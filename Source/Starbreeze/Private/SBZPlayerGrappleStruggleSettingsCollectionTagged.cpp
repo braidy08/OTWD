@@ -1,0 +1,5 @@
+#include "SBZPlayerGrappleStruggleSettingsCollectionTagged.h"
+
+FSBZPlayerGrappleStruggleSettingsCollectionTagged::FSBZPlayerGrappleStruggleSettingsCollectionTagged() {
+}
+

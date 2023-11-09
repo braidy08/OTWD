@@ -1,0 +1,5 @@
+#include "SBZBTDecorator_CanInterruptCurrentMoveToInteraction.h"
+
+USBZBTDecorator_CanInterruptCurrentMoveToInteraction::USBZBTDecorator_CanInterruptCurrentMoveToInteraction() {
+}
+

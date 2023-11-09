@@ -1,0 +1,36 @@
+using UnrealBuildTool;
+
+public class OTWD : ModuleRules {
+    public OTWD(ReadOnlyTargetRules Target) : base(Target) {
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+        
+        PublicDependencyModuleNames.AddRange(new string[] {
+            "AIModule",
+            "AkAudio",
+            "AnimGraphRuntime",
+            "AnimationCore",
+            "AudioMixer",
+            "Core",
+            "CoreUObject",
+            "Engine",
+            "GameplayAbilities",
+            "GameplayTags",
+            "GameplayTasks",
+            "InputCore",
+            "MediaAssets",
+            "MovieScene",
+            "MovieSceneTracks",
+            "OnlineSubsystem",
+            "OnlineSubsystemUtils",
+            "Overlay",
+            "PhysXVehicles",
+            "ProceduralMeshComponent",
+            "SBZAnalytics",
+            "SignificanceManager",
+            "Slate",
+            "SlateCore",
+            "Starbreeze",
+            "UMG",
+        });
+    }
+}

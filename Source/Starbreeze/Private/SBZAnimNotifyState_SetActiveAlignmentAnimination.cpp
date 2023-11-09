@@ -1,0 +1,5 @@
+#include "SBZAnimNotifyState_SetActiveAlignmentAnimination.h"
+
+USBZAnimNotifyState_SetActiveAlignmentAnimination::USBZAnimNotifyState_SetActiveAlignmentAnimination() {
+}
+

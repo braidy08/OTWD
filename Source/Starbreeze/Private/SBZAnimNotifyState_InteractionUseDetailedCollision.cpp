@@ -1,0 +1,5 @@
+#include "SBZAnimNotifyState_InteractionUseDetailedCollision.h"
+
+USBZAnimNotifyState_InteractionUseDetailedCollision::USBZAnimNotifyState_InteractionUseDetailedCollision() {
+}
+

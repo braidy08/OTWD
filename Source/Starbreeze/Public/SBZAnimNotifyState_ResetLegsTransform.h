@@ -1,0 +1,12 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "Animation/AnimNotifies/AnimNotifyState.h"
+#include "SBZAnimNotifyState_ResetLegsTransform.generated.h"
+
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
+class STARBREEZE_API USBZAnimNotifyState_ResetLegsTransform : public UAnimNotifyState {
+    GENERATED_BODY()
+public:
+    USBZAnimNotifyState_ResetLegsTransform();
+};
+

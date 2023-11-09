@@ -1,0 +1,5 @@
+#include "SBZAnimNotifyState_ChangeHandSlotInterruptsMeleeSwing.h"
+
+USBZAnimNotifyState_ChangeHandSlotInterruptsMeleeSwing::USBZAnimNotifyState_ChangeHandSlotInterruptsMeleeSwing() {
+}
+
