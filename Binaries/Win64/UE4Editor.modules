@@ -1,0 +1,11 @@
+{
+	"BuildId": "3709383",
+	"Modules": 
+	{
+		"OTWD": "UE4Editor-OTWD.dll",
+		"SBZAnalytics": "UE4Editor-SBZAnalytics.dll",
+		"SBZScriptRemapper": "UE4Editor-SBZScriptRemapper.dll",
+		"SignificanceManager": "UE4Editor-SignificanceManager.dll",
+		"Starbreeze": "UE4Editor-Starbreeze.dll"
+	}
+}
