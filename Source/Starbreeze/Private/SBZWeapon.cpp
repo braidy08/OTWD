@@ -37,7 +37,7 @@ ASBZWeapon::ASBZWeapon() {
     this->WeaponBaseMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("WeaponBaseMesh"));
     this->StaticShadowMesh1P = NULL;
     this->WeaponBaseStaticMesh = NULL;
-    this->WeaponBaseSkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("WeaponBaseMesh"));
+    this->WeaponBaseSkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("WeaponBaseSkeletalMesh"));
     this->ModularBuilderComponent = CreateDefaultSubobject<USBZModularMeshComponent>(TEXT("ModularBuilderComponent"));
     this->AbilitySystem = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
     this->WeaponAttributeSet = CreateDefaultSubobject<USBZWeaponAttributeSet>(TEXT("SBZWeaponAttributeSet"));

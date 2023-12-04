@@ -18,8 +18,8 @@ void ASBZStaticBagItem::AttachWorldHidden() {
 
 ASBZStaticBagItem::ASBZStaticBagItem() {
     this->PickedUpMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PickedUpMesh"));
-    this->OriginalMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent0"));
-    this->CurrentMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent0"));
+    this->OriginalMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("OriginalMesh"));
+    this->CurrentMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CurrentMesh"));
     this->OutlineComponent = NULL;
 }
 

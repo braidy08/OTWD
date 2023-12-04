@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{C6822F35-4684-7765-DAE3-04BFA0E9726C}",
+	"EngineAssociation": "4.18",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -103,10 +103,10 @@
 			"Name": "FunctionalTestingEditor",
 			"Enabled": true
 		},
-		{
-			"Name": "FbxAutomationTestBuilder",
-			"Enabled": true
-		}
+    {
+      "Name": "FbxAutomationTestBuilder",
+      "Enabled": true
+    }
 	],
 	"TargetPlatforms": [
 		"AllDesktop",

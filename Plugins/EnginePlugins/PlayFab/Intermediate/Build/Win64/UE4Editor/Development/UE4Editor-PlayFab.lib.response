@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-PlayFab.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD\Plugins\EnginePlugins\PlayFab\Intermediate\Build\Win64\UE4Editor\Development\PlayFab\Module.PlayFab.cpp.obj"
+"C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD\Plugins\EnginePlugins\PlayFab\Intermediate\Build\Win64\UE4Editor\Development\PlayFab\Module.PlayFab.gen.cpp.obj"
+"D:\games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\PlayFab\PCLaunch.rc.res"
+"D:\games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\ModuleVersionResource.rc.inl.res"
+/OUT:"C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD\Plugins\EnginePlugins\PlayFab\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-PlayFab.lib"
