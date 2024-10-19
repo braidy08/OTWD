@@ -137,3 +137,5 @@ obj/
 /Saved/*
 /Saved/Logs/*
 /.vs
+/Plugins/Wwise
+!Content/**
