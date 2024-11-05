@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AKAUDIO_AkOnFloatValueChangedEventDelegate_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkOnFloatValueChangedEventDelegate_h_5_DELEGATE \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkOnFloatValueChangedEventDelegate_h_5_DELEGATE \
 struct _Script_AkAudio_eventAkOnFloatValueChangedEvent_Parms \
 { \
 	float Value; \
@@ -27,7 +27,7 @@ static inline void FAkOnFloatValueChangedEvent_DelegateWrapper(const FMulticastS
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkOnFloatValueChangedEventDelegate_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkOnFloatValueChangedEventDelegate_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

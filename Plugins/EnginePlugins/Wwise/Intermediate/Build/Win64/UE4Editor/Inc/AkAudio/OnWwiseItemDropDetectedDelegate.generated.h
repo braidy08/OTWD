@@ -14,7 +14,7 @@ struct FGuid;
 #endif
 #define AKAUDIO_OnWwiseItemDropDetectedDelegate_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWwiseItemDropDetectedDelegate_h_6_DELEGATE \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWwiseItemDropDetectedDelegate_h_6_DELEGATE \
 struct _Script_AkAudio_eventOnWwiseItemDropDetected_Parms \
 { \
 	FGuid ItemDroppedID; \
@@ -28,7 +28,7 @@ static inline void FOnWwiseItemDropDetected_DelegateWrapper(const FMulticastScri
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWwiseItemDropDetectedDelegate_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWwiseItemDropDetectedDelegate_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

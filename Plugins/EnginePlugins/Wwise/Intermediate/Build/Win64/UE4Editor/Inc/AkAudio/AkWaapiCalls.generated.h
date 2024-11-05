@@ -16,7 +16,7 @@ struct FAkWaapiSubscriptionId;
 #endif
 #define AKAUDIO_AkWaapiCalls_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_RPC_WRAPPERS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execCallWaapi) \
 	{ \
@@ -108,7 +108,7 @@ struct FAkWaapiSubscriptionId;
 	}
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execCallWaapi) \
 	{ \
@@ -200,7 +200,7 @@ struct FAkWaapiSubscriptionId;
 	}
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_INCLASS_NO_PURE_DECLS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAkWaapiCalls(); \
 	friend AKAUDIO_API class UClass* Z_Construct_UClass_UAkWaapiCalls(); \
@@ -213,7 +213,7 @@ public: \
 
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_INCLASS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesUAkWaapiCalls(); \
 	friend AKAUDIO_API class UClass* Z_Construct_UClass_UAkWaapiCalls(); \
@@ -226,7 +226,7 @@ public: \
 
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_STANDARD_CONSTRUCTORS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UAkWaapiCalls(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UAkWaapiCalls) \
@@ -239,7 +239,7 @@ private: \
 public:
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_ENHANCED_CONSTRUCTORS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UAkWaapiCalls(UAkWaapiCalls&&); \
@@ -250,32 +250,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UAkWaapiCalls); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UAkWaapiCalls)
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_PRIVATE_PROPERTY_OFFSET
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_12_PROLOG
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_GENERATED_BODY_LEGACY \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_PRIVATE_PROPERTY_OFFSET
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_12_PROLOG
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_PRIVATE_PROPERTY_OFFSET \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_RPC_WRAPPERS \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_INCLASS \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_STANDARD_CONSTRUCTORS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_PRIVATE_PROPERTY_OFFSET \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_RPC_WRAPPERS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_INCLASS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_GENERATED_BODY \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_PRIVATE_PROPERTY_OFFSET \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_INCLASS_NO_PURE_DECLS \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_ENHANCED_CONSTRUCTORS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_PRIVATE_PROPERTY_OFFSET \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_INCLASS_NO_PURE_DECLS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiCalls_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

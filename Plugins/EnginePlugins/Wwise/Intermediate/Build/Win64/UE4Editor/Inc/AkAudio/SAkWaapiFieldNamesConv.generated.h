@@ -14,7 +14,7 @@ struct FAkWaapiFieldNames;
 #endif
 #define AKAUDIO_SAkWaapiFieldNamesConv_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_RPC_WRAPPERS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execConv_FAkWaapiFieldNamesToString) \
 	{ \
@@ -35,7 +35,7 @@ struct FAkWaapiFieldNames;
 	}
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_RPC_WRAPPERS_NO_PURE_DECLS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execConv_FAkWaapiFieldNamesToString) \
 	{ \
@@ -56,7 +56,7 @@ struct FAkWaapiFieldNames;
 	}
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_INCLASS_NO_PURE_DECLS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUSAkWaapiFieldNamesConv(); \
 	friend AKAUDIO_API class UClass* Z_Construct_UClass_USAkWaapiFieldNamesConv(); \
@@ -66,7 +66,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_INCLASS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_INCLASS \
 private: \
 	static void StaticRegisterNativesUSAkWaapiFieldNamesConv(); \
 	friend AKAUDIO_API class UClass* Z_Construct_UClass_USAkWaapiFieldNamesConv(); \
@@ -76,7 +76,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_STANDARD_CONSTRUCTORS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API USAkWaapiFieldNamesConv(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USAkWaapiFieldNamesConv) \
@@ -89,7 +89,7 @@ private: \
 public:
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_ENHANCED_CONSTRUCTORS \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API USAkWaapiFieldNamesConv(USAkWaapiFieldNamesConv&&); \
@@ -100,32 +100,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USAkWaapiFieldNamesConv); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USAkWaapiFieldNamesConv)
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_PRIVATE_PROPERTY_OFFSET
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_7_PROLOG
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_GENERATED_BODY_LEGACY \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_PRIVATE_PROPERTY_OFFSET
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_7_PROLOG
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_PRIVATE_PROPERTY_OFFSET \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_RPC_WRAPPERS \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_INCLASS \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_STANDARD_CONSTRUCTORS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_PRIVATE_PROPERTY_OFFSET \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_RPC_WRAPPERS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_INCLASS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_GENERATED_BODY \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_PRIVATE_PROPERTY_OFFSET \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_RPC_WRAPPERS_NO_PURE_DECLS \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_INCLASS_NO_PURE_DECLS \
-	OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_ENHANCED_CONSTRUCTORS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_PRIVATE_PROPERTY_OFFSET \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_RPC_WRAPPERS_NO_PURE_DECLS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_INCLASS_NO_PURE_DECLS \
+	OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h_9_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_SAkWaapiFieldNamesConv_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

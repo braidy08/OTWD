@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AKAUDIO_OnWaapiProjectLoadedDelegate_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWaapiProjectLoadedDelegate_h_5_DELEGATE \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWaapiProjectLoadedDelegate_h_5_DELEGATE \
 static inline void FOnWaapiProjectLoaded_DelegateWrapper(const FScriptDelegate& OnWaapiProjectLoaded) \
 { \
 	OnWaapiProjectLoaded.ProcessDelegate<UObject>(NULL); \
@@ -21,7 +21,7 @@ static inline void FOnWaapiProjectLoaded_DelegateWrapper(const FScriptDelegate& 
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWaapiProjectLoadedDelegate_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWaapiProjectLoadedDelegate_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

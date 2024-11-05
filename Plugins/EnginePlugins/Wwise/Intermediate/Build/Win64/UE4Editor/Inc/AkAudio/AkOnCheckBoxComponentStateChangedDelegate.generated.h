@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AKAUDIO_AkOnCheckBoxComponentStateChangedDelegate_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkOnCheckBoxComponentStateChangedDelegate_h_5_DELEGATE \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkOnCheckBoxComponentStateChangedDelegate_h_5_DELEGATE \
 struct _Script_AkAudio_eventAkOnCheckBoxComponentStateChanged_Parms \
 { \
 	bool bIsChecked; \
@@ -27,7 +27,7 @@ static inline void FAkOnCheckBoxComponentStateChanged_DelegateWrapper(const FMul
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkOnCheckBoxComponentStateChangedDelegate_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkOnCheckBoxComponentStateChangedDelegate_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

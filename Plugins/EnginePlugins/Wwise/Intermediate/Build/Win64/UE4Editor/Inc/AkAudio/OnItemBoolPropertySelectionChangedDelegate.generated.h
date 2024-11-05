@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AKAUDIO_OnItemBoolPropertySelectionChangedDelegate_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnItemBoolPropertySelectionChangedDelegate_h_5_DELEGATE \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnItemBoolPropertySelectionChangedDelegate_h_5_DELEGATE \
 struct _Script_AkAudio_eventOnItemBoolPropertySelectionChanged_Parms \
 { \
 	FString PropertySelected; \
@@ -27,7 +27,7 @@ static inline void FOnItemBoolPropertySelectionChanged_DelegateWrapper(const FMu
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnItemBoolPropertySelectionChangedDelegate_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnItemBoolPropertySelectionChangedDelegate_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

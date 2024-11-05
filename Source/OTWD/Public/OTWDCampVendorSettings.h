@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
+#include "Engine/DeveloperSettings.h"
 #include "ESBZWeaponRarity.h"
 #include "OTWDBlackmarketProgressSettings.h"
 #include "OTWDCampVendorSettings.generated.h"

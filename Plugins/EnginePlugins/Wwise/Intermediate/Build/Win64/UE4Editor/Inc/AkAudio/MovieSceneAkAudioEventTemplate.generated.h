@@ -13,14 +13,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AKAUDIO_MovieSceneAkAudioEventTemplate_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_MovieSceneAkAudioEventTemplate_h_10_GENERATED_BODY \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_MovieSceneAkAudioEventTemplate_h_10_GENERATED_BODY \
 	friend AKAUDIO_API class UScriptStruct* Z_Construct_UScriptStruct_FMovieSceneAkAudioEventTemplate(); \
 	static class UScriptStruct* StaticStruct(); \
 	typedef FMovieSceneEvalTemplate Super;
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_MovieSceneAkAudioEventTemplate_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_MovieSceneAkAudioEventTemplate_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

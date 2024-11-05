@@ -14,7 +14,7 @@ struct FGuid;
 #endif
 #define AKAUDIO_OnItemDragDetectedDelegate_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnItemDragDetectedDelegate_h_6_DELEGATE \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnItemDragDetectedDelegate_h_6_DELEGATE \
 struct _Script_AkAudio_eventOnItemDragDetected_Parms \
 { \
 	FGuid ItemDraggedID; \
@@ -30,7 +30,7 @@ static inline void FOnItemDragDetected_DelegateWrapper(const FMulticastScriptDel
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnItemDragDetectedDelegate_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnItemDragDetectedDelegate_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
