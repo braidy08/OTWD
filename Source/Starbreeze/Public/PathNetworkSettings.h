@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
+#include "Engine/DeveloperSettings.h"
 #include "PathNetworkSettings.generated.h"
 
 UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)

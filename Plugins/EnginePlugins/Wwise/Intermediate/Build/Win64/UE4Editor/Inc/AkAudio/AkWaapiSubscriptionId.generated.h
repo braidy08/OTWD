@@ -13,13 +13,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AKAUDIO_AkWaapiSubscriptionId_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiSubscriptionId_h_7_GENERATED_BODY \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiSubscriptionId_h_7_GENERATED_BODY \
 	friend AKAUDIO_API class UScriptStruct* Z_Construct_UScriptStruct_FAkWaapiSubscriptionId(); \
 	static class UScriptStruct* StaticStruct();
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiSubscriptionId_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkWaapiSubscriptionId_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

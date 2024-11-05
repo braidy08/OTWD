@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
 #include "Engine/EngineTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EPhysicalSurface -FallbackName=EPhysicalSurface
+#include "Engine/EngineTypes.h"
 #include "Engine/EngineTypes.h"
 #include "ESBZDoorActionType.h"
 #include "ESBZDoorInteractionPointType.h"

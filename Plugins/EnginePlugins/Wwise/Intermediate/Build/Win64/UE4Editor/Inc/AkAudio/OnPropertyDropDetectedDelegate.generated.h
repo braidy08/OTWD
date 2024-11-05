@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AKAUDIO_OnPropertyDropDetectedDelegate_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnPropertyDropDetectedDelegate_h_5_DELEGATE \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnPropertyDropDetectedDelegate_h_5_DELEGATE \
 struct _Script_AkAudio_eventOnPropertyDropDetected_Parms \
 { \
 	FString PropertyDropped; \
@@ -27,7 +27,7 @@ static inline void FOnPropertyDropDetected_DelegateWrapper(const FMulticastScrip
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnPropertyDropDetectedDelegate_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnPropertyDropDetectedDelegate_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

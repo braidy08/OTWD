@@ -15,7 +15,7 @@ struct FAKWaapiJsonObject;
 #endif
 #define AKAUDIO_OnEventCallbackDelegate_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnEventCallbackDelegate_h_7_DELEGATE \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnEventCallbackDelegate_h_7_DELEGATE \
 struct _Script_AkAudio_eventOnEventCallback_Parms \
 { \
 	FAkWaapiSubscriptionId SubscriptionId; \
@@ -31,7 +31,7 @@ static inline void FOnEventCallback_DelegateWrapper(const FScriptDelegate& OnEve
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnEventCallbackDelegate_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnEventCallbackDelegate_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

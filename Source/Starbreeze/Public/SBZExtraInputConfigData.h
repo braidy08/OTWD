@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
+#include "Engine/DeveloperSettings.h"
 #include "InputCoreTypes.h"
 #include "SBZRebindableSpecification.h"
 #include "SBZExtraInputConfigData.generated.h"

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "Engine/EngineTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ECollisionTraceFlag -FallbackName=ECollisionTraceFlag
+#include "PhysicsEngine/BodySetupEnums.h"
 #include "Engine/EngineTypes.h"
 #include "EHoudiniRuntimeSettingsAxisImport.h"
 #include "EHoudiniRuntimeSettingsRecomputeFlag.h"

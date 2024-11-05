@@ -1,6 +1,6 @@
 #include "SBZNavObstacle.h"
 #include "Components/BoxComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavModifierComponent -FallbackName=NavModifierComponent
+#include "AI/Navigation/NavModifierComponent.h"
 
 bool ASBZNavObstacle::IsEnable() const {
     return false;

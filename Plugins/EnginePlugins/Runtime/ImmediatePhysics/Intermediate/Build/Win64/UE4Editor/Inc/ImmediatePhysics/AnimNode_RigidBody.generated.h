@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define IMMEDIATEPHYSICS_AnimNode_RigidBody_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Runtime_ImmediatePhysics_Source_ImmediatePhysics_Public_AnimNode_RigidBody_h_13_GENERATED_BODY \
+#define OTWD_T2_Plugins_EnginePlugins_Runtime_ImmediatePhysics_Source_ImmediatePhysics_Public_AnimNode_RigidBody_h_13_GENERATED_BODY \
 	friend IMMEDIATEPHYSICS_API class UScriptStruct* Z_Construct_UScriptStruct_FAnimNode_RigidBody(); \
 	static class UScriptStruct* StaticStruct(); \
 	FORCEINLINE static uint32 __PPO__bComponentSpaceSimulation() { return STRUCT_OFFSET(FAnimNode_RigidBody, bComponentSpaceSimulation); } \
@@ -21,7 +21,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Runtime_ImmediatePhysics_Source_ImmediatePhysics_Public_AnimNode_RigidBody_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Runtime_ImmediatePhysics_Source_ImmediatePhysics_Public_AnimNode_RigidBody_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

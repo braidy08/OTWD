@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AKAUDIO_OnWaapiConnectionLostDelegate_generated_h
 
-#define OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWaapiConnectionLostDelegate_h_5_DELEGATE \
+#define OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWaapiConnectionLostDelegate_h_5_DELEGATE \
 static inline void FOnWaapiConnectionLost_DelegateWrapper(const FScriptDelegate& OnWaapiConnectionLost) \
 { \
 	OnWaapiConnectionLost.ProcessDelegate<UObject>(NULL); \
@@ -21,7 +21,7 @@ static inline void FOnWaapiConnectionLost_DelegateWrapper(const FScriptDelegate&
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWaapiConnectionLostDelegate_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_OnWaapiConnectionLostDelegate_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ECollisionTraceFlag -FallbackName=ECollisionTraceFlag
+#include "PhysicsEngine/BodySetupEnums.h"
 #include "Components/PrimitiveComponent.h"
 #include "Engine/EngineTypes.h"
 #include "HoudiniAssetComponent.generated.h"

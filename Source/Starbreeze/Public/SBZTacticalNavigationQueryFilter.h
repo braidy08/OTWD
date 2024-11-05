@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavigationQueryFilter -FallbackName=NavigationQueryFilter
+#include "AI/Navigation/NavFilters/NavigationQueryFilter.h"
 #include "SBZTacticalNavigationQueryFilter.generated.h"
 
 UCLASS(Abstract, Blueprintable)

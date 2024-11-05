@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define AKAUDIO_AkChannelConfiguration_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID OTWD_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkChannelConfiguration_h
+#define CURRENT_FILE_ID OTWD_T2_Plugins_EnginePlugins_Wwise_Source_AkAudio_Public_AkChannelConfiguration_h
 
 
 #define FOREACH_ENUM_AKCHANNELCONFIGURATION(op) \

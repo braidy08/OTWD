@@ -153,15 +153,15 @@
 			"IsPrecompiled": true
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UE4GamepadUMG/Plugins/GamepadUMGPlugin/Binaries/Win64/UE4Editor-GamepadUMGPlugin.dll",
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UE4GamepadUMG/Binaries/Win64/UE4Editor-GamepadUMGPlugin.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UE4GamepadUMG/Plugins/GamepadUMGPlugin/Binaries/Win64/UE4Editor-GamepadUMGPlugin.pdb",
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UE4GamepadUMG/Binaries/Win64/UE4Editor-GamepadUMGPlugin.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UE4GamepadUMG/Plugins/GamepadUMGPlugin/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-GamepadUMGPlugin.lib",
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UE4GamepadUMG/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-GamepadUMGPlugin.lib",
 			"Type": "ImportLibrary"
 		},
 		{
@@ -5920,7 +5920,7 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UE4GamepadUMG/Plugins/GamepadUMGPlugin/Binaries/Win64/UE4Editor.modules",
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UE4GamepadUMG/Binaries/Win64/UE4Editor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -5970,7 +5970,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UE4GamepadUMG/Plugins/GamepadUMGPlugin/GamepadUMGPlugin.uplugin",
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UE4GamepadUMG/GamepadUMGPlugin.uplugin",
 			"Type": "UFS"
 		},
 		{

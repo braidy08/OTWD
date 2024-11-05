@@ -24,10 +24,10 @@
 /wd4838
 /w44668
 /I D:\games\UE_4.18\Engine\Source
-/I "C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD\Plugins\EnginePlugins\Wwise\Source"
-/I "C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD\Plugins\EnginePlugins\Wwise\Source\AkAudio\Public"
-/I "C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD\Plugins\EnginePlugins\Wwise\Intermediate\Build\Win64\UE4Editor\Inc\AkAudio"
-/I "C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD\Plugins\EnginePlugins\Wwise\Source\AkAudio"
+/I "C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD-T2\Plugins\EnginePlugins\Wwise\Source"
+/I "C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD-T2\Plugins\EnginePlugins\Wwise\Source\AkAudio\Public"
+/I "C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD-T2\Plugins\EnginePlugins\Wwise\Intermediate\Build\Win64\UE4Editor\Inc\AkAudio"
+/I "C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD-T2\Plugins\EnginePlugins\Wwise\Source\AkAudio"
 /I D:\games\UE_4.18\Engine\Source\Runtime\Core\Public
 /I D:\games\UE_4.18\Engine\Source\Runtime\Core\Public\Internationalization
 /I D:\games\UE_4.18\Engine\Source\Runtime\Core\Public\Async
@@ -360,9 +360,9 @@
 /FI"D:\games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h"
 /Yu"D:\games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h"
 /Fp"D:\games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.pch"
-"C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD\Plugins\EnginePlugins\Wwise\Intermediate\Build\Win64\UE4Editor\Development\AkAudio\Module.AkAudio.cpp"
-/FI"C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD\Plugins\EnginePlugins\Wwise\Intermediate\Build\Win64\UE4Editor\Development\AkAudio\Definitions.AkAudio.h"
-/Fo"C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD\Plugins\EnginePlugins\Wwise\Intermediate\Build\Win64\UE4Editor\Development\AkAudio\Module.AkAudio.cpp.obj"
+"C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD-T2\Plugins\EnginePlugins\Wwise\Intermediate\Build\Win64\UE4Editor\Development\AkAudio\Module.AkAudio.cpp"
+/FI"C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD-T2\Plugins\EnginePlugins\Wwise\Intermediate\Build\Win64\UE4Editor\Development\AkAudio\Definitions.AkAudio.h"
+/Fo"C:\Users\USER\OneDrive\Documents\Unreal Projects\OTWD-T2\Plugins\EnginePlugins\Wwise\Intermediate\Build\Win64\UE4Editor\Development\AkAudio\Module.AkAudio.cpp.obj"
 /TP
 /GR-
 /W4
