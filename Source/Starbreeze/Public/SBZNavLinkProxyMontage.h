@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AI/Navigation/NavLinkProxy.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavLinkProxy -FallbackName=NavLinkProxy
 #include "SBZNavLinkProxyMontage.generated.h"
 
 class ASBZAICharacter;
@@ -21,7 +21,8 @@ private:
     ASBZAICharacter* Visitor;
     
 public:
-    ASBZNavLinkProxyMontage();
+    ASBZNavLinkProxyMontage(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_PlayMontage(ASBZAICharacter* Character);

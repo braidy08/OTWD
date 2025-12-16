@@ -8,5 +8,6 @@ class OTWD_API UBTTask_SetGoalLocation : public UBTTask_BlackboardBase {
     GENERATED_BODY()
 public:
     UBTTask_SetGoalLocation();
+
 };
 

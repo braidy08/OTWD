@@ -16,3 +16,7 @@ USBZUIWidgetLibrary::USBZUIWidgetLibrary() {
     this->KickedPopupWidgetBlueprint = NULL;
 }
 
+void USBZUIWidgetLibrary::MissionEndedPopupIteraction(const FName ActionName, ESBZButtonInputType ButtonType, USBZPopupWidget* WidgetPointer) {
+}
+
+

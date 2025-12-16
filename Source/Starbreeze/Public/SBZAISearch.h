@@ -22,7 +22,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnSearchTargetReached OnSearchTargetReached;
     
-    ASBZAISearch();
+    ASBZAISearch(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SearchGroup(TArray<ASBZAICharacter*> AICharacters, FSBZAIStanceIdHelper Stance, FSBZAlertnessLevelIdHelper AlertnessLevel, FVector TargetPosition);
     

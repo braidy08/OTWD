@@ -1,5 +1,13 @@
 #include "SBZExplosionManager.h"
 
+ASBZExplosionManager::ASBZExplosionManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+}
+
 void ASBZExplosionManager::Server_ExplodeWithOverlap(AActor* DamageCauser, const UObject* WorldContextObject, const FVector& Pos, const FRotator& Rot, const float Radius, UParticleSystem* EmitterTemplate, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, UClass* ClassFilter, const TArray<AActor*>& ActorsToIgnore, TArray<AActor*>& OutActors, bool bNetMulticast) {
 }
 
@@ -35,6 +43,4 @@ TArray<AActor*> ASBZExplosionManager::Explode(const UObject* WorldContextObject,
     return TArray<AActor*>();
 }
 
-ASBZExplosionManager::ASBZExplosionManager() {
-}
 

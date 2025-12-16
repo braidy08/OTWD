@@ -1,18 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZSpawnManager.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZSpawnManager -FallbackName=SBZSpawnManager
 #include "OTWDSpawnManager.generated.h"
 
-class AOTWDSpawnManager;
-class UObject;
-
-UCLASS(Blueprintable)
-class OTWD_API AOTWDSpawnManager : public ASBZSpawnManager {
+UCLASS(Blueprintable, EditInlineNew)
+class OTWD_API UOTWDSpawnManager : public USBZSpawnManager {
     GENERATED_BODY()
 public:
-    AOTWDSpawnManager();
-    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
-    static AOTWDSpawnManager* GetSpawnManager(const UObject* WorldContextObject);
-    
+    UOTWDSpawnManager();
+
 };
 

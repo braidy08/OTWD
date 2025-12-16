@@ -4,9 +4,9 @@
 
 UENUM(BlueprintType)
 enum class ESBZPOIAnimation : uint8 {
-    Intro = 0x1,
+    Intro = 1,
     Using,
-    Exit = 0x4,
-    None = 0x8,
+    Exit = 4,
+    None = 8,
 };
 

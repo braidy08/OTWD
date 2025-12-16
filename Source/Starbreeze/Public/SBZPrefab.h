@@ -7,6 +7,6 @@ UCLASS(Blueprintable, MinimalAPI)
 class ASBZPrefab : public AActor {
     GENERATED_BODY()
 public:
-    ASBZPrefab();
+    ASBZPrefab(const FObjectInitializer& ObjectInitializer);
 };
 

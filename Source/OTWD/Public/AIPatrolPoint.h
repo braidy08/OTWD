@@ -7,6 +7,6 @@ UCLASS(Abstract, Blueprintable)
 class OTWD_API AAIPatrolPoint : public ASBZAIPatrolPoint {
     GENERATED_BODY()
 public:
-    AAIPatrolPoint();
+    AAIPatrolPoint(const FObjectInitializer& ObjectInitializer);
 };
 

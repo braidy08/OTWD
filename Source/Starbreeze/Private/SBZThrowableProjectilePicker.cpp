@@ -4,6 +4,17 @@
 #include "Net/UnrealNetwork.h"
 #include "SBZOutlineComponent.h"
 
+ASBZThrowableProjectilePicker::ASBZThrowableProjectilePicker(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("SceneRoot"));
+    this->SceneRoot = (USceneComponent*)RootComponent;
+    this->InteractionCapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("InteractionCapsule"));
+    this->OutlineComponent = CreateDefaultSubobject<USBZOutlineComponent>(TEXT("OulineComponent"));
+    this->InteractionCapsuleComponent->SetupAttachment(RootComponent);
+}
+
 void ASBZThrowableProjectilePicker::Server_OnPickup_Implementation(ASBZPlayerCharacter* Player) {
 }
 bool ASBZThrowableProjectilePicker::Server_OnPickup_Validate(ASBZPlayerCharacter* Player) {
@@ -31,9 +42,4 @@ void ASBZThrowableProjectilePicker::GetLifetimeReplicatedProps(TArray<FLifetimeP
     DOREPLIFETIME(ASBZThrowableProjectilePicker, ProjectileGuid);
 }
 
-ASBZThrowableProjectilePicker::ASBZThrowableProjectilePicker() {
-    this->SceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("SceneRoot"));
-    this->InteractionCapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("InteractionCapsule"));
-    this->OutlineComponent = CreateDefaultSubobject<USBZOutlineComponent>(TEXT("OulineComponent"));
-}
 

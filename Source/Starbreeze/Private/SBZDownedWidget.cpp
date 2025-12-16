@@ -1,17 +1,5 @@
 #include "SBZDownedWidget.h"
 
-void USBZDownedWidget::SetupWidgets(UTextBlock* MinTextWidget, UTextBlock* SecsTextWidget, UMaterialInstanceDynamic* ProgressMaterialWidget, UPanelWidget* LivesPanelWidget) {
-}
-
-void USBZDownedWidget::SetupAnimation(UWidgetAnimation* ShowReviveAnimation, UWidgetAnimation* HideReviveAnimation) {
-}
-
-void USBZDownedWidget::SetOwner(ASBZPlayerCharacter* Owner) {
-}
-
-void USBZDownedWidget::OnPlayerStateChangedEventHandler(ESBZPlayerDefeatState NewState, AActor* InOwner) {
-}
-
 USBZDownedWidget::USBZDownedWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->LifeStatusBlueprint = NULL;
     this->DefeatHandler = NULL;
@@ -28,4 +16,17 @@ USBZDownedWidget::USBZDownedWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->OwnerCharacter = NULL;
     this->MissionState = NULL;
 }
+
+void USBZDownedWidget::SetupWidgets(UTextBlock* MinTextWidget, UTextBlock* SecsTextWidget, UMaterialInstanceDynamic* ProgressMaterialWidget, UPanelWidget* LivesPanelWidget) {
+}
+
+void USBZDownedWidget::SetupAnimation(UWidgetAnimation* ShowReviveAnimation, UWidgetAnimation* HideReviveAnimation) {
+}
+
+void USBZDownedWidget::SetOwner(ASBZPlayerCharacter* Owner) {
+}
+
+void USBZDownedWidget::OnPlayerStateChangedEventHandler(ESBZPlayerDefeatState NewState, AActor* InOwner) {
+}
+
 

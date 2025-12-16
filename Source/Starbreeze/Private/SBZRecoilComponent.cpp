@@ -1,6 +1,7 @@
 #include "SBZRecoilComponent.h"
 
-USBZRecoilComponent::USBZRecoilComponent() {
+USBZRecoilComponent::USBZRecoilComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->Weapon = NULL;
 }
+
 

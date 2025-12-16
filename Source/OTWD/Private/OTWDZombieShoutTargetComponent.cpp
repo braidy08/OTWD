@@ -1,5 +1,6 @@
 #include "OTWDZombieShoutTargetComponent.h"
 
-UOTWDZombieShoutTargetComponent::UOTWDZombieShoutTargetComponent() {
+UOTWDZombieShoutTargetComponent::UOTWDZombieShoutTargetComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

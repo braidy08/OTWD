@@ -24,6 +24,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USBZOutlineSchematic* DebugOutlineSchematic;
     
-    ASBZAISwitcher();
+    ASBZAISwitcher(const FObjectInitializer& ObjectInitializer);
+
 };
 

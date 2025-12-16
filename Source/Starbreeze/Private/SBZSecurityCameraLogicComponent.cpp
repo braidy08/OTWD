@@ -1,6 +1,33 @@
 #include "SBZSecurityCameraLogicComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZSecurityCameraLogicComponent::USBZSecurityCameraLogicComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->CameraMesh = NULL;
+    this->Health = 1;
+    this->CurrentHealth = 1;
+    this->PeripheralVisionAngle = 1;
+    this->VerticalVisionOffsetTop = 1;
+    this->VerticalVisionOffsetBottom = 1;
+    this->VerticalVisionAngleDegreesTop = 1;
+    this->VerticalVisionAngleDegreesBottom = 1;
+    this->TargetYaw = 1;
+    this->TargetPitch = 1;
+    this->RotationSpeed = 1;
+    this->DestroyedPitch = 1;
+    this->MinPitch = 1;
+    this->MaxPitch = 1;
+    this->MinYaw = 1;
+    this->MaxYaw = 1;
+    this->DetectionInterval = 1;
+    this->CameraViewDistance = 1;
+    this->TimeUntilAlert = 1;
+    this->CameraPanDegree = 1;
+    this->TimeUntilDirectionChange = 1;
+    this->DisabledPitch = 1;
+    this->CurrentState = ESBZSecurityCameraState::SCS_None;
+}
+
 void USBZSecurityCameraLogicComponent::TestVisualDetection() {
 }
 
@@ -61,29 +88,4 @@ void USBZSecurityCameraLogicComponent::GetLifetimeReplicatedProps(TArray<FLifeti
     DOREPLIFETIME(USBZSecurityCameraLogicComponent, CurrentState);
 }
 
-USBZSecurityCameraLogicComponent::USBZSecurityCameraLogicComponent() {
-    this->CameraMesh = NULL;
-    this->Health = 1;
-    this->CurrentHealth = 1;
-    this->PeripheralVisionAngle = 1;
-    this->VerticalVisionOffsetTop = 1;
-    this->VerticalVisionOffsetBottom = 1;
-    this->VerticalVisionAngleDegreesTop = 1;
-    this->VerticalVisionAngleDegreesBottom = 1;
-    this->TargetYaw = 1;
-    this->TargetPitch = 1;
-    this->RotationSpeed = 1;
-    this->DestroyedPitch = 1;
-    this->MinPitch = 1;
-    this->MaxPitch = 1;
-    this->MinYaw = 1;
-    this->MaxYaw = 1;
-    this->DetectionInterval = 1;
-    this->CameraViewDistance = 1;
-    this->TimeUntilAlert = 1;
-    this->CameraPanDegree = 1;
-    this->TimeUntilDirectionChange = 1;
-    this->DisabledPitch = 1;
-    this->CurrentState = ESBZSecurityCameraState::SCS_None;
-}
 

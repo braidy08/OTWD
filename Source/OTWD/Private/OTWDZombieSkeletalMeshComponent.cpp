@@ -1,5 +1,6 @@
 #include "OTWDZombieSkeletalMeshComponent.h"
 
-UOTWDZombieSkeletalMeshComponent::UOTWDZombieSkeletalMeshComponent() {
+UOTWDZombieSkeletalMeshComponent::UOTWDZombieSkeletalMeshComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

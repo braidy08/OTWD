@@ -1,17 +1,6 @@
 #include "SBZCharacterMovementComponent.h"
 
-void USBZCharacterMovementComponent::UpdateTargetMaxSpeedMultiplier() {
-}
-
-float USBZCharacterMovementComponent::GetMaxWalkSpeed() const {
-    return 0.0f;
-}
-
-float USBZCharacterMovementComponent::GetMaxClimbSpeed() const {
-    return 0.0f;
-}
-
-USBZCharacterMovementComponent::USBZCharacterMovementComponent() {
+USBZCharacterMovementComponent::USBZCharacterMovementComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bUseSlideMinDistance = false;
     this->SlideMoveMinSlideDistance = 1;
     this->SlideMoveMaxDistance = 1;
@@ -59,4 +48,16 @@ USBZCharacterMovementComponent::USBZCharacterMovementComponent() {
     this->OwningAICharacter = NULL;
     this->CurrentMovementState = ESBZPlayerMovementState::Walk;
 }
+
+void USBZCharacterMovementComponent::UpdateTargetMaxSpeedMultiplier() {
+}
+
+float USBZCharacterMovementComponent::GetMaxWalkSpeed() const {
+    return 0.0f;
+}
+
+float USBZCharacterMovementComponent::GetMaxClimbSpeed() const {
+    return 0.0f;
+}
+
 

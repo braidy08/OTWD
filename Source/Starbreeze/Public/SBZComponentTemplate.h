@@ -18,6 +18,7 @@ protected:
     
 public:
     USBZComponentTemplate();
+
     UFUNCTION(BlueprintCallable)
     static UActorComponent* SpawnComponentFromTemplate(USBZComponentTemplate* ComponentTemplate, AActor* Owner, USceneComponent* AttachParent, FName AttachBone);
     

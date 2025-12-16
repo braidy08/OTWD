@@ -1,5 +1,6 @@
 #include "SBZPlaceableVolume.h"
 
-ASBZPlaceableVolume::ASBZPlaceableVolume() {
+ASBZPlaceableVolume::ASBZPlaceableVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

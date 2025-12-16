@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector TargetLocationKey;
     
     UBTTask_GetHomeLocation();
+
 };
 

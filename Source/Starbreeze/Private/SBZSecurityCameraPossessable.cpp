@@ -1,7 +1,28 @@
 #include "SBZSecurityCameraPossessable.h"
-#include "Camera/CameraComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraComponent -FallbackName=CameraComponent
 #include "Components/StaticMeshComponent.h"
 #include "SBZSecurityCameraLogicComponent.h"
+
+ASBZSecurityCameraPossessable::ASBZSecurityCameraPossessable(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CameraArmMesh"));
+    this->CameraArmMesh = (UStaticMeshComponent*)RootComponent;
+    this->CameraMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CameraMesh"));
+    this->CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
+    this->PossessedByCharacter = NULL;
+    this->SecurityCameraLogic = CreateDefaultSubobject<USBZSecurityCameraLogicComponent>(TEXT("Logic"));
+    this->SecurityCameraSwitcher = NULL;
+    this->SpeedStep = 1;
+    this->PossessedRotationSpeed = 1;
+    this->MinimumMovementDifference = 1;
+    this->ZoomStep = 1;
+    this->ZoomSpeed = 1;
+    this->MinZoom = 1;
+    this->MaxZoom = 1;
+    this->HUDMenu = NULL;
+    this->bEnableControl = true;
+    this->CameraComponent->SetupAttachment(RootComponent);
+    this->CameraMesh->SetupAttachment(RootComponent);
+}
 
 void ASBZSecurityCameraPossessable::Server_UnpossessSecurityCamera_Implementation(float Pitch, float Yaw) {
 }
@@ -74,21 +95,4 @@ bool ASBZSecurityCameraPossessable::CanPossess() const {
     return false;
 }
 
-ASBZSecurityCameraPossessable::ASBZSecurityCameraPossessable() {
-    this->CameraArmMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CameraArmMesh"));
-    this->CameraMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CameraMesh"));
-    this->CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
-    this->PossessedByCharacter = NULL;
-    this->SecurityCameraLogic = CreateDefaultSubobject<USBZSecurityCameraLogicComponent>(TEXT("Logic"));
-    this->SecurityCameraSwitcher = NULL;
-    this->SpeedStep = 1;
-    this->PossessedRotationSpeed = 1;
-    this->MinimumMovementDifference = 1;
-    this->ZoomStep = 1;
-    this->ZoomSpeed = 1;
-    this->MinZoom = 1;
-    this->MaxZoom = 1;
-    this->HUDMenu = NULL;
-    this->bEnableControl = true;
-}
 

@@ -1,5 +1,6 @@
 #include "SBZHolsteredWeapon.h"
 
-ASBZHolsteredWeapon::ASBZHolsteredWeapon() {
+ASBZHolsteredWeapon::ASBZHolsteredWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

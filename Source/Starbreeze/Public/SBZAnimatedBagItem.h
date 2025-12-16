@@ -52,7 +52,8 @@ protected:
     float NetIterpSpeed;
     
 public:
-    ASBZAnimatedBagItem();
+    ASBZAnimatedBagItem(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnThrowed();

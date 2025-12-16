@@ -1,8 +1,10 @@
 #include "AIRoamingVolume.h"
-#include "Components/BoxComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
 
-AAIRoamingVolume::AAIRoamingVolume() {
-    this->BoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("RoamingVolumeBox"));
+AAIRoamingVolume::AAIRoamingVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("RoamingVolumeBox"));
+    this->BoxComponent = (UBoxComponent*)RootComponent;
     this->Method = ESBZBTTask_GetWanderLocation_Method::None;
 }
+
 

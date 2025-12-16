@@ -14,6 +14,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnCameraDetectionSignature OnExitDetection;
     
-    USBZCameraPOIComponent();
+    USBZCameraPOIComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

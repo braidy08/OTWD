@@ -8,5 +8,6 @@ class STARBREEZE_API USBZFootstepImpactSchematic : public USBZImpactSchematic {
     GENERATED_BODY()
 public:
     USBZFootstepImpactSchematic();
+
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Pawn -FallbackName=Pawn
 #include "Templates/SubclassOf.h"
 #include "SBZSecurityCameraPossessable.generated.h"
 
@@ -66,7 +66,8 @@ protected:
     bool bEnableControl;
     
 public:
-    ASBZSecurityCameraPossessable();
+    ASBZSecurityCameraPossessable(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_UnpossessSecurityCamera(float Pitch, float Yaw);

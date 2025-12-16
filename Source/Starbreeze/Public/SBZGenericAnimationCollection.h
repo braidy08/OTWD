@@ -116,5 +116,6 @@ public:
     UAnimSequenceBase* FacialMelee;
     
     USBZGenericAnimationCollection();
+
 };
 

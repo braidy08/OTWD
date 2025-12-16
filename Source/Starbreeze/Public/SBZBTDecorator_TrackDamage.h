@@ -11,5 +11,6 @@ public:
     bool bClearDamageFlag;
     
     USBZBTDecorator_TrackDamage();
+
 };
 

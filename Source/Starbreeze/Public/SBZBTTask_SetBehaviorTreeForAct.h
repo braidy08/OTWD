@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector ActKey;
     
     USBZBTTask_SetBehaviorTreeForAct();
+
 };
 

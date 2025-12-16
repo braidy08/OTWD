@@ -39,7 +39,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnInteractorInteractionSuccessful OnInteractionSuccessful;
     
-    USBZBaseInteractorComponent();
+    USBZBaseInteractorComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void SaySystemComment(ESBZVoiceComment Comment, bool bReplicated, ESBZVoicePriority InPlayingPriority) const;
     

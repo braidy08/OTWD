@@ -12,5 +12,6 @@ public:
     TMap<FName, FSBZDialogDefinition> Dialogs;
     
     USBZDialogData();
+
 };
 

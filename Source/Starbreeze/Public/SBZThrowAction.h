@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayAbilitySpec.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbilitySpecHandle -FallbackName=GameplayAbilitySpecHandle
 #include "SBZBasePlayerAction.h"
 #include "Templates/SubclassOf.h"
 #include "SBZThrowAction.generated.h"
@@ -25,6 +25,7 @@ private:
     
 public:
     USBZThrowAction();
+
 protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Throw(uint8 State, USBZGameplayAbilityThrow* Ability);

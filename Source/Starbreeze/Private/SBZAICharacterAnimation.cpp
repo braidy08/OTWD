@@ -1,6 +1,68 @@
 #include "SBZAICharacterAnimation.h"
 #include "Net/UnrealNetwork.h"
 
+USBZAICharacterAnimation::USBZAICharacterAnimation() {
+    this->bShouldPlayFirstPersonAnim = false;
+    this->PinningType = ESBZAICharacterPinningAnimType::None;
+    this->bWantAttackDoorAgainst = false;
+    this->bWantAttackDoorNotAgainst = false;
+    this->bWantAttackDoor = false;
+    this->bAttackDoorAgainst = false;
+    this->bAttackDoorNotAgainst = false;
+    this->bInteractWithDoor = false;
+    this->bLunging = false;
+    this->LungeDistance = 1;
+    this->MinimumWalkingSpeed = 1;
+    this->bHasTurnOnSpotAnimation = false;
+    this->AnimationTurnAngle = 1;
+    this->WaitForTurnOnSpotFullBlendOut = true;
+    this->bIdleStateReadyForTurnOnSpot = false;
+    this->Searching = NULL;
+    this->bIsSearching = false;
+    this->bWasMoving = false;
+    this->bIsTransitioningToIdle = false;
+    this->bCanUpdateSpeedValue = false;
+    this->SpeedSquareMovingAverage = 1;
+    this->HighSpeedSquareMovingAverageThreshold = 1;
+    this->VelocityAverageWindowFramesNum = 0;
+    this->bIsAIAgentAboutToStop = false;
+    this->LastAnimNormalizedTime = 1;
+    this->bIsPlayingLandingMontage = false;
+    this->CurrentPOIMontage = NULL;
+    this->bIsUsingPOI = false;
+    this->bIsUsingFacialPOI = false;
+    this->bIsInterruptExitingPOI = false;
+    this->bIsObstructedWalk = false;
+    this->bHasLaunchedIntroPOI = false;
+    this->bHasLaunchedUsingPOI = false;
+    this->bHasLaunchedExitPOI = false;
+    this->bHasPlayedAllPOISequences = false;
+    this->bHasOutro = false;
+    this->POIAnimationMask = 0;
+    this->POIFacialAnimationMask = 0;
+    this->bIsTank = false;
+    this->bAverageVelocityHigh = false;
+    this->CurrentStanceId = 0;
+    this->bIsInOneOfCombatStances = false;
+    this->TurnAroundBlendSpace = NULL;
+    this->LatestSmallestHeading = 1;
+    this->ToActionDefaultBlendTime = 1;
+    this->ToActionBlendTime = 1;
+    this->FromActionBlendTime = 1;
+    this->bWasPlayingPOIDynMontage = false;
+    this->StartVariation = 1;
+    this->LocalStartVariation = 1;
+    this->SecondaryLocalStartVariation = 1;
+    this->SecondaryBlendWeight = 1;
+    this->SecondaryAnimation = NULL;
+    this->bSecondaryAnimationLoop = false;
+    this->PoseVariation = 0;
+    this->bCanTransitionFromSingleNode = false;
+    this->bTransitioningToSingleNode = false;
+    this->BlendspaceInputAnimationTurnAngle = 1;
+    this->OwningAICharacter = NULL;
+}
+
 void USBZAICharacterAnimation::SetIsTank(bool bInIsTank) {
 }
 
@@ -45,62 +107,4 @@ void USBZAICharacterAnimation::GetLifetimeReplicatedProps(TArray<FLifetimeProper
     DOREPLIFETIME(USBZAICharacterAnimation, StartVariation);
 }
 
-USBZAICharacterAnimation::USBZAICharacterAnimation() {
-    this->bShouldPlayFirstPersonAnim = false;
-    this->PinningType = ESBZAICharacterPinningAnimType::None;
-    this->bWantAttackDoorAgainst = false;
-    this->bWantAttackDoorNotAgainst = false;
-    this->bAttackDoorAgainst = false;
-    this->bAttackDoorNotAgainst = false;
-    this->bInteractWithDoor = false;
-    this->bLunging = false;
-    this->LungeDistance = 1;
-    this->MinimumWalkingSpeed = 1;
-    this->bHasTurnOnSpotAnimation = false;
-    this->AnimationTurnAngle = 1;
-    this->WaitForTurnOnSpotFullBlendOut = true;
-    this->bIdleStateReadyForTurnOnSpot = false;
-    this->Searching = NULL;
-    this->bIsSearching = false;
-    this->bWasMoving = false;
-    this->bIsTransitioningToIdle = false;
-    this->bCanUpdateSpeedValue = false;
-    this->SpeedSquareMovingAverage = 1;
-    this->HighSpeedSquareMovingAverageThreshold = 1;
-    this->VelocityAverageWindowFramesNum = 0;
-    this->bIsAIAgentAboutToStop = false;
-    this->LastAnimNormalizedTime = 1;
-    this->bIsPlayingLandingMontage = false;
-    this->CurrentPOIMontage = NULL;
-    this->bIsUsingPOI = false;
-    this->bIsUsingFacialPOI = false;
-    this->bIsInterruptExitingPOI = false;
-    this->bHasLaunchedIntroPOI = false;
-    this->bHasLaunchedUsingPOI = false;
-    this->bHasLaunchedExitPOI = false;
-    this->bHasPlayedAllPOISequences = false;
-    this->bHasOutro = false;
-    this->POIAnimationMask = 0;
-    this->POIFacialAnimationMask = 0;
-    this->bIsTank = false;
-    this->bAverageVelocityHigh = false;
-    this->CurrentStanceId = 0;
-    this->bIsInOneOfCombatStances = false;
-    this->TurnAroundBlendSpace = NULL;
-    this->LatestSmallestHeading = 1;
-    this->ToActionDefaultBlendTime = 1;
-    this->ToActionBlendTime = 1;
-    this->FromActionBlendTime = 1;
-    this->bWasPlayingPOIDynMontage = false;
-    this->StartVariation = 1;
-    this->LocalStartVariation = 1;
-    this->SecondaryLocalStartVariation = 1;
-    this->SecondaryBlendWeight = 1;
-    this->SecondaryAnimation = NULL;
-    this->bSecondaryAnimationLoop = false;
-    this->PoseVariation = 0;
-    this->bCanTransitionFromSingleNode = false;
-    this->bTransitioningToSingleNode = false;
-    this->BlendspaceInputAnimationTurnAngle = 1;
-}
 

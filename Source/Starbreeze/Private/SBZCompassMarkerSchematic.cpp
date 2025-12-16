@@ -5,3 +5,4 @@ USBZCompassMarkerSchematic::USBZCompassMarkerSchematic() {
     this->bRemoveWhenKilled = false;
 }
 
+

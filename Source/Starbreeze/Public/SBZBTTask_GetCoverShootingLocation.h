@@ -28,5 +28,6 @@ public:
     bool bUseShootingPointKey;
     
     USBZBTTask_GetCoverShootingLocation();
+
 };
 

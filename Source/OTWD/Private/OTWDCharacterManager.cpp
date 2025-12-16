@@ -1,5 +1,11 @@
 #include "OTWDCharacterManager.h"
 
+UOTWDCharacterManager::UOTWDCharacterManager() {
+    this->GameInstance = NULL;
+    this->Schematic = NULL;
+    this->LevelData = NULL;
+}
+
 void UOTWDCharacterManager::RewardExperience(FGuid Character, int32 Experience, bool bIsBleedXp, bool bAwardBleedXp) {
 }
 
@@ -18,9 +24,4 @@ int32 UOTWDCharacterManager::ApplyDifficultyExperienceModifier(int32 Experience,
 void UOTWDCharacterManager::AddSkillPoints(const TSoftClassPtr<APawn>& PawnClass, int32 Amount) {
 }
 
-UOTWDCharacterManager::UOTWDCharacterManager() {
-    this->GameInstance = NULL;
-    this->Schematic = NULL;
-    this->LevelData = NULL;
-}
 

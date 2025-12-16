@@ -14,5 +14,6 @@ public:
     bool bIsLeftHand;
     
     UAnimNotifyState_DisableHandsOverwrite();
+
 };
 

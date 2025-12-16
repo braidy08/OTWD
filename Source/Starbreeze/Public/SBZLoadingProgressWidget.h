@@ -23,6 +23,7 @@ private:
     
 public:
     USBZLoadingProgressWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UTextBlock* PercentTextWidget, UMaterialInstanceDynamic* ProgressMaterialInstance, UPanelWidget* InContainerWidget);
     

@@ -1,5 +1,8 @@
 #include "OTWDOnlineFunctionLibrary.h"
 
+UOTWDOnlineFunctionLibrary::UOTWDOnlineFunctionLibrary() {
+}
+
 void UOTWDOnlineFunctionLibrary::OpenWeaponReward(const UObject* WorldContextObject, const ESBZRewardType& RewardType, const FOTWDWeaponSavedData& SaveData) {
 }
 
@@ -23,6 +26,4 @@ FOTWDLobbyRewardsInfo UOTWDOnlineFunctionLibrary::GetLobbyReward(const UObject* 
     return FOTWDLobbyRewardsInfo{};
 }
 
-UOTWDOnlineFunctionLibrary::UOTWDOnlineFunctionLibrary() {
-}
 

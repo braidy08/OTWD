@@ -36,6 +36,7 @@ private:
     TArray<FOTWDZoneVariation> Zone3VariationArray;
     
 public:
-    AOTWDCosmeticCharacterVariation();
+    AOTWDCosmeticCharacterVariation(const FObjectInitializer& ObjectInitializer);
+
 };
 

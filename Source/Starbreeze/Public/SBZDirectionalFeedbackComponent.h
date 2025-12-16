@@ -11,6 +11,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag FeedbackTag;
     
-    USBZDirectionalFeedbackComponent();
+    USBZDirectionalFeedbackComponent(const FObjectInitializer& ObjectInitializer);
+
+    UFUNCTION(BlueprintCallable)
+    void SetCanShow(bool bInCanShow);
+    
 };
 

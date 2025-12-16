@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZPlayerHUDWidget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPlayerHUDWidget -FallbackName=SBZPlayerHUDWidget
 #include "OTWDPlayerHUDWidget.generated.h"
 
 class UOTWDAbilityCraftingWidget;
@@ -19,6 +19,7 @@ private:
     
 public:
     UOTWDPlayerHUDWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UOTWDAbilityCraftingWidget* CraftingMenuWidget, UOTWDCampHUDWidget* CampHUDWidget);
     

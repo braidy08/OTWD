@@ -5,5 +5,5 @@
 class USBZBaseInteractorComponent;
 class USBZInteractableComponent;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnIsRelevantChanged, USBZInteractableComponent*, Interactable, USBZBaseInteractorComponent*, Interactor, bool, bIsRelevant);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FOnIsRelevantChanged, USBZInteractableComponent*, Interactable, USBZBaseInteractorComponent*, Interactor, bool, bIsRelevant, int32, InteractableIndex);
 

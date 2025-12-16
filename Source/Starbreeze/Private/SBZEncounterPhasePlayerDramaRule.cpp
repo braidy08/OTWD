@@ -5,3 +5,4 @@ USBZEncounterPhasePlayerDramaRule::USBZEncounterPhasePlayerDramaRule() {
     this->PlayersRule = EDramaPlayersRule::SinglePlayer;
 }
 
+

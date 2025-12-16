@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimNotify_OnCoverPeekLeftExit : public UAnimNotify {
     GENERATED_BODY()
 public:
     USBZAnimNotify_OnCoverPeekLeftExit();
+
 };
 

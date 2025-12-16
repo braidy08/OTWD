@@ -47,7 +47,7 @@ public:
     FString Nickname;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    FUniqueNetIdRepl PlayerUId;
+    FUniqueNetIdRepl PlayerUid;
     
     STARBREEZE_API FSBZLobbyCharacterInfoUi();
 };

@@ -14,7 +14,7 @@ class UMediaSource;
 class USBZLevelSchematic;
 class USBZLoadingWidget;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class STARBREEZE_API USBZLoadingScreenManager : public UObject {
     GENERATED_BODY()
 public:
@@ -51,6 +51,7 @@ protected:
     
 public:
     USBZLoadingScreenManager();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void SetupLoadingScreen();

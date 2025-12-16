@@ -1,6 +1,14 @@
 #include "OTWDIronWillAbilityAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDIronWillAbilityAttributeSet::UOTWDIronWillAbilityAttributeSet() {
+    this->Duration = 1;
+    this->DamageResistMod = 1;
+    this->CoolDown = 1;
+    this->StaminaMod = 1;
+    this->DurationBonus = 1;
+}
+
 void UOTWDIronWillAbilityAttributeSet::OnRep_StaminaMod() {
 }
 
@@ -26,11 +34,4 @@ void UOTWDIronWillAbilityAttributeSet::GetLifetimeReplicatedProps(TArray<FLifeti
     DOREPLIFETIME(UOTWDIronWillAbilityAttributeSet, DurationBonus);
 }
 
-UOTWDIronWillAbilityAttributeSet::UOTWDIronWillAbilityAttributeSet() {
-    this->Duration = 1;
-    this->DamageResistMod = 1;
-    this->CoolDown = 1;
-    this->StaminaMod = 1;
-    this->DurationBonus = 1;
-}
 

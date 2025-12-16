@@ -5,7 +5,6 @@
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Engine/EngineTypes.h"
 #include "SBZLineBatchComponentFunctionLibrary.generated.h"
@@ -18,6 +17,7 @@ class USBZLineBatchComponentFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USBZLineBatchComponentFunctionLibrary();
+
     UFUNCTION(BlueprintCallable)
     static void Flush(ULineBatchComponent* LineBatcher);
     

@@ -9,3 +9,4 @@ USBZEnvQueryTest_PreferredDistance::USBZEnvQueryTest_PreferredDistance() {
     this->bScoreOutsideDistances = false;
 }
 
+

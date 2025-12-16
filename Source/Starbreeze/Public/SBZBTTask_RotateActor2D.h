@@ -30,5 +30,6 @@ public:
     bool bUseActorKey;
     
     USBZBTTask_RotateActor2D();
+
 };
 

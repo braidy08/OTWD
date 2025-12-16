@@ -1,6 +1,8 @@
 #include "SBZTurretWeapon.h"
 
-ASBZTurretWeapon::ASBZTurretWeapon() {
+ASBZTurretWeapon::ASBZTurretWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bIsAIWeapon = true;
     this->bHasInfiniteAmmo = true;
 }
+
 

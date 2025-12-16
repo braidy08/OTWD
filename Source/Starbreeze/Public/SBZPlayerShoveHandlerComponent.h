@@ -13,6 +13,7 @@ private:
     FVector BoxHalfSize;
     
 public:
-    USBZPlayerShoveHandlerComponent();
+    USBZPlayerShoveHandlerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

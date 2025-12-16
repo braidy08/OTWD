@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZGameInstance.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZGameInstance -FallbackName=SBZGameInstance
 #include "OTWDMissionEndReport.h"
 #include "Templates/SubclassOf.h"
 #include "OTWDGameInstance.generated.h"
@@ -62,6 +62,7 @@ private:
     
 public:
     UOTWDGameInstance();
+
     UFUNCTION(BlueprintCallable)
     void StartTwitchConnection();
     

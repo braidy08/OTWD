@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZLobbyRemoteState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZLobbyRemoteState -FallbackName=SBZLobbyRemoteState
 #include "OTWDLobbyRewardsInfo.h"
 #include "OTWDLobbyStatsInfo.h"
 #include "OTWDLobbyRemoteState.generated.h"
@@ -15,9 +15,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_StatsInfo, meta=(AllowPrivateAccess=true))
     TArray<FOTWDLobbyStatsInfo> StatsInfo;
     
-    AOTWDLobbyRemoteState();
+    AOTWDLobbyRemoteState(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_StatsInfo();
     

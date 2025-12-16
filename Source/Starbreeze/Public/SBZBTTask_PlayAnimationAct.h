@@ -13,5 +13,6 @@ public:
     USBZAnimationAct* ActToPlay;
     
     USBZBTTask_PlayAnimationAct();
+
 };
 

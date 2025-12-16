@@ -15,5 +15,6 @@ public:
     FFloatInterval SeparationWeightInterval;
     
     USBZAICrowdNavigationData();
+
 };
 

@@ -20,5 +20,6 @@ public:
     bool bDoDeathScream;
     
     UAnimNotify_GrappleStabBleedEffect();
+
 };
 

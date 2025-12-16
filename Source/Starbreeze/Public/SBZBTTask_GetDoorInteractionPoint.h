@@ -15,5 +15,6 @@ public:
     float AdditionnalForwardOffset;
     
     USBZBTTask_GetDoorInteractionPoint();
+
 };
 

@@ -8,5 +8,6 @@ class OTWD_API UBTDecorator_IsZombieCrowd : public UBTDecorator {
     GENERATED_BODY()
 public:
     UBTDecorator_IsZombieCrowd();
+
 };
 

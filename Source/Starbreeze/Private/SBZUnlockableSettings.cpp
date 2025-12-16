@@ -1,8 +1,9 @@
 #include "SBZUnlockableSettings.h"
 
 USBZUnlockableSettings::USBZUnlockableSettings() {
-    this->CachedGlobalUnlockableMetadataCollection = NULL;
-    this->ContentPacks.AddDefaulted(12);
+    this->ContentPacks.AddDefaulted(17);
+    this->CachedContentPacks.AddDefaulted(17);
     this->CosmeticTypeHelper = NULL;
 }
+
 

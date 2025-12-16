@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "GameplayAbility.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbility -FallbackName=GameplayAbility
 #include "Templates/SubclassOf.h"
 #include "SBZGameplayAbilityThrow.generated.h"
 
@@ -72,6 +72,7 @@ public:
     TSubclassOf<AActor> DummyClass;
     
     USBZGameplayAbilityThrow();
+
     UFUNCTION(BlueprintCallable)
     FTransform GetCharacterSpawnOffset();
     

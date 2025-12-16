@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBaseAngleOverrideCameraModifier : public USBZPlayerCame
     GENERATED_BODY()
 public:
     USBZBaseAngleOverrideCameraModifier();
+
 };
 

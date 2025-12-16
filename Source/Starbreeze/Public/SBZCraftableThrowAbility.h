@@ -14,6 +14,7 @@ public:
     TSubclassOf<UGameplayAbility> CraftingAbility;
     
     USBZCraftableThrowAbility();
+
     UFUNCTION(BlueprintCallable)
     TSubclassOf<UGameplayAbility> GetCraftableAbility();
     

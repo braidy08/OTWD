@@ -21,5 +21,6 @@ public:
     bool bClearCurrentCoverPoint;
     
     USBZBTDecorator_ReserveCoverPoint();
+
 };
 

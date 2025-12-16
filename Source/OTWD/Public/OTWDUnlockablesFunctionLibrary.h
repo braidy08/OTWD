@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZUnlockablesFunctionLibrary.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZUnlockablesFunctionLibrary -FallbackName=SBZUnlockablesFunctionLibrary
 #include "OTWDUnlockablesFunctionLibrary.generated.h"
 
 class ASBZPlayerController;
@@ -14,6 +14,7 @@ class OTWD_API UOTWDUnlockablesFunctionLibrary : public USBZUnlockablesFunctionL
     GENERATED_BODY()
 public:
     UOTWDUnlockablesFunctionLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static USBZUnlockableMetadataCollection* GetTakedownWeaponCosmeticMetadataCollection(const USBZCharacterSchematic* PlayerPawnData);
     

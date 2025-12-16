@@ -1,5 +1,6 @@
 #include "ZombieDamageableComponent.h"
 
-UZombieDamageableComponent::UZombieDamageableComponent() {
+UZombieDamageableComponent::UZombieDamageableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

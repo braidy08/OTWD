@@ -13,6 +13,7 @@ class STARBREEZE_API USBZAIPerceptionFunctionLibrary : public UBlueprintFunction
     GENERATED_BODY()
 public:
     USBZAIPerceptionFunctionLibrary();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     static bool UnregisterPerceptionStimuliSource(UObject* WorldContext, TSubclassOf<UAISense> Sense, AActor* Target);
     

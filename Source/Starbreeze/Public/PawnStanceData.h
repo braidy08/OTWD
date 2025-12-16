@@ -16,7 +16,7 @@ public:
     bool bIsMoving;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bIsAds;
+    bool bIsADS;
     
     FPawnStanceData();
 };

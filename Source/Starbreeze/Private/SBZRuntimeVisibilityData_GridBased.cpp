@@ -4,3 +4,4 @@ USBZRuntimeVisibilityData_GridBased::USBZRuntimeVisibilityData_GridBased() {
     this->MaximumTestDistance = 1;
 }
 
+

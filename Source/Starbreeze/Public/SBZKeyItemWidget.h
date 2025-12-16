@@ -29,6 +29,7 @@ private:
     
 public:
     USBZKeyItemWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UImage* IconWidget, UTextBlock* TextWidget, UWidgetAnimation* AppearAnimation, UWidgetAnimation* DisappearAnimation, UWidgetAnimation* UpdateAnimation);
     

@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZPerceptionDetectorComponent : public UAIPerceptionComponent {
     GENERATED_BODY()
 public:
-    USBZPerceptionDetectorComponent();
+    USBZPerceptionDetectorComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

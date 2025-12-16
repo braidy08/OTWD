@@ -25,7 +25,10 @@ public:
     int32 TimesContinuouslyFired;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    int32 TimesPlayedSingleFire;
+    bool bAutoFireEventStarted;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bStopFireWanted;
     
     STARBREEZE_API FSBZWeaponBarrel();
 };

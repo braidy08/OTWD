@@ -8,5 +8,6 @@ class OTWD_API UBTTask_ZombieLunge : public UBTTask_BlackboardBase {
     GENERATED_BODY()
 public:
     UBTTask_ZombieLunge();
+
 };
 

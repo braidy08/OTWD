@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RadialDamageParams -FallbackName=RadialDamageParams
 #include "Engine/NetSerialization.h"
 #include "Templates/SubclassOf.h"
 #include "SBZThrowProjectileData.generated.h"

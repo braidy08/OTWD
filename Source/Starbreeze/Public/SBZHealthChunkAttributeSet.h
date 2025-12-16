@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
+#include "AttributeSet.h"
 #include "SBZHealthChunkAttributeSet.generated.h"
 
 UCLASS(Blueprintable)
@@ -11,8 +12,9 @@ public:
     float ChunkSize;
     
     USBZHealthChunkAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_ChunkSize(float OldValue);
     

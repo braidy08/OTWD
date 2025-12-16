@@ -8,6 +8,5 @@ enum class EBTDecorator_Timer_CheckFor : int32 {
     NotSet,
     Running,
     Elapsed,
-    EBTDecorator_Timer_MAX UMETA(Hidden),
 };
 

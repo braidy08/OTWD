@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "ESBZDifficulty.h"
 #include "OnTankArmorPartDestroyedDelegate.h"
 #include "SBZTankArmorPartComponent.generated.h"
@@ -32,7 +32,8 @@ protected:
     float DefaultDurability;
     
 public:
-    USBZTankArmorPartComponent();
+    USBZTankArmorPartComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Replenish();
     

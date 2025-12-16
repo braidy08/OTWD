@@ -44,5 +44,6 @@ protected:
     
 public:
     USBZBTTask_VehicleDrive();
+
 };
 

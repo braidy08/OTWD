@@ -15,12 +15,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 PatrolLocationMemory;
     
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AAIPatrolVolume> RandomPatrolVolume;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bRandomPatrolEnabled;
     
-    UAIRandomRoamingComponent();
+    UAIRandomRoamingComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

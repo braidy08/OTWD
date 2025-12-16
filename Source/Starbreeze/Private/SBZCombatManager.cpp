@@ -1,5 +1,11 @@
 #include "SBZCombatManager.h"
 
+ASBZCombatManager::ASBZCombatManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->FiringPermissionData = NULL;
+    this->TimeForWarningShot = 1;
+    this->FiringPermission = NULL;
+}
+
 float ASBZCombatManager::GetTimeAfterCombatStarted() const {
     return 0.0f;
 }
@@ -28,9 +34,4 @@ int32 ASBZCombatManager::GetNumberOfCombatAreas() const {
     return 0;
 }
 
-ASBZCombatManager::ASBZCombatManager() {
-    this->FiringPermissionData = NULL;
-    this->TimeForWarningShot = 1;
-    this->FiringPermission = NULL;
-}
 

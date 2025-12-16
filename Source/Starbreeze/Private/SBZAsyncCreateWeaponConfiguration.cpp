@@ -1,5 +1,8 @@
 #include "SBZAsyncCreateWeaponConfiguration.h"
 
+USBZAsyncCreateWeaponConfiguration::USBZAsyncCreateWeaponConfiguration() {
+}
+
 void USBZAsyncCreateWeaponConfiguration::OnFinishAsyncLoading(FAsyncCreateWeaponConfigurationPayload Payload) {
 }
 
@@ -11,6 +14,4 @@ USBZAsyncCreateWeaponConfiguration* USBZAsyncCreateWeaponConfiguration::AsyncCre
     return NULL;
 }
 
-USBZAsyncCreateWeaponConfiguration::USBZAsyncCreateWeaponConfiguration() {
-}
 

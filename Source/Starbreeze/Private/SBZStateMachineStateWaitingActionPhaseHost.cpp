@@ -1,5 +1,9 @@
 #include "SBZStateMachineStateWaitingActionPhaseHost.h"
 
+USBZStateMachineStateWaitingActionPhaseHost::USBZStateMachineStateWaitingActionPhaseHost() {
+    this->TravelTimeOutTime = 1;
+}
+
 void USBZStateMachineStateWaitingActionPhaseHost::PostSeamlessTravel(UWorld* NewWorld) {
 }
 
@@ -15,7 +19,4 @@ void USBZStateMachineStateWaitingActionPhaseHost::HandlePlayerReadyToAbsoluteTra
 void USBZStateMachineStateWaitingActionPhaseHost::HandlePlayerFinishedAbsoluteTravel(FUniqueNetIdRepl PlayerId) {
 }
 
-USBZStateMachineStateWaitingActionPhaseHost::USBZStateMachineStateWaitingActionPhaseHost() {
-    this->TravelTimeOutTime = 1;
-}
 

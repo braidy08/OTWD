@@ -10,22 +10,22 @@ class STARBREEZE_API USBZBaseActAnimationSet : public USBZSchematic {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<UAnimSequenceBase> Intro;
+    UAnimSequenceBase* Intro;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<UAnimSequenceBase> Using;
+    UAnimSequenceBase* Using;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<UAnimSequenceBase> Exit;
+    UAnimSequenceBase* Exit;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<UAnimSequenceBase> FacialIntro;
+    UAnimSequenceBase* FacialIntro;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<UAnimSequenceBase> FacialUsing;
+    UAnimSequenceBase* FacialUsing;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<UAnimSequenceBase> FacialExit;
+    UAnimSequenceBase* FacialExit;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseUnequipBeforeIntro;
@@ -37,5 +37,6 @@ public:
     bool bIsPlayingExitOnInterrupt;
     
     USBZBaseActAnimationSet();
+
 };
 

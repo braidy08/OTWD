@@ -1,4 +1,14 @@
 #include "ZombieAIController.h"
+#include "OTWDCrowdFollowingComponent.h"
+
+AZombieAIController::AZombieAIController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UOTWDCrowdFollowingComponent>(TEXT("PathFollowingComponent"))) {
+    this->bIsLurker = false;
+    this->bIsCrowdZombie = false;
+    this->bIsCrawler = false;
+    this->BTNormalAsset = NULL;
+    this->BTCrowdAsset = NULL;
+    this->ZombieCharacter = NULL;
+}
 
 bool AZombieAIController::TryLungeDefaultSettings(ASBZCharacter* TargetCharacter) {
     return false;
@@ -22,12 +32,4 @@ float AZombieAIController::GetDefaultBehaviourWaitTime() {
     return 0.0f;
 }
 
-AZombieAIController::AZombieAIController() {
-    this->bIsLurker = false;
-    this->bIsCrowdZombie = false;
-    this->bIsCrawler = false;
-    this->BTNormalAsset = NULL;
-    this->BTCrowdAsset = NULL;
-    this->ZombieCharacter = NULL;
-}
 

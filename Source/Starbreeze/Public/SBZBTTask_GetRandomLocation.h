@@ -21,5 +21,6 @@ public:
     float Radius;
     
     USBZBTTask_GetRandomLocation();
+
 };
 

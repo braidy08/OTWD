@@ -1,6 +1,14 @@
 #include "SBZOutlineComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZOutlineComponent::USBZOutlineComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->DefaultSchematic = NULL;
+    this->bUseBoundsCenter = true;
+    this->CurrentActiveMeshComponent = NULL;
+    this->ActiveReplicated = NULL;
+}
+
 void USBZOutlineComponent::StopUsingPositionComponent() {
 }
 
@@ -92,10 +100,4 @@ void USBZOutlineComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(USBZOutlineComponent, ActiveReplicated);
 }
 
-USBZOutlineComponent::USBZOutlineComponent() {
-    this->DefaultSchematic = NULL;
-    this->bUseBoundsCenter = true;
-    this->CurrentActiveMeshComponent = NULL;
-    this->ActiveReplicated = NULL;
-}
 

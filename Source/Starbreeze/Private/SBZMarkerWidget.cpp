@@ -1,5 +1,9 @@
 #include "SBZMarkerWidget.h"
 
+USBZMarkerWidget::USBZMarkerWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->Marker = NULL;
+}
+
 
 
 void USBZMarkerWidget::OnRefreshOpacity_Implementation() {
@@ -20,7 +24,4 @@ USBZUIMarker* USBZMarkerWidget::GetMarker() const {
     return NULL;
 }
 
-USBZMarkerWidget::USBZMarkerWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->Marker = NULL;
-}
 

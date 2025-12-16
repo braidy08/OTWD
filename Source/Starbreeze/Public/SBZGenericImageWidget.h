@@ -10,6 +10,7 @@ class STARBREEZE_API USBZGenericImageWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     USBZGenericImageWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetImage(UTexture2D* Texture2D);
     

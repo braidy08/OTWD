@@ -23,6 +23,7 @@ private:
     
 public:
     USBZActionImageWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetAction(FName Action);
     

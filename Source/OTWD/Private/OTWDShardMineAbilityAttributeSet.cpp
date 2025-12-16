@@ -1,6 +1,16 @@
 #include "OTWDShardMineAbilityAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDShardMineAbilityAttributeSet::UOTWDShardMineAbilityAttributeSet() {
+    this->ExplosionRadius = 1;
+    this->ExplosionDamage = 1;
+    this->ArmoredDamageMod = 1;
+    this->WoundRadius = 1;
+    this->WoundChance = 1;
+    this->WoundDamage = 1;
+    this->WoundDuration = 1;
+}
+
 void UOTWDShardMineAbilityAttributeSet::OnRep_WoundRadius() {
 }
 
@@ -34,13 +44,4 @@ void UOTWDShardMineAbilityAttributeSet::GetLifetimeReplicatedProps(TArray<FLifet
     DOREPLIFETIME(UOTWDShardMineAbilityAttributeSet, WoundDuration);
 }
 
-UOTWDShardMineAbilityAttributeSet::UOTWDShardMineAbilityAttributeSet() {
-    this->ExplosionRadius = 1;
-    this->ExplosionDamage = 1;
-    this->ArmoredDamageMod = 1;
-    this->WoundRadius = 1;
-    this->WoundChance = 1;
-    this->WoundDamage = 1;
-    this->WoundDuration = 1;
-}
 

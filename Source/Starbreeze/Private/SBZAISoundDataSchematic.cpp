@@ -6,3 +6,4 @@ USBZAISoundDataSchematic::USBZAISoundDataSchematic() {
     this->AINoiseDataRun = NULL;
 }
 
+

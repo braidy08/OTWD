@@ -1,7 +1,24 @@
 #include "SBZPlayerGrappleHandler.h"
 
+USBZPlayerGrappleHandler::USBZPlayerGrappleHandler(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Settings = NULL;
+    this->FirstPersonAnimInstance = NULL;
+    this->ThirdPersonAnimInstance = NULL;
+    this->PlayerCharacter = NULL;
+    this->GrappleManager = NULL;
+    this->StrugglePromptWidget = NULL;
+    this->DepthOfFieldComponent = NULL;
+    this->PostProcessComponent = NULL;
+}
+
 bool USBZPlayerGrappleHandler::TryTakedown(AActor* TargetActor) {
     return false;
+}
+
+void USBZPlayerGrappleHandler::SetStabBlocked(bool bInIsStabBlocked) {
+}
+
+void USBZPlayerGrappleHandler::SetShoveBlocked(bool bInIsShoveBlocked) {
 }
 
 void USBZPlayerGrappleHandler::Server_RefreshStruggleDamage_Implementation(bool bApplyInitialDamage, bool bResetTickingDamage) {
@@ -28,10 +45,10 @@ bool USBZPlayerGrappleHandler::Server_EndStruggle_Validate(ESBZGrappleParticipan
     return true;
 }
 
-void USBZPlayerGrappleHandler::Server_ApplyShove_Implementation(const TArray<FSBZGrappleShovePrediction>& InShovePredictionArray, ENetRole InstigatorRole) {
+void USBZPlayerGrappleHandler::Server_ApplyShove_Implementation(const TArray<FSBZGrappleShovePrediction>& InShovePredictionArray, TEnumAsByte<ENetRole> InstigatorRole) {
 }
-bool USBZPlayerGrappleHandler::Server_ApplyShove_Validate(const TArray<FSBZGrappleShovePrediction>& InShovePredictionArray, ENetRole InstigatorRole) {
-	return true;
+bool USBZPlayerGrappleHandler::Server_ApplyShove_Validate(const TArray<FSBZGrappleShovePrediction>& InShovePredictionArray, TEnumAsByte<ENetRole> InstigatorRole) {
+    return true;
 }
 
 void USBZPlayerGrappleHandler::OnShoveTargetKilled(ASBZCharacter* KilledCharacter) {
@@ -58,7 +75,7 @@ void USBZPlayerGrappleHandler::OnAddChanged(bool bAddRemoved, AActor* AddActor, 
 void USBZPlayerGrappleHandler::NetMulticast_OnFinisherChosen_Implementation(ESBZPlayerGrappleFinisherState InFinisherState) {
 }
 
-void USBZPlayerGrappleHandler::NetMulticast_ApplyShove_Implementation(const TArray<FSBZGrappleShovePrediction>& InShovePredictionArray, ENetRole InstigatorRole) {
+void USBZPlayerGrappleHandler::NetMulticast_ApplyShove_Implementation(const TArray<FSBZGrappleShovePrediction>& InShovePredictionArray, TEnumAsByte<ENetRole> InstigatorRole) {
 }
 
 int32 USBZPlayerGrappleHandler::GetNumberOfAdds() const {
@@ -68,14 +85,4 @@ int32 USBZPlayerGrappleHandler::GetNumberOfAdds() const {
 void USBZPlayerGrappleHandler::DoKnifePenetrationEffect(UParticleSystem* ParticleSystem, const FSBZGrappleStabDecalSettings& DecalSettings, bool bDoDeathScream, bool bDrawDebug) {
 }
 
-USBZPlayerGrappleHandler::USBZPlayerGrappleHandler() {
-    this->Settings = NULL;
-    this->FirstPersonAnimInstance = NULL;
-    this->ThirdPersonAnimInstance = NULL;
-    this->PlayerCharacter = NULL;
-    this->GrappleManager = NULL;
-    this->StrugglePromptWidget = NULL;
-    this->DepthOfFieldComponent = NULL;
-    this->PostProcessComponent = NULL;
-}
 

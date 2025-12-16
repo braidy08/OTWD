@@ -1,10 +1,29 @@
 #include "OTWDCraftingResourceAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDCraftingResourceAttributeSet::UOTWDCraftingResourceAttributeSet() {
+    this->Chemical = 1;
+    this->ChemicalMaximum = 1;
+    this->Metal = 1;
+    this->MetalMaximum = 1;
+    this->Cloth = 1;
+    this->ClothMaximum = 1;
+    this->Gadget = 1;
+    this->GadgetMaximum = 1;
+    this->Guts = 1;
+    this->GutsMaximum = 1;
+}
+
 void UOTWDCraftingResourceAttributeSet::OnRep_MetalMaximum(float OldValue) {
 }
 
 void UOTWDCraftingResourceAttributeSet::OnRep_Metal(float OldValue) {
+}
+
+void UOTWDCraftingResourceAttributeSet::OnRep_GutsMaximum(float OldValue) {
+}
+
+void UOTWDCraftingResourceAttributeSet::OnRep_Guts(float OldValue) {
 }
 
 void UOTWDCraftingResourceAttributeSet::OnRep_GadgetMaximum(float OldValue) {
@@ -30,6 +49,14 @@ FGameplayAttribute UOTWDCraftingResourceAttributeSet::GetMetalMaximumAttribute()
 }
 
 FGameplayAttribute UOTWDCraftingResourceAttributeSet::GetMetalAttribute() {
+    return FGameplayAttribute{};
+}
+
+FGameplayAttribute UOTWDCraftingResourceAttributeSet::GetGutsMaximumAttribute() {
+    return FGameplayAttribute{};
+}
+
+FGameplayAttribute UOTWDCraftingResourceAttributeSet::GetGutsAttribute() {
     return FGameplayAttribute{};
 }
 
@@ -68,16 +95,8 @@ void UOTWDCraftingResourceAttributeSet::GetLifetimeReplicatedProps(TArray<FLifet
     DOREPLIFETIME(UOTWDCraftingResourceAttributeSet, ClothMaximum);
     DOREPLIFETIME(UOTWDCraftingResourceAttributeSet, Gadget);
     DOREPLIFETIME(UOTWDCraftingResourceAttributeSet, GadgetMaximum);
+    DOREPLIFETIME(UOTWDCraftingResourceAttributeSet, Guts);
+    DOREPLIFETIME(UOTWDCraftingResourceAttributeSet, GutsMaximum);
 }
 
-UOTWDCraftingResourceAttributeSet::UOTWDCraftingResourceAttributeSet() {
-    this->Chemical = 1;
-    this->ChemicalMaximum = 1;
-    this->Metal = 1;
-    this->MetalMaximum = 1;
-    this->Cloth = 1;
-    this->ClothMaximum = 1;
-    this->Gadget = 1;
-    this->GadgetMaximum = 1;
-}
 

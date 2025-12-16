@@ -1,6 +1,7 @@
 #include "BTTask_GrappleAttack.h"
 
 UBTTask_GrappleAttack::UBTTask_GrappleAttack() {
+    this->NodeName = TEXT("Grapple attack");
     this->OwningZombie = NULL;
     this->TargetActor = NULL;
     this->bDirectPathToTarget = false;
@@ -11,4 +12,5 @@ UBTTask_GrappleAttack::UBTTask_GrappleAttack() {
     this->bInitialised = false;
     this->GrappleManager = NULL;
 }
+
 

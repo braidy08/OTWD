@@ -31,5 +31,6 @@ public:
     ASBZGrappleManager* GrappleManager;
     
     UBTTask_GrappleAttackCrowd();
+
 };
 

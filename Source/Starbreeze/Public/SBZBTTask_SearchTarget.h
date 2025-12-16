@@ -19,5 +19,6 @@ public:
     float SearchTime;
     
     USBZBTTask_SearchTarget();
+
 };
 

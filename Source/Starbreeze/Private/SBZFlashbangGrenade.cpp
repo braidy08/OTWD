@@ -1,9 +1,6 @@
 #include "SBZFlashbangGrenade.h"
 
-void ASBZFlashbangGrenade::OnDetonate() {
-}
-
-ASBZFlashbangGrenade::ASBZFlashbangGrenade() {
+ASBZFlashbangGrenade::ASBZFlashbangGrenade(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->GameplayEffectClass = NULL;
     this->MaximumAngleDifference = 1;
     this->PlayerFlashTime = 1;
@@ -17,4 +14,8 @@ ASBZFlashbangGrenade::ASBZFlashbangGrenade() {
     this->NoiseUserData = NULL;
     this->ClassFilter = NULL;
 }
+
+void ASBZFlashbangGrenade::OnDetonate() {
+}
+
 

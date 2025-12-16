@@ -1,5 +1,8 @@
 #include "SBZChat.h"
 
+USBZChat::USBZChat() {
+}
+
 void USBZChat::SendSystemChatMessage(UObject* WorldContextObject, const FString& Message) {
 }
 
@@ -14,6 +17,4 @@ bool USBZChat::GetNextWhisperOption(const FUniqueNetIdRepl& CurrentWhisper, FUni
     return false;
 }
 
-USBZChat::USBZChat() {
-}
 

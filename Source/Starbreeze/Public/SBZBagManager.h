@@ -2,7 +2,9 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "OnBagPickedupDelegate.h"
+#include "OnBagSecuredDelegate.h"
 #include "OnPickedUpAllNeededDelegate.h"
+#include "UpdateBagsSecuredDelegate.h"
 #include "SBZBagManager.generated.h"
 
 class ASBZBagItem;
@@ -15,9 +17,6 @@ UCLASS(Blueprintable)
 class STARBREEZE_API ASBZBagManager : public AActor {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpdateBagsSecured, const TArray<ASBZBagItem*>&, SecuredBags);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnBagSecured, ASBZBagItem*, SecuredBag, ASBZTriggerPoint*, TriggerPoint, ASBZCharacter*, Character);
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnPickedUpAllNeeded OnPickedUpAllNeeded;
     
@@ -43,9 +42,10 @@ private:
     TArray<ASBZBagItem*> SecuredBags;
     
 public:
-    ASBZBagManager();
+    ASBZBagManager(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetNumberOfBagsNeeded(int32 NumberNeeded);
     

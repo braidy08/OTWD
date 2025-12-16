@@ -22,5 +22,6 @@ public:
     TMap<ESBZMeleeWeaponType, TSubclassOf<USBZLocalPlayerFeedback>> MeleeTypeFeedbackOverride;
     
     USBZMeleeImpactSchematic();
+
 };
 

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZClampCameraRotationModifier : public USBZPlayerCameraMo
     GENERATED_BODY()
 public:
     USBZClampCameraRotationModifier();
+
 };
 

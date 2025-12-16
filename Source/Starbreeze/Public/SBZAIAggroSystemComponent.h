@@ -3,13 +3,14 @@
 #include "Components/ActorComponent.h"
 #include "SBZAIAggroSystemData.h"
 #include "SBZAlertnessLevelIdHelper.h"
+#include "SBZCurrentAggroTarget.h"
 #include "SBZTargetAggro.h"
 #include "SBZAIAggroSystemComponent.generated.h"
 
 class AActor;
 class AController;
 class ASBZAICharacter;
-class ASBZCharacter;
+class ASBZAIController;
 class UDamageType;
 class USBZAIPerceptionComponent;
 class USBZAlertnessComponent;
@@ -29,23 +30,32 @@ protected:
     ASBZAICharacter* AIOwnerCharacter;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASBZAIController* AIOwnerController;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FSBZTargetAggro> KnownTargetAggros;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    AActor* CurrentHighestTarget;
+    FSBZCurrentAggroTarget CurrentTarget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FSBZCurrentAggroTarget LastAttackedTarget;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USBZAlertnessComponent* AlertnessComponent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    ASBZCharacter* NewThreats;
-    
 public:
-    USBZAIAggroSystemComponent();
+    USBZAIAggroSystemComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnDamageTaken(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* DamageInstigator, AActor* DamageCause);
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnArmorHit(AActor* ArmorOwner, AActor* HitArmor, float Damage, const UDamageType* DamageType, AController* DamageInstigator, AActor* DamageCauser);
+    
+public:
     UFUNCTION(BlueprintCallable)
     void OnAlertnessChanged(USBZAlertnessComponent* Sender, FSBZAlertnessLevelIdHelper NewLevel, FSBZAlertnessLevelIdHelper OldLevel);
     

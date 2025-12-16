@@ -7,3 +7,4 @@ UOTWDCharacterLevelsDataAsset::UOTWDCharacterLevelsDataAsset() {
     this->LevelDataTable = NULL;
 }
 
+

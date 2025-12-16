@@ -1,6 +1,13 @@
 #include "OTWDBlueprintPickup.h"
 #include "Net/UnrealNetwork.h"
 
+AOTWDBlueprintPickup::AOTWDBlueprintPickup(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->InteractableComponent = NULL;
+    this->Instagator = NULL;
+    this->bIsEnabled = true;
+    this->bIsPickedUp = false;
+}
+
 void AOTWDBlueprintPickup::UpdatePickUpState_Implementation() {
 }
 
@@ -31,10 +38,4 @@ void AOTWDBlueprintPickup::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(AOTWDBlueprintPickup, bIsPickedUp);
 }
 
-AOTWDBlueprintPickup::AOTWDBlueprintPickup() {
-    this->InteractableComponent = NULL;
-    this->Instagator = NULL;
-    this->bIsEnabled = true;
-    this->bIsPickedUp = false;
-}
 

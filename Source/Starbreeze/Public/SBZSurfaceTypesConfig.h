@@ -6,10 +6,11 @@
 #include "SBZSurfaceType.h"
 #include "SBZSurfaceTypesConfig.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class STARBREEZE_API USBZSurfaceTypesConfig : public UObject {
     GENERATED_BODY()
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ProjectileDecalAmount;
     
@@ -46,6 +47,8 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSBZSurfaceType> SurfaceData;
     
+public:
     USBZSurfaceTypesConfig();
+
 };
 

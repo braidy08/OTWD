@@ -22,7 +22,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnableHardPoint;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZCombatArea> AssignedCombatArea;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -34,7 +34,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USBZHardPointRecruitmentSphereComponent* RecruitmentSphere;
     
-    ASBZHardPoint();
+    ASBZHardPoint(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void PopAllDefenders();
     

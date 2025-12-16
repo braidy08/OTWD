@@ -1,7 +1,8 @@
 #include "SBZAIPerceptionMemoryComponent.h"
 
-USBZAIPerceptionMemoryComponent::USBZAIPerceptionMemoryComponent() {
+USBZAIPerceptionMemoryComponent::USBZAIPerceptionMemoryComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->AggroSystemComponent = NULL;
     this->OwnerController = NULL;
 }
+
 

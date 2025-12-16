@@ -1,6 +1,18 @@
 #include "SBZTrap.h"
 #include "Net/UnrealNetwork.h"
 
+ASBZTrap::ASBZTrap(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+    this->LocalTrapState = ESBZTrapState::Armed;
+    this->ServerTrapState = ESBZTrapState::Armed;
+    this->RequiredActivatingTriggers = 0;
+    this->ActivatingTriggers = 0;
+    this->Comment = ESBZVoiceComment::None;
+}
+
 void ASBZTrap::Rearm(AActor* RearmingActor) {
 }
 
@@ -44,11 +56,4 @@ void ASBZTrap::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetime
     DOREPLIFETIME(ASBZTrap, ServerTrapState);
 }
 
-ASBZTrap::ASBZTrap() {
-    this->LocalTrapState = ESBZTrapState::Armed;
-    this->ServerTrapState = ESBZTrapState::Armed;
-    this->RequiredActivatingTriggers = 0;
-    this->ActivatingTriggers = 0;
-    this->Comment = ESBZVoiceComment::None;
-}
 

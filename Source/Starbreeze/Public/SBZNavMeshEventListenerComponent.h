@@ -16,6 +16,7 @@ protected:
     bool bListenAlsoNextNodeChange;
     
 public:
-    USBZNavMeshEventListenerComponent();
+    USBZNavMeshEventListenerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

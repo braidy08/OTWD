@@ -15,6 +15,7 @@ private:
     
 public:
     USBZInteractionWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUIRefresh();
     

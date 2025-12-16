@@ -3,7 +3,7 @@
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/NetSerialization.h"
-#include "Engine/NetSerialization.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantizeNormal -FallbackName=Vector_NetQuantizeNormal
 #include "EMeleeAttackCategory.h"
 #include "MeleeHitBoxResult.generated.h"
 

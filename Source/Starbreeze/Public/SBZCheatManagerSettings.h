@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DeveloperSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "Templates/SubclassOf.h"
 #include "SBZCheatManagerSettings.generated.h"
 
 class AActor;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class USBZCheatManagerSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -16,6 +16,7 @@ protected:
     
 public:
     USBZCheatManagerSettings();
+
     UFUNCTION(BlueprintCallable)
     static TArray<TSoftClassPtr<AActor>> GetQuickSummonActorClasses();
     

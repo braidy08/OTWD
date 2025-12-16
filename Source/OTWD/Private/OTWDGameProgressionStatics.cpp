@@ -1,5 +1,8 @@
 #include "OTWDGameProgressionStatics.h"
 
+UOTWDGameProgressionStatics::UOTWDGameProgressionStatics() {
+}
+
 bool UOTWDGameProgressionStatics::IsTimeLimitedVendorUnlocked(const UObject* WorldContextObject) {
     return false;
 }
@@ -36,6 +39,4 @@ bool UOTWDGameProgressionStatics::AreBountiesActive(const UObject* WorldContextO
     return false;
 }
 
-UOTWDGameProgressionStatics::UOTWDGameProgressionStatics() {
-}
 

@@ -11,23 +11,24 @@ UCLASS(Blueprintable)
 class AOTWDSpawnRegion : public ASBZSpawnRegion {
     GENERATED_BODY()
 public:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bIsCrowd;
+    ESBZBTTask_GetWanderLocation_Method WanderMethod;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector WanderDirection;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ESBZBTTask_GetWanderLocation_Method WanderMethod;
+    bool bCreateRoamingVolume;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UChildActorComponent* RoamingVolumeComponent;
+    
+public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAddZombiesToHorde;
     
-protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UChildActorComponent* RoamingVolume;
-    
-public:
-    AOTWDSpawnRegion();
+    AOTWDSpawnRegion(const FObjectInitializer& ObjectInitializer);
+
 };
 

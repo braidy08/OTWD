@@ -72,6 +72,7 @@ private:
     
 public:
     USBZAbilityElementWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UImage* AbilityIconWidget, UTextBlock* AmmoTextWidget, USBZActionImageWidget* ActionImageWidget, UImage* ResourceImageWidget, UWidgetAnimation* AbilityNotUseableAnimation, UWidgetAnimation* AbilityUseableAnimation, UWidgetAnimation* AbilityNotUseableDefaultAnimation, UWidgetAnimation* AbilityUseableDefaultAnimation, UWidgetAnimation* AbilityUsedAnimation, UWidgetAnimation* AbilityCraftedAnimation, UWidgetAnimation* ResourceUpdatedAnimation, UWidgetAnimation* FadeInAnimation, UWidgetAnimation* FadeOutAnimation, UWidgetAnimation* AbilityFailedAnimation, UWidgetAnimation* ShowCraftableAnimation, UWidgetAnimation* HideCraftableAnimation, UWidgetAnimation* ShowCraftableDefaultAnimation, UWidgetAnimation* HideCraftableDefaultAnimation, UWidgetAnimation* AbilityActivationAnimation);
     

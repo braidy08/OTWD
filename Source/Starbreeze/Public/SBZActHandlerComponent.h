@@ -18,6 +18,7 @@ private:
     FSBZActData ActData;
     
 public:
-    USBZActHandlerComponent();
+    USBZActHandlerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

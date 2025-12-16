@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZDirectionalFeedbackWidget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZDirectionalFeedbackWidget -FallbackName=SBZDirectionalFeedbackWidget
 #include "Templates/SubclassOf.h"
 #include "OTWDDirectionalFeedbackWidget.generated.h"
 
+class UOTWDPlayerStealthMeterComponent;
 class UOTWDZombieIndicatorWidget;
 class USBZDirectionalIndicatorWidget;
 
@@ -25,7 +26,11 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     TArray<USBZDirectionalIndicatorWidget*> SniperArray;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    UOTWDPlayerStealthMeterComponent* OTWDStealthComponent;
+    
 public:
     UOTWDDirectionalFeedbackWidget();
+
 };
 

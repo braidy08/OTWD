@@ -1,5 +1,6 @@
 #include "SBZPlayerBlockingVolume.h"
 
-ASBZPlayerBlockingVolume::ASBZPlayerBlockingVolume() {
+ASBZPlayerBlockingVolume::ASBZPlayerBlockingVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

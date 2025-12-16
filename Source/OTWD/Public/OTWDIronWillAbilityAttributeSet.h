@@ -23,8 +23,9 @@ public:
     float DurationBonus;
     
     UOTWDIronWillAbilityAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_StaminaMod();
     

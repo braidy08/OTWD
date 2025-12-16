@@ -6,3 +6,4 @@ UOTWDGameProgressionRootDataAsset::UOTWDGameProgressionRootDataAsset() {
     this->RequiredUnlockableForWeeklies = NULL;
 }
 
+

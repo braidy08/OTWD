@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESBZDifficulty.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
 #include "SBZSchematic.h"
 #include "OTWDEncounterSheetSchematic.generated.h"
 
@@ -14,5 +14,6 @@ public:
     TMap<ESBZDifficulty, USBZEncounterTableSchematic*> MappedDifficulties;
     
     UOTWDEncounterSheetSchematic();
+
 };
 

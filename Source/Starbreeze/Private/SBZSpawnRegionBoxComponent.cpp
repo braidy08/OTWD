@@ -1,5 +1,7 @@
 #include "SBZSpawnRegionBoxComponent.h"
 
-USBZSpawnRegionBoxComponent::USBZSpawnRegionBoxComponent() {
+USBZSpawnRegionBoxComponent::USBZSpawnRegionBoxComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Mobility = EComponentMobility::Static;
 }
+
 

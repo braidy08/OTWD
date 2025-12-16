@@ -8,5 +8,6 @@ class STARBREEZE_API UAnimNotifyState_GrappleImmunity : public UAnimNotifyState 
     GENERATED_BODY()
 public:
     UAnimNotifyState_GrappleImmunity();
+
 };
 

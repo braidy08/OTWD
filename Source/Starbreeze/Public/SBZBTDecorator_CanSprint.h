@@ -40,5 +40,6 @@ public:
     bool bUseTargetCover;
     
     USBZBTDecorator_CanSprint();
+
 };
 

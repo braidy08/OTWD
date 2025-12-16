@@ -1,14 +1,7 @@
 #include "SBZExplodable.h"
 #include "Templates/SubclassOf.h"
 
-void ASBZExplodable::Explode(AController* ExplosionInstigator) {
-}
-
-
-void ASBZExplodable::ApplyDamage(float DamageAmount, TSubclassOf<UDamageType> DamageTypeClass, AController* EventInstigator, AActor* DamageCauser) {
-}
-
-ASBZExplodable::ASBZExplodable() {
+ASBZExplodable::ASBZExplodable(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->Health = 1;
     this->Damage = 1;
     this->MinimumDamage = 1;
@@ -19,4 +12,12 @@ ASBZExplodable::ASBZExplodable() {
     this->DamageType = NULL;
     this->bDestroyOnExplosion = false;
 }
+
+void ASBZExplodable::Explode(AController* ExplosionInstigator) {
+}
+
+
+void ASBZExplodable::ApplyDamage(float DamageAmount, TSubclassOf<UDamageType> DamageTypeClass, AController* EventInstigator, AActor* DamageCauser) {
+}
+
 

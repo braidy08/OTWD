@@ -14,7 +14,8 @@ protected:
     bool bPassedValidation;
     
 public:
-    APathResultProcessor();
+    APathResultProcessor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool ProcessResult(const FPathNetworkData& NetworkData, UPARAM(Ref) FGeneratedPath& ResultPath);
     

@@ -9,7 +9,7 @@ USTRUCT(BlueprintType)
 struct FSBZMeleeShovePrediction {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZCharacter> Character;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

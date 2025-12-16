@@ -24,5 +24,6 @@ public:
     bool bPrioritizeStandLow;
     
     USBZBTTask_GetCoverShootingPointType();
+
 };
 

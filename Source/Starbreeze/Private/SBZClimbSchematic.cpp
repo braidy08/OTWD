@@ -32,3 +32,4 @@ USBZClimbSchematic::USBZClimbSchematic() {
     this->CollisionChannel = ECC_WorldStatic;
 }
 
+

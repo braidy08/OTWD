@@ -77,6 +77,7 @@ public:
     TArray<UOTWDWeaponPartRewardGenerator*> WeaponPartGenerators;
     
     UOTWDWeaponRewardGenerator();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBasePowerLevel(const UOTWDProfileSaveData* ProfileSaveData, float Range);
     

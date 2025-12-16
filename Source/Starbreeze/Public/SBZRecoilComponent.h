@@ -14,6 +14,7 @@ protected:
     ASBZRangedWeapon* Weapon;
     
 public:
-    USBZRecoilComponent();
+    USBZRecoilComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

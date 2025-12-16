@@ -8,5 +8,6 @@ class STARBREEZE_API UAnimNotify_EmptyWeaponStateReached : public UAnimNotify {
     GENERATED_BODY()
 public:
     UAnimNotify_EmptyWeaponStateReached();
+
 };
 

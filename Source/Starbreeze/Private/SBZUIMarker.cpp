@@ -1,5 +1,11 @@
 #include "SBZUIMarker.h"
 
+USBZUIMarker::USBZUIMarker() {
+    this->OnScreenWidget = NULL;
+    this->OffScreenWidget = NULL;
+    this->TargetActor = NULL;
+}
+
 void USBZUIMarker::StartFade(float InTargetAlpha, float InDelay, float InFadeSpeed) {
 }
 
@@ -61,9 +67,4 @@ bool USBZUIMarker::CanShowDistance() const {
     return false;
 }
 
-USBZUIMarker::USBZUIMarker() {
-    this->OnScreenWidget = NULL;
-    this->OffScreenWidget = NULL;
-    this->TargetActor = NULL;
-}
 

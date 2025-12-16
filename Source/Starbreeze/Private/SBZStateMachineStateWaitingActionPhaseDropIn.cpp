@@ -1,5 +1,8 @@
 #include "SBZStateMachineStateWaitingActionPhaseDropIn.h"
 
+USBZStateMachineStateWaitingActionPhaseDropIn::USBZStateMachineStateWaitingActionPhaseDropIn() {
+}
+
 void USBZStateMachineStateWaitingActionPhaseDropIn::TickCinematicAndLoading() {
 }
 
@@ -21,6 +24,4 @@ void USBZStateMachineStateWaitingActionPhaseDropIn::HandleLoadingComplete(UWorld
 void USBZStateMachineStateWaitingActionPhaseDropIn::GameReadyToActionPhase() {
 }
 
-USBZStateMachineStateWaitingActionPhaseDropIn::USBZStateMachineStateWaitingActionPhaseDropIn() {
-}
 

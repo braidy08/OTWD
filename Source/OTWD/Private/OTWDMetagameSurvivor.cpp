@@ -1,5 +1,19 @@
 #include "OTWDMetagameSurvivor.h"
 
+UOTWDMetagameSurvivor::UOTWDMetagameSurvivor() {
+    this->bIsNew = false;
+    this->HealingCost = 0;
+    this->ClassType = NULL;
+    this->CurrentXP = 0;
+    this->Level = 1;
+    this->MaxLevel = 10;
+    this->bShowPotential = false;
+    this->TurnsTillDying = 0;
+    this->TurnsTillDeath = 0;
+    this->SurvivorState = ESurvivorState::Idle;
+    this->bIsOnAMission = false;
+}
+
 void UOTWDMetagameSurvivor::SetSurvivorVoice(TSoftObjectPtr<UOTWDSurvivorVoiceDataAsset> NewVoice) {
 }
 
@@ -101,17 +115,4 @@ bool UOTWDMetagameSurvivor::CanBeAssignedToBuilding() const {
     return false;
 }
 
-UOTWDMetagameSurvivor::UOTWDMetagameSurvivor() {
-    this->bIsNew = false;
-    this->HealingCost = 0;
-    this->ClassType = NULL;
-    this->CurrentXP = 0;
-    this->Level = 1;
-    this->MaxLevel = 10;
-    this->bShowPotential = false;
-    this->TurnsTillDying = 0;
-    this->TurnsTillDeath = 0;
-    this->SurvivorState = ESurvivorState::Idle;
-    this->bIsOnAMission = false;
-}
 

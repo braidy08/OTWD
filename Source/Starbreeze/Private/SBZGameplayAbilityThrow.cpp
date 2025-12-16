@@ -1,9 +1,5 @@
 #include "SBZGameplayAbilityThrow.h"
 
-FTransform USBZGameplayAbilityThrow::GetCharacterSpawnOffset() {
-    return FTransform{};
-}
-
 USBZGameplayAbilityThrow::USBZGameplayAbilityThrow() {
     this->ItemClass = NULL;
     this->ThrowingForce = 1;
@@ -25,4 +21,9 @@ USBZGameplayAbilityThrow::USBZGameplayAbilityThrow() {
     this->AnimationCollectionTPP = NULL;
     this->DummyClass = NULL;
 }
+
+FTransform USBZGameplayAbilityThrow::GetCharacterSpawnOffset() {
+    return FTransform{};
+}
+
 

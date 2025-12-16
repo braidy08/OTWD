@@ -33,6 +33,7 @@ private:
     
 public:
     USBZActionButtonWidget();
+
     UFUNCTION(BlueprintCallable)
     void UnbindInput();
     

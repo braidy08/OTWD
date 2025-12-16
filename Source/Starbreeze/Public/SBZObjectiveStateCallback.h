@@ -12,5 +12,6 @@ public:
     FObjectiveStateUpdated ObjectiveStateDelegate;
     
     USBZObjectiveStateCallback();
+
 };
 

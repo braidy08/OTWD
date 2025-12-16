@@ -8,5 +8,6 @@ class STARBREEZE_API USBZSignatureAbilityAction : public USBZBaseAbilityAction {
     GENERATED_BODY()
 public:
     USBZSignatureAbilityAction();
+
 };
 

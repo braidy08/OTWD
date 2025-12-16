@@ -2,6 +2,10 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
+USBZPropertyComponent::USBZPropertyComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+}
+
 void USBZPropertyComponent::SetDynamicTarget_Implementation(const int32 PropertyID, const float NewValue) {
 }
 bool USBZPropertyComponent::SetDynamicTarget_Validate(const int32 PropertyID, const float NewValue) {
@@ -109,6 +113,4 @@ void USBZPropertyComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(USBZPropertyComponent, DynamicGameProperties);
 }
 
-USBZPropertyComponent::USBZPropertyComponent() {
-}
 

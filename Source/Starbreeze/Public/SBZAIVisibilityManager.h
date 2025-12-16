@@ -49,7 +49,8 @@ protected:
     TMap<AActor*, TScriptInterface<ISBZAIVisibilityRelevant>> AIVisibilityRelevants;
     
 public:
-    ASBZAIVisibilityManager();
+    ASBZAIVisibilityManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void UnregisterVisibilityComponent(USBZAIVisibilityComponent* InVisibilityComponent);
     

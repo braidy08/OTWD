@@ -8,6 +8,7 @@
 #include "OTWDMetagameWeaponDataAsset.generated.h"
 
 class UDataTable;
+class USBZContentPack;
 
 UCLASS(Blueprintable)
 class OTWD_API UOTWDMetagameWeaponDataAsset : public UDataAsset {
@@ -17,7 +18,7 @@ public:
     FOTWDMetagameWeaponSettingsByRarity RarityWeaponSettings[7];
     
     UPROPERTY(AdvancedDisplay, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    FOTWDMetagameWeaponSettingsByFamily FamilyWeaponSettings[13];
+    FOTWDMetagameWeaponSettingsByFamily FamilyWeaponSettings[15];
     
     UPROPERTY(AdvancedDisplay, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FOTWDMetagameWeaponSettingsByDifficulty DifficultyWeaponSettings[4];
@@ -41,12 +42,16 @@ public:
     int32 MaxAmountInVault;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<USBZContentPack*, int32> BonusAmountInVaultFromContentPacks;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MaxAmountInPostmaster;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MaxWeaponPowerLevel;
     
     UOTWDMetagameWeaponDataAsset();
+
     UFUNCTION(BlueprintCallable)
     void ParseDataTables();
     

@@ -16,6 +16,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CoolDownTime;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float EnterCombatDelay;
+    
     FSBZFiringPermissionData_Weapon();
 };
 

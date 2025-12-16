@@ -1,5 +1,11 @@
 #include "PathController.h"
 
+APathController::APathController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bIsInitialController = true;
+    this->bShouldUseProceduralGeneration = true;
+    this->Pathfinder = NULL;
+}
+
 bool APathController::SetAccessPointFlags(const UAccessPointType* AccessPointType, const int32 Flags) {
     return false;
 }
@@ -14,9 +20,4 @@ bool APathController::HasAccessPointType(const UAccessPointType* AccessPointType
 void APathController::ApplyPath_Implementation(int32 PathSeed) {
 }
 
-APathController::APathController() {
-    this->bIsInitialController = true;
-    this->bShouldUseProceduralGeneration = true;
-    this->Pathfinder = NULL;
-}
 

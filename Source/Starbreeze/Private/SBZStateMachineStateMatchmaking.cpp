@@ -1,5 +1,13 @@
 #include "SBZStateMachineStateMatchmaking.h"
 
+USBZStateMachineStateMatchmaking::USBZStateMachineStateMatchmaking() {
+    this->AcceptMatchTimeMax = 0;
+    this->AcceptMatchUnlockTimeDebug = 0;
+    this->AcceptMatchUnlockTimeShipping = 0;
+    this->AcceptMatchUnlockTimePrivateParty = 0;
+    this->AcceptMatchUnlockTimeCamp = 0;
+}
+
 void USBZStateMachineStateMatchmaking::HandleSessionBecomeOutdated() {
 }
 
@@ -18,11 +26,4 @@ void USBZStateMachineStateMatchmaking::HandleLostConnectionToHost(ESBZOnlineCode
 void USBZStateMachineStateMatchmaking::FireMatchAcceptUnlock() {
 }
 
-USBZStateMachineStateMatchmaking::USBZStateMachineStateMatchmaking() {
-    this->AcceptMatchTimeMax = 0;
-    this->AcceptMatchUnlockTimeDebug = 0;
-    this->AcceptMatchUnlockTimeShipping = 0;
-    this->AcceptMatchUnlockTimePrivateParty = 0;
-    this->AcceptMatchUnlockTimeCamp = 0;
-}
 

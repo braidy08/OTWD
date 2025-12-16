@@ -7,6 +7,7 @@ UCLASS(Blueprintable, NonTransient)
 class OTWD_API AOTWDMainMenuGameMode : public AOTWDMission {
     GENERATED_BODY()
 public:
-    AOTWDMainMenuGameMode();
+    AOTWDMainMenuGameMode(const FObjectInitializer& ObjectInitializer);
+
 };
 

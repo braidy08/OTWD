@@ -8,5 +8,6 @@ class STARBREEZE_API USBZDamageTypeMedium : public USBZDamageType {
     GENERATED_BODY()
 public:
     USBZDamageTypeMedium();
+
 };
 

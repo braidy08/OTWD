@@ -8,5 +8,6 @@ class STARBREEZE_API USBZHeightOverrideModifier : public USBZPlayerCameraModifie
     GENERATED_BODY()
 public:
     USBZHeightOverrideModifier();
+
 };
 

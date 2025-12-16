@@ -1,5 +1,8 @@
 #include "SBZGameEventPlayerAttackTracker.h"
 
+USBZGameEventPlayerAttackTracker::USBZGameEventPlayerAttackTracker() {
+}
+
 void USBZGameEventPlayerAttackTracker::OnProjectileHit(FSBZProjectileHitStruct ProjectileHitStruct) {
 }
 
@@ -12,6 +15,4 @@ void USBZGameEventPlayerAttackTracker::OnCharacterGotHit(FSBZCharacterGotHitStru
 void USBZGameEventPlayerAttackTracker::OnAttackEnd(FSBZAttackEndStruct AttackEndStruct) {
 }
 
-USBZGameEventPlayerAttackTracker::USBZGameEventPlayerAttackTracker() {
-}
 

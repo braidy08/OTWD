@@ -24,6 +24,7 @@ private:
     
 public:
     USBZOverlaySubtitleWidget();
+
     UFUNCTION(BlueprintCallable)
     void UpdateText(FTimespan AtTime);
     

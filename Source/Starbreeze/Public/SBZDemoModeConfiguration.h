@@ -17,6 +17,7 @@ public:
     TArray<USBZContentPack*> DemoContentPacks;
     
     USBZDemoModeConfiguration();
+
     UFUNCTION(BlueprintCallable)
     void Validate() const;
     

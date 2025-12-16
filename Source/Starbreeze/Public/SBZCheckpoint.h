@@ -1,12 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/PlayerStart.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PlayerStart -FallbackName=PlayerStart
 #include "SBZCheckpoint.generated.h"
 
 UCLASS(Blueprintable)
 class STARBREEZE_API ASBZCheckpoint : public APlayerStart {
     GENERATED_BODY()
 public:
-    ASBZCheckpoint();
+    ASBZCheckpoint(const FObjectInitializer& ObjectInitializer);
+
 };
 

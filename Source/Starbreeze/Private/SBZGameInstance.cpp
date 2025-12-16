@@ -3,6 +3,41 @@
 #include "SBZProfileSaveData.h"
 #include "SBZUISaveData.h"
 
+USBZGameInstance::USBZGameInstance() {
+    this->RootSchematic = NULL;
+    this->UIManagerClass = NULL;
+    this->UIWidgetLibraryClass = NULL;
+    this->UISaveDataClass = USBZUISaveData::StaticClass();
+    this->GameEventBroker = NULL;
+    this->GameStateMachine = NULL;
+    this->SelectedDifficutly = ESBZDifficulty::Normal;
+    this->TransitionLevelSchematic = NULL;
+    this->MainMenuSchematic = NULL;
+    this->PlayGoSchematic = NULL;
+    this->SelectedMissionSchematic = NULL;
+    this->UIGlobalsSchematic = NULL;
+    this->ProfileSaveDataClass = USBZProfileSaveData::StaticClass();
+    this->LocalProfileSaveData = NULL;
+    this->MissionSaveDataClass = USBZMissionSaveData::StaticClass();
+    this->MusicManagerClass = NULL;
+    this->VolumeManagerClass = NULL;
+    this->ChallengeManagerClass = NULL;
+    this->UIManager = NULL;
+    this->UIWidgetLibrary = NULL;
+    this->AnalyticsProvider = NULL;
+    this->ChallengeManager = NULL;
+    this->NetworkConnectionChangedPopup = NULL;
+    this->LoggedOutAmbiguouslyPopup = NULL;
+    this->UserManager = NULL;
+    this->MusicManager = NULL;
+    this->PlatformPurchasing = NULL;
+    this->VolumeManager = NULL;
+    this->SkyboundRegistrationAPI = NULL;
+    this->ResetWebApiCooldownTime = 0;
+    this->MissionEventTracker = NULL;
+    this->WaitingStateAmbientEvent = NULL;
+}
+
 bool USBZGameInstance::UnlockMission(USBZLevelSchematic* InLevelToUnlock, bool bShouldUnlockMission) {
     return false;
 }
@@ -15,12 +50,6 @@ bool USBZGameInstance::ShouldSkipMissionReport() const {
 }
 
 void USBZGameInstance::SetSelectedMissionSchematic(USBZLevelSchematic* InSelectedMissionSchematic) {
-}
-
-void USBZGameInstance::SetNewForcedGeneratedSeed(const UObject* WorldContextObject, const FString& SeedString) {
-}
-
-void USBZGameInstance::SetNewForcedGeneratedData(const UObject* WorldContextObject, const FString& DataString) {
 }
 
 void USBZGameInstance::SelectDifficulty(ESBZDifficulty Difficulty) {
@@ -102,10 +131,6 @@ USBZOnlineSession* USBZGameInstance::GetSbzOnlineSession() const {
     return NULL;
 }
 
-TSet<FName> USBZGameInstance::GetMissionInventoryNames() {
-    return TSet<FName>();
-}
-
 void USBZGameInstance::GetMenuEvent(const FString& EventName) {
 }
 
@@ -121,56 +146,7 @@ TEnumAsByte<ESBZGameStateMachineState> USBZGameInstance::GetGameStateMachineStat
     return SM_NotLoggedIn;
 }
 
-FString USBZGameInstance::GetForcedGeneratedSeedAsString() {
-    return TEXT("");
-}
-
-FString USBZGameInstance::GetForcedGeneratedDataAsString() {
-    return TEXT("");
-}
-
-FString USBZGameInstance::GetCurrentGeneratedDataAsString() {
-    return TEXT("");
-}
-
 void USBZGameInstance::DebugOnlineTravel(USBZLevelSchematic* LevelSchematic) {
 }
 
-void USBZGameInstance::ClearForcedGeneratedData(const UObject* WorldContextObject) {
-}
-
-USBZGameInstance::USBZGameInstance() {
-    this->RootSchematic = NULL;
-    this->UIManagerClass = NULL;
-    this->UIWidgetLibraryClass = NULL;
-    this->UISaveDataClass = USBZUISaveData::StaticClass();
-    this->GameEventBroker = NULL;
-    this->GameStateMachine = NULL;
-    this->SelectedDifficutly = ESBZDifficulty::Normal;
-    this->TransitionLevelSchematic = NULL;
-    this->MainMenuSchematic = NULL;
-    this->PlayGoSchematic = NULL;
-    this->SelectedMissionSchematic = NULL;
-    this->UIGlobalsSchematic = NULL;
-    this->ProfileSaveDataClass = USBZProfileSaveData::StaticClass();
-    this->LocalProfileSaveData = NULL;
-    this->MissionSaveDataClass = USBZMissionSaveData::StaticClass();
-    this->MusicManagerClass = NULL;
-    this->VolumeManagerClass = NULL;
-    this->ChallengeManagerClass = NULL;
-    this->UIManager = NULL;
-    this->UIWidgetLibrary = NULL;
-    this->AnalyticsProvider = NULL;
-    this->ChallengeManager = NULL;
-    this->NetworkConnectionChangedPopup = NULL;
-    this->LoggedOutAmbiguouslyPopup = NULL;
-    this->UserManager = NULL;
-    this->MusicManager = NULL;
-    this->PlatformPurchasing = NULL;
-    this->VolumeManager = NULL;
-    this->SkyboundRegistrationAPI = NULL;
-    this->ResetWebApiCooldownTime = 0;
-    this->MissionEventTracker = NULL;
-    this->WaitingStateAmbientEvent = NULL;
-}
 

@@ -7,3 +7,4 @@ USBZRaycastArcDamagePattern::USBZRaycastArcDamagePattern() {
     this->bAllowMultipleHitsPerActor = false;
 }
 
+

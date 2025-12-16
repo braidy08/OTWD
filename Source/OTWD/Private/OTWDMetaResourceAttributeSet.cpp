@@ -1,6 +1,11 @@
 #include "OTWDMetaResourceAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDMetaResourceAttributeSet::UOTWDMetaResourceAttributeSet() {
+    this->MetaResource = 1;
+    this->MetaResourceMaximum = 1;
+}
+
 void UOTWDMetaResourceAttributeSet::OnRep_MetaResourceMaximum(float OldValue) {
 }
 
@@ -22,8 +27,4 @@ void UOTWDMetaResourceAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeP
     DOREPLIFETIME(UOTWDMetaResourceAttributeSet, MetaResourceMaximum);
 }
 
-UOTWDMetaResourceAttributeSet::UOTWDMetaResourceAttributeSet() {
-    this->MetaResource = 1;
-    this->MetaResourceMaximum = 1;
-}
 

@@ -22,5 +22,6 @@ public:
     TSubclassOf<UEnvQueryContext> SearchCenter;
     
     USBZEnvQueryGenerator_Actors();
+
 };
 

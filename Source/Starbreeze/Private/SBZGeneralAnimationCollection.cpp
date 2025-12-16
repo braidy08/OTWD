@@ -67,3 +67,4 @@ USBZGeneralAnimationCollection::USBZGeneralAnimationCollection() {
     this->LocomotionUpperBodyAdditive = NULL;
 }
 
+

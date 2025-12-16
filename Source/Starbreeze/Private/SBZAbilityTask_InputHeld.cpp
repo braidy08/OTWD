@@ -1,6 +1,9 @@
 #include "SBZAbilityTask_InputHeld.h"
 #include "Templates/SubclassOf.h"
 
+USBZAbilityTask_InputHeld::USBZAbilityTask_InputHeld() {
+}
+
 void USBZAbilityTask_InputHeld::OnTimerFulfilledCallback() {
 }
 
@@ -11,6 +14,4 @@ USBZAbilityTask_InputHeld* USBZAbilityTask_InputHeld::InputHeld(UGameplayAbility
     return NULL;
 }
 
-USBZAbilityTask_InputHeld::USBZAbilityTask_InputHeld() {
-}
 

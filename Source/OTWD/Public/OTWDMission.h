@@ -51,7 +51,7 @@ private:
     TArray<FOTWDMetaSurvivorIngameData> RescuedSurvivors;
     
 public:
-    AOTWDMission();
+    AOTWDMission(const FObjectInitializer& ObjectInitializer);
 private:
     UFUNCTION(BlueprintCallable)
     void VoteEnd(const FVoteEnd NewVoteEnd);

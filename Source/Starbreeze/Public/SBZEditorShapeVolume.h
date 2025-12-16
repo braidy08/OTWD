@@ -1,12 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Volume.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Volume -FallbackName=Volume
 #include "SBZEditorShapeVolume.generated.h"
 
 UCLASS(Blueprintable)
 class ASBZEditorShapeVolume : public AVolume {
     GENERATED_BODY()
 public:
-    ASBZEditorShapeVolume();
+    ASBZEditorShapeVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

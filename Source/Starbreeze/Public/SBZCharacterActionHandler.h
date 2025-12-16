@@ -21,11 +21,15 @@ private:
     TMap<FName, USBZBaseAction*> ActionMap;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    TArray<USBZBaseAction*> ForbiddenActionArray;
+    TArray<USBZBaseAction*> RemovedActionArray;
     
 public:
-    USBZCharacterActionHandler();
+    USBZCharacterActionHandler(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+    UFUNCTION(BlueprintCallable)
+    void SetActionRemoved(const TSubclassOf<USBZBaseAction> InActionType, bool bInIsRemoved);
     
     UFUNCTION(BlueprintCallable)
     void SetActionForbidden(const TSubclassOf<USBZBaseAction> InActionType, bool bInIsForbidden);

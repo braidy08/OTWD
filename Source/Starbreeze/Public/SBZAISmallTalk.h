@@ -25,6 +25,7 @@ private:
     float TwoPerformersChance;
     
 public:
-    ASBZAISmallTalk();
+    ASBZAISmallTalk(const FObjectInitializer& ObjectInitializer);
+
 };
 

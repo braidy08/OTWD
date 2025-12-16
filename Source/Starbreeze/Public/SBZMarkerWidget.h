@@ -17,6 +17,7 @@ private:
     
 public:
     USBZMarkerWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnVisible();
     

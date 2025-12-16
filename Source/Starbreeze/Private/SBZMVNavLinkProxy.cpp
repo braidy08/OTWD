@@ -1,5 +1,18 @@
 #include "SBZMVNavLinkProxy.h"
 
+ASBZMVNavLinkProxy::ASBZMVNavLinkProxy(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->PointLinks.AddDefaulted(1);
+    this->NavLinkDirection = ESBZMVNavLinkDirection::Automatic;
+    this->VaultingSchematic = NULL;
+    this->MantlingSchematic = NULL;
+    this->DefaultCharacterClass = NULL;
+    this->bKeepOnFloor = true;
+    this->bDrawShapes = false;
+    this->CoolDownDurationAfterUse = 1;
+    this->bOverrideCoolDownDurationAfterUse = false;
+    this->CoolDownDurationAfterUseOverride = 1;
+}
+
 void ASBZMVNavLinkProxy::UseLink() {
 }
 
@@ -25,15 +38,4 @@ void ASBZMVNavLinkProxy::ForceFreeLink() {
 void ASBZMVNavLinkProxy::ComputeTrajectories() {
 }
 
-ASBZMVNavLinkProxy::ASBZMVNavLinkProxy() {
-    this->NavLinkDirection = ESBZMVNavLinkDirection::Automatic;
-    this->VaultingSchematic = NULL;
-    this->MantlingSchematic = NULL;
-    this->DefaultCharacterClass = NULL;
-    this->bKeepOnFloor = true;
-    this->bDrawShapes = false;
-    this->CoolDownDurationAfterUse = 1;
-    this->bOverrideCoolDownDurationAfterUse = false;
-    this->CoolDownDurationAfterUseOverride = 1;
-}
 

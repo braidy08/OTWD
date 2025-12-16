@@ -1,7 +1,10 @@
 #include "SBZUnlockablesFunctionLibrary.h"
 #include "Templates/SubclassOf.h"
 
-bool USBZUnlockablesFunctionLibrary::UpdatePurchasedContentPacks(const UObject* WorldContextObject, TArray<USBZUnlockableMetadata*>& OutUnlocked) {
+USBZUnlockablesFunctionLibrary::USBZUnlockablesFunctionLibrary() {
+}
+
+bool USBZUnlockablesFunctionLibrary::UpdatePurchasedContentPacks(const UObject* WorldContextObject, TArray<USBZContentPack*>& OutNewContentPacks, TArray<USBZUnlockableMetadata*>& OutUnlocked) {
     return false;
 }
 
@@ -49,6 +52,4 @@ bool USBZUnlockablesFunctionLibrary::AddAcquiredPawnTechs(const UObject* WorldCo
     return false;
 }
 
-USBZUnlockablesFunctionLibrary::USBZUnlockablesFunctionLibrary() {
-}
 

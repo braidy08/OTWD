@@ -1,17 +1,5 @@
 #include "SBZAmmoWidget.h"
 
-void USBZAmmoWidget::SetupWidgets(UTextBlock* CurrentAmmoWidget, UTextBlock* SpareAmmoWidget, UTextBlock* PickupTextWidget, UImage* AmmoIconWidget, UPanelWidget* VisibilityPanelWidget, USBZAttributeProgressWidget* MeleeAmmoWidget, UWidgetAnimation* PickupAnimation, UWidgetAnimation* LowAmmoStateAnimation, UWidgetAnimation* DefaultStateAnimation, UWidgetAnimation* AppearAnimation, UWidgetAnimation* DisappearAnimation, UWidgetAnimation* CurrentAmmoDecreasedAnimation, UWidgetAnimation* CurrentAmmoIncreaseAnimation, UWidgetAnimation* ClipAmmoDecreasedAnimation, UWidgetAnimation* ClipAmmoIncreasedAnimation) {
-}
-
-void USBZAmmoWidget::OnWeaponChanged() {
-}
-
-void USBZAmmoWidget::OnAmmoPickup(ASBZPlayerCharacter* Character, ESBZWeaponFamily WeaponFamily, ESBZWeaponSlotType WeaponSlot, int32 Amount) {
-}
-
-void USBZAmmoWidget::DisplayAmmoPickup() {
-}
-
 USBZAmmoWidget::USBZAmmoWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->AmmoWarningPercent = 1;
     this->PrimaryAmmoTexture = NULL;
@@ -38,4 +26,17 @@ USBZAmmoWidget::USBZAmmoWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->ClipAmmoIncreasedAnim = NULL;
     this->DisplayAfter = 1;
 }
+
+void USBZAmmoWidget::SetupWidgets(UTextBlock* CurrentAmmoWidget, UTextBlock* SpareAmmoWidget, UTextBlock* PickupTextWidget, UImage* AmmoIconWidget, UPanelWidget* VisibilityPanelWidget, USBZAttributeProgressWidget* MeleeAmmoWidget, UWidgetAnimation* PickupAnimation, UWidgetAnimation* LowAmmoStateAnimation, UWidgetAnimation* DefaultStateAnimation, UWidgetAnimation* AppearAnimation, UWidgetAnimation* DisappearAnimation, UWidgetAnimation* CurrentAmmoDecreasedAnimation, UWidgetAnimation* CurrentAmmoIncreaseAnimation, UWidgetAnimation* ClipAmmoDecreasedAnimation, UWidgetAnimation* ClipAmmoIncreasedAnimation) {
+}
+
+void USBZAmmoWidget::OnWeaponChanged() {
+}
+
+void USBZAmmoWidget::OnAmmoPickup(ASBZPlayerCharacter* Character, ESBZWeaponFamily WeaponFamily, ESBZWeaponSlotType WeaponSlot, int32 Amount) {
+}
+
+void USBZAmmoWidget::DisplayAmmoPickup() {
+}
+
 

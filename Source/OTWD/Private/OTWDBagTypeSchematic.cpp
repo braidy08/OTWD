@@ -4,3 +4,4 @@ UOTWDBagTypeSchematic::UOTWDBagTypeSchematic() {
     this->MetaResources = 1;
 }
 
+

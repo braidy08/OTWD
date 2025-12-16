@@ -1,6 +1,7 @@
 #include "OTWDHubGameState.h"
 
-AOTWDHubGameState::AOTWDHubGameState() {
+AOTWDHubGameState::AOTWDHubGameState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->HolsteredWeapon = NULL;
 }
+
 

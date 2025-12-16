@@ -30,6 +30,7 @@ public:
     FSBZVolumeTypeSetting VoipVolumeSetting;
     
     USBZVolumeManager();
+
     UFUNCTION(BlueprintCallable)
     void SetVolume(AudioType Type, float NewVolume);
     

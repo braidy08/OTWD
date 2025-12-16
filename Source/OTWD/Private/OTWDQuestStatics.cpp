@@ -1,5 +1,8 @@
 #include "OTWDQuestStatics.h"
 
+UOTWDQuestStatics::UOTWDQuestStatics() {
+}
+
 void UOTWDQuestStatics::UpdateBountyData(const UObject* WorldContextObject) {
 }
 
@@ -82,6 +85,4 @@ bool UOTWDQuestStatics::AbandonActiveBounty(const UObject* WorldContextObject, U
     return false;
 }
 
-UOTWDQuestStatics::UOTWDQuestStatics() {
-}
 

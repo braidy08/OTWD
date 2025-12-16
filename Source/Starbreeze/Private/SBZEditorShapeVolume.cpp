@@ -1,5 +1,6 @@
 #include "SBZEditorShapeVolume.h"
 
-ASBZEditorShapeVolume::ASBZEditorShapeVolume() {
+ASBZEditorShapeVolume::ASBZEditorShapeVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

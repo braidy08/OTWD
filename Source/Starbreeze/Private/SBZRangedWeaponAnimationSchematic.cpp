@@ -4,3 +4,4 @@ UDEPRECATED_SBZRangedWeaponAnimationSchematic::UDEPRECATED_SBZRangedWeaponAnimat
     this->bCanEnterUnjamLoopFromJam = false;
 }
 
+

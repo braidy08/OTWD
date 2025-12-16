@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAssaultSpawnBehaviour : public USBZBaseSpawnBehaviour {
     GENERATED_BODY()
 public:
     USBZAssaultSpawnBehaviour();
+
 };
 

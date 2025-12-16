@@ -17,7 +17,8 @@ protected:
     TArray<AZombieCharacter*> ZombiesInside;
     
 public:
-    UOTWDBoxComponent();
+    UOTWDBoxComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);

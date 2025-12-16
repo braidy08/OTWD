@@ -7,6 +7,5 @@ enum class EBTTask_Crouch_Operation : uint8 {
     Toggle,
     Crouch,
     Stand,
-    EBTTask_Crouch_MAX UMETA(Hidden),
 };
 

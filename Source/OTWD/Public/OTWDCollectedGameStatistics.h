@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZCollectedGameStatistics.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZCollectedGameStatistics -FallbackName=SBZCollectedGameStatistics
 #include "OTWDCollectedGameStatistics.generated.h"
 
 USTRUCT(BlueprintType)

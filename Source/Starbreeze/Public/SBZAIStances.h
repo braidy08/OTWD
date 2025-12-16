@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAIStances : public UObject {
     GENERATED_BODY()
 public:
     USBZAIStances();
+
 };
 

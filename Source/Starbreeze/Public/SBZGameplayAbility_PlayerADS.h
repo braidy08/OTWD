@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGameplayAbility_PlayerADS : public USBZGameplayAbility 
     GENERATED_BODY()
 public:
     USBZGameplayAbility_PlayerADS();
+
 };
 

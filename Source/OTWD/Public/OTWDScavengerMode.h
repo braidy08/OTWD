@@ -7,6 +7,7 @@ UCLASS(Blueprintable, NonTransient)
 class OTWD_API AOTWDScavengerMode : public AOTWDMission {
     GENERATED_BODY()
 public:
-    AOTWDScavengerMode();
+    AOTWDScavengerMode(const FObjectInitializer& ObjectInitializer);
+
 };
 

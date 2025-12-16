@@ -33,6 +33,7 @@ private:
     AOTWDCrowdColliderManager* CrowdColliderManager;
     
 public:
-    AOTWDWorldSettings();
+    AOTWDWorldSettings(const FObjectInitializer& ObjectInitializer);
+
 };
 

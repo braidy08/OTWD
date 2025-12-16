@@ -50,6 +50,7 @@ private:
     
 public:
     USBZSilencerWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UProgressBar* CurrentProgressWidget, UProgressBar* BlinkProgressWidget, UProgressBar* MissingProgressWidget, UWidgetAnimation* DecreasedAnimation, UWidgetAnimation* EquippedAnimation, UWidgetAnimation* UnequippedAnimation, UWidgetAnimation* BrokenAnimation, UWidgetAnimation* FadeInAnimation, UWidgetAnimation* FadeOutAnimation);
     

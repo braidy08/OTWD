@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "SBZTech.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZTech -FallbackName=SBZTech
 #include "OTWDMetaTechUpgradesDescriptionSection.h"
 #include "OTWDMetagameCurrency.h"
 #include "OTWDMetagameUpgrades.h"
@@ -73,5 +73,6 @@ public:
     FOTWDMetagameUpgrades MetagameUpgrade;
     
     UOTWDMetaTechSchematic();
+
 };
 

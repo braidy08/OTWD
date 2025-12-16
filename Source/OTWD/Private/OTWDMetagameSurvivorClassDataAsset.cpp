@@ -5,3 +5,4 @@ UOTWDMetagameSurvivorClassDataAsset::UOTWDMetagameSurvivorClassDataAsset() {
     this->Icon = NULL;
 }
 
+

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZLeanCameraModifier : public USBZPlayerCameraModifier {
     GENERATED_BODY()
 public:
     USBZLeanCameraModifier();
+
 };
 

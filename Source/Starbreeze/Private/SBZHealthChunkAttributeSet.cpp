@@ -1,6 +1,10 @@
 #include "SBZHealthChunkAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZHealthChunkAttributeSet::USBZHealthChunkAttributeSet() {
+    this->ChunkSize = 1;
+}
+
 void USBZHealthChunkAttributeSet::OnRep_ChunkSize(float OldValue) {
 }
 
@@ -14,7 +18,4 @@ void USBZHealthChunkAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimePro
     DOREPLIFETIME(USBZHealthChunkAttributeSet, ChunkSize);
 }
 
-USBZHealthChunkAttributeSet::USBZHealthChunkAttributeSet() {
-    this->ChunkSize = 1;
-}
 

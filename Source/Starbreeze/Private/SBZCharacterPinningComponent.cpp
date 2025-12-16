@@ -1,5 +1,10 @@
 #include "SBZCharacterPinningComponent.h"
 
+USBZCharacterPinningComponent::USBZCharacterPinningComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->OwningCharacter = NULL;
+    this->DefeatSettings = NULL;
+}
+
 bool USBZCharacterPinningComponent::StopPinningTheActor(AActor* ActorToRelease, bool bCallRemovePinnedActor) {
     return false;
 }
@@ -30,7 +35,7 @@ void USBZCharacterPinningComponent::HandlePinnedActorDestroyed(AActor* Despawned
 void USBZCharacterPinningComponent::HandleAlignmentSlotAvailabilityToggled(bool bIsNowAnyAvailable) {
 }
 
-bool USBZCharacterPinningComponent::GetPinnedByActor(AActor* IncomingPinningActor, ESBZPinningType PinningType, bool bWarnIncomingPinningActor) {
+bool USBZCharacterPinningComponent::GetPinnedByActor(AActor* IncomingPinningActor, ESBZPinningType PinningType, bool bWarnIncomingPinningActor, bool bCheckIsAlreadyPinningActor) {
     return false;
 }
 
@@ -42,8 +47,4 @@ int32 USBZCharacterPinningComponent::GetCurrentPinnedActorsNumber() const {
     return 0;
 }
 
-USBZCharacterPinningComponent::USBZCharacterPinningComponent() {
-    this->OwningCharacter = NULL;
-    this->DefeatSettings = NULL;
-}
 

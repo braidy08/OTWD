@@ -1,5 +1,9 @@
 #include "SBZCharacterSchematic.h"
 
+USBZCharacterSchematic::USBZCharacterSchematic() {
+    this->TechCollection = NULL;
+}
+
 USBZGameplayAbilityData* USBZCharacterSchematic::GetPawnGameplayAbilityDataForSlot(int32 Slot) const {
     return NULL;
 }
@@ -12,7 +16,4 @@ FSBZWeaponSavedData USBZCharacterSchematic::GetDefaultWeaponSavedDataForSlot(int
     return FSBZWeaponSavedData{};
 }
 
-USBZCharacterSchematic::USBZCharacterSchematic() {
-    this->TechCollection = NULL;
-}
 

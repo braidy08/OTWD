@@ -1,5 +1,6 @@
 #include "OTWDBeaconActionPhaseClient.h"
 
-AOTWDBeaconActionPhaseClient::AOTWDBeaconActionPhaseClient() {
+AOTWDBeaconActionPhaseClient::AOTWDBeaconActionPhaseClient(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

@@ -12,7 +12,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class OTWD_API UTraceDamageZoneComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UTraceDamageZoneComponent();
+    UTraceDamageZoneComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     TArray<UPrimitiveComponent*> TraceDamageZone(FVector startTrace, FVector endTrace, TEnumAsByte<ECollisionChannel> macroCollisionChannel, TEnumAsByte<ECollisionChannel> detailedCollisionChannel, bool BulletPiercing, TEnumAsByte<ETraceMethod> Trace, float SphereDiameter, bool displayDebugInfo);
     

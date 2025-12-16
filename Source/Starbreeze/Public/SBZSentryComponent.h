@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
-#include "Engine/NetSerialization.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantizeNormal -FallbackName=Vector_NetQuantizeNormal
 #include "EDetectionType.h"
 #include "ESentryDetectionMotionBehavior.h"
 #include "OnASentryLostActorDelegate.h"
@@ -38,7 +38,7 @@ protected:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     ESentryDetectionMotionBehavior DetectionMotionBehavior;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     float RotationSpeed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -84,6 +84,15 @@ protected:
     float ViewpointDelayTimer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float TargetStopDelay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float TargetDelayTimer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float TargetTolerance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bReverseOnEnd;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -123,6 +132,9 @@ protected:
     bool bDetectOnlyActorsWithinAngle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUsePropertyReplication;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AngleToDetectActorsWithin;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -160,14 +172,21 @@ private:
     bool bIsAtViewpoint;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bIsAtTarget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bIsAtEnd;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float FollowForgetTimer;
     
 public:
-    USBZSentryComponent();
+    USBZSentryComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintNativeEvent)
+    void UpdateCustomDetection(TArray<AActor*>& PotentiallyDetectedActors);
     
     UFUNCTION(BlueprintCallable)
     void SetupSplitRotationRoot(USceneComponent* InRotationPitchRoot, USceneComponent* InRotationYawRoot);
@@ -186,6 +205,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void Setup(USceneComponent* InRotationRoot, UPrimitiveComponent* InDetectionShape, USceneComponent* InRayStartPoint);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
+    void SetRotationSpeed(float InRotationSpeed);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetMotionEnabled(bool bInEnabled);

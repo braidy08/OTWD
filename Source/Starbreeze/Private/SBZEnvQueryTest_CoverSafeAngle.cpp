@@ -8,3 +8,4 @@ USBZEnvQueryTest_CoverSafeAngle::USBZEnvQueryTest_CoverSafeAngle() {
     this->MaxElevation = 1;
 }
 
+

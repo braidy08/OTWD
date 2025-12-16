@@ -14,7 +14,8 @@ private:
     UBoxComponent* Box;
     
 public:
-    ASBZArmorPartBox();
+    ASBZArmorPartBox(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UBoxComponent* GetBox() const;
     

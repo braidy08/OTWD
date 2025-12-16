@@ -1,6 +1,28 @@
 #include "SBZBodyDraggingComponent.h"
-#include "PhysicsEngine/PhysicsHandleComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PhysicsHandleComponent -FallbackName=PhysicsHandleComponent
 #include "Net/UnrealNetwork.h"
+
+USBZBodyDraggingComponent::USBZBodyDraggingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->DraggedCharacter = NULL;
+    this->AllowedAngleMin = 1;
+    this->AllowedAngleMax = 1;
+    this->DistanceToKeepAtAlive = 1;
+    this->DistanceToKeepAtDeadMin = 1;
+    this->DistanceToKeepAtDeadMax = 1;
+    this->BlockedMovementConeToDraggedBody = 1;
+    this->HandZStandingOffsetWhenDraggingDead = 1;
+    this->HandZCrouchedOffsetWhenDraggingDead = 1;
+    this->PullRightOffset = 1;
+    this->InterpSpeed = 1;
+    this->bRenderDraggedCharacterInTopPass = false;
+    this->HandBoneName = TEXT("LeftHand");
+    this->GrabbedBodyRoot = TEXT("Hips");
+    this->HandReachInterpSpeed = 1;
+    this->OnDragBodyEffectClass = NULL;
+    this->BodyDraggingInputComponent = NULL;
+    this->PhysicsHandleComponent = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("BodyDraggingPhysicsHandleComponent"));
+}
 
 void USBZBodyDraggingComponent::StopDragging() {
 }
@@ -39,24 +61,4 @@ void USBZBodyDraggingComponent::GetLifetimeReplicatedProps(TArray<FLifetimePrope
     DOREPLIFETIME(USBZBodyDraggingComponent, CurrentGrabbedSocketName);
 }
 
-USBZBodyDraggingComponent::USBZBodyDraggingComponent() {
-    this->DraggedCharacter = NULL;
-    this->AllowedAngleMin = 1;
-    this->AllowedAngleMax = 1;
-    this->DistanceToKeepAtAlive = 1;
-    this->DistanceToKeepAtDeadMin = 1;
-    this->DistanceToKeepAtDeadMax = 1;
-    this->BlockedMovementConeToDraggedBody = 1;
-    this->HandZStandingOffsetWhenDraggingDead = 1;
-    this->HandZCrouchedOffsetWhenDraggingDead = 1;
-    this->PullRightOffset = 1;
-    this->InterpSpeed = 1;
-    this->bRenderDraggedCharacterInTopPass = false;
-    this->HandBoneName = TEXT("LeftHand");
-    this->GrabbedBodyRoot = TEXT("Hips");
-    this->HandReachInterpSpeed = 1;
-    this->OnDragBodyEffectClass = NULL;
-    this->BodyDraggingInputComponent = NULL;
-    this->PhysicsHandleComponent = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("BodyDraggingPhysicsHandleComponent"));
-}
 

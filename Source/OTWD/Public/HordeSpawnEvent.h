@@ -11,7 +11,7 @@ struct OTWD_API FHordeSpawnEvent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float ActiveHordeBuildUpValue;
+    float HordeProgressScale;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float OnActivatedFreezeTime;
@@ -30,6 +30,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FHordeWeightedEnemy> EnemySchematics;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 ExposedSpawnerBehaviorCooldowns[2];
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor EventControllerColour;

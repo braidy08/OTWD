@@ -21,6 +21,7 @@ private:
     
 public:
     USBZQueryUserPrivilegeCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static USBZQueryUserPrivilegeCallbackProxy* QueryUserPrivilege(UObject* NewWorldContextObject, EUserPrivilegesProxy PrivilegeRequestType);
     

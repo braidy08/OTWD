@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGameplayAbility_Input : public USBZGameplayAbility {
     GENERATED_BODY()
 public:
     USBZGameplayAbility_Input();
+
 };
 

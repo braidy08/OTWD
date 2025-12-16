@@ -1,5 +1,8 @@
 #include "SBZNetStructLibrary.h"
 
+USBZNetStructLibrary::USBZNetStructLibrary() {
+}
+
 bool USBZNetStructLibrary::WriteStruct(FSBZNetStruct& InNetStruct, const FSBZNetStubStruct& InStruct) {
     return false;
 }
@@ -19,6 +22,4 @@ uint8 USBZNetStructLibrary::GetIdentifier(FSBZNetStruct& InNetStruct) {
     return 0;
 }
 
-USBZNetStructLibrary::USBZNetStructLibrary() {
-}
 

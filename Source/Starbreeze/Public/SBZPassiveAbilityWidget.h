@@ -25,13 +25,20 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UWidgetAnimation* ReadyAnim;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* ActivationAnim;
+    
 public:
     USBZPassiveAbilityWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UImage* PassiveImageWidget);
     
     UFUNCTION(BlueprintCallable)
-    void SetupAnimations(UWidgetAnimation* ActiveAnimation, UWidgetAnimation* CooldownAnimation, UWidgetAnimation* ReadyAnimation);
+    void SetupAnimations(UWidgetAnimation* ActiveAnimation, UWidgetAnimation* CooldownAnimation, UWidgetAnimation* ReadyAnimation, UWidgetAnimation* ActivationAnimation);
+    
+    UFUNCTION(BlueprintCallable)
+    void PlayActivationAnimation();
     
 private:
     UFUNCTION(BlueprintCallable)

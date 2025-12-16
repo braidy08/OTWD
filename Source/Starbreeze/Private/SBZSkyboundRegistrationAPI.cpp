@@ -1,5 +1,8 @@
 #include "SBZSkyboundRegistrationAPI.h"
 
+USBZSkyboundRegistrationAPI::USBZSkyboundRegistrationAPI() {
+}
+
 void USBZSkyboundRegistrationAPI::UpdateGameEvent(int32 InEventId, const FString& InEventValue) {
 }
 
@@ -20,6 +23,4 @@ bool USBZSkyboundRegistrationAPI::IsLoggedInToSkybound() {
 void USBZSkyboundRegistrationAPI::CheckIsSkyBoundInsider(const FString& InUserEmail) {
 }
 
-USBZSkyboundRegistrationAPI::USBZSkyboundRegistrationAPI() {
-}
 

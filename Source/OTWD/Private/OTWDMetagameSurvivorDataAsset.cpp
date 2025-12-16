@@ -11,3 +11,4 @@ UOTWDMetagameSurvivorDataAsset::UOTWDMetagameSurvivorDataAsset() {
     this->SurvivorState = ESurvivorState::Idle;
 }
 
+

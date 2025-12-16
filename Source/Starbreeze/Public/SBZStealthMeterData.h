@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FSBZStealthMeterData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZAICharacter> Target;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

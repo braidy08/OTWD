@@ -28,7 +28,8 @@ private:
     UParticleSystemComponent* ParticleSystemComponent;
     
 public:
-    ASBZSoundEffectActor();
+    ASBZSoundEffectActor(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnEffectSpawned(FName InEventName, float InEmitterTime, FVector InLocation, FVector InVelocity);

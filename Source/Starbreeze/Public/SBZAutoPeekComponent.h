@@ -45,6 +45,7 @@ protected:
     int32 ThicknessCheckPassCount;
     
 public:
-    USBZAutoPeekComponent();
+    USBZAutoPeekComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

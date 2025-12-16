@@ -1,5 +1,6 @@
 #include "SBZIVehicleSeatComponent.h"
 
-USBZIVehicleSeatComponent::USBZIVehicleSeatComponent() {
+USBZIVehicleSeatComponent::USBZIVehicleSeatComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

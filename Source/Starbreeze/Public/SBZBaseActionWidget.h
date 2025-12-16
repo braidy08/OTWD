@@ -19,6 +19,7 @@ private:
     
 public:
     USBZBaseActionWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UImage* ImageWidget);
     

@@ -17,6 +17,7 @@ private:
     
 public:
     USBZStateMachineStateGameError();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void HandleLoadingFinished();

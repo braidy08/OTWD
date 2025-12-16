@@ -25,6 +25,7 @@ private:
     
 public:
     USBZPartyHUDWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UPanelWidget* PartyPanelWidget);
     

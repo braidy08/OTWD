@@ -14,7 +14,8 @@ private:
     USphereComponent* Sphere;
     
 public:
-    ASBZArmorPartSphere();
+    ASBZArmorPartSphere(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     USphereComponent* GetSphere() const;
     

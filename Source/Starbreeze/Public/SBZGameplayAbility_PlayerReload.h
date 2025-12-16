@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGameplayAbility_PlayerReload : public USBZGameplayAbili
     GENERATED_BODY()
 public:
     USBZGameplayAbility_PlayerReload();
+
 };
 

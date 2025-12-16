@@ -6,6 +6,5 @@ UENUM(BlueprintType)
 enum class ESBZBTDecorator_ShootingPointTypeMatchType : uint8 {
     All,
     Any,
-    ESBZBTDecorator_MAX UMETA(Hidden),
 };
 

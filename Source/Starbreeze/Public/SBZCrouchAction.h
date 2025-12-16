@@ -8,5 +8,6 @@ class STARBREEZE_API USBZCrouchAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZCrouchAction();
+
 };
 

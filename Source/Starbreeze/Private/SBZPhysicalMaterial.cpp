@@ -6,3 +6,4 @@ USBZPhysicalMaterial::USBZPhysicalMaterial() {
     this->ProjectilePenetrationMaxTravelDistanceInsideMaterial = 1;
 }
 
+

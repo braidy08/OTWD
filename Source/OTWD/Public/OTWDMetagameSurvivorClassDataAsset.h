@@ -20,5 +20,6 @@ public:
     UTexture2D* Icon;
     
     UOTWDMetagameSurvivorClassDataAsset();
+
 };
 

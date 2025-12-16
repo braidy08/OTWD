@@ -42,6 +42,7 @@ private:
     
 public:
     UOTWDDefenceGateWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidget(UImage* GetaIcon, UImage* HordeIcon, UWidgetAnimation* SecuredAnimation, UWidgetAnimation* BrechedAnimation, UWidgetAnimation* HordeAnimation);
     

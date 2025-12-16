@@ -17,13 +17,14 @@ public:
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    USBZContentPack* contentPack;
+    USBZContentPack* ContentPack;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UObject* WorldContextObject;
     
 public:
     USBZEntitlementPurchaseCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static USBZEntitlementPurchaseCallbackProxy* PurchaseUserEntitlement(UObject* NewWorldContextObject, const USBZContentPack* NewContentPack);
     

@@ -108,9 +108,10 @@ protected:
     TArray<UShapeComponent*> ShapeComponents;
     
 public:
-    ASBZTriggerPoint();
+    ASBZTriggerPoint(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ToggleActiveServer(bool bIsActive);

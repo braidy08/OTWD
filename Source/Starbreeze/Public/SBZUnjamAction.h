@@ -8,5 +8,6 @@ class STARBREEZE_API USBZUnjamAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZUnjamAction();
+
 };
 

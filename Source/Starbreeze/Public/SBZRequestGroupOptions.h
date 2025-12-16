@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ESpawnActorCollisionHandlingMethod -FallbackName=ESpawnActorCollisionHandlingMethod
 #include "SBZRequestGroupOptions.generated.h"
 
 USTRUCT(BlueprintType)

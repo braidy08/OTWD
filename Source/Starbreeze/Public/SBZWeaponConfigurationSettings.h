@@ -15,7 +15,7 @@ public:
     FText ConditionDisplayNames[4];
     
     UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FText FamilyDisplayNames[13];
+    FText FamilyDisplayNames[15];
     
     UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText FireModeDisplayNames[3];
@@ -33,5 +33,6 @@ public:
     TArray<FSBZWeaponUIStatSettings> WeaponPartUIStats;
     
     USBZWeaponConfigurationSettings();
+
 };
 

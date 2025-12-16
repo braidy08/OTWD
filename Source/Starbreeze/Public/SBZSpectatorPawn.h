@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/SpectatorPawn.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SpectatorPawn -FallbackName=SpectatorPawn
 #include "SBZSpectateCameraSettings.h"
 #include "SBZSpectateTargetChangedDelegateDelegate.h"
 #include "Templates/SubclassOf.h"
@@ -51,6 +51,7 @@ private:
     AActor* SpectateTarget;
     
 public:
-    ASBZSpectatorPawn();
+    ASBZSpectatorPawn(const FObjectInitializer& ObjectInitializer);
+
 };
 

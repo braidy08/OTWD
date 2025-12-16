@@ -21,6 +21,7 @@ public:
     bool NotifyObserverOnValueChange;
     
     USBZBTDecorator_CombatRole();
+
     UFUNCTION(BlueprintCallable)
     void OnCombatRoleChanged(ASBZHumanAICharacter* Sender, ESBZAIRole NewRole, ESBZAIRole OldRole);
     

@@ -7,3 +7,4 @@ UOTWDObjectiveSchematic::UOTWDObjectiveSchematic() {
     this->bPlaySoundOnIncrement = true;
 }
 
+

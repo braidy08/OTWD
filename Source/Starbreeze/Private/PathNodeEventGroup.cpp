@@ -1,5 +1,6 @@
 #include "PathNodeEventGroup.h"
 
-APathNodeEventGroup::APathNodeEventGroup() {
+APathNodeEventGroup::APathNodeEventGroup(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

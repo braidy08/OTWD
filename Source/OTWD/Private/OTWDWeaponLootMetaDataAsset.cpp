@@ -5,3 +5,4 @@ UOTWDWeaponLootMetaDataAsset::UOTWDWeaponLootMetaDataAsset() {
     this->WeaponLootMetaByRarity = NULL;
 }
 
+

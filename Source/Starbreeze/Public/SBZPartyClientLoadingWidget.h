@@ -29,6 +29,7 @@ private:
     
 public:
     USBZPartyClientLoadingWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UImage* InPlayerPortrait, UImage* InCinematicWidget, UTextBlock* InCharacterNameTextWidget, UTextBlock* InProgressTextWidget);
     

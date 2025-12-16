@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimNotifyState_RecoilReloadAction : public UAnimNotify
     GENERATED_BODY()
 public:
     USBZAnimNotifyState_RecoilReloadAction();
+
 };
 

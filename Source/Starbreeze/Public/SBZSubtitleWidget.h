@@ -29,6 +29,7 @@ private:
     
 public:
     USBZSubtitleWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void SetSubtitleTextPanel(UTextBlock* TextWidget);

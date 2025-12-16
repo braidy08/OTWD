@@ -1,5 +1,6 @@
 #include "SBZPawnSensingComponent.h"
 
-USBZPawnSensingComponent::USBZPawnSensingComponent() {
+USBZPawnSensingComponent::USBZPawnSensingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

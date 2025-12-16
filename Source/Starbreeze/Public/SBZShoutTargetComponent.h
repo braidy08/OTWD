@@ -71,7 +71,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZShoutedAtDelegate OnShoutedAt;
     
-    USBZShoutTargetComponent();
+    USBZShoutTargetComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     static void MakeComponentsShoutTargetable(TArray<UPrimitiveComponent*> Components);
     

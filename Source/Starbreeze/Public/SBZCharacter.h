@@ -14,7 +14,6 @@
 #include "CharacterAbilityChangedDelegate.h"
 #include "CharacterCrouchStateChangedDelegateDelegate.h"
 #include "CharacterKilledSignatureDelegate.h"
-#include "CharacterSchematicChangedDelegate.h"
 #include "EAISoundType.h"
 #include "EAbilityInput.h"
 #include "ESBZAIVisibilityNodeComputationFrequency.h"
@@ -22,24 +21,27 @@
 #include "ESBZGrappleRequestFailedReason.h"
 #include "ESBZGrappleState.h"
 #include "ESBZPeekingState.h"
+#include "ESBZSpecialArmorType.h"
 #include "ESBZVoiceComment.h"
 #include "ESBZVoicePriority.h"
 #include "PawnStanceData.h"
 #include "SBZAIVisibilityLeafNode.h"
+#include "SBZAutoPickUpItemCount.h"
 #include "SBZGameplayEffectData.h"
 #include "SBZGrappleAlignmentSettings.h"
 #include "SBZGrappleEventSettings.h"
 #include "SBZGrappleEventStateProperties.h"
 #include "SBZGrappleStateChangedSignatureDelegate.h"
 #include "SBZHurtReactionPrediction.h"
+#include "SBZOnPostWeaponUsedDelegate.h"
 #include "SBZPostDamageProcessedSignatureDelegate.h"
-#include "SBZSchematicNetworkReference.h"
 #include "SBZTeleportingSignatureDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "SBZCharacter.generated.h"
 
 class AActor;
 class APawn;
+class ASBZArmorPart;
 class ASBZCharacterGadget;
 class ASBZMeleeWeapon;
 class ASBZPlayerController;
@@ -57,13 +59,15 @@ class UPhysicsAsset;
 class UPrimitiveComponent;
 class USBZAIAimTargetComponent;
 class USBZAIFactionHideZoneComponent;
+class USBZAggroAttributeSet;
 class USBZArmorPartChildActor;
 class USBZCharacterMVComponent;
 class USBZCharacterMovementMultiplierModifier;
-class USBZCharacterSchematic;
 class USBZCharacterSkin;
 class USBZCharacterVoiceComponent;
 class USBZClimbComponent;
+class USBZDecoyAttributeSet;
+class USBZGearAttachment;
 class USBZGenericAnimationCollection;
 class USBZHealthAttributeSet;
 class USBZHurtReaction;
@@ -123,6 +127,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZVoiceComment DeathVoiceComment;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZOnPostWeaponUsed OnPostWeaponUsed;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AggroWeight;
     
@@ -157,11 +164,17 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USBZLocomotionAttributeSet* LocomotionAttributeSet;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USBZAggroAttributeSet* AggroAttributeSet;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USBZDecoyAttributeSet* DecoyAttributeSet;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZAIVisibilityNodeComputationFrequency AIVisibilityNodeComputationFrequency;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    FSBZAIVisibilityLeafNode AIVisibilityNode;
+    FSBZAIVisibilityLeafNode AiVisibilityNode;
     
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -195,9 +208,6 @@ public:
     FCharacterKilledSignature OnPredictedRagdolled;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FCharacterSchematicChanged OnCharacterSchematicChangedEvent;
-    
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCharacterAbilityChanged OnCharacterAbilityChangedEvent;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -211,6 +221,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> ExplosionLineTraceBones;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FSBZAutoPickUpItemCount> OnKilledSpawnedPickups;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float OnKilledSpawnedPickupsDistributionRadius;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PlayerStandingHeight;
@@ -318,9 +334,6 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AActor* GrappleKnifeActor;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_CharacterSchematic, meta=(AllowPrivateAccess=true))
-    FSBZSchematicNetworkReference CharacterSchematic;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FTimerHandle ShoveTimerHandle;
     
@@ -347,6 +360,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_Inventory, meta=(AllowPrivateAccess=true))
     TArray<ASBZWeapon*> Inventory;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USBZGearAttachment* GearAttachment;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -402,10 +418,17 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USBZArmorPartChildActor* HelmetPartComponent;
     
-public:
-    ASBZCharacter();
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASBZArmorPart* HelmetActor;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<AActor*> TearOffActorsOnTearOff;
+    
+public:
+    ASBZCharacter(const FObjectInitializer& ObjectInitializer);
+
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintCallable)
     void TakeFallingDamage(float Percentage, const FHitResult& Hit);
     
@@ -414,6 +437,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     bool SetStuck(bool bIsStuck);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetSpecialArmorType(ASBZArmorPart* ArmorPartActor, ESBZSpecialArmorType SpecialArmorType);
     
     UFUNCTION(BlueprintCallable)
     void SetPeekState(ESBZPeekingState PeekingState);
@@ -517,10 +543,6 @@ private:
     UFUNCTION(BlueprintCallable)
     void OnRep_CurrentWeapon(ASBZWeapon* InLastWeapon);
     
-protected:
-    UFUNCTION(BlueprintCallable)
-    void OnRep_CharacterSchematic();
-    
 public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnGrappleStateChanged(ESBZGrappleState NewState, const FSBZGrappleEventStateProperties& EventProperties);
@@ -547,10 +569,10 @@ protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_OnKill(const FGameplayEffectContextHandle& ContextHandle, TSubclassOf<UGameplayEffect> GameplayEffectClass, float KillDamage);
     
+public:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_ApplyShove(AActor* InInstigator, const FSBZHurtReactionPrediction& InHurtReactionPrediction);
     
-public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Kill(const FGameplayEffectContextHandle& ContextHandle, TSubclassOf<UGameplayEffect> GameplayEffectClass, float KillDamage);
     
@@ -627,8 +649,8 @@ public:
     bool HasValidMantleTrajectory() const;
     
 protected:
-    UFUNCTION(BlueprintCallable)
-    bool HasHelmet();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool HasHelmet() const;
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -663,9 +685,6 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     USBZClimbComponent* GetClimbComponent() const;
-    
-    UFUNCTION(BlueprintCallable)
-    USBZCharacterSchematic* GetCharacterSchematic();
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool GetAlignmentPointTransform(FTransform& Transform);

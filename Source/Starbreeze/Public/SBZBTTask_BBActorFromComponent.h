@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector ComponentBlackboardKey;
     
     USBZBTTask_BBActorFromComponent();
+
 };
 

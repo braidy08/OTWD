@@ -1,5 +1,6 @@
 #include "SBZAutoPickUpItemAmmo.h"
 
-ASBZAutoPickUpItemAmmo::ASBZAutoPickUpItemAmmo() {
+ASBZAutoPickUpItemAmmo::ASBZAutoPickUpItemAmmo(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

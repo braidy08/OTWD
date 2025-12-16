@@ -16,5 +16,6 @@ public:
     ESBZBTTask_GetWanderLocation_Method Method;
     
     UBTTask_SetRoaming();
+
 };
 

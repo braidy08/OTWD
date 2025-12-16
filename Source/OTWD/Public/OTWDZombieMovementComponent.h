@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/EngineTypes.h"
-#include "SBZCharacterMovementComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZCharacterMovementComponent -FallbackName=SBZCharacterMovementComponent
 #include "OTWDZombieMovementComponent.generated.h"
 
 class ACharacter;
@@ -21,7 +21,14 @@ protected:
     UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<TWeakObjectPtr<ACharacter>> Neighbors;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 NeighbourCountToBeStacked;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float DistanceFromNeighbourToBeStacked;
+    
 public:
-    UOTWDZombieMovementComponent();
+    UOTWDZombieMovementComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

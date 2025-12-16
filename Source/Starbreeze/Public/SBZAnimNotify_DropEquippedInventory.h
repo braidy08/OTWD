@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimNotify_DropEquippedInventory : public UAnimNotify {
     GENERATED_BODY()
 public:
     USBZAnimNotify_DropEquippedInventory();
+
 };
 

@@ -8,5 +8,6 @@ class STARBREEZE_API UAnimNotify_JammedWeaponStateReached : public UAnimNotify {
     GENERATED_BODY()
 public:
     UAnimNotify_JammedWeaponStateReached();
+
 };
 

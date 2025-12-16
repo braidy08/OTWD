@@ -1,5 +1,64 @@
 #include "SBZCharacterAnimation.h"
 
+USBZCharacterAnimation::USBZCharacterAnimation() {
+    this->DummyActor = NULL;
+    this->DummyVisCount = 0;
+    this->HorizontalSpeed = 1;
+    this->GeneralAnimationCollection = NULL;
+    this->RangedWeaponAnimationCollection = NULL;
+    this->LeftHandIK = 1;
+    this->LeftHandIKFadeTime = 1;
+    this->LastHurtReactionWeight = ESBZHurtReactionWeight::Light;
+    this->FaceAlpha = 1;
+    this->MoveDirection = 1;
+    this->AimPitch = 1;
+    this->AimYaw = 1;
+    this->IdleJammedAnimation = NULL;
+    this->RunJammedExitAnimation = NULL;
+    this->ToCrouchJammedAnimation = NULL;
+    this->ToStandJammedAnimation = NULL;
+    this->MantleJammedEnterAnimation = NULL;
+    this->MantleJammedExitAnimation = NULL;
+    this->IdleHandsOverwriteAnimation = NULL;
+    this->RunExitAnimation = NULL;
+    this->StandMoveBlendSpaceAnimation = NULL;
+    this->CrouchMoveBlendSpaceAnimation = NULL;
+    this->StandIdleAimOffsetAnimation = NULL;
+    this->StandMoveAimOffsetAnimation = NULL;
+    this->StandJogAimOffsetAnimation = NULL;
+    this->CrouchIdleAimOffsetAnimation = NULL;
+    this->CrouchMoveAimOffsetAnimation = NULL;
+    this->ToCrouchAnimation = NULL;
+    this->IdleCrouchAnimation = NULL;
+    this->ToStandAnimation = NULL;
+    this->CurrentAimOffset = NULL;
+    this->CurrentThrowAnimation = NULL;
+    this->CurrentThrowBlendSpaceAnimation = NULL;
+    this->CurrentThrowLoopAnimation = NULL;
+    this->CurrentThrowLoopBlendSpaceAnimation = NULL;
+    this->CurrentThrowEndAnimation = NULL;
+    this->CurrentThrowEndBlendSpaceAnimation = NULL;
+    this->bIsShoved = false;
+    this->bIsLeftHandIKEnabled = true;
+    this->bUseIdleHandsOverwriteAnimation = false;
+    this->bUseMoveAimOffsetAnimation = false;
+    this->bUseJogAimOffsetAnimation = false;
+    this->bIsHurtFace = false;
+    this->bIsHurtFaceInterrupted = false;
+    this->bWasHurtDeath = false;
+    this->bIsInHurtFaceState = false;
+    this->bIsWalking = false;
+    this->bIsRunning = false;
+    this->bIsCrouching = false;
+    this->bIsThrowing = false;
+    this->bIsInThrowState = false;
+    this->bIsThrowingInterrupted = false;
+    this->bThrowWaitLoop = false;
+    this->bThrowAllowEarly = false;
+    this->bIsEquipping = false;
+    this->bIsUnequipping = false;
+}
+
 
 bool USBZCharacterAnimation::IsRightHandOverwriteEnabled() const {
     return false;
@@ -113,62 +172,4 @@ void USBZCharacterAnimation::AnimNotify_ArmThrow() {
 void USBZCharacterAnimation::AnimNotify_AllowEarlyThrow() {
 }
 
-USBZCharacterAnimation::USBZCharacterAnimation() {
-    this->DummyActor = NULL;
-    this->DummyVisCount = 0;
-    this->GeneralAnimationCollection = NULL;
-    this->RangedWeaponAnimationCollection = NULL;
-    this->LeftHandIK = 1;
-    this->LeftHandIKFadeTime = 1;
-    this->LastHurtReactionWeight = ESBZHurtReactionWeight::Light;
-    this->FaceAlpha = 1;
-    this->HorizontalSpeed = 1;
-    this->MoveDirection = 1;
-    this->AimPitch = 1;
-    this->AimYaw = 1;
-    this->IdleJammedAnimation = NULL;
-    this->RunJammedExitAnimation = NULL;
-    this->ToCrouchJammedAnimation = NULL;
-    this->ToStandJammedAnimation = NULL;
-    this->MantleJammedEnterAnimation = NULL;
-    this->MantleJammedExitAnimation = NULL;
-    this->IdleHandsOverwriteAnimation = NULL;
-    this->RunExitAnimation = NULL;
-    this->StandMoveBlendSpaceAnimation = NULL;
-    this->CrouchMoveBlendSpaceAnimation = NULL;
-    this->StandIdleAimOffsetAnimation = NULL;
-    this->StandMoveAimOffsetAnimation = NULL;
-    this->StandJogAimOffsetAnimation = NULL;
-    this->CrouchIdleAimOffsetAnimation = NULL;
-    this->CrouchMoveAimOffsetAnimation = NULL;
-    this->ToCrouchAnimation = NULL;
-    this->IdleCrouchAnimation = NULL;
-    this->ToStandAnimation = NULL;
-    this->CurrentAimOffset = NULL;
-    this->CurrentThrowAnimation = NULL;
-    this->CurrentThrowBlendSpaceAnimation = NULL;
-    this->CurrentThrowLoopAnimation = NULL;
-    this->CurrentThrowLoopBlendSpaceAnimation = NULL;
-    this->CurrentThrowEndAnimation = NULL;
-    this->CurrentThrowEndBlendSpaceAnimation = NULL;
-    this->bIsShoved = false;
-    this->bIsLeftHandIKEnabled = true;
-    this->bUseIdleHandsOverwriteAnimation = false;
-    this->bUseMoveAimOffsetAnimation = false;
-    this->bUseJogAimOffsetAnimation = false;
-    this->bIsHurtFace = false;
-    this->bIsHurtFaceInterrupted = false;
-    this->bWasHurtDeath = false;
-    this->bIsInHurtFaceState = false;
-    this->bIsWalking = false;
-    this->bIsRunning = false;
-    this->bIsCrouching = false;
-    this->bIsThrowing = false;
-    this->bIsInThrowState = false;
-    this->bIsThrowingInterrupted = false;
-    this->bThrowWaitLoop = false;
-    this->bThrowAllowEarly = false;
-    this->bIsEquipping = false;
-    this->bIsUnequipping = false;
-}
 

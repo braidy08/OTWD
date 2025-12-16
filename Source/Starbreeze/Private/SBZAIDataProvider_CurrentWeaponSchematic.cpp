@@ -6,3 +6,4 @@ USBZAIDataProvider_CurrentWeaponSchematic::USBZAIDataProvider_CurrentWeaponSchem
     this->BoolValue = false;
 }
 
+

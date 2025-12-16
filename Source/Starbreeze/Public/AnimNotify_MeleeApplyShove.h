@@ -8,5 +8,6 @@ class STARBREEZE_API UAnimNotify_MeleeApplyShove : public UAnimNotify {
     GENERATED_BODY()
 public:
     UAnimNotify_MeleeApplyShove();
+
 };
 

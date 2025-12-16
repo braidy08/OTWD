@@ -1,16 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "OnTriggeredSingatureDelegate.h"
 #include "OTWDProgressTrigger.generated.h"
-
-class AOTWDProgressTrigger;
 
 UCLASS(Blueprintable)
 class OTWD_API AOTWDProgressTrigger : public AActor {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnTriggeredSingature, AOTWDProgressTrigger*, Trigger);
-    
     UPROPERTY(BlueprintAssignable, BlueprintAuthorityOnly, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnTriggeredSingature OnTriggered;
     
@@ -20,9 +17,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bTriggerOnPlayerEnter;
     
-    AOTWDProgressTrigger();
+    AOTWDProgressTrigger(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Trigger();
     

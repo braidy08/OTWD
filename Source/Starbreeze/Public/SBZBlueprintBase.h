@@ -10,6 +10,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bDormant: 1;
     
-    ASBZBlueprintBase();
+    ASBZBlueprintBase(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class OTWD_API AOTWDScavengerGameState : public AOTWDMissionState {
     GENERATED_BODY()
 public:
-    AOTWDScavengerGameState();
+    AOTWDScavengerGameState(const FObjectInitializer& ObjectInitializer);
+
 };
 

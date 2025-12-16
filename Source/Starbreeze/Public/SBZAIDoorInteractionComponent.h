@@ -15,16 +15,17 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASBZDoor* LastDoor;
     
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZAICharacter> OwningAICharacter;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_InteractionData, meta=(AllowPrivateAccess=true))
     FSBZDoorInteractionReplicatedDatas CurrentInteractionDatas;
     
 public:
-    USBZAIDoorInteractionComponent();
+    USBZAIDoorInteractionComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_InteractionData();

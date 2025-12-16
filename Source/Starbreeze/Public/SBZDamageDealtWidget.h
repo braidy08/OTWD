@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
-#include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RadialDamageParams -FallbackName=RadialDamageParams
 #include "Blueprint/UserWidget.h"
 #include "SBZDamageDealtInfo.h"
 #include "SBZOnKillData.h"
@@ -48,6 +48,7 @@ private:
     
 public:
     USBZDamageDealtWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidget(UWidgetAnimation* FadeOutAnimation, UWidgetAnimation* HitAnimation);
     

@@ -1,14 +1,5 @@
 #include "SBZAbilityCraftingResourceWidget.h"
 
-void USBZAbilityCraftingResourceWidget::SetupWidgets(UImage* ResourceIconWidget, UTextBlock* ResourceCountTextWidget) {
-}
-
-void USBZAbilityCraftingResourceWidget::SetupData(const FGameplayAttribute& InResourceAttribute) {
-}
-
-void USBZAbilityCraftingResourceWidget::SetupAnimations(UWidgetAnimation* ResourceAvailableAnimation, UWidgetAnimation* ResourceAvailableDefaultAnimation, UWidgetAnimation* ResourceEmptyAnimation, UWidgetAnimation* ResourceEmptyDefaultAnimation, UWidgetAnimation* ResourceAvailableToActivatedAnimation, UWidgetAnimation* ResourceActivatedToAvailableAnimation, UWidgetAnimation* ResourceActivatedToEmptyAnimation, UWidgetAnimation* ResourceChangedAnimation) {
-}
-
 USBZAbilityCraftingResourceWidget::USBZAbilityCraftingResourceWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->ResourceIcon = NULL;
     this->ResourceCountText = NULL;
@@ -23,4 +14,14 @@ USBZAbilityCraftingResourceWidget::USBZAbilityCraftingResourceWidget() : UUserWi
     this->ResourceActivatedToEmptyAnim = NULL;
     this->ResourceChangedAnim = NULL;
 }
+
+void USBZAbilityCraftingResourceWidget::SetupWidgets(UImage* ResourceIconWidget, UTextBlock* ResourceCountTextWidget) {
+}
+
+void USBZAbilityCraftingResourceWidget::SetupData(const FGameplayAttribute& InResourceAttribute) {
+}
+
+void USBZAbilityCraftingResourceWidget::SetupAnimations(UWidgetAnimation* ResourceAvailableAnimation, UWidgetAnimation* ResourceAvailableDefaultAnimation, UWidgetAnimation* ResourceEmptyAnimation, UWidgetAnimation* ResourceEmptyDefaultAnimation, UWidgetAnimation* ResourceAvailableToActivatedAnimation, UWidgetAnimation* ResourceActivatedToAvailableAnimation, UWidgetAnimation* ResourceActivatedToEmptyAnimation, UWidgetAnimation* ResourceChangedAnimation) {
+}
+
 

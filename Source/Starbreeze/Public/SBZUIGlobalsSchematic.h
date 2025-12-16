@@ -36,5 +36,6 @@ public:
     TArray<FSBZPlayerUIData> PlayerArray;
     
     USBZUIGlobalsSchematic();
+
 };
 

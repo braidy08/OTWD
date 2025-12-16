@@ -69,6 +69,7 @@ private:
     
 public:
     UOTWDDefenceMeterWidget();
+
 private:
     UFUNCTION(BlueprintCallable)
     void SetupWidgetHuman(UPanelWidget* WaveContainer, UMaterialInstanceDynamic* ProgressMaterial, UImage* ModeIcon, UImage* FailedIcon, UWidgetAnimation* FaildAnim, UWidgetAnimation* ChunkOneAnim, UWidgetAnimation* ChunkTwoAnim, UWidgetAnimation* ChunkThreeAnim);

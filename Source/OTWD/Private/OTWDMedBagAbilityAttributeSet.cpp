@@ -1,6 +1,16 @@
 #include "OTWDMedBagAbilityAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDMedBagAbilityAttributeSet::UOTWDMedBagAbilityAttributeSet() {
+    this->UseTime = 1;
+    this->UseCount = 1;
+    this->InstantHeal = 1;
+    this->HealOverTime = 1;
+    this->HealDuration = 1;
+    this->DamageResistMod = 1;
+    this->StaminaMod = 1;
+}
+
 void UOTWDMedBagAbilityAttributeSet::OnRep_UseTime() {
 }
 
@@ -34,13 +44,4 @@ void UOTWDMedBagAbilityAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetime
     DOREPLIFETIME(UOTWDMedBagAbilityAttributeSet, StaminaMod);
 }
 
-UOTWDMedBagAbilityAttributeSet::UOTWDMedBagAbilityAttributeSet() {
-    this->UseTime = 1;
-    this->UseCount = 1;
-    this->InstantHeal = 1;
-    this->HealOverTime = 1;
-    this->HealDuration = 1;
-    this->DamageResistMod = 1;
-    this->StaminaMod = 1;
-}
 

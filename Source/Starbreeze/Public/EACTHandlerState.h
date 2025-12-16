@@ -5,7 +5,6 @@
 UENUM(BlueprintType)
 enum class EACTHandlerState : uint8 {
     InActive,
-    Starting,
     Using,
     WaitingForNextTick,
 };

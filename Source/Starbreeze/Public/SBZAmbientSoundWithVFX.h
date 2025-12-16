@@ -51,6 +51,15 @@ private:
     bool bTurnOffAmbientSoundOnParticleDeath;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUseAverageParticleCollisionLocation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 NumberOfParticlesToSampleForAmbientSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FVector> SampledPositions;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZParticleEmitterSpawnType ParticleEmitterSpawnType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -68,8 +77,18 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UParticleSystemComponent* ParticleSystemComponent;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bIsActive;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bTurnedOff;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bHasCalculatedAverageLocation;
+    
 public:
-    ASBZAmbientSoundWithVFX();
+    ASBZAmbientSoundWithVFX(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void StartEmitter();
     

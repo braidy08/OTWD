@@ -1,5 +1,6 @@
 #include "OTWDPartyBeaconClient.h"
 
-AOTWDPartyBeaconClient::AOTWDPartyBeaconClient() {
+AOTWDPartyBeaconClient::AOTWDPartyBeaconClient(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

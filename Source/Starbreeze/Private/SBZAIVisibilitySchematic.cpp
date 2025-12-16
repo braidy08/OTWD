@@ -10,3 +10,4 @@ USBZAIVisibilitySchematic::USBZAIVisibilitySchematic() {
     this->MaxSubRaycastSideDistFromCenterCoverPoint = 1;
 }
 
+

@@ -1,9 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/DataTable.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataTableRowHandle -FallbackName=DataTableRowHandle
 #include "EMeleeAttackCategory.h"
-#include "ESBZMeleeWeaponType.h"
 #include "IncrementAttackSequencePrediction.h"
 #include "MeleeHitBoxResult.h"
 #include "SBZMeleeShovePrediction.h"
@@ -35,9 +34,6 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UGameplayEffect> OnAttackCommittedEffect;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ESBZMeleeWeaponType MeleeWeaponType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<USBZMeleeAttack*> HeavyAttackSequence;
@@ -85,7 +81,8 @@ protected:
     TArray<FSBZWeaponDecal> WeaponDecalArray;
     
 public:
-    ASBZMeleeWeapon();
+    ASBZMeleeWeapon(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Shove();
     
@@ -100,7 +97,10 @@ private:
     void Server_MeleeSwingStarted(bool bInIsMeleeLightAttack);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
-    void Server_MeleeShoveStarted();
+    void Server_MeleeShoveBlockStarted(bool bIsBlock);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    void Server_MeleeBlockEnded();
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_IncrementAttackSequence(FIncrementAttackSequencePrediction InPrediction);
@@ -115,10 +115,20 @@ private:
     void Multicast_MeleeSwingStarted(bool bInIsMeleeLightAttack);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
-    void Multicast_MeleeShoveStarted();
+    void Multicast_MeleeShoveBlockStarted(bool bIsBlock);
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void Multicast_MeleeBlockEnded();
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_IncrementAttackSequence(FIncrementAttackSequencePrediction InPrediction);
+    
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsShoveLast() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsLightAttackLast() const;
     
 public:
     UFUNCTION(BlueprintCallable)

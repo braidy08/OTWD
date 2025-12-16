@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DeveloperSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "OTWDCheatManagerSettings.generated.h"
 
 class USBZGameplayAbilityDataCollection;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class OTWD_API UOTWDCheatManagerSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -19,5 +19,6 @@ public:
     TSoftObjectPtr<USBZGameplayAbilityDataCollection> DefenseAbilitiesCollection;
     
     UOTWDCheatManagerSettings();
+
 };
 

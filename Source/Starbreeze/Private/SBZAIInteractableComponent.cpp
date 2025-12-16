@@ -1,6 +1,7 @@
 #include "SBZAIInteractableComponent.h"
 
-USBZAIInteractableComponent::USBZAIInteractableComponent() {
+USBZAIInteractableComponent::USBZAIInteractableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->CoolDown = 1;
 }
+
 

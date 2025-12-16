@@ -4,3 +4,4 @@ USBZDebugPanelProperyDetails::USBZDebugPanelProperyDetails() {
     this->PropertyComponent = NULL;
 }
 
+

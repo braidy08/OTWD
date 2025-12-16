@@ -25,7 +25,8 @@ protected:
     bool bShouldDestroyOnLooted;
     
 public:
-    ASBZAutoPickUpItemContainer();
+    ASBZAutoPickUpItemContainer(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnInteractionSuccessful(USBZInteractableComponent* Interactable, const TArray<USBZBaseInteractorComponent*>& Interactors);
     

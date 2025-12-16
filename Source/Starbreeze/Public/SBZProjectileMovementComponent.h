@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/ProjectileMovementComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ProjectileMovementComponent -FallbackName=ProjectileMovementComponent
 #include "SBZProjectileMovementComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -10,6 +10,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UProjectileMovementComponent::FOnProjectileBounceDelegate OnProjectileStopWithVelocity;
     
-    USBZProjectileMovementComponent();
+    USBZProjectileMovementComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

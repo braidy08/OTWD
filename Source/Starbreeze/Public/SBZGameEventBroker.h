@@ -13,6 +13,7 @@
 #include "OnCharacterGrappledDelegate.h"
 #include "OnCharacterKilledDelegate.h"
 #include "OnCinematicStateChangedDelegate.h"
+#include "OnExtraGrapplerAddedDelegate.h"
 #include "OnGlobalTechPurchasedDelegate.h"
 #include "OnHideLevelTutorialDelegate.h"
 #include "OnLoadingScreenEventDelegate.h"
@@ -90,6 +91,9 @@ public:
     FOnCharacterGrappled OnCharacterGrappled;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnExtraGrapplerAdded OnExtraGrapplerAdded;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnPlayerOnlineStatusChangedDelegate OnPlayerJoinedLobby;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -141,6 +145,7 @@ public:
     FOnHideLevelTutorial OnHideLevelTutorial;
     
     USBZGameEventBroker();
+
     UFUNCTION(BlueprintCallable)
     void PostOnPlayerCharacterPossessed(AController* Controller);
     

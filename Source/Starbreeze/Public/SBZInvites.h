@@ -11,6 +11,7 @@ class STARBREEZE_API USBZInvites : public UObject {
     GENERATED_BODY()
 public:
     USBZInvites();
+
 private:
     UFUNCTION(BlueprintCallable)
     void HandleStateEnteredPlayTogether(FName StateName);

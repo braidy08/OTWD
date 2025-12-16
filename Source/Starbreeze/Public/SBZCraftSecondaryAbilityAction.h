@@ -8,5 +8,6 @@ class STARBREEZE_API USBZCraftSecondaryAbilityAction : public USBZCraftingRedire
     GENERATED_BODY()
 public:
     USBZCraftSecondaryAbilityAction();
+
 };
 

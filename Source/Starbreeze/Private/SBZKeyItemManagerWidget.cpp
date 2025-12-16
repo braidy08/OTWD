@@ -1,17 +1,5 @@
 #include "SBZKeyItemManagerWidget.h"
 
-void USBZKeyItemManagerWidget::SetupWidgets(UPanelWidget* PanelWidget, UImage* ImageWidget, UWidgetAnimation* ThrownAppearAnimation, UWidgetAnimation* ThrownDisappearAnimation, UWidgetAnimation* ThrownAppearDefaultAnimation, UWidgetAnimation* ThrownDisappearDefaultAnimation, UWidgetAnimation* ShowSeperatorAnimation, UWidgetAnimation* HideSeperatorAnimation) {
-}
-
-void USBZKeyItemManagerWidget::SetManagerOwner(ASBZPlayerCharacter* Owner) {
-}
-
-void USBZKeyItemManagerWidget::RemoveKeyItem(const FActiveGameplayEffect& Effect) {
-}
-
-void USBZKeyItemManagerWidget::ClearManagerOwner() {
-}
-
 USBZKeyItemManagerWidget::USBZKeyItemManagerWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->KeyItemBlueprint = NULL;
     this->KeyItemPanel = NULL;
@@ -27,4 +15,17 @@ USBZKeyItemManagerWidget::USBZKeyItemManagerWidget() : UUserWidget(FObjectInitia
     this->CurrentThrownItem = NULL;
     this->bHasSeperator = false;
 }
+
+void USBZKeyItemManagerWidget::SetupWidgets(UPanelWidget* PanelWidget, UImage* ImageWidget, UWidgetAnimation* ThrownAppearAnimation, UWidgetAnimation* ThrownDisappearAnimation, UWidgetAnimation* ThrownAppearDefaultAnimation, UWidgetAnimation* ThrownDisappearDefaultAnimation, UWidgetAnimation* ShowSeperatorAnimation, UWidgetAnimation* HideSeperatorAnimation) {
+}
+
+void USBZKeyItemManagerWidget::SetManagerOwner(ASBZPlayerCharacter* Owner) {
+}
+
+void USBZKeyItemManagerWidget::RemoveKeyItem(const FActiveGameplayEffect& Effect) {
+}
+
+void USBZKeyItemManagerWidget::ClearManagerOwner() {
+}
+
 

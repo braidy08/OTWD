@@ -28,7 +28,8 @@ private:
     bool bUseBoneRotationOnDetach;
     
 public:
-    USBZDetachableTankArmorPartComponent();
+    USBZDetachableTankArmorPartComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_DetachArmorPart();

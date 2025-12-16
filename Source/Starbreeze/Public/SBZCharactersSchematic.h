@@ -17,6 +17,7 @@ public:
     TArray<USBZCharacterSchematic*> Characters;
     
     USBZCharactersSchematic();
+
     UFUNCTION(BlueprintCallable)
     USBZCharacterSchematic* FindSchematicForClass(TSoftClassPtr<APawn> PawnClass);
     

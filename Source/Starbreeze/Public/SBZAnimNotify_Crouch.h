@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimNotify_Crouch : public UAnimNotify {
     GENERATED_BODY()
 public:
     USBZAnimNotify_Crouch();
+
 };
 

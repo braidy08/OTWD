@@ -21,6 +21,9 @@ public:
     TArray<UBlendSpaceBase*> WalksPatrol;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> WalksPatrolObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> TurnsPatrol;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -36,10 +39,19 @@ public:
     TArray<UBlendSpaceBase*> CrawlerWalksPatrol;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> CrawlerWalksPatrolObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> CrawlerLeftHandWalksPatrol;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> CrawlerLeftHandWalksPatrolObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> CrawlerRightHandWalksPatrol;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> CrawlerRightHandWalksPatrolObstructed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> CrawlerTurnsPatrol;
@@ -57,6 +69,9 @@ public:
     TArray<UBlendSpaceBase*> WalksInvestigate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> WalksInvestigateObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> TurnsInvestigate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -72,10 +87,19 @@ public:
     TArray<UBlendSpaceBase*> CrawlerWalksInvestigate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> CrawlerWalksInvestigateObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> CrawlerLeftHandWalksInvestigate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> CrawlerLeftHandWalksInvestigateObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> CrawlerRightHandWalksInvestigate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> CrawlerRightHandWalksInvestigateObstructed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> CrawlerTurnsInvestigate;
@@ -93,6 +117,9 @@ public:
     TArray<UBlendSpaceBase*> WalksCombat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> WalksCombatObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> TurnsCombat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -108,10 +135,19 @@ public:
     TArray<UBlendSpaceBase*> CrawlerWalksCombat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> CrawlerWalksCombatObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> CrawlerLeftHandWalksCombat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> CrawlerLeftHandWalksCombatObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> CrawlerRightHandWalksCombat;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<UBlendSpaceBase*> CrawlerRightHandWalksCombatObstructed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpaceBase*> CralwerTurnsCombat;
@@ -165,5 +201,6 @@ public:
     TArray<UAnimSequenceBase*> WalkerToCrawlers;
     
     USBZGeneralZombieAIAnimationCollection();
+
 };
 

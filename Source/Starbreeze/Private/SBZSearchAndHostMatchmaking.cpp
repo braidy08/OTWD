@@ -1,8 +1,5 @@
 #include "SBZSearchAndHostMatchmaking.h"
 
-void USBZSearchAndHostMatchmaking::HandleLostConnectionToHost(ESBZOnlineCode Result) {
-}
-
 USBZSearchAndHostMatchmaking::USBZSearchAndHostMatchmaking() {
     this->MaxSearchesPerRequest = 0;
     this->RepeatSearchDelayMin = 1;
@@ -11,5 +8,10 @@ USBZSearchAndHostMatchmaking::USBZSearchAndHostMatchmaking() {
     this->LostConnectionDelayMax = 1;
     this->PowerLevelDeltaSmall = 1;
     this->PowerLevelDeltaMedium = 1;
+    this->bPartyDropInEnabled = true;
 }
+
+void USBZSearchAndHostMatchmaking::HandleLostConnectionToHost(ESBZOnlineCode Result) {
+}
+
 

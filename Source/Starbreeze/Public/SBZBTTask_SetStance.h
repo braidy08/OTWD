@@ -19,5 +19,6 @@ public:
     bool bUseBlackboardValue;
     
     USBZBTTask_SetStance();
+
 };
 

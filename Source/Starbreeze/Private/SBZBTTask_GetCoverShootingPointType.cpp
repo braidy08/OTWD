@@ -5,3 +5,4 @@ USBZBTTask_GetCoverShootingPointType::USBZBTTask_GetCoverShootingPointType() {
     this->bPrioritizeStandLow = false;
 }
 
+

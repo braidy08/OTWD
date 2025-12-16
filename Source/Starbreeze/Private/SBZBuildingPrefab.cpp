@@ -1,4 +1,14 @@
 #include "SBZBuildingPrefab.h"
+#include "Components/SceneComponent.h"
+
+ASBZBuildingPrefab::ASBZBuildingPrefab(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bCanBeDamaged = false;
+    this->bEnableAutoLODGeneration = true;
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+    this->bForceBuildingAccessStates = false;
+    this->DefaultBuildingAccessState = ESBZBuildingAccessState::Closed;
+    this->SpecialAccessComponentTag = TEXT("SpecialAccessComponent");
+}
 
 void ASBZBuildingPrefab::SetAllAccessesToState(ESBZBuildingAccessState NewState) {
 }
@@ -35,9 +45,4 @@ FSBZBuildingAccessDoorData ASBZBuildingPrefab::GetAccessDoorData(FName Identifie
     return FSBZBuildingAccessDoorData{};
 }
 
-ASBZBuildingPrefab::ASBZBuildingPrefab() {
-    this->bForceBuildingAccessStates = false;
-    this->DefaultBuildingAccessState = ESBZBuildingAccessState::Closed;
-    this->SpecialAccessComponentTag = TEXT("SpecialAccessComponent");
-}
 

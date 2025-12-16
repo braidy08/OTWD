@@ -1,5 +1,8 @@
 #include "SBZPlayerSettings.h"
 
+USBZPlayerSettings::USBZPlayerSettings() {
+}
+
 bool USBZPlayerSettings::IsValidPlayerPawnClass(TSoftClassPtr<APawn> PawnClass) {
     return false;
 }
@@ -20,6 +23,4 @@ USBZCharacterSchematic* USBZPlayerSettings::GetCharacterSchematic(TSoftClassPtr<
     return NULL;
 }
 
-USBZPlayerSettings::USBZPlayerSettings() {
-}
 

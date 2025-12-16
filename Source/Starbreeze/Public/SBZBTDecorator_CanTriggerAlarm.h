@@ -14,5 +14,6 @@ public:
     bool bTriggerAlarmBox;
     
     USBZBTDecorator_CanTriggerAlarm();
+
 };
 

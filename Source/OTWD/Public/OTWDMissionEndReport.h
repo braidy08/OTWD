@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "ESBZDifficulty.h"
-#include "ESBZEndMissionState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZEndMissionState -FallbackName=ESBZEndMissionState
 #include "OTWDCollectedGameStatistics.h"
 #include "OTWDMetaSurvivorIngameData.h"
 #include "OTWDMetagameCurrency.h"

@@ -29,7 +29,8 @@ private:
     UAkAudioEvent* HitWeakSpotAudioEvent;
     
 public:
-    USBZAITankComponent();
+    USBZAITankComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnArmorPartDestroyed(USBZTankArmorPartComponent* DestroyedArmorPart);

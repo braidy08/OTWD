@@ -1,8 +1,5 @@
 #include "OTWDDefenceGateWidget.h"
 
-void UOTWDDefenceGateWidget::SetupWidget(UImage* GetaIcon, UImage* HordeIcon, UWidgetAnimation* SecuredAnimation, UWidgetAnimation* BrechedAnimation, UWidgetAnimation* HordeAnimation) {
-}
-
 UOTWDDefenceGateWidget::UOTWDDefenceGateWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->Icon = NULL;
     this->Horde = NULL;
@@ -14,4 +11,8 @@ UOTWDDefenceGateWidget::UOTWDDefenceGateWidget() : UUserWidget(FObjectInitialize
     this->CurrentState = EOTWDDefencePointState::Safe;
     this->PreviousPlayedAnim = NULL;
 }
+
+void UOTWDDefenceGateWidget::SetupWidget(UImage* GetaIcon, UImage* HordeIcon, UWidgetAnimation* SecuredAnimation, UWidgetAnimation* BrechedAnimation, UWidgetAnimation* HordeAnimation) {
+}
+
 

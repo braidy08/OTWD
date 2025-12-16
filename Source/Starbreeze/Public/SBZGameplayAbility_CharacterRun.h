@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGameplayAbility_CharacterRun : public USBZGameplayAbili
     GENERATED_BODY()
 public:
     USBZGameplayAbility_CharacterRun();
+
 };
 

@@ -20,6 +20,7 @@ private:
     
 public:
     USBZReturnToMainMenuCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static USBZReturnToMainMenuCallbackProxy* WaitReturnToMainMenu(UObject* NewWorldContextObject);
     

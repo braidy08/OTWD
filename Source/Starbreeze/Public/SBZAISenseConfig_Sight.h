@@ -12,5 +12,6 @@ public:
     TArray<FSBZAIPerceptionInfluenceThreshold> InfluenceThresholds;
     
     USBZAISenseConfig_Sight();
+
 };
 

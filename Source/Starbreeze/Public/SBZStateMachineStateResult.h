@@ -4,7 +4,7 @@
 #include "SBZGameStateMachineState.h"
 #include "SBZStateMachineStateResult.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class STARBREEZE_API USBZStateMachineStateResult : public USBZGameStateMachineState {
     GENERATED_BODY()
 public:
@@ -17,6 +17,7 @@ private:
     
 public:
     USBZStateMachineStateResult();
+
 private:
     UFUNCTION(BlueprintCallable)
     void HandleMatchInfoUpdated();

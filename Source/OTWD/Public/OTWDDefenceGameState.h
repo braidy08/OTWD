@@ -61,9 +61,10 @@ private:
     EOTWDDefenceMode CurrentDefenceMode;
     
 public:
-    AOTWDDefenceGameState();
+    AOTWDDefenceGameState(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void UpdateFortifications(bool bForceUpdate);
     

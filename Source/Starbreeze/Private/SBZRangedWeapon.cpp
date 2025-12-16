@@ -1,6 +1,41 @@
 #include "SBZRangedWeapon.h"
 #include "Net/UnrealNetwork.h"
 #include "SBZRangedWeaponAttributeSet.h"
+#include "SBZWeaponPlayerMeshComponent.h"
+
+ASBZRangedWeapon::ASBZRangedWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USBZWeaponPlayerMeshComponent>(TEXT("ModularBuilderComponent"))) {
+    this->FiringForceFeedbackEffect = NULL;
+    this->CameraOffsetADSDistance = 1;
+    this->TargetingBoneName = TEXT("L_Sight");
+    this->NormalMagnification = 1;
+    this->TargetingMagnification = 1;
+    this->GlintEffect = NULL;
+    this->MaximumPenetratedActorsCount = 0;
+    this->ChanceToNotKillZombiesOnFirstHit = 1;
+    this->FirstPersonPlayerRangedWeaponAnimations = NULL;
+    this->ThirdPersonPlayerRangedWeaponAnimations = NULL;
+    this->FirstPersonWeaponRangedWeaponAnimations = NULL;
+    this->ThirdPersonWeaponRangedWeaponAnimations = NULL;
+    this->EnterTargetingEvent = NULL;
+    this->ExitTargetingEvent = NULL;
+    this->SilencerBreakEvent = NULL;
+    this->BulletSlot = NULL;
+    this->SpawnDistanceForBarrelShellEffect = 1;
+    this->SilencerRespawnShots = 0;
+    this->BarrelFireEffect = NULL;
+    this->BarrelShellEffect = NULL;
+    this->BarrelTraceEffect = NULL;
+    this->SpawnedGlintEffectComponent = NULL;
+    this->PartsEnabled = 0;
+    this->bGlintActive = false;
+    this->RangedWeaponAttributeSet = CreateDefaultSubobject<USBZRangedWeaponAttributeSet>(TEXT("SBZRangedWeaponAttributeSet"));
+    this->bAllowJamOnLastShot = false;
+    this->bIsAllAmmoSlotsAlwaysOccupied = false;
+    this->bWeaponUnjamState = false;
+    this->InnerClusterNumber = 0;
+    this->InnerClusterSpreadMultiplier = 1;
+    this->PieOcclusion = 1;
+}
 
 void ASBZRangedWeapon::StopReload_Implementation(bool bInIsReloadInterrupted) {
 }
@@ -16,9 +51,6 @@ bool ASBZRangedWeapon::StartReload() {
 }
 
 void ASBZRangedWeapon::StartFire() {
-}
-
-void ASBZRangedWeapon::StartAutoFireAkEvent() {
 }
 
 void ASBZRangedWeapon::SetPartShots_Implementation(ESBZRangedWeaponModuleType Type, int32 InNewShotsFired) {
@@ -257,36 +289,4 @@ void ASBZRangedWeapon::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(ASBZRangedWeapon, bWeaponUnjamState);
 }
 
-ASBZRangedWeapon::ASBZRangedWeapon() {
-    this->FiringForceFeedbackEffect = NULL;
-    this->CameraOffsetADSDistance = 1;
-    this->TargetingBoneName = TEXT("L_Sight");
-    this->NormalMagnification = 1;
-    this->TargetingMagnification = 1;
-    this->GlintEffect = NULL;
-    this->MaximumPenetratedActorsCount = 0;
-    this->ChanceToNotKillZombiesOnFirstHit = 1;
-    this->FirstPersonPlayerRangedWeaponAnimations = NULL;
-    this->ThirdPersonPlayerRangedWeaponAnimations = NULL;
-    this->FirstPersonWeaponRangedWeaponAnimations = NULL;
-    this->ThirdPersonWeaponRangedWeaponAnimations = NULL;
-    this->EnterTargetingEvent = NULL;
-    this->ExitTargetingEvent = NULL;
-    this->SilencerBreakEvent = NULL;
-    this->BulletSlot = NULL;
-    this->SpawnDistanceForBarrelShellEffect = 1;
-    this->SilencerRespawnShots = 0;
-    this->BarrelFireEffect = NULL;
-    this->BarrelShellEffect = NULL;
-    this->BarrelTraceEffect = NULL;
-    this->SpawnedGlintEffectComponent = NULL;
-    this->PartsEnabled = 0;
-    this->bGlintActive = false;
-    this->RangedWeaponAttributeSet = CreateDefaultSubobject<USBZRangedWeaponAttributeSet>(TEXT("SBZRangedWeaponAttributeSet"));
-    this->bAllowJamOnLastShot = false;
-    this->bWeaponUnjamState = false;
-    this->InnerClusterNumber = 0;
-    this->InnerClusterSpreadMultiplier = 1;
-    this->PieOcclusion = 1;
-}
 

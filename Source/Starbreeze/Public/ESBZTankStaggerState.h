@@ -8,6 +8,5 @@ enum class ESBZTankStaggerState : uint8 {
     TSS_SHIELD_STAGGER,
     TSS_BODY_STAGGER,
     TSS_STAGGER_RECOVER,
-    TSS_MAX UMETA(Hidden),
 };
 

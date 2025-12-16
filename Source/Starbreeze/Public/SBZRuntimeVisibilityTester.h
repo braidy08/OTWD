@@ -26,6 +26,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bShowSourceVisibilityDebugShapes;
     
-    ASBZRuntimeVisibilityTester();
+    ASBZRuntimeVisibilityTester(const FObjectInitializer& ObjectInitializer);
+
 };
 

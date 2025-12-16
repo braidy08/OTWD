@@ -5,3 +5,4 @@ USBZDebugPanelActionsDetails::USBZDebugPanelActionsDetails() {
     this->CurrentAction = NULL;
 }
 
+

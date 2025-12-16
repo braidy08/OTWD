@@ -5,3 +5,4 @@ USBZAnimNotifyState_EnableVaultHandsIK::USBZAnimNotifyState_EnableVaultHandsIK()
     this->FadeOutTime = 1;
 }
 
+

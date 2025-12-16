@@ -13,6 +13,7 @@ class OTWD_API UOTWDGameProgressionStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOTWDGameProgressionStatics();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool IsTimeLimitedVendorUnlocked(const UObject* WorldContextObject);
     

@@ -31,6 +31,7 @@ private:
     
 public:
     UOTWDZombieDefenceMeterWidget();
+
 private:
     UFUNCTION(BlueprintCallable)
     void UpdateGatesState();

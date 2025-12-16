@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
-#include "GameFramework/Volume.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LightingChannels -FallbackName=LightingChannels
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Volume -FallbackName=Volume
 #include "ESBZSparseIrradianceVolumeHintVolumeAction.h"
 #include "SBZSparseIrradianceVolumeHintVolume.generated.h"
 
@@ -18,6 +18,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RepulsionDistance;
     
-    ASBZSparseIrradianceVolumeHintVolume();
+    ASBZSparseIrradianceVolumeHintVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -1,5 +1,8 @@
 #include "OTWDLootRewardStatics.h"
 
+UOTWDLootRewardStatics::UOTWDLootRewardStatics() {
+}
+
 TArray<float> UOTWDLootRewardStatics::GetRarityWeightsFromPlayer(const UOTWDProfileSaveData* ProfileSaveData, const UOTWDMetagameWeaponDataAsset* MetagameWeaponAsset, ESBZDifficulty Difficulty) {
     return TArray<float>();
 }
@@ -20,6 +23,4 @@ TArray<USBZWeaponPartSlot*> UOTWDLootRewardStatics::GenerateModdableSlots(FRando
     return TArray<USBZWeaponPartSlot*>();
 }
 
-UOTWDLootRewardStatics::UOTWDLootRewardStatics() {
-}
 

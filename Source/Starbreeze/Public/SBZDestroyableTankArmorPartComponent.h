@@ -14,7 +14,8 @@ private:
     UParticleSystem* Particle;
     
 public:
-    USBZDestroyableTankArmorPartComponent();
+    USBZDestroyableTankArmorPartComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_DestroyArmorPart();

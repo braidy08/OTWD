@@ -39,6 +39,7 @@ private:
     
 public:
     USBZPickupNotificationWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidget(UTextBlock* ResourceName, UTextBlock* ResourceNumber, UImage* ResourceImage, UWidgetAnimation* NotifAnimation);
     

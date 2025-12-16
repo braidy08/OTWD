@@ -13,5 +13,6 @@ public:
     UOTWDLibraryItemData* LibraryItemToCollect;
     
     UOTWDQuestObjectiveLibraryItemCollectedDataAsset();
+
 };
 

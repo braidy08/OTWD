@@ -10,3 +10,4 @@ USBZWeaponSchematic::USBZWeaponSchematic() {
     this->EmptyEvent = NULL;
 }
 
+

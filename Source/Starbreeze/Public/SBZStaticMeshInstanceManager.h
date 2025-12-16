@@ -33,7 +33,8 @@ private:
     TSet<ULevel*> QueuedRemovalLevelSet;
     
 public:
-    ASBZStaticMeshInstanceManager();
+    ASBZStaticMeshInstanceManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnLevelVisibilityChanged();
     

@@ -4,7 +4,7 @@
 #include "SBZGameStateMachineState.h"
 #include "SBZStateMachineStateLobby.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class STARBREEZE_API USBZStateMachineStateLobby : public USBZGameStateMachineState {
     GENERATED_BODY()
 public:
@@ -20,6 +20,7 @@ protected:
     
 public:
     USBZStateMachineStateLobby();
+
 private:
     UFUNCTION(BlueprintCallable)
     void WaitPlayersTickSeconds();

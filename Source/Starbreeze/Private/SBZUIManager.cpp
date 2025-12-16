@@ -1,6 +1,23 @@
 #include "SBZUIManager.h"
 #include "Templates/SubclassOf.h"
 
+USBZUIManager::USBZUIManager() {
+    this->LoadingManagerClass = NULL;
+    this->NotificationWidgetBlueprint = NULL;
+    this->PopupWidgetBlueprint = NULL;
+    this->PauseOpenSoundEvent = NULL;
+    this->PauseClosedSoundEvent = NULL;
+    this->LoadingScreenManager = NULL;
+    this->PauseMenuWidget = NULL;
+    this->HUDWidget = NULL;
+    this->UIGlobalsSchematic = NULL;
+    this->LastUser = NULL;
+    this->NotificationWidget = NULL;
+    this->PopupWidget = NULL;
+    this->CurrentControllerType = ESBZControllerUIType::Keyboard;
+    this->UISaveData = NULL;
+}
+
 void USBZUIManager::ToggleNotification(bool bCanShow) {
 }
 
@@ -130,20 +147,4 @@ USBZUIMarker* USBZUIManager::CreateActorMarker(UObject* WorldContextObject, AAct
 void USBZUIManager::AddTutorialTag(const FName& InTutorialTag) {
 }
 
-USBZUIManager::USBZUIManager() {
-    this->LoadingManagerClass = NULL;
-    this->NotificationWidgetBlueprint = NULL;
-    this->PopupWidgetBlueprint = NULL;
-    this->PauseOpenSoundEvent = NULL;
-    this->PauseClosedSoundEvent = NULL;
-    this->LoadingScreenManager = NULL;
-    this->PauseMenuWidget = NULL;
-    this->HUDWidget = NULL;
-    this->UIGlobalsSchematic = NULL;
-    this->LastUser = NULL;
-    this->NotificationWidget = NULL;
-    this->PopupWidget = NULL;
-    this->CurrentControllerType = ESBZControllerUIType::Keyboard;
-    this->UISaveData = NULL;
-}
 

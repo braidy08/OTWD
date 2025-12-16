@@ -24,6 +24,7 @@ private:
     
 public:
     USBZLifeStatusWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UWidgetAnimation* AliveStateAnimWidget, UWidgetAnimation* DeadStateAnimWidget, UWidgetAnimation* DeadAnimWidget);
     

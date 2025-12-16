@@ -1,5 +1,10 @@
 #include "SBZDemoSettings.h"
 
+USBZDemoSettings::USBZDemoSettings() {
+    this->bEnableDemoMode = false;
+    this->CachedDemoModeConfiguration = NULL;
+}
+
 void USBZDemoSettings::SetDemoModeEnabled(bool bShouldEnable) {
 }
 
@@ -11,8 +16,4 @@ USBZDemoModeConfiguration* USBZDemoSettings::GetDemoModeConfiguration() {
     return NULL;
 }
 
-USBZDemoSettings::USBZDemoSettings() {
-    this->bEnableDemoMode = false;
-    this->CachedDemoModeConfiguration = NULL;
-}
 

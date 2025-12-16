@@ -1,5 +1,14 @@
 #include "SBZAlertnessStateMachine.h"
 
+USBZAlertnessStateMachine::USBZAlertnessStateMachine() {
+    this->CurrentInfluenceSenseType = ESBZSenseType::SenseType_Sight;
+    this->CurrentAlertness = 1;
+    this->SecondsSinceLastInfluenceChange = 1;
+    this->ParentStateMachine = NULL;
+    this->bRecruitmentEnabled = false;
+    this->bInBrokenState = false;
+}
+
 void USBZAlertnessStateMachine::TickStateMachine_Implementation(float DeltaTime) {
 }
 
@@ -86,12 +95,4 @@ bool USBZAlertnessStateMachine::CanRecruit() const {
     return false;
 }
 
-USBZAlertnessStateMachine::USBZAlertnessStateMachine() {
-    this->CurrentInfluenceSenseType = ESBZSenseType::SenseType_Sight;
-    this->CurrentAlertness = 1;
-    this->SecondsSinceLastInfluenceChange = 1;
-    this->ParentStateMachine = NULL;
-    this->bRecruitmentEnabled = false;
-    this->bInBrokenState = false;
-}
 

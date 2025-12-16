@@ -1,6 +1,14 @@
 #include "OTWDTrueSurvivorAbilityAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDTrueSurvivorAbilityAttributeSet::UOTWDTrueSurvivorAbilityAttributeSet() {
+    this->Duration = 1;
+    this->CoolDown = 1;
+    this->SpeedMod = 1;
+    this->HealthRegenMod = 1;
+    this->HealthRegenDelayMod = 1;
+}
+
 void UOTWDTrueSurvivorAbilityAttributeSet::OnRep_SpeedMod() {
 }
 
@@ -26,11 +34,4 @@ void UOTWDTrueSurvivorAbilityAttributeSet::GetLifetimeReplicatedProps(TArray<FLi
     DOREPLIFETIME(UOTWDTrueSurvivorAbilityAttributeSet, HealthRegenDelayMod);
 }
 
-UOTWDTrueSurvivorAbilityAttributeSet::UOTWDTrueSurvivorAbilityAttributeSet() {
-    this->Duration = 1;
-    this->CoolDown = 1;
-    this->SpeedMod = 1;
-    this->HealthRegenMod = 1;
-    this->HealthRegenDelayMod = 1;
-}
 

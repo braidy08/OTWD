@@ -4,3 +4,4 @@ USBZGadgetSilencerAction::USBZGadgetSilencerAction() {
     this->DurationSeconds = 1;
 }
 
+

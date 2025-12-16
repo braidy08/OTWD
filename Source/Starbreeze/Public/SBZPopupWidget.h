@@ -71,6 +71,7 @@ private:
     
 public:
     USBZPopupWidget();
+
     UFUNCTION(BlueprintCallable)
     void ShowPopup(const FText& Title, UUserWidget* BodyWidget, const TArray<FName>& InActionNames, const TArray<FText>& InButtonLabels, bool bImportantPopup);
     

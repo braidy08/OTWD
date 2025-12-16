@@ -38,6 +38,7 @@ protected:
     UAkAudioEvent* StopRunAudioEvent;
     
 public:
-    USBZPlayerMovementComponent();
+    USBZPlayerMovementComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

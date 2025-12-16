@@ -36,7 +36,8 @@ protected:
     TArray<FSBZBodyDraggingBoneBlendData> BonesToBlend;
     
 public:
-    USBZDraggableBodyComponent();
+    USBZDraggableBodyComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnDragStarted(USBZBodyDraggingComponent* Component);
     

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZChallengeUnlocks.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZChallengeUnlocks -FallbackName=SBZChallengeUnlocks
 #include "OTWDChallengeUnlocks.generated.h"
 
 USTRUCT(BlueprintType)

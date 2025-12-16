@@ -21,6 +21,7 @@ public:
     bool bShouldBeAppliedToCharacter;
     
     USBZTech();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLoadoutRelevant() const;
     

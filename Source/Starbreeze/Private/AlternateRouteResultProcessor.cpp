@@ -1,5 +1,6 @@
 #include "AlternateRouteResultProcessor.h"
 
-AAlternateRouteResultProcessor::AAlternateRouteResultProcessor() {
+AAlternateRouteResultProcessor::AAlternateRouteResultProcessor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

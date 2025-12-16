@@ -10,7 +10,10 @@ USBZAISchematic::USBZAISchematic() {
     this->StanceData = NULL;
     this->ClimbSchematic = NULL;
     this->CombatRoleAggressiveness = ESBZAIRoleAggressiveness::ERoleAggressivenessVeryLow;
+    this->bCaresAboutFriendlyFire = false;
+    this->FriendlyFireTimer = 1;
     this->bInfluenceDataRead = false;
     this->bStanceDataRead = false;
 }
+
 

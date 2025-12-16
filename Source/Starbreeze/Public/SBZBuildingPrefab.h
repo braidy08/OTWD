@@ -47,7 +47,8 @@ protected:
     TArray<USceneComponent*> AutoSocketParents;
     
 public:
-    ASBZBuildingPrefab();
+    ASBZBuildingPrefab(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetAllAccessesToState(ESBZBuildingAccessState NewState);
     

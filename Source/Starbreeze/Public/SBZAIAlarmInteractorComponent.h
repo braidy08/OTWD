@@ -16,6 +16,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RadioDuration;
     
-    USBZAIAlarmInteractorComponent();
+    USBZAIAlarmInteractorComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

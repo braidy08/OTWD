@@ -29,5 +29,6 @@ private:
     
 public:
     USBZBTDecorator_IsTargetVisible();
+
 };
 

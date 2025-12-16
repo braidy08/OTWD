@@ -22,6 +22,7 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPathConnection StitchConnection;
     
-    ANodeStitchResultProcessor();
+    ANodeStitchResultProcessor(const FObjectInitializer& ObjectInitializer);
+
 };
 

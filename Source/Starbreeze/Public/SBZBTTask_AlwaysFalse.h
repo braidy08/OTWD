@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTTask_AlwaysFalse : public UBTTaskNode {
     GENERATED_BODY()
 public:
     USBZBTTask_AlwaysFalse();
+
 };
 

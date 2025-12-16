@@ -1,5 +1,6 @@
 #include "SBZVehicleTurretSeat.h"
 
-ASBZVehicleTurretSeat::ASBZVehicleTurretSeat() {
+ASBZVehicleTurretSeat::ASBZVehicleTurretSeat(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

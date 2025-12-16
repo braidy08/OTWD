@@ -9,6 +9,5 @@ enum class EClimbStep : uint8 {
     CS_EdgeStep,
     CS_EdgeLandStep,
     CS_LandStep,
-    CS_MAX UMETA(Hidden),
 };
 

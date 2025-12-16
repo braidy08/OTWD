@@ -1,5 +1,8 @@
 #include "SBZUtility.h"
 
+USBZUtility::USBZUtility() {
+}
+
 void USBZUtility::SortObjectArrayByName(TArray<UObject*>& Array, bool Reverse) {
 }
 
@@ -72,6 +75,4 @@ void USBZUtility::Array_ShuffleWithStream(const TArray<int32>& TargetArray, cons
 void USBZUtility::AddInstancesToSockets(USceneComponent* TargetComponent, UInstancedStaticMeshComponent* InstancedMeshComponent, const FName& SocketPrefix) {
 }
 
-USBZUtility::USBZUtility() {
-}
 

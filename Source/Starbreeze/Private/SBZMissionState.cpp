@@ -1,6 +1,46 @@
 #include "SBZMissionState.h"
 #include "Net/UnrealNetwork.h"
+#include "SBZDialogManager.h"
 #include "SBZImpactManager.h"
+
+ASBZMissionState::ASBZMissionState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ClientMissionSeed = 0;
+    this->LightScenario = ESBZLightScenario::Day;
+    this->MatchState = TEXT("EnteringMap");
+    this->PreviousMatchState = TEXT("EnteringMap");
+    this->Difficulty = ESBZDifficulty::Normal;
+    this->PlayerDefeatSettings = NULL;
+    this->EndMissionSettings = NULL;
+    this->HostFps = 0;
+    this->ReplicatedChatProxy = NULL;
+    this->ReplicatedKickingProxy = NULL;
+    this->InitialLevelScriptCheckpoint = 0;
+    this->bReceivedInitialBunch = false;
+    this->GrappleManagerClass = NULL;
+    this->ObjectiveManagerClass = NULL;
+    this->ExplosionManagerClass = NULL;
+    this->CombatManagerClass = NULL;
+    this->AssaultManagerClass = NULL;
+    this->DialogManagerClass = NULL;
+    this->ProjectileManagerClass = NULL;
+    this->ChatProxyClass = NULL;
+    this->KickingProxyClass = NULL;
+    this->AlignmentManager = NULL;
+    this->GrappleManager = NULL;
+    this->StaticMeshInstanceManager = NULL;
+    this->ObjectiveManager = NULL;
+    this->EndMissionHandler = NULL;
+    this->TotalPlayerDeaths = 0;
+    this->ExplosionManager = NULL;
+    this->ImpactManager = CreateDefaultSubobject<USBZImpactManager>(TEXT("ImpactManager"));
+    this->BagManager = NULL;
+    this->CombatManager = NULL;
+    this->AssaultManager = NULL;
+    this->DialogManager = CreateDefaultSubobject<USBZDialogManager>(TEXT("DialogManager"));
+    this->NavMeshEventManager = NULL;
+    this->ProjectileManager = NULL;
+    this->AISearch = NULL;
+}
 
 bool ASBZMissionState::ShouldEndMission() const {
     return false;
@@ -52,10 +92,6 @@ ASBZStaticMeshInstanceManager* ASBZMissionState::GetStaticMeshInstanceManager() 
     return NULL;
 }
 
-ASBZSpawnManager* ASBZMissionState::GetSpawnManager() const {
-    return NULL;
-}
-
 ASBZProjectileManager* ASBZMissionState::GetProjectileManager() const {
     return NULL;
 }
@@ -72,16 +108,12 @@ ASBZNavMeshEventManager* ASBZMissionState::GetNavMeshEventManager() const {
     return NULL;
 }
 
-int32 ASBZMissionState::GetMissionSeed() {
+ASBZMissionState* ASBZMissionState::GetMissionState(const UObject* WorldContextObject) {
+    return NULL;
+}
+
+int32 ASBZMissionState::GetMissionSeed() const {
     return 0;
-}
-
-USBZInventoryComponent* ASBZMissionState::GetMissionInventoryByName(FName Name) {
-    return NULL;
-}
-
-USBZInventoryComponent* ASBZMissionState::GetMissionInventoryByIndex(int32 Index) {
-    return NULL;
 }
 
 float ASBZMissionState::GetLoneRespawnTimer() const {
@@ -112,12 +144,12 @@ ASBZEndMissionHandler* ASBZMissionState::GetEndMissionHandler() const {
     return NULL;
 }
 
-ASBZDialogManager* ASBZMissionState::GetDialogManager() const {
+USBZDialogManager* ASBZMissionState::GetDialogManager() const {
     return NULL;
 }
 
-FString ASBZMissionState::GetDebugMissionSeed() const {
-    return TEXT("");
+int32 ASBZMissionState::GetCurrentMissionSeed(const UObject* WorldContextObject) {
+    return 0;
 }
 
 ASBZCombatManager* ASBZMissionState::GetCombatManager() const {
@@ -159,7 +191,7 @@ void ASBZMissionState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(ASBZMissionState, ReplicatedChatProxy);
     DOREPLIFETIME(ASBZMissionState, ReplicatedKickingProxy);
     DOREPLIFETIME(ASBZMissionState, InitialLevelScriptCheckpoint);
-    DOREPLIFETIME(ASBZMissionState, SessionID);
+    DOREPLIFETIME(ASBZMissionState, SessionId);
     DOREPLIFETIME(ASBZMissionState, AlignmentManager);
     DOREPLIFETIME(ASBZMissionState, GrappleManager);
     DOREPLIFETIME(ASBZMissionState, StaticMeshInstanceManager);
@@ -168,49 +200,7 @@ void ASBZMissionState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(ASBZMissionState, TotalPlayerDeaths);
     DOREPLIFETIME(ASBZMissionState, ExplosionManager);
     DOREPLIFETIME(ASBZMissionState, BagManager);
-    DOREPLIFETIME(ASBZMissionState, DialogManager);
     DOREPLIFETIME(ASBZMissionState, ProjectileManager);
-    DOREPLIFETIME(ASBZMissionState, SpawnManager);
 }
 
-ASBZMissionState::ASBZMissionState() {
-    this->ClientMissionSeed = 0;
-    this->LightScenario = ESBZLightScenario::Day;
-    this->MatchState = TEXT("EnteringMap");
-    this->PreviousMatchState = TEXT("EnteringMap");
-    this->Difficulty = ESBZDifficulty::Normal;
-    this->PlayerDefeatSettings = NULL;
-    this->EndMissionSettings = NULL;
-    this->HostFps = 0;
-    this->ReplicatedChatProxy = NULL;
-    this->ReplicatedKickingProxy = NULL;
-    this->InitialLevelScriptCheckpoint = 0;
-    this->bReceivedInitialBunch = false;
-    this->GrappleManagerClass = NULL;
-    this->ObjectiveManagerClass = NULL;
-    this->ExplosionManagerClass = NULL;
-    this->CombatManagerClass = NULL;
-    this->AssaultManagerClass = NULL;
-    this->DialogManagerClass = NULL;
-    this->ProjectileManagerClass = NULL;
-    this->SpawnManagerClass = NULL;
-    this->ChatProxyClass = NULL;
-    this->KickingProxyClass = NULL;
-    this->AlignmentManager = NULL;
-    this->GrappleManager = NULL;
-    this->StaticMeshInstanceManager = NULL;
-    this->ObjectiveManager = NULL;
-    this->EndMissionHandler = NULL;
-    this->TotalPlayerDeaths = 0;
-    this->ExplosionManager = NULL;
-    this->ImpactManager = CreateDefaultSubobject<USBZImpactManager>(TEXT("ImpactManager"));
-    this->BagManager = NULL;
-    this->CombatManager = NULL;
-    this->AssaultManager = NULL;
-    this->DialogManager = NULL;
-    this->NavMeshEventManager = NULL;
-    this->ProjectileManager = NULL;
-    this->SpawnManager = NULL;
-    this->AISearch = NULL;
-}
 

@@ -1,8 +1,5 @@
 #include "SBZPingWidget.h"
 
-void USBZPingWidget::SetupWidgets(UMaterialInstanceDynamic* PingMaterialWidget, UTextBlock* PingTextWidget) {
-}
-
 USBZPingWidget::USBZPingWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->PingThreeBarMax = 0;
     this->PingTwoBarMax = 0;
@@ -11,4 +8,8 @@ USBZPingWidget::USBZPingWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->PingText = NULL;
     this->CurrentPlayerState = NULL;
 }
+
+void USBZPingWidget::SetupWidgets(UMaterialInstanceDynamic* PingMaterialWidget, UTextBlock* PingTextWidget) {
+}
+
 

@@ -10,3 +10,4 @@ USBZCameraData::USBZCameraData() {
     this->YawRotationSpeed = 1;
 }
 
+

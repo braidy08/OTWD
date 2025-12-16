@@ -20,8 +20,7 @@ enum class EAbilityInput : uint8 {
     UseAbility8,
     UseAbility9,
     ShoutoutAbility,
-    CharacterAbilityLast = 0x4,
-    CraftAbilityLast = 0x9,
-    EAbilityInput_MAX = 0x10,
+    CharacterAbilityLast = UseAbility4,
+    CraftAbilityLast = CraftAbility4,
 };
 

@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector ValueBlackboardKey;
     
     USBZBTTask_BBAdd();
+
 };
 

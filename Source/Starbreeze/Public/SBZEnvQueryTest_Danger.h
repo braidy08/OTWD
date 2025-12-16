@@ -22,5 +22,6 @@ private:
     
 public:
     UDEPRECATED_SBZEnvQueryTest_Danger();
+
 };
 

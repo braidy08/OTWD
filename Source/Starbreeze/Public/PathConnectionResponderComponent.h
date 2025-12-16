@@ -13,7 +13,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bRespondWhenOpened;
     
-    UPathConnectionResponderComponent();
+    UPathConnectionResponderComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnConnectionReset();
     

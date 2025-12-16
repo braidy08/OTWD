@@ -1,5 +1,8 @@
 #include "SBZMissionReward.h"
 
+USBZMissionReward::USBZMissionReward() {
+}
+
 bool USBZMissionReward::HasExplicitRarity() const {
     return false;
 }
@@ -15,6 +18,4 @@ ESBZWeaponRarity USBZMissionReward::GetHighestPotentialRarity() const {
     return ESBZWeaponRarity::Ordinary;
 }
 
-USBZMissionReward::USBZMissionReward() {
-}
 

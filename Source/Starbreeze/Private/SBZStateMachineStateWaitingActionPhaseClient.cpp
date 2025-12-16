@@ -1,5 +1,8 @@
 #include "SBZStateMachineStateWaitingActionPhaseClient.h"
 
+USBZStateMachineStateWaitingActionPhaseClient::USBZStateMachineStateWaitingActionPhaseClient() {
+}
+
 void USBZStateMachineStateWaitingActionPhaseClient::HandleTransitionGameModeReady() {
 }
 
@@ -9,6 +12,4 @@ void USBZStateMachineStateWaitingActionPhaseClient::HandlePostLoadMapAfterServer
 void USBZStateMachineStateWaitingActionPhaseClient::HandlePostLoadMapAfterSeamlessTravel(UWorld* NewWorld) {
 }
 
-USBZStateMachineStateWaitingActionPhaseClient::USBZStateMachineStateWaitingActionPhaseClient() {
-}
 

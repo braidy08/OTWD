@@ -8,6 +8,7 @@ class STARBREEZE_API USBZAnimatedVignetteWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     USBZAnimatedVignetteWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPlayAnimation();
     

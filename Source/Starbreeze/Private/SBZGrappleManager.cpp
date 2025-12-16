@@ -1,5 +1,15 @@
 #include "SBZGrappleManager.h"
 
+ASBZGrappleManager::ASBZGrappleManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+    this->GrappleAlignmentTag = TEXT("Grapple");
+    this->bDoKnifePenetrationDebug = false;
+}
+
 bool ASBZGrappleManager::RequestGrapple(AActor* Attacker, AActor* Victim, const FSBZGrappleEventSettings& GrappleConfig, const FSBZGrappleAlignmentSettings& AlignmentSettings) {
     return false;
 }
@@ -60,8 +70,4 @@ bool ASBZGrappleManager::AddAttackerToGrapple(int32 GrappleEventID, AActor* Atta
     return false;
 }
 
-ASBZGrappleManager::ASBZGrappleManager() {
-    this->GrappleAlignmentTag = TEXT("Grapple");
-    this->bDoKnifePenetrationDebug = false;
-}
 

@@ -1,5 +1,10 @@
 #include "OTWDPlayerHUDWidget.h"
 
+UOTWDPlayerHUDWidget::UOTWDPlayerHUDWidget() {
+    this->CraftingMenu = NULL;
+    this->CampHUD = NULL;
+}
+
 void UOTWDPlayerHUDWidget::SetupWidgets(UOTWDAbilityCraftingWidget* CraftingMenuWidget, UOTWDCampHUDWidget* CampHUDWidget) {
 }
 
@@ -11,8 +16,4 @@ UOTWDCampHUDWidget* UOTWDPlayerHUDWidget::GetCampHUD() {
     return NULL;
 }
 
-UOTWDPlayerHUDWidget::UOTWDPlayerHUDWidget() {
-    this->CraftingMenu = NULL;
-    this->CampHUD = NULL;
-}
 

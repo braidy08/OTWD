@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataTable.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataTableRowHandle -FallbackName=DataTableRowHandle
 #include "SBZWeaponSchematic.h"
 #include "SBZMeleeWeaponSchematic.generated.h"
 
@@ -47,5 +47,6 @@ public:
     USBZNoiseSchematic* LightNoiseData;
     
     USBZMeleeWeaponSchematic();
+
 };
 

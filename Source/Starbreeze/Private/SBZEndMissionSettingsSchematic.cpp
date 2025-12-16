@@ -14,3 +14,4 @@ USBZEndMissionSettingsSchematic::USBZEndMissionSettingsSchematic() {
     this->DefaultNeutralWidgetClass = NULL;
 }
 
+

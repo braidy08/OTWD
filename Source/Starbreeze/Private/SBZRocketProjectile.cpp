@@ -1,8 +1,8 @@
 #include "SBZRocketProjectile.h"
 #include "AkComponent.h"
+#include "SBZRocketProjectileMovementComponent.h"
 
-
-ASBZRocketProjectile::ASBZRocketProjectile() {
+ASBZRocketProjectile::ASBZRocketProjectile(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USBZRocketProjectileMovementComponent>(TEXT("ProjectileMovement"))) {
     this->ExplosionRadius = 1;
     this->Damage = 1;
     this->DamageFalloff = 1;
@@ -13,5 +13,8 @@ ASBZRocketProjectile::ASBZRocketProjectile() {
     this->AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
     this->ThrowEvent = NULL;
     this->DetonationEvent = NULL;
+    this->AkComponent->SetupAttachment(RootComponent);
 }
+
+
 

@@ -6,3 +6,4 @@ USBZWeaponDecalConfig::USBZWeaponDecalConfig() {
     this->FadeRate = 1;
 }
 
+

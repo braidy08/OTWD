@@ -14,6 +14,7 @@ protected:
     UBoxComponent* BoxBlocker;
     
 public:
-    ASBZBlockingVolume();
+    ASBZBlockingVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

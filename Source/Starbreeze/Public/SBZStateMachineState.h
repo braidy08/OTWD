@@ -8,5 +8,6 @@ class STARBREEZE_API USBZStateMachineState : public UObject {
     GENERATED_BODY()
 public:
     USBZStateMachineState();
+
 };
 

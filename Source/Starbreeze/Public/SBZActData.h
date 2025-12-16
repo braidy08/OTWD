@@ -2,12 +2,14 @@
 #include "CoreMinimal.h"
 #include "SBZActData.generated.h"
 
+class USBZActAnimationSetSchematic;
+
 USTRUCT(BlueprintType)
 struct FSBZActData {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 AnimationSetId;
+    USBZActAnimationSetSchematic* AnimationSet;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bLoopingUsingAnimation;

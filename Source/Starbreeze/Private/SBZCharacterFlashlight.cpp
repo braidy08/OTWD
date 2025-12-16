@@ -1,8 +1,10 @@
 #include "SBZCharacterFlashlight.h"
 #include "SBZFlashlightComponent.h"
 
-ASBZCharacterFlashlight::ASBZCharacterFlashlight() {
+ASBZCharacterFlashlight::ASBZCharacterFlashlight(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USBZFlashlightComponent>(TEXT("SBZFlashlightComponent"));
     this->FlashlightSchematic = NULL;
-    this->FlashlightComponent = CreateDefaultSubobject<USBZFlashlightComponent>(TEXT("SBZFlashlightComponent"));
+    this->FlashlightComponent = (USBZFlashlightComponent*)RootComponent;
 }
+
 

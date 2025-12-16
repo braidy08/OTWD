@@ -1,6 +1,10 @@
 #include "SBZPlayerVehicleServiceComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZPlayerVehicleServiceComponent::USBZPlayerVehicleServiceComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Vehicle = NULL;
+}
+
 void USBZPlayerVehicleServiceComponent::SetViewYawLimit_Implementation(float ViewYawMin, float ViewYawMax) {
 }
 
@@ -64,7 +68,4 @@ void USBZPlayerVehicleServiceComponent::GetLifetimeReplicatedProps(TArray<FLifet
     DOREPLIFETIME(USBZPlayerVehicleServiceComponent, Vehicle);
 }
 
-USBZPlayerVehicleServiceComponent::USBZPlayerVehicleServiceComponent() {
-    this->Vehicle = NULL;
-}
 

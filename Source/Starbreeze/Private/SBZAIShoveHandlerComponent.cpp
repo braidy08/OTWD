@@ -1,5 +1,10 @@
 #include "SBZAIShoveHandlerComponent.h"
 
+USBZAIShoveHandlerComponent::USBZAIShoveHandlerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bIsTank = false;
+    this->TankShoveHitSuccessSoundEvent = NULL;
+}
+
 void USBZAIShoveHandlerComponent::OnTimerEnd() {
 }
 
@@ -20,8 +25,4 @@ bool USBZAIShoveHandlerComponent::CanShove() const {
     return false;
 }
 
-USBZAIShoveHandlerComponent::USBZAIShoveHandlerComponent() {
-    this->bIsTank = false;
-    this->TankShoveHitSuccessSoundEvent = NULL;
-}
 

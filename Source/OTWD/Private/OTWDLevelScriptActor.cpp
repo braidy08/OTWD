@@ -1,5 +1,6 @@
 #include "OTWDLevelScriptActor.h"
 
-AOTWDLevelScriptActor::AOTWDLevelScriptActor() {
+AOTWDLevelScriptActor::AOTWDLevelScriptActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

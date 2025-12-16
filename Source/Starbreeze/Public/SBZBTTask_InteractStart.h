@@ -8,5 +8,6 @@ class USBZBTTask_InteractStart : public UBTTaskNode {
     GENERATED_BODY()
 public:
     USBZBTTask_InteractStart();
+
 };
 

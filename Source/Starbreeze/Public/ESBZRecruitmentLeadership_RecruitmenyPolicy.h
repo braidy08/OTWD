@@ -6,6 +6,5 @@ UENUM()
 enum class ESBZRecruitmentLeadership_RecruitmenyPolicy : int32 {
     AcceptAll,
     AcceptLeader,
-    ESBZRecruitmentLeadership_MAX UMETA(Hidden),
 };
 

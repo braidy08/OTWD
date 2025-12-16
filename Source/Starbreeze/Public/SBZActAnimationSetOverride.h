@@ -8,5 +8,6 @@ class STARBREEZE_API USBZActAnimationSetOverride : public USBZBaseActAnimationSe
     GENERATED_BODY()
 public:
     USBZActAnimationSetOverride();
+
 };
 

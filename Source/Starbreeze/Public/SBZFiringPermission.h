@@ -8,5 +8,6 @@ class STARBREEZE_API USBZFiringPermission : public UObject {
     GENERATED_BODY()
 public:
     USBZFiringPermission();
+
 };
 

@@ -10,7 +10,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZLineBatchComponent : public ULineBatchComponent {
     GENERATED_BODY()
 public:
-    USBZLineBatchComponent();
+    USBZLineBatchComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void DrawSolidBox(const FTransform& Transform, const FVector HalfSize, const FColor Color, uint8 DepthPriority, float LifeTime);
     

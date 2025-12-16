@@ -7,7 +7,6 @@
 #include "Templates/SubclassOf.h"
 #include "SBZAlertManagerWidget.generated.h"
 
-class ASBZWorldSettings;
 class USBZAlertMarkerWidget;
 class USBZUIMarkerSingle;
 
@@ -45,9 +44,6 @@ private:
     TArray<FSBZAlertManagerActorData> ActorDataArray;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    ASBZWorldSettings* WorldSettings;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float MaxDistanceSquared;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -55,5 +51,6 @@ private:
     
 public:
     USBZAlertManagerWidget();
+
 };
 

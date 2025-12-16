@@ -1,6 +1,16 @@
 #include "SBZAlignmentManager.h"
 #include "Net/UnrealNetwork.h"
 
+ASBZAlignmentManager::ASBZAlignmentManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+    this->AlignmentTags.AddDefaulted(2);
+    this->AlignmentSockets.AddDefaulted(1);
+}
+
 void ASBZAlignmentManager::OccupySlotWithCallback(int32 SlotID, FSBZAlignmentSlotOccupationSettings Settings, const FSBZAlignmentStateChangeDelegate& StateChangeCallback) {
 }
 
@@ -95,8 +105,4 @@ void ASBZAlignmentManager::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(ASBZAlignmentManager, AlignmentSockets);
 }
 
-ASBZAlignmentManager::ASBZAlignmentManager() {
-    this->AlignmentTags.AddDefaulted(2);
-    this->AlignmentSockets.AddDefaulted(1);
-}
 

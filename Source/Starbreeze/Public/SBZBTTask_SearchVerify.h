@@ -24,5 +24,6 @@ public:
     float AcceptRadius;
     
     USBZBTTask_SearchVerify();
+
 };
 

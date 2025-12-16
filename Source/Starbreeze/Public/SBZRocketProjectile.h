@@ -14,8 +14,6 @@ UCLASS(Abstract, Blueprintable)
 class STARBREEZE_API ASBZRocketProjectile : public ASBZThrowableProjectile {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSBZRocketProjectileOnDetonate, ASBZRocketProjectile*, Projectile);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ExplosionRadius;
     
@@ -46,7 +44,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAkAudioEvent* DetonationEvent;
     
-    ASBZRocketProjectile();
+    ASBZRocketProjectile(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnDetonate(ASBZRocketProjectile* Projectile);
     

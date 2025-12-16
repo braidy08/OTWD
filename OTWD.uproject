@@ -3,37 +3,37 @@
 	"EngineAssociation": "4.18",
 	"Category": "",
 	"Description": "",
-	"Modules": [
-		{
-			"Name": "OTWD",
-			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"AdditionalDependencies": [
-				"AIModule",
-				"Engine"
-			]
-		},
-		{
-			"Name": "Starbreeze",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "AkAudio",
-			"Type": "Runtime",
-			"LoadingPhase": "PreDefault"
-		},
-		{
-			"Name": "SBZScriptRemapper",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "SBZAnalytics",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		}
-	],
+    "Modules": [
+        {
+            "Name": "OTWD",
+            "Type": "Runtime",
+            "LoadingPhase": "Default",
+            "AdditionalDependencies": [
+                "AIModule",
+                "Engine"
+            ]
+        },
+        {
+            "Name": "Starbreeze",
+            "Type": "Runtime",
+            "LoadingPhase": "Default"
+        },
+        {
+            "Name": "AkAudio",
+            "Type": "Runtime",
+            "LoadingPhase": "PreDefault"
+        },
+        {
+          "Name": "SBZScriptRemapper",
+          "Type": "Runtime",
+          "LoadingPhase": "Default"
+        },
+        {
+          "Name": "SBZWorldRuntime",
+          "Type": "Runtime",
+          "LoadingPhase": "Default"
+        }
+    ],
 	"Plugins": [
 		{
 			"Name": "OnlineSubsystem",
@@ -103,10 +103,10 @@
 			"Name": "FunctionalTestingEditor",
 			"Enabled": true
 		},
-    {
-      "Name": "FbxAutomationTestBuilder",
-      "Enabled": true
-    }
+		{
+			"Name": "FbxAutomationTestBuilder",
+			"Enabled": true
+		}
 	],
 	"TargetPlatforms": [
 		"AllDesktop",

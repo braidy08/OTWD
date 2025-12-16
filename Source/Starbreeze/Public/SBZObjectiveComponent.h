@@ -23,7 +23,8 @@ private:
     bool bAutoAdd;
     
 public:
-    USBZObjectiveComponent();
+    USBZObjectiveComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetSleep(bool bSleep);
     

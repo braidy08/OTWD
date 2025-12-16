@@ -13,6 +13,5 @@ enum class EVehicleSeatOrdering : uint8 {
     E_VehicleSeat6,
     E_VehicleSeat7,
     E_VehicleSeatNone,
-    E_MAX UMETA(Hidden),
 };
 

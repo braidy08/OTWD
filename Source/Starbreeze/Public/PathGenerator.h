@@ -9,7 +9,8 @@ UCLASS(Abstract, Blueprintable)
 class STARBREEZE_API APathGenerator : public AInfo {
     GENERATED_BODY()
 public:
-    APathGenerator();
+    APathGenerator(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool GetGeneratedPath(UPARAM(Ref) FGeneratedPath& OutGeneratedPath, const FPathNetworkData& NetworkData);
     

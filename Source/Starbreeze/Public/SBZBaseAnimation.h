@@ -86,7 +86,7 @@ protected:
     bool bIsEmptyMagazine;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bIsAds;
+    bool bIsADS;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseRecoilEmptyAnimation;
@@ -336,6 +336,7 @@ protected:
     
 public:
     USBZBaseAnimation();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void ResetGrappleProperties();

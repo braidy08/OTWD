@@ -36,14 +36,15 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASBZHumanAICharacter* OwnerCharacter;
     
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<USBZCharacterAnimation> CharacterAnimInstance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USBZAIPerceptionMemoryComponent* MemoryComponent;
     
 public:
-    USBZAIThrownAttackHandlerComponent();
+    USBZAIThrownAttackHandlerComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_StartThrowAnimation(const USBZAIThrowWeapon* ThrowWeapon);
     

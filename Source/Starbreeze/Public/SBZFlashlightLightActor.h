@@ -27,7 +27,8 @@ protected:
     UStaticMeshComponent* LensFlareComponent;
     
 public:
-    ASBZFlashlightLightActor();
+    ASBZFlashlightLightActor(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetFlashLightQuality() const;

@@ -32,7 +32,8 @@ private:
     TSubclassOf<AActor> DummyPartClass;
     
 public:
-    USBZCosmeticPart();
+    USBZCosmeticPart(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void PopPart(const FVector& HitDirection);
     

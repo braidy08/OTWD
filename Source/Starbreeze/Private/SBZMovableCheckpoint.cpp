@@ -1,5 +1,6 @@
 #include "SBZMovableCheckpoint.h"
 
-ASBZMovableCheckpoint::ASBZMovableCheckpoint() {
+ASBZMovableCheckpoint::ASBZMovableCheckpoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZStateMachineStateNotLoggedIn : public USBZGameStateMach
     GENERATED_BODY()
 public:
     USBZStateMachineStateNotLoggedIn();
+
 };
 

@@ -5,110 +5,9 @@
 #include "SBZActHandlerComponent.h"
 #include "SBZMoveToInteractionHandlerComponent.h"
 
-void ASBZAICharacter::SetPinningTarget(AActor* InPinnedActor) {
-}
-
-void ASBZAICharacter::SeekOutPlayer(FSBZAlertnessLevelIdHelper AlertLevelToSet, float Alertness, FName BlackboardInfluenceTargetName, FName BlackboardInfluenceLocationName) {
-}
-
-void ASBZAICharacter::OnStanceChanged(FSBZAIStanceIdHelper NewStance, FSBZAIStanceIdHelper OldStance) {
-}
-
-void ASBZAICharacter::OnRep_SyncLandResultData(FSBZSyncLandResultData OldSyncLandResultData) {
-}
-
-void ASBZAICharacter::OnRep_PinnedActor() {
-}
-
-void ASBZAICharacter::OnRep_CurrentStance() {
-}
-
-void ASBZAICharacter::OnRep_ActData() {
-}
-
-void ASBZAICharacter::OnLandingMontageEnded3P(UAnimMontage* InMontage, bool bInInterrupted) {
-}
-
-void ASBZAICharacter::OnAlertnessChanged(USBZAlertnessComponent* Sender, FSBZAlertnessLevelIdHelper NewLevel, FSBZAlertnessLevelIdHelper OldLevel) {
-}
-
-void ASBZAICharacter::OnAIEnabledChanged(bool bInIsAIEnabled) {
-}
-
-void ASBZAICharacter::NetMulticast_ApplyPinnerShove_Implementation(AActor* DamageCauser, const FSBZHurtReactionPrediction& ShoveReaction) {
-}
-
-void ASBZAICharacter::NetMulticast_AbortAct_Implementation() {
-}
-
-void ASBZAICharacter::Multicast_AnimationTurnCancel_Implementation(const FSBZTurnAnimationCancelParameters& CancelParameters) {
-}
-
-void ASBZAICharacter::Multicast_AnimationTurn_Implementation(const FSBZTurnAnimationParameters& TurnParameters) {
-}
-
-float ASBZAICharacter::LimitToCharacterTurnSpeed(float DeltaTime, float DesiredRotation) const {
-    return 0.0f;
-}
-
-bool ASBZAICharacter::IsUsingAct() const {
-    return false;
-}
-
-bool ASBZAICharacter::IsRoaming() const {
-    return false;
-}
-
-void ASBZAICharacter::InteractWithDoor_Implementation() {
-}
-
-USBZAIDoorInteractionComponent* ASBZAICharacter::GetDoorInteractionComponent() const {
-    return NULL;
-}
-
-USBZAlertnessComponent* ASBZAICharacter::GetAlertnessComponent() const {
-    return NULL;
-}
-
-USBZAIAggroSystemComponent* ASBZAICharacter::GetAggroComponent() const {
-    return NULL;
-}
-
-bool ASBZAICharacter::ForceMove(FSBZAIStanceIdHelper Stance, FVector Location) {
-    return false;
-}
-
-void ASBZAICharacter::EquipWeapon_Implementation() {
-}
-
-void ASBZAICharacter::EnablePatrol(bool bEnable) {
-}
-
-void ASBZAICharacter::CleanupOnDeath() {
-}
-
-void ASBZAICharacter::CheckNetRelevancy() {
-}
-
-void ASBZAICharacter::AbortPOI() {
-}
-
-void ASBZAICharacter::AbortAct() {
-}
-
-void ASBZAICharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
-    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-    
-    DOREPLIFETIME(ASBZAICharacter, CurrentAlertness);
-    DOREPLIFETIME(ASBZAICharacter, CurrentStance);
-    DOREPLIFETIME(ASBZAICharacter, PinnedActor);
-    DOREPLIFETIME(ASBZAICharacter, bIsAIEnabled);
-    DOREPLIFETIME(ASBZAICharacter, SyncLandResultData);
-    DOREPLIFETIME(ASBZAICharacter, ActData);
-}
-
-ASBZAICharacter::ASBZAICharacter() {
-    this->AICharacterSchematic = NULL;
+ASBZAICharacter::ASBZAICharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Tags.AddDefaulted(1);
+    this->ExplosionLineTraceBones.AddDefaulted(6);
     this->AISchematicStart = NULL;
     this->AISchematic = NULL;
     this->YawValueWhenToAnimTurnStarted = 1;
@@ -169,6 +68,117 @@ ASBZAICharacter::ASBZAICharacter() {
     this->bAllowMassDestroy = true;
     this->AIHumanTankcomponent = NULL;
     this->CachedSBZAICharAnim = NULL;
+    this->CurrentCoverPoint = NULL;
     this->LastLandingMontage = NULL;
 }
+
+AActor* ASBZAICharacter::UpdateCurrentTarget() {
+    return NULL;
+}
+
+void ASBZAICharacter::SetPinningTarget(AActor* InPinnedActor) {
+}
+
+void ASBZAICharacter::SeekOutPlayer(FSBZAlertnessLevelIdHelper AlertLevelToSet, float Alertness, FName BlackboardInfluenceTargetName, FName BlackboardInfluenceLocationName) {
+}
+
+void ASBZAICharacter::OnStanceChanged(FSBZAIStanceIdHelper NewStance, FSBZAIStanceIdHelper OldStance) {
+}
+
+void ASBZAICharacter::OnRep_SyncLandResultData(FSBZSyncLandResultData OldSyncLandResultData) {
+}
+
+void ASBZAICharacter::OnRep_PinnedActor() {
+}
+
+void ASBZAICharacter::OnRep_CurrentStance() {
+}
+
+void ASBZAICharacter::OnRep_ActData() {
+}
+
+void ASBZAICharacter::OnLandingMontageEnded3P(UAnimMontage* InMontage, bool bInInterrupted) {
+}
+
+void ASBZAICharacter::OnAlertnessChanged(USBZAlertnessComponent* Sender, FSBZAlertnessLevelIdHelper NewLevel, FSBZAlertnessLevelIdHelper OldLevel) {
+}
+
+void ASBZAICharacter::OnAIEnabledChanged(bool bInIsAIEnabled) {
+}
+
+void ASBZAICharacter::NetMulticast_ApplyPinnerShove_Implementation(AActor* DamageCauser, const FSBZHurtReactionPrediction& ShoveReaction) {
+}
+
+void ASBZAICharacter::NetMulticast_AbortAct_Implementation() {
+}
+
+void ASBZAICharacter::Multicast_AnimationTurnCancel_Implementation(const FSBZTurnAnimationCancelParameters& CancelParameters) {
+}
+
+void ASBZAICharacter::Multicast_AnimationTurn_Implementation(const FSBZTurnAnimationParameters& TurnParameters) {
+}
+
+float ASBZAICharacter::LimitToCharacterTurnSpeed(float DeltaTime, float DesiredRotation) const {
+    return 0.0f;
+}
+
+bool ASBZAICharacter::IsUsingAct() const {
+    return false;
+}
+
+bool ASBZAICharacter::IsRoaming() const {
+    return false;
+}
+
+void ASBZAICharacter::InteractWithDoor_Implementation() {
+}
+
+AActor* ASBZAICharacter::GetHighestAggroTarget() const {
+    return NULL;
+}
+
+USBZAIDoorInteractionComponent* ASBZAICharacter::GetDoorInteractionComponent() const {
+    return NULL;
+}
+
+USBZAlertnessComponent* ASBZAICharacter::GetAlertnessComponent() const {
+    return NULL;
+}
+
+USBZAIAggroSystemComponent* ASBZAICharacter::GetAggroComponent() const {
+    return NULL;
+}
+
+bool ASBZAICharacter::ForceMove(FSBZAIStanceIdHelper Stance, FVector Location) {
+    return false;
+}
+
+void ASBZAICharacter::EquipWeapon_Implementation() {
+}
+
+void ASBZAICharacter::EnablePatrol(bool bEnable) {
+}
+
+void ASBZAICharacter::CleanupOnDeath() {
+}
+
+void ASBZAICharacter::CheckNetRelevancy() {
+}
+
+void ASBZAICharacter::AbortPOI() {
+}
+
+void ASBZAICharacter::AbortAct() {
+}
+
+void ASBZAICharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
+    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+    
+    DOREPLIFETIME(ASBZAICharacter, CurrentStance);
+    DOREPLIFETIME(ASBZAICharacter, PinnedActor);
+    DOREPLIFETIME(ASBZAICharacter, bIsAIEnabled);
+    DOREPLIFETIME(ASBZAICharacter, SyncLandResultData);
+    DOREPLIFETIME(ASBZAICharacter, ActData);
+}
+
 

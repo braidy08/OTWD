@@ -8,5 +8,6 @@ class STARBREEZE_API USBZCraftingAction : public USBZBaseAbilityAction {
     GENERATED_BODY()
 public:
     USBZCraftingAction();
+
 };
 

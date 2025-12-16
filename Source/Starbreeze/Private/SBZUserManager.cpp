@@ -1,5 +1,8 @@
 #include "SBZUserManager.h"
 
+USBZUserManager::USBZUserManager() {
+}
+
 void USBZUserManager::StopListeningForIISInput() {
 }
 
@@ -103,6 +106,4 @@ FText USBZUserManager::CanPlayOnlineFailedPopupSetup(int32 PrivilegeResult) {
     return FText::GetEmpty();
 }
 
-USBZUserManager::USBZUserManager() {
-}
 

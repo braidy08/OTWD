@@ -1,6 +1,12 @@
 #include "SBZStrengthAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZStrengthAttributeSet::USBZStrengthAttributeSet() {
+    this->Strength = 1;
+    this->StrengthMaximum = 1;
+    this->StrengthRegenRate = 1;
+}
+
 void USBZStrengthAttributeSet::RegisterStrengthEvents() {
 }
 
@@ -33,9 +39,4 @@ void USBZStrengthAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProper
     DOREPLIFETIME(USBZStrengthAttributeSet, StrengthRegenRate);
 }
 
-USBZStrengthAttributeSet::USBZStrengthAttributeSet() {
-    this->Strength = 1;
-    this->StrengthMaximum = 1;
-    this->StrengthRegenRate = 1;
-}
 

@@ -6,7 +6,9 @@ FSBZHurtReactionPrediction::FSBZHurtReactionPrediction() {
     this->BoneIndex = 0;
     this->Duration = 0;
     this->Pose = ESBZHurtReactionPose::Standing;
-    this->Yaw = 0;
+    this->Yaw = 1;
+    this->YawCompressed = 0;
+    this->bIsYawUsed = false;
     this->bIsAlive = false;
     this->bIsRunningForward = false;
     this->Direction = ESBZHurtReactionDirection::Forward;

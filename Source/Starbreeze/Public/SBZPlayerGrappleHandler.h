@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ENetRole -FallbackName=ENetRole
 #include "Engine/EngineTypes.h"
 #include "ESBZGrappleParticipantType.h"
 #include "ESBZPlayerGrappleFinisherState.h"
@@ -9,7 +9,7 @@
 #include "SBZGrappleEventStateProperties.h"
 #include "SBZGrappleShovePrediction.h"
 #include "SBZGrappleStabDecalSettings.h"
-#include "Components/PostProcessComponent.h"
+#include "SBZPlayerGrappleCountChangedDelegate.h"
 #include "SBZPlayerGrappleHandler.generated.h"
 
 class AActor;
@@ -17,6 +17,7 @@ class ASBZCharacter;
 class ASBZGrappleManager;
 class ASBZPlayerCharacter;
 class UParticleSystem;
+class UPostProcessComponent;
 class USBZDepthOfFieldComponent;
 class USBZPlayerAnimation;
 class USBZPlayerGrappleSettingsSchematic;
@@ -31,6 +32,10 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPlayerGrappleRefreshHud OnRefreshGrappleHud;
+    
+protected:
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZPlayerGrappleCountChanged GrappleCountChanged;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -67,9 +72,17 @@ private:
     TMap<AActor*, bool> CachedValidTakedownTargetButTakedownNotPossible;
     
 public:
-    USBZPlayerGrappleHandler();
+    USBZPlayerGrappleHandler(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool TryTakedown(AActor* TargetActor);
+    
+protected:
+    UFUNCTION(BlueprintCallable)
+    void SetStabBlocked(bool bInIsStabBlocked);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetShoveBlocked(bool bInIsShoveBlocked);
     
 private:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
@@ -85,7 +98,7 @@ private:
     void Server_EndStruggle(ESBZGrappleParticipantType InStruggleWinner);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
-	void Server_ApplyShove(const TArray<FSBZGrappleShovePrediction>& InShovePredictionArray, ENetRole InstigatorRole);
+    void Server_ApplyShove(const TArray<FSBZGrappleShovePrediction>& InShovePredictionArray, TEnumAsByte<ENetRole> InstigatorRole);
     
     UFUNCTION(BlueprintCallable)
     void OnShoveTargetKilled(ASBZCharacter* KilledCharacter);
@@ -116,7 +129,7 @@ private:
     void NetMulticast_OnFinisherChosen(ESBZPlayerGrappleFinisherState InFinisherState);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
-    void NetMulticast_ApplyShove(const TArray<FSBZGrappleShovePrediction>& InShovePredictionArray, ENetRole InstigatorRole);
+    void NetMulticast_ApplyShove(const TArray<FSBZGrappleShovePrediction>& InShovePredictionArray, TEnumAsByte<ENetRole> InstigatorRole);
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)

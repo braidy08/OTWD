@@ -7,6 +7,7 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class OTWD_API UWoundMeshComponent : public UStaticMeshComponent {
     GENERATED_BODY()
 public:
-    UWoundMeshComponent();
+    UWoundMeshComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

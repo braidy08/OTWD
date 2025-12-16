@@ -4,8 +4,10 @@
 #include "EActAnimationPreview.h"
 #include "SBZAIActEditorPreviewComponent.generated.h"
 
+class UAnimSequenceBase;
 class ULineBatchComponent;
 class USBZActAnimationSetSchematic;
+class USkeletalMesh;
 class USkeletalMeshComponent;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -28,7 +30,15 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USBZActAnimationSetSchematic* PreviewAnimSet;
     
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USkeletalMesh* CachedMesh;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UAnimSequenceBase* CachedAnimation;
+    
 public:
-    USBZAIActEditorPreviewComponent();
+    USBZAIActEditorPreviewComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

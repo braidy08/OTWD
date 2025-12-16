@@ -7,11 +7,11 @@ enum class ESBZWeaponRarity : uint8 {
     Ordinary,
     Common,
     Uncommon,
-	Rare = 0x3,
+    Rare,
     Epic,
     Legendary,
     Relic,
     MAX,
-    DEFAULT = 0x3,
+    DEFAULT = Rare,
 };
 

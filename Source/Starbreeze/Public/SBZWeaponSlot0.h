@@ -8,5 +8,6 @@ class STARBREEZE_API USBZWeaponSlot0 : public USBZSwitchWeaponSlotCDO {
     GENERATED_BODY()
 public:
     USBZWeaponSlot0();
+
 };
 

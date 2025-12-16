@@ -13,6 +13,7 @@ public:
     USBZUnlockableMetadata* MetaData;
     
     USBZUnlockable();
+
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     bool MeetsAllRequirements(const UObject* WorldContextObject) const;
     

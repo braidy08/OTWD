@@ -8,7 +8,8 @@ UCLASS(Blueprintable)
 class ASBZChatReplicatedProxy : public AActor {
     GENERATED_BODY()
 public:
-    ASBZChatReplicatedProxy();
+    ASBZChatReplicatedProxy(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSendChatMessage(const FSBZChatMessage& Message);
     

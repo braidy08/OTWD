@@ -15,6 +15,7 @@ public:
     FEntitlementQueryComplete OnUpdateComplete;
     
     USBZEntitlementUpdateCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static USBZEntitlementUpdateCallbackProxy* UpdateUserEntitlements(UObject* WorldContextObject);
     

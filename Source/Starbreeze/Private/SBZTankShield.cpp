@@ -1,6 +1,20 @@
 #include "SBZTankShield.h"
 #include "Components/StaticMeshComponent.h"
 
+ASBZTankShield::ASBZTankShield(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->RootComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+    this->DefaultRequiredDamage = 1;
+    this->Mesh = (UStaticMeshComponent*)RootComponent;
+    this->StaggerTime = 1;
+    this->DetachedLifeTime = 1;
+    this->OwnerCharacter = NULL;
+    this->TankComponent = NULL;
+    this->HitShieldAudioEvent2D = NULL;
+}
+
 void ASBZTankShield::SetIgnoreDamage(bool bIgnore) {
 }
 
@@ -38,14 +52,4 @@ float ASBZTankShield::GetAccumulatedDamage() const {
     return 0.0f;
 }
 
-ASBZTankShield::ASBZTankShield() {
-    this->DefaultRequiredDamage = 1;
-    this->Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
-    this->StaggerTime = 1;
-    this->DetachedLifeTime = 1;
-    this->OwnerCharacter = NULL;
-    this->TankComponent = NULL;
-    this->Alertness = NULL;
-    this->HitShieldAudioEvent2D = NULL;
-}
 

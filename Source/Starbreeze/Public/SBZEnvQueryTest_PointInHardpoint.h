@@ -8,5 +8,6 @@ class USBZEnvQueryTest_PointInHardpoint : public UEnvQueryTest {
     GENERATED_BODY()
 public:
     USBZEnvQueryTest_PointInHardpoint();
+
 };
 

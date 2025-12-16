@@ -1,40 +1,5 @@
 #include "SBZLevelSchematic.h"
 
-bool USBZLevelSchematic::IsWeeklyMission() const {
-    return false;
-}
-
-bool USBZLevelSchematic::IsTutorial() const {
-    return false;
-}
-
-bool USBZLevelSchematic::IsSoloMission() const {
-    return false;
-}
-
-bool USBZLevelSchematic::IsExpedition() const {
-    return false;
-}
-
-bool USBZLevelSchematic::IsDifficultyAvailableForLevel(ESBZDifficulty InDifficulty) {
-    return false;
-}
-
-bool USBZLevelSchematic::IsCampLevel() const {
-    return false;
-}
-
-bool USBZLevelSchematic::HasQuestRequirement() {
-    return false;
-}
-
-int32 USBZLevelSchematic::GetRecommendedPowerLevelForDifficulty(ESBZDifficulty InDifficulty) {
-    return 0;
-}
-
-void USBZLevelSchematic::GenerateSaveDataID() {
-}
-
 USBZLevelSchematic::USBZLevelSchematic() {
     this->Flags = 0;
     this->CompletionRewards = NULL;
@@ -56,5 +21,55 @@ USBZLevelSchematic::USBZLevelSchematic() {
     this->LevelModifierIntensity = 1;
     this->LevelModifierTimer = 1;
     this->bIsSoloMission = false;
+    this->bDoTurn = true;
+    this->bDegradeWeapons = true;
 }
+
+bool USBZLevelSchematic::IsWeeklyMission() const {
+    return false;
+}
+
+bool USBZLevelSchematic::IsTutorial() const {
+    return false;
+}
+
+bool USBZLevelSchematic::IsSoloMission() const {
+    return false;
+}
+
+bool USBZLevelSchematic::IsPlayerPawnAllowed(const UObject* WorldContextObject, const USBZCharacterSchematic* PlayerPawnData) const {
+    return false;
+}
+
+bool USBZLevelSchematic::IsExpedition() const {
+    return false;
+}
+
+bool USBZLevelSchematic::IsDifficultyAvailableForLevel(ESBZDifficulty InDifficulty) {
+    return false;
+}
+
+bool USBZLevelSchematic::IsCampLevel() const {
+    return false;
+}
+
+bool USBZLevelSchematic::HasQuestRequirement() {
+    return false;
+}
+
+USBZCharacterSchematic* USBZLevelSchematic::GetReplacementPlayerPawn(const UObject* WorldContextObject, const USBZCharacterSchematic* PlayerPawnData) const {
+    return NULL;
+}
+
+int32 USBZLevelSchematic::GetRecommendedPowerLevelForDifficulty(ESBZDifficulty InDifficulty) {
+    return 0;
+}
+
+FSBZOutroMovieConfig USBZLevelSchematic::GetOutroMovieConfig(const TSoftClassPtr<APawn>& PlayerCharacterClass) const {
+    return FSBZOutroMovieConfig{};
+}
+
+void USBZLevelSchematic::GenerateSaveDataID() {
+}
+
 

@@ -17,6 +17,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float LineThickness;
     
-    ULineComponent();
+    ULineComponent(const FObjectInitializer& ObjectInitializer);
 };
 

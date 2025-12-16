@@ -11,5 +11,6 @@ public:
     float Value;
     
     USBZBTTask_BBSetFloat();
+
 };
 

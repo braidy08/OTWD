@@ -11,6 +11,7 @@ class STARBREEZE_API USBZAIFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USBZAIFunctionLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsValidRotation(const FRotator& Rotation);
     

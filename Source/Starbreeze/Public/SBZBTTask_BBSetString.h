@@ -11,5 +11,6 @@ public:
     FString Value;
     
     USBZBTTask_BBSetString();
+
 };
 

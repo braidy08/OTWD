@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGameplayAbility_CharacterProne : public USBZGameplayAbi
     GENERATED_BODY()
 public:
     USBZGameplayAbility_CharacterProne();
+
 };
 

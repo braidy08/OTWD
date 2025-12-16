@@ -26,7 +26,8 @@ protected:
     ASBZCharacter* Character;
     
 public:
-    USBZAIAimTargetComponent();
+    USBZAIAimTargetComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetAimTargetLocation() const;
     

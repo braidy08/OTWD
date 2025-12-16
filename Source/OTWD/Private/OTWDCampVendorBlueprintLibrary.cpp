@@ -1,6 +1,16 @@
 #include "OTWDCampVendorBlueprintLibrary.h"
 
+UOTWDCampVendorBlueprintLibrary::UOTWDCampVendorBlueprintLibrary() {
+}
+
 bool UOTWDCampVendorBlueprintLibrary::IsBlackmarketItemProgressComplete(const UObject* WorldContextObject, int32 InventoryIndex) {
+    return false;
+}
+
+void UOTWDCampVendorBlueprintLibrary::GetWeaponStashInventory(const UObject* WorldContextObject, UOTWDWeaponStashAsset* WeaponStashAsset, TArray<FOTWDWeaponSavedData>& OutWeapons) {
+}
+
+bool UOTWDCampVendorBlueprintLibrary::GetWeaponStashBuyCost(const UObject* WorldContextObject, UOTWDWeaponStashAsset* WeaponStashAsset, const FOTWDWeaponSavedData& WeaponSavedData, FOTWDMetagameCurrency& OutCost) {
     return false;
 }
 
@@ -42,8 +52,16 @@ float UOTWDCampVendorBlueprintLibrary::GetBlackmarketItemSavedData(const UObject
 void UOTWDCampVendorBlueprintLibrary::GetBlackmarketItemSaveDataAtProgress(const UObject* WorldContextObject, int32 InventoryIndex, ESBZWeaponRarity Rarity, float ProgressPercent, EOTWDVendorItemSwitch& OutputExec, TArray<FOTWDWeaponSavedData>& OutWeapons, TArray<FOTWDWeaponPartSavedData>& OutWeaponParts) {
 }
 
+bool UOTWDCampVendorBlueprintLibrary::CanBuyWeaponStashWeapon(const UObject* WorldContextObject, UOTWDWeaponStashAsset* WeaponStashAsset, const FOTWDWeaponSavedData& WeaponSavedData) {
+    return false;
+}
+
 int32 UOTWDCampVendorBlueprintLibrary::CalculateGoldRequiredForProgress(const UObject* WorldContextObject, int32 InventoryIndex, ESBZWeaponRarity TargetRarity, float TargetProgress) {
     return 0;
+}
+
+bool UOTWDCampVendorBlueprintLibrary::BuyWeaponStashWeapon(const UObject* WorldContextObject, UOTWDWeaponStashAsset* WeaponStashAsset, const FOTWDWeaponSavedData& WeaponSavedData) {
+    return false;
 }
 
 bool UOTWDCampVendorBlueprintLibrary::BuyWeaponPart(const UObject* WorldContextObject, const FOTWDWeaponPartSavedData& WeaponPartSavedData) {
@@ -54,6 +72,4 @@ bool UOTWDCampVendorBlueprintLibrary::BuyWeapon(const UObject* WorldContextObjec
     return false;
 }
 
-UOTWDCampVendorBlueprintLibrary::UOTWDCampVendorBlueprintLibrary() {
-}
 

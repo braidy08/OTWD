@@ -22,6 +22,7 @@ protected:
     USBZPlayerActionHandler* OwningPlayerActionHandler;
     
 public:
-    USBZPlayerWeaponRestrictionComponent();
+    USBZPlayerWeaponRestrictionComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

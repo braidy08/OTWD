@@ -24,5 +24,6 @@ public:
     USBZBaseSpawnBehaviour* SpawnBehaviour;
     
     UOTWDTwitchSpawnSchematic();
+
 };
 

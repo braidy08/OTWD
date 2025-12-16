@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ESBZWeaponFamily.h"
-#include "SBZFactionIdHelper.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZFactionIdHelper -FallbackName=SBZFactionIdHelper
 #include "OTWDQuestObjectiveIngameDataAsset.h"
 #include "OTWDQuestObjectiveAIKilledDataAsset.generated.h"
 
@@ -21,12 +21,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<ESBZWeaponFamily> WeaponFamily;
     
- //   UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
- //   TSet<FSBZFactionIdHelper> Factions;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSet<FSBZFactionIdHelper> Factions;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bRequiresHeadshot;
     
     UOTWDQuestObjectiveAIKilledDataAsset();
+
 };
 

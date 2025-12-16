@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EObjectTypeQuery -FallbackName=EObjectTypeQuery
 #include "GameplayTagContainer.h"
 #include "SBZGrenade.h"
 #include "Templates/SubclassOf.h"
@@ -61,7 +61,8 @@ protected:
     TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypes;
     
 public:
-    ASBZFlashbangGrenade();
+    ASBZFlashbangGrenade(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnDetonate();

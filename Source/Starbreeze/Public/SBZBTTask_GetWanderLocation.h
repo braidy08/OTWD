@@ -38,5 +38,6 @@ public:
     float Radius;
     
     USBZBTTask_GetWanderLocation();
+
 };
 

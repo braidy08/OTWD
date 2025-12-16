@@ -6,3 +6,4 @@ UOTWDQuestObjectiveBaseDataAsset::UOTWDQuestObjectiveBaseDataAsset() {
     this->ObjectiveType = EOTWDQuestObjectiveType::None;
 }
 
+

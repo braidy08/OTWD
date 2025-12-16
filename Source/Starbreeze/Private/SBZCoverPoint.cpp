@@ -1,5 +1,14 @@
 #include "SBZCoverPoint.h"
-#include "Components/BoxComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
+#include "Components/SceneComponent.h"
+
+ASBZCoverPoint::ASBZCoverPoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+    this->BlockingCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("BlockingCollision"));
+    this->AIVisibilityNodeComputationFrequency = ESBZAIVisibilityNodeComputationFrequency::Once;
+    this->LinkRadius = 1;
+    this->BlockingCollision->SetupAttachment(RootComponent);
+}
 
 void ASBZCoverPoint::SetBlocked(bool bInBlocked) {
 }
@@ -91,9 +100,4 @@ bool ASBZCoverPoint::Abandon(AActor* OccupyingActor) {
     return false;
 }
 
-ASBZCoverPoint::ASBZCoverPoint() {
-    this->BlockingCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("BlockingCollision"));
-    this->AIVisibilityNodeComputationFrequency = ESBZAIVisibilityNodeComputationFrequency::Once;
-    this->LinkRadius = 1;
-}
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/TargetPoint.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TargetPoint -FallbackName=TargetPoint
 #include "Engine/EngineTypes.h"
 #include "SBZWeaponConfiguration.h"
 #include "Templates/SubclassOf.h"
@@ -52,7 +52,8 @@ private:
     USBZPedestalCharacterWeaponAnimationCollection* CharacterWeaponAnimationCollection;
     
 public:
-    ASBZCharacterPedestal();
+    ASBZCharacterPedestal(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void UpdateLocalPlayerState();

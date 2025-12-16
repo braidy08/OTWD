@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=EGameplayContainerMatchType -FallbackName=EGameplayContainerMatchType
 #include "SBZCompositeGameplayAbilityQuery.generated.h"
 
 class USBZGameplayAbilityQuery;

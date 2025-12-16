@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class STARBREEZE_API ASBZHolsteredWeapon : public ASBZWeapon {
     GENERATED_BODY()
 public:
-    ASBZHolsteredWeapon();
+    ASBZHolsteredWeapon(const FObjectInitializer& ObjectInitializer);
+
 };
 

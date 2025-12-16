@@ -15,6 +15,7 @@ protected:
     
 public:
     USBZMarkerSingleWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     USBZUIMarkerSingle* GetMarker() const;
     

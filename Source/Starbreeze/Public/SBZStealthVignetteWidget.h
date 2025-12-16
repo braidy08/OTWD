@@ -8,6 +8,7 @@ class STARBREEZE_API USBZStealthVignetteWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     USBZStealthVignetteWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStealthBroken();
     

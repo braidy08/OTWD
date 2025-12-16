@@ -8,5 +8,6 @@ class STARBREEZE_API UAccessPointType : public UObject {
     GENERATED_BODY()
 public:
     UAccessPointType();
+
 };
 

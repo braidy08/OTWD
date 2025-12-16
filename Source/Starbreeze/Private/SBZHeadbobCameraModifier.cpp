@@ -4,3 +4,4 @@ USBZHeadbobCameraModifier::USBZHeadbobCameraModifier() {
     this->ControllingCharacterMesh = NULL;
 }
 
+

@@ -1,5 +1,6 @@
 #include "OTWDPlayerActionHandler.h"
 
-UOTWDPlayerActionHandler::UOTWDPlayerActionHandler() {
+UOTWDPlayerActionHandler::UOTWDPlayerActionHandler(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

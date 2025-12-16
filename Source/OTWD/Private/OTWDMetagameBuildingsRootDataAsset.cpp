@@ -9,3 +9,4 @@ UOTWDMetagameBuildingsRootDataAsset::UOTWDMetagameBuildingsRootDataAsset() {
     this->InjuredModifier = 1;
 }
 
+

@@ -14,6 +14,7 @@ private:
     TArray<ASBZAIFactionHideZone*> ActiveZones;
     
 public:
-    USBZAIFactionHideZoneComponent();
+    USBZAIFactionHideZoneComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZAICharacterSchematic.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZAICharacterSchematic -FallbackName=SBZAICharacterSchematic
 #include "Templates/SubclassOf.h"
 #include "ZombieSpawnWoundData.h"
 #include "OTWDAICharacterSchematic.generated.h"
@@ -28,5 +28,6 @@ public:
     TArray<TSubclassOf<APawn>> FemaleCharacters;
     
     UOTWDAICharacterSchematic();
+
 };
 

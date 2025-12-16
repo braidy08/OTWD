@@ -25,7 +25,8 @@ private:
     bool bApplyToAllInteractables;
     
 public:
-    USBZOnInteractionObjective();
+    USBZOnInteractionObjective(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnInteractionSuccessful(USBZInteractableComponent* Interactable, const TArray<USBZBaseInteractorComponent*>& Interactors);

@@ -12,6 +12,7 @@ class STARBREEZE_API USBZWeaponConfigurationLibrary : public UBlueprintFunctionL
     GENERATED_BODY()
 public:
     USBZWeaponConfigurationLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool SetModularPartsFromWeaponConfiguration(const ASBZWeapon* Weapon, TArray<FSBZModularPart>& ModularParts, const FSBZWeaponConfiguration& WeaponConfiguration);
     

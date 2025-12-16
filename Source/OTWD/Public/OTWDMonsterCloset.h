@@ -1,11 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OTWDMonsterClosetBreachedSignatureDelegate.h"
 #include "OTWDSpawnRegion.h"
 #include "OTWDMonsterCloset.generated.h"
 
 class AActor;
-class AOTWDMonsterCloset;
-class UBoxComponent;
 class UChildActorComponent;
 class USBZBaseSpawnBehaviour;
 
@@ -13,8 +12,6 @@ UCLASS(Blueprintable)
 class OTWD_API AOTWDMonsterCloset : public AOTWDSpawnRegion {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOTWDMonsterClosetBreachedSignature, AOTWDMonsterCloset*, MonsterCloset);
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOTWDMonsterClosetBreachedSignature OnBreached;
     
@@ -26,16 +23,11 @@ public:
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UBoxComponent* ProximityTriggerBoxComponent;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UChildActorComponent* ClosetAttachmentComponent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    bool bIsEnabled;
-    
 public:
-    AOTWDMonsterCloset();
+    AOTWDMonsterCloset(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetMonsterClosetEnabled(bool bEnabled);
     

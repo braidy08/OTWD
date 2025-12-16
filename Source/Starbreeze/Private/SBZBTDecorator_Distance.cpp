@@ -1,6 +1,7 @@
 #include "SBZBTDecorator_Distance.h"
 
 USBZBTDecorator_Distance::USBZBTDecorator_Distance() {
+    this->NodeName = TEXT("Distance");
     this->ComparisonMethod = ESBZNumericComparison::EqualTo;
     this->Distance = 1;
     this->bUseDistanceKey = false;
@@ -9,4 +10,5 @@ USBZBTDecorator_Distance::USBZBTDecorator_Distance() {
     this->DistanceZ = 1;
     this->bRequiresBothDirections = true;
 }
+
 

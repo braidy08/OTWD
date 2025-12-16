@@ -24,5 +24,6 @@ public:
     bool bCheckDamageFlagOnly;
     
     USBZBTDecorator_HasTakenDamage();
+
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EPhysicalSurface -FallbackName=EPhysicalSurface
 #include "ESBZAISoundSurfaceTypes.h"
 #include "SBZSurfaceType.generated.h"
 
@@ -21,22 +21,37 @@ public:
     ESBZAISoundSurfaceTypes AISoundSurfaceType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USBZProjectileImpactSchematic* BulletImpactSchematic;
+    TSoftObjectPtr<USBZProjectileImpactSchematic> BulletImpactSchematic;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USBZMeleeImpactSchematic* MeleeImpactSchematic;
+    TSoftObjectPtr<USBZMeleeImpactSchematic> MeleeImpactSchematic;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USBZExplosionImpactSchematic* ExplosionImpactSchematic;
+    TSoftObjectPtr<USBZExplosionImpactSchematic> ExplosionImpactSchematic;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USBZFootstepImpactSchematic* FootstepImpactSchematic;
+    TSoftObjectPtr<USBZFootstepImpactSchematic> FootstepImpactSchematic;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USBZBloodSplatterImpactSchematic* BloodSplatterImpactSchematic;
+    TSoftObjectPtr<USBZBloodSplatterImpactSchematic> BloodSplatterImpactSchematic;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString MaterialSoundSwitchState;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USBZProjectileImpactSchematic* CachedBulletImpactSchematic;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USBZMeleeImpactSchematic* CachedMeleeImpactSchematic;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USBZExplosionImpactSchematic* CachedExplosionImpactSchematic;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USBZFootstepImpactSchematic* CachedFootstepImpactSchematic;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USBZBloodSplatterImpactSchematic* CachedBloodSplatterImpactSchematic;
     
     FSBZSurfaceType();
 };

@@ -9,6 +9,5 @@ enum class ESBZBTTask_GetWanderLocation_Method : uint8 {
     LimitedToCurrentVolume,
     LimitedToVolumes,
     AroundLocation,
-    ESBZBTTask_GetWanderLocation_MAX UMETA(Hidden),
 };
 

@@ -19,5 +19,6 @@ public:
     FSBZAlertnessLevelIdHelper HighestAlertLevelForSearch;
     
     USBZBTTask_Search();
+
 };
 

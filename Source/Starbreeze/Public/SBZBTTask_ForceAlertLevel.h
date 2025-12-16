@@ -15,5 +15,6 @@ public:
     float Alertness;
     
     USBZBTTask_ForceAlertLevel();
+
 };
 

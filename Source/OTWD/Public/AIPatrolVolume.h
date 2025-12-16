@@ -15,6 +15,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBoxComponent* BoxComponent;
     
-    AAIPatrolVolume();
+    AAIPatrolVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

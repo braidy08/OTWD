@@ -1,12 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
-#include "SBZMissionState.h"
-#include "SBZNetStruct.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZMissionState -FallbackName=SBZMissionState
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZNetStruct -FallbackName=SBZNetStruct
 #include "OnTwitchVoteChangedDelegate.h"
 #include "OnTwitchVoteEnabledDelegate.h"
 #include "OnTwitchVoteEndedDelegate.h"
 #include "OnTwitchVoteOpenedDelegate.h"
+#include "RequestFortificationCheckDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "VoteChange.h"
 #include "VoteConfig.h"
@@ -15,7 +16,6 @@
 
 class AOTWDGameIntensityAnalyzer;
 class AOTWDHordeManager;
-class APawn;
 class ASBZPlayerState;
 class UUserWidget;
 
@@ -23,8 +23,6 @@ UCLASS(Blueprintable)
 class OTWD_API AOTWDMissionState : public ASBZMissionState {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRequestFortificationCheck, APawn*, PlayerPawn);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer GameplayTags;
     
@@ -61,9 +59,10 @@ private:
     AOTWDHordeManager* HordeManager;
     
 public:
-    AOTWDMissionState();
+    AOTWDMissionState(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void RequestCanPlaceFortificationCheck();
     

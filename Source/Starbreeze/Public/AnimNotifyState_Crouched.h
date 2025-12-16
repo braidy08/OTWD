@@ -8,5 +8,6 @@ class STARBREEZE_API UAnimNotifyState_Crouched : public UAnimNotifyState {
     GENERATED_BODY()
 public:
     UAnimNotifyState_Crouched();
+
 };
 

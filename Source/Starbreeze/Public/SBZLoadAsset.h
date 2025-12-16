@@ -8,5 +8,6 @@ class USBZLoadAsset : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
     USBZLoadAsset();
+
 };
 

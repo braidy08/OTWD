@@ -4,3 +4,4 @@ UOTWDInstancedQuestDataAsset::UOTWDInstancedQuestDataAsset() {
     this->InstancedQuestType = EOTWDInstancedQuestType::CampDefence;
 }
 
+

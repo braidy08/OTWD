@@ -40,7 +40,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<AActor>> EncompassedTaggedActors;
     
-    ASBZLootRegion();
+    ASBZLootRegion(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Refresh();
     

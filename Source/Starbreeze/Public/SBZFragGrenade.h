@@ -31,7 +31,8 @@ protected:
     float DestroyDelay;
     
 public:
-    ASBZFragGrenade();
+    ASBZFragGrenade(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnDetonate();

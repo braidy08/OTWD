@@ -45,5 +45,6 @@ public:
     TSoftObjectPtr<UTexture2D> Icon;
     
     USBZBagTypeSchematic();
+
 };
 

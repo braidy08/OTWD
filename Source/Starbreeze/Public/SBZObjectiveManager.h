@@ -58,9 +58,10 @@ private:
     TMap<FUniqueNetIdRepl, APawn*> ActivePlayers;
     
 public:
-    ASBZObjectiveManager();
+    ASBZObjectiveManager(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 private:
     UFUNCTION(BlueprintCallable)
     void UpdateTimersLoop();

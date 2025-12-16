@@ -1,5 +1,6 @@
 #include "SBZEncounterVolume.h"
 
-ASBZEncounterVolume::ASBZEncounterVolume() {
+ASBZEncounterVolume::ASBZEncounterVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

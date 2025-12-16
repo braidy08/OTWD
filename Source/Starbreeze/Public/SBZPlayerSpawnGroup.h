@@ -12,6 +12,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<APlayerStart*> PlayerStarts;
     
-    ASBZPlayerSpawnGroup();
+    ASBZPlayerSpawnGroup(const FObjectInitializer& ObjectInitializer);
+
 };
 

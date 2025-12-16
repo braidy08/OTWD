@@ -1,13 +1,16 @@
 #include "SBZPlayerCharacter.h"
 #include "Components/CapsuleComponent.h"
-#include "Components/SkeletalMeshComponent.h"
-#include "GameFramework/SpringArmComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SpringArmComponent -FallbackName=SpringArmComponent
 #include "Net/UnrealNetwork.h"
 #include "SBZAimAssistComponent.h"
 #include "SBZArmorAttributeSet.h"
 #include "SBZAutoPeekComponent.h"
 #include "SBZCarryingComponent.h"
+#include "SBZCharacterMVComponent.h"
 #include "SBZCharacterMovementMultiplierModifier.h"
+#include "SBZClimbComponent.h"
+#include "SBZDetectionAttributeSet.h"
 #include "SBZFirstPersonCameraAttachment.h"
 #include "SBZInteractionAttributeSet.h"
 #include "SBZNoiseAttributeSet.h"
@@ -16,277 +19,33 @@
 #include "SBZPlayerDirectionalFeedbackComponent.h"
 #include "SBZPlayerDownedAttributeSet.h"
 #include "SBZPlayerGrappleHandler.h"
+#include "SBZPlayerMovementComponent.h"
 #include "SBZPlayerWeaponRestrictionComponent.h"
 #include "SBZRecoilComponent.h"
 #include "SBZStaminaAttributeSet.h"
 #include "SBZStrengthAttributeSet.h"
 #include "Templates/SubclassOf.h"
 
-void ASBZPlayerCharacter::ToggleWeaponPart(ESBZRangedWeaponModuleType PartType) {
-}
-
-void ASBZPlayerCharacter::TargetInfoUpdated() {
-}
-
-void ASBZPlayerCharacter::StartThrowThrowableProjectile(TSubclassOf<ASBZThrowableProjectile> ThrowableProjectileClass, const FVector& StartLocation, float ThrowForce, const FRadialDamageParams& RadialDamage) {
-}
-
-void ASBZPlayerCharacter::StartThrowSimple() {
-}
-
-void ASBZPlayerCharacter::StartThrow(AActor* ActorToThrow, float ThrowForce, bool bAddCharacterVelocity) {
-}
-
-void ASBZPlayerCharacter::SetWeaponPartEnabled(ESBZRangedWeaponModuleType PartType, bool bEnabled) {
-}
-
-void ASBZPlayerCharacter::ServerSetWeaponPartEnabled_Implementation(ASBZRangedWeapon* Weapon, ESBZRangedWeaponModuleType PartType, bool bEnabled) {
-}
-bool ASBZPlayerCharacter::ServerSetWeaponPartEnabled_Validate(ASBZRangedWeapon* Weapon, ESBZRangedWeaponModuleType PartType, bool bEnabled) {
-    return true;
-}
-
-void ASBZPlayerCharacter::ServerSetClimbSprinting_Implementation(bool bInIsRunning) {
-}
-bool ASBZPlayerCharacter::ServerSetClimbSprinting_Validate(bool bInIsRunning) {
-    return true;
-}
-
-void ASBZPlayerCharacter::ServerSetAnimationJumping_Implementation(bool bInIsJumping) {
-}
-bool ASBZPlayerCharacter::ServerSetAnimationJumping_Validate(bool bInIsJumping) {
-    return true;
-}
-
-void ASBZPlayerCharacter::Server_SpawnDone_Implementation() {
-}
-bool ASBZPlayerCharacter::Server_SpawnDone_Validate() {
-    return true;
-}
-
-void ASBZPlayerCharacter::Server_SetThrowing_Implementation(bool bInIsThrowing, bool bInIsInterrupted) {
-}
-bool ASBZPlayerCharacter::Server_SetThrowing_Validate(bool bInIsThrowing, bool bInIsInterrupted) {
-    return true;
-}
-
-void ASBZPlayerCharacter::Server_SetRunPressed_Implementation(bool bInIsRunPressed) {
-}
-bool ASBZPlayerCharacter::Server_SetRunPressed_Validate(bool bInIsRunPressed) {
-    return true;
-}
-
-void ASBZPlayerCharacter::Server_SetRunActionEnabled_Implementation(bool bInIsRunActionEnabled) {
-}
-bool ASBZPlayerCharacter::Server_SetRunActionEnabled_Validate(bool bInIsRunActionEnabled) {
-    return true;
-}
-
-void ASBZPlayerCharacter::Server_SetMeleeMovementModifierMultiplier_Implementation(float InMultiplier) {
-}
-bool ASBZPlayerCharacter::Server_SetMeleeMovementModifierMultiplier_Validate(float InMultiplier) {
-    return true;
-}
-
-void ASBZPlayerCharacter::Server_SetIsForwardInput_Implementation(bool bInIsForwardInput) {
-}
-bool ASBZPlayerCharacter::Server_SetIsForwardInput_Validate(bool bInIsForwardInput) {
-    return true;
-}
-
-void ASBZPlayerCharacter::Server_SetFlashlightEnabled_Implementation(bool bInIsFlashlightEnabled) {
-}
-bool ASBZPlayerCharacter::Server_SetFlashlightEnabled_Validate(bool bInIsFlashlightEnabled) {
-    return true;
-}
-
-void ASBZPlayerCharacter::Server_OnDisableStrengthRegenChanged_Implementation(bool bInIsDisabled) {
-}
-bool ASBZPlayerCharacter::Server_OnDisableStrengthRegenChanged_Validate(bool bInIsDisabled) {
-    return true;
-}
-
-void ASBZPlayerCharacter::RemoveThrowItem(bool bRemoveEffectsOnly, bool bDestroyThrowItem) {
-}
-
-void ASBZPlayerCharacter::RemoveCameraFeedback(int32 RemoveID) {
-}
-
-void ASBZPlayerCharacter::PlaySoundEffectByName(const FString& EventName) {
-}
-
-void ASBZPlayerCharacter::PlaySoundEffect(UAkAudioEvent* InAkEvent) {
-}
-
-void ASBZPlayerCharacter::PlayCinematicMontage_Implementation(UAnimMontage* InCharacterMontage1P, UAnimMontage* InCharacterMontage3P, UAnimMontage* InWeaponMontage1P, UAnimMontage* InWeaponMontage3P, TSubclassOf<ASkeletalMeshActor> InWeaponMeshActorClass1P, TSubclassOf<ASkeletalMeshActor> InWeaponMeshActorClass3P, FName InAttachSocket1P, FName InAttachSocket3P) {
-}
-
-void ASBZPlayerCharacter::PickupSupplies() {
-}
-
-void ASBZPlayerCharacter::OnRep_IsFlashlightEnabled() {
-}
-
-void ASBZPlayerCharacter::OnInteractionSuccess(USBZInteractableComponent* Interactable) {
-}
-
-void ASBZPlayerCharacter::OnDamage(const FDamageReceivedData& DamageData) {
-}
-
-void ASBZPlayerCharacter::OnCinematicMontageTimerDone(bool bInIsEquippedWeaponHidden) {
-}
-
-void ASBZPlayerCharacter::Multicast_SetThrowing_Implementation(bool bInIsThrowing, bool bInIsInterrupted) {
-}
-
-void ASBZPlayerCharacter::Multicast_RepVaultMontagePosition_Implementation(float InVaultMontagePosition) {
-}
-
-void ASBZPlayerCharacter::McastSetAnimationJumping_Implementation(bool bInIsJumping) {
-}
-
-void ASBZPlayerCharacter::K2_PlayCinematicMontage(UAnimMontage* InCharacterMontage1P, UAnimMontage* InCharacterMontage3P, UAnimMontage* InWeaponMontage1P, UAnimMontage* InWeaponMontage3P, TSubclassOf<ASkeletalMeshActor> InWeaponMeshActorClass1P, TSubclassOf<ASkeletalMeshActor> InWeaponMeshActorClass3P, FName InAttachSocket1P, FName InAttachSocket3P) {
-}
-
-bool ASBZPlayerCharacter::IsTargetedByAlertEnemies() const {
-    return false;
-}
-
-bool ASBZPlayerCharacter::IsTargetedByAggroEnemies() const {
-    return false;
-}
-
-bool ASBZPlayerCharacter::IsFirstPerson() const {
-    return false;
-}
-
-void ASBZPlayerCharacter::HandleWeaponContinuousFireToggled(bool bIsNowContinuouslyFiring) {
-}
-
-void ASBZPlayerCharacter::HandlePickupStateChanged(ESBZPickedUpState NewState, ASBZPickupItem* PickupItem) {
-}
-
-float ASBZPlayerCharacter::GetWantedFOV() const {
-    return 0.0f;
-}
-
-ASBZThrownItem* ASBZPlayerCharacter::GetThrowItem() {
-    return NULL;
-}
-
-float ASBZPlayerCharacter::GetTargetingTransitionTime() const {
-    return 0.0f;
-}
-
-void ASBZPlayerCharacter::GetTargetingProgress(float& OutProgress, bool& bOutWantsTargeting) {
-}
-
-float ASBZPlayerCharacter::GetTargetingOnTopFOV() const {
-    return 0.0f;
-}
-
-float ASBZPlayerCharacter::GetTargetingFOV() const {
-    return 0.0f;
-}
-
-float ASBZPlayerCharacter::GetNormalOnTopFOV() const {
-    return 0.0f;
-}
-
-float ASBZPlayerCharacter::GetNormalFOV() const {
-    return 0.0f;
-}
-
-USBZLadderCameraModifier* ASBZPlayerCharacter::GetLadderModifier() {
-    return NULL;
-}
-
-USBZHeadbobCameraModifier* ASBZPlayerCharacter::GetHeadbobModifier() {
-    return NULL;
-}
-
-float ASBZPlayerCharacter::GetFOVModifier(bool bWantsTargeting, bool bOnTop) const {
-    return 0.0f;
-}
-
-float ASBZPlayerCharacter::GetCurrentShoveImmunity() const {
-    return 0.0f;
-}
-
-float ASBZPlayerCharacter::GetControllerInputModifier() {
-    return 0.0f;
-}
-
-FText ASBZPlayerCharacter::GetCharacterName() const {
-    return FText::GetEmpty();
-}
-
-USBZFirstPersonCameraAttachment* ASBZPlayerCharacter::GetCameraAttachment() const {
-    return NULL;
-}
-
-float ASBZPlayerCharacter::GetBaseFOV() const {
-    return 0.0f;
-}
-
-USBZPlayerActionHandler* ASBZPlayerCharacter::GetActionHandler() const {
-    return NULL;
-}
-
-void ASBZPlayerCharacter::FadeOutCameraFeedback(int32 RemoveID) {
-}
-
-void ASBZPlayerCharacter::ClientDetachFPCamera_Implementation(AController* InController) {
-}
-
-void ASBZPlayerCharacter::Client_StopNeedsToMove_Implementation() {
-}
-
-void ASBZPlayerCharacter::Client_StartNeedsToMove_Implementation(float TimeLeft) {
-}
-
-void ASBZPlayerCharacter::CheckNetRelevancy() {
-}
-
-FString ASBZPlayerCharacter::CharacterName() {
-    return TEXT("");
-}
-
-void ASBZPlayerCharacter::ChangeWeaponToIndex(int32 InNewWeaponIndex) {
-}
-
-
-
-
-
-int32 ASBZPlayerCharacter::ApplyCameraFeedback(TSubclassOf<USBZLocalPlayerFeedback> FeedbackClass) {
-    return 0;
-}
-
-void ASBZPlayerCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
-    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-    
-    DOREPLIFETIME(ASBZPlayerCharacter, bIsRunActionEnabled);
-    DOREPLIFETIME(ASBZPlayerCharacter, bIsRunPressed);
-    DOREPLIFETIME(ASBZPlayerCharacter, ThrowItem);
-    DOREPLIFETIME(ASBZPlayerCharacter, bWantsToClimbSprint);
-    DOREPLIFETIME(ASBZPlayerCharacter, bIsFlashlightEnabled);
-    DOREPLIFETIME(ASBZPlayerCharacter, TargetedByAggroEnemies);
-    DOREPLIFETIME(ASBZPlayerCharacter, TargetedByAlertEnemies);
-    DOREPLIFETIME(ASBZPlayerCharacter, GrappleDamageAbilityHandle);
-    DOREPLIFETIME(ASBZPlayerCharacter, GrappleStruggleShoveDamageAbilityHandle);
-}
-
-ASBZPlayerCharacter::ASBZPlayerCharacter() {
+ASBZPlayerCharacter::ASBZPlayerCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USBZPlayerMovementComponent>(TEXT("CharMoveComp"))) {
+    this->bAlwaysRelevant = true;
+    this->Tags.AddDefaulted(1);
+    this->AIControllerClass = NULL;
+    this->bShouldTearOffNetworkOnDeath = false;
+    this->ExplosionLineTraceBones.AddDefaulted(6);
+    this->bSpawnGrappleKnifeOnBeginPlay = true;
+    this->ClimbComponent = CreateDefaultSubobject<USBZClimbComponent>(TEXT("ClimbLadderComponent"));
+    this->MantlingVaultingComponent = CreateDefaultSubobject<USBZCharacterMVComponent>(TEXT("MantlingVaultingComponent"));
     this->ArmorAttributeSet = CreateDefaultSubobject<USBZArmorAttributeSet>(TEXT("SBZArmorAttributeSet"));
     this->StaminaAttributeSet = CreateDefaultSubobject<USBZStaminaAttributeSet>(TEXT("SBZStaminaAttributeSet"));
     this->StrengthAttributeSet = CreateDefaultSubobject<USBZStrengthAttributeSet>(TEXT("SBZStrengthAttributeSet"));
     this->InteractionAttributeSet = CreateDefaultSubobject<USBZInteractionAttributeSet>(TEXT("SBZInteractionAttributeSet"));
     this->NoiseAttributeSet = CreateDefaultSubobject<USBZNoiseAttributeSet>(TEXT("SBZNoiseAttributeSet"));
     this->PlayerDownedAttributeSet = CreateDefaultSubobject<USBZPlayerDownedAttributeSet>(TEXT("SBZPlayerDownedAttributeSet"));
+    this->DetectionAttributeSet = CreateDefaultSubobject<USBZDetectionAttributeSet>(TEXT("SBZDetectionAttributeSet"));
     this->LowThreshholdDuration = 1;
     this->LowThreshholdPostProcess = 1;
     this->bUseLowStaminaPostProcessEffect = true;
+    this->StrengthDepletedShoveDuration = 1;
     this->VaultMontagePosition = 1;
     this->RecoilComponent = CreateDefaultSubobject<USBZRecoilComponent>(TEXT("RecoilComponent"));
     this->PlayerWeaponRestrictionComponent = CreateDefaultSubobject<USBZPlayerWeaponRestrictionComponent>(TEXT("PlayerWeaponRestrictionComponent"));
@@ -301,6 +60,7 @@ ASBZPlayerCharacter::ASBZPlayerCharacter() {
     this->CinematicMontageWeapon = NULL;
     this->Mesh1P = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("PawnMesh1P"));
     this->LegMesh1P = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("PawnLegMesh1P"));
+    const FProperty* p_Mesh_Parent = GetClass()->FindPropertyByName("Mesh");
     this->WeaponShadow1P = NULL;
     this->bIsRunActionEnabled = false;
     this->bIsRunPressed = false;
@@ -393,5 +153,273 @@ ASBZPlayerCharacter::ASBZPlayerCharacter() {
     this->TargetedByAggroEnemies = 0;
     this->TargetedByAlertEnemies = 0;
     this->FlashlightGadget = NULL;
+    this->FPCameraSpringArm->SetupAttachment(RootComponent);
+    this->FPCameraAttachment->SetupAttachment(FPCameraSpringArm);
+    this->LegMesh1P->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponent>(this));
+    this->Mesh1P->SetupAttachment(FPCameraAttachment);
 }
+
+void ASBZPlayerCharacter::ToggleWeaponPart(ESBZRangedWeaponModuleType PartType) {
+}
+
+void ASBZPlayerCharacter::TargetInfoUpdated() {
+}
+
+void ASBZPlayerCharacter::StartThrowThrowableProjectile(TSubclassOf<ASBZThrowableProjectile> ThrowableProjectileClass, const FVector& StartLocation, float ThrowForce, const FRadialDamageParams& RadialDamage) {
+}
+
+void ASBZPlayerCharacter::StartThrowSimple() {
+}
+
+void ASBZPlayerCharacter::StartThrow(AActor* ActorToThrow, float ThrowForce, bool bAddCharacterVelocity) {
+}
+
+void ASBZPlayerCharacter::SetWeaponPartEnabled(ESBZRangedWeaponModuleType PartType, bool bEnabled) {
+}
+
+void ASBZPlayerCharacter::ServerSetWeaponPartEnabled_Implementation(ASBZRangedWeapon* Weapon, ESBZRangedWeaponModuleType PartType, bool bEnabled) {
+}
+bool ASBZPlayerCharacter::ServerSetWeaponPartEnabled_Validate(ASBZRangedWeapon* Weapon, ESBZRangedWeaponModuleType PartType, bool bEnabled) {
+    return true;
+}
+
+void ASBZPlayerCharacter::ServerSetClimbSprinting_Implementation(bool bInIsRunning) {
+}
+bool ASBZPlayerCharacter::ServerSetClimbSprinting_Validate(bool bInIsRunning) {
+    return true;
+}
+
+void ASBZPlayerCharacter::ServerSetAnimationJumping_Implementation(bool bInIsJumping) {
+}
+bool ASBZPlayerCharacter::ServerSetAnimationJumping_Validate(bool bInIsJumping) {
+    return true;
+}
+
+void ASBZPlayerCharacter::Server_SpawnDone_Implementation() {
+}
+bool ASBZPlayerCharacter::Server_SpawnDone_Validate() {
+    return true;
+}
+
+void ASBZPlayerCharacter::Server_SetThrowing_Implementation(bool bInIsThrowing, bool bInIsInterrupted) {
+}
+bool ASBZPlayerCharacter::Server_SetThrowing_Validate(bool bInIsThrowing, bool bInIsInterrupted) {
+    return true;
+}
+
+void ASBZPlayerCharacter::Server_SetRunPressed_Implementation(bool bInIsRunPressed) {
+}
+bool ASBZPlayerCharacter::Server_SetRunPressed_Validate(bool bInIsRunPressed) {
+    return true;
+}
+
+void ASBZPlayerCharacter::Server_SetRunActionEnabled_Implementation(bool bInIsRunActionEnabled) {
+}
+bool ASBZPlayerCharacter::Server_SetRunActionEnabled_Validate(bool bInIsRunActionEnabled) {
+    return true;
+}
+
+void ASBZPlayerCharacter::Server_SetMeleeMovementModifierMultiplier_Implementation(float InMultiplier) {
+}
+bool ASBZPlayerCharacter::Server_SetMeleeMovementModifierMultiplier_Validate(float InMultiplier) {
+    return true;
+}
+
+void ASBZPlayerCharacter::Server_SetIsForwardInput_Implementation(bool bInIsForwardInput) {
+}
+bool ASBZPlayerCharacter::Server_SetIsForwardInput_Validate(bool bInIsForwardInput) {
+    return true;
+}
+
+void ASBZPlayerCharacter::Server_SetFlashlightEnabled_Implementation(bool bInIsFlashlightEnabled) {
+}
+bool ASBZPlayerCharacter::Server_SetFlashlightEnabled_Validate(bool bInIsFlashlightEnabled) {
+    return true;
+}
+
+void ASBZPlayerCharacter::Server_OnDisableStrengthRegenChanged_Implementation(bool bInIsDisabled) {
+}
+bool ASBZPlayerCharacter::Server_OnDisableStrengthRegenChanged_Validate(bool bInIsDisabled) {
+    return true;
+}
+
+void ASBZPlayerCharacter::RemoveThrowItem(bool bRemoveEffectsOnly, bool bDestroyThrowItem) {
+}
+
+bool ASBZPlayerCharacter::RemoveCameraFeedback(int32 RemoveID) {
+    return false;
+}
+
+void ASBZPlayerCharacter::PlaySoundEffectByName(const FString& EventName) {
+}
+
+void ASBZPlayerCharacter::PlaySoundEffect(UAkAudioEvent* InAkEvent) {
+}
+
+void ASBZPlayerCharacter::PlayCinematicMontage_Implementation(UAnimMontage* InCharacterMontage1P, UAnimMontage* InCharacterMontage3P, UAnimMontage* InWeaponMontage1P, UAnimMontage* InWeaponMontage3P, TSubclassOf<ASkeletalMeshActor> InWeaponMeshActorClass1P, TSubclassOf<ASkeletalMeshActor> InWeaponMeshActorClass3P, FName InAttachSocket1P, FName InAttachSocket3P) {
+}
+
+void ASBZPlayerCharacter::PickupSupplies() {
+}
+
+void ASBZPlayerCharacter::OnRep_ThrownItemChanged() {
+}
+
+void ASBZPlayerCharacter::OnRep_IsFlashlightEnabled() {
+}
+
+void ASBZPlayerCharacter::OnInteractionSuccess(USBZInteractableComponent* Interactable) {
+}
+
+void ASBZPlayerCharacter::OnDisableStrengthRegenChanged(bool bInIsDisabled, bool bIsDelayedToNotification) {
+}
+
+void ASBZPlayerCharacter::OnDamage(const FDamageReceivedData& DamageData) {
+}
+
+void ASBZPlayerCharacter::OnCinematicMontageTimerDone(bool bInIsEquippedWeaponHidden) {
+}
+
+void ASBZPlayerCharacter::Multicast_SetThrowing_Implementation(bool bInIsThrowing, bool bInIsInterrupted) {
+}
+
+void ASBZPlayerCharacter::Multicast_RepVaultMontagePosition_Implementation(float InVaultMontagePosition) {
+}
+
+void ASBZPlayerCharacter::McastSetAnimationJumping_Implementation(bool bInIsJumping) {
+}
+
+void ASBZPlayerCharacter::K2_PlayCinematicMontage(UAnimMontage* InCharacterMontage1P, UAnimMontage* InCharacterMontage3P, UAnimMontage* InWeaponMontage1P, UAnimMontage* InWeaponMontage3P, TSubclassOf<ASkeletalMeshActor> InWeaponMeshActorClass1P, TSubclassOf<ASkeletalMeshActor> InWeaponMeshActorClass3P, FName InAttachSocket1P, FName InAttachSocket3P) {
+}
+
+bool ASBZPlayerCharacter::IsTargetedByAlertEnemies() const {
+    return false;
+}
+
+bool ASBZPlayerCharacter::IsTargetedByAggroEnemies() const {
+    return false;
+}
+
+bool ASBZPlayerCharacter::IsFirstPerson() const {
+    return false;
+}
+
+void ASBZPlayerCharacter::HandleWeaponContinuousFireToggled(bool bIsNowContinuouslyFiring) {
+}
+
+void ASBZPlayerCharacter::HandlePickupStateChanged(ESBZPickedUpState NewState, ASBZPickupItem* PickupItem) {
+}
+
+float ASBZPlayerCharacter::GetWantedFOV() const {
+    return 0.0f;
+}
+
+ASBZThrownItem* ASBZPlayerCharacter::GetThrowItem() {
+    return NULL;
+}
+
+float ASBZPlayerCharacter::GetTargetingTransitionTime() const {
+    return 0.0f;
+}
+
+void ASBZPlayerCharacter::GetTargetingProgress(float& OutProgress, bool& bOutWantsTargeting) {
+}
+
+float ASBZPlayerCharacter::GetTargetingOnTopFOV() const {
+    return 0.0f;
+}
+
+float ASBZPlayerCharacter::GetTargetingFOV() const {
+    return 0.0f;
+}
+
+float ASBZPlayerCharacter::GetNormalOnTopFOV() const {
+    return 0.0f;
+}
+
+float ASBZPlayerCharacter::GetNormalFOV() const {
+    return 0.0f;
+}
+
+USBZLadderCameraModifier* ASBZPlayerCharacter::GetLadderModifier() {
+    return NULL;
+}
+
+USBZHeadbobCameraModifier* ASBZPlayerCharacter::GetHeadbobModifier() {
+    return NULL;
+}
+
+float ASBZPlayerCharacter::GetFOVModifier(bool bWantsTargeting, bool bOnTop) const {
+    return 0.0f;
+}
+
+float ASBZPlayerCharacter::GetFOVMagnification(bool bWantsTargeting, bool bOnTop) const {
+    return 0.0f;
+}
+
+float ASBZPlayerCharacter::GetCurrentShoveImmunity() const {
+    return 0.0f;
+}
+
+float ASBZPlayerCharacter::GetControllerInputModifier() {
+    return 0.0f;
+}
+
+FText ASBZPlayerCharacter::GetCharacterName() const {
+    return FText::GetEmpty();
+}
+
+USBZFirstPersonCameraAttachment* ASBZPlayerCharacter::GetCameraAttachment() const {
+    return NULL;
+}
+
+float ASBZPlayerCharacter::GetBaseFOV() const {
+    return 0.0f;
+}
+
+USBZPlayerActionHandler* ASBZPlayerCharacter::GetActionHandler() const {
+    return NULL;
+}
+
+bool ASBZPlayerCharacter::FadeOutCameraFeedback(int32 RemoveID) {
+    return false;
+}
+
+void ASBZPlayerCharacter::ClientDetachFPCamera_Implementation(AController* InController) {
+}
+
+void ASBZPlayerCharacter::Client_StopNeedsToMove_Implementation() {
+}
+
+void ASBZPlayerCharacter::Client_StartNeedsToMove_Implementation(float TimeLeft) {
+}
+
+void ASBZPlayerCharacter::CheckNetRelevancy() {
+}
+
+void ASBZPlayerCharacter::ChangeWeaponToIndex(int32 InNewWeaponIndex) {
+}
+
+
+
+
+
+int32 ASBZPlayerCharacter::ApplyCameraFeedback(TSubclassOf<USBZLocalPlayerFeedback> FeedbackClass, float Intensity) {
+    return 0;
+}
+
+void ASBZPlayerCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
+    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+    
+    DOREPLIFETIME(ASBZPlayerCharacter, bIsRunActionEnabled);
+    DOREPLIFETIME(ASBZPlayerCharacter, bIsRunPressed);
+    DOREPLIFETIME(ASBZPlayerCharacter, ThrowItem);
+    DOREPLIFETIME(ASBZPlayerCharacter, bWantsToClimbSprint);
+    DOREPLIFETIME(ASBZPlayerCharacter, bIsFlashlightEnabled);
+    DOREPLIFETIME(ASBZPlayerCharacter, TargetedByAggroEnemies);
+    DOREPLIFETIME(ASBZPlayerCharacter, TargetedByAlertEnemies);
+    DOREPLIFETIME(ASBZPlayerCharacter, GrappleDamageAbilityHandle);
+    DOREPLIFETIME(ASBZPlayerCharacter, GrappleStruggleShoveDamageAbilityHandle);
+}
+
 

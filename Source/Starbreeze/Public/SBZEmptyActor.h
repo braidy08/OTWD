@@ -12,6 +12,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USceneComponent* Scene;
     
-    ASBZEmptyActor();
+    ASBZEmptyActor(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -1,8 +1,5 @@
 #include "SBZNotificationWidget.h"
 
-void USBZNotificationWidget::SetupWidgets(UTextBlock* TitleTextWidget, UTextBlock* BodyTextWidget, UCanvasPanel* ProgressContainerWidget, UTextBlock* ProgressTextWidget, UProgressBar* CurrentProgressBarWidget, UImage* IconImageWidget) {
-}
-
 USBZNotificationWidget::USBZNotificationWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->TitleText = NULL;
     this->BodyText = NULL;
@@ -13,4 +10,8 @@ USBZNotificationWidget::USBZNotificationWidget() : UUserWidget(FObjectInitialize
     this->MaxLifespan = 1;
     this->CurrentLifespan = 1;
 }
+
+void USBZNotificationWidget::SetupWidgets(UTextBlock* TitleTextWidget, UTextBlock* BodyTextWidget, UCanvasPanel* ProgressContainerWidget, UTextBlock* ProgressTextWidget, UProgressBar* CurrentProgressBarWidget, UImage* IconImageWidget) {
+}
+
 

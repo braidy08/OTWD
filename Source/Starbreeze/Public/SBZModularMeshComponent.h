@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
+#include "OperationSignatureDelegate.h"
 #include "SBZModularAttachmentComponents.h"
 #include "SBZModularPart.h"
 #include "SBZModularMeshComponent.generated.h"
@@ -17,8 +18,6 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZModularMeshComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOperationSignature);
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOperationSignature ComponentSpawningStarted;
     
@@ -30,6 +29,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     USBZMaterialReplacements* MaterialReplacements;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<USBZWeaponPartSlot*> UnskinnedPartSlots;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
@@ -48,9 +50,10 @@ protected:
     TMap<FName, FSBZModularAttachmentComponents> AttachableSockets;
     
 public:
-    USBZModularMeshComponent();
+    USBZModularMeshComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void UpdateInstancedComponentsFromBaseRig();
     
@@ -62,6 +65,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetBaseRigComponent(USceneComponent* NewBaseRigComponent);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsSpawningComponents() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FBoxSphereBounds GetTightBounds() const;

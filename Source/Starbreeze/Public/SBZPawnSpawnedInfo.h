@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FSBZPawnSpawnedInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     APawn* SpawnedPawn;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASBZSpawnerBase* Spawner;
     
     STARBREEZE_API FSBZPawnSpawnedInfo();

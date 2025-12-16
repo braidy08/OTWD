@@ -49,6 +49,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_BuildProgress, meta=(AllowPrivateAccess=true))
     float CurrentHordeProgress;
     
+    UPROPERTY(EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USBZBaseSpawnBehaviour* ExposedSpawnerBehaviors[2];
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float CurrentPhasePopulationScale;
@@ -60,9 +63,10 @@ private:
     AOTWDWorldSettings* CachedOTWDWorldSettings;
     
 public:
-    AOTWDHordeManager();
+    AOTWDHordeManager(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void StopHordeAutoBuildup();
     

@@ -36,5 +36,6 @@ public:
     FOTWDMetagameCurrency BountyReward;
     
     UOTWDQuestDataAssetRoot();
+
 };
 

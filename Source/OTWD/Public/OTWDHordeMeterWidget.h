@@ -83,6 +83,7 @@ private:
     
 public:
     UOTWDHordeMeterWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UImage* ProgressImageWidget, UImage* EventImageWidget, UWidgetAnimation* DefaultStateAnimation, UImage* AlarmImageWidget, UWidgetAnimation* DefaultAlarmAnimation, UWidgetAnimation* DefaultAlarmStartAnimation, UWidgetAnimation* MaxStateAnimation, UWidgetAnimation* MaxAlarmLoopingAnimation, UTextBlock* EventTextWidget, UWidgetAnimation* IncreaseAnimation, UImage* StageImageWidget, UImage* DelayedStageImageWidget, UBorder* ColoredBorderWidget, UBorder* ExtraColoredBorderWidget, UWidgetAnimation* ActivationAnimation);
     

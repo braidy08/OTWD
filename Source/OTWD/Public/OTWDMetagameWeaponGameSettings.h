@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DeveloperSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "OTWDMetagameWeaponGameSettings.generated.h"
 
 class UOTWDMetagameWeaponDataAsset;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=OTWD)
+UCLASS(Blueprintable, DefaultConfig, Config=OTWD)
 class UOTWDMetagameWeaponGameSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -18,6 +18,7 @@ protected:
     
 public:
     UOTWDMetagameWeaponGameSettings();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UOTWDMetagameWeaponDataAsset* GetMetaDataAsset();
     

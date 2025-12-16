@@ -1,7 +1,27 @@
 #include "SBZPlayerController.h"
 #include "Net/UnrealNetwork.h"
+#include "SBZCheatManager.h"
+#include "SBZPlayerCameraManager.h"
 #include "SBZPlayerDramaComponent.h"
+#include "SBZRemoteActorVisibility.h"
 #include "Templates/SubclassOf.h"
+
+ASBZPlayerController::ASBZPlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bWantsDetailedDamageEvents = true;
+    this->PlayerCameraManagerClass = ASBZPlayerCameraManager::StaticClass();
+    this->CheatClass = USBZCheatManager::StaticClass();
+    this->ClickEventKeys.AddDefaulted(1);
+    this->DramaComponent = CreateDefaultSubobject<USBZPlayerDramaComponent>(TEXT("DramaComponent"));
+    this->RemoteSpawnerVisibility = CreateDefaultSubobject<USBZRemoteActorVisibility>(TEXT("RemoteSpawnerVisibility"));
+    this->PreviousPawn = NULL;
+    this->SBZCharacter = NULL;
+    this->SBZPlayerCharacter = NULL;
+    this->PlayerDefeatSettings = NULL;
+    this->Corpse = NULL;
+    this->LowAmmoLimit = 1;
+    this->LowAmmoCheckInterval = 1;
+    this->LocalPlayerClass = NULL;
+}
 
 void ASBZPlayerController::ToggleInGameMenu() {
 }
@@ -63,6 +83,12 @@ bool ASBZPlayerController::Server_DrawAreaBroadcastClear_Validate(int32 PlayerId
 void ASBZPlayerController::Server_DrawAreaBroadcastActionBuffer_Implementation(int32 PlayerId, const FName& DrawArea, const FDrawAreaActionBuffer& ActionBuffer) {
 }
 bool ASBZPlayerController::Server_DrawAreaBroadcastActionBuffer_Validate(int32 PlayerId, const FName& DrawArea, const FDrawAreaActionBuffer& ActionBuffer) {
+    return true;
+}
+
+void ASBZPlayerController::Server_DebugTeleportTo_Implementation(const FVector Location, const float Yaw) {
+}
+bool ASBZPlayerController::Server_DebugTeleportTo_Validate(const FVector Location, const float Yaw) {
     return true;
 }
 
@@ -255,15 +281,4 @@ void ASBZPlayerController::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(ASBZPlayerController, ProfileInfo);
 }
 
-ASBZPlayerController::ASBZPlayerController() {
-    this->DramaComponent = CreateDefaultSubobject<USBZPlayerDramaComponent>(TEXT("DramaComponent"));
-    this->PreviousPawn = NULL;
-    this->SBZCharacter = NULL;
-    this->SBZPlayerCharacter = NULL;
-    this->PlayerDefeatSettings = NULL;
-    this->Corpse = NULL;
-    this->LowAmmoLimit = 1;
-    this->LowAmmoCheckInterval = 1;
-    this->LocalPlayerClass = NULL;
-}
 

@@ -1,6 +1,12 @@
 #include "OTWDPlayerStealthMeterComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDPlayerStealthMeterComponent::UOTWDPlayerStealthMeterComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->MaxImmediateThreatMarkers = 0;
+    this->ViewFovBase = 1;
+    this->MaxSniperThreatMarkers = 0;
+}
+
 void UOTWDPlayerStealthMeterComponent::GetSniperThreats(TArray<AActor*>& OutArray) const {
 }
 
@@ -35,9 +41,4 @@ void UOTWDPlayerStealthMeterComponent::GetLifetimeReplicatedProps(TArray<FLifeti
     DOREPLIFETIME(UOTWDPlayerStealthMeterComponent, ImmediateThreats);
 }
 
-UOTWDPlayerStealthMeterComponent::UOTWDPlayerStealthMeterComponent() {
-    this->MaxImmediateThreatMarkers = 0;
-    this->ViewFovBase = 1;
-    this->MaxSniperThreatMarkers = 0;
-}
 

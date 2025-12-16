@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
-#include "SBZAttributeSetOverflowBase.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZAttributeSetOverflowBase -FallbackName=SBZAttributeSetOverflowBase
 #include "OTWDCraftingResourceAttributeSet.generated.h"
 
 UCLASS(Blueprintable)
@@ -32,14 +32,27 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_GadgetMaximum, meta=(AllowPrivateAccess=true))
     float GadgetMaximum;
     
-    UOTWDCraftingResourceAttributeSet();
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_Guts, meta=(AllowPrivateAccess=true))
+    float Guts;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_GutsMaximum, meta=(AllowPrivateAccess=true))
+    float GutsMaximum;
+    
+    UOTWDCraftingResourceAttributeSet();
+
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintCallable)
     void OnRep_MetalMaximum(float OldValue);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_Metal(float OldValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_GutsMaximum(float OldValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_Guts(float OldValue);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_GadgetMaximum(float OldValue);
@@ -64,6 +77,12 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FGameplayAttribute GetMetalAttribute();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static FGameplayAttribute GetGutsMaximumAttribute();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static FGameplayAttribute GetGutsAttribute();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FGameplayAttribute GetGadgetMaximumAttribute();

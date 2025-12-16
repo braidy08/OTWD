@@ -1,5 +1,14 @@
 #include "SBZEncounter.h"
 
+ASBZEncounter::ASBZEncounter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->CharacterTable = NULL;
+    this->LinkedCombatArea = NULL;
+    this->SpawnBehaviour = NULL;
+    this->bIgnorePopulationPool = false;
+    this->CurrentWaveCount = 0;
+    this->CurrentPhase = NULL;
+}
+
 void ASBZEncounter::StartEncounter_Implementation() {
 }
 
@@ -83,11 +92,4 @@ void ASBZEncounter::AdvancePhase() {
 void ASBZEncounter::AddWeightToSpawner(ASBZSpawnerBase* TargetSpawner, float AdditionalWeight) {
 }
 
-ASBZEncounter::ASBZEncounter() {
-    this->CharacterTable = NULL;
-    this->LinkedCombatArea = NULL;
-    this->SpawnBehaviour = NULL;
-    this->bIgnorePopulationPool = false;
-    this->CurrentWaveCount = 0;
-}
 

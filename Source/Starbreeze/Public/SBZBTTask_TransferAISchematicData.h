@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTTask_TransferAISchematicData : public USBZBTTask_Tran
     GENERATED_BODY()
 public:
     USBZBTTask_TransferAISchematicData();
+
 };
 

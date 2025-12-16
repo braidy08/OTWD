@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTTask_ClimbLadder : public UBTTaskNode {
     GENERATED_BODY()
 public:
     USBZBTTask_ClimbLadder();
+
 };
 

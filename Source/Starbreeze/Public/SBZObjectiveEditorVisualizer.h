@@ -18,6 +18,7 @@ private:
     USBZObjectiveComponent* ObjectiveComponent;
     
 public:
-    ASBZObjectiveEditorVisualizer();
+    ASBZObjectiveEditorVisualizer(const FObjectInitializer& ObjectInitializer);
+
 };
 

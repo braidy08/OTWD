@@ -32,7 +32,8 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNodeEventActivationData ActiveEventData;
     
-    APathNode();
+    APathNode(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool ResetNode();
     

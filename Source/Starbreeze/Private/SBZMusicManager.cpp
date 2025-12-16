@@ -1,5 +1,11 @@
 #include "SBZMusicManager.h"
 
+USBZMusicManager::USBZMusicManager() {
+    this->VolumeRTPC = TEXT("global_music_volume");
+    this->CurrentVolume = 1;
+    this->DefaultMusic = NULL;
+}
+
 void USBZMusicManager::StopMusic() {
 }
 
@@ -32,9 +38,4 @@ USBZMusicManager* USBZMusicManager::GetMusicManager(UObject* WorldContextObject)
     return NULL;
 }
 
-USBZMusicManager::USBZMusicManager() {
-    this->VolumeRTPC = TEXT("global_music_volume");
-    this->CurrentVolume = 1;
-    this->DefaultMusic = NULL;
-}
 

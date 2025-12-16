@@ -1,5 +1,9 @@
 #include "TwitchCore.h"
 
+UTwitchCore::UTwitchCore(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bTwitchFlag = false;
+}
+
 void UTwitchCore::SetUserInfo(const FString& InoAuth, const FString& InUsername, const FString& InChannel) {
 }
 
@@ -24,7 +28,4 @@ bool UTwitchCore::AuthenticateTwitchIRC(FString& OutError) {
     return false;
 }
 
-UTwitchCore::UTwitchCore() {
-    this->bTwitchFlag = false;
-}
 

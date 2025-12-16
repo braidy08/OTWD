@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "ESBZProfileDataLocked.h"
 #include "ESBZRangedWeaponModuleType.h"
 #include "ESBZWeaponCondition.h"
 #include "ESBZWeaponFamily.h"
@@ -22,6 +23,7 @@ class UOTWDProfileSaveData;
 class UOTWDWeaponModdingSession;
 class UObject;
 class USBZCharacterSchematic;
+class USBZUnlockableMetadata;
 class USBZWeaponData;
 class USBZWeaponPartSchematic;
 class USBZWeaponPartSlot;
@@ -31,6 +33,10 @@ class UOTWDProfileSaveDataBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOTWDProfileSaveDataBlueprintLibrary();
+
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool SwapLockedWeaponsFromPawns(const UObject* WorldContextObject, TArray<FGuid>& OutUnassignedWeapons, TArray<FGuid>& OutAssignedWeapons);
+    
     UFUNCTION(BlueprintCallable)
     static void SetWeaponPartMarkedAsFavorite(UOTWDProfileSaveData* ProfileSaveData, const FGuid& WeaponPartSavedDataGuid, bool bInMarkedAsFavorite);
     
@@ -219,6 +225,15 @@ public:
     UFUNCTION(BlueprintCallable)
     static void FilterSavedDataInPostmaster(const UOTWDProfileSaveData* ProfileSaveData, const TArray<FOTWDWeaponSavedData>& WeaponSavedDataCollection, const TArray<FOTWDWeaponPartSavedData>& WeaponPartSavedDataCollection, TArray<FOTWDVaultIdentifier>& OutIdentifiers);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static ESBZProfileDataLocked DoesWeaponPartMetaDataMeetRequirements(const UObject* WorldContextObject, const FOTWDWeaponPartSavedData& SavedData, USBZUnlockableMetadata*& OutLockedMetadata);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static ESBZProfileDataLocked DoesWeaponMetaDataMeetRequirements(const UObject* WorldContextObject, const FOTWDWeaponSavedData& SavedData, USBZUnlockableMetadata*& OutLockedMetadata);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static ESBZProfileDataLocked DoesPawnMetaDataMeetRequirements(const UObject* WorldContextObject, const FOTWDPawnSavedData& SavedData, USBZUnlockableMetadata*& OutLockedMetadata);
+    
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool DismantleWeaponPart(const UObject* WorldContextObject, const FGuid& WeaponPartSavedDataGuid, FOTWDMetagameCurrency& OutDismantleProfit);
     
@@ -266,6 +281,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static TMap<FName, float> CompareUIStats(const TMap<FName, float>& FirstUIStats, const TMap<FName, float>& SecondUIStats);
+    
+    UFUNCTION(BlueprintCallable)
+    static void ClonePawnAssignedWeapons(UOTWDProfileSaveData* ProfileSaveData, const USBZCharacterSchematic* SourcePawnData, const USBZCharacterSchematic* TargetPawnData, const bool bReducePowerLevels);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool CanWeaponDegrade(const UOTWDProfileSaveData* ProfileSaveData, const FGuid& WeaponSavedDataGuid);

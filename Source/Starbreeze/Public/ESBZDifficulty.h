@@ -4,12 +4,12 @@
 
 UENUM(BlueprintType)
 enum class ESBZDifficulty : uint8 {
-	Normal = 0x0,
+    Normal,
     Hard,
     VeryHard,
     Overkill,
     MAX,
     Any,
-    Default = 0x0,
+    Default = Normal,
 };
 

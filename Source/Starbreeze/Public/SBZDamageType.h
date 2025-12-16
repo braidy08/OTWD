@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/DamageType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DamageType -FallbackName=DamageType
 #include "EWeaponCaliber.h"
 #include "Templates/SubclassOf.h"
 #include "SBZDamageType.generated.h"
@@ -49,6 +49,9 @@ public:
     float ArmorDamageMultiplier;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float PenetratingDamageMultiplier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UGameplayEffect> GameplayEffectClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -58,5 +61,6 @@ public:
     uint8 bAppliesDamage: 1;
     
     USBZDamageType();
+
 };
 

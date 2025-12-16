@@ -30,8 +30,12 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     TArray<USkeletalMeshComponent*> EmptyAmmoArray;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    TArray<UMeshComponent*> MagazineMeshArray;
+    
 public:
-    USBZWeaponPlayerMeshComponent();
+    USBZWeaponPlayerMeshComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetWeaponConfiguration(const FSBZWeaponConfiguration& NewWeaponConfiguration);
     

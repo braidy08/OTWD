@@ -7,7 +7,8 @@ UCLASS(Blueprintable)
 class STARBREEZE_API ASBZLadderNavLinkProxy : public ASBZProximitySensorNavLinkProxy {
     GENERATED_BODY()
 public:
-    ASBZLadderNavLinkProxy();
+    ASBZLadderNavLinkProxy(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetBeingClimbed(bool bInBeingClimbed);
     

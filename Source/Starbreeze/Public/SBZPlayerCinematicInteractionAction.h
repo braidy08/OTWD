@@ -42,7 +42,8 @@ protected:
     FName AttachSocketOnSuccess3P;
     
 public:
-    ASBZPlayerCinematicInteractionAction();
+    ASBZPlayerCinematicInteractionAction(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnInteractionSuccessful(USBZInteractableComponent* InInteractable, const TArray<USBZBaseInteractorComponent*>& InInteractors);

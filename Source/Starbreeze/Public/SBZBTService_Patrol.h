@@ -26,5 +26,6 @@ protected:
     
 public:
     USBZBTService_Patrol();
+
 };
 

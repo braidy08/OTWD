@@ -30,6 +30,7 @@ private:
     
 public:
     USBZPlayerHUDWidget();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSetupComplete(ESBZPlayerDefeatState InitState);

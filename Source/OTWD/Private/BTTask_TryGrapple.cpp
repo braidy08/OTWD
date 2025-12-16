@@ -1,6 +1,7 @@
 #include "BTTask_TryGrapple.h"
 
 UBTTask_TryGrapple::UBTTask_TryGrapple() {
+    this->NodeName = TEXT("Try Grapple");
     this->Target = NULL;
     this->ZombiePawn = NULL;
     this->Timer = 1;
@@ -10,4 +11,5 @@ UBTTask_TryGrapple::UBTTask_TryGrapple() {
     this->DistanceThreshold = 1;
     this->bMoveTooFar = false;
 }
+
 

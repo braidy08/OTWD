@@ -21,5 +21,6 @@ public:
     float Alertness;
     
     USBZSeekOutPlayersSpawnBehaviour();
+
 };
 

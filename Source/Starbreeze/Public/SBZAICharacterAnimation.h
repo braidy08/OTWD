@@ -8,6 +8,7 @@
 #include "SBZCharacterAnimation.h"
 #include "SBZAICharacterAnimation.generated.h"
 
+class ASBZAICharacter;
 class UAnimMontage;
 class UAnimSequenceBase;
 class UAnimationAsset;
@@ -28,6 +29,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bWantAttackDoorNotAgainst;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bWantAttackDoor;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAttackDoorAgainst;
@@ -109,6 +113,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsInterruptExitingPOI: 1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 bIsObstructedWalk: 1;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bHasLaunchedIntroPOI;
@@ -192,10 +199,15 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BlendspaceInputAnimationTurnAngle;
     
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASBZAICharacter* OwningAICharacter;
+    
 public:
     USBZAICharacterAnimation();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetIsTank(bool bInIsTank);
     

@@ -43,7 +43,8 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGeneratedPath CurrentGeneratedPath;
     
-    APathController();
+    APathController(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool SetAccessPointFlags(const UAccessPointType* AccessPointType, const int32 Flags);
     

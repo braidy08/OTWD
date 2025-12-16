@@ -17,3 +17,4 @@ USBZThrowableProjectileSchematic::USBZThrowableProjectileSchematic() {
     this->ActivateDetailCollisionTimeStep = 1;
 }
 
+

@@ -10,6 +10,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAddZombiesToHorde;
     
-    AOTWDAISpawner();
+    AOTWDAISpawner(const FObjectInitializer& ObjectInitializer);
 };
 

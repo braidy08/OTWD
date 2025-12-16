@@ -1,6 +1,13 @@
 #include "SBZPlayerStealthMeterComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZPlayerStealthMeterComponent::USBZPlayerStealthMeterComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->bAutoActivate = true;
+    this->MaxAlertMarkers = 0;
+    this->bIsInStealth = true;
+}
+
 bool USBZPlayerStealthMeterComponent::IsInStealth() const {
     return false;
 }
@@ -31,8 +38,4 @@ void USBZPlayerStealthMeterComponent::GetLifetimeReplicatedProps(TArray<FLifetim
     DOREPLIFETIME(USBZPlayerStealthMeterComponent, AlertnessList);
 }
 
-USBZPlayerStealthMeterComponent::USBZPlayerStealthMeterComponent() {
-    this->MaxAlertMarkers = 0;
-    this->bIsInStealth = true;
-}
 

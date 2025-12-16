@@ -20,6 +20,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<ESBZLightVisibilityAreaAction::Type> Action;
     
-    ASBZLightVisibilityArea();
+    ASBZLightVisibilityArea(const FObjectInitializer& ObjectInitializer);
+
 };
 

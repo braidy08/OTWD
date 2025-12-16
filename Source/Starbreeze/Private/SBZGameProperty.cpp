@@ -1,6 +1,15 @@
 #include "SBZGameProperty.h"
 #include "Net/UnrealNetwork.h"
 
+USBZGameProperty::USBZGameProperty() {
+    this->PropertyName = TEXT("Unnamed Property");
+    this->StartValue = 1;
+    this->CurrentValue = 1;
+    this->MinValue = 1;
+    this->MaxValue = 1;
+    this->Modifier = 1;
+}
+
 void USBZGameProperty::SetCurrentValue(float InCurrentValue) {
 }
 
@@ -36,12 +45,4 @@ void USBZGameProperty::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(USBZGameProperty, Modifier);
 }
 
-USBZGameProperty::USBZGameProperty() {
-    this->PropertyName = TEXT("Unnamed Property");
-    this->StartValue = 1;
-    this->CurrentValue = 1;
-    this->MinValue = 1;
-    this->MaxValue = 1;
-    this->Modifier = 1;
-}
 

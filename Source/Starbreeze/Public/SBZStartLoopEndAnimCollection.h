@@ -29,5 +29,6 @@ public:
     UBlendSpaceBase* EndBlendSpace;
     
     USBZStartLoopEndAnimCollection();
+
 };
 

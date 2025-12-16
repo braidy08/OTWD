@@ -2,6 +2,10 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/Object.h"
+#include "ChangedMetagameBuildingsDelegate.h"
+#include "ChangedMetagameDelegate.h"
+#include "ChangedMetagameMissionsDelegate.h"
+#include "ChangedMetagameSurvivorsDelegate.h"
 #include "OTWDCampSummary.h"
 #include "OTWDCompletedMissionsInfo.h"
 #include "OTWDMetagameCurrency.h"
@@ -24,11 +28,6 @@ UCLASS(Blueprintable)
 class OTWD_API UOTWDMetaManager : public UObject {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FChangedMetagameSurvivors);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FChangedMetagameMissions);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FChangedMetagameBuildings);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FChangedMetagame);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOTWDCampSummary CampSummary;
     

@@ -19,6 +19,7 @@ private:
     bool bChangeMass;
     
 public:
-    USBZWheeledVehicleMovementComponent4W();
+    USBZWheeledVehicleMovementComponent4W(const FObjectInitializer& ObjectInitializer);
+
 };
 

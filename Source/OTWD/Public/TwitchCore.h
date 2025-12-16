@@ -37,7 +37,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bTwitchFlag;
     
-    UTwitchCore();
+    UTwitchCore(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetUserInfo(const FString& InoAuth, const FString& InUsername, const FString& InChannel);
     

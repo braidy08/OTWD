@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/LevelStreaming.h"
-#include "Engine/LevelStreaming.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LevelStreamingLoadedStatus__DelegateSignature -FallbackName=LevelStreamingLoadedStatusDelegate
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LevelStreamingVisibilityStatus__DelegateSignature -FallbackName=LevelStreamingVisibilityStatusDelegate
 #include "Components/SceneComponent.h"
 #include "SBZLODLevelReference.h"
 #include "SBZStreamingLevelComponent.generated.h"
@@ -44,7 +44,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBox LevelBounds;
     
-    USBZStreamingLevelComponent();
+    USBZStreamingLevelComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetWorldAssets(const TArray<FSBZLODLevelReference>& WorldAssets);
     

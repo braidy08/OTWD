@@ -30,6 +30,7 @@ public:
     bool bOnlyNotifyOnEscalation;
     
     USBZBTDecorator_AlertLevel();
+
     UFUNCTION(BlueprintCallable)
     void OnAlertLevelChanged(USBZAlertnessComponent* Sender, FSBZAlertnessLevelIdHelper NewLevel, FSBZAlertnessLevelIdHelper OldLevel);
     

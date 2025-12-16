@@ -6,6 +6,7 @@
 #include "SBZAICharacterSchematic.generated.h"
 
 class APawn;
+class UBehaviorTree;
 
 UCLASS(Blueprintable)
 class STARBREEZE_API USBZAICharacterSchematic : public USBZSchematic {
@@ -35,6 +36,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DramaOnDeathMultiplier;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FGameplayTag, UBehaviorTree*> InjectedBehaviourTrees;
+    
     USBZAICharacterSchematic();
+
 };
 

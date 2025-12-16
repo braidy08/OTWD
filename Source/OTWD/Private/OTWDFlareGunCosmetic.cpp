@@ -4,3 +4,4 @@ UOTWDFlareGunCosmetic::UOTWDFlareGunCosmetic() {
     this->SkeletalMeshActorClass = NULL;
 }
 
+

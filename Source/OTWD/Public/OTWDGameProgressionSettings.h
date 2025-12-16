@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DeveloperSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "OTWDGameProgressionSettings.generated.h"
 
 class UOTWDGameProgressionRootDataAsset;
 
-UCLASS(Blueprintable, Config=Engine, Const, DefaultConfig, Config=OTWD)
+UCLASS(Blueprintable, Const, DefaultConfig, Config=OTWD)
 class OTWD_API UOTWDGameProgressionSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -18,5 +18,6 @@ protected:
     
 public:
     UOTWDGameProgressionSettings();
+
 };
 

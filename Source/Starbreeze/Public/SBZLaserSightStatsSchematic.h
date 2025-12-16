@@ -52,5 +52,6 @@ public:
     TMap<ESBZLightScenario, float> PerLightScenarioIntensity;
     
     USBZLaserSightStatsSchematic();
+
 };
 

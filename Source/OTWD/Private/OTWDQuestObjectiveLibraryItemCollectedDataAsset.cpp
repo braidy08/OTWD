@@ -4,3 +4,4 @@ UOTWDQuestObjectiveLibraryItemCollectedDataAsset::UOTWDQuestObjectiveLibraryItem
     this->LibraryItemToCollect = NULL;
 }
 
+

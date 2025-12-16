@@ -4,3 +4,4 @@ USBZBTDecorator_CheckWeaponGameplayTag::USBZBTDecorator_CheckWeaponGameplayTag()
     this->TagsToMatch = EGameplayContainerMatchType::Any;
 }
 
+

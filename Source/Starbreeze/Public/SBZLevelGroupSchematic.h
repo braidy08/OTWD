@@ -30,5 +30,6 @@ public:
     TSoftObjectPtr<UTexture2D> MaskImage;
     
     USBZLevelGroupSchematic();
+
 };
 

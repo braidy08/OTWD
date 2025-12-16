@@ -1,10 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/PlayerState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PlayerState -FallbackName=PlayerState
 #include "GameFramework/OnlineReplStructs.h"
 #include "ESBZWeaponCheatFlags.h"
 #include "OnAsyncLoadProgressUpdatedDelegate.h"
 #include "OnCinematicStateChangedDelegate.h"
+#include "OnMissionRewardReceivedDelegate.h"
 #include "SBZCollectedGameStatistics.h"
 #include "SBZNetStruct.h"
 #include "SBZWeaponConfiguration.h"
@@ -12,7 +13,6 @@
 #include "SBZPlayerState.generated.h"
 
 class APawn;
-class ASBZPlayerState;
 class UGameplayAbility;
 class USBZCosmetic;
 class USBZLoadingStallTimer;
@@ -23,8 +23,6 @@ UCLASS(Blueprintable)
 class STARBREEZE_API ASBZPlayerState : public APlayerState {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnMissionRewardReceived, ASBZPlayerState*, PlayerState, const FSBZNetStruct&, MissionReward);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     ESBZWeaponCheatFlags WeaponCheatFlags;
     
@@ -78,9 +76,10 @@ protected:
     TArray<USBZCosmetic*> Cosmetics;
     
 public:
-    ASBZPlayerState();
+    ASBZPlayerState(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSetReadyState();
     

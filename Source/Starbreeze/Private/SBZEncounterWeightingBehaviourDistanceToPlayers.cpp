@@ -5,3 +5,4 @@ USBZEncounterWeightingBehaviourDistanceToPlayers::USBZEncounterWeightingBehaviou
     this->WeightAtMaxDistance = 1;
 }
 
+

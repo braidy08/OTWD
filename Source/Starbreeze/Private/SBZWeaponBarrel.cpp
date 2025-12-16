@@ -6,6 +6,7 @@ FSBZWeaponBarrel::FSBZWeaponBarrel() {
     this->RecoveryTime = 1;
     this->BarrelFireEffect = NULL;
     this->TimesContinuouslyFired = 0;
-    this->TimesPlayedSingleFire = 0;
+    this->bAutoFireEventStarted = false;
+    this->bStopFireWanted = false;
 }
 

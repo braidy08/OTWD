@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZChallengeRequirements.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZChallengeRequirements -FallbackName=SBZChallengeRequirements
 #include "EChallengeName.h"
 #include "OTWDChallengeRequirements.generated.h"
 
+class USBZContentPack;
 class USBZLevelSchematic;
 
 USTRUCT(BlueprintType)
@@ -15,6 +16,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<USBZLevelSchematic*> OptionalRestrictiveLevelSchematics;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USBZContentPack* OptionalRestrictiveContentPack;
     
     FOTWDChallengeRequirements();
 };

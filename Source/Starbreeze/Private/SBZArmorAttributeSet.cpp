@@ -1,6 +1,12 @@
 #include "SBZArmorAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZArmorAttributeSet::USBZArmorAttributeSet() {
+    this->armor = 1;
+    this->ArmorMaximum = 1;
+    this->ArmorRegenRate = 1;
+}
+
 void USBZArmorAttributeSet::RegisterArmorEvents() {
 }
 
@@ -33,9 +39,4 @@ void USBZArmorAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(USBZArmorAttributeSet, ArmorRegenRate);
 }
 
-USBZArmorAttributeSet::USBZArmorAttributeSet() {
-    this->armor = 1;
-    this->ArmorMaximum = 1;
-    this->ArmorRegenRate = 1;
-}
 

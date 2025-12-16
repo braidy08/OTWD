@@ -38,5 +38,6 @@ public:
     UBlendSpaceBase* BounceBlendSpace;
     
     USBZMeleeAttackAnimationCollection();
+
 };
 

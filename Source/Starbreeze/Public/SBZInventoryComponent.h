@@ -34,9 +34,10 @@ private:
     TArray<FSBZInventoryItem> ItemsArray;
     
 public:
-    USBZInventoryComponent();
+    USBZInventoryComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void UpdateItemsReplication();

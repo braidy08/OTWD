@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/MeshMerging.h"
+#include "MeshDataGenerationDelegateDelegate.h"
 #include "Components/StaticMeshComponent.h"
 #include "SBZReducedMeshComponent.generated.h"
 
@@ -11,8 +12,6 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class STARBREEZE_API USBZReducedMeshComponent : public UStaticMeshComponent {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMeshDataGenerationDelegate);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bSaveGeneratedMeshWithComponent;
     
@@ -45,7 +44,8 @@ protected:
     float ActivateScreenSizeNormalized;
     
 public:
-    USBZReducedMeshComponent();
+    USBZReducedMeshComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetHiddenComponents(const TArray<USceneComponent*>& NewHiddenComponents);
     

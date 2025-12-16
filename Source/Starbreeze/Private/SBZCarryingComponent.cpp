@@ -1,5 +1,17 @@
 #include "SBZCarryingComponent.h"
 
+USBZCarryingComponent::USBZCarryingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->bHasPickedUp = false;
+    this->bChangeOwnerOnPickup = false;
+    this->bEnableAIOnReleased = true;
+    this->bHideTargetsWeaponOnPickup = true;
+    this->BagType = NULL;
+    this->OnHoldEffectClass = NULL;
+    this->MaxPlacementSlopeAngle = 1;
+    this->PlacementSearchDistance = 1;
+}
+
 bool USBZCarryingComponent::UpdateCanRelease() {
     return false;
 }
@@ -40,14 +52,4 @@ bool USBZCarryingComponent::GetCanRelease() const {
     return false;
 }
 
-USBZCarryingComponent::USBZCarryingComponent() {
-    this->bHasPickedUp = false;
-    this->bChangeOwnerOnPickup = false;
-    this->bEnableAIOnReleased = true;
-    this->bHideTargetsWeaponOnPickup = true;
-    this->BagType = NULL;
-    this->OnHoldEffectClass = NULL;
-    this->MaxPlacementSlopeAngle = 1;
-    this->PlacementSearchDistance = 1;
-}
 

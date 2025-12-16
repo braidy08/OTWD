@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESBZDifficulty.h"
-#include "SBZNoiseSchematic.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZNoiseSchematic -FallbackName=SBZNoiseSchematic
 #include "OTWDNoiseSchematic.generated.h"
 
 UCLASS(Blueprintable)
@@ -18,5 +18,6 @@ public:
     TMap<ESBZDifficulty, float> BuildHordeAmount;
     
     UOTWDNoiseSchematic();
+
 };
 

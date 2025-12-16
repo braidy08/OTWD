@@ -6,6 +6,6 @@ UENUM(BlueprintType)
 enum class ESBZEvaluatePosition : uint8 {
     ActorLocation,
     OpenAreaAttackLocation,
-    Both,
+    ActorLocationStationary,
 };
 

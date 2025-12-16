@@ -1,12 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ESBZWeaponRarity.h"
-#include "SBZChallengeManager.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZChallengeManager -FallbackName=SBZChallengeManager
 #include "EChallengeName.h"
 #include "OTWDObjectiveEvent.h"
 #include "OTWDChallengeManager.generated.h"
 
 class UOTWDChallengeSchematic;
+class USBZContentPack;
 class USBZPlayerDefeatHandler;
 
 UCLASS(Blueprintable)
@@ -22,11 +23,15 @@ private:
     
 public:
     UOTWDChallengeManager();
+
     UFUNCTION(BlueprintCallable)
     void UpdateObjectiveChallenges(const FOTWDObjectiveEvent& ObjectiveEvent);
     
     UFUNCTION(BlueprintCallable)
-    void Progress(EChallengeName Name, int32 Collected, bool bSaveImmediately);
+    void SetProgressStep(EChallengeName Name, uint8 StepIndex, bool bSaveImmediately, const USBZContentPack* ContentPack);
+    
+    UFUNCTION(BlueprintCallable)
+    void Progress(EChallengeName Name, int32 Collected, bool bSaveImmediately, const USBZContentPack* ContentPack);
     
     UFUNCTION(BlueprintCallable)
     void OnAssignWeaponToPawnSlot(ESBZWeaponRarity Rarity);

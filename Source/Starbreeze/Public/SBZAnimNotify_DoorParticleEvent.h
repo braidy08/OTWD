@@ -12,5 +12,6 @@ public:
     FGameplayTag ParticleTag;
     
     USBZAnimNotify_DoorParticleEvent();
+
 };
 

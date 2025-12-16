@@ -45,7 +45,8 @@ private:
     USBZHurtReaction* HighHurtReaction;
     
 public:
-    USBZAIHumanTankComponent();
+    USBZAIHumanTankComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnTimerEnd();

@@ -1,6 +1,16 @@
 #include "OTWDAbilityItemsAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDAbilityItemsAttributeSet::UOTWDAbilityItemsAttributeSet() {
+    this->AbilityItemSignature = 1;
+    this->AbilityItemSignatureMaximum = 1;
+    this->AbilityItemSecondary = 1;
+    this->AbilityItemSecondaryMaximum = 1;
+    this->AbilityItemTool = 1;
+    this->AbilityItemToolMaximum = 1;
+    this->AbilityItemToolCostChance = 1;
+}
+
 void UOTWDAbilityItemsAttributeSet::OnRep_AbilityItemToolMaximum(float OldValue) {
 }
 
@@ -62,13 +72,4 @@ void UOTWDAbilityItemsAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeP
     DOREPLIFETIME(UOTWDAbilityItemsAttributeSet, AbilityItemToolCostChance);
 }
 
-UOTWDAbilityItemsAttributeSet::UOTWDAbilityItemsAttributeSet() {
-    this->AbilityItemSignature = 1;
-    this->AbilityItemSignatureMaximum = 1;
-    this->AbilityItemSecondary = 1;
-    this->AbilityItemSecondaryMaximum = 1;
-    this->AbilityItemTool = 1;
-    this->AbilityItemToolMaximum = 1;
-    this->AbilityItemToolCostChance = 1;
-}
 

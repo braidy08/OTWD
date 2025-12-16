@@ -8,6 +8,5 @@ enum class EVehicleSeatType : uint8 {
     E_Passenger,
     E_Pawn,
     E_None,
-    E_MAX UMETA(Hidden),
 };
 

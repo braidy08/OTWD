@@ -1,19 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DeveloperSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "ESBZWeaponRarity.h"
 #include "OTWDBlackmarketProgressSettings.h"
 #include "OTWDCampVendorSettings.generated.h"
 
 class UOTWDVendorInventoryCollection;
+class UOTWDWeaponStashCollection;
 class USBZWeaponPartSlot;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=OTWD)
+UCLASS(Blueprintable, DefaultConfig, Config=OTWD)
 class OTWD_API UOTWDCampVendorSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UOTWDVendorInventoryCollection> VendorInventoryCollection;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UOTWDWeaponStashCollection> WeaponStashCollection;
     
     UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOTWDBlackmarketProgressSettings BlackmarketProgress[7];
@@ -43,7 +47,17 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UOTWDVendorInventoryCollection* CachedVendorDataAsset;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UOTWDWeaponStashCollection* CachedWeaponStashDataAsset;
+    
 public:
     UOTWDCampVendorSettings();
+
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static UOTWDWeaponStashCollection* GetWeaponStashCollection();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static UOTWDVendorInventoryCollection* GetVendorInventoryCollection();
+    
 };
 

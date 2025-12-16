@@ -1,6 +1,24 @@
 #include "SBZPlayerInteractorComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZPlayerInteractorComponent::USBZPlayerInteractorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->InteractionWidgetClass = NULL;
+    this->TraceChannel = TraceTypeQuery1;
+    this->InteractionCameraPitchMin = 1;
+    this->InteractionCameraPitchMax = 1;
+    this->InteractionCameraYawMin = 1;
+    this->InteractionCameraYawMax = 1;
+    this->Controller = NULL;
+    this->SBZPlayerCharacterOwner = NULL;
+    this->InteractionWidget = NULL;
+    this->BlockedInteractionTargetable = NULL;
+    this->TargetedInteractable = NULL;
+    this->TargetedLookAtShape = NULL;
+    this->VolumeInteractable = NULL;
+    this->PawnOwner = NULL;
+}
+
 void USBZPlayerInteractorComponent::UpdateInteractionData_Implementation(const FSBZInteractionData& InInteractionData) {
 }
 
@@ -46,20 +64,4 @@ void USBZPlayerInteractorComponent::GetLifetimeReplicatedProps(TArray<FLifetimeP
     DOREPLIFETIME(USBZPlayerInteractorComponent, InteractionDataServer);
 }
 
-USBZPlayerInteractorComponent::USBZPlayerInteractorComponent() {
-    this->InteractionWidgetClass = NULL;
-    this->TraceChannel = TraceTypeQuery1;
-    this->InteractionCameraPitchMin = 1;
-    this->InteractionCameraPitchMax = 1;
-    this->InteractionCameraYawMin = 1;
-    this->InteractionCameraYawMax = 1;
-    this->Controller = NULL;
-    this->SBZPlayerCharacterOwner = NULL;
-    this->InteractionWidget = NULL;
-    this->BlockedInteractionTargetable = NULL;
-    this->TargetedInteractable = NULL;
-    this->TargetedLookAtShape = NULL;
-    this->VolumeInteractable = NULL;
-    this->PawnOwner = NULL;
-}
 

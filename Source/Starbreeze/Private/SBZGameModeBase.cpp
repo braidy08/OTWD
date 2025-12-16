@@ -1,4 +1,10 @@
 #include "SBZGameModeBase.h"
+#include "SBZGameStateBase.h"
+
+ASBZGameModeBase::ASBZGameModeBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->GameStateClass = ASBZGameStateBase::StaticClass();
+    this->bIsReadyBP = true;
+}
 
 FSBZPlayerLoadout ASBZGameModeBase::ValidateLoadoutForPlayerController_Implementation(ASBZPlayerController* PlayerController, const FSBZPlayerLoadout& NewLoadout) {
     return FSBZPlayerLoadout{};
@@ -27,7 +33,4 @@ USBZGameInstance* ASBZGameModeBase::GetSBZGameInstance() {
 void ASBZGameModeBase::AddSeamlessActor(AActor* Actor) {
 }
 
-ASBZGameModeBase::ASBZGameModeBase() {
-    this->bIsReadyBP = true;
-}
 

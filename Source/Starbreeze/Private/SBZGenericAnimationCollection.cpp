@@ -38,3 +38,4 @@ USBZGenericAnimationCollection::USBZGenericAnimationCollection() {
     this->FacialMelee = NULL;
 }
 
+

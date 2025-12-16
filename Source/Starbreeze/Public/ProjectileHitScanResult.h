@@ -2,7 +2,6 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/NetSerialization.h"
-#include "ActorMultiHitResult.h"
 #include "ProjectileHitScanResult.generated.h"
 
 USTRUCT(BlueprintType)
@@ -13,13 +12,7 @@ public:
     FVector_NetQuantize TraceStartLocation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FVector_NetQuantize> TraceEndLocations;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FActorMultiHitResult> ActorMultiHitResults;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    bool bFinalHit;
+    float FireLocationToTraceStartDistance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FGuid ShotAnalyticsGuid;

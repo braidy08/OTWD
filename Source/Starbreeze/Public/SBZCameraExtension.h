@@ -19,6 +19,7 @@ private:
     ECameraMode CameraMode;
     
 public:
-    USBZCameraExtension();
+    USBZCameraExtension(const FObjectInitializer& ObjectInitializer);
+
 };
 

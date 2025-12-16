@@ -22,5 +22,6 @@ public:
     FString Text;
     
     USBZBTTask_DebugMessage();
+
 };
 

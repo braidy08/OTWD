@@ -1,5 +1,22 @@
 #include "SBZLoadingWidget.h"
 
+USBZLoadingWidget::USBZLoadingWidget() {
+    this->MediaPlayer = NULL;
+    this->SubtitleWidgetClass = NULL;
+    this->PartyClientLoadingWidgetClass = NULL;
+    this->bVideoSourceOpen = false;
+    this->bIsPlayingLevelCinematic = false;
+    this->CurrentMediaSource = NULL;
+    this->ProgressContainer = NULL;
+    this->ProgressPercentText = NULL;
+    this->TutorialTipPanel = NULL;
+    this->TutorialTipCategoryText = NULL;
+    this->TutorialTipText = NULL;
+    this->WaitingForPlayersContainer = NULL;
+    this->PartyPlayerWidgetContainer = NULL;
+    this->SubtitleWidget = NULL;
+}
+
 void USBZLoadingWidget::StopCurrentVideo() {
 }
 
@@ -30,20 +47,4 @@ void USBZLoadingWidget::HandleMediaClosed() {
 void USBZLoadingWidget::HandleGameReady() {
 }
 
-USBZLoadingWidget::USBZLoadingWidget() {
-    this->MediaPlayer = NULL;
-    this->SubtitleWidgetClass = NULL;
-    this->PartyClientLoadingWidgetClass = NULL;
-    this->bVideoSourceOpen = false;
-    this->bIsPlayingLevelCinematic = false;
-    this->CurrentMediaSource = NULL;
-    this->ProgressContainer = NULL;
-    this->ProgressPercentText = NULL;
-    this->TutorialTipPanel = NULL;
-    this->TutorialTipCategoryText = NULL;
-    this->TutorialTipText = NULL;
-    this->WaitingForPlayersContainer = NULL;
-    this->PartyPlayerWidgetContainer = NULL;
-    this->SubtitleWidget = NULL;
-}
 

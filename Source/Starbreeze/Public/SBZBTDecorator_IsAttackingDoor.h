@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTDecorator_IsAttackingDoor : public UBTDecorator {
     GENERATED_BODY()
 public:
     USBZBTDecorator_IsAttackingDoor();
+
 };
 

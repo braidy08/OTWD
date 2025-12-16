@@ -54,6 +54,7 @@ private:
     
 public:
     USBZAbilityCraftingResourceWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UImage* ResourceIconWidget, UTextBlock* ResourceCountTextWidget);
     

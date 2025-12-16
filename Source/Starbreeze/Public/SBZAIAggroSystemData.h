@@ -42,9 +42,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AggroDecayDistanceRateFar;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float MaxTimeAttackingNewThreats;
-    
     FSBZAIAggroSystemData();
 };
 

@@ -14,12 +14,19 @@ private:
     FBlackboardKeySelector TargetBlackboardKey;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FGameplayTag ThrowWeaponTag;
+    FGameplayTag DefaultThrowWeaponTag;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FBlackboardKeySelector OverrideThrowWeaponTagKey;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bThrowAtLastKnownLocation;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bThrowAtTargetLocation;
+    
 public:
     USBZBTTask_ThrownAttack();
+
 };
 

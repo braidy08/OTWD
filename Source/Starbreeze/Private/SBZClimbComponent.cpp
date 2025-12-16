@@ -1,6 +1,12 @@
 #include "SBZClimbComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZClimbComponent::USBZClimbComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->Schematic = NULL;
+    this->CurrentPlayingMontage = NULL;
+}
+
 bool USBZClimbComponent::WantToClimb(bool bCheckAngle) const {
     return false;
 }
@@ -154,8 +160,4 @@ void USBZClimbComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& O
     DOREPLIFETIME(USBZClimbComponent, ServerClimbDatas);
 }
 
-USBZClimbComponent::USBZClimbComponent() {
-    this->Schematic = NULL;
-    this->CurrentPlayingMontage = NULL;
-}
 

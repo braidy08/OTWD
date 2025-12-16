@@ -86,9 +86,10 @@ protected:
     UPhysicsHandleComponent* PhysicsHandleComponent;
     
 public:
-    USBZBodyDraggingComponent();
+    USBZBodyDraggingComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void StopDragging();
     

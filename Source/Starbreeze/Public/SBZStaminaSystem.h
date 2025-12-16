@@ -46,7 +46,8 @@ private:
     USBZGameProperty* StaminaProperty;
     
 public:
-    USBZStaminaSystem();
+    USBZStaminaSystem(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void OnStaminaEmptyRPC();

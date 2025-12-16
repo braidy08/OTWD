@@ -1,6 +1,56 @@
 #include "SBZSentryComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZSentryComponent::USBZSentryComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->bMotionEnabled = true;
+    this->RotationRoot = NULL;
+    this->RotationYawRoot = NULL;
+    this->DetectionMotionBehavior = ESentryDetectionMotionBehavior::eStopMoving;
+    this->RotationSpeed = 1;
+    this->DefaultTargetYawMin = 1;
+    this->DefaultTargetYawMax = 1;
+    this->DefaultTargetPitchMin = 1;
+    this->DefaultTargetPitchMax = 1;
+    this->HorizontalAngularLimitMin = 1;
+    this->HorizontalAngularLimitMax = 1;
+    this->VerticalAngularLimitMin = 1;
+    this->VerticalAngularLimitMax = 1;
+    this->bUseViewpoints = false;
+    this->CurrentCheckpointIndex = 0;
+    this->bStopAtViewpoint = false;
+    this->ViewpointStopDelay = 1;
+    this->ViewpointDelayTimer = 1;
+    this->TargetStopDelay = 1;
+    this->TargetDelayTimer = 1;
+    this->TargetTolerance = 1;
+    this->bReverseOnEnd = false;
+    this->bReversing = false;
+    this->bDetectionEnabled = true;
+    this->bShouldUseClassFilter = false;
+    this->bShouldDoAttitudeCheck = false;
+    this->DetectAttitudes = 0;
+    this->RayStartPoint = NULL;
+    this->RayLength = 1;
+    this->DetectionVolume = NULL;
+    this->bDetectOnlyActorsWithinAngle = false;
+    this->bUsePropertyReplication = false;
+    this->AngleToDetectActorsWithin = 1;
+    this->DetectionType = EDetectionType::eRay;
+    this->bRequiresLineOfSight = true;
+    this->bManualTargetSelection = false;
+    this->FollowDetectedTargetForgetTimeout = 1;
+    this->FollowTarget = NULL;
+    this->LatestTimeStamp = 1;
+    this->bIsAtViewpoint = false;
+    this->bIsAtTarget = false;
+    this->bIsAtEnd = true;
+    this->FollowForgetTimer = 1;
+}
+
+void USBZSentryComponent::UpdateCustomDetection_Implementation(TArray<AActor*>& PotentiallyDetectedActors) {
+}
+
 void USBZSentryComponent::SetupSplitRotationRoot(USceneComponent* InRotationPitchRoot, USceneComponent* InRotationYawRoot) {
 }
 
@@ -17,6 +67,9 @@ void USBZSentryComponent::SetupDetectionShape(UPrimitiveComponent* InDetectionSh
 }
 
 void USBZSentryComponent::Setup(USceneComponent* InRotationRoot, UPrimitiveComponent* InDetectionShape, USceneComponent* InRayStartPoint) {
+}
+
+void USBZSentryComponent::SetRotationSpeed(float InRotationSpeed) {
 }
 
 void USBZSentryComponent::SetMotionEnabled(bool bInEnabled) {
@@ -36,48 +89,9 @@ void USBZSentryComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
     
     DOREPLIFETIME(USBZSentryComponent, RotationRoot);
     DOREPLIFETIME(USBZSentryComponent, RotationYawRoot);
+    DOREPLIFETIME(USBZSentryComponent, RotationSpeed);
     DOREPLIFETIME(USBZSentryComponent, DetectedActors);
     DOREPLIFETIME(USBZSentryComponent, FollowTarget);
 }
 
-USBZSentryComponent::USBZSentryComponent() {
-    this->bMotionEnabled = true;
-    this->RotationRoot = NULL;
-    this->RotationYawRoot = NULL;
-    this->DetectionMotionBehavior = ESentryDetectionMotionBehavior::eStopMoving;
-    this->RotationSpeed = 1;
-    this->DefaultTargetYawMin = 1;
-    this->DefaultTargetYawMax = 1;
-    this->DefaultTargetPitchMin = 1;
-    this->DefaultTargetPitchMax = 1;
-    this->HorizontalAngularLimitMin = 1;
-    this->HorizontalAngularLimitMax = 1;
-    this->VerticalAngularLimitMin = 1;
-    this->VerticalAngularLimitMax = 1;
-    this->bUseViewpoints = false;
-    this->CurrentCheckpointIndex = 0;
-    this->bStopAtViewpoint = false;
-    this->ViewpointStopDelay = 1;
-    this->ViewpointDelayTimer = 1;
-    this->bReverseOnEnd = false;
-    this->bReversing = false;
-    this->bDetectionEnabled = true;
-    this->bShouldUseClassFilter = false;
-    this->bShouldDoAttitudeCheck = false;
-    this->DetectAttitudes = 0;
-    this->RayStartPoint = NULL;
-    this->RayLength = 1;
-    this->DetectionVolume = NULL;
-    this->bDetectOnlyActorsWithinAngle = false;
-    this->AngleToDetectActorsWithin = 1;
-    this->DetectionType = EDetectionType::eRay;
-    this->bRequiresLineOfSight = true;
-    this->bManualTargetSelection = false;
-    this->FollowDetectedTargetForgetTimeout = 1;
-    this->FollowTarget = NULL;
-    this->LatestTimeStamp = 1;
-    this->bIsAtViewpoint = false;
-    this->bIsAtEnd = true;
-    this->FollowForgetTimer = 1;
-}
 

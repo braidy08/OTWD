@@ -1,5 +1,9 @@
 #include "SBZCheatManager.h"
 
+USBZCheatManager::USBZCheatManager() {
+    this->CheatsMenuWidget = NULL;
+}
+
 void USBZCheatManager::UnlockMissions(bool bShouldUnlock) {
 }
 
@@ -40,6 +44,9 @@ void USBZCheatManager::ToggleMVNavLinkDebug() {
 }
 
 void USBZCheatManager::ToggleMuteMusic() {
+}
+
+void USBZCheatManager::ToggleIntCvar(const FString& Cvar, int32 First, int32 Second) {
 }
 
 void USBZCheatManager::ToggleIgnoreZoneDebugDraw() {
@@ -139,6 +146,9 @@ void USBZCheatManager::ToggleCoverassignmentDebug() {
 }
 
 void USBZCheatManager::ToggleCheatsMenu() {
+}
+
+void USBZCheatManager::ToggleBooleanCvar(const FString& Cvar) {
 }
 
 void USBZCheatManager::ToggleAIRecruitmentDebug() {
@@ -311,7 +321,13 @@ void USBZCheatManager::FailedMission() {
 void USBZCheatManager::FailAllObjectives() {
 }
 
+void USBZCheatManager::ExecF(const FString& File) {
+}
+
 void USBZCheatManager::EndMission(ESBZEndMissionState NewEndMission) {
+}
+
+void USBZCheatManager::DevSlomo(float NewTimeDilation) {
 }
 
 void USBZCheatManager::DestroyAllAi() {
@@ -323,13 +339,19 @@ void USBZCheatManager::DebugCameraSetControllerDeadZone(float DeadZone) {
 void USBZCheatManager::DamageSelf(float DamageAmount) {
 }
 
-void USBZCheatManager::ContentPackSetUnlocked(const FString& contentPack, bool unlock) {
+void USBZCheatManager::ContentPackSetUnlocked(const FString& ContentPack, bool unlock) {
 }
 
 void USBZCheatManager::ContentPackList() {
 }
 
 void USBZCheatManager::CompleteAllObjectives() {
+}
+
+void USBZCheatManager::ClearRagdollBuffer() {
+}
+
+void USBZCheatManager::ClearDebrisBuffer() {
 }
 
 void USBZCheatManager::ClearAllTutorialFlags() {
@@ -341,7 +363,4 @@ void USBZCheatManager::ChangePlayerPawnClass(const TSoftClassPtr<APawn>& NewPawn
 void USBZCheatManager::ApplyKeybindings() {
 }
 
-USBZCheatManager::USBZCheatManager() {
-    this->CheatsMenuWidget = NULL;
-}
 

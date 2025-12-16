@@ -28,5 +28,6 @@ public:
     float MaxAllowedAngle;
     
     USBZBTDecorator_IsCoverSafe();
+
 };
 

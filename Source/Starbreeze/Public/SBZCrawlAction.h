@@ -8,5 +8,6 @@ class STARBREEZE_API USBZCrawlAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZCrawlAction();
+
 };
 

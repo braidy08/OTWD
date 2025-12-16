@@ -1,5 +1,6 @@
 #include "OTWDSpawnManagerBoundsVolume.h"
 
-AOTWDSpawnManagerBoundsVolume::AOTWDSpawnManagerBoundsVolume() {
+AOTWDSpawnManagerBoundsVolume::AOTWDSpawnManagerBoundsVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

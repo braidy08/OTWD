@@ -14,5 +14,6 @@ public:
     float BlendOut;
     
     USBZAnimNotifyState_ResetAimPitch();
+
 };
 

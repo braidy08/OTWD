@@ -1,7 +1,19 @@
 #include "SBZInteractorVolume.h"
-#include "Components/BoxComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
 #include "Components/SceneComponent.h"
 #include "SBZInteractableComponent.h"
+
+ASBZInteractorVolume::ASBZInteractorVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComponent"));
+    this->InteractableComponent = CreateDefaultSubobject<USBZInteractableComponent>(TEXT("InteractableComponent"));
+    this->SceneComponent = (USceneComponent*)RootComponent;
+    this->TriggerArea = CreateDefaultSubobject<UBoxComponent>(TEXT("TriggerArea"));
+    this->bIsDeactivatedOnSuccess = true;
+    this->TriggerArea->SetupAttachment(RootComponent);
+}
 
 void ASBZInteractorVolume::OnSuccess(USBZInteractableComponent* InInteractable, const TArray<USBZBaseInteractorComponent*>& InInteractors) {
 }
@@ -21,10 +33,4 @@ void ASBZInteractorVolume::DeactivateVolume() {
 void ASBZInteractorVolume::ActivateVolume() {
 }
 
-ASBZInteractorVolume::ASBZInteractorVolume() {
-    this->InteractableComponent = CreateDefaultSubobject<USBZInteractableComponent>(TEXT("InteractableComponent"));
-    this->SceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComponent"));
-    this->TriggerArea = CreateDefaultSubobject<UBoxComponent>(TEXT("TriggerArea"));
-    this->bIsDeactivatedOnSuccess = true;
-}
 

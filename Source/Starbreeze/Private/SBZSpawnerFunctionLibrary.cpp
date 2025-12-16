@@ -1,5 +1,8 @@
 #include "SBZSpawnerFunctionLibrary.h"
 
+USBZSpawnerFunctionLibrary::USBZSpawnerFunctionLibrary() {
+}
+
 bool USBZSpawnerFunctionLibrary::ConstructMoveToActSpawnBehavior(USBZActSpawnBehaviour*& OutBehavior, UObject* Outer, bool bUseActorTransform, AActor* Actor, FVector Location, bool bUseRandomBox, FTransform BoxTransfrom, FVector BoxExtent, FSBZAIStanceIdHelper Stance, bool bForced) {
     return false;
 }
@@ -8,6 +11,4 @@ bool USBZSpawnerFunctionLibrary::ConstructAnimationActSpawnBehavior(USBZActSpawn
     return false;
 }
 
-USBZSpawnerFunctionLibrary::USBZSpawnerFunctionLibrary() {
-}
 

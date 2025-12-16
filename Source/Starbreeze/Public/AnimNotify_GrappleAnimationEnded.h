@@ -12,5 +12,6 @@ public:
     ESBZGrappleState AnimationState;
     
     UAnimNotify_GrappleAnimationEnded();
+
 };
 

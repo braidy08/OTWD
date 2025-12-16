@@ -1,12 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AI/Navigation/RecastNavMesh.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RecastNavMesh -FallbackName=RecastNavMesh
 #include "SBZVehicleRecastNavMesh.generated.h"
 
 UCLASS(Blueprintable)
 class ASBZVehicleRecastNavMesh : public ARecastNavMesh {
     GENERATED_BODY()
 public:
-    ASBZVehicleRecastNavMesh();
+    ASBZVehicleRecastNavMesh(const FObjectInitializer& ObjectInitializer);
+
 };
 

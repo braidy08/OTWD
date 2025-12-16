@@ -5,3 +5,4 @@ UAnimNotifyState_ForceAnimCameraLookDirection::UAnimNotifyState_ForceAnimCameraL
     this->FadeInTime = 1;
 }
 
+

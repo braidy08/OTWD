@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ESBZPlayerDefeatState.h"
-#include "SBZPlayerCharacter.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPlayerCharacter -FallbackName=SBZPlayerCharacter
 #include "Templates/SubclassOf.h"
 #include "OTWDPlayerCharacter.generated.h"
 
@@ -86,9 +86,10 @@ private:
     bool bHasValidIngameName;
     
 public:
-    AOTWDPlayerCharacter();
+    AOTWDPlayerCharacter(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void UnholsterWeapons();
     

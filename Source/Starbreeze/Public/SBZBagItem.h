@@ -25,7 +25,8 @@ protected:
     bool bAutoSecureBagOnPickup;
     
 public:
-    ASBZBagItem();
+    ASBZBagItem(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void NetMulticast_TriggerMissionEnded();
     

@@ -1,9 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
+#include "ESBZButtonInputType.h"
 #include "Templates/SubclassOf.h"
 #include "SBZUIWidgetLibrary.generated.h"
 
+class USBZPopupWidget;
 class UUserWidget;
 
 UCLASS(Blueprintable)
@@ -50,5 +52,9 @@ public:
     TSubclassOf<UUserWidget> KickedPopupWidgetBlueprint;
     
     USBZUIWidgetLibrary();
+
+    UFUNCTION(BlueprintCallable)
+    void MissionEndedPopupIteraction(const FName ActionName, ESBZButtonInputType ButtonType, USBZPopupWidget* WidgetPointer);
+    
 };
 

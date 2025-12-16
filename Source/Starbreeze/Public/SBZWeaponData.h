@@ -52,7 +52,13 @@ public:
     int32 PowerRangeMaximum0;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 PowerRangeMaximum1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSBZWeaponAttributeUIStatRange> PowerRangeUIData0;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FSBZWeaponAttributeUIStatRange> PowerRangeUIData1;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSBZWeaponAttributeUIStatSingle> StaticUIData;
@@ -61,12 +67,16 @@ public:
     TArray<FSBZWeaponAttributeUIStatRange> OverridePowerRangeUIData0;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FSBZWeaponAttributeUIStatRange> OverridePowerRangeUIData1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSBZWeaponAttributeUIStatSingle> OverrideStaticUIData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, float> AdditionalUIStatsValues;
     
     USBZWeaponData();
+
     UFUNCTION(BlueprintCallable)
     void RefreshDataFromBlueprint() const;
     

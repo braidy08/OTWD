@@ -1,6 +1,9 @@
 #include "OTWDLobbyRemoteState.h"
 #include "Net/UnrealNetwork.h"
 
+AOTWDLobbyRemoteState::AOTWDLobbyRemoteState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void AOTWDLobbyRemoteState::OnRep_StatsInfo() {
 }
 
@@ -14,6 +17,4 @@ void AOTWDLobbyRemoteState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(AOTWDLobbyRemoteState, StatsInfo);
 }
 
-AOTWDLobbyRemoteState::AOTWDLobbyRemoteState() {
-}
 

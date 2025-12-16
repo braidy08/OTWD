@@ -11,7 +11,8 @@ UCLASS(Blueprintable)
 class ASBZKickingReplicatedProxy : public AInfo {
     GENERATED_BODY()
 public:
-    ASBZKickingReplicatedProxy();
+    ASBZKickingReplicatedProxy(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void VoteToKick(FUniqueNetIdRepl PlayerIdToKick, FUniqueNetIdRepl PlayerProposingKick, ESBZKickingMode ModeKick);
     

@@ -29,8 +29,9 @@ public:
     float HighlightRadius;
     
     UOTWDMarkForDeathAbilityAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_StaminaMod();
     

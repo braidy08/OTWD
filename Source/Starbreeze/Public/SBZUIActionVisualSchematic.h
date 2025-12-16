@@ -25,5 +25,6 @@ public:
     TMap<FName, FName> UIActionToInputAction;
     
     USBZUIActionVisualSchematic();
+
 };
 

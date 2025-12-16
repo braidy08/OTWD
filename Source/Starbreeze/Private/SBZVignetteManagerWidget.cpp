@@ -1,5 +1,15 @@
 #include "SBZVignetteManagerWidget.h"
 
+USBZVignetteManagerWidget::USBZVignetteManagerWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->HealthVignette = NULL;
+    this->DownedVignette = NULL;
+    this->BleedOutVignette = NULL;
+    this->DeathVignette = NULL;
+    this->ReviveVignette = NULL;
+    this->LowStaminaVignette = NULL;
+    this->AbilitySystem = NULL;
+}
+
 void USBZVignetteManagerWidget::SetReviveVignette(USBZAnimatedVignetteWidget* Widget) {
 }
 
@@ -21,13 +31,4 @@ void USBZVignetteManagerWidget::SetBleedOutVignette(USBZAnimatedVignetteWidget* 
 void USBZVignetteManagerWidget::OnPlayerStateChangedEventHandler(ESBZPlayerDefeatState NewState, AActor* InOwner) {
 }
 
-USBZVignetteManagerWidget::USBZVignetteManagerWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->HealthVignette = NULL;
-    this->DownedVignette = NULL;
-    this->BleedOutVignette = NULL;
-    this->DeathVignette = NULL;
-    this->ReviveVignette = NULL;
-    this->LowStaminaVignette = NULL;
-    this->AbilitySystem = NULL;
-}
 

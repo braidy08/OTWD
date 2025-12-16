@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Curves/CurveBase.h"
-#include "Curves/RichCurve.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CurveBase -FallbackName=CurveBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RichCurve -FallbackName=RichCurve
 #include "SBZCurveFloatInterval.generated.h"
 
 UCLASS(Blueprintable)
@@ -12,6 +12,7 @@ public:
     FRichCurve FloatCurves[2];
     
     USBZCurveFloatInterval();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMinimumValue(float Time) const;
     

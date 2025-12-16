@@ -1,5 +1,12 @@
 #include "OTWDQuestRuntime.h"
 
+UOTWDQuestRuntime::UOTWDQuestRuntime() {
+    this->QuestObjectiveIndex = 0;
+    this->TurnsToComplete = 0;
+    this->bQuestChangedFlag = false;
+    this->bIsQuestComplete = false;
+}
+
 bool UOTWDQuestRuntime::IsQuestChangedFlagSet() const {
     return false;
 }
@@ -34,10 +41,4 @@ TArray<FOTWDQuestObjectiveRuntime> UOTWDQuestRuntime::GetActiveObjectives() cons
 void UOTWDQuestRuntime::ClearQuestChangedFlag() {
 }
 
-UOTWDQuestRuntime::UOTWDQuestRuntime() {
-    this->QuestObjectiveIndex = 0;
-    this->TurnsToComplete = 0;
-    this->bQuestChangedFlag = false;
-    this->bIsQuestComplete = false;
-}
 

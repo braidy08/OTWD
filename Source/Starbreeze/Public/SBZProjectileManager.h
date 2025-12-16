@@ -7,6 +7,7 @@
 #include "SBZProjectileManager.generated.h"
 
 class ASBZProjectileManager;
+class ASBZRangedProjectile;
 class ASBZThrowableProjectile;
 class UObject;
 class UWorld;
@@ -17,15 +18,16 @@ class STARBREEZE_API ASBZProjectileManager : public AActor {
 public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    TMap<FGuid, ASBZThrowableProjectile*> SpawnedProjectiles;
+    TMap<FGuid, ASBZRangedProjectile*> SpawnedProjectiles;
     
 public:
-    ASBZProjectileManager();
+    ASBZProjectileManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SpawnProjectilePicker(const ASBZThrowableProjectile* Projectile);
     
     UFUNCTION(BlueprintCallable)
-    ASBZThrowableProjectile* SpawnProjectile(UWorld* World, TSubclassOf<ASBZThrowableProjectile> ProjectileClass, AActor* InOwner, FGuid CurrentGuid);
+    ASBZRangedProjectile* SpawnProjectile(UWorld* World, TSubclassOf<ASBZRangedProjectile> ProjectileClass, AActor* InOwner, FGuid CurrentGuid);
     
 protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
@@ -33,7 +35,7 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable)
-    ASBZThrowableProjectile* GetSpawnedProjectile(FGuid Guid);
+    ASBZRangedProjectile* GetSpawnedProjectile(FGuid Guid);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static ASBZProjectileManager* GetProjectileManager(UObject* WorldContextObject);

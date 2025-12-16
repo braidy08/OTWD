@@ -10,6 +10,7 @@ class STARBREEZE_API USBZCompassMarkerWidget : public USBZGenericImageWidget {
     GENERATED_BODY()
 public:
     USBZCompassMarkerWidget();
+
     UFUNCTION(BlueprintCallable)
     void UpdateDistance(float Distance);
     

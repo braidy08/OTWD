@@ -12,5 +12,6 @@ public:
     TArray<FSBZDoorState> States;
     
     USBZDoorStatesSchematic();
+
 };
 

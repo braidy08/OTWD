@@ -1,12 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZBeaconActionPhaseClient.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZBeaconActionPhaseClient -FallbackName=SBZBeaconActionPhaseClient
 #include "OTWDBeaconActionPhaseClient.generated.h"
 
 UCLASS(Blueprintable, NonTransient)
 class OTWD_API AOTWDBeaconActionPhaseClient : public ASBZBeaconActionPhaseClient {
     GENERATED_BODY()
 public:
-    AOTWDBeaconActionPhaseClient();
+    AOTWDBeaconActionPhaseClient(const FObjectInitializer& ObjectInitializer);
+
 };
 

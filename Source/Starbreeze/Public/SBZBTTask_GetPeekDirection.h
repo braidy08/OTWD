@@ -24,5 +24,6 @@ public:
     bool bConsiderEnemyPosition;
     
     UDEPRECATED_SBZBTTask_GetPeekDirection();
+
 };
 

@@ -7,6 +7,5 @@ enum class ESBZBTTask_ThrownAttack_LineOfSightAction : uint8 {
     DontChange,
     RequireLineOfSight,
     DoNotRequireLineOfSight,
-    ESBZBTTask_ThrownAttack_MAX UMETA(Hidden),
 };
 

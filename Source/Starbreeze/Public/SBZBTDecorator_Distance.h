@@ -42,5 +42,6 @@ private:
     
 public:
     USBZBTDecorator_Distance();
+
 };
 

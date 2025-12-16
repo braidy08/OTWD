@@ -31,7 +31,8 @@ protected:
     bool bShowMilliseconds;
     
 public:
-    USBZTimerComponent();
+    USBZTimerComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void UpdateText(const FString& Text);

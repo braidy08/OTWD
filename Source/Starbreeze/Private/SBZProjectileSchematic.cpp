@@ -14,3 +14,4 @@ USBZProjectileSchematic::USBZProjectileSchematic() {
     this->ThrowableProjectileSchematic = NULL;
 }
 
+

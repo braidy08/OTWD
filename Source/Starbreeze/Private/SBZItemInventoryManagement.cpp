@@ -1,5 +1,9 @@
 #include "SBZItemInventoryManagement.h"
 
+ASBZItemInventoryManagement::ASBZItemInventoryManagement(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->InventoryItemManagementSchematic = NULL;
+}
+
 ASBZItemInventoryManagement* ASBZItemInventoryManagement::GetItemInventoryManagement() {
     return NULL;
 }
@@ -7,7 +11,4 @@ ASBZItemInventoryManagement* ASBZItemInventoryManagement::GetItemInventoryManage
 void ASBZItemInventoryManagement::DeactivateZone(const FString& ZoneName) {
 }
 
-ASBZItemInventoryManagement::ASBZItemInventoryManagement() {
-    this->InventoryItemManagementSchematic = NULL;
-}
 

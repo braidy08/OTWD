@@ -4,3 +4,4 @@ UAnimNotify_SpawnLensParticleEffect::UAnimNotify_SpawnLensParticleEffect() {
     this->ParticleSystem = NULL;
 }
 
+

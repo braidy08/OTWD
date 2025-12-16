@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZHurtReactionPrediction.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZHurtReactionPrediction -FallbackName=SBZHurtReactionPrediction
 #include "SBZLungePrediction.generated.h"
 
 class ASBZCharacter;
@@ -9,7 +9,7 @@ USTRUCT(BlueprintType)
 struct FSBZLungePrediction {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZCharacter> Character;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

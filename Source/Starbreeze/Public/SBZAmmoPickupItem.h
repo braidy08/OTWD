@@ -19,7 +19,8 @@ protected:
     bool bAddOnlyToCurrent;
     
 public:
-    ASBZAmmoPickupItem();
+    ASBZAmmoPickupItem(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void OnPickup(ASBZCharacter* Character);
     

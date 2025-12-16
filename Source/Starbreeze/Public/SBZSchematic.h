@@ -8,5 +8,6 @@ class STARBREEZE_API USBZSchematic : public UObject {
     GENERATED_BODY()
 public:
     USBZSchematic();
+
 };
 

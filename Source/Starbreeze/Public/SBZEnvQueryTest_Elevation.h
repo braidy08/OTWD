@@ -30,5 +30,6 @@ private:
     
 public:
     USBZEnvQueryTest_Elevation();
+
 };
 

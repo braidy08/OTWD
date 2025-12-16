@@ -3,8 +3,8 @@
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
-#include "Engine/EngineTypes.h"
-#include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EObjectTypeQuery -FallbackName=EObjectTypeQuery
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RadialDamageEvent -FallbackName=RadialDamageEvent
 #include "Engine/NetSerialization.h"
 #include "ActorMultiHitResult.h"
 #include "ExplosionData.h"
@@ -25,7 +25,8 @@ private:
     TArray<TEnumAsByte<EObjectTypeQuery>> HitImpulseObjectTypes;
     
 public:
-    ASBZExplosionManager();
+    ASBZExplosionManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     void Server_ExplodeWithOverlap(AActor* DamageCauser, const UObject* WorldContextObject, const FVector& Pos, const FRotator& Rot, const float Radius, UParticleSystem* EmitterTemplate, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, UClass* ClassFilter, const TArray<AActor*>& ActorsToIgnore, TArray<AActor*>& OutActors, bool bNetMulticast);
     

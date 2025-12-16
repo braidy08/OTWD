@@ -5,3 +5,4 @@ USBZMigrationCheckpoint::USBZMigrationCheckpoint() {
     this->GameSaveDataClass = USBZMigrationGameSave::StaticClass();
 }
 
+

@@ -12,5 +12,6 @@ public:
     EOTWDInstancedQuestType InstancedQuestType;
     
     UOTWDInstancedQuestDataAsset();
+
 };
 

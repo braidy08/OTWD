@@ -1,5 +1,8 @@
 #include "OTWDCampHUDWidget.h"
 
+UOTWDCampHUDWidget::UOTWDCampHUDWidget() : UUserWidget(FObjectInitializer::Get()) {
+}
+
 void UOTWDCampHUDWidget::UpdateWaves(int32 CurrentWave) {
 }
 
@@ -16,6 +19,4 @@ void UOTWDCampHUDWidget::ShowWarning(const FText& WarningText, const FName& Glob
 
 
 
-UOTWDCampHUDWidget::UOTWDCampHUDWidget() : UUserWidget(FObjectInitializer::Get()) {
-}
 

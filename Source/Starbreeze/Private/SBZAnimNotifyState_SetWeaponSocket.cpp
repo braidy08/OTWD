@@ -4,3 +4,4 @@ USBZAnimNotifyState_SetWeaponSocket::USBZAnimNotifyState_SetWeaponSocket() {
     this->SocketName = TEXT("LeftHandWeapon");
 }
 
+

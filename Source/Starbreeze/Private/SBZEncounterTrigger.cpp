@@ -1,9 +1,10 @@
 #include "SBZEncounterTrigger.h"
 
-void USBZEncounterTrigger::Trigger_Implementation(ASBZEncounter* Encounter) {
-}
-
 USBZEncounterTrigger::USBZEncounterTrigger() {
     this->TriggerOnEnterPhaseState = EEncounterPhaseState::Inactive;
 }
+
+void USBZEncounterTrigger::Trigger_Implementation(ASBZEncounter* Encounter) {
+}
+
 

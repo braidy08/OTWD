@@ -1,6 +1,6 @@
 #include "SBZLitPrefab.h"
 
-ASBZLitPrefab::ASBZLitPrefab() {
+ASBZLitPrefab::ASBZLitPrefab(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->LinkedLight = NULL;
     this->AnimatedIntensityMultiplier = 1;
     this->bUseColorCurveAnimation = false;
@@ -14,4 +14,5 @@ ASBZLitPrefab::ASBZLitPrefab() {
     this->FlareMultiplier = 1;
     this->FlareIntensityOffset = 1;
 }
+
 

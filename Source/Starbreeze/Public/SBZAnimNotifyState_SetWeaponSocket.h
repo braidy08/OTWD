@@ -13,5 +13,6 @@ protected:
     
 public:
     USBZAnimNotifyState_SetWeaponSocket();
+
 };
 

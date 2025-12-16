@@ -14,7 +14,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bRespondWhenActivated;
     
-    UPathNodeResponderComponent();
+    UPathNodeResponderComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnNodeReset();
     

@@ -1,6 +1,10 @@
 #include "SBZLocomotionAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZLocomotionAttributeSet::USBZLocomotionAttributeSet() {
+    this->MaxSpeedMultiplier = 1;
+}
+
 void USBZLocomotionAttributeSet::OnRep_MaxSpeedMultiplier(float OldValue) {
 }
 
@@ -14,7 +18,4 @@ void USBZLocomotionAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProp
     DOREPLIFETIME(USBZLocomotionAttributeSet, MaxSpeedMultiplier);
 }
 
-USBZLocomotionAttributeSet::USBZLocomotionAttributeSet() {
-    this->MaxSpeedMultiplier = 1;
-}
 

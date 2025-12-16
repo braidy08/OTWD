@@ -14,3 +14,4 @@ UOTWDMetagameSaveData::UOTWDMetagameSaveData() {
     this->bIsTimeLimitedVendorActive = false;
 }
 
+

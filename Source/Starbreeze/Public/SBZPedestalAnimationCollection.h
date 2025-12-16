@@ -28,5 +28,6 @@ public:
     UAnimSequenceBase* IdleReadyToIdleNormal;
     
     USBZPedestalAnimationCollection();
+
 };
 

@@ -33,6 +33,7 @@ private:
     
 public:
     USBZPartySpeakerWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidget(UImage* Icon);
     

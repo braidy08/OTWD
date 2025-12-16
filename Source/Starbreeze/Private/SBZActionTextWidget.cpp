@@ -1,5 +1,10 @@
 #include "SBZActionTextWidget.h"
 
+USBZActionTextWidget::USBZActionTextWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->ActionImageBlueprint = NULL;
+    this->TextPanel = NULL;
+}
+
 void USBZActionTextWidget::SetupWidgets(UHorizontalBox* PanelWidget) {
 }
 
@@ -9,8 +14,4 @@ void USBZActionTextWidget::SetupTextDefaults(FName GlobalFont, FName GlobalColor
 void USBZActionTextWidget::SetTextString(const FText& NewText) {
 }
 
-USBZActionTextWidget::USBZActionTextWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->ActionImageBlueprint = NULL;
-    this->TextPanel = NULL;
-}
 

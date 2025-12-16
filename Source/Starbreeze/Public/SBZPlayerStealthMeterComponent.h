@@ -23,9 +23,10 @@ protected:
     TArray<FSBZStealthMeterData> AlertnessList;
     
 public:
-    USBZPlayerStealthMeterComponent();
+    USBZPlayerStealthMeterComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInStealth() const;
     

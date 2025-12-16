@@ -1,6 +1,7 @@
 #include "SBZLootTablesSchematic.h"
 
-USBZLootTablesSchematic::USBZLootTablesSchematic() {
+UDEPRECATED_SBZLootTablesSchematic::UDEPRECATED_SBZLootTablesSchematic() {
     this->DefaultLootTable = NULL;
 }
+
 

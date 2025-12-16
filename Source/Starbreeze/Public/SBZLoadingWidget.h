@@ -63,6 +63,7 @@ private:
     
 public:
     USBZLoadingWidget();
+
     UFUNCTION(BlueprintCallable)
     void StopCurrentVideo();
     

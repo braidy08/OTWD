@@ -13,5 +13,6 @@ public:
     USBZStateMachineState* PreviousState;
     
     USBZStateMachineData();
+
 };
 

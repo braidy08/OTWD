@@ -21,5 +21,6 @@ public:
     TSoftObjectPtr<UStaticMesh> ItemContainerMesh;
     
     USBZInventoryItemsSchematic();
+
 };
 

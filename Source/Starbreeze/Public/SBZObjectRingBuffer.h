@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "DropElementDelegateDelegate.h"
 #include "SBZObjectContainer.h"
 #include "SBZObjectRingBuffer.generated.h"
 
@@ -12,12 +13,13 @@ protected:
     int32 HeadIndex;
     
 public:
-    //UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //FDropElementDelegate ElementDropped;
+    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDropElementDelegate ElementDropped;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USBZObjectContainer* DroppedElementContainer;
     
     USBZObjectRingBuffer();
+
 };
 

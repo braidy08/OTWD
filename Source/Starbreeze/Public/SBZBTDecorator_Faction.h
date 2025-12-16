@@ -18,5 +18,6 @@ private:
     
 public:
     USBZBTDecorator_Faction();
+
 };
 

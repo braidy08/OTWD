@@ -7,6 +7,7 @@ UCLASS(Abstract, Blueprintable)
 class STARBREEZE_API ASBZPointSpawner : public ASBZSpawnerBase {
     GENERATED_BODY()
 public:
-    ASBZPointSpawner();
+    ASBZPointSpawner(const FObjectInitializer& ObjectInitializer);
+
 };
 

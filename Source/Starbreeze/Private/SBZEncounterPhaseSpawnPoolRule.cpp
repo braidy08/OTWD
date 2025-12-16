@@ -7,3 +7,4 @@ USBZEncounterPhaseSpawnPoolRule::USBZEncounterPhaseSpawnPoolRule() {
     this->ComparisonMethod = ESBZNumericComparison::EqualTo;
 }
 
+

@@ -1,6 +1,17 @@
 #include "SBZHealthAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZHealthAttributeSet::USBZHealthAttributeSet() {
+    this->Health = 1;
+    this->HealthMaximum = 1;
+    this->HealthRegenRate = 1;
+    this->LastHealthChunkRegenModifier = 1;
+    this->SecondHealthChunkRegenModifier = 1;
+    this->MinimumHealthChunksRegenerated = 1;
+    this->HealthRegenDamageDelay = 1;
+    this->IncomingDamageMultiplier = 1;
+}
+
 void USBZHealthAttributeSet::RegisterHealthEvents() {
 }
 
@@ -73,14 +84,4 @@ void USBZHealthAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
     DOREPLIFETIME(USBZHealthAttributeSet, IncomingDamageMultiplier);
 }
 
-USBZHealthAttributeSet::USBZHealthAttributeSet() {
-    this->Health = 1;
-    this->HealthMaximum = 1;
-    this->HealthRegenRate = 1;
-    this->LastHealthChunkRegenModifier = 1;
-    this->SecondHealthChunkRegenModifier = 1;
-    this->MinimumHealthChunksRegenerated = 1;
-    this->HealthRegenDamageDelay = 1;
-    this->IncomingDamageMultiplier = 1;
-}
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayEffectTypes.h"
-#include "GameplayEffect.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=ActiveGameplayEffectHandle -FallbackName=ActiveGameplayEffectHandle
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayEffectSpec -FallbackName=GameplayEffectSpec
 #include "Blueprint/UserWidget.h"
 #include "SBZGameplayEffectWidget.generated.h"
 
@@ -13,7 +13,7 @@ class STARBREEZE_API USBZGameplayEffectWidget : public UUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UAbilitySystemComponent> SourceAbilitySystem;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -21,6 +21,7 @@ protected:
     
 public:
     USBZGameplayEffectWidget();
+
     UFUNCTION(BlueprintCallable)
     void UnbindEvents();
     

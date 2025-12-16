@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/EngineTypes.h"
-#include "Components/SphereComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 #include "OTWDSphereComponent.generated.h"
 
 class AActor;
@@ -17,7 +17,8 @@ protected:
     TArray<AZombieCharacter*> ZombiesInside;
     
 public:
-    UOTWDSphereComponent();
+    UOTWDSphereComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);

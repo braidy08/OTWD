@@ -1,12 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/GameInstance.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstance -FallbackName=GameInstance
 #include "ESBZButtonInputType.h"
 #include "ESBZDifficulty.h"
-#include "ESBZEndMissionState.h"
 #include "ESBZGameStateMachineState.h"
 #include "ESBZReturnToIISReason.h"
 #include "ESBZReturnToMainMenuReason.h"
+#include "OnLoadingFinishedDelegateDelegate.h"
+#include "OnMissionEndDelegateDelegate.h"
+#include "OnMissionStartDelegateDelegate.h"
+#include "OnNetworkDisconnectDelegateDelegate.h"
+#include "OnNetworkReconnectDelegateDelegate.h"
 #include "SBZGameInstanceUIBindings.h"
 #include "Templates/SubclassOf.h"
 #include "SBZGameInstance.generated.h"
@@ -35,17 +39,10 @@ class USBZUserManager;
 class USBZVolumeManager;
 class UUserWidget;
 
-UCLASS(Blueprintable, NonTransient)
+UCLASS(Blueprintable, NonTransient, Config=Engine)
 class STARBREEZE_API USBZGameInstance : public UGameInstance {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnNetworkReconnectDelegate);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnNetworkDisconnectDelegate);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnMissionStartDelegate);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMissionEndWithResultDelegate, ESBZEndMissionState, EndMissionStateResult);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnMissionEndDelegate);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLoadingFinishedDelegate);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USBZRootSchematic* RootSchematic;
     
@@ -129,9 +126,6 @@ protected:
     TSubclassOf<USBZChallengeManager> ChallengeManagerClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSet<FName> MissionInventoryNames;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USBZUIManager* UIManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -176,6 +170,7 @@ public:
     UAkAudioEvent* WaitingStateAmbientEvent;
     
     USBZGameInstance();
+
     UFUNCTION(BlueprintCallable)
     bool UnlockMission(USBZLevelSchematic* InLevelToUnlock, bool bShouldUnlockMission);
     
@@ -187,12 +182,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetSelectedMissionSchematic(USBZLevelSchematic* InSelectedMissionSchematic);
-    
-    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static void SetNewForcedGeneratedSeed(const UObject* WorldContextObject, const FString& SeedString);
-    
-    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static void SetNewForcedGeneratedData(const UObject* WorldContextObject, const FString& DataString);
     
     UFUNCTION(BlueprintCallable, Exec)
     void SelectDifficulty(ESBZDifficulty Difficulty);
@@ -273,9 +262,6 @@ public:
     USBZOnlineSession* GetSbzOnlineSession() const;
     
     UFUNCTION(BlueprintCallable)
-    TSet<FName> GetMissionInventoryNames();
-    
-    UFUNCTION(BlueprintCallable)
     void GetMenuEvent(const FString& EventName);
     
     UFUNCTION(BlueprintCallable)
@@ -288,19 +274,7 @@ public:
     static TEnumAsByte<ESBZGameStateMachineState> GetGameStateMachineState(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable)
-    FString GetForcedGeneratedSeedAsString();
-    
-    UFUNCTION(BlueprintCallable)
-    FString GetForcedGeneratedDataAsString();
-    
-    UFUNCTION(BlueprintCallable)
-    FString GetCurrentGeneratedDataAsString();
-    
-    UFUNCTION(BlueprintCallable)
     void DebugOnlineTravel(USBZLevelSchematic* LevelSchematic);
-    
-    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static void ClearForcedGeneratedData(const UObject* WorldContextObject);
     
 };
 

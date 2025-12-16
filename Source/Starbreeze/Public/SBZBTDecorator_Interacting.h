@@ -8,5 +8,6 @@ class USBZBTDecorator_Interacting : public UBTDecorator {
     GENERATED_BODY()
 public:
     USBZBTDecorator_Interacting();
+
 };
 

@@ -8,5 +8,6 @@ class STARBREEZE_API UAnimNotifyState_MeleeLightAttackPeriod : public UAnimNotif
     GENERATED_BODY()
 public:
     UAnimNotifyState_MeleeLightAttackPeriod();
+
 };
 

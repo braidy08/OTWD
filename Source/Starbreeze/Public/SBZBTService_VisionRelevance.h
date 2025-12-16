@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTService_VisionRelevance : public UBTService {
     GENERATED_BODY()
 public:
     USBZBTService_VisionRelevance();
+
 };
 

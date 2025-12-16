@@ -1,5 +1,8 @@
 #include "SBZProfileSaveData.h"
 
+USBZProfileSaveData::USBZProfileSaveData() {
+}
+
 bool USBZProfileSaveData::SetActivePawnSavedDataGuid(const FGuid& SavedDataGuid) {
     return false;
 }
@@ -40,8 +43,20 @@ bool USBZProfileSaveData::DoesWeaponPartSavedDataExist(const FGuid& SavedDataGui
     return false;
 }
 
+ESBZProfileDataLocked USBZProfileSaveData::DoesWeaponPartMetaDataMeetRequirements(const UObject* WorldContextObject, const FGuid& SavedDataGuid, USBZUnlockableMetadata*& OutLockedMetadata) const {
+    return ESBZProfileDataLocked::Unlocked;
+}
+
+ESBZProfileDataLocked USBZProfileSaveData::DoesWeaponMetaDataMeetRequirements(const UObject* WorldContextObject, const FGuid& SavedDataGuid, USBZUnlockableMetadata*& OutLockedMetadata) const {
+    return ESBZProfileDataLocked::Unlocked;
+}
+
 bool USBZProfileSaveData::DoesPawnSavedDataExist(const FGuid& SavedDataGuid) const {
     return false;
+}
+
+ESBZProfileDataLocked USBZProfileSaveData::DoesPawnMetaDataMeetRequirements(const UObject* WorldContextObject, const FGuid& SavedDataGuid, USBZUnlockableMetadata*& OutLockedMetadata) const {
+    return ESBZProfileDataLocked::Unlocked;
 }
 
 FSBZWeaponConfiguration USBZProfileSaveData::CreateWeaponConfigurationFromWeaponSavedData(const FSBZWeaponSavedData& WeaponSavedData, bool bIncludeSoftAssets, bool bIncludeWeaponData) const {
@@ -64,6 +79,4 @@ bool USBZProfileSaveData::AssignAbilityToPawnAtSlot(const FGuid& PawnSavedDataGu
     return false;
 }
 
-USBZProfileSaveData::USBZProfileSaveData() {
-}
 

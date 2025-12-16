@@ -1,9 +1,6 @@
 #include "SBZAbilityElementBaseWidget.h"
 #include "Templates/SubclassOf.h"
 
-void USBZAbilityElementBaseWidget::SetupData(TSubclassOf<UGameplayAbility> Ability, const FGameplayAttribute& AmmoAttribute, const FName& ActionName) {
-}
-
 USBZAbilityElementBaseWidget::USBZAbilityElementBaseWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->TwoResourceMaterial = NULL;
     this->ThreeResourceMaterial = NULL;
@@ -16,4 +13,8 @@ USBZAbilityElementBaseWidget::USBZAbilityElementBaseWidget() : UUserWidget(FObje
     this->bPrevCanCraft = false;
     this->bHasSetupCraftStatus = false;
 }
+
+void USBZAbilityElementBaseWidget::SetupData(TSubclassOf<UGameplayAbility> Ability, const FGameplayAttribute& AmmoAttribute, const FName& ActionName) {
+}
+
 

@@ -1,5 +1,8 @@
 #include "SBZWaitStateMachineStateChangeCallbackProxy.h"
 
+USBZWaitStateMachineStateChangeCallbackProxy::USBZWaitStateMachineStateChangeCallbackProxy() {
+}
+
 USBZWaitStateMachineStateChangeCallbackProxy* USBZWaitStateMachineStateChangeCallbackProxy::WaitGameStateMachineStateChange(UObject* WorldContextObject) {
     return NULL;
 }
@@ -7,6 +10,4 @@ USBZWaitStateMachineStateChangeCallbackProxy* USBZWaitStateMachineStateChangeCal
 void USBZWaitStateMachineStateChangeCallbackProxy::HandleStateEntered(FName StateName) {
 }
 
-USBZWaitStateMachineStateChangeCallbackProxy::USBZWaitStateMachineStateChangeCallbackProxy() {
-}
 

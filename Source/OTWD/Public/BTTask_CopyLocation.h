@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector LocationKey;
     
     UBTTask_CopyLocation();
+
 };
 

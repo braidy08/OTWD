@@ -4,3 +4,4 @@ USBZWeaponPartStatsSchematic::USBZWeaponPartStatsSchematic() {
     this->MaxShots = 0;
 }
 
+

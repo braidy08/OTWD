@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ChildActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ChildActorComponent -FallbackName=ChildActorComponent
 #include "OnArmorPartRemovedDelegate.h"
 #include "SBZArmorPartChildActor.generated.h"
 
@@ -11,6 +11,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnArmorPartRemoved OnArmorPartRemoved;
     
-    USBZArmorPartChildActor();
+    USBZArmorPartChildActor(const FObjectInitializer& ObjectInitializer);
+
 };
 

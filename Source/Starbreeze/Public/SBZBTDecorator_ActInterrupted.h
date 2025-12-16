@@ -18,5 +18,6 @@ public:
     FBlackboardKeySelector InterrutIfSetKey;
     
     USBZBTDecorator_ActInterrupted();
+
 };
 

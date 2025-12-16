@@ -22,6 +22,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UPrimitiveComponent* ParentPrimitiveComponent;
     
-    USBZDamageCapsuleComponent();
+    USBZDamageCapsuleComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

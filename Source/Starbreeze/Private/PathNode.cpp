@@ -1,4 +1,13 @@
 #include "PathNode.h"
+#include "Components/SceneComponent.h"
+
+APathNode::APathNode(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bHidden = true;
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+    this->PotentialUsage = 0;
+    this->State = EPathNodeState::Uninitialized;
+    this->ActualUsage = EPathNodeActualUsage::Entry;
+}
 
 bool APathNode::ResetNode() {
     return false;
@@ -48,9 +57,4 @@ bool APathNode::ActivateNode(const EPathNodeActualUsage ChosenUsage, const FNode
     return false;
 }
 
-APathNode::APathNode() {
-    this->PotentialUsage = 0;
-    this->State = EPathNodeState::Uninitialized;
-    this->ActualUsage = EPathNodeActualUsage::Entry;
-}
 

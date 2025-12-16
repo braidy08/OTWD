@@ -33,7 +33,7 @@ public:
     FString AttackType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    bool bIsAds;
+    bool bIsADS;
     
     FSBZPlayerAttackStruct();
 };

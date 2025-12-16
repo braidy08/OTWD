@@ -8,5 +8,6 @@ class STARBREEZE_API USBZDragBodyAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZDragBodyAction();
+
 };
 

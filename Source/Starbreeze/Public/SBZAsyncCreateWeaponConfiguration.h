@@ -4,6 +4,7 @@
 #include "Kismet/BlueprintAsyncActionBase.h"
 #include "AsyncCreateWeaponConfigurationPayload.h"
 #include "SBZWeaponConfiguration.h"
+#include "WeaponConfigurationSignatureDelegate.h"
 #include "SBZAsyncCreateWeaponConfiguration.generated.h"
 
 class ASBZWeapon;
@@ -14,8 +15,6 @@ UCLASS(Blueprintable)
 class STARBREEZE_API USBZAsyncCreateWeaponConfiguration : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FWeaponConfigurationSignature, FSBZWeaponConfiguration, Configuration);
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWeaponConfigurationSignature Completed;
     
@@ -28,6 +27,7 @@ protected:
     
 public:
     USBZAsyncCreateWeaponConfiguration();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnFinishAsyncLoading(FAsyncCreateWeaponConfigurationPayload Payload);

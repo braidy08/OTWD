@@ -4,3 +4,4 @@ USBZEncounterPhaseBossSpawnPoolRule::USBZEncounterPhaseBossSpawnPoolRule() {
     this->bCheckAllBossSpawnPools = true;
 }
 
+

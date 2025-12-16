@@ -14,9 +14,6 @@ public:
     FBlackboardKeySelector EnemeyKey;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FBlackboardKeySelector LastPositionKey;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector ShootPointKey;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -59,5 +56,6 @@ public:
     bool bShootAtCover;
     
     USBZBTTask_SuppressiveCover();
+
 };
 

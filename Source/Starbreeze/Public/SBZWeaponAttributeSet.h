@@ -16,6 +16,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_ArmorDamageMultiplier, meta=(AllowPrivateAccess=true))
     float ArmorDamageMultiplier;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_StaggeredDamageMultiplier, meta=(AllowPrivateAccess=true))
+    float StaggeredDamageMultiplier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_UnawareDamageMultiplier, meta=(AllowPrivateAccess=true))
+    float UnawareDamageMultiplier;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_EquipSpeed, meta=(AllowPrivateAccess=true))
     float EquipSpeed;
     
@@ -26,13 +32,20 @@ public:
     float WoundChanceMultiplier;
     
     USBZWeaponAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_WoundChanceMultiplier(float OldValue);
     
     UFUNCTION(BlueprintCallable)
+    void OnRep_UnawareDamageMultiplier(float OldValue);
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_StatusEffectChanceModifier(float OldValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_StaggeredDamageMultiplier(float OldValue);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_EquipSpeed(float OldValue);
@@ -50,7 +63,13 @@ public:
     static FGameplayAttribute GetWoundChanceMultiplierAttribute();
     
     UFUNCTION(BlueprintCallable)
+    static FGameplayAttribute GetUnawareDamageMultiplierAttribute();
+    
+    UFUNCTION(BlueprintCallable)
     static FGameplayAttribute GetStatusEffectChanceModifierAttribute();
+    
+    UFUNCTION(BlueprintCallable)
+    static FGameplayAttribute GetStaggeredDamageMultiplierAttribute();
     
     UFUNCTION(BlueprintCallable)
     static FGameplayAttribute GetEquipSpeedAttribute();

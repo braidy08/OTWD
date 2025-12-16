@@ -18,5 +18,6 @@ protected:
     
 public:
     UOTWDAnimNotify_PlayHitDoorSound();
+
 };
 

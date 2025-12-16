@@ -18,5 +18,6 @@ protected:
     
 public:
     USBZBTTask_GetPatrolStance();
+
 };
 

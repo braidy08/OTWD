@@ -8,9 +8,9 @@ enum class EPathTimeEstimate : uint8 {
     Miniscule,
     VeryShort,
     Short,
-    Moderate = 0x5,
-    Long = 0x8,
-    VeryLong = 0xD,
-    Enormous = 0x15,
+    Moderate = 5,
+    Long = 8,
+    VeryLong = 13,
+    Enormous = 21,
 };
 

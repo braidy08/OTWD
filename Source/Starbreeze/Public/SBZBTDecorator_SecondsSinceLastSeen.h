@@ -30,5 +30,6 @@ private:
     
 public:
     USBZBTDecorator_SecondsSinceLastSeen();
+
 };
 

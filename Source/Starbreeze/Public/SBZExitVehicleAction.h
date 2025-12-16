@@ -8,5 +8,6 @@ class STARBREEZE_API USBZExitVehicleAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZExitVehicleAction();
+
 };
 

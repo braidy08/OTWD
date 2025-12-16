@@ -1,5 +1,6 @@
 #include "SBZProjectileMovementComponent.h"
 
-USBZProjectileMovementComponent::USBZProjectileMovementComponent() {
+USBZProjectileMovementComponent::USBZProjectileMovementComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

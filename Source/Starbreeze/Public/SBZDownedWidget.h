@@ -65,6 +65,7 @@ private:
     
 public:
     USBZDownedWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UTextBlock* MinTextWidget, UTextBlock* SecsTextWidget, UMaterialInstanceDynamic* ProgressMaterialWidget, UPanelWidget* LivesPanelWidget);
     

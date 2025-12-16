@@ -37,5 +37,6 @@ public:
     FVector MoveToLocation;
     
     USBZMoveToLocation();
+
 };
 

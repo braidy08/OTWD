@@ -1,8 +1,21 @@
 #include "SBZThrowableProjectile.h"
-#include "Particles/ParticleSystemComponent.h"
-#include "Components/SkeletalMeshComponent.h"
-#include "Components/SphereComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 #include "SBZProjectileMovementComponent.h"
+
+ASBZThrowableProjectile::ASBZThrowableProjectile(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionCapsule"));
+    this->SphereCollision = (USphereComponent*)RootComponent;
+    this->ProjectileMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ProjectileMesh"));
+    this->TrailParticleComp = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("TrailParticleComp"));
+    this->ProjectileMovementComp = CreateDefaultSubobject<USBZProjectileMovementComponent>(TEXT("ProjectileMovement"));
+    this->CurrentState = EThrowableProjectileState::Idle;
+    this->ProjectileMesh->SetupAttachment(RootComponent);
+}
+
+void ASBZThrowableProjectile::Throw(float ThrowForce, USBZProjectileSchematic* InProjectileSchematic, const FVector& StartPosition, const FVector& Direction, APawn* InInstigator, AActor* InDamageCauser, const FRadialDamageParams& InDamageParams, USkeletalMesh* OverrideMesh) {
+}
 
 void ASBZThrowableProjectile::ShowProjectile() {
 }
@@ -14,9 +27,6 @@ void ASBZThrowableProjectile::SetMesh(USkeletalMesh* InMesh) {
 }
 
 void ASBZThrowableProjectile::SetMaxSpeedModifier(float InMaxSpeedModifier) {
-}
-
-void ASBZThrowableProjectile::SetGuid(FGuid InGuid) {
 }
 
 void ASBZThrowableProjectile::SetGravityScaleModifier(float InGravityScaleModifier) {
@@ -43,18 +53,4 @@ float ASBZThrowableProjectile::GetPenetrationDist(float InSpeed) {
     return 0.0f;
 }
 
-FGuid ASBZThrowableProjectile::GetGuid() const {
-    return FGuid{};
-}
-
-ASBZThrowableProjectile::ASBZThrowableProjectile() {
-    this->SphereCollision = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionCapsule"));
-    this->ProjectileMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ProjectileMesh"));
-    this->TrailParticleComp = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("TrailParticleComp"));
-    this->ProjectileMovementComp = CreateDefaultSubobject<USBZProjectileMovementComponent>(TEXT("ProjectileMovement"));
-    this->CurrentState = EThrowableProjectileState::Idle;
-    this->ProjectileSchematic = NULL;
-    this->bDestroyProjectileOnHit = true;
-    this->ThrowAudioEvent = NULL;
-}
 

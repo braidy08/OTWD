@@ -15,5 +15,6 @@ public:
     float AcceptRadius;
     
     USBZBTService_SearchGroup();
+
 };
 

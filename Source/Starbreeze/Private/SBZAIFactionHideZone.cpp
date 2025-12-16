@@ -1,6 +1,14 @@
 #include "SBZAIFactionHideZone.h"
-#include "Components/BoxComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
 #include "SBZFactionIgnoreBoxComponent.h"
+
+ASBZAIFactionHideZone::ASBZAIFactionHideZone(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("ParentBoxComponent"));
+    this->SBZFactionSafeBox = CreateDefaultSubobject<USBZFactionIgnoreBoxComponent>(TEXT("DefaultFactionIgnoreBoxComponent"));
+    this->Box = (UBoxComponent*)RootComponent;
+    this->bStartsEnabled = true;
+    this->SBZFactionSafeBox->SetupAttachment(RootComponent);
+}
 
 void ASBZAIFactionHideZone::OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) {
 }
@@ -17,9 +25,4 @@ void ASBZAIFactionHideZone::CheckCharacter(ASBZCharacter* Character, const FGene
 void ASBZAIFactionHideZone::ActivateZones() {
 }
 
-ASBZAIFactionHideZone::ASBZAIFactionHideZone() {
-    this->SBZFactionSafeBox = CreateDefaultSubobject<USBZFactionIgnoreBoxComponent>(TEXT("DefaultFactionIgnoreBoxComponent"));
-    this->Box = CreateDefaultSubobject<UBoxComponent>(TEXT("ParentBoxComponent"));
-    this->bStartsEnabled = true;
-}
 

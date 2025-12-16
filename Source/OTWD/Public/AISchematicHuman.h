@@ -8,5 +8,6 @@ class OTWD_API UAISchematicHuman : public UOTWDAISchematic {
     GENERATED_BODY()
 public:
     UAISchematicHuman();
+
 };
 

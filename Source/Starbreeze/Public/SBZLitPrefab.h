@@ -54,6 +54,7 @@ protected:
     float FlareIntensityOffset;
     
 public:
-    ASBZLitPrefab();
+    ASBZLitPrefab(const FObjectInitializer& ObjectInitializer);
+
 };
 

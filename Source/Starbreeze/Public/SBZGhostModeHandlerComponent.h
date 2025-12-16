@@ -25,9 +25,10 @@ protected:
     TArray<FSBZGhostInteractableLink> GhostInteractableLinks;
     
 public:
-    USBZGhostModeHandlerComponent();
+    USBZGhostModeHandlerComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void ShowGhost(USBZInteractableComponent* InInteractable, bool bShow);

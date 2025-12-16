@@ -8,7 +8,7 @@ enum class ESBZVisibilityResult : uint8 {
     Visible,
     Hidden,
     MAX,
-    Highest = 0x2,
-    Lowest = 0x0,
+    Highest = Hidden,
+    Lowest = Indeterminate,
 };
 

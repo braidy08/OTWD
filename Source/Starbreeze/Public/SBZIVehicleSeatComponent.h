@@ -7,6 +7,7 @@ UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableCompo
 class STARBREEZE_API USBZIVehicleSeatComponent : public USceneComponent {
     GENERATED_BODY()
 public:
-    USBZIVehicleSeatComponent();
+    USBZIVehicleSeatComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

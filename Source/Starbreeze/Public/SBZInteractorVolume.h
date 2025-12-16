@@ -33,7 +33,8 @@ private:
     TArray<ASBZPlayerCharacter*> PlayersInVolume;
     
 public:
-    ASBZInteractorVolume();
+    ASBZInteractorVolume(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnSuccess(USBZInteractableComponent* InInteractable, const TArray<USBZBaseInteractorComponent*>& InInteractors);

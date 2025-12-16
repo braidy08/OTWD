@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimNotifyState_MeleeSwingUnblock : public UAnimNotifyS
     GENERATED_BODY()
 public:
     USBZAnimNotifyState_MeleeSwingUnblock();
+
 };
 

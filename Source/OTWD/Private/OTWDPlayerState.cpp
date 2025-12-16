@@ -1,5 +1,12 @@
 #include "OTWDPlayerState.h"
 #include "Net/UnrealNetwork.h"
+#include "OTWDStatistics.h"
+
+AOTWDPlayerState::AOTWDPlayerState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UOTWDStatistics>(TEXT("Gameplay_Statistics"))) {
+    this->LevelIdx = 0;
+    this->PowerLevel = 0;
+    this->bCanRescueWanderer = false;
+}
 
 void AOTWDPlayerState::SendHordeRelocatorVisible_Implementation(AOTWDHordeRelocator* SeenThis) {
 }
@@ -17,9 +24,4 @@ void AOTWDPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(AOTWDPlayerState, PowerLevel);
 }
 
-AOTWDPlayerState::AOTWDPlayerState() {
-    this->LevelIdx = 0;
-    this->PowerLevel = 0;
-    this->bCanRescueWanderer = false;
-}
 

@@ -1,20 +1,5 @@
 #include "SBZPartyMemberHUDWidget.h"
 
-void USBZPartyMemberHUDWidget::SetupWidgets(UImage* ToolIconWidget, UImage* PlayerPortraitWidget, UTextBlock* NameTextWidget, USBZDownedWidget* DownedWidget, USBZAttributeProgressWidget* HealthBarWidget, USBZKeyItemManagerWidget* KeyItemManagerWidget, USBZDeathWidget* DeathWidget, USBZPartySpeakerWidget* SpeakingIconWidget) {
-}
-
-void USBZPartyMemberHUDWidget::SetupAnimations(UWidgetAnimation* FadeInAnimation, UWidgetAnimation* AliveDefaultAnimation, UWidgetAnimation* DownedDefaultAnimation, UWidgetAnimation* DeadDefaultAnimation) {
-}
-
-void USBZPartyMemberHUDWidget::OnPawnRefreshed() {
-}
-
-void USBZPartyMemberHUDWidget::OnNameReplicated() {
-}
-
-void USBZPartyMemberHUDWidget::OnDefeatStateChanged(ESBZPlayerDefeatState NewState, AActor* Owner) {
-}
-
 USBZPartyMemberHUDWidget::USBZPartyMemberHUDWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->ToolIcon = NULL;
     this->DisplayedPlayerState = NULL;
@@ -33,4 +18,20 @@ USBZPartyMemberHUDWidget::USBZPartyMemberHUDWidget() : UUserWidget(FObjectInitia
     this->DefeatHandler = NULL;
     this->PlayerContainer = NULL;
 }
+
+void USBZPartyMemberHUDWidget::SetupWidgets(UImage* ToolIconWidget, UImage* PlayerPortraitWidget, UTextBlock* NameTextWidget, USBZDownedWidget* DownedWidget, USBZAttributeProgressWidget* HealthBarWidget, USBZKeyItemManagerWidget* KeyItemManagerWidget, USBZDeathWidget* DeathWidget, USBZPartySpeakerWidget* SpeakingIconWidget) {
+}
+
+void USBZPartyMemberHUDWidget::SetupAnimations(UWidgetAnimation* FadeInAnimation, UWidgetAnimation* AliveDefaultAnimation, UWidgetAnimation* DownedDefaultAnimation, UWidgetAnimation* DeadDefaultAnimation) {
+}
+
+void USBZPartyMemberHUDWidget::OnPawnRefreshed() {
+}
+
+void USBZPartyMemberHUDWidget::OnNameReplicated() {
+}
+
+void USBZPartyMemberHUDWidget::OnDefeatStateChanged(ESBZPlayerDefeatState NewState, AActor* Owner) {
+}
+
 

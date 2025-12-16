@@ -1,6 +1,10 @@
 #include "SBZGhostModeHandlerComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZGhostModeHandlerComponent::USBZGhostModeHandlerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+}
+
 void USBZGhostModeHandlerComponent::ShowGhost(USBZInteractableComponent* InInteractable, bool bShow) {
 }
 
@@ -48,6 +52,4 @@ void USBZGhostModeHandlerComponent::GetLifetimeReplicatedProps(TArray<FLifetimeP
     DOREPLIFETIME(USBZGhostModeHandlerComponent, GhostInteractableLinks);
 }
 
-USBZGhostModeHandlerComponent::USBZGhostModeHandlerComponent() {
-}
 

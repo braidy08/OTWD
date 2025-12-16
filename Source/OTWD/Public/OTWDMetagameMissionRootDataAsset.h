@@ -61,5 +61,6 @@ public:
     TArray<FHQLevelToMissionsMap> HQLevelMissionInfo;
     
     UOTWDMetagameMissionRootDataAsset();
+
 };
 

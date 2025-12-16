@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/Object.h"
-#include "ESBZDifficulty.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
 #include "OTWDCharacterManager.generated.h"
 
 class APawn;
@@ -26,6 +26,7 @@ public:
     UOTWDCharacterLevelsDataAsset* LevelData;
     
     UOTWDCharacterManager();
+
     UFUNCTION(BlueprintCallable)
     void RewardExperience(FGuid Character, int32 Experience, bool bIsBleedXp, bool bAwardBleedXp);
     

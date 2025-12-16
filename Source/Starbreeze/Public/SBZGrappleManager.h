@@ -46,7 +46,8 @@ private:
     TArray<USBZGrappleEvent*> EventPool;
     
 public:
-    ASBZGrappleManager();
+    ASBZGrappleManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool RequestGrapple(AActor* Attacker, AActor* Victim, const FSBZGrappleEventSettings& GrappleConfig, const FSBZGrappleAlignmentSettings& AlignmentSettings);
     

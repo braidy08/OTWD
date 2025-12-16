@@ -1,5 +1,10 @@
 #include "PathConnectionResponderComponent.h"
 
+UPathConnectionResponderComponent::UPathConnectionResponderComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->AllowedDirections = 3;
+    this->bRespondWhenOpened = true;
+}
+
 void UPathConnectionResponderComponent::OnConnectionReset_Implementation() {
 }
 
@@ -13,8 +18,4 @@ bool UPathConnectionResponderComponent::IsDirectionAllowed(const uint8 Direction
     return false;
 }
 
-UPathConnectionResponderComponent::UPathConnectionResponderComponent() {
-    this->AllowedDirections = 3;
-    this->bRespondWhenOpened = true;
-}
 

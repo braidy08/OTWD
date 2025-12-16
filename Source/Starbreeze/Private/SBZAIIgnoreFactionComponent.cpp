@@ -1,5 +1,7 @@
 #include "SBZAIIgnoreFactionComponent.h"
 
-USBZAIIgnoreFactionComponent::USBZAIIgnoreFactionComponent() {
+USBZAIIgnoreFactionComponent::USBZAIIgnoreFactionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAutoActivate = true;
 }
+
 

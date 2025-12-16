@@ -1,5 +1,6 @@
 #include "SBZNavEdgeProvider.h"
 
-ASBZNavEdgeProvider::ASBZNavEdgeProvider() {
+ASBZNavEdgeProvider::ASBZNavEdgeProvider(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

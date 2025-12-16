@@ -14,8 +14,10 @@ USBZDamageType::USBZDamageType() {
     this->HeavyHurtChance = 1;
     this->WoundChance = 1;
     this->ArmorDamageMultiplier = 1;
+    this->PenetratingDamageMultiplier = 1;
     this->GameplayEffectClass = USBZDamageEffect::StaticClass();
     this->LocalPlayerFeedback = NULL;
     this->bAppliesDamage = true;
 }
+
 

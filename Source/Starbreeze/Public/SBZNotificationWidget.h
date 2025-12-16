@@ -43,6 +43,7 @@ private:
     
 public:
     USBZNotificationWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UTextBlock* TitleTextWidget, UTextBlock* BodyTextWidget, UCanvasPanel* ProgressContainerWidget, UTextBlock* ProgressTextWidget, UProgressBar* CurrentProgressBarWidget, UImage* IconImageWidget);
     

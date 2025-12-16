@@ -1,5 +1,6 @@
 #include "SBZCheckpoint.h"
 
-ASBZCheckpoint::ASBZCheckpoint() : APlayerStart(FObjectInitializer::Get()) {
+ASBZCheckpoint::ASBZCheckpoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

@@ -31,7 +31,8 @@ protected:
     TArray<ASBZProximitySensorNavLinkProxy*> NavLinks;
     
 public:
-    ASBZProximitySensorNavLinkManager();
+    ASBZProximitySensorNavLinkManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static ASBZProximitySensorNavLinkManager* GetProximitySensorNavLinkManager(UObject* WorldContextObject);
     

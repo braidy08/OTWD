@@ -1,5 +1,9 @@
 #include "SBZChallengeManager.h"
 
+USBZChallengeManager::USBZChallengeManager() {
+    this->Achievements = NULL;
+}
+
 void USBZChallengeManager::HandleGameReady() {
 }
 
@@ -7,7 +11,4 @@ USBZChallengeManager* USBZChallengeManager::GetChallengeManager(UObject* WorldCo
     return NULL;
 }
 
-USBZChallengeManager::USBZChallengeManager() {
-    this->Achievements = NULL;
-}
 

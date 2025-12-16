@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DeveloperSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "SBZLookInputSettings.h"
 #include "SBZPlayerSettings.generated.h"
 
@@ -9,7 +9,7 @@ class USBZCharacterSchematic;
 class USBZCharactersSchematic;
 class USBZWeaponDataCollection;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class STARBREEZE_API USBZPlayerSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -25,6 +25,7 @@ protected:
     
 public:
     USBZPlayerSettings();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsValidPlayerPawnClass(TSoftClassPtr<APawn> PawnClass);
     

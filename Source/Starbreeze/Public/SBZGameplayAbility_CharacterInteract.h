@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGameplayAbility_CharacterInteract : public USBZGameplay
     GENERATED_BODY()
 public:
     USBZGameplayAbility_CharacterInteract();
+
 };
 

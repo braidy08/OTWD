@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGameplayAbility_CharacterJump : public USBZGameplayAbil
     GENERATED_BODY()
 public:
     USBZGameplayAbility_CharacterJump();
+
 };
 

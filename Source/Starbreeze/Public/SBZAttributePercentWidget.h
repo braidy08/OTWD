@@ -17,6 +17,7 @@ protected:
     
 public:
     USBZAttributePercentWidget();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSetup(float CurrentValue, float MaxValue, float Percentage);

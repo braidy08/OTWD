@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayEffectTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayEffectContext -FallbackName=GameplayEffectContext
 #include "SBZGameplayEffectContext.generated.h"
 
 USTRUCT(BlueprintType)

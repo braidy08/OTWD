@@ -11,8 +11,6 @@ UCLASS(Blueprintable, Config=Engine)
 class STARBREEZE_API ASBZGameSession : public AGameSession {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPlayerRegisterDelegate, APlayerState*, PlayerState);
-    
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PingCheckPeriod;
     
@@ -30,7 +28,8 @@ private:
     float LoadingTimeout;
     
 public:
-    ASBZGameSession();
+    ASBZGameSession(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void UnregisterTravelingClient(const FUniqueNetIdRepl& ClientId);

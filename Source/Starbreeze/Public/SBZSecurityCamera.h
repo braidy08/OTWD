@@ -21,6 +21,7 @@ protected:
     USBZSecurityCameraLogicComponent* SecurityCameraLogic;
     
 public:
-    ASBZSecurityCamera();
+    ASBZSecurityCamera(const FObjectInitializer& ObjectInitializer);
+
 };
 

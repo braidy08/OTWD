@@ -51,5 +51,6 @@ public:
     TSubclassOf<UUserWidget> DefaultNeutralWidgetClass;
     
     USBZEndMissionSettingsSchematic();
+
 };
 

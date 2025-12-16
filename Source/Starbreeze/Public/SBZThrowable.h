@@ -15,7 +15,8 @@ protected:
     UStaticMeshComponent* Mesh;
     
 public:
-    ASBZThrowable();
+    ASBZThrowable(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Throw(const FVector& Direction, float Strength);
     

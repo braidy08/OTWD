@@ -1,11 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "EClimbType.h"
-#include "EHumanFollowerStatus.h"
-#include "ESBZLadderClimbActionType.h"
-#include "ESBZPinningType.h"
-#include "SBZHumanFollower.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=EClimbType -FallbackName=EClimbType
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=EHumanFollowerStatus -FallbackName=EHumanFollowerStatus
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZLadderClimbActionType -FallbackName=ESBZLadderClimbActionType
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZPinningType -FallbackName=ESBZPinningType
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZHumanFollower -FallbackName=SBZHumanFollower
+#include "DestinationReachedDelegateDelegate.h"
 #include "ERescuableFollowerAnimCollection.h"
 #include "ERescuableFollowerName.h"
 #include "ERescuableFollowerType.h"
@@ -16,15 +17,12 @@ class AActor;
 class ASBZCharacter;
 class ASBZPlayerCharacter;
 class UOTWDSurvivorVoiceDataAsset;
-class USBZAnimationAct;
 class USBZGeneralHumanAIAnimationCollection;
 
 UCLASS(Blueprintable)
 class OTWD_API AOTWDRescuableFollower : public ASBZHumanFollower {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDestinationReachedDelegate, AActor*, DestinationActor);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FOTWDMetaSurvivorIngameData> SurvivorOptions;
     
@@ -33,9 +31,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UOTWDSurvivorVoiceDataAsset*> PossibleMaleVoices;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    USBZAnimationAct* EatenByZombiesAct;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOTWDMetaSurvivorIngameData SurvivorData;
@@ -67,7 +62,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MetersAwayWhenRevived;
     
-    AOTWDRescuableFollower();
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bAllowBeingTarget;
+    
+public:
+    AOTWDRescuableFollower(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool ShouldBeCrouched();
     
@@ -76,6 +77,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     bool SetNeutralAnimationCollection();
+    
+    UFUNCTION(BlueprintCallable)
+    void SetAllowBeingTarget(bool bNowAllowedToBeTarget);
     
 private:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
@@ -102,12 +106,6 @@ protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void NetMulticast_SetGeneralAnimationCollection(ERescuableFollowerAnimCollection SelectedAnimSet);
     
-    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
-    void NetMulticast_LastPinnerReleased();
-    
-    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
-    void NetMulticast_FirstPinnerAdded();
-    
 public:
     UFUNCTION(BlueprintCallable)
     void MoveToIndependentLocation(FVector IndependentLocation, bool bLimitMoveTime);
@@ -128,10 +126,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     void HandleDestinationReached(AActor* DestinationActor);
     
-public:
     UFUNCTION(BlueprintCallable)
-    void ChangeFollowerStatus(EHumanFollowerStatus NewStatus, ASBZCharacter* ByCharacter);
+    void ChangeFollowerStatus_Internal(EHumanFollowerStatus NewStatus, ASBZCharacter* ByCharacter);
     
+public:
     UFUNCTION(BlueprintCallable)
     void ApplySurvivorData();
     

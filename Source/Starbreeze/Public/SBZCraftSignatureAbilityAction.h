@@ -8,5 +8,6 @@ class STARBREEZE_API USBZCraftSignatureAbilityAction : public USBZCraftingRedire
     GENERATED_BODY()
 public:
     USBZCraftSignatureAbilityAction();
+
 };
 

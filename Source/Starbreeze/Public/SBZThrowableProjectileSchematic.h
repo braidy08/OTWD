@@ -61,5 +61,6 @@ public:
     float ActivateDetailCollisionTimeStep;
     
     USBZThrowableProjectileSchematic();
+
 };
 

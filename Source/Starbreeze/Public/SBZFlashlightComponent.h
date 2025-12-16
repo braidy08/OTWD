@@ -22,7 +22,8 @@ protected:
     UTimelineComponent* BrightnessTimeline;
     
 public:
-    USBZFlashlightComponent();
+    USBZFlashlightComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void TimelineFloatReturn(float Value);

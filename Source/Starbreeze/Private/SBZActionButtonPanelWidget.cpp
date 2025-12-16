@@ -1,5 +1,10 @@
 #include "SBZActionButtonPanelWidget.h"
 
+USBZActionButtonPanelWidget::USBZActionButtonPanelWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->ActionButtonBlueprint = NULL;
+    this->ButtonPanel = NULL;
+}
+
 void USBZActionButtonPanelWidget::UnbindInput() {
 }
 
@@ -12,8 +17,4 @@ void USBZActionButtonPanelWidget::SetupData(const TArray<FName>& InActionNames, 
 void USBZActionButtonPanelWidget::OnActionButtonClicked(const FName Action, ESBZButtonInputType InputType) {
 }
 
-USBZActionButtonPanelWidget::USBZActionButtonPanelWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->ActionButtonBlueprint = NULL;
-    this->ButtonPanel = NULL;
-}
 

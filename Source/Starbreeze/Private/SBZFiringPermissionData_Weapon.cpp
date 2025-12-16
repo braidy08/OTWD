@@ -3,5 +3,6 @@
 FSBZFiringPermissionData_Weapon::FSBZFiringPermissionData_Weapon() {
     this->NumOfTokens = 0;
     this->CoolDownTime = 1;
+    this->EnterCombatDelay = 1;
 }
 

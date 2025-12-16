@@ -1,5 +1,13 @@
 #include "SBZTimerWidget.h"
 
+USBZTimerWidget::USBZTimerWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->CurrentTimeStamp = 1;
+    this->bUseServerWorldTime = false;
+    this->bPaused = false;
+    this->PausedTimeStamp = 1;
+    this->GameState = NULL;
+}
+
 void USBZTimerWidget::SetTimeStampAsCurrentWorldTime(float Timestamp) {
 }
 
@@ -20,11 +28,4 @@ float USBZTimerWidget::GetTimeElapsed() const {
     return 0.0f;
 }
 
-USBZTimerWidget::USBZTimerWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->CurrentTimeStamp = 1;
-    this->bUseServerWorldTime = false;
-    this->bPaused = false;
-    this->PausedTimeStamp = 1;
-    this->GameState = NULL;
-}
 

@@ -21,6 +21,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FNodeEventActivationData> Events;
     
-    ARouteBasedPathGenerator();
+    ARouteBasedPathGenerator(const FObjectInitializer& ObjectInitializer);
+
 };
 

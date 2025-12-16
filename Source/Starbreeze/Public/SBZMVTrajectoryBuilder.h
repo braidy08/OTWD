@@ -8,5 +8,6 @@ class STARBREEZE_API USBZMVTrajectoryBuilder : public UObject {
     GENERATED_BODY()
 public:
     USBZMVTrajectoryBuilder();
+
 };
 

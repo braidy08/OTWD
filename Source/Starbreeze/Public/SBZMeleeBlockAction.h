@@ -8,5 +8,6 @@ class STARBREEZE_API USBZMeleeBlockAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZMeleeBlockAction();
+
 };
 

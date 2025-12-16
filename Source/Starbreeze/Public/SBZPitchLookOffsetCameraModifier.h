@@ -8,5 +8,6 @@ class STARBREEZE_API USBZPitchLookOffsetCameraModifier : public USBZPlayerCamera
     GENERATED_BODY()
 public:
     USBZPitchLookOffsetCameraModifier();
+
 };
 

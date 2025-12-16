@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/EngineTypes.h"
-#include "SBZFactionIgnoreZone.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZFactionIgnoreZone -FallbackName=SBZFactionIgnoreZone
 #include "OTWDFactionIgnoreZone.generated.h"
 
 class AActor;
@@ -20,7 +20,8 @@ private:
     TArray<UBoxComponent*> IgnoreZones;
     
 public:
-    AOTWDFactionIgnoreZone();
+    AOTWDFactionIgnoreZone(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
     

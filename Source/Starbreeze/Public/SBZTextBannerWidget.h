@@ -30,6 +30,7 @@ private:
     
 public:
     USBZTextBannerWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UTextBlock* BannerTextWidget);
     

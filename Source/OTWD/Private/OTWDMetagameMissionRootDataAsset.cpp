@@ -16,3 +16,4 @@ UOTWDMetagameMissionRootDataAsset::UOTWDMetagameMissionRootDataAsset() {
     this->TurnsTillDeathOnDying = 0;
 }
 
+

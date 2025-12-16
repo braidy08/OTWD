@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayEffectTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=ActiveGameplayEffect -FallbackName=ActiveGameplayEffect
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=ActiveGameplayEffectHandle -FallbackName=ActiveGameplayEffectHandle
 #include "GameplayTagContainer.h"
 #include "Blueprint/UserWidget.h"
 #include "SBZItemWidget.h"
@@ -75,6 +76,7 @@ private:
     
 public:
     USBZKeyItemManagerWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UPanelWidget* PanelWidget, UImage* ImageWidget, UWidgetAnimation* ThrownAppearAnimation, UWidgetAnimation* ThrownDisappearAnimation, UWidgetAnimation* ThrownAppearDefaultAnimation, UWidgetAnimation* ThrownDisappearDefaultAnimation, UWidgetAnimation* ShowSeperatorAnimation, UWidgetAnimation* HideSeperatorAnimation);
     

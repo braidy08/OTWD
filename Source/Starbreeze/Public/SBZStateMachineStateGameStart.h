@@ -9,6 +9,7 @@ class STARBREEZE_API USBZStateMachineStateGameStart : public USBZGameStateMachin
     GENERATED_BODY()
 public:
     USBZStateMachineStateGameStart();
+
 private:
     UFUNCTION(BlueprintCallable)
     void HandleLostConnectionToPartyHost(ESBZOnlineCode ErrorCode);

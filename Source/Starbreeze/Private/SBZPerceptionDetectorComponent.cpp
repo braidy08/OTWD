@@ -1,5 +1,6 @@
 #include "SBZPerceptionDetectorComponent.h"
 
-USBZPerceptionDetectorComponent::USBZPerceptionDetectorComponent() {
+USBZPerceptionDetectorComponent::USBZPerceptionDetectorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

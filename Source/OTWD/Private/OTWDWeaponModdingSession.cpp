@@ -1,5 +1,8 @@
 #include "OTWDWeaponModdingSession.h"
 
+UOTWDWeaponModdingSession::UOTWDWeaponModdingSession() {
+}
+
 bool UOTWDWeaponModdingSession::RepairWeapon() {
     return false;
 }
@@ -24,6 +27,4 @@ bool UOTWDWeaponModdingSession::GetSessionCost(FOTWDMetagameCurrency& OutModding
     return false;
 }
 
-UOTWDWeaponModdingSession::UOTWDWeaponModdingSession() {
-}
 

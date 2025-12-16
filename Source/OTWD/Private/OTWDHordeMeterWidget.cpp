@@ -1,23 +1,5 @@
 #include "OTWDHordeMeterWidget.h"
 
-void UOTWDHordeMeterWidget::SetupWidgets(UImage* ProgressImageWidget, UImage* EventImageWidget, UWidgetAnimation* DefaultStateAnimation, UImage* AlarmImageWidget, UWidgetAnimation* DefaultAlarmAnimation, UWidgetAnimation* DefaultAlarmStartAnimation, UWidgetAnimation* MaxStateAnimation, UWidgetAnimation* MaxAlarmLoopingAnimation, UTextBlock* EventTextWidget, UWidgetAnimation* IncreaseAnimation, UImage* StageImageWidget, UImage* DelayedStageImageWidget, UBorder* ColoredBorderWidget, UBorder* ExtraColoredBorderWidget, UWidgetAnimation* ActivationAnimation) {
-}
-
-void UOTWDHordeMeterWidget::PlayMaximizedLoopAnimation() {
-}
-
-void UOTWDHordeMeterWidget::PlayIdleAnimation() {
-}
-
-void UOTWDHordeMeterWidget::PlayActivationAnimation() {
-}
-
-void UOTWDHordeMeterWidget::OnHordeTotalProgressChanged(float NewTotalProgress) {
-}
-
-void UOTWDHordeMeterWidget::OnHordeAlarmChanged(bool bAlarmEnabled) {
-}
-
 UOTWDHordeMeterWidget::UOTWDHordeMeterWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->HordeLevelSettingsCollection.AddDefaulted(4);
     this->ProgressParameterName = TEXT("Progress");
@@ -42,4 +24,23 @@ UOTWDHordeMeterWidget::UOTWDHordeMeterWidget() : UUserWidget(FObjectInitializer:
     this->PreviousPlayedAnim = NULL;
     this->ActivationAnim = NULL;
 }
+
+void UOTWDHordeMeterWidget::SetupWidgets(UImage* ProgressImageWidget, UImage* EventImageWidget, UWidgetAnimation* DefaultStateAnimation, UImage* AlarmImageWidget, UWidgetAnimation* DefaultAlarmAnimation, UWidgetAnimation* DefaultAlarmStartAnimation, UWidgetAnimation* MaxStateAnimation, UWidgetAnimation* MaxAlarmLoopingAnimation, UTextBlock* EventTextWidget, UWidgetAnimation* IncreaseAnimation, UImage* StageImageWidget, UImage* DelayedStageImageWidget, UBorder* ColoredBorderWidget, UBorder* ExtraColoredBorderWidget, UWidgetAnimation* ActivationAnimation) {
+}
+
+void UOTWDHordeMeterWidget::PlayMaximizedLoopAnimation() {
+}
+
+void UOTWDHordeMeterWidget::PlayIdleAnimation() {
+}
+
+void UOTWDHordeMeterWidget::PlayActivationAnimation() {
+}
+
+void UOTWDHordeMeterWidget::OnHordeTotalProgressChanged(float NewTotalProgress) {
+}
+
+void UOTWDHordeMeterWidget::OnHordeAlarmChanged(bool bAlarmEnabled) {
+}
+
 

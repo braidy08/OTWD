@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector TargetCurrentKey;
     
     USBZBTDecorator_SearchTarget();
+
 };
 

@@ -56,6 +56,7 @@ private:
     
 public:
     UOTWDAbilityHUDWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UPanelWidget* AbilityPanelWidget);
     

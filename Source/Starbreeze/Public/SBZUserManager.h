@@ -2,7 +2,6 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "ESBZButtonInputType.h"
-#include "EUserPrivilegesProxy.h"
 #include "OnIISInteractionDelegate.h"
 #include "SBZUserManager.generated.h"
 
@@ -15,12 +14,11 @@ UCLASS(Blueprintable)
 class STARBREEZE_API USBZUserManager : public UObject {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnQueryUserPrivilegeComplete, EUserPrivilegesProxy, PrivilegeType, bool, PrivilegeQuerySucceeded, int32, PrivilegeQueryResults);
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnIISInteraction IISInteractionDelegate;
     
     USBZUserManager();
+
     UFUNCTION(BlueprintCallable)
     void StopListeningForIISInput();
     

@@ -11,7 +11,8 @@ enum class ESBZOnlineSessionRequestType : uint8 {
     DestroyLobby,
     DestroyParty,
     Search,
-    RestoreBeacons,
+    RestoreLobbyBeacon,
+    RestorePartyBeacon,
     None,
 };
 

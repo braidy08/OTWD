@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimNotifyState_RunUnblock : public UAnimNotifyState {
     GENERATED_BODY()
 public:
     USBZAnimNotifyState_RunUnblock();
+
 };
 

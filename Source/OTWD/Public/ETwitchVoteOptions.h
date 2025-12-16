@@ -12,6 +12,5 @@ enum class ETwitchVoteOptions : uint8 {
     TVO_ArmoredWalkers,
     TVO_HumanTanks,
     TVO_FlickFlashlights,
-    TVO_MAX UMETA(Hidden),
 };
 

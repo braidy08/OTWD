@@ -1,5 +1,15 @@
 #include "SBZCombatArea.h"
 
+ASBZCombatArea::ASBZCombatArea(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bEnableCombatArea = true;
+    this->MaxNumRusher = 0;
+    this->LeashDistance = 1;
+    this->bStayInCombat = false;
+    this->bAlertAllInLinkedAreas = true;
+    this->OngoingAlertBufferTime = 1;
+    this->bSeekOutPlayersInCombat = false;
+}
+
 void ASBZCombatArea::SetSeekOutPlayersInCombat(bool bValue) {
 }
 
@@ -39,13 +49,4 @@ int32 ASBZCombatArea::GetCurMaxNumberOfRushers() const {
 void ASBZCombatArea::ForceAllAIsIntoCombat() {
 }
 
-ASBZCombatArea::ASBZCombatArea() {
-    this->bEnableCombatArea = true;
-    this->MaxNumRusher = 0;
-    this->LeashDistance = 1;
-    this->bStayInCombat = false;
-    this->bAlertAllInLinkedAreas = true;
-    this->OngoingAlertBufferTime = 1;
-    this->bSeekOutPlayersInCombat = false;
-}
 

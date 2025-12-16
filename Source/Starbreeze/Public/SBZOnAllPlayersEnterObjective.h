@@ -7,7 +7,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZOnAllPlayersEnterObjective : public USBZObjectiveComponent {
     GENERATED_BODY()
 public:
-    USBZOnAllPlayersEnterObjective();
+    USBZOnAllPlayersEnterObjective(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnAllPlayersEnter(bool Value);

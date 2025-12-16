@@ -6,3 +6,4 @@ AAIPatrolVolume::AAIPatrolVolume() {
     this->BoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("PatrolVolumeBox"));
 }
 
+

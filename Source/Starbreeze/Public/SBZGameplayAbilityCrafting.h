@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayAbility.h"
-#include "Abilities/GameplayAbilityTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbility -FallbackName=GameplayAbility
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbilityActorInfo -FallbackName=GameplayAbilityActorInfo
 #include "AttributeSet.h"
 #include "Templates/SubclassOf.h"
 #include "SBZGameplayAbilityCrafting.generated.h"
@@ -13,6 +13,9 @@ class STARBREEZE_API USBZGameplayAbilityCrafting : public UGameplayAbility {
     GENERATED_BODY()
 public:
 protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSubclassOf<UGameplayAbility>> AuxiliaryPassiveGameplayAbilityClasses;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UGameplayEffect> AddedResourceGameEffect;
     
@@ -27,6 +30,7 @@ protected:
     
 public:
     USBZGameplayAbilityCrafting();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsResourceAlreadyFull(const FGameplayAbilityActorInfo& ActorInfo) const;
     

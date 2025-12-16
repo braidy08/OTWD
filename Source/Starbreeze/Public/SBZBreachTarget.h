@@ -44,7 +44,8 @@ protected:
     bool bDisableInteractionWhenActivated;
     
 public:
-    ASBZBreachTarget();
+    ASBZBreachTarget(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void ShowLinkedTargets();
     

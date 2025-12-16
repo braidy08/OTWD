@@ -74,6 +74,7 @@ private:
     
 public:
     USBZPartyMemberHUDWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UImage* ToolIconWidget, UImage* PlayerPortraitWidget, UTextBlock* NameTextWidget, USBZDownedWidget* DownedWidget, USBZAttributeProgressWidget* HealthBarWidget, USBZKeyItemManagerWidget* KeyItemManagerWidget, USBZDeathWidget* DeathWidget, USBZPartySpeakerWidget* SpeakingIconWidget);
     

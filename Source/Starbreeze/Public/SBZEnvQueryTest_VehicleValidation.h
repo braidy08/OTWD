@@ -8,5 +8,6 @@ class USBZEnvQueryTest_VehicleValidation : public UEnvQueryTest {
     GENERATED_BODY()
 public:
     USBZEnvQueryTest_VehicleValidation();
+
 };
 

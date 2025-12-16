@@ -1,11 +1,5 @@
 #include "OTWDAbilityCraftingWidget.h"
 
-void UOTWDAbilityCraftingWidget::SetupWidgets(UPanelWidget* ResourcePanelWidget, UPanelWidget* SignaturePanelWidget, UPanelWidget* SecondaryPanelWidget, UPanelWidget* ToolPanelWidget, UWidgetAnimation* FadeInAnimation, UWidgetAnimation* FadeOutAnimation) {
-}
-
-void UOTWDAbilityCraftingWidget::SetProgress(ECraftingSlot CraftingSlot, float Progress) {
-}
-
 UOTWDAbilityCraftingWidget::UOTWDAbilityCraftingWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->ResourceBlueprint = NULL;
     this->CraftingElementBlueprint = NULL;
@@ -26,4 +20,11 @@ UOTWDAbilityCraftingWidget::UOTWDAbilityCraftingWidget() : UUserWidget(FObjectIn
     this->bIsSetup = false;
     this->bShouldShowTool = true;
 }
+
+void UOTWDAbilityCraftingWidget::SetupWidgets(UPanelWidget* ResourcePanelWidget, UPanelWidget* SignaturePanelWidget, UPanelWidget* SecondaryPanelWidget, UPanelWidget* ToolPanelWidget, UWidgetAnimation* FadeInAnimation, UWidgetAnimation* FadeOutAnimation) {
+}
+
+void UOTWDAbilityCraftingWidget::SetProgress(ECraftingSlot CraftingSlot, float Progress) {
+}
+
 

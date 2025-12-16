@@ -17,6 +17,8 @@ enum class ESBZWeaponFamily : uint8 {
     Melee_Staff,
     Melee_Machete,
     Melee_Axe,
+    Melee_Spear,
+    Melee_BatonShield,
     MAX,
 };
 

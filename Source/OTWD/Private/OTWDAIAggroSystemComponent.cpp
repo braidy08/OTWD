@@ -1,5 +1,6 @@
 #include "OTWDAIAggroSystemComponent.h"
 
-UOTWDAIAggroSystemComponent::UOTWDAIAggroSystemComponent() {
+UOTWDAIAggroSystemComponent::UOTWDAIAggroSystemComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

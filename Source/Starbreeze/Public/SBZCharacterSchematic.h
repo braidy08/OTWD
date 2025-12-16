@@ -26,6 +26,9 @@ public:
     FText BriefDescription;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText LockedDescription;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<APawn> PawnClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -33,6 +36,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UTexture2D> PawnThumbnailSmall;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UTexture2D> LockedThumbnail;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UTexture2D> NotAvailableThumbnail;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ESBZWeaponFamily> PreferredWeaponFamilies;
@@ -53,6 +62,7 @@ public:
     TArray<USBZGameplayAbilityData*> PawnGameplayAbilityData;
     
     USBZCharacterSchematic();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     USBZGameplayAbilityData* GetPawnGameplayAbilityDataForSlot(int32 Slot) const;
     

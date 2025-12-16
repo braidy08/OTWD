@@ -12,6 +12,7 @@ class UAnimMontage;
 class UAnimSequenceBase;
 class UBlendSpaceBase;
 class USBZAIShoveHandlerComponent;
+class USBZGeneralHumanAIAnimationCollection;
 
 UCLASS(Blueprintable, NonTransient)
 class STARBREEZE_API USBZHumanAICharacterAnimation : public USBZAICharacterAnimation {
@@ -27,6 +28,9 @@ public:
     float LeftHandIKEffectorBarricadePositionAlpha;
     
 protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USBZGeneralHumanAIAnimationCollection* GeneralHumanAIAnimations;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZWeaponIKPlayerSchematic PatrolLeftHandIK;
     
@@ -365,6 +369,7 @@ protected:
     
 public:
     USBZHumanAICharacterAnimation();
+
     UFUNCTION(BlueprintCallable)
     void PlayMontageTransition(UAnimMontage* MontageTransition);
     

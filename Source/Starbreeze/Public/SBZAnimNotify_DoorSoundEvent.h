@@ -12,5 +12,6 @@ public:
     FGameplayTag SoundTag;
     
     USBZAnimNotify_DoorSoundEvent();
+
 };
 

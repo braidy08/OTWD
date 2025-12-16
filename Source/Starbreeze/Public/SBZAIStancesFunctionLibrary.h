@@ -10,6 +10,7 @@ class STARBREEZE_API USBZAIStancesFunctionLibrary : public UBlueprintFunctionLib
     GENERATED_BODY()
 public:
     USBZAIStancesFunctionLibrary();
+
     UFUNCTION(BlueprintCallable)
     static bool NotEqual_AIStanceNameName(const FSBZAIStanceNameHelper& A, FName B);
     

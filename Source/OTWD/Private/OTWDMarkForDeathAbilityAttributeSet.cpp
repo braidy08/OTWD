@@ -1,6 +1,16 @@
 #include "OTWDMarkForDeathAbilityAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDMarkForDeathAbilityAttributeSet::UOTWDMarkForDeathAbilityAttributeSet() {
+    this->Duration = 1;
+    this->MaxMarks = 1;
+    this->DamageMod = 1;
+    this->StaminaMod = 1;
+    this->StaminaDuration = 1;
+    this->SpeedMod = 1;
+    this->HighlightRadius = 1;
+}
+
 void UOTWDMarkForDeathAbilityAttributeSet::OnRep_StaminaMod() {
 }
 
@@ -34,13 +44,4 @@ void UOTWDMarkForDeathAbilityAttributeSet::GetLifetimeReplicatedProps(TArray<FLi
     DOREPLIFETIME(UOTWDMarkForDeathAbilityAttributeSet, HighlightRadius);
 }
 
-UOTWDMarkForDeathAbilityAttributeSet::UOTWDMarkForDeathAbilityAttributeSet() {
-    this->Duration = 1;
-    this->MaxMarks = 1;
-    this->DamageMod = 1;
-    this->StaminaMod = 1;
-    this->StaminaDuration = 1;
-    this->SpeedMod = 1;
-    this->HighlightRadius = 1;
-}
 

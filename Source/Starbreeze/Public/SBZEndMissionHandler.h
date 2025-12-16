@@ -31,9 +31,10 @@ private:
     USBZGameInstance* SBZGameInstance;
     
 public:
-    ASBZEndMissionHandler();
+    ASBZEndMissionHandler(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetSettings(USBZEndMissionSettingsSchematic* InSettings);
     

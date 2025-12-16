@@ -18,5 +18,6 @@ public:
     bool bGetHomeDirection;
     
     USBZBTTask_GetHomeLocation();
+
 };
 

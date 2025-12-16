@@ -7,3 +7,4 @@ USBZPedestalAnimationCollection::USBZPedestalAnimationCollection() {
     this->IdleReadyToIdleNormal = NULL;
 }
 
+

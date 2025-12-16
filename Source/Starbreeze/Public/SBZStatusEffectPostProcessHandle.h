@@ -1,8 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Curves/RichCurve.h"
-#include "Components/PostProcessComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RichCurve -FallbackName=RichCurve
 #include "SBZStatusEffectPostProcessHandle.generated.h"
+
+class UPostProcessComponent;
 
 USTRUCT(BlueprintType)
 struct STARBREEZE_API FSBZStatusEffectPostProcessHandle {

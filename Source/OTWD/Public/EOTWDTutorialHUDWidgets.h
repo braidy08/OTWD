@@ -9,5 +9,7 @@ enum class EOTWDTutorialHUDWidgets : uint8 {
     ToolAbility,
     HordeMeter,
     GrapplePrompt,
+    PassiveAbility,
+    HealthBar,
 };
 

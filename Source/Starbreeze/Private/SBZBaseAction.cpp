@@ -1,7 +1,21 @@
 #include "SBZBaseAction.h"
 #include "Templates/SubclassOf.h"
 
+USBZBaseAction::USBZBaseAction() {
+    this->bIsQueuedOnPrevent = false;
+    this->bIsQueuedOnBreakingOtherAction = false;
+    this->bIsQueuedOnInterrupt = false;
+    this->Priority = 0;
+}
+
+void USBZBaseAction::SetForbidden(bool bInIsForbidden) {
+}
+
 bool USBZBaseAction::IsQueued() const {
+    return false;
+}
+
+bool USBZBaseAction::IsForbidden() const {
     return false;
 }
 
@@ -33,10 +47,4 @@ bool USBZBaseAction::CanBreak() {
     return false;
 }
 
-USBZBaseAction::USBZBaseAction() {
-    this->bIsQueuedOnPrevent = false;
-    this->bIsQueuedOnBreakingOtherAction = false;
-    this->bIsQueuedOnInterrupt = false;
-    this->Priority = 0;
-}
 

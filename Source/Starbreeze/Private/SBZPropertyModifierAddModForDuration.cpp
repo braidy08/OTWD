@@ -5,3 +5,4 @@ USBZPropertyModifierAddModForDuration::USBZPropertyModifierAddModForDuration() {
     this->Duration = 1;
 }
 
+

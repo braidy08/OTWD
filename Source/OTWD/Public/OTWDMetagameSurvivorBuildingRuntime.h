@@ -25,6 +25,7 @@ protected:
     
 public:
     UOTWDMetagameSurvivorBuildingRuntime();
+
     UFUNCTION(BlueprintCallable)
     void RemoveSurvivorFromBuilding(UOTWDMetagameSurvivor* SurvivorToRemove, bool& WasRemovalSuccess);
     

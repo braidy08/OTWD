@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimNotifyState_ForbidDieAnimation : public UAnimNotify
     GENERATED_BODY()
 public:
     USBZAnimNotifyState_ForbidDieAnimation();
+
 };
 

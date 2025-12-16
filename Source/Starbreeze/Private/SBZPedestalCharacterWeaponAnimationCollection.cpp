@@ -4,3 +4,4 @@ USBZPedestalCharacterWeaponAnimationCollection::USBZPedestalCharacterWeaponAnima
     this->Fallback = NULL;
 }
 
+

@@ -1,5 +1,15 @@
 #include "SBZPlayerDramaComponent.h"
 
+USBZPlayerDramaComponent::USBZPlayerDramaComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAutoActivate = true;
+    this->HighDramaThreshold = 1;
+    this->LowDramaThreshold = 1;
+    this->DramaDropCooldownTime = 1;
+    this->DramaCooldownTime = 1;
+    this->OwnerController = NULL;
+    this->OwnerPlayerController = NULL;
+}
+
 void USBZPlayerDramaComponent::OnPlayerDefeatStateChanged(ESBZPlayerDefeatState NewState, AActor* InOwner) {
 }
 
@@ -44,12 +54,4 @@ float USBZPlayerDramaComponent::GetAveragePlayerIntensity(const UObject* WorldCo
     return 0.0f;
 }
 
-USBZPlayerDramaComponent::USBZPlayerDramaComponent() {
-    this->HighDramaThreshold = 1;
-    this->LowDramaThreshold = 1;
-    this->DramaDropCooldownTime = 1;
-    this->DramaCooldownTime = 1;
-    this->OwnerController = NULL;
-    this->OwnerPlayerController = NULL;
-}
 

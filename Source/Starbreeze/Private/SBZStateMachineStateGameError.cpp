@@ -1,5 +1,9 @@
 #include "SBZStateMachineStateGameError.h"
 
+USBZStateMachineStateGameError::USBZStateMachineStateGameError() {
+    this->ErrorData = NULL;
+}
+
 void USBZStateMachineStateGameError::HandleLoadingFinished() {
 }
 
@@ -9,7 +13,4 @@ void USBZStateMachineStateGameError::GameErrorPopupIteraction(const FName Action
 void USBZStateMachineStateGameError::DelayedTravelToMainMenu() {
 }
 
-USBZStateMachineStateGameError::USBZStateMachineStateGameError() {
-    this->ErrorData = NULL;
-}
 

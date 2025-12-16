@@ -1,6 +1,7 @@
 #include "SBZNavMeshEventListenerComponent.h"
 
-USBZNavMeshEventListenerComponent::USBZNavMeshEventListenerComponent() {
+USBZNavMeshEventListenerComponent::USBZNavMeshEventListenerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bListenAlsoNextNodeChange = false;
 }
+
 

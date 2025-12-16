@@ -16,6 +16,7 @@ public:
     TArray<USBZUnlockableMetadata*> PrePurchasedTechsMetadata;
     
     UOTWDAbilityTechListSchematic();
+
     UFUNCTION(BlueprintCallable)
     void OrganizeTechs();
     

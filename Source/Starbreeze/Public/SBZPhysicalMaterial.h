@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PhysicalMaterials/PhysicalMaterial.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PhysicalMaterial -FallbackName=PhysicalMaterial
 #include "SBZPhysicalMaterial.generated.h"
 
 UCLASS(Blueprintable, CollapseCategories)
@@ -17,5 +17,6 @@ public:
     float ProjectilePenetrationMaxTravelDistanceInsideMaterial;
     
     USBZPhysicalMaterial();
+
 };
 

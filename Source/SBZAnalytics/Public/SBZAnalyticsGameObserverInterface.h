@@ -8,5 +8,6 @@ class SBZANALYTICS_API USBZAnalyticsGameObserverInterface : public UObject {
     GENERATED_BODY()
 public:
     USBZAnalyticsGameObserverInterface();
+
 };
 

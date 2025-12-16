@@ -13,6 +13,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ASBZWeapon> HolsteredWeapon;
     
-    AOTWDHubGameState();
+    AOTWDHubGameState(const FObjectInitializer& ObjectInitializer);
+
 };
 

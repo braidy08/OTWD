@@ -10,6 +10,7 @@ class STARBREEZE_API USBZPlatformPurchasing : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USBZPlatformPurchasing();
+
     UFUNCTION(BlueprintCallable)
     bool GetPurchasedReceipts(const APlayerController* PlayerController, TArray<FString>& outIds);
     

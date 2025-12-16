@@ -8,6 +8,5 @@ enum class ESBZObjectiveType : uint8 {
     OT_MainObjective,
     OT_SubObjective,
     OT_SideObjective,
-    OT_MAX UMETA(Hidden),
 };
 

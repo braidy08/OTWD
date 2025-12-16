@@ -128,5 +128,6 @@ public:
     int32 BurstsBeforeMustReload;
     
     USBZWeaponAISchematic();
+
 };
 

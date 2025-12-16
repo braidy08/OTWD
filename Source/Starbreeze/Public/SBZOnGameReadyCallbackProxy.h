@@ -15,6 +15,7 @@ public:
     FOnGameReadyDynamicDelegate OnSuccess;
     
     USBZOnGameReadyCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static USBZOnGameReadyCallbackProxy* WaitGameReady(UObject* WorldContextObject);
     

@@ -14,6 +14,7 @@ private:
     TArray<AZombieCharacter*> ActiveZombies;
     
 public:
-    AOTWDCrowdSwitcher();
+    AOTWDCrowdSwitcher(const FObjectInitializer& ObjectInitializer);
+
 };
 

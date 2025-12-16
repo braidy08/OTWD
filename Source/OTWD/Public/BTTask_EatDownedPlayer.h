@@ -28,6 +28,7 @@ public:
     UBlackboardComponent* LocalBlackboardComp;
     
     UBTTask_EatDownedPlayer();
+
     UFUNCTION(BlueprintCallable)
     void OnDefeatUnpinned();
     

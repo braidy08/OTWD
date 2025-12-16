@@ -1,11 +1,12 @@
 #include "SBZAIPointOfInterestDynamic.h"
 
-void ASBZAIPointOfInterestDynamic::Recruit(TArray<ASBZAICharacter*>& Characters) {
-}
-
-ASBZAIPointOfInterestDynamic::ASBZAIPointOfInterestDynamic() {
+ASBZAIPointOfInterestDynamic::ASBZAIPointOfInterestDynamic(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->InstigatorCharacter = NULL;
     this->AlertRadius = 1;
     this->bRequireVisualPerceptionOnAlert = true;
 }
+
+void ASBZAIPointOfInterestDynamic::Recruit(TArray<ASBZAICharacter*>& Characters) {
+}
+
 

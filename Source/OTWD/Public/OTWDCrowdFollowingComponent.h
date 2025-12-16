@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZCrowdFollowingComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZCrowdFollowingComponent -FallbackName=SBZCrowdFollowingComponent
 #include "Templates/SubclassOf.h"
 #include "OTWDCrowdFollowingComponent.generated.h"
 
@@ -25,6 +25,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UNavArea> ClumsyNavAreaMega;
     
-    UOTWDCrowdFollowingComponent();
+    UOTWDCrowdFollowingComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -12,6 +12,7 @@ class USBZGameEventPlayerAttackTracker : public USBZGameEventTrackerBase {
     GENERATED_BODY()
 public:
     USBZGameEventPlayerAttackTracker();
+
     UFUNCTION(BlueprintCallable)
     void OnProjectileHit(FSBZProjectileHitStruct ProjectileHitStruct);
     

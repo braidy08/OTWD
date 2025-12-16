@@ -18,7 +18,8 @@ protected:
     UAkAudioEvent* TankShoveHitSuccessSoundEvent;
     
 public:
-    USBZAIShoveHandlerComponent();
+    USBZAIShoveHandlerComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnTimerEnd();

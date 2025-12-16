@@ -2,6 +2,24 @@
 #include "SBZDamageStrengthEffect.h"
 #include "SBZMeleeAttributeSet.h"
 
+ASBZMeleeWeapon::ASBZMeleeWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->MeleeAttributeSet = CreateDefaultSubobject<USBZMeleeAttributeSet>(TEXT("SBZMeleeAttributeSet"));
+    this->UIMeleeSpeed = 1;
+    this->OnAttackCommittedEffect = USBZDamageStrengthEffect::StaticClass();
+    this->MaximumImpactEffectsPerActor = 0;
+    this->CurrentHeavyAttackIndex = 0;
+    this->CurrentLightAttackIndex = 0;
+    this->FirstPersonPlayerMeleeWeaponAnimations = NULL;
+    this->ThirdPersonPlayerMeleeWeaponAnimations = NULL;
+    this->FirstPersonWeaponMeleeWeaponAnimations = NULL;
+    this->ThirdPersonWeaponMeleeWeaponAnimations = NULL;
+    this->SwingEvent = NULL;
+    this->HitEvent = NULL;
+    this->ShoveHitEvent = NULL;
+    this->HeavyNoiseData = NULL;
+    this->LightNoiseData = NULL;
+}
+
 void ASBZMeleeWeapon::Shove() {
 }
 
@@ -23,9 +41,15 @@ bool ASBZMeleeWeapon::Server_MeleeSwingStarted_Validate(bool bInIsMeleeLightAtta
     return true;
 }
 
-void ASBZMeleeWeapon::Server_MeleeShoveStarted_Implementation() {
+void ASBZMeleeWeapon::Server_MeleeShoveBlockStarted_Implementation(bool bIsBlock) {
 }
-bool ASBZMeleeWeapon::Server_MeleeShoveStarted_Validate() {
+bool ASBZMeleeWeapon::Server_MeleeShoveBlockStarted_Validate(bool bIsBlock) {
+    return true;
+}
+
+void ASBZMeleeWeapon::Server_MeleeBlockEnded_Implementation() {
+}
+bool ASBZMeleeWeapon::Server_MeleeBlockEnded_Validate() {
     return true;
 }
 
@@ -44,31 +68,24 @@ void ASBZMeleeWeapon::Multicast_PerformHit_Implementation(const FMeleeHitBoxResu
 void ASBZMeleeWeapon::Multicast_MeleeSwingStarted_Implementation(bool bInIsMeleeLightAttack) {
 }
 
-void ASBZMeleeWeapon::Multicast_MeleeShoveStarted_Implementation() {
+void ASBZMeleeWeapon::Multicast_MeleeShoveBlockStarted_Implementation(bool bIsBlock) {
+}
+
+void ASBZMeleeWeapon::Multicast_MeleeBlockEnded_Implementation() {
 }
 
 void ASBZMeleeWeapon::Multicast_IncrementAttackSequence_Implementation(FIncrementAttackSequencePrediction InPrediction) {
 }
 
+bool ASBZMeleeWeapon::IsShoveLast() const {
+    return false;
+}
+
+bool ASBZMeleeWeapon::IsLightAttackLast() const {
+    return false;
+}
+
 void ASBZMeleeWeapon::Hit(const EMeleeAttackCategory& AttackCategory, const FVector& EffectDirection, const FVector& ForceDirection, float DecalAngle) {
 }
 
-ASBZMeleeWeapon::ASBZMeleeWeapon() {
-    this->MeleeAttributeSet = CreateDefaultSubobject<USBZMeleeAttributeSet>(TEXT("SBZMeleeAttributeSet"));
-    this->UIMeleeSpeed = 1;
-    this->OnAttackCommittedEffect = USBZDamageStrengthEffect::StaticClass();
-    this->MeleeWeaponType = ESBZMeleeWeaponType::Blunt;
-    this->MaximumImpactEffectsPerActor = 0;
-    this->CurrentHeavyAttackIndex = 0;
-    this->CurrentLightAttackIndex = 0;
-    this->FirstPersonPlayerMeleeWeaponAnimations = NULL;
-    this->ThirdPersonPlayerMeleeWeaponAnimations = NULL;
-    this->FirstPersonWeaponMeleeWeaponAnimations = NULL;
-    this->ThirdPersonWeaponMeleeWeaponAnimations = NULL;
-    this->SwingEvent = NULL;
-    this->HitEvent = NULL;
-    this->ShoveHitEvent = NULL;
-    this->HeavyNoiseData = NULL;
-    this->LightNoiseData = NULL;
-}
 

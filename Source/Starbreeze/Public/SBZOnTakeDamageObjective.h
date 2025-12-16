@@ -19,7 +19,8 @@ private:
     float TotalRequiredDamage;
     
 public:
-    USBZOnTakeDamageObjective();
+    USBZOnTakeDamageObjective(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnTakeAnyDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser);

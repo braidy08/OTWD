@@ -1,5 +1,12 @@
 #include "SBZTextBannerWidget.h"
 
+USBZTextBannerWidget::USBZTextBannerWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->BannerText = NULL;
+    this->FadeInAnim = NULL;
+    this->FadeOutAnim = NULL;
+    this->OverrideAnim = NULL;
+}
+
 void USBZTextBannerWidget::SetupWidgets(UTextBlock* BannerTextWidget) {
 }
 
@@ -12,10 +19,4 @@ void USBZTextBannerWidget::OnShowHUDBannerText(FText LocalisedText, float Durati
 void USBZTextBannerWidget::OnFadeOutFinished() {
 }
 
-USBZTextBannerWidget::USBZTextBannerWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->BannerText = NULL;
-    this->FadeInAnim = NULL;
-    this->FadeOutAnim = NULL;
-    this->OverrideAnim = NULL;
-}
 

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZDebugPanelComponentSelector : public USBZDebugPanel {
     GENERATED_BODY()
 public:
     USBZDebugPanelComponentSelector();
+
 };
 

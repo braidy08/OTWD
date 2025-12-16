@@ -8,6 +8,5 @@ enum class ESBZTankHitInfo : uint8 {
     THI_WeakSpot,
     THI_ArmorPart,
     THI_Body,
-    THI_MAX UMETA(Hidden),
 };
 

@@ -14,5 +14,6 @@ public:
     float SearchDistance;
     
     USBZBTTask_InteractSearch();
+
 };
 

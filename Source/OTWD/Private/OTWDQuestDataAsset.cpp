@@ -9,5 +9,7 @@ UOTWDQuestDataAsset::UOTWDQuestDataAsset() {
     this->QuestSeason = 0;
     this->QuestEpisodeNumber = 0;
     this->bIsQuestHidden = false;
+    this->WeightedChance = 1;
 }
+
 

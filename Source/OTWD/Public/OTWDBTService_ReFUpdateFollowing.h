@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTService.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
-#include "EHumanFollowerStatus.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=EHumanFollowerStatus -FallbackName=EHumanFollowerStatus
 #include "OTWDBTService_ReFUpdateFollowing.generated.h"
 
 class AAIController;
@@ -47,6 +47,7 @@ public:
     FBlackboardKeySelector IsAtCrouchDistanceKey;
     
     UOTWDBTService_ReFUpdateFollowing();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnFollowerStatusChanged(EHumanFollowerStatus NewStatus, ASBZCharacter* ByCharacter);

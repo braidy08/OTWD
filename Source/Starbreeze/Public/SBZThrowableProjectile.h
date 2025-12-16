@@ -1,14 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "GameFramework/Actor.h"
 #include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RadialDamageParams -FallbackName=RadialDamageParams
 #include "EThrowableProjectileState.h"
+#include "SBZRangedProjectile.h"
 #include "SBZThrowableProjectile.generated.h"
 
+class AActor;
+class APawn;
 class ASBZCharacter;
-class UAkAudioEvent;
 class UParticleSystemComponent;
 class UPrimitiveComponent;
 class USBZProjectileMovementComponent;
@@ -19,7 +20,7 @@ class USkeletalMeshComponent;
 class USphereComponent;
 
 UCLASS(Abstract, Blueprintable)
-class STARBREEZE_API ASBZThrowableProjectile : public AActor {
+class STARBREEZE_API ASBZThrowableProjectile : public ASBZRangedProjectile {
     GENERATED_BODY()
 public:
 protected:
@@ -38,17 +39,12 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EThrowableProjectileState CurrentState;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USBZProjectileSchematic* ProjectileSchematic;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bDestroyProjectileOnHit;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkAudioEvent* ThrowAudioEvent;
-    
 public:
-    ASBZThrowableProjectile();
+    ASBZThrowableProjectile(const FObjectInitializer& ObjectInitializer);
+
+    UFUNCTION(BlueprintCallable)
+    void Throw(float ThrowForce, USBZProjectileSchematic* InProjectileSchematic, const FVector& StartPosition, const FVector& Direction, APawn* InInstigator, AActor* InDamageCauser, const FRadialDamageParams& InDamageParams, USkeletalMesh* OverrideMesh);
+    
     UFUNCTION(BlueprintCallable)
     void ShowProjectile();
     
@@ -60,9 +56,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetMaxSpeedModifier(float InMaxSpeedModifier);
-    
-    UFUNCTION(BlueprintCallable)
-    void SetGuid(FGuid InGuid);
     
     UFUNCTION(BlueprintCallable)
     void SetGravityScaleModifier(float InGravityScaleModifier);
@@ -86,9 +79,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     float GetPenetrationDist(float InSpeed);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    FGuid GetGuid() const;
     
 };
 

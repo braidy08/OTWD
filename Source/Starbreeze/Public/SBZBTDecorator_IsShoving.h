@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTDecorator_IsShoving : public UBTDecorator {
     GENERATED_BODY()
 public:
     USBZBTDecorator_IsShoving();
+
 };
 

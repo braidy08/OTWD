@@ -6,3 +6,4 @@ USBZBTTask_GetCoverShootingLocation::USBZBTTask_GetCoverShootingLocation() {
     this->bUseShootingPointKey = false;
 }
 
+

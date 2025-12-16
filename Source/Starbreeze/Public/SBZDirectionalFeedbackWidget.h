@@ -66,6 +66,7 @@ private:
     
 public:
     USBZDirectionalFeedbackWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetFeedbackPanel(UCanvasPanel* Panel);
     

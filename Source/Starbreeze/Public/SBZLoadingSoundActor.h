@@ -12,7 +12,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMediaSoundComponent* SoundComponent;
     
-    ASBZLoadingSoundActor();
+    ASBZLoadingSoundActor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsReady() const;
     

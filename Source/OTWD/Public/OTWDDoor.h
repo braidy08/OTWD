@@ -28,7 +28,7 @@ protected:
     UAkAudioEvent* DoorHitMuffledSoundEvent;
     
 public:
-    AOTWDDoor();
+    AOTWDDoor(const FObjectInitializer& ObjectInitializer);
 protected:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetHealth(float InHealth);

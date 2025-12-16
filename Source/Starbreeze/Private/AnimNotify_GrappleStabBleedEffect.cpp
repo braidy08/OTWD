@@ -5,3 +5,4 @@ UAnimNotify_GrappleStabBleedEffect::UAnimNotify_GrappleStabBleedEffect() {
     this->bDoDeathScream = false;
 }
 
+

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZBlueprintBase.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZBlueprintBase -FallbackName=SBZBlueprintBase
 #include "PickedUpChangedDelegateDelegate.h"
 #include "PickedUpDelegateDelegate.h"
 #include "OTWDBlueprintPickup.generated.h"
@@ -31,9 +31,10 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPickedUpChangedDelegate OnPickedUpStateChanged;
     
-    AOTWDBlueprintPickup();
+    AOTWDBlueprintPickup(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void UpdatePickUpState();
     

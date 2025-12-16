@@ -1,6 +1,6 @@
 #include "ProjectileHitScanResult.h"
 
 FProjectileHitScanResult::FProjectileHitScanResult() {
-    this->bFinalHit = false;
+    this->FireLocationToTraceStartDistance = 1;
 }
 

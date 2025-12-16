@@ -8,5 +8,6 @@ class STARBREEZE_API UNodeEventCategory : public UObject {
     GENERATED_BODY()
 public:
     UNodeEventCategory();
+
 };
 

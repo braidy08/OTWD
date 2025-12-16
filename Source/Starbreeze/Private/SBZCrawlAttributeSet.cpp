@@ -1,6 +1,15 @@
 #include "SBZCrawlAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZCrawlAttributeSet::USBZCrawlAttributeSet() {
+    this->StrengthRequiredToStandup = 1;
+    this->StrengthMaximumRequiredToStandup = 1;
+    this->StrengthGatherRate = 1;
+    this->HelpStandMultiplier = 1;
+    this->CrawlHeight = 1;
+    this->CrawlCameraHeight = 1;
+}
+
 void USBZCrawlAttributeSet::OnRep_StrengthRequiredToStandup(float OldValue) {
 }
 
@@ -54,12 +63,4 @@ void USBZCrawlAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(USBZCrawlAttributeSet, CrawlCameraHeight);
 }
 
-USBZCrawlAttributeSet::USBZCrawlAttributeSet() {
-    this->StrengthRequiredToStandup = 1;
-    this->StrengthMaximumRequiredToStandup = 1;
-    this->StrengthGatherRate = 1;
-    this->HelpStandMultiplier = 1;
-    this->CrawlHeight = 1;
-    this->CrawlCameraHeight = 1;
-}
 

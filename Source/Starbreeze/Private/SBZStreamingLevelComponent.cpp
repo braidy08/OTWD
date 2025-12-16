@@ -1,5 +1,11 @@
 #include "SBZStreamingLevelComponent.h"
 
+USBZStreamingLevelComponent::USBZStreamingLevelComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bShouldBlockOnLoad = false;
+    this->bIsStatic = false;
+    this->StreamingLevel = NULL;
+}
+
 void USBZStreamingLevelComponent::SetWorldAssets(const TArray<FSBZLODLevelReference>& WorldAssets) {
 }
 
@@ -41,9 +47,4 @@ bool USBZStreamingLevelComponent::CreateStreamingLevel(bool bForceRecreate, bool
     return false;
 }
 
-USBZStreamingLevelComponent::USBZStreamingLevelComponent() {
-    this->bShouldBlockOnLoad = false;
-    this->bIsStatic = false;
-    this->StreamingLevel = NULL;
-}
 

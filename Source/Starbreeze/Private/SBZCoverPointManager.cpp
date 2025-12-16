@@ -1,5 +1,12 @@
 #include "SBZCoverPointManager.h"
 
+USBZCoverPointManager::USBZCoverPointManager() {
+    this->ShootingPointHeightOffset = 1;
+    this->bUseAiVisibilitySystem = false;
+    this->MinVisibilityScoreToBeSafe = 1;
+    this->ScoringMode = ESBZCoverPointScoringMode::Min;
+}
+
 ASBZCoverPoint* USBZCoverPointManager::K2GetBestCoverPointWithFSearch(FBoxSphereBounds& Bounds, ASBZCoverPoint* CurCoverPoint, const FSBZCoverSearch& CoverSearch, const TArray<ASBZCoverPoint*> RejectedCoverPoints) {
     return NULL;
 }
@@ -20,10 +27,4 @@ USBZCoverPointManager* USBZCoverPointManager::GetCoverPointManager(UObject* Worl
     return NULL;
 }
 
-USBZCoverPointManager::USBZCoverPointManager() {
-    this->ShootingPointHeightOffset = 1;
-    this->bUseAiVisibilitySystem = false;
-    this->MinVisibilityScoreToBeSafe = 1;
-    this->ScoringMode = ESBZCoverPointScoringMode::Min;
-}
 

@@ -1,5 +1,10 @@
 #include "SBZWeaponPlayerMeshComponent.h"
 
+USBZWeaponPlayerMeshComponent::USBZWeaponPlayerMeshComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->AmmoStatsSchematic = NULL;
+    this->SpeedLoaderMesh = NULL;
+}
+
 void USBZWeaponPlayerMeshComponent::SetWeaponConfiguration(const FSBZWeaponConfiguration& NewWeaponConfiguration) {
 }
 
@@ -14,8 +19,4 @@ ESBZWeaponCondition USBZWeaponPlayerMeshComponent::GetWeaponCondition() {
     return ESBZWeaponCondition::BattleWorn;
 }
 
-USBZWeaponPlayerMeshComponent::USBZWeaponPlayerMeshComponent() {
-    this->AmmoStatsSchematic = NULL;
-    this->SpeedLoaderMesh = NULL;
-}
 

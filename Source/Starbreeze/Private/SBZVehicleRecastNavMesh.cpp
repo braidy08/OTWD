@@ -1,5 +1,6 @@
 #include "SBZVehicleRecastNavMesh.h"
 
-ASBZVehicleRecastNavMesh::ASBZVehicleRecastNavMesh() {
+ASBZVehicleRecastNavMesh::ASBZVehicleRecastNavMesh(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

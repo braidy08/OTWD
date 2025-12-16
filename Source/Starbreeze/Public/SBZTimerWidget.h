@@ -27,6 +27,7 @@ protected:
     
 public:
     USBZTimerWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetTimeStampAsCurrentWorldTime(float Timestamp);
     

@@ -23,7 +23,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bRequireVisualPerceptionOnAlert;
     
-    ASBZAIPointOfInterestDynamic();
+    ASBZAIPointOfInterestDynamic(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Recruit(TArray<ASBZAICharacter*>& Characters);
     

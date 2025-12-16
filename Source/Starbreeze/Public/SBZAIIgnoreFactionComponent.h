@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZAIIgnoreFactionComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    USBZAIIgnoreFactionComponent();
+    USBZAIIgnoreFactionComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

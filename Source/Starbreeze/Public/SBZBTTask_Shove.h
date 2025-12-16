@@ -14,5 +14,6 @@ public:
     TSubclassOf<UGameplayEffect> OnShoveGameplayEffect;
     
     USBZBTTask_Shove();
+
 };
 

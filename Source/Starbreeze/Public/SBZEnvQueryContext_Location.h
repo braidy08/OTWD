@@ -8,5 +8,6 @@ class USBZEnvQueryContext_Location : public UEnvQueryContext {
     GENERATED_BODY()
 public:
     USBZEnvQueryContext_Location();
+
 };
 

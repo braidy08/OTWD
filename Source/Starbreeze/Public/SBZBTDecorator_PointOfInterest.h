@@ -20,6 +20,7 @@ private:
     
 public:
     USBZBTDecorator_PointOfInterest();
+
     UFUNCTION(BlueprintCallable)
     void OnAlertLevelChanged(USBZAlertnessComponent* Sender, FSBZAlertnessLevelIdHelper NewLevel, FSBZAlertnessLevelIdHelper OldLevel);
     

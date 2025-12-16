@@ -1,6 +1,13 @@
 #include "SBZCharacterShoveHandlerComponent.h"
 #include "SBZDamageTypeMedium.h"
 
+USBZCharacterShoveHandlerComponent::USBZCharacterShoveHandlerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->ShoveDamageType = USBZDamageTypeMedium::StaticClass();
+    this->ShoveVelocityFalloffCurve = NULL;
+    this->bIgnorePlayers = false;
+}
+
 void USBZCharacterShoveHandlerComponent::Shove() {
 }
 
@@ -13,9 +20,4 @@ bool USBZCharacterShoveHandlerComponent::Server_Shove_Validate(const TArray<FSBZ
 void USBZCharacterShoveHandlerComponent::Multicast_Shove_Implementation(const TArray<FSBZShoveHandlerPrediction>& InShovePredictionArray) {
 }
 
-USBZCharacterShoveHandlerComponent::USBZCharacterShoveHandlerComponent() {
-    this->ShoveDamageType = USBZDamageTypeMedium::StaticClass();
-    this->ShoveVelocityFalloffCurve = NULL;
-    this->bIgnorePlayers = false;
-}
 

@@ -101,7 +101,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASBZAICharacter* Visitor;
     
-    ASBZAIPointOfInterest();
+    ASBZAIPointOfInterest(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool Validate(ASBZAICharacter* Character);
     

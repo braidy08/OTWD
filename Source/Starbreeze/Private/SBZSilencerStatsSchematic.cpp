@@ -7,3 +7,4 @@ USBZSilencerStatsSchematic::USBZSilencerStatsSchematic() {
     this->bBreakableSilencer = true;
 }
 
+

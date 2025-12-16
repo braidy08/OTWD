@@ -25,6 +25,7 @@ public:
     ESBZDifficulty HighestCompletedDifficulty;
     
     USBZMissionSaveData();
+
     UFUNCTION(BlueprintCallable)
     void MarkAsCompletedWithDifficulty(ESBZDifficulty CompletedDifficulty);
     

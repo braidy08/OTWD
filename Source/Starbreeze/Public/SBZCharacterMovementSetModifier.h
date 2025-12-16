@@ -8,5 +8,6 @@ class STARBREEZE_API USBZCharacterMovementSetModifier : public UObject {
     GENERATED_BODY()
 public:
     USBZCharacterMovementSetModifier();
+
 };
 

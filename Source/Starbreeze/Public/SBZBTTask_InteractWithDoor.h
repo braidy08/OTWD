@@ -12,5 +12,6 @@ public:
     ESBZDoorInteractionType InteractionType;
     
     USBZBTTask_InteractWithDoor();
+
 };
 

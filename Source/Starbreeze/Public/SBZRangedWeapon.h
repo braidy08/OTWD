@@ -157,6 +157,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FSBZWeaponBarrel> Barrels;
     
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 bIsAllAmmoSlotsAlwaysOccupied: 1;
+    
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_UnjamState, meta=(AllowPrivateAccess=true))
     bool bWeaponUnjamState;
@@ -172,9 +176,10 @@ protected:
     float PieOcclusion;
     
 public:
-    ASBZRangedWeapon();
+    ASBZRangedWeapon(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void StopReload_Implementation(bool bInIsReloadInterrupted);
     
@@ -190,11 +195,6 @@ public:
     UFUNCTION(BlueprintCallable)
     void StartFire();
     
-private:
-    UFUNCTION(BlueprintCallable)
-    void StartAutoFireAkEvent();
-    
-public:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void SetPartShots(ESBZRangedWeaponModuleType Type, int32 InNewShotsFired);
     

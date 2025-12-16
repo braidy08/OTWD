@@ -17,6 +17,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector InteractionPoint;
     
-    USBZAIInteractableComponent();
+    USBZAIInteractableComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

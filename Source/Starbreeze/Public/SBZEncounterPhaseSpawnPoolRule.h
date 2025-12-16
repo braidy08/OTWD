@@ -21,5 +21,6 @@ public:
     ESBZNumericComparison ComparisonMethod;
     
     USBZEncounterPhaseSpawnPoolRule();
+
 };
 

@@ -8,5 +8,6 @@ class UOTWDGameplayAbilityTags : public UObject {
     GENERATED_BODY()
 public:
     UOTWDGameplayAbilityTags();
+
 };
 

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZSecondaryAbilityAction : public USBZBaseAbilityAction {
     GENERATED_BODY()
 public:
     USBZSecondaryAbilityAction();
+
 };
 

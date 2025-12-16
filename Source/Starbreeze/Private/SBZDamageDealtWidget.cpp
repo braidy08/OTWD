@@ -1,5 +1,16 @@
 #include "SBZDamageDealtWidget.h"
 
+USBZDamageDealtWidget::USBZDamageDealtWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->bRespondsToAnyDamageEvents = false;
+    this->bRespondsToPointDamageEvents = true;
+    this->bRespondsToRadialDamageEvents = true;
+    this->bRespondsToOverlapDamageEvents = true;
+    this->HeadBoneName = TEXT("Head");
+    this->FadeOutAnim = NULL;
+    this->HitAnim = NULL;
+    this->GameSettings = NULL;
+}
+
 void USBZDamageDealtWidget::SetupWidget(UWidgetAnimation* FadeOutAnimation, UWidgetAnimation* HitAnimation) {
 }
 
@@ -19,14 +30,4 @@ void USBZDamageDealtWidget::OnCharacterKilled(const FSBZOnKillData& KillData) {
 void USBZDamageDealtWidget::OnAnyDamageDealt(float Damage, const UDamageType* DamageType, AActor* DamagedActor, AActor* DamageCauser) {
 }
 
-USBZDamageDealtWidget::USBZDamageDealtWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->bRespondsToAnyDamageEvents = false;
-    this->bRespondsToPointDamageEvents = true;
-    this->bRespondsToRadialDamageEvents = true;
-    this->bRespondsToOverlapDamageEvents = true;
-    this->HeadBoneName = TEXT("Head");
-    this->FadeOutAnim = NULL;
-    this->HitAnim = NULL;
-    this->GameSettings = NULL;
-}
 

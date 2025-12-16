@@ -18,5 +18,6 @@ public:
     TSubclassOf<UNavigationQueryFilter> FilterClass;
     
     USBZBTTask_GetLocationInHardpoint();
+
 };
 

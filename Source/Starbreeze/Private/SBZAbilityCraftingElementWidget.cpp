@@ -1,11 +1,5 @@
 #include "SBZAbilityCraftingElementWidget.h"
 
-void USBZAbilityCraftingElementWidget::SetupWidgets(UImage* AbilityIconWidget, UMaterialInstanceDynamic* ProgressMaterialWidget, UImage* ResourceImageWidget, UCanvasPanel* ResourcePanelWidget, USBZActionImageWidget* ActionImageWidget) {
-}
-
-void USBZAbilityCraftingElementWidget::SetupAnimations(UWidgetAnimation* ShowCraftableAnimation, UWidgetAnimation* HideCraftableAnimation, UWidgetAnimation* ShowCraftableDefaultAnimation, UWidgetAnimation* HideCraftableDefaultAnimation, UWidgetAnimation* StartCraftingAnimation, UWidgetAnimation* StopCraftingAnimation, UWidgetAnimation* SuccessfulCraftAnimation) {
-}
-
 USBZAbilityCraftingElementWidget::USBZAbilityCraftingElementWidget() {
     this->ResourceWheelElementBlueprint = NULL;
     this->MaxSetupTime = 1;
@@ -27,4 +21,11 @@ USBZAbilityCraftingElementWidget::USBZAbilityCraftingElementWidget() {
     this->ElapsedSetupTime = 1;
     this->PrevCraftingProgress = 1;
 }
+
+void USBZAbilityCraftingElementWidget::SetupWidgets(UImage* AbilityIconWidget, UMaterialInstanceDynamic* ProgressMaterialWidget, UImage* ResourceImageWidget, UCanvasPanel* ResourcePanelWidget, USBZActionImageWidget* ActionImageWidget) {
+}
+
+void USBZAbilityCraftingElementWidget::SetupAnimations(UWidgetAnimation* ShowCraftableAnimation, UWidgetAnimation* HideCraftableAnimation, UWidgetAnimation* ShowCraftableDefaultAnimation, UWidgetAnimation* HideCraftableDefaultAnimation, UWidgetAnimation* StartCraftingAnimation, UWidgetAnimation* StopCraftingAnimation, UWidgetAnimation* SuccessfulCraftAnimation) {
+}
+
 

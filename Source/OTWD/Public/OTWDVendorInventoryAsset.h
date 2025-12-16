@@ -16,6 +16,7 @@ public:
     TArray<FOTWDVendorWeaponPart> WeaponParts;
     
     UOTWDVendorInventoryAsset();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void GenerateWeapons();

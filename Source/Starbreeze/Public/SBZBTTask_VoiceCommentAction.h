@@ -12,5 +12,6 @@ public:
     ESBZVoiceComment SystemComment;
     
     USBZBTTask_VoiceCommentAction();
+
 };
 

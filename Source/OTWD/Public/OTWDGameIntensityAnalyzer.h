@@ -44,7 +44,8 @@ protected:
     TSubclassOf<USBZLocalPlayerFeedback> EnterCombatFeedback;
     
 public:
-    AOTWDGameIntensityAnalyzer();
+    AOTWDGameIntensityAnalyzer(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnTargetInfoUpdated(ASBZPlayerCharacter* PlayerCharacter, int32 TargetedByAggroEnemies, int32 TargetedByAlertEnemies);
     

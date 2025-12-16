@@ -25,6 +25,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool UseManualHideIndex;
     
-    AOTWDRegionHider();
+    AOTWDRegionHider(const FObjectInitializer& ObjectInitializer);
+
 };
 

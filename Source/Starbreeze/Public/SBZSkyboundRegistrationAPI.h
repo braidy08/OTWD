@@ -20,6 +20,7 @@ public:
     FSBZSkyboundUpdateGameEventDelegate OnSkyboundUpdateGameEventDelegate;
     
     USBZSkyboundRegistrationAPI();
+
     UFUNCTION(BlueprintCallable)
     void UpdateGameEvent(int32 InEventId, const FString& InEventValue);
     

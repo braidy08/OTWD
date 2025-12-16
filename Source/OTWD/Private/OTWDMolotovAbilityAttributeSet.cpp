@@ -1,6 +1,15 @@
 #include "OTWDMolotovAbilityAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDMolotovAbilityAttributeSet::UOTWDMolotovAbilityAttributeSet() {
+    this->FireRadius = 1;
+    this->FireDamage = 1;
+    this->FireDuration = 1;
+    this->FireSpeedMod = 1;
+    this->ExplosionRadius = 1;
+    this->ExplosionDamage = 1;
+}
+
 void UOTWDMolotovAbilityAttributeSet::OnRep_FireSpeedMod() {
 }
 
@@ -30,12 +39,4 @@ void UOTWDMolotovAbilityAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetim
     DOREPLIFETIME(UOTWDMolotovAbilityAttributeSet, ExplosionDamage);
 }
 
-UOTWDMolotovAbilityAttributeSet::UOTWDMolotovAbilityAttributeSet() {
-    this->FireRadius = 1;
-    this->FireDamage = 1;
-    this->FireDuration = 1;
-    this->FireSpeedMod = 1;
-    this->ExplosionRadius = 1;
-    this->ExplosionDamage = 1;
-}
 

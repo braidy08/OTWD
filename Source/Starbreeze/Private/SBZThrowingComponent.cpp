@@ -1,6 +1,13 @@
 #include "SBZThrowingComponent.h"
 #include "Templates/SubclassOf.h"
 
+USBZThrowingComponent::USBZThrowingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->DefaultThrowForce = 1;
+    this->DefaultThrownItemClass = NULL;
+    this->SpawnOffsetFromCamera = 1;
+    this->CharacterMovementVelocityModifier = 1;
+}
+
 void USBZThrowingComponent::ThrowActorNetMulticast_Implementation(const FSBZThrowActorData& ActorData, const FTransform& OwnerTransform) {
 }
 
@@ -37,6 +44,9 @@ bool USBZThrowingComponent::Server_SpawnAndThrowItem_Validate(const FSBZThrowIte
 void USBZThrowingComponent::OnThrowItem_Implementation(const FSBZThrowItemData& ThrowData) {
 }
 
+void USBZThrowingComponent::NetMulticast_ThrowActorCompleted_Implementation(AActor* Actor, FTransform ServerTransform) {
+}
+
 void USBZThrowingComponent::NetMulticast_SpawnAndThrowThrowableProjectile_Implementation(const FSBZThrowProjectileData& ThrowData) {
 }
 
@@ -44,10 +54,4 @@ FSBZThrowItemData USBZThrowingComponent::GetDefaultThrowData() {
     return FSBZThrowItemData{};
 }
 
-USBZThrowingComponent::USBZThrowingComponent() {
-    this->DefaultThrowForce = 1;
-    this->DefaultThrownItemClass = NULL;
-    this->SpawnOffsetFromCamera = 1;
-    this->CharacterMovementVelocityModifier = 1;
-}
 

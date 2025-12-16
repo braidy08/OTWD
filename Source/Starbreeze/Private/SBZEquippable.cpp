@@ -1,6 +1,12 @@
 #include "SBZEquippable.h"
 #include "Net/UnrealNetwork.h"
 #include "SBZEquippableAttributeSet.h"
+#include "SBZWeaponPlayerMeshComponent.h"
+
+ASBZEquippable::ASBZEquippable(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USBZWeaponPlayerMeshComponent>(TEXT("ModularBuilderComponent"))) {
+    this->EquippableAttributeSet = CreateDefaultSubobject<USBZEquippableAttributeSet>(TEXT("SBZEquippableAttributeSet"));
+    this->bTickOnlyWhenEquipped = true;
+}
 
 void ASBZEquippable::RefillAmmo(EEquippableSlotId SlotID, int32 Amount) {
 }
@@ -47,8 +53,4 @@ void ASBZEquippable::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
     DOREPLIFETIME(ASBZEquippable, AbilityBindInfo);
 }
 
-ASBZEquippable::ASBZEquippable() {
-    this->EquippableAttributeSet = CreateDefaultSubobject<USBZEquippableAttributeSet>(TEXT("SBZEquippableAttributeSet"));
-    this->bTickOnlyWhenEquipped = true;
-}
 

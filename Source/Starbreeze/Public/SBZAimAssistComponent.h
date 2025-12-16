@@ -45,7 +45,8 @@ private:
     TArray<FSBZTargetCandidate> BulletMagnetismCandidates;
     
 public:
-    USBZAimAssistComponent();
+    USBZAimAssistComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     FSBZAimAssistResult TickAimAssist(float DeltaTime, bool bHandlePlayerRotation);
     

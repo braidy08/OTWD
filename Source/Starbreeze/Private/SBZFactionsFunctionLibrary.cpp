@@ -1,5 +1,8 @@
 #include "SBZFactionsFunctionLibrary.h"
 
+USBZFactionsFunctionLibrary::USBZFactionsFunctionLibrary() {
+}
+
 bool USBZFactionsFunctionLibrary::NotEqual_FactionNameName(const FSBZFactionNameHelper& A, FName B) {
     return false;
 }
@@ -56,6 +59,4 @@ bool USBZFactionsFunctionLibrary::Equal_FactionIdFactionId(const FSBZFactionIdHe
     return false;
 }
 
-USBZFactionsFunctionLibrary::USBZFactionsFunctionLibrary() {
-}
 

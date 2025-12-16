@@ -1,6 +1,15 @@
 #include "SBZModularMeshComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZModularMeshComponent::USBZModularMeshComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->bUseAsyncSpawning = true;
+    this->MaterialReplacements = NULL;
+    this->BaseRigComponent = NULL;
+    this->BaseRigPrimitiveComponent = NULL;
+    this->BaseRigSkeletalMeshComponent = NULL;
+}
+
 void USBZModularMeshComponent::UpdateInstancedComponentsFromBaseRig() {
 }
 
@@ -11,6 +20,10 @@ void USBZModularMeshComponent::SetModularParts(const TArray<FSBZModularPart>& Pa
 }
 
 void USBZModularMeshComponent::SetBaseRigComponent(USceneComponent* NewBaseRigComponent) {
+}
+
+bool USBZModularMeshComponent::IsSpawningComponents() const {
+    return false;
 }
 
 FBoxSphereBounds USBZModularMeshComponent::GetTightBounds() const {
@@ -50,11 +63,4 @@ void USBZModularMeshComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProper
     DOREPLIFETIME(USBZModularMeshComponent, MaterialReplacements);
 }
 
-USBZModularMeshComponent::USBZModularMeshComponent() {
-    this->bUseAsyncSpawning = true;
-    this->MaterialReplacements = NULL;
-    this->BaseRigComponent = NULL;
-    this->BaseRigPrimitiveComponent = NULL;
-    this->BaseRigSkeletalMeshComponent = NULL;
-}
 

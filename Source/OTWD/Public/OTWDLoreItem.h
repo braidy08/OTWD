@@ -7,11 +7,11 @@
 
 class APawn;
 class UAkAudioEvent;
-class UAkComponent;
 class UBoxComponent;
 class UOTWDLibraryItemData;
 class UOTWDQuestDataAsset;
 class UParticleSystemComponent;
+class USBZAmbientSoundComponent;
 class USBZBaseInteractorComponent;
 class USBZInteractableComponent;
 class USBZInteractableTemplate;
@@ -57,12 +57,11 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZVoiceComment PickupComment;
     
-private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
-    UAkComponent* AkComponent;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USBZAmbientSoundComponent* AmbientSoundComponent;
     
 public:
-    AOTWDLoreItem();
+    AOTWDLoreItem(const FObjectInitializer& ObjectInitializer);
 protected:
     UFUNCTION(BlueprintCallable)
     void OnLocalInteractionSuccessful(USBZInteractableComponent* Interactable, const TArray<USBZBaseInteractorComponent*>& Interactors);

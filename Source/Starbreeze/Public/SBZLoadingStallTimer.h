@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "SBZLoadingStallTimer.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class STARBREEZE_API USBZLoadingStallTimer : public UObject {
     GENERATED_BODY()
 public:
@@ -13,6 +13,7 @@ protected:
     
 public:
     USBZLoadingStallTimer();
+
     UFUNCTION(BlueprintCallable)
     void SetPlayerStuck();
     

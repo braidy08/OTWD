@@ -7,6 +7,7 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class STARBREEZE_API USBZPlayerActionHandler : public USBZCharacterActionHandler {
     GENERATED_BODY()
 public:
-    USBZPlayerActionHandler();
+    USBZPlayerActionHandler(const FObjectInitializer& ObjectInitializer);
+
 };
 

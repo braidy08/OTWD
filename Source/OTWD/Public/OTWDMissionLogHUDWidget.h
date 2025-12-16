@@ -23,6 +23,7 @@ protected:
     
 public:
     UOTWDMissionLogHUDWidget();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnQuestUpdated(const UOTWDQuestDataAsset* QuestData);

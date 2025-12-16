@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DeveloperSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "InputCoreTypes.h"
 #include "SBZRebindableSpecification.h"
 #include "SBZExtraInputConfigData.generated.h"
 
 class USBZUIActionVisualSchematic;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Input)
+UCLASS(Blueprintable, DefaultConfig, Config=Input)
 class STARBREEZE_API USBZExtraInputConfigData : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -24,5 +24,6 @@ public:
     TSoftObjectPtr<USBZUIActionVisualSchematic> SoftDefaultVisualSchematic;
     
     USBZExtraInputConfigData();
+
 };
 

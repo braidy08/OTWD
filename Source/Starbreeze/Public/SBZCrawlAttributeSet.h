@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
+#include "AttributeSet.h"
 #include "SBZCrawlAttributeSet.generated.h"
 
 UCLASS(Blueprintable)
@@ -26,8 +27,9 @@ public:
     float CrawlCameraHeight;
     
     USBZCrawlAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_StrengthRequiredToStandup(float OldValue);
     

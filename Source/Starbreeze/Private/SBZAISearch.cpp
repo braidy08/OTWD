@@ -1,5 +1,8 @@
 #include "SBZAISearch.h"
 
+ASBZAISearch::ASBZAISearch(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void ASBZAISearch::SearchGroup(TArray<ASBZAICharacter*> AICharacters, FSBZAIStanceIdHelper Stance, FSBZAlertnessLevelIdHelper AlertnessLevel, FVector TargetPosition) {
 }
 
@@ -10,6 +13,4 @@ ASBZAISearch* ASBZAISearch::GetAISearchManager(UObject* WorldContextObject) {
     return NULL;
 }
 
-ASBZAISearch::ASBZAISearch() {
-}
 

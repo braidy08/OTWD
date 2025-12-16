@@ -32,6 +32,7 @@ private:
     
 public:
     USBZActionTextWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UHorizontalBox* PanelWidget);
     

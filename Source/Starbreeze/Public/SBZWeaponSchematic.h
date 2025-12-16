@@ -95,5 +95,6 @@ public:
     UAkAudioEvent* EmptyEvent;
     
     USBZWeaponSchematic();
+
 };
 

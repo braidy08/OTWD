@@ -8,5 +8,6 @@ class UOTWDQuestObjectiveTurnInDataAsset : public UOTWDQuestObjectiveBaseDataAss
     GENERATED_BODY()
 public:
     UOTWDQuestObjectiveTurnInDataAsset();
+
 };
 

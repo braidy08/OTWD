@@ -14,5 +14,6 @@ public:
     int32 NavMeshFallbackSteps;
     
     USBZBTTask_MoveToInteraction();
+
 };
 

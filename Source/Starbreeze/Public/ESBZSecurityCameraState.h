@@ -11,6 +11,5 @@ enum class ESBZSecurityCameraState : uint8 {
     SCS_Delay,
     SCS_Destroyed,
     SCS_Disabled,
-    SCS_MAX UMETA(Hidden),
 };
 

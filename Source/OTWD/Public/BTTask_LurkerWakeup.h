@@ -25,6 +25,9 @@ public:
     float WakeUpChance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName CharacterInProximityKey;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName CurrentInfluenceKey;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -37,7 +40,7 @@ public:
     FName LocationKey;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bWakeSound;
+    bool bWakeFromStimuli;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName SenseTypeKey;
@@ -46,5 +49,6 @@ public:
     FName AlertnessKey;
     
     UBTTask_LurkerWakeup();
+
 };
 

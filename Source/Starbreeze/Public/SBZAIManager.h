@@ -10,7 +10,8 @@ UCLASS(Blueprintable)
 class STARBREEZE_API ASBZAIManager : public AActor {
     GENERATED_BODY()
 public:
-    ASBZAIManager();
+    ASBZAIManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static ASBZAIManager* GetAIManager(UObject* WorldContextObject);
     

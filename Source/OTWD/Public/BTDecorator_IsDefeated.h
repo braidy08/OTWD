@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector TargetKey;
     
     UBTDecorator_IsDefeated();
+
 };
 

@@ -17,5 +17,6 @@ public:
     bool bUseDetourCrowdAvoidance;
     
     UBTTask_DumbMoveTo();
+
 };
 

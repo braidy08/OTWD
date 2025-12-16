@@ -5,6 +5,6 @@
 UENUM(BlueprintType)
 enum class EGoalType : uint8 {
     GT_MoveToLocation,
-    GT_None = 0xFF,
+    GT_None = 255,
 };
 

@@ -12,6 +12,9 @@ class STARBREEZE_API ISBZRandomized : public IInterface {
     GENERATED_BODY()
 public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    bool ShouldRandomizeOnAllClients();
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool SetSeed(const int32 NewSeed);
     
 };

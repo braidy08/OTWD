@@ -10,6 +10,7 @@
 #include "OTWDWeaponSavedData.h"
 #include "OTWDCampVendorBlueprintLibrary.generated.h"
 
+class UOTWDWeaponStashAsset;
 class UObject;
 
 UCLASS(Blueprintable)
@@ -17,8 +18,15 @@ class OTWD_API UOTWDCampVendorBlueprintLibrary : public UBlueprintFunctionLibrar
     GENERATED_BODY()
 public:
     UOTWDCampVendorBlueprintLibrary();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool IsBlackmarketItemProgressComplete(const UObject* WorldContextObject, int32 InventoryIndex);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static void GetWeaponStashInventory(const UObject* WorldContextObject, UOTWDWeaponStashAsset* WeaponStashAsset, TArray<FOTWDWeaponSavedData>& OutWeapons);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static bool GetWeaponStashBuyCost(const UObject* WorldContextObject, UOTWDWeaponStashAsset* WeaponStashAsset, const FOTWDWeaponSavedData& WeaponSavedData, FOTWDMetagameCurrency& OutCost);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static bool GetWeaponPartBuyCost(const FOTWDWeaponPartSavedData& WeaponPartSavedData, FOTWDMetagameCurrency& OutBuyCost, const UObject* WorldContextObject);
@@ -50,8 +58,14 @@ public:
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void GetBlackmarketItemSaveDataAtProgress(const UObject* WorldContextObject, int32 InventoryIndex, ESBZWeaponRarity Rarity, float ProgressPercent, EOTWDVendorItemSwitch& OutputExec, TArray<FOTWDWeaponSavedData>& OutWeapons, TArray<FOTWDWeaponPartSavedData>& OutWeaponParts);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static bool CanBuyWeaponStashWeapon(const UObject* WorldContextObject, UOTWDWeaponStashAsset* WeaponStashAsset, const FOTWDWeaponSavedData& WeaponSavedData);
+    
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static int32 CalculateGoldRequiredForProgress(const UObject* WorldContextObject, int32 InventoryIndex, ESBZWeaponRarity TargetRarity, float TargetProgress);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool BuyWeaponStashWeapon(const UObject* WorldContextObject, UOTWDWeaponStashAsset* WeaponStashAsset, const FOTWDWeaponSavedData& WeaponSavedData);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool BuyWeaponPart(const UObject* WorldContextObject, const FOTWDWeaponPartSavedData& WeaponPartSavedData);

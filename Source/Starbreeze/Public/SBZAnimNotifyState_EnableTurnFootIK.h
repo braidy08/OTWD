@@ -23,5 +23,6 @@ protected:
     
 public:
     USBZAnimNotifyState_EnableTurnFootIK();
+
 };
 

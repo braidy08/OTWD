@@ -1,5 +1,6 @@
 #include "SBZReducedMeshSwitchManager.h"
 
-ASBZReducedMeshSwitchManager::ASBZReducedMeshSwitchManager() {
+ASBZReducedMeshSwitchManager::ASBZReducedMeshSwitchManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

@@ -1,5 +1,16 @@
 #include "SBZDrawArea.h"
 
+USBZDrawArea::USBZDrawArea() {
+    this->DrawUpdateIntervall = 1;
+    this->DrawInterpolationSpeed = 1;
+    this->DrawUpdateTolerance = 1;
+    this->EligibleDrawKeys.AddDefaulted(1);
+    this->DisplayMaterialInstance = NULL;
+    this->ReplicationPenMaterialInstance = NULL;
+    this->ReplicationBufferRenderMaterialInstance = NULL;
+    this->ReplicationManager = NULL;
+}
+
 void USBZDrawArea::ToggleDebug() {
 }
 
@@ -29,14 +40,4 @@ FLinearColor USBZDrawArea::CalculateUserColor(int32 Seed) {
     return FLinearColor{};
 }
 
-USBZDrawArea::USBZDrawArea() {
-    this->DrawUpdateIntervall = 1;
-    this->DrawInterpolationSpeed = 1;
-    this->DrawUpdateTolerance = 1;
-    this->EligibleDrawKeys.AddDefaulted(1);
-    this->DisplayMaterialInstance = NULL;
-    this->ReplicationPenMaterialInstance = NULL;
-    this->ReplicationBufferRenderMaterialInstance = NULL;
-    this->ReplicationManager = NULL;
-}
 

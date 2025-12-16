@@ -1,5 +1,6 @@
 #include "SBZArmorPartChildActor.h"
 
-USBZArmorPartChildActor::USBZArmorPartChildActor() {
+USBZArmorPartChildActor::USBZArmorPartChildActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

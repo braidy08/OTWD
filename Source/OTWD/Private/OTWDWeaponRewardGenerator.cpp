@@ -1,9 +1,5 @@
 #include "OTWDWeaponRewardGenerator.h"
 
-float UOTWDWeaponRewardGenerator::GetBasePowerLevel(const UOTWDProfileSaveData* ProfileSaveData, float Range) {
-    return 0.0f;
-}
-
 UOTWDWeaponRewardGenerator::UOTWDWeaponRewardGenerator() {
     this->bOverridePowerLevel = false;
     this->bOverrideRarity = false;
@@ -19,4 +15,9 @@ UOTWDWeaponRewardGenerator::UOTWDWeaponRewardGenerator() {
     this->LowestPowerLevelMultiplier = 1;
     this->BonusPartsDropChance = 1;
 }
+
+float UOTWDWeaponRewardGenerator::GetBasePowerLevel(const UOTWDProfileSaveData* ProfileSaveData, float Range) {
+    return 0.0f;
+}
+
 

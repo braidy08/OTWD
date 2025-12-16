@@ -1,5 +1,12 @@
 #include "OTWDProfileSaveDataBlueprintLibrary.h"
 
+UOTWDProfileSaveDataBlueprintLibrary::UOTWDProfileSaveDataBlueprintLibrary() {
+}
+
+bool UOTWDProfileSaveDataBlueprintLibrary::SwapLockedWeaponsFromPawns(const UObject* WorldContextObject, TArray<FGuid>& OutUnassignedWeapons, TArray<FGuid>& OutAssignedWeapons) {
+    return false;
+}
+
 void UOTWDProfileSaveDataBlueprintLibrary::SetWeaponPartMarkedAsFavorite(UOTWDProfileSaveData* ProfileSaveData, const FGuid& WeaponPartSavedDataGuid, bool bInMarkedAsFavorite) {
 }
 
@@ -231,6 +238,18 @@ void UOTWDProfileSaveDataBlueprintLibrary::GetAttachedWeaponPartsSavedData(const
 void UOTWDProfileSaveDataBlueprintLibrary::FilterSavedDataInPostmaster(const UOTWDProfileSaveData* ProfileSaveData, const TArray<FOTWDWeaponSavedData>& WeaponSavedDataCollection, const TArray<FOTWDWeaponPartSavedData>& WeaponPartSavedDataCollection, TArray<FOTWDVaultIdentifier>& OutIdentifiers) {
 }
 
+ESBZProfileDataLocked UOTWDProfileSaveDataBlueprintLibrary::DoesWeaponPartMetaDataMeetRequirements(const UObject* WorldContextObject, const FOTWDWeaponPartSavedData& SavedData, USBZUnlockableMetadata*& OutLockedMetadata) {
+    return ESBZProfileDataLocked::Unlocked;
+}
+
+ESBZProfileDataLocked UOTWDProfileSaveDataBlueprintLibrary::DoesWeaponMetaDataMeetRequirements(const UObject* WorldContextObject, const FOTWDWeaponSavedData& SavedData, USBZUnlockableMetadata*& OutLockedMetadata) {
+    return ESBZProfileDataLocked::Unlocked;
+}
+
+ESBZProfileDataLocked UOTWDProfileSaveDataBlueprintLibrary::DoesPawnMetaDataMeetRequirements(const UObject* WorldContextObject, const FOTWDPawnSavedData& SavedData, USBZUnlockableMetadata*& OutLockedMetadata) {
+    return ESBZProfileDataLocked::Unlocked;
+}
+
 bool UOTWDProfileSaveDataBlueprintLibrary::DismantleWeaponPart(const UObject* WorldContextObject, const FGuid& WeaponPartSavedDataGuid, FOTWDMetagameCurrency& OutDismantleProfit) {
     return false;
 }
@@ -295,6 +314,9 @@ TMap<FName, float> UOTWDProfileSaveDataBlueprintLibrary::CompareUIStats(const TM
     return TMap<FName, float>();
 }
 
+void UOTWDProfileSaveDataBlueprintLibrary::ClonePawnAssignedWeapons(UOTWDProfileSaveData* ProfileSaveData, const USBZCharacterSchematic* SourcePawnData, const USBZCharacterSchematic* TargetPawnData, const bool bReducePowerLevels) {
+}
+
 bool UOTWDProfileSaveDataBlueprintLibrary::CanWeaponDegrade(const UOTWDProfileSaveData* ProfileSaveData, const FGuid& WeaponSavedDataGuid) {
     return false;
 }
@@ -307,6 +329,4 @@ bool UOTWDProfileSaveDataBlueprintLibrary::CanAttachPartToAnyProfileWeapon(const
     return false;
 }
 
-UOTWDProfileSaveDataBlueprintLibrary::UOTWDProfileSaveDataBlueprintLibrary() {
-}
 

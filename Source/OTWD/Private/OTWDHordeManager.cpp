@@ -1,6 +1,26 @@
 #include "OTWDHordeManager.h"
 #include "Net/UnrealNetwork.h"
 
+AOTWDHordeManager::AOTWDHordeManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+    this->bUseCurveBasedTargetPopulation = false;
+    this->DefaultSpawnBehaviour = NULL;
+    this->HordePopulationLimitingThreshold = 0;
+    this->HordePopulationLimitingScale = 1;
+    this->NumNavigationQueriesPerTick = 0;
+    this->ActiveHordeConfiguration = NULL;
+    this->CurrentHordeProgress = 1;
+    this->ExposedSpawnerBehaviors[0] = NULL;
+    this->ExposedSpawnerBehaviors[1] = NULL;
+    this->CurrentPhasePopulationScale = 1;
+    this->bIsHordeFrozen = false;
+    this->CachedOTWDWorldSettings = NULL;
+}
+
 void AOTWDHordeManager::StopHordeAutoBuildup() {
 }
 
@@ -68,16 +88,4 @@ void AOTWDHordeManager::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     DOREPLIFETIME(AOTWDHordeManager, bIsHordeFrozen);
 }
 
-AOTWDHordeManager::AOTWDHordeManager() {
-    this->bUseCurveBasedTargetPopulation = false;
-    this->DefaultSpawnBehaviour = NULL;
-    this->HordePopulationLimitingThreshold = 0;
-    this->HordePopulationLimitingScale = 1;
-    this->NumNavigationQueriesPerTick = 0;
-    this->ActiveHordeConfiguration = NULL;
-    this->CurrentHordeProgress = 1;
-    this->CurrentPhasePopulationScale = 1;
-    this->bIsHordeFrozen = false;
-    this->CachedOTWDWorldSettings = NULL;
-}
 

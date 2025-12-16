@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimNotify_GrappleShoveActivate : public USBZAnimNotify
     GENERATED_BODY()
 public:
     USBZAnimNotify_GrappleShoveActivate();
+
 };
 

@@ -5,3 +5,4 @@ UAnimNotify_MeleeCalculateDamage::UAnimNotify_MeleeCalculateDamage() {
     this->DecalAngle = 1;
 }
 
+

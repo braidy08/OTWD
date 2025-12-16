@@ -29,5 +29,6 @@ public:
     float YawRotationSpeed;
     
     USBZCameraData();
+
 };
 

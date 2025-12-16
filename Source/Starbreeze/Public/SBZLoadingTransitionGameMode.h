@@ -12,6 +12,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASBZLoadingSoundActor* LoadingSoundObject;
     
-    ASBZLoadingTransitionGameMode();
+    ASBZLoadingTransitionGameMode(const FObjectInitializer& ObjectInitializer);
+
 };
 

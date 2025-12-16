@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "ESBZBubbleStatePlayers.h"
+#include "OnPlayBubbleStateChangedDelegate.h"
 #include "SBZPlayBubble.generated.h"
 
 class ASBZCheckpoint;
@@ -13,8 +14,6 @@ UCLASS(Blueprintable)
 class ASBZPlayBubble : public AActor {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPlayBubbleStateChanged, ASBZPlayBubble*, Bubble);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ASBZTriggerPoint*> ConnectedTriggerPoints;
     
@@ -24,17 +23,21 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintAuthorityOnly, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnPlayBubbleStateChanged OnAllowed;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<ASBZPlayBubble*> NeighbourBubbles;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZBubbleStatePlayers PlayersAllowedState;
     
 public:
-    ASBZPlayBubble();
+    ASBZPlayBubble(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    void StartDisallowTimer(float Time, bool bAddWarningTime);
+    void StartDisallowTimer(float Time, bool bAddWarningTime, bool bResetActiveTimer);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    void SetCheckpointsAndDisallowPlayBubble(const TArray<ASBZCheckpoint*>& Checkpoints, float Timer, bool bAddDefaultWarningTime);
+    void SetCheckpointsAndDisallowPlayBubble(const TArray<ASBZCheckpoint*>& Checkpoints, float Timer, bool bAddDefaultWarningTime, bool bResetActiveTimer);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetAllowed();

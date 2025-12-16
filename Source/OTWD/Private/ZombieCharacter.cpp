@@ -1,8 +1,86 @@
 #include "ZombieCharacter.h"
-#include "SBZAIAimTargetComponent.h"
-#include "SBZCharacterFootStepComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZAIAimTargetComponent -FallbackName=SBZAIAimTargetComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZCharacterFootStepComponent -FallbackName=SBZCharacterFootStepComponent
 #include "Net/UnrealNetwork.h"
+#include "OTWDZombieMovementComponent.h"
+#include "OTWDZombieSkeletalMeshComponent.h"
+#include "OTWDZombieVoiceComponent.h"
 #include "Templates/SubclassOf.h"
+
+AZombieCharacter::AZombieCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UOTWDZombieSkeletalMeshComponent>(TEXT("CharacterMesh0")).SetDefaultSubobjectClass<UOTWDZombieMovementComponent>(TEXT("CharMoveComp")).SetDefaultSubobjectClass<UOTWDZombieVoiceComponent>(TEXT("VoiceComponent"))) {
+    this->Tags.AddDefaulted(1);
+    this->ExplosionLineTraceBones.AddDefaulted(6);
+    this->WoundReferenceClass = NULL;
+    this->WoundReferenceCDO = NULL;
+    this->WoundIndex0 = 0;
+    this->WoundIndex1 = 0;
+    this->WoundIndex2 = 0;
+    this->WoundIndex3 = 0;
+    this->bIsLurker = false;
+    this->bIsCrawler = false;
+    this->bIsCapsuleCrawlerSet = false;
+    this->bIsBloater = false;
+    this->bShouldStandUp = false;
+    this->bShouldWakeUp = false;
+    this->IsCrowdZombie = false;
+    this->bIsStumbling = false;
+    this->bAllowedToStumble = true;
+    this->bStartAsCrawler = false;
+    this->CrawlerSchematic = NULL;
+    this->AnimationCollection = NULL;
+    this->RandomSeed = 0;
+    this->CosmeticVariation = NULL;
+    this->CrowdAnimationIndex = 0;
+    this->CrowdGrapplAnimIntro = NULL;
+    this->CrowdGrapplAnimStruggle = NULL;
+    this->CrowdGrapplAnimEndWin = NULL;
+    this->CrowdGrapplAnimEndLose = NULL;
+    this->CrowdFallingAnimation = NULL;
+    this->RandomStumbleAnim = 0;
+    this->LastStumbleAnim = 0;
+    this->EatingActor = NULL;
+    this->ExplodeAttackTimeDelay = 1;
+    this->ExplodeOriginBoneName = TEXT("Spine");
+    this->ExplodeDamageMax = 1;
+    this->ExplodeDamageMin = 1;
+    this->ExplodeDamageDifficultyMultiplier[0] = 1;
+    this->ExplodeDamageDifficultyMultiplier[1] = 1;
+    this->ExplodeDamageDifficultyMultiplier[2] = 1;
+    this->ExplodeDamageDifficultyMultiplier[3] = 1;
+    this->ExplodeDamageFalloff = 1;
+    this->ExplodeDamageType = NULL;
+    this->ExplodeAudioEvent = NULL;
+    this->ExplodeEmitterTemplate = NULL;
+    this->ExplodeLocalPlayerFeedback = NULL;
+    this->ExplodeLensRadius = 1;
+    this->ExplodePostMesh = NULL;
+    this->ExplodeResidualActor = NULL;
+    this->ExplodeResidualActorLifeSpan = 1;
+    this->ExplodeStunDuration = 1;
+    this->ExplodeShoveImpulse = 1;
+    this->ExplodeShoveRecoveryDuration = 1;
+    this->MeshOffsetCrawler = 1;
+    this->MaxLimbPhysicImpulse = 1;
+    this->bIsLunging = false;
+    this->CrawlerDieReaction = NULL;
+    this->CrawlerHurtReaction = NULL;
+    this->CrawlerKnockbackReaction = NULL;
+    this->CrawlerFallingMontage = NULL;
+    this->LightCrawlerLandingMontage = NULL;
+    this->CrawlerLandingMontage = NULL;
+    this->SBZCharacterFootStep = CreateDefaultSubobject<USBZCharacterFootStepComponent>(TEXT("SBZCharacterFootStep"));
+    this->Target_Head = CreateDefaultSubobject<USBZAIAimTargetComponent>(TEXT("Target_Head"));
+    this->MonsterClosetSpawnRegion = NULL;
+    this->ZombieSchematic = NULL;
+    this->ChanceToNotKillZombiesOnFirstHitRoll = 1;
+    this->bIsTryingToGrapple = false;
+    this->CrawlerABP = NULL;
+    this->bSaveDataIsAlive = false;
+    this->HashedAISchematic = 0;
+    const FProperty* p_Mesh = GetClass()->FindPropertyByName("Mesh");
+    (*p_Mesh->ContainerPtrToValuePtr<USkeletalMeshComponent*>(this))->SetupAttachment(RootComponent);
+    this->Target_Head->SetupAttachment(Mesh);
+}
 
 void AZombieCharacter::TryExplodeZombie() {
 }
@@ -17,6 +95,10 @@ void AZombieCharacter::StartLunge_Implementation(const FSBZLungePrediction& InPr
 }
 
 void AZombieCharacter::SetTryingToGrapple(bool bNewState) {
+}
+
+bool AZombieCharacter::SetLureTarget(const FVector& Location, FSBZAlertnessLevelIdHelper AlertnessLevel) {
+    return false;
 }
 
 void AZombieCharacter::SetIsCrawler() {
@@ -111,71 +193,4 @@ void AZombieCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(AZombieCharacter, HashedAISchematic);
 }
 
-AZombieCharacter::AZombieCharacter() {
-    this->WoundReferenceClass = NULL;
-    this->WoundReferenceCDO = NULL;
-    this->WoundIndex0 = 0;
-    this->WoundIndex1 = 0;
-    this->WoundIndex2 = 0;
-    this->WoundIndex3 = 0;
-    this->bIsLurker = false;
-    this->bIsCrawler = false;
-    this->bIsCapsuleCrawlerSet = false;
-    this->bIsBloater = false;
-    this->bShouldStandUp = false;
-    this->bShouldWakeUp = false;
-    this->IsCrowdZombie = false;
-    this->bIsStumbling = false;
-    this->bAllowedToStumble = true;
-    this->bStartAsCrawler = false;
-    this->CrawlerSchematic = NULL;
-    this->AnimationCollection = NULL;
-    this->RandomSeed = 0;
-    this->CosmeticVariation = NULL;
-    this->CrowdAnimationIndex = 0;
-    this->CrowdGrapplAnimIntro = NULL;
-    this->CrowdGrapplAnimStruggle = NULL;
-    this->CrowdGrapplAnimEndWin = NULL;
-    this->CrowdGrapplAnimEndLose = NULL;
-    this->RandomStumbleAnim = 0;
-    this->LastStumbleAnim = 0;
-    this->EatingActor = NULL;
-    this->ExplodeAttackTimeDelay = 1;
-    this->ExplodeOriginBoneName = TEXT("Spine");
-    this->ExplodeDamageMax = 1;
-    this->ExplodeDamageMin = 1;
-    this->ExplodeDamageDifficultyMultiplier[0] = 1;
-    this->ExplodeDamageDifficultyMultiplier[1] = 1;
-    this->ExplodeDamageDifficultyMultiplier[2] = 1;
-    this->ExplodeDamageDifficultyMultiplier[3] = 1;
-    this->ExplodeDamageFalloff = 1;
-    this->ExplodeDamageType = NULL;
-    this->ExplodeAudioEvent = NULL;
-    this->ExplodeEmitterTemplate = NULL;
-    this->ExplodeLocalPlayerFeedback = NULL;
-    this->ExplodeLensRadius = 1;
-    this->ExplodePostMesh = NULL;
-    this->ExplodeResidualActor = NULL;
-    this->ExplodeResidualActorLifeSpan = 1;
-    this->ExplodeStunDuration = 1;
-    this->ExplodeShoveImpulse = 1;
-    this->ExplodeShoveRecoveryDuration = 1;
-    this->MeshOffsetCrawler = 1;
-    this->MaxLimbPhysicImpulse = 1;
-    this->bIsLunging = false;
-    this->CrawlerDieReaction = NULL;
-    this->CrawlerHurtReaction = NULL;
-    this->CrawlerKnockbackReaction = NULL;
-    this->CrawlerFallingMontage = NULL;
-    this->LightCrawlerLandingMontage = NULL;
-    this->CrawlerLandingMontage = NULL;
-    this->SBZCharacterFootStep = CreateDefaultSubobject<USBZCharacterFootStepComponent>(TEXT("SBZCharacterFootStep"));
-    this->Target_Head = CreateDefaultSubobject<USBZAIAimTargetComponent>(TEXT("Target_Head"));
-    this->ZombieSchematic = NULL;
-    this->ChanceToNotKillZombiesOnFirstHitRoll = 1;
-    this->bIsTryingToGrapple = false;
-    this->CrawlerABP = NULL;
-    this->bSaveDataIsAlive = false;
-    this->HashedAISchematic = 0;
-}
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "SBZOnKillData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZOnKillData -FallbackName=SBZOnKillData
 #include "ChangedActiveQuestRuntimesDelegate.h"
 #include "OTWDInstancedQuestGroup.h"
 #include "OTWDQuestRewards.h"
@@ -55,6 +55,7 @@ private:
     
 public:
     UOTWDQuestManager();
+
     UFUNCTION(BlueprintCallable)
     bool UnlockQuest(const UOTWDQuestDataAsset* InQuestData);
     

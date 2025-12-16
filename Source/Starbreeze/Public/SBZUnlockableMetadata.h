@@ -14,7 +14,7 @@ class STARBREEZE_API USBZUnlockableMetadata : public UObject {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USBZContentPack* contentPack;
+    USBZContentPack* ContentPack;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<USBZUnlockableMetadata*> QuestsMetadata;
@@ -44,6 +44,7 @@ public:
     TSubclassOf<USBZUnlockable> UnlockableClass;
     
     USBZUnlockableMetadata();
+
     UFUNCTION(BlueprintCallable)
     void OrganizeRequirements();
     

@@ -18,6 +18,7 @@ private:
     TArray<UOTWDBoxComponent*> BoxColliders;
     
 public:
-    AOTWDCrowdColliderManager();
+    AOTWDCrowdColliderManager(const FObjectInitializer& ObjectInitializer);
+
 };
 

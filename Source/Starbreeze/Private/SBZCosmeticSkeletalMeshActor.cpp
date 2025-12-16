@@ -4,3 +4,4 @@ UDEPRECATED_SBZCosmeticSkeletalMeshActor::UDEPRECATED_SBZCosmeticSkeletalMeshAct
     this->SkeletalMeshActorClass = NULL;
 }
 
+

@@ -16,6 +16,7 @@ protected:
     
 public:
     USBZMeleeSwingAction();
+
 protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetAttacking(bool bIsAttacking);

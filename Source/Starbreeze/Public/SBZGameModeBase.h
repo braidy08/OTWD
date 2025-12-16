@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/GameModeBase.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameModeBase -FallbackName=GameModeBase
 #include "SBZPlayerLoadout.h"
 #include "SBZGameModeBase.generated.h"
 
@@ -20,7 +20,8 @@ protected:
     TArray<AActor*> SeamlessActors;
     
 public:
-    ASBZGameModeBase();
+    ASBZGameModeBase(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FSBZPlayerLoadout ValidateLoadoutForPlayerController(ASBZPlayerController* PlayerController, const FSBZPlayerLoadout& NewLoadout);
     

@@ -1,5 +1,9 @@
 #include "PathNodeEvent.h"
 
+APathNodeEvent::APathNodeEvent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->HostNode = NULL;
+}
+
 void APathNodeEvent::OnSetupEvent_Implementation(const UNodeEventCategory* Category, const uint8 Intensity) {
 }
 
@@ -19,7 +23,4 @@ bool APathNodeEvent::DoesEventMatch_Implementation(const UNodeEventCategory* Cat
     return false;
 }
 
-APathNodeEvent::APathNodeEvent() {
-    this->HostNode = NULL;
-}
 

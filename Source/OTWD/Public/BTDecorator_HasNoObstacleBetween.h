@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector Victim;
     
     UBTDecorator_HasNoObstacleBetween();
+
 };
 

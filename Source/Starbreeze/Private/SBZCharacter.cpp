@@ -1,14 +1,103 @@
 #include "SBZCharacter.h"
-#include "AbilitySystemComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=AbilitySystemComponent -FallbackName=AbilitySystemComponent
 #include "Net/UnrealNetwork.h"
 #include "SBZAIFactionHideZoneComponent.h"
+#include "SBZAggroAttributeSet.h"
 #include "SBZCharacterMovementMultiplierModifier.h"
 #include "SBZCharacterVoiceComponent.h"
 #include "SBZDamageType.h"
+#include "SBZDecoyAttributeSet.h"
 #include "SBZHealthAttributeSet.h"
 #include "SBZLocomotionAttributeSet.h"
 #include "SBZOutlineComponent.h"
 #include "Templates/SubclassOf.h"
+
+ASBZCharacter::ASBZCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Tags.AddDefaulted(1);
+    this->bWantsDetailedDamageEvents = true;
+    this->AbilitySystem = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
+    this->GenericAnimations = NULL;
+    this->bShouldTearOffNetworkOnDeath = true;
+    this->MarkedVoiceComment = ESBZVoiceComment::None;
+    this->DeathVoiceComment = ESBZVoiceComment::None;
+    this->AggroWeight = 1;
+    this->HeadBoneName = TEXT("Head");
+    this->LandSoundEvent = NULL;
+    this->DeathByHeadTraumaEvent = NULL;
+    this->DodgeChancePerDifficulty[0] = 1;
+    this->DodgeChancePerDifficulty[1] = 1;
+    this->DodgeChancePerDifficulty[2] = 1;
+    this->DodgeChancePerDifficulty[3] = 1;
+    this->MediumHurtHealthScaleLimitPerDifficulty[0] = 1;
+    this->MediumHurtHealthScaleLimitPerDifficulty[1] = 1;
+    this->MediumHurtHealthScaleLimitPerDifficulty[2] = 1;
+    this->MediumHurtHealthScaleLimitPerDifficulty[3] = 1;
+    this->HeavyHurtHealthScaleLimitPerDifficulty[0] = 1;
+    this->HeavyHurtHealthScaleLimitPerDifficulty[1] = 1;
+    this->HeavyHurtHealthScaleLimitPerDifficulty[2] = 1;
+    this->HeavyHurtHealthScaleLimitPerDifficulty[3] = 1;
+    this->bUseBlueprintAttributeEvents = false;
+    this->HealthAttributeSet = CreateDefaultSubobject<USBZHealthAttributeSet>(TEXT("SBZHealthAttributeSet"));
+    this->LocomotionAttributeSet = CreateDefaultSubobject<USBZLocomotionAttributeSet>(TEXT("SBZLocomotionAttributeSet"));
+    this->AggroAttributeSet = CreateDefaultSubobject<USBZAggroAttributeSet>(TEXT("SBZAggroAttributeSet"));
+    this->DecoyAttributeSet = CreateDefaultSubobject<USBZDecoyAttributeSet>(TEXT("SBZDecoyAttributeSet"));
+    this->AIVisibilityNodeComputationFrequency = ESBZAIVisibilityNodeComputationFrequency::Once;
+    this->CurrentWeapon = NULL;
+    this->ShoveNoiseSchematic = NULL;
+    this->ExplosionLineTraceBones.AddDefaulted(6);
+    this->OnKilledSpawnedPickupsDistributionRadius = 1;
+    this->PlayerStandingHeight = 1;
+    this->PlayerCrouchingHeight = 1;
+    this->PlayerProneHeight = 1;
+    this->PlayerSlideHeight = 1;
+    this->PlayerJumpingHeight = 1;
+    this->PlayerVaultHeight = 1;
+    this->CrouchSpeedModifier = 1;
+    this->ProneSpeedModifier = 1;
+    this->SlideSpeedModifier = 1;
+    this->FallDamageType = USBZDamageType::StaticClass();
+    this->FallingStartHeight = 1;
+    this->bIsProne = false;
+    this->bIsVaulted = false;
+    this->bIsSliding = false;
+    this->bIsHopping = false;
+    this->bIsGrabbingLedge = false;
+    this->CurrentPeekingState = ESBZPeekingState::None;
+    this->TargetingSpeedModifier = 1;
+    this->DieReaction = NULL;
+    this->HurtReaction = NULL;
+    this->KnockbackReaction = NULL;
+    this->DodgeReaction = NULL;
+    this->LocalHitSound = NULL;
+    this->LocalHitSoundHead = NULL;
+    this->bIsFaceAnimated = true;
+    this->LandedNoiseSchematic = NULL;
+    this->bIsTargeting = false;
+    this->bIsAlive = true;
+    this->RagdollPhysicsAsset = NULL;
+    this->GrappleState = ESBZGrappleState::None;
+    this->DefaultGrappleKnifeClass = NULL;
+    this->bSpawnGrappleKnifeOnBeginPlay = false;
+    this->GrappleKnifeActor = NULL;
+    this->TargetingMovementModifier = CreateDefaultSubobject<USBZCharacterMovementMultiplierModifier>(TEXT("TargetingMovementModifier"));
+    this->CrouchMovementModifier = CreateDefaultSubobject<USBZCharacterMovementMultiplierModifier>(TEXT("CrouchMovementModifier"));
+    this->ProneMovementModifier = CreateDefaultSubobject<USBZCharacterMovementMultiplierModifier>(TEXT("ProneMovementModifier"));
+    this->SlideMovementModifier = CreateDefaultSubobject<USBZCharacterMovementMultiplierModifier>(TEXT("SlideMovementModifier"));
+    this->ClimbComponent = NULL;
+    this->GearAttachment = NULL;
+    this->TagTriggeredMontageMap3P = NULL;
+    this->OutlineComponent = CreateDefaultSubobject<USBZOutlineComponent>(TEXT("OutlineComponent"));
+    this->MantlingVaultingComponent = NULL;
+    this->AlertLowOutlineSchematic = NULL;
+    this->AlertMediumOutlineSchematic = NULL;
+    this->AlertHighOutlineSchematic = NULL;
+    this->VoiceComponent = CreateDefaultSubobject<USBZCharacterVoiceComponent>(TEXT("VoiceComponent"));
+    this->FactionSafeZoneComponent = CreateDefaultSubobject<USBZAIFactionHideZoneComponent>(TEXT("FactionSafeZoneComponent"));
+    this->RemoteViewYaw = 0;
+    this->WaypointComponent = NULL;
+    this->HelmetPartComponent = NULL;
+    this->HelmetActor = NULL;
+}
 
 void ASBZCharacter::TakeFallingDamage(float Percentage, const FHitResult& Hit) {
 }
@@ -18,6 +107,9 @@ void ASBZCharacter::StopShoveRecovery() {
 
 bool ASBZCharacter::SetStuck(bool bIsStuck) {
     return false;
+}
+
+void ASBZCharacter::SetSpecialArmorType(ASBZArmorPart* ArmorPartActor, ESBZSpecialArmorType SpecialArmorType) {
 }
 
 void ASBZCharacter::SetPeekState(ESBZPeekingState PeekingState) {
@@ -143,9 +235,6 @@ void ASBZCharacter::OnRep_Inventory(TArray<ASBZWeapon*> InOldInventory) {
 void ASBZCharacter::OnRep_CurrentWeapon(ASBZWeapon* InLastWeapon) {
 }
 
-void ASBZCharacter::OnRep_CharacterSchematic() {
-}
-
 void ASBZCharacter::OnGrappleStateChanged_Implementation(ESBZGrappleState NewState, const FSBZGrappleEventStateProperties& EventProperties) {
 }
 
@@ -269,7 +358,7 @@ bool ASBZCharacter::HasValidMantleTrajectory() const {
     return false;
 }
 
-bool ASBZCharacter::HasHelmet() {
+bool ASBZCharacter::HasHelmet() const {
     return false;
 }
 
@@ -317,10 +406,6 @@ USBZClimbComponent* ASBZCharacter::GetClimbComponent() const {
     return NULL;
 }
 
-USBZCharacterSchematic* ASBZCharacter::GetCharacterSchematic() {
-    return NULL;
-}
-
 bool ASBZCharacter::GetAlignmentPointTransform_Implementation(FTransform& Transform) {
     return false;
 }
@@ -365,89 +450,9 @@ void ASBZCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
     DOREPLIFETIME(ASBZCharacter, bIsGrabbingLedge);
     DOREPLIFETIME(ASBZCharacter, CurrentPeekingState);
     DOREPLIFETIME(ASBZCharacter, bIsTargeting);
-    DOREPLIFETIME(ASBZCharacter, CharacterSchematic);
     DOREPLIFETIME(ASBZCharacter, Inventory);
     DOREPLIFETIME(ASBZCharacter, TeamID);
     DOREPLIFETIME(ASBZCharacter, RemoteViewYaw);
 }
 
-ASBZCharacter::ASBZCharacter() {
-    this->AbilitySystem = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
-    this->GenericAnimations = NULL;
-    this->bShouldTearOffNetworkOnDeath = true;
-    this->MarkedVoiceComment = ESBZVoiceComment::None;
-    this->DeathVoiceComment = ESBZVoiceComment::None;
-    this->AggroWeight = 1;
-    this->HeadBoneName = TEXT("Head");
-    this->LandSoundEvent = NULL;
-    this->DeathByHeadTraumaEvent = NULL;
-    this->DodgeChancePerDifficulty[0] = 1;
-    this->DodgeChancePerDifficulty[1] = 1;
-    this->DodgeChancePerDifficulty[2] = 1;
-    this->DodgeChancePerDifficulty[3] = 1;
-    this->MediumHurtHealthScaleLimitPerDifficulty[0] = 1;
-    this->MediumHurtHealthScaleLimitPerDifficulty[1] = 1;
-    this->MediumHurtHealthScaleLimitPerDifficulty[2] = 1;
-    this->MediumHurtHealthScaleLimitPerDifficulty[3] = 1;
-    this->HeavyHurtHealthScaleLimitPerDifficulty[0] = 1;
-    this->HeavyHurtHealthScaleLimitPerDifficulty[1] = 1;
-    this->HeavyHurtHealthScaleLimitPerDifficulty[2] = 1;
-    this->HeavyHurtHealthScaleLimitPerDifficulty[3] = 1;
-    this->bUseBlueprintAttributeEvents = false;
-    this->HealthAttributeSet = CreateDefaultSubobject<USBZHealthAttributeSet>(TEXT("SBZHealthAttributeSet"));
-    this->LocomotionAttributeSet = CreateDefaultSubobject<USBZLocomotionAttributeSet>(TEXT("SBZLocomotionAttributeSet"));
-    this->AIVisibilityNodeComputationFrequency = ESBZAIVisibilityNodeComputationFrequency::Once;
-    this->CurrentWeapon = NULL;
-    this->ShoveNoiseSchematic = NULL;
-    this->ExplosionLineTraceBones.AddDefaulted(6);
-    this->PlayerStandingHeight = 1;
-    this->PlayerCrouchingHeight = 1;
-    this->PlayerProneHeight = 1;
-    this->PlayerSlideHeight = 1;
-    this->PlayerJumpingHeight = 1;
-    this->PlayerVaultHeight = 1;
-    this->CrouchSpeedModifier = 1;
-    this->ProneSpeedModifier = 1;
-    this->SlideSpeedModifier = 1;
-    this->FallDamageType = USBZDamageType::StaticClass();
-    this->FallingStartHeight = 1;
-    this->bIsProne = false;
-    this->bIsVaulted = false;
-    this->bIsSliding = false;
-    this->bIsHopping = false;
-    this->bIsGrabbingLedge = false;
-    this->CurrentPeekingState = ESBZPeekingState::None;
-    this->TargetingSpeedModifier = 1;
-    this->DieReaction = NULL;
-    this->HurtReaction = NULL;
-    this->KnockbackReaction = NULL;
-    this->DodgeReaction = NULL;
-    this->LocalHitSound = NULL;
-    this->LocalHitSoundHead = NULL;
-    this->bIsFaceAnimated = true;
-    this->LandedNoiseSchematic = NULL;
-    this->bIsTargeting = false;
-    this->bIsAlive = true;
-    this->RagdollPhysicsAsset = NULL;
-    this->GrappleState = ESBZGrappleState::None;
-    this->DefaultGrappleKnifeClass = NULL;
-    this->bSpawnGrappleKnifeOnBeginPlay = false;
-    this->GrappleKnifeActor = NULL;
-    this->TargetingMovementModifier = CreateDefaultSubobject<USBZCharacterMovementMultiplierModifier>(TEXT("TargetingMovementModifier"));
-    this->CrouchMovementModifier = CreateDefaultSubobject<USBZCharacterMovementMultiplierModifier>(TEXT("CrouchMovementModifier"));
-    this->ProneMovementModifier = CreateDefaultSubobject<USBZCharacterMovementMultiplierModifier>(TEXT("ProneMovementModifier"));
-    this->SlideMovementModifier = CreateDefaultSubobject<USBZCharacterMovementMultiplierModifier>(TEXT("SlideMovementModifier"));
-    this->ClimbComponent = NULL;
-    this->TagTriggeredMontageMap3P = NULL;
-    this->OutlineComponent = CreateDefaultSubobject<USBZOutlineComponent>(TEXT("OutlineComponent"));
-    this->MantlingVaultingComponent = NULL;
-    this->AlertLowOutlineSchematic = NULL;
-    this->AlertMediumOutlineSchematic = NULL;
-    this->AlertHighOutlineSchematic = NULL;
-    this->VoiceComponent = CreateDefaultSubobject<USBZCharacterVoiceComponent>(TEXT("VoiceComponent"));
-    this->FactionSafeZoneComponent = CreateDefaultSubobject<USBZAIFactionHideZoneComponent>(TEXT("FactionSafeZoneComponent"));
-    this->RemoteViewYaw = 0;
-    this->WaypointComponent = NULL;
-    this->HelmetPartComponent = NULL;
-}
 

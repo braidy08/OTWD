@@ -1,6 +1,14 @@
 #include "OTWDMissionState.h"
 #include "Net/UnrealNetwork.h"
 
+AOTWDMissionState::AOTWDMissionState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->TwitchVotingUIClass = NULL;
+    this->HordeManagerClass = NULL;
+    this->GameIntensityAnalyzerClass = NULL;
+    this->GameIntensityAnalyzer = NULL;
+    this->HordeManager = NULL;
+}
+
 void AOTWDMissionState::RequestCanPlaceFortificationCheck() {
 }
 
@@ -46,11 +54,4 @@ void AOTWDMissionState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     DOREPLIFETIME(AOTWDMissionState, HordeManager);
 }
 
-AOTWDMissionState::AOTWDMissionState() {
-    this->TwitchVotingUIClass = NULL;
-    this->HordeManagerClass = NULL;
-    this->GameIntensityAnalyzerClass = NULL;
-    this->GameIntensityAnalyzer = NULL;
-    this->HordeManager = NULL;
-}
 

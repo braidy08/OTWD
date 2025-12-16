@@ -1,5 +1,7 @@
 #include "SBZVehicleServiceComponent.h"
 
-USBZVehicleServiceComponent::USBZVehicleServiceComponent() {
+USBZVehicleServiceComponent::USBZVehicleServiceComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
 }
+
 

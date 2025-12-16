@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector ActorKey;
     
     USBZBTDecorator_InsideHardpoint();
+
 };
 

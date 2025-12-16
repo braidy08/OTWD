@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
+#include "AttributeSet.h"
 #include "SBZRangedWeaponAttributeSet.generated.h"
 
 UCLASS(Blueprintable)
@@ -176,8 +177,9 @@ public:
     float BreathingSpeedMultiplier;
     
     USBZRangedWeaponAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_VerticalSpreadMultiplier(float OldValue);
     

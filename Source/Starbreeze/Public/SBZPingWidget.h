@@ -32,6 +32,7 @@ private:
     
 public:
     USBZPingWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UMaterialInstanceDynamic* PingMaterialWidget, UTextBlock* PingTextWidget);
     

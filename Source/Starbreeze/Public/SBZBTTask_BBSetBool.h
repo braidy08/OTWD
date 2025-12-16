@@ -11,5 +11,6 @@ public:
     bool Value;
     
     USBZBTTask_BBSetBool();
+
 };
 

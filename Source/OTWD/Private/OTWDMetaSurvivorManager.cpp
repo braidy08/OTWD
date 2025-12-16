@@ -1,5 +1,8 @@
 #include "OTWDMetaSurvivorManager.h"
 
+UOTWDMetaSurvivorManager::UOTWDMetaSurvivorManager() {
+}
+
 void UOTWDMetaSurvivorManager::SurvivorAbandonCamp(UOTWDMetagameSurvivor* Survivor, bool& bOutDidSurvivorAbandonCamp) {
 }
 
@@ -58,6 +61,4 @@ int32 UOTWDMetaSurvivorManager::AddPendingSurvivors(TArray<UOTWDMetagameSurvivor
     return 0;
 }
 
-UOTWDMetaSurvivorManager::UOTWDMetaSurvivorManager() {
-}
 

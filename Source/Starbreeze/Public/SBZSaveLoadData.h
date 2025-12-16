@@ -8,5 +8,6 @@ class STARBREEZE_API USBZSaveLoadData : public UObject {
     GENERATED_BODY()
 public:
     USBZSaveLoadData();
+
 };
 

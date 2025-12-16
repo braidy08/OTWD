@@ -1,5 +1,6 @@
 #include "OTWDLootTablesSchematic.h"
 
-UOTWDLootTablesSchematic::UOTWDLootTablesSchematic() {
+UDEPRECATED_OTWDLootTablesSchematic::UDEPRECATED_OTWDLootTablesSchematic() {
 }
+
 

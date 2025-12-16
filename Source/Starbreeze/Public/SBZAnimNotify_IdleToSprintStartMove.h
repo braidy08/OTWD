@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimNotify_IdleToSprintStartMove : public UAnimNotify {
     GENERATED_BODY()
 public:
     USBZAnimNotify_IdleToSprintStartMove();
+
 };
 

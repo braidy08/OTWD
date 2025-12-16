@@ -8,5 +8,6 @@ class STARBREEZE_API USBZHUDWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     USBZHUDWidget();
+
 };
 

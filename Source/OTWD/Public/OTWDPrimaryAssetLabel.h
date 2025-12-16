@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/PrimaryAssetLabel.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PrimaryAssetLabel -FallbackName=PrimaryAssetLabel
 #include "OTWDPrimaryAssetLabel.generated.h"
 
 UCLASS(Blueprintable)
@@ -17,5 +17,6 @@ public:
     uint8 PlatformRestriction;
     
     UOTWDPrimaryAssetLabel();
+
 };
 

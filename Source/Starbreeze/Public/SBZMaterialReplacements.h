@@ -29,6 +29,7 @@ public:
     TArray<FName> CopiedTextureParameterNames;
     
     USBZMaterialReplacements();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UMaterialInterface* FindReplacement(const UMaterialInterface* MaterialInterface) const;
     

@@ -74,5 +74,6 @@ public:
     TSoftObjectPtr<UAnimSequenceBase> Unequip;
     
     UDEPRECATED_SBZWeaponAnimationSchematic();
+
 };
 

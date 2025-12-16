@@ -18,6 +18,7 @@ private:
     ASBZAIController* OwnerController;
     
 public:
-    USBZAIPerceptionMemoryComponent();
+    USBZAIPerceptionMemoryComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

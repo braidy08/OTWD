@@ -8,6 +8,5 @@ enum class EBuildingType : uint8 {
     Building_Defense,
     Building_Combat,
     Building_Medical,
-    Building_MAX UMETA(Hidden),
 };
 

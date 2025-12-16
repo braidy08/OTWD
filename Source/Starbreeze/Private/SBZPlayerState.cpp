@@ -3,6 +3,17 @@
 #include "SBZStatistics.h"
 #include "Templates/SubclassOf.h"
 
+ASBZPlayerState::ASBZPlayerState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->WeaponCheatFlags = ESBZWeaponCheatFlags::None;
+    this->bIsInCinematic = false;
+    this->bReady = false;
+    this->bAsyncLoadingComplete = false;
+    this->bActionPhaseStarted = false;
+    this->AsyncLoadingProgress = 1;
+    this->GameplayStatistics = CreateDefaultSubobject<USBZStatistics>(TEXT("Gameplay_Statistics"));
+    this->PawnClass = NULL;
+}
+
 void ASBZPlayerState::ServerSetReadyState_Implementation() {
 }
 bool ASBZPlayerState::ServerSetReadyState_Validate() {
@@ -111,14 +122,4 @@ void ASBZPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
     DOREPLIFETIME(ASBZPlayerState, Cosmetics);
 }
 
-ASBZPlayerState::ASBZPlayerState() {
-    this->WeaponCheatFlags = ESBZWeaponCheatFlags::None;
-    this->bIsInCinematic = false;
-    this->bReady = false;
-    this->bAsyncLoadingComplete = false;
-    this->bActionPhaseStarted = false;
-    this->AsyncLoadingProgress = 1;
-    this->GameplayStatistics = CreateDefaultSubobject<USBZStatistics>(TEXT("Gameplay_Statistics"));
-    this->PawnClass = NULL;
-}
 

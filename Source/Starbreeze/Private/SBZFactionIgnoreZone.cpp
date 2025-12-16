@@ -1,6 +1,15 @@
 #include "SBZFactionIgnoreZone.h"
-#include "Components/BoxComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
 #include "SBZFactionIgnoreBoxComponent.h"
+
+ASBZFactionIgnoreZone::ASBZFactionIgnoreZone(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("ParentBoxComponent"));
+    this->SBZFactionIgnoreBox = CreateDefaultSubobject<USBZFactionIgnoreBoxComponent>(TEXT("DefaultFactionIgnoreBoxComponent"));
+    this->Boxes = (UBoxComponent*)RootComponent;
+    this->bKeepIgnoringFactionOnEnteringZone = false;
+    this->bStartsEnabled = true;
+    this->SBZFactionIgnoreBox->SetupAttachment(RootComponent);
+}
 
 void ASBZFactionIgnoreZone::OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) {
 }
@@ -14,10 +23,4 @@ void ASBZFactionIgnoreZone::DeactivateZones() {
 void ASBZFactionIgnoreZone::ActivateZones() {
 }
 
-ASBZFactionIgnoreZone::ASBZFactionIgnoreZone() {
-    this->SBZFactionIgnoreBox = CreateDefaultSubobject<USBZFactionIgnoreBoxComponent>(TEXT("DefaultFactionIgnoreBoxComponent"));
-    this->Boxes = CreateDefaultSubobject<UBoxComponent>(TEXT("ParentBoxComponent"));
-    this->bKeepIgnoringFactionOnEnteringZone = false;
-    this->bStartsEnabled = true;
-}
 

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBaseGrappleAnimationSchematic : public USBZSchematic {
     GENERATED_BODY()
 public:
     USBZBaseGrappleAnimationSchematic();
+
 };
 

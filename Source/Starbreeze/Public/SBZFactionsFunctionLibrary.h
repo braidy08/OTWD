@@ -13,6 +13,7 @@ class STARBREEZE_API USBZFactionsFunctionLibrary : public UBlueprintFunctionLibr
     GENERATED_BODY()
 public:
     USBZFactionsFunctionLibrary();
+
     UFUNCTION(BlueprintCallable)
     static bool NotEqual_FactionNameName(const FSBZFactionNameHelper& A, FName B);
     

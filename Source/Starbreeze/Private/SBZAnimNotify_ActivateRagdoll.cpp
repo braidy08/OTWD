@@ -4,3 +4,4 @@ USBZAnimNotify_ActivateRagdoll::USBZAnimNotify_ActivateRagdoll() {
     this->RandomOffsetBackward = 1;
 }
 
+

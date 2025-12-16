@@ -132,6 +132,9 @@ public:
     FSBZVoiceCommentData AbilityGrenade;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZVoiceCommentData AbilityGutBucket;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZVoiceCommentData AchievementHeadshots;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -202,6 +205,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZVoiceCommentData MarkSurvivor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZVoiceCommentData MarkSpotlight;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZVoiceCommentData GrappleEnter;
@@ -345,6 +351,18 @@ public:
     FSBZVoiceCommentData CallBridgerDefeat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZVoiceCommentData CallTannerNormal;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZVoiceCommentData CallTannerDefeat;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZVoiceCommentData CallJakeNormal;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZVoiceCommentData CallJakeDefeat;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZVoiceCommentData AnnounceDeadAidan;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -363,6 +381,12 @@ public:
     FSBZVoiceCommentData AnnounceDeadBridger;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZVoiceCommentData AnnounceDeadTanner;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZVoiceCommentData AnnounceDeadJake;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZVoiceCommentData AnnounceMonsterCloset;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -370,6 +394,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZVoiceCommentData AnnounceFoundBody;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZVoiceCommentData AnnounceSpotted;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZVoiceCommentData KilledBlocker;
@@ -429,6 +456,9 @@ public:
     FSBZVoiceCommentData PoolThank;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZVoiceCommentData PoolSuccess;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZVoiceCommentData FollowPeggyAnn;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -456,5 +486,6 @@ public:
     FSBZVoiceCommentData SurvivorBehaviourExtractionReached;
     
     USBZVoiceCommentConfig();
+
 };
 

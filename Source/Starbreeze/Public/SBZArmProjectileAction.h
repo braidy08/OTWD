@@ -8,5 +8,6 @@ class STARBREEZE_API USBZArmProjectileAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZArmProjectileAction();
+
 };
 

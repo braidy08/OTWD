@@ -17,5 +17,6 @@ public:
     TArray<UAISenseConfig*> SensesConfig;
     
     USBZAISchematic_SenseOverride();
+
 };
 

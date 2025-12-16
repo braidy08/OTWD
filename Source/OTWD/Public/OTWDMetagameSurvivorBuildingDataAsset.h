@@ -37,5 +37,6 @@ public:
     int32 NumberOfSurvivorSlots;
     
     UOTWDMetagameSurvivorBuildingDataAsset();
+
 };
 

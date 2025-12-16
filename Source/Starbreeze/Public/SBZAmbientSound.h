@@ -3,8 +3,9 @@
 #include "GameFramework/Actor.h"
 #include "SBZAmbientSound.generated.h"
 
+class UActorComponent;
 class UAkAudioEvent;
-class UAkComponent;
+class USBZAmbientSoundComponent;
 
 UCLASS(Blueprintable)
 class STARBREEZE_API ASBZAmbientSound : public AActor {
@@ -17,8 +18,8 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DefaultAttenuation;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    float AttenuationSquared;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUseDefaultAttenuation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAkAudioEvent* AkAudioEvent;
@@ -26,10 +27,18 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString EventName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
-    UAkComponent* AmbientAkComponent;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USBZAmbientSoundComponent* AmbientSoundComponent;
     
 public:
-    ASBZAmbientSound();
+    ASBZAmbientSound(const FObjectInitializer& ObjectInitializer);
+
+protected:
+    UFUNCTION(BlueprintCallable)
+    void HandleDeactivateSoundComponent(UActorComponent* Component);
+    
+    UFUNCTION(BlueprintCallable)
+    void HandleActivateSoundComponent(UActorComponent* Component, bool bReset);
+    
 };
 

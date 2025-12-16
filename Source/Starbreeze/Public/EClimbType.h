@@ -6,6 +6,5 @@ UENUM(BlueprintType)
 enum class EClimbType : uint8 {
     CS_VAULTING,
     CS_MANTLING,
-    CS_MAX UMETA(Hidden),
 };
 

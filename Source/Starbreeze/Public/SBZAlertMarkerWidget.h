@@ -41,6 +41,7 @@ private:
     
 public:
     USBZAlertMarkerWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UMaterialInstanceDynamic* ProgressMaterialWidget);
     

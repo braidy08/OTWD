@@ -1,5 +1,6 @@
 #include "SBZPointSpawner.h"
 
-ASBZPointSpawner::ASBZPointSpawner() {
+ASBZPointSpawner::ASBZPointSpawner(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

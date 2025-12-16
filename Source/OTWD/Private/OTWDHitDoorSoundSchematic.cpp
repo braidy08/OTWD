@@ -6,3 +6,4 @@ UOTWDHitDoorSoundSchematic::UOTWDHitDoorSoundSchematic() {
     this->MaxDistFromPlayers = 1;
 }
 
+

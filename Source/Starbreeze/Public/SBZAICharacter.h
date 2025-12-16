@@ -2,6 +2,8 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
+#include "DisruptiveHurtStartedDelegateDelegate.h"
 #include "ESBZDifficulty.h"
 #include "ESBZVoiceComment.h"
 #include "SBZAIStanceIdHelper.h"
@@ -18,6 +20,7 @@
 
 class AActor;
 class ASBZAIPointOfInterestDynamic;
+class ASBZCoverPoint;
 class ASBZSpawnerBase;
 class UActorComponent;
 class UAnimMontage;
@@ -44,7 +47,7 @@ UCLASS(Blueprintable)
 class STARBREEZE_API ASBZAICharacter : public ASBZCharacter {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZSpawnerBase> Spawner;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -104,8 +107,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ReloadAbsAimYawAngleThreshold;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDisruptiveHurtStartedDelegate OnDisruptiveHurtStarted;
+    
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZAlertnessLevelIdHelper CurrentAlertness;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_CurrentStance, meta=(AllowPrivateAccess=true))
@@ -198,6 +204,15 @@ protected:
     TSet<FGameplayTag> TagsBreakPinning;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTagContainer ObstructedWalkTagContainer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTagContainer BlindingTags;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTagContainer DeafeningTags;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHasIgnoreFactionCollisionRestriction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -239,12 +254,14 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZVoiceComment StreakComment;
     
+public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseBrainTickLOD;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZTickIntervalLODParams BrainTickIntervalLODParams;
     
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAllowMassDestroy;
     
@@ -259,11 +276,18 @@ private:
     TSet<UActorComponent*> ComponentsKeptAfterDeath;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASBZCoverPoint* CurrentCoverPoint;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UAnimMontage* LastLandingMontage;
     
 public:
-    ASBZAICharacter();
+    ASBZAICharacter(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+    UFUNCTION(BlueprintCallable)
+    AActor* UpdateCurrentTarget();
     
     UFUNCTION(BlueprintCallable)
     void SetPinningTarget(AActor* InPinnedActor);
@@ -322,6 +346,9 @@ public:
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void InteractWithDoor();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    AActor* GetHighestAggroTarget() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     USBZAIDoorInteractionComponent* GetDoorInteractionComponent() const;

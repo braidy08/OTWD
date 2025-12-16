@@ -6,6 +6,8 @@ UENUM(BlueprintType)
 enum class ESBZDoorAttackType : uint8 {
     None,
     AgainstTheDoor,
+    AgainstTheDoorNotFacing,
     NotAgainstTheDoor,
+    Invalid,
 };
 

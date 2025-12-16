@@ -28,5 +28,6 @@ public:
     FAIDataProviderIntValue MaxCovers;
     
     USBZEnvQueryGenerator_CoverPoints();
+
 };
 

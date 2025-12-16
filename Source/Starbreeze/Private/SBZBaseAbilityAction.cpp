@@ -4,3 +4,4 @@ USBZBaseAbilityAction::USBZBaseAbilityAction() {
     this->AbilitySlot = EAbilityInput::UseAbility0;
 }
 
+

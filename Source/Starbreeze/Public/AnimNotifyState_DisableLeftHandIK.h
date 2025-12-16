@@ -14,5 +14,6 @@ public:
     float FadeOutTime;
     
     UAnimNotifyState_DisableLeftHandIK();
+
 };
 

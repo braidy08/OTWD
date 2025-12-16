@@ -39,6 +39,8 @@ class UDataTable;
 class ULevel;
 class ULevelStreaming;
 class UObject;
+class UParticleSystem;
+class UParticleSystemComponent;
 class UPrimitiveComponent;
 class USBZActorContainer;
 class USBZDamageType;
@@ -54,6 +56,7 @@ class STARBREEZE_API USBZGameplayStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USBZGameplayStatics();
+
     UFUNCTION(BlueprintCallable)
     static FText WarnUnusedFormattingArguments(const FText& Text);
     
@@ -73,6 +76,9 @@ public:
     static ASBZWeapon* SpawnWeaponFromClass(const UObject* WorldContextObject, APawn* Owner, const TSubclassOf<ASBZWeapon>& WeaponClass);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static UParticleSystemComponent* SpawnPooledEmitterAtLocation(const UObject* WorldContextObject, UParticleSystem* EmitterTemplate, FVector Location, FRotator Rotation, FVector Scale);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void SpawnPickupItems(const UObject* WorldContextObject, const TSubclassOf<ASBZAutoPickUpItem>& PickupItemClass, const FVector& Location, int32 Count, float DistributionRadius);
     
     UFUNCTION(BlueprintCallable)
@@ -85,7 +91,7 @@ public:
     static void SetPrimitiveComponentEnabled(UPrimitiveComponent* Component, const bool bShouldBeHidden, const TEnumAsByte<ECollisionEnabled::Type> DesiredCollision, const bool bShouldTick);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static void SetCheckpointsAndDisallowPlayBubbles(const UObject* WorldContextObject, const TArray<ASBZCheckpoint*>& Checkpoints, TArray<ASBZPlayBubble*> Bubbles, float Timer, bool bAddDefaultWarningTime);
+    static void SetCheckpointsAndDisallowPlayBubbles(const UObject* WorldContextObject, const TArray<ASBZCheckpoint*>& Checkpoints, TArray<ASBZPlayBubble*> Bubbles, float Timer, bool bAddDefaultWarningTime, bool bResetActiveTimer);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void SetCheckpoints(const UObject* WorldContextObject, const TArray<ASBZCheckpoint*>& Checkpoints);
@@ -94,7 +100,10 @@ public:
     static void SetActorEnabled(AActor* Actor, const bool bShouldBeHidden, const bool bShouldHaveCollision, const bool bShouldTick);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static void SaySystemCommentWithSuitablePlayer(UObject* WorldContextObject, ESBZVoiceComment VoiceComment, const FVector& Location, float Distance);
+    static void SaySystemCommentWithSuitablePlayer(UObject* WorldContextObject, ESBZVoiceComment VoiceComment, const FVector& Location, float Distance, bool bPrioritizeClosest);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
+    static void SaySystemCommentWithPlayer(ASBZPlayerCharacter* PlayerCharacter, ESBZVoiceComment VoiceComment);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void RequestDestroyAi(APawn* Actor);
@@ -106,7 +115,13 @@ public:
     static void PrintError(UObject* WorldContextObject, const FString& String, bool bPrintToScreen, bool bShowDialog, FLinearColor TextColor, float Duration);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static ESBZPlayDialogResult PlayDialogWithSuitablePlayers(UObject* WorldContextObject, FName DialogID, const FBPOnDialogEnded_Delegate& OnDialogEnded, AActor* DialogInstigator);
+    static ESBZPlayDialogResult PlayDialogWithSuitablePlayers(UObject* WorldContextObject, FName DialogID, const FBPOnDialogEnded_Delegate& OnDialogEnded);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static ESBZPlayDialogResult PlayDialogByName(UObject* WorldContextObject, FName DialogID, const TArray<AActor*>& Performers, const FBPOnDialogEnded_Delegate& OnDialogEnded, AActor* DialogInstigator);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static void ModifyStreamWithMissionSeed(const UObject* WorldContextObject, UPARAM(Ref) FRandomStream& Stream);
     
     UFUNCTION(BlueprintCallable)
     static void LoadStreamLevelSync(ULevelStreaming* LevelStreamingObject, bool bMakeVisibleAfterLoad, bool bShouldBlockOnLoad);
@@ -120,6 +135,9 @@ public:
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool IsTargetWithinVisualPerception(UObject* WorldContextObject, const FSBZVisualPerceptionInfo& VisualPerception, bool bDebugDraw, float Length, const FLinearColor& ColorSide, const FLinearColor& ColorTop, float DebugDrawDuration);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static bool IsSolo(const UObject* WorldContextObject);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsShippingBuild();
     
@@ -131,6 +149,9 @@ public:
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool InterruptMissionNeutralCountdown(const UObject* WorldContextObject);
+    
+    UFUNCTION(BlueprintCallable)
+    static UParticleSystemComponent* InternalSpawnPooledEmitterAtLocation(UWorld* World, UParticleSystem* EmitterTemplate, FVector SpawnLocation, FRotator SpawnRotation, FVector SpawnScale);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static ULevelStreaming* GetStreamingLevelForWorld(const UObject* WorldContextObject, const TSoftObjectPtr<UWorld>& WorldAssetReference);
@@ -181,7 +202,10 @@ public:
     static void ForceDestroyActor(AActor* Actor);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
-    static ASBZPlayerCharacter* FindSuitablePlayer(UObject* WorldContextObject, const FVector& Location, float Distance);
+    static ASBZPlayerCharacter* FindSuitablePlayer(UObject* WorldContextObject, const FVector& Location, float Distance, bool bPrioritizeClosest);
+    
+    UFUNCTION(BlueprintCallable)
+    static AActor* FindNearestActorFromContainer(const USBZActorContainer* Container, const FVector& Location);
     
     UFUNCTION(BlueprintCallable)
     static TArray<USBZOutlineComponent*> FindNearbyOutlineComponentsFromInteractableContainer(USBZObjectContainer* Container, const FVector& Position, float Distance);
@@ -227,6 +251,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static void DeactivatePawnCollision(const FSBZDetailedCollisionHandle& Handle);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static FRandomStream CreateStreamWithMissionSeed(const UObject* WorldContextObject, int32 InitialSeed);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void CalculatePlayersInsideBubblesAndTriggerPoints(const UObject* WorldContextObject, const TArray<ASBZPlayBubble*>& Bubbles, const TArray<ASBZTriggerPoint*> Triggers, int32& OutNumPlayersInside, int32& OutNumCurrentPlayersAlive);

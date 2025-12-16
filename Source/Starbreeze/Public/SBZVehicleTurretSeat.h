@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class ASBZVehicleTurretSeat : public ASBZVehicleSeatPawn {
     GENERATED_BODY()
 public:
-    ASBZVehicleTurretSeat();
+    ASBZVehicleTurretSeat(const FObjectInitializer& ObjectInitializer);
+
 };
 

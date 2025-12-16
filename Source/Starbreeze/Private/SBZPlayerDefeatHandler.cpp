@@ -1,6 +1,18 @@
 #include "SBZPlayerDefeatHandler.h"
 #include "Net/UnrealNetwork.h"
 
+USBZPlayerDefeatHandler::USBZPlayerDefeatHandler(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->PlayerCharacter = NULL;
+    this->Settings = NULL;
+    this->Health = 0;
+    this->bIsFastDying = false;
+    this->CurrentReviveInteractor = NULL;
+    this->ReviveMarker = NULL;
+    this->StrugglingEnemy = NULL;
+    this->StrugglePinnerLensEffectInstance = NULL;
+}
+
 void USBZPlayerDefeatHandler::SetFastDyingMultiplier(float InFastDyingMultiplier) {
 }
 
@@ -89,14 +101,4 @@ void USBZPlayerDefeatHandler::GetLifetimeReplicatedProps(TArray<FLifetimePropert
     DOREPLIFETIME(USBZPlayerDefeatHandler, bIsFastDying);
 }
 
-USBZPlayerDefeatHandler::USBZPlayerDefeatHandler() {
-    this->PlayerCharacter = NULL;
-    this->Settings = NULL;
-    this->Health = 0;
-    this->bIsFastDying = false;
-    this->CurrentReviveInteractor = NULL;
-    this->ReviveMarker = NULL;
-    this->StrugglingEnemy = NULL;
-    this->StrugglePinnerLensEffectInstance = NULL;
-}
 

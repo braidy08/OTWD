@@ -17,5 +17,6 @@ public:
     bool bMetaEquipmentCollected;
     
     UOTWDQuestObjectiveMetaResouceCollectedDataAsset();
+
 };
 

@@ -46,9 +46,10 @@ private:
     TMap<ASBZCharacter*, bool> CapsuleMonitoringPreviousValue;
     
 public:
-    ASBZAlignmentManager();
+    ASBZAlignmentManager(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OccupySlotWithCallback(int32 SlotID, FSBZAlignmentSlotOccupationSettings Settings, const FSBZAlignmentStateChangeDelegate& StateChangeCallback);
     

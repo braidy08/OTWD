@@ -41,6 +41,7 @@ private:
     
 public:
     USBZGrappleEvent();
+
     UFUNCTION(BlueprintCallable)
     void ParticipantTakeDamage(ASBZCharacter* DamagedActor, float Damage, const USBZDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser);
     

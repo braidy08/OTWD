@@ -8,5 +8,6 @@ class STARBREEZE_API USBZCraftToolAbilityAction : public USBZCraftingRedirectAct
     GENERATED_BODY()
 public:
     USBZCraftToolAbilityAction();
+
 };
 

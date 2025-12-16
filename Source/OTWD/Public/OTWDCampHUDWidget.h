@@ -8,6 +8,7 @@ class OTWD_API UOTWDCampHUDWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UOTWDCampHUDWidget();
+
     UFUNCTION(BlueprintCallable)
     void UpdateWaves(int32 CurrentWave);
     

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZNonHumanAICharacterAnimation : public USBZAICharacterAn
     GENERATED_BODY()
 public:
     USBZNonHumanAICharacterAnimation();
+
 };
 

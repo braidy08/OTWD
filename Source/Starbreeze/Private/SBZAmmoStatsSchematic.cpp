@@ -5,3 +5,4 @@ USBZAmmoStatsSchematic::USBZAmmoStatsSchematic() {
     this->bIsEmptyAlwaysVisible = false;
 }
 
+

@@ -1,5 +1,8 @@
 #include "SBZAbilityTaskWaitForAbilityGenericEvent.h"
 
+USBZAbilityTaskWaitForAbilityGenericEvent::USBZAbilityTaskWaitForAbilityGenericEvent() {
+}
+
 USBZAbilityTaskWaitForAbilityGenericEvent* USBZAbilityTaskWaitForAbilityGenericEvent::WaitForAbilityGenericEvent(UGameplayAbility* OwningAbility, TEnumAsByte<EAbilityGenericReplicatedEvent::Type> EventToFireOn) {
     return NULL;
 }
@@ -7,6 +10,4 @@ USBZAbilityTaskWaitForAbilityGenericEvent* USBZAbilityTaskWaitForAbilityGenericE
 void USBZAbilityTaskWaitForAbilityGenericEvent::OnEventFiredCallback() {
 }
 
-USBZAbilityTaskWaitForAbilityGenericEvent::USBZAbilityTaskWaitForAbilityGenericEvent() {
-}
 

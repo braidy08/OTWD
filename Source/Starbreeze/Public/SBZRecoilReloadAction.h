@@ -8,5 +8,6 @@ class STARBREEZE_API USBZRecoilReloadAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZRecoilReloadAction();
+
 };
 

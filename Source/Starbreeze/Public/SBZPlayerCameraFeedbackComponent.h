@@ -22,18 +22,19 @@ protected:
     ASBZPlayerCameraManager* PlayerCameraOwner;
     
 public:
-    USBZPlayerCameraFeedbackComponent();
+    USBZPlayerCameraFeedbackComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
-    void RemoveFeedback(int32 RemoveID);
+    bool RemoveFeedback(int32 RemoveID);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static USBZPlayerCameraFeedbackComponent* GetLocalCameraFeedbackComponent(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable)
-    void FadeOutFeedback(int32 RemoveID);
+    bool FadeOutFeedback(int32 RemoveID);
     
     UFUNCTION(BlueprintCallable)
-    int32 AddFeedback(TSubclassOf<USBZLocalPlayerFeedback> InFeedbackClass);
+    int32 AddFeedback(TSubclassOf<USBZLocalPlayerFeedback> InFeedbackClass, float Intensity);
     
 };
 

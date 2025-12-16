@@ -1,5 +1,6 @@
 #include "OTWDScavengerGameState.h"
 
-AOTWDScavengerGameState::AOTWDScavengerGameState() {
+AOTWDScavengerGameState::AOTWDScavengerGameState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

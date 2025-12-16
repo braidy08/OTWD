@@ -7,6 +7,5 @@ enum class ESBZBTTask_RangedAttack_InterruptAction : int32 {
     DontChange,
     Pause,
     Resume,
-    ESBZBTTask_RangedAttack_MAX UMETA(Hidden),
 };
 

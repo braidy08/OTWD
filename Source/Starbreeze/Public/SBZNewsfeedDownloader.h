@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class ASBZNewsfeedDownloader : public AActor {
     GENERATED_BODY()
 public:
-    ASBZNewsfeedDownloader();
+    ASBZNewsfeedDownloader(const FObjectInitializer& ObjectInitializer);
+
 };
 

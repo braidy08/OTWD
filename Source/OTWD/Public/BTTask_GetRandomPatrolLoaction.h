@@ -15,5 +15,6 @@ public:
     FBlackboardKeySelector RandomPatrolWaitTimeKey;
     
     UBTTask_GetRandomPatrolLoaction();
+
 };
 

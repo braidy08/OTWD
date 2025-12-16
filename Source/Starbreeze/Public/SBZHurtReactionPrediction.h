@@ -21,8 +21,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag Tag;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    uint16 BoneIndex;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 BoneIndex;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     uint16 Duration;
@@ -33,8 +33,14 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZHurtReactionPose Pose;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float Yaw;
+    
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    uint16 Yaw;
+    uint16 YawCompressed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsYawUsed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsAlive;

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "GameFramework/PlayerInput.h"
-#include "GameFramework/PlayerInput.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=InputActionKeyMapping -FallbackName=InputActionKeyMapping
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=InputAxisKeyMapping -FallbackName=InputAxisKeyMapping
 #include "InputCoreTypes.h"
 #include "OnActionRebindAttemptDelegate.h"
 #include "OnActionRebindingDelegate.h"
@@ -33,6 +33,7 @@ protected:
     
 public:
     USBZInputUserSettings();
+
     UFUNCTION(BlueprintCallable)
     void StopRebinding(ASBZPlayerController* Controller);
     

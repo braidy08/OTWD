@@ -23,5 +23,6 @@ public:
     FVector2D BoxExtent;
     
     USBZBTTask_GetSearchLocation();
+
 };
 

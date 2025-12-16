@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
+#include "OnJumpToLevelScriptCheckpointDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "SBZHostMigration.generated.h"
 
@@ -13,8 +14,6 @@ UCLASS(Blueprintable)
 class STARBREEZE_API USBZHostMigration : public UObject {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnJumpToLevelScriptCheckpoint, int32, ScriptCheckpointIndex);
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnJumpToLevelScriptCheckpoint OnJumpToLevelScriptCheckpoint;
     
@@ -31,6 +30,7 @@ private:
     
 public:
     USBZHostMigration();
+
 private:
     UFUNCTION(BlueprintCallable)
     void SetNextHost();

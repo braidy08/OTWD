@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
+#include "AttributeSet.h"
 #include "SBZLocomotionAttributeSet.generated.h"
 
 UCLASS(Blueprintable)
@@ -11,8 +12,9 @@ public:
     float MaxSpeedMultiplier;
     
     USBZLocomotionAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_MaxSpeedMultiplier(float OldValue);
     

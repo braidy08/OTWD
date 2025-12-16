@@ -32,7 +32,8 @@ protected:
     bool bIsRegistered;
     
 public:
-    UDEPRECATED_SBZDangerComponent();
+    UDEPRECATED_SBZDangerComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Unregister();
     

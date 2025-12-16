@@ -2,15 +2,16 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RadialDamageParams -FallbackName=RadialDamageParams
 #include "Engine/EngineTypes.h"
-#include "Engine/EngineTypes.h"
-#include "GameplayEffectTypes.h"
-#include "GameplayAbilitySpec.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=ActiveGameplayEffectHandle -FallbackName=ActiveGameplayEffectHandle
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbilitySpecHandle -FallbackName=GameplayAbilitySpecHandle
 #include "DamageReceivedData.h"
 #include "ESBZPickedUpState.h"
 #include "ESBZRangedWeaponModuleType.h"
 #include "ESBZWeaponSlotType.h"
 #include "OnTargetInfoUpdatedDelegate.h"
+#include "OnThrowWaitingChangeDelegate.h"
 #include "SBZCharacter.h"
 #include "SBZGameplayEffectData.h"
 #include "SBZPointDamageInterval.h"
@@ -42,6 +43,7 @@ class USBZBaseAngleOverrideCameraModifier;
 class USBZCarryingComponent;
 class USBZCharacterMovementMultiplierModifier;
 class USBZClampCameraRotationModifier;
+class USBZDetectionAttributeSet;
 class USBZFirstPersonCameraAttachment;
 class USBZGenericAnimationCollection;
 class USBZHUDWidget;
@@ -70,14 +72,10 @@ class USBZStrengthAttributeSet;
 class USkeletalMeshComponent;
 class USpringArmComponent;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Engine)
+UCLASS(Blueprintable)
 class STARBREEZE_API ASBZPlayerCharacter : public ASBZCharacter {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnUnPossessedDelegate);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnThrowWaitingChange, bool, bIsWaiting);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPossessedByDelegate, AController*, NewController);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText NameUi;
     
@@ -102,6 +100,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USBZPlayerDownedAttributeSet* PlayerDownedAttributeSet;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USBZDetectionAttributeSet* DetectionAttributeSet;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZGameplayEffectData ArmorRegenEffectData;
@@ -138,6 +139,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZGameplayEffectData DisableStrengthRegenEffectData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float StrengthDepletedShoveDuration;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZGameplayEffectData StrengthDepletedEffectData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZPointDamageInterval PointDamageInterval;
@@ -194,9 +201,6 @@ protected:
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASkeletalMeshActor* CinematicMontageWeapon;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    FTimerHandle CinematicMontageTimer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* Mesh1P;
@@ -311,7 +315,7 @@ public:
     USBZAutoPeekComponent* AutoPeekComponent;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_ThrownItemChanged, meta=(AllowPrivateAccess=true))
     ASBZThrownItem* ThrowItem;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -515,9 +519,10 @@ private:
     FActiveGameplayEffectHandle GrappleRegenDisableHandle;
     
 public:
-    ASBZPlayerCharacter();
+    ASBZPlayerCharacter(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void ToggleWeaponPart(ESBZRangedWeaponModuleType PartType);
     
@@ -579,7 +584,7 @@ public:
     void RemoveThrowItem(bool bRemoveEffectsOnly, bool bDestroyThrowItem);
     
     UFUNCTION(BlueprintCallable)
-    void RemoveCameraFeedback(int32 RemoveID);
+    bool RemoveCameraFeedback(int32 RemoveID);
     
     UFUNCTION(BlueprintCallable)
     void PlaySoundEffectByName(const FString& EventName);
@@ -595,6 +600,9 @@ public:
     
 private:
     UFUNCTION(BlueprintCallable)
+    void OnRep_ThrownItemChanged();
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsFlashlightEnabled();
     
 protected:
@@ -602,6 +610,9 @@ protected:
     void OnInteractionSuccess(USBZInteractableComponent* Interactable);
     
 public:
+    UFUNCTION(BlueprintCallable)
+    void OnDisableStrengthRegenChanged(bool bInIsDisabled, bool bIsDelayedToNotification);
+    
     UFUNCTION(BlueprintCallable)
     void OnDamage(const FDamageReceivedData& DamageData);
     
@@ -673,6 +684,9 @@ public:
     float GetFOVModifier(bool bWantsTargeting, bool bOnTop) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetFOVMagnification(bool bWantsTargeting, bool bOnTop) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentShoveImmunity() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -691,7 +705,7 @@ public:
     USBZPlayerActionHandler* GetActionHandler() const;
     
     UFUNCTION(BlueprintCallable)
-    void FadeOutCameraFeedback(int32 RemoveID);
+    bool FadeOutCameraFeedback(int32 RemoveID);
     
 private:
     UFUNCTION(BlueprintCallable, Client, Reliable)
@@ -706,9 +720,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void CheckNetRelevancy();
-    
-    UFUNCTION(BlueprintCallable)
-    FString CharacterName();
     
     UFUNCTION(BlueprintCallable)
     void ChangeWeaponToIndex(int32 InNewWeaponIndex);
@@ -728,7 +739,7 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable)
-    int32 ApplyCameraFeedback(TSubclassOf<USBZLocalPlayerFeedback> FeedbackClass);
+    int32 ApplyCameraFeedback(TSubclassOf<USBZLocalPlayerFeedback> FeedbackClass, float Intensity);
     
 };
 

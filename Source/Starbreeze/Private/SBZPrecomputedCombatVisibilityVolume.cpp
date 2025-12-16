@@ -1,6 +1,7 @@
 #include "SBZPrecomputedCombatVisibilityVolume.h"
 
-ASBZPrecomputedCombatVisibilityVolume::ASBZPrecomputedCombatVisibilityVolume() {
+ASBZPrecomputedCombatVisibilityVolume::ASBZPrecomputedCombatVisibilityVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bComputeVisibilityToAllVolumes = true;
 }
+
 

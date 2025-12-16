@@ -4,3 +4,4 @@ USBZCraftingRedirectAction::USBZCraftingRedirectAction() {
     this->AbilitySlot = EAbilityInput::UseAbility0;
 }
 
+

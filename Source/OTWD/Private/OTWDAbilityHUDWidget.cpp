@@ -1,11 +1,5 @@
 #include "OTWDAbilityHUDWidget.h"
 
-void UOTWDAbilityHUDWidget::SetupWidgets(UPanelWidget* AbilityPanelWidget) {
-}
-
-void UOTWDAbilityHUDWidget::SetAbilityContainerVisibility(FName ActionName, bool bIsVisible) {
-}
-
 UOTWDAbilityHUDWidget::UOTWDAbilityHUDWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->ElementWidget = NULL;
     this->MaxSetupTime = 1;
@@ -17,4 +11,11 @@ UOTWDAbilityHUDWidget::UOTWDAbilityHUDWidget() : UUserWidget(FObjectInitializer:
     this->bShouldShowTool = true;
     this->SetupElapsed = 1;
 }
+
+void UOTWDAbilityHUDWidget::SetupWidgets(UPanelWidget* AbilityPanelWidget) {
+}
+
+void UOTWDAbilityHUDWidget::SetAbilityContainerVisibility(FName ActionName, bool bIsVisible) {
+}
+
 

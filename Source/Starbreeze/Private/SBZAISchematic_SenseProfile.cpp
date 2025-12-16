@@ -4,3 +4,4 @@ USBZAISchematic_SenseProfile::USBZAISchematic_SenseProfile() {
     this->ID = 0;
 }
 
+

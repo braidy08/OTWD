@@ -11,6 +11,7 @@ class STARBREEZE_API USBZCosmetic : public USBZUnlockable {
     GENERATED_BODY()
 public:
     USBZCosmetic();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static TSoftObjectPtr<USBZCosmetic> GetUnlockableAsCosmetic(const USBZUnlockableMetadata* UnlockableMetadata);
     

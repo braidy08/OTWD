@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class OTWD_API AOTWDClumsyNavManager : public AActor {
     GENERATED_BODY()
 public:
-    AOTWDClumsyNavManager();
+    AOTWDClumsyNavManager(const FObjectInitializer& ObjectInitializer);
+
 };
 

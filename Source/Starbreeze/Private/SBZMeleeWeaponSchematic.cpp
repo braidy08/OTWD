@@ -7,3 +7,4 @@ USBZMeleeWeaponSchematic::USBZMeleeWeaponSchematic() {
     this->LightNoiseData = NULL;
 }
 
+

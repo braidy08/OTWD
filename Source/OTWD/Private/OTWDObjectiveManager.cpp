@@ -1,6 +1,10 @@
 #include "OTWDObjectiveManager.h"
 #include "Net/UnrealNetwork.h"
 
+AOTWDObjectiveManager::AOTWDObjectiveManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->CurrentGlobalObjective = NULL;
+}
+
 void AOTWDObjectiveManager::SetGlobalObjectiveText(UObject* WorldContextObject, const FText& NewGlobalObjectiveText) {
 }
 
@@ -20,7 +24,4 @@ void AOTWDObjectiveManager::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(AOTWDObjectiveManager, CurrentGlobalObjective);
 }
 
-AOTWDObjectiveManager::AOTWDObjectiveManager() {
-    this->CurrentGlobalObjective = NULL;
-}
 

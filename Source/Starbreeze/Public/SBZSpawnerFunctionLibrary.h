@@ -16,6 +16,7 @@ class STARBREEZE_API USBZSpawnerFunctionLibrary : public UBlueprintFunctionLibra
     GENERATED_BODY()
 public:
     USBZSpawnerFunctionLibrary();
+
     UFUNCTION(BlueprintCallable)
     static bool ConstructMoveToActSpawnBehavior(USBZActSpawnBehaviour*& OutBehavior, UObject* Outer, bool bUseActorTransform, AActor* Actor, FVector Location, bool bUseRandomBox, FTransform BoxTransfrom, FVector BoxExtent, FSBZAIStanceIdHelper Stance, bool bForced);
     

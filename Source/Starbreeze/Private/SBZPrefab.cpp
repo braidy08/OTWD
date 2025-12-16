@@ -1,5 +1,6 @@
 #include "SBZPrefab.h"
 
-ASBZPrefab::ASBZPrefab() {
+ASBZPrefab::ASBZPrefab(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

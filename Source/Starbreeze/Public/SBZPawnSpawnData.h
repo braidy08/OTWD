@@ -1,6 +1,5 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "ESBZSpawnSignificance.h"
 #include "SBZPawnSpawnData.generated.h"
 
@@ -22,15 +21,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZSpawnSignificance SpawnSignificance;
-    
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bOverrideRandomRotation;
-    
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float RandomRotationOffset;
-    
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FVector Location;
     
     FSBZPawnSpawnData();
 };

@@ -30,5 +30,6 @@ private:
     
 public:
     UDEPRECATED_SBZBTTask_GetCoverShootingPoint();
+
 };
 

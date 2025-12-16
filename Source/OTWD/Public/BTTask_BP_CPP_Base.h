@@ -8,5 +8,6 @@ class OTWD_API UBTTask_BP_CPP_Base : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UBTTask_BP_CPP_Base();
+
 };
 

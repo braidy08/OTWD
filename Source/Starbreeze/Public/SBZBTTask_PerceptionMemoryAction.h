@@ -19,5 +19,6 @@ public:
     FBlackboardKeySelector EnemyKey;
     
     USBZBTTask_PerceptionMemoryAction();
+
 };
 

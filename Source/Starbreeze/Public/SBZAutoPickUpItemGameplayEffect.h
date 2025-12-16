@@ -15,7 +15,8 @@ protected:
     TArray<FSBZGameplayEffectData> GameplayLoot;
     
 public:
-    ASBZAutoPickUpItemGameplayEffect();
+    ASBZAutoPickUpItemGameplayEffect(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool ApplyPickUpGameplayEffects(UAbilitySystemComponent* AbilitySystem);
     

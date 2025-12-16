@@ -1,6 +1,16 @@
 #include "OTWDFlashbangAbilityAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDFlashbangAbilityAttributeSet::UOTWDFlashbangAbilityAttributeSet() {
+    this->DetonateDelay = 1;
+    this->BlindRadius = 1;
+    this->BlindDuration = 1;
+    this->StunRadius = 1;
+    this->StunDuration = 1;
+    this->LureRadius = 1;
+    this->LureDuration = 1;
+}
+
 void UOTWDFlashbangAbilityAttributeSet::OnRep_StunRadius() {
 }
 
@@ -34,13 +44,4 @@ void UOTWDFlashbangAbilityAttributeSet::GetLifetimeReplicatedProps(TArray<FLifet
     DOREPLIFETIME(UOTWDFlashbangAbilityAttributeSet, LureDuration);
 }
 
-UOTWDFlashbangAbilityAttributeSet::UOTWDFlashbangAbilityAttributeSet() {
-    this->DetonateDelay = 1;
-    this->BlindRadius = 1;
-    this->BlindDuration = 1;
-    this->StunRadius = 1;
-    this->StunDuration = 1;
-    this->LureRadius = 1;
-    this->LureDuration = 1;
-}
 

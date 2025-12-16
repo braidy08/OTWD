@@ -1,5 +1,10 @@
 #include "SBZGameplayAbilityCrafting.h"
 
+USBZGameplayAbilityCrafting::USBZGameplayAbilityCrafting() {
+    this->AddedResourceGameEffect = NULL;
+    this->TimeToHold = 1;
+}
+
 bool USBZGameplayAbilityCrafting::IsResourceAlreadyFull(const FGameplayAbilityActorInfo& ActorInfo) const {
     return false;
 }
@@ -11,8 +16,4 @@ bool USBZGameplayAbilityCrafting::CraftObject(int32 Amount) {
     return false;
 }
 
-USBZGameplayAbilityCrafting::USBZGameplayAbilityCrafting() {
-    this->AddedResourceGameEffect = NULL;
-    this->TimeToHold = 1;
-}
 

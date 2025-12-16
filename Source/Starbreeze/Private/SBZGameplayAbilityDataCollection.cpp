@@ -1,6 +1,9 @@
 #include "SBZGameplayAbilityDataCollection.h"
 #include "Templates/SubclassOf.h"
 
+USBZGameplayAbilityDataCollection::USBZGameplayAbilityDataCollection() {
+}
+
 USBZGameplayAbilityData* USBZGameplayAbilityDataCollection::FindDataForGameplayAbility(TSubclassOf<UGameplayAbility> GameplayAbilityClass) const {
     return NULL;
 }
@@ -8,6 +11,4 @@ USBZGameplayAbilityData* USBZGameplayAbilityDataCollection::FindDataForGameplayA
 void USBZGameplayAbilityDataCollection::CollectGameplayAbilityData() const {
 }
 
-USBZGameplayAbilityDataCollection::USBZGameplayAbilityDataCollection() {
-}
 

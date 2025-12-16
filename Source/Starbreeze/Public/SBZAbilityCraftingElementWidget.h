@@ -81,6 +81,7 @@ private:
     
 public:
     USBZAbilityCraftingElementWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UImage* AbilityIconWidget, UMaterialInstanceDynamic* ProgressMaterialWidget, UImage* ResourceImageWidget, UCanvasPanel* ResourcePanelWidget, USBZActionImageWidget* ActionImageWidget);
     

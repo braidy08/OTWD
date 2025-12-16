@@ -29,8 +29,9 @@ public:
     float WoundDuration;
     
     UOTWDShardMineAbilityAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_WoundRadius();
     

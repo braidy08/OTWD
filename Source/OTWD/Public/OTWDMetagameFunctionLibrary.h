@@ -10,6 +10,7 @@ class OTWD_API UOTWDMetagameFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOTWDMetagameFunctionLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FOTWDMetagameCurrency EvaluateCurrencyRewards(const FOTWDMetagameCurrencyRewards& Rewards, float Ratio);
     

@@ -9,3 +9,4 @@ USBZThrownWeaponAISchematic::USBZThrownWeaponAISchematic() {
     this->ThrowVoiceComment = ESBZVoiceComment::None;
 }
 
+

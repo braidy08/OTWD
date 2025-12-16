@@ -4,3 +4,4 @@ UOTWDQuestDataAssetRoot::UOTWDQuestDataAssetRoot() {
     this->MaxNumberOfActiveBounties = 0;
 }
 
+

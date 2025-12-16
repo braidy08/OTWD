@@ -19,12 +19,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float UsingAnimationDuration;
     
-    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_User, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_User, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZAICharacter> UsingCharacter;
     
-    UDEPRECATED_SBZPOIComponent();
+    UDEPRECATED_SBZPOIComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnRep_User();

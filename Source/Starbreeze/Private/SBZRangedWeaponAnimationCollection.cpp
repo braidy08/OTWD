@@ -49,3 +49,4 @@ USBZRangedWeaponAnimationCollection::USBZRangedWeaponAnimationCollection() {
     this->MantleJammedExit = NULL;
 }
 
+

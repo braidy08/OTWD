@@ -8,5 +8,6 @@ class STARBREEZE_API USBZMantlingVaultingAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZMantlingVaultingAction();
+
 };
 

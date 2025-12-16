@@ -1,6 +1,10 @@
 #include "SBZLobbyBeaconClient.h"
 #include "Net/UnrealNetwork.h"
 
+ASBZLobbyBeaconClient::ASBZLobbyBeaconClient(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->LobbyState = NULL;
+}
+
 void ASBZLobbyBeaconClient::ServerUpdatePlayerInfo_Implementation(const FSBZLobbyCharacterInfo& PlayerInfo) {
 }
 bool ASBZLobbyBeaconClient::ServerUpdatePlayerInfo_Validate(const FSBZLobbyCharacterInfo& PlayerInfo) {
@@ -49,7 +53,4 @@ void ASBZLobbyBeaconClient::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(ASBZLobbyBeaconClient, LobbyState);
 }
 
-ASBZLobbyBeaconClient::ASBZLobbyBeaconClient() {
-    this->LobbyState = NULL;
-}
 

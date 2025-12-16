@@ -4,3 +4,4 @@ USBZGrappleAnimationSchematic::USBZGrappleAnimationSchematic() {
     this->FirstPersonLegsParticipant = ESBZGrappleParticipantType::None;
 }
 
+

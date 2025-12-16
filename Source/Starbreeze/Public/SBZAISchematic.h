@@ -91,6 +91,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZAIActBehavior AIActBehaviorTrees;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bCaresAboutFriendlyFire;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float FriendlyFireTimer;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     uint8 bInfluenceDataRead: 1;
@@ -100,5 +106,6 @@ private:
     
 public:
     USBZAISchematic();
+
 };
 

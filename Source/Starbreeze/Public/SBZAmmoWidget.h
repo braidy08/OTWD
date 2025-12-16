@@ -98,6 +98,7 @@ private:
     
 public:
     USBZAmmoWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UTextBlock* CurrentAmmoWidget, UTextBlock* SpareAmmoWidget, UTextBlock* PickupTextWidget, UImage* AmmoIconWidget, UPanelWidget* VisibilityPanelWidget, USBZAttributeProgressWidget* MeleeAmmoWidget, UWidgetAnimation* PickupAnimation, UWidgetAnimation* LowAmmoStateAnimation, UWidgetAnimation* DefaultStateAnimation, UWidgetAnimation* AppearAnimation, UWidgetAnimation* DisappearAnimation, UWidgetAnimation* CurrentAmmoDecreasedAnimation, UWidgetAnimation* CurrentAmmoIncreaseAnimation, UWidgetAnimation* ClipAmmoDecreasedAnimation, UWidgetAnimation* ClipAmmoIncreasedAnimation);
     

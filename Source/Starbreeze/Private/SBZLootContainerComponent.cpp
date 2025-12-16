@@ -2,6 +2,16 @@
 #include "Net/UnrealNetwork.h"
 #include "SBZInteractableComponent.h"
 
+USBZLootContainerComponent::USBZLootContainerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->InteractionTemplate = NULL;
+    this->MaxLootCapacity = 0;
+    this->MaxPickUpDistributionRadius = 1;
+    this->InteractableComponent = CreateDefaultSubobject<USBZInteractableComponent>(TEXT("InteractableComponent"));
+    this->InteractableState = ESBZLootInteractableState::Closed;
+    this->NumExtraInteractables = 0;
+}
+
 void USBZLootContainerComponent::SetNumInteractables(uint8 InNumInteractables) {
 }
 
@@ -39,29 +49,29 @@ uint8 USBZLootContainerComponent::GetNumInteractables() const {
     return 0;
 }
 
-int32 USBZLootContainerComponent::GetMaxLootCapacity() {
+int32 USBZLootContainerComponent::GetMaxLootCapacity() const {
     return 0;
 }
 
-void USBZLootContainerComponent::GetInteractableStates(TArray<ESBZLootInteractableState>& OutStates) {
+void USBZLootContainerComponent::GetInteractableStates(TArray<ESBZLootInteractableState>& OutStates) const {
 }
 
-ESBZLootInteractableState USBZLootContainerComponent::GetInteractableStateByIndex(uint8 InteractableIndex) {
+ESBZLootInteractableState USBZLootContainerComponent::GetInteractableStateByIndex(uint8 InteractableIndex) const {
     return ESBZLootInteractableState::Closed;
 }
 
-ESBZLootInteractableState USBZLootContainerComponent::GetInteractableState(USBZInteractableComponent* Interactable) {
+ESBZLootInteractableState USBZLootContainerComponent::GetInteractableState(USBZInteractableComponent* Interactable) const {
     return ESBZLootInteractableState::Closed;
 }
 
-int32 USBZLootContainerComponent::GetInteractableIndex(USBZInteractableComponent* Interactable) {
+int32 USBZLootContainerComponent::GetInteractableIndex(USBZInteractableComponent* Interactable) const {
     return 0;
 }
 
-void USBZLootContainerComponent::GetInteractableComponents(TArray<USBZInteractableComponent*>& OutComponents) {
+void USBZLootContainerComponent::GetInteractableComponents(TArray<USBZInteractableComponent*>& OutComponents) const {
 }
 
-USBZInteractableComponent* USBZLootContainerComponent::GetInteractableByIndex(uint8 InteractableIndex) {
+USBZInteractableComponent* USBZLootContainerComponent::GetInteractableByIndex(uint8 InteractableIndex) const {
     return NULL;
 }
 
@@ -73,12 +83,4 @@ void USBZLootContainerComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProp
     DOREPLIFETIME(USBZLootContainerComponent, ExtraInteractableStates);
 }
 
-USBZLootContainerComponent::USBZLootContainerComponent() {
-    this->InteractionTemplate = NULL;
-    this->MaxLootCapacity = 0;
-    this->MaxPickUpDistributionRadius = 1;
-    this->InteractableComponent = CreateDefaultSubobject<USBZInteractableComponent>(TEXT("InteractableComponent"));
-    this->InteractableState = ESBZLootInteractableState::Closed;
-    this->NumExtraInteractables = 0;
-}
 

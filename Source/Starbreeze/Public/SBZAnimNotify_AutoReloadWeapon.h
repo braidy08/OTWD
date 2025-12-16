@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimNotify_AutoReloadWeapon : public UAnimNotify {
     GENERATED_BODY()
 public:
     USBZAnimNotify_AutoReloadWeapon();
+
 };
 

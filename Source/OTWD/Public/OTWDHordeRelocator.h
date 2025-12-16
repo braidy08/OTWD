@@ -10,18 +10,11 @@ UCLASS(Abstract, Blueprintable)
 class OTWD_API AOTWDHordeRelocator : public AOTWDSpawnRegion {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float SpawnRadius;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USBZBaseSpawnBehaviour* SpawnBehaviour;
     
-protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    bool bIsRelocatorEnabled;
-    
-public:
-    AOTWDHordeRelocator();
+    AOTWDHordeRelocator(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetRelocatorEnabled(bool bEnabled);
     

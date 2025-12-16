@@ -11,6 +11,7 @@ class STARBREEZE_API USBZEncounterWeightingBehaviourBase : public UObject {
     GENERATED_BODY()
 public:
     USBZEncounterWeightingBehaviourBase();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float EvaluateSpawnerWeight(ASBZSpawnerBase* Spawner, ASBZEncounter* Encounter);
     

@@ -5,6 +5,6 @@
 UENUM(BlueprintType)
 enum class EOTWDProfileInfoBitFlags : uint8 {
     CanRescueWanderer,
-    MAX = 0x8,
+    MAX = 8,
 };
 

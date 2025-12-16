@@ -1,5 +1,41 @@
 #include "SBZGameUserSettings.h"
 
+USBZGameUserSettings::USBZGameUserSettings() {
+    this->SBZVersion = 0;
+    this->bPlayerActionHoldToRun = true;
+    this->bPlayerActionHoldToADS = true;
+    this->bPlayerActionHoldToCrouch = false;
+    this->bPlayerActionHoldToProne = false;
+    this->bPlayerActionHoldToPeek = false;
+    this->bPlayerActionHoldForTabMenu = true;
+    this->bVisibleOutlines = true;
+    this->bVisibleKillIndicator = true;
+    this->bVisibleHitIndicator = true;
+    this->bForceFeedbackEnabled = true;
+    this->FieldOfView = 0;
+    this->ResolutionScale = 0;
+    this->MasterVolume = 1;
+    this->SFXVolume = 1;
+    this->MusicVolume = 1;
+    this->VOVolume = 1;
+    this->HUDVolume = 1;
+    this->VoipVolume = 1;
+    this->Gamma = 1;
+    this->bYAxisInverted = false;
+    this->bEnableMouseSmoothing = true;
+    this->MouseSensitivity = 1;
+    this->LastConfirmedMouseSensitivity = 1;
+    this->ZoomSensitivity = 1;
+    this->GamepadHorizontalSensitivity = 1;
+    this->GamepadVerticalSensitivity = 1;
+    this->ChatSetting = ESBZChatSettings::AlwaysShow;
+    this->TipSettings = ESBZTutorialTipSettings::Tutorial;
+    this->bSubtitlesEnabled = true;
+    this->SubtitleSize = 0;
+    this->bVoipEnabled = true;
+    this->bPushToTalk = true;
+}
+
 void USBZGameUserSettings::SetZoomSensitivity(float InSensitivity) {
 }
 
@@ -259,39 +295,4 @@ bool USBZGameUserSettings::AreSubtitlesEnabled() {
 void USBZGameUserSettings::ApplyGamma() {
 }
 
-USBZGameUserSettings::USBZGameUserSettings() {
-    this->SBZVersion = 0;
-    this->bPlayerActionHoldToRun = true;
-    this->bPlayerActionHoldToADS = true;
-    this->bPlayerActionHoldToCrouch = false;
-    this->bPlayerActionHoldToProne = false;
-    this->bPlayerActionHoldToPeek = false;
-    this->bPlayerActionHoldForTabMenu = true;
-    this->bVisibleOutlines = true;
-    this->bVisibleKillIndicator = true;
-    this->bVisibleHitIndicator = false;
-    this->bForceFeedbackEnabled = true;
-    this->FieldOfView = 0;
-    this->ResolutionScale = 0;
-    this->MasterVolume = 1;
-    this->SFXVolume = 1;
-    this->MusicVolume = 1;
-    this->VOVolume = 1;
-    this->HUDVolume = 1;
-    this->VoipVolume = 1;
-    this->Gamma = 1;
-    this->bYAxisInverted = false;
-    this->bEnableMouseSmoothing = true;
-    this->MouseSensitivity = 1;
-    this->LastConfirmedMouseSensitivity = 1;
-    this->ZoomSensitivity = 1;
-    this->GamepadHorizontalSensitivity = 1;
-    this->GamepadVerticalSensitivity = 1;
-    this->ChatSetting = ESBZChatSettings::AlwaysShow;
-    this->TipSettings = ESBZTutorialTipSettings::Tutorial;
-    this->bSubtitlesEnabled = true;
-    this->SubtitleSize = 0;
-    this->bVoipEnabled = true;
-    this->bPushToTalk = true;
-}
 

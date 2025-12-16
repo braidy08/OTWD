@@ -2,6 +2,17 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
+ASBZEndMissionHandler::ASBZEndMissionHandler(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+    this->Settings = NULL;
+    this->State = ESBZEndMissionHandlerState::None;
+    this->SBZGameInstance = NULL;
+}
+
 void ASBZEndMissionHandler::SetSettings(USBZEndMissionSettingsSchematic* InSettings) {
 }
 
@@ -46,9 +57,4 @@ void ASBZEndMissionHandler::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(ASBZEndMissionHandler, State);
 }
 
-ASBZEndMissionHandler::ASBZEndMissionHandler() {
-    this->Settings = NULL;
-    this->State = ESBZEndMissionHandlerState::None;
-    this->SBZGameInstance = NULL;
-}
 

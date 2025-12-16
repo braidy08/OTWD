@@ -17,7 +17,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CoolDown;
     
-    ASBZAreaRepresentation();
+    ASBZAreaRepresentation(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static TArray<ASBZAreaRepresentation*> GetAreaRepresentationList(UObject* WorldContextObject);
     

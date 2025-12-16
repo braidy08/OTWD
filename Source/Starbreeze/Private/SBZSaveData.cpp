@@ -1,15 +1,19 @@
 #include "SBZSaveData.h"
 
-void USBZSaveData::Wipe() {
+USBZSaveData::USBZSaveData() {
 }
 
-void USBZSaveData::Validate(bool bIsSaving) {
+void USBZSaveData::Wipe(const UObject* WorldContextObject) {
+}
+
+void USBZSaveData::Validate(const UObject* WorldContextObject, bool bIsSaving) {
 }
 
 bool USBZSaveData::Save(const UObject* WorldContextObject) {
     return false;
 }
 
-USBZSaveData::USBZSaveData() {
+void USBZSaveData::LogSaveData(const UObject* WorldContextObject) const {
 }
+
 

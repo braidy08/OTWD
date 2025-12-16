@@ -16,5 +16,6 @@ public:
     TArray<FActorSaveChunk> ActorChunks;
     
     USBZGameSave();
+
 };
 

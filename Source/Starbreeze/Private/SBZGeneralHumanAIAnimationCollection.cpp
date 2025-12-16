@@ -1,13 +1,16 @@
 #include "SBZGeneralHumanAIAnimationCollection.h"
 
 USBZGeneralHumanAIAnimationCollection::USBZGeneralHumanAIAnimationCollection() {
+    this->CrouchMoveObstructedBlendSpace = NULL;
     this->PatrolIdle = NULL;
     this->PatrolIdleHandsOverwrite = NULL;
     this->PatrolStandMoveBlendSpace = NULL;
+    this->PatrolStandMoveObstructedBlendSpace = NULL;
     this->PatrolStandIdleTurnAroundBlendSpace = NULL;
     this->InvestigateIdle = NULL;
     this->InvestigateIdleHandsOverwrite = NULL;
     this->InvestigateStandMoveBlendSpace = NULL;
+    this->InvestigateStandMoveObstructedBlendSpace = NULL;
     this->InvestigateStandIdleTurnAroundBlendSpace = NULL;
     this->SuspiciousIdle = NULL;
     this->SuspiciousStandIdleTurnAroundBlendSpace = NULL;
@@ -15,10 +18,14 @@ USBZGeneralHumanAIAnimationCollection::USBZGeneralHumanAIAnimationCollection() {
     this->CombatCrouchIdleTurnAroundBlendSpace = NULL;
     this->SearchIdle = NULL;
     this->SearchStandMoveBlendSpace = NULL;
+    this->SearchStandMoveObstructedBlendSpace = NULL;
     this->CombatIdle = NULL;
     this->CombatStandMoveBlendSpace = NULL;
+    this->CombatStandMoveObstructedBlendSpace = NULL;
     this->CombatStandMoveJogBlendSpace = NULL;
+    this->CombatStandMoveJogObstructedBlendSpace = NULL;
     this->CombatStandMoveSprintBlendSpace = NULL;
+    this->CombatStandMoveSprintObstructedBlendSpace = NULL;
     this->TankShoveAnticipation = NULL;
     this->TankShoveLoopAnticipation = NULL;
     this->TankShoveBash = NULL;
@@ -70,4 +77,5 @@ USBZGeneralHumanAIAnimationCollection::USBZGeneralHumanAIAnimationCollection() {
     this->TransitionSprintToIdleBackwardLeft = NULL;
     this->TransitionSprintToIdleBackwardRight = NULL;
 }
+
 

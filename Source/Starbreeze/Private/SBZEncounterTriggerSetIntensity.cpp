@@ -5,3 +5,4 @@ USBZEncounterTriggerSetIntensity::USBZEncounterTriggerSetIntensity() {
     this->bIsRelativeIncrease = true;
 }
 
+

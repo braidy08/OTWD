@@ -7,3 +7,4 @@ USBZEnvQueryTest_CoverSafeness::USBZEnvQueryTest_CoverSafeness() {
     this->bUseAngleCheck = false;
 }
 
+

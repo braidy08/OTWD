@@ -28,6 +28,7 @@ protected:
     bool bLimitYaw;
     
 public:
-    USBZVehicleSeatComponent();
+    USBZVehicleSeatComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

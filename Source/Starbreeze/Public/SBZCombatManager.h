@@ -28,7 +28,8 @@ private:
     USBZFiringPermission* FiringPermission;
     
 public:
-    ASBZCombatManager();
+    ASBZCombatManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetTimeAfterCombatStarted() const;
     

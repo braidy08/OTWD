@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "SBZGlobalVoiceCommentPermission.h"
 #include "SBZVoiceCommentData.generated.h"
 
@@ -21,6 +22,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZGlobalVoiceCommentPermission GlobalPermission;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTagContainer BlockingTags;
     
     FSBZVoiceCommentData();
 };

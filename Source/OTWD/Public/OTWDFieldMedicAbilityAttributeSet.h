@@ -29,8 +29,9 @@ public:
     float BuffDuration;
     
     UOTWDFieldMedicAbilityAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_SpeedBuffMod();
     

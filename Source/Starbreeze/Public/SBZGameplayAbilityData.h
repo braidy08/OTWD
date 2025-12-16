@@ -42,8 +42,9 @@ public:
     TArray<FSBZGameplayAbilityTechBranch> TechBranches;
     
     USBZGameplayAbilityData();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static TSoftObjectPtr<USBZGameplayAbilityData> GetUnlockableAsGameplayAbilityData(const USBZUnlockableMetadata* UnlockableMetadata);
+    static TSoftObjectPtr<USBZGameplayAbilityData> GetUnlockableAsGameplayAbilityData(const USBZUnlockableMetadata* UnlockableMetadata) const;
     
 };
 

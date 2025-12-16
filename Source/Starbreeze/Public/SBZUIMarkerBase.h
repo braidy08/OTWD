@@ -20,7 +20,7 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USBZMarkerBaseWidget* OffScreenWidget;
     
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AActor> TargetActor;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -67,6 +67,7 @@ private:
     
 public:
     USBZUIMarkerBase();
+
     UFUNCTION(BlueprintCallable)
     void StartFade(float InTargetAlpha, float InDelay, float InFadeSpeed);
     

@@ -6,9 +6,14 @@
 #include "ESBZLightScenario.h"
 #include "ESBZMissionDifficultyAvailable.h"
 #include "SBZLevelPawnReplaceRule.h"
+#include "SBZOutroMovieConfig.h"
+#include "SBZOutroMovieConfigFilter.h"
 #include "SBZUnlockable.h"
 #include "SBZLevelSchematic.generated.h"
 
+class APawn;
+class UObject;
+class USBZCharacterSchematic;
 class USBZMissionCompletionRewards;
 class USBZObjectiveSchematic;
 class USBZQuest;
@@ -95,6 +100,15 @@ public:
     bool bIsSoloMission;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDoTurn;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDegradeWeapons;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FSBZOutroMovieConfigFilter> OutroMovieConfigArray;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString VideoPath;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -107,6 +121,7 @@ public:
     FGuid MissionID;
     
     USBZLevelSchematic();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsWeeklyMission() const;
     
@@ -115,6 +130,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsSoloMission() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    bool IsPlayerPawnAllowed(const UObject* WorldContextObject, const USBZCharacterSchematic* PlayerPawnData) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsExpedition() const;
@@ -128,8 +146,14 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasQuestRequirement();
     
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    USBZCharacterSchematic* GetReplacementPlayerPawn(const UObject* WorldContextObject, const USBZCharacterSchematic* PlayerPawnData) const;
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetRecommendedPowerLevelForDifficulty(ESBZDifficulty InDifficulty);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FSBZOutroMovieConfig GetOutroMovieConfig(const TSoftClassPtr<APawn>& PlayerCharacterClass) const;
     
     UFUNCTION(BlueprintCallable)
     void GenerateSaveDataID();

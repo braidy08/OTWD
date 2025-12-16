@@ -1,5 +1,6 @@
 #include "AIGoalComponent.h"
 
-UAIGoalComponent::UAIGoalComponent() {
+UAIGoalComponent::UAIGoalComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

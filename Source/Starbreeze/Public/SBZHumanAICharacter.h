@@ -49,6 +49,9 @@ protected:
     USBZHumanAIAttributeSet* HumanAIAttributeSet;
     
 private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_CurrentPackedAlertnessValue, meta=(AllowPrivateAccess=true))
+    uint8 CurrentPackedAlertnessValue;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USBZHumanAICharacterAnimation* CachedSBZHumanAICharAnim;
     
@@ -56,18 +59,29 @@ private:
     ASBZCharacterFlashlight* FlashlightGadget;
     
 public:
-    ASBZHumanAICharacter();
+    ASBZHumanAICharacter(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OrderMoveToLocation(const FVector& Location, float AcceptRadius);
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnRep_CurrentPackedAlertnessValue();
+    
+public:
     UFUNCTION(BlueprintCallable)
     void OnLeaveAlertnessState(FSBZAlertnessLevelIdHelper LeaveLevel);
     
     UFUNCTION(BlueprintCallable)
     void OnEnterAlertnessState(FSBZAlertnessLevelIdHelper EnterLevel);
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnCurrentAlertnessValueChanged(float AlertnessValue);
+    
+public:
     UFUNCTION(NetMulticast, Reliable)
     void NetMulticast_TryPlayTransition(ESBZHumanAICharacterTransition Transition, uint16 Dir);
     

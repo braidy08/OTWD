@@ -2,6 +2,12 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
+USBZCharacterActionHandler::USBZCharacterActionHandler(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
+void USBZCharacterActionHandler::SetActionRemoved(const TSubclassOf<USBZBaseAction> InActionType, bool bInIsRemoved) {
+}
+
 void USBZCharacterActionHandler::SetActionForbidden(const TSubclassOf<USBZBaseAction> InActionType, bool bInIsForbidden) {
 }
 
@@ -23,6 +29,4 @@ void USBZCharacterActionHandler::GetLifetimeReplicatedProps(TArray<FLifetimeProp
     DOREPLIFETIME(USBZCharacterActionHandler, NetworkedActionArray);
 }
 
-USBZCharacterActionHandler::USBZCharacterActionHandler() {
-}
 

@@ -1,5 +1,8 @@
 #include "SBZDebuggerOptions.h"
 
+USBZDebuggerOptions::USBZDebuggerOptions() {
+}
+
 bool USBZDebuggerOptions::ShouldSkipIntroMovies() {
     return false;
 }
@@ -24,6 +27,4 @@ bool USBZDebuggerOptions::IsAIDisabled() {
     return false;
 }
 
-USBZDebuggerOptions::USBZDebuggerOptions() {
-}
 

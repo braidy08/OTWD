@@ -8,5 +8,6 @@ class USBZBTTask_VehicleExit : public UBTTaskNode {
     GENERATED_BODY()
 public:
     USBZBTTask_VehicleExit();
+
 };
 

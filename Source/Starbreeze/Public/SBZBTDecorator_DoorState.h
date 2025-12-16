@@ -12,5 +12,6 @@ public:
     ESBZDoorStateType TargetState;
     
     USBZBTDecorator_DoorState();
+
 };
 

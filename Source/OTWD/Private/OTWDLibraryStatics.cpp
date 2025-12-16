@@ -1,5 +1,8 @@
 #include "OTWDLibraryStatics.h"
 
+UOTWDLibraryStatics::UOTWDLibraryStatics() {
+}
+
 void UOTWDLibraryStatics::UnlockLibraryItem(const UObject* WorldContextObject, UOTWDLibraryItemData* ItemToUnlock) {
 }
 
@@ -22,6 +25,4 @@ bool UOTWDLibraryStatics::DoUnreadLibraryItemsExist(const UObject* WorldContextO
     return false;
 }
 
-UOTWDLibraryStatics::UOTWDLibraryStatics() {
-}
 

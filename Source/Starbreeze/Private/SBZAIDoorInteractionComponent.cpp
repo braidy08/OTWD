@@ -1,6 +1,11 @@
 #include "SBZAIDoorInteractionComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZAIDoorInteractionComponent::USBZAIDoorInteractionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->LastDoor = NULL;
+}
+
 void USBZAIDoorInteractionComponent::OnRep_InteractionData() {
 }
 
@@ -14,7 +19,4 @@ void USBZAIDoorInteractionComponent::GetLifetimeReplicatedProps(TArray<FLifetime
     DOREPLIFETIME(USBZAIDoorInteractionComponent, CurrentInteractionDatas);
 }
 
-USBZAIDoorInteractionComponent::USBZAIDoorInteractionComponent() {
-    this->LastDoor = NULL;
-}
 

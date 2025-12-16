@@ -18,5 +18,6 @@ public:
     TMap<ESBZWeaponFamily, USBZPedestalAnimationCollection*> WeaponFamilyFallbackMap;
     
     USBZPedestalWeaponAnimationCollection();
+
 };
 

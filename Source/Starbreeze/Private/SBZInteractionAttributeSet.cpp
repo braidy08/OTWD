@@ -1,6 +1,15 @@
 #include "SBZInteractionAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZInteractionAttributeSet::USBZInteractionAttributeSet() {
+    this->DefaultInteractionSpeedMultiplier = 1;
+    this->TrapInteractionSpeedMultiplier = 1;
+    this->CraftingSpeedMultiplier = 1;
+    this->ReviveInteractionSpeedMultiplier = 1;
+    this->ReviveHealthAmount = 1;
+    this->ReviveArmorAmount = 1;
+}
+
 void USBZInteractionAttributeSet::OnRep_TrapInteractionSpeedMultiplier(float OldValue) {
 }
 
@@ -46,12 +55,4 @@ void USBZInteractionAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimePro
     DOREPLIFETIME(USBZInteractionAttributeSet, ReviveInteractionSpeedMultiplier);
 }
 
-USBZInteractionAttributeSet::USBZInteractionAttributeSet() {
-    this->DefaultInteractionSpeedMultiplier = 1;
-    this->TrapInteractionSpeedMultiplier = 1;
-    this->CraftingSpeedMultiplier = 1;
-    this->ReviveInteractionSpeedMultiplier = 1;
-    this->ReviveHealthAmount = 1;
-    this->ReviveArmorAmount = 1;
-}
 

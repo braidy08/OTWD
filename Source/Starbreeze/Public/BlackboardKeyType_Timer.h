@@ -8,5 +8,6 @@ class STARBREEZE_API UBlackboardKeyType_Timer : public UBlackboardKeyType {
     GENERATED_BODY()
 public:
     UBlackboardKeyType_Timer();
+
 };
 

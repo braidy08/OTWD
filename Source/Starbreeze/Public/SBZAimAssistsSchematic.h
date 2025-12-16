@@ -15,6 +15,7 @@ public:
     FSBZAimAssistSchematic Joypad;
     
     USBZAimAssistsSchematic();
+
     UFUNCTION(BlueprintCallable)
     void UseJoypad(bool _bUseJoypad);
     

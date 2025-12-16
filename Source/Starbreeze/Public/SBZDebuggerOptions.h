@@ -20,6 +20,7 @@ public:
     FSBZUIDebuggerOptions UIOptions;
     
     USBZDebuggerOptions();
+
     UFUNCTION(BlueprintCallable)
     static bool ShouldSkipIntroMovies();
     

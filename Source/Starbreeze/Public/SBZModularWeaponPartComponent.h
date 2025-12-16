@@ -18,7 +18,8 @@ protected:
     ASBZRangedWeapon* RangedWeapon;
     
 public:
-    USBZModularWeaponPartComponent();
+    USBZModularWeaponPartComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     USBZWeaponPartStatsSchematic* GetWeaponStats() const;
     

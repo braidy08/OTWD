@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/NetSerialization.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=FastArraySerializerItem -FallbackName=FastArraySerializerItem
 #include "SBZTimerUpdateInfo.generated.h"
 
 class USBZObjectiveSchematic;

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTDecorator_Reload : public UBTDecorator {
     GENERATED_BODY()
 public:
     USBZBTDecorator_Reload();
+
 };
 

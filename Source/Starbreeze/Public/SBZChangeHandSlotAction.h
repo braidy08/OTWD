@@ -14,14 +14,24 @@ protected:
     
 public:
     USBZChangeHandSlotAction();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
+    UFUNCTION(BlueprintCallable)
+    void SetWeaponIndexForbidden(int32 Index, bool bIsForbidden);
+    
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetState(ESBZChangeHandSlotState InState);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_SyncedState();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    TSet<int32> GetForbiddenWeaponIndexSet() const;
+    
+    UFUNCTION(BlueprintCallable)
+    void ClearForbiddenWeaponIndices();
     
 };
 

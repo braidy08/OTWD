@@ -22,6 +22,7 @@ protected:
     
 public:
     USBZWeaponMaterialSchematic();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void MakeVectorParameters(ESBZWeaponRarity Rarity, ESBZWeaponCondition Condition, TArray<FSBZVectorParameter>& OutVectorParameters);
     

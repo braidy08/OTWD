@@ -20,6 +20,7 @@ private:
     
 public:
     USBZSpectatorRespawnWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void SetTimerText(UTextBlock* TextWidget);

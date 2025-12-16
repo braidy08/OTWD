@@ -4,3 +4,4 @@ UOTWDMetagameMissionType::UOTWDMetagameMissionType() {
     this->BonusForPreferredClassPresent = 1;
 }
 
+

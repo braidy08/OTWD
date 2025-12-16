@@ -15,5 +15,6 @@ public:
     bool bResetInfluence;
     
     UBTTask_ForgetPerceivedActor();
+
 };
 

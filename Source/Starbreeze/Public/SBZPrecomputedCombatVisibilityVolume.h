@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Volume.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Volume -FallbackName=Volume
 #include "SBZPrecomputedCombatVisibilityVolume.generated.h"
 
 class ASBZPrecomputedCombatVisibilityVolume;
@@ -15,6 +15,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ASBZPrecomputedCombatVisibilityVolume*> ConnectedVisibilityVolumes;
     
-    ASBZPrecomputedCombatVisibilityVolume();
+    ASBZPrecomputedCombatVisibilityVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

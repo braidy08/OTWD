@@ -2,6 +2,44 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
+USBZInteractableComponent::USBZInteractableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->bInteractionInitiallyEnabled = true;
+    this->HighlightOutlineSchematic = NULL;
+    this->IsInteractableOutlineSchematic = NULL;
+    this->InteractionTemplate = NULL;
+    this->bIsLoot = false;
+    this->bOverrideDuration = false;
+    this->bOverrideText = false;
+    this->bOverrideNotAllowedText = false;
+    this->bOverrideOccupiedText = false;
+    this->bOverrideMaxDistance = false;
+    this->bOverridePriority = false;
+    this->bOverrideMaxNumInteractors = false;
+    this->bOverridePlayAnimationOnInteraction = false;
+    this->bOverrideAnimationType = false;
+    this->bOverrideInteractionWidgetClass = false;
+    this->bOverrideCanInteractQuery = false;
+    this->bOverrideInteractStartVoiceComment = false;
+    this->bOverrideInteractSuccessVoiceComment = false;
+    this->Duration = 1;
+    this->NotAllowedIcon = NULL;
+    this->MaxDistance = 1;
+    this->Priority = 0;
+    this->MaxNumInteractors = 0;
+    this->bPlayAnimationOnInteraction = true;
+    this->AnimationType = EInteractionAnimationType::Default;
+    this->InteractionWidgetClass = NULL;
+    this->GameplayInteractionQuery = NULL;
+    this->InteractStartVoiceComment = ESBZVoiceComment::None;
+    this->InteractSuccessVoiceComment = ESBZVoiceComment::None;
+    this->bIgnoreGameplayEffectsFromTemplate = false;
+    this->RestrictTo = EInteractionFactionRestriction::NoRestriction;
+    this->bAllowLocalInteraction = true;
+    this->bInteractionEnabled = false;
+    this->InteractionProgress = 1;
+}
+
 void USBZInteractableComponent::SetTemplate(TSubclassOf<USBZInteractableTemplate> NewTemplate) {
 }
 
@@ -165,40 +203,4 @@ void USBZInteractableComponent::GetLifetimeReplicatedProps(TArray<FLifetimePrope
     DOREPLIFETIME(USBZInteractableComponent, InteractionProgress);
 }
 
-USBZInteractableComponent::USBZInteractableComponent() {
-    this->bInteractionInitiallyEnabled = true;
-    this->HighlightOutlineSchematic = NULL;
-    this->IsInteractableOutlineSchematic = NULL;
-    this->InteractionTemplate = NULL;
-    this->bIsLoot = false;
-    this->bOverrideDuration = false;
-    this->bOverrideText = false;
-    this->bOverrideNotAllowedText = false;
-    this->bOverrideOccupiedText = false;
-    this->bOverrideMaxDistance = false;
-    this->bOverridePriority = false;
-    this->bOverrideMaxNumInteractors = false;
-    this->bOverridePlayAnimationOnInteraction = false;
-    this->bOverrideAnimationType = false;
-    this->bOverrideInteractionWidgetClass = false;
-    this->bOverrideCanInteractQuery = false;
-    this->bOverrideInteractStartVoiceComment = false;
-    this->bOverrideInteractSuccessVoiceComment = false;
-    this->Duration = 1;
-    this->NotAllowedIcon = NULL;
-    this->MaxDistance = 1;
-    this->Priority = 0;
-    this->MaxNumInteractors = 0;
-    this->bPlayAnimationOnInteraction = true;
-    this->AnimationType = EInteractionAnimationType::Default;
-    this->InteractionWidgetClass = NULL;
-    this->GameplayInteractionQuery = NULL;
-    this->InteractStartVoiceComment = ESBZVoiceComment::None;
-    this->InteractSuccessVoiceComment = ESBZVoiceComment::None;
-    this->bIgnoreGameplayEffectsFromTemplate = false;
-    this->RestrictTo = EInteractionFactionRestriction::NoRestriction;
-    this->bAllowLocalInteraction = true;
-    this->bInteractionEnabled = false;
-    this->InteractionProgress = 1;
-}
 

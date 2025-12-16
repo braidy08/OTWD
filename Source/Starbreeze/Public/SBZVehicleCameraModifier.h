@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Camera/CameraModifier.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraModifier -FallbackName=CameraModifier
 #include "SBZVehicleCameraModifier.generated.h"
 
 class AActor;
@@ -19,6 +19,7 @@ private:
     
 public:
     USBZVehicleCameraModifier();
+
     UFUNCTION(BlueprintCallable)
     void SetVehicle(AActor* TargetVehicle);
     

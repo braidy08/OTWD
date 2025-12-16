@@ -37,6 +37,7 @@ private:
     
 public:
     USBZTeleportationTimeWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidget(UTextBlock* TimerText, UTextBlock* WarningText);
     

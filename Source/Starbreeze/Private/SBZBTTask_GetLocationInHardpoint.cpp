@@ -4,3 +4,4 @@ USBZBTTask_GetLocationInHardpoint::USBZBTTask_GetLocationInHardpoint() {
     this->FilterClass = NULL;
 }
 
+

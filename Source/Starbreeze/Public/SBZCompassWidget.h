@@ -49,6 +49,7 @@ private:
     
 public:
     USBZCompassWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupCompass(UImage* CompassGrid, UCanvasPanel* CanvasPanel);
     

@@ -5,3 +5,4 @@ UPathNetworkSettings::UPathNetworkSettings() {
     this->ConnectionMinimumDistanceInterval = 0;
 }
 
+

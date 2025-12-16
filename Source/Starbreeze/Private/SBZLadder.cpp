@@ -1,10 +1,39 @@
 #include "SBZLadder.h"
-#include "Components/BoxComponent.h"
-#include "Components/ChildActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ChildActorComponent -FallbackName=ChildActorComponent
 #include "Components/SceneComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "SBZInteractableComponent.h"
 #include "SBZNavArea_Ladder.h"
+
+ASBZLadder::ASBZLadder(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    this->TriggerAreaThickness = 1;
+    this->TriggerAreaHeightExceed = 1;
+    this->TreadStep = 1;
+    this->LadderOrientation = ESBZLadderOrientation::FrontSide;
+    this->TriggerArea = CreateDefaultSubobject<UBoxComponent>(TEXT("TriggerArea"));
+    this->LadderPartCount = 0;
+    this->TopMesh = NULL;
+    this->MiddleMesh = NULL;
+    this->BottomMesh = NULL;
+    this->bGhostMode = false;
+    this->bServerGhostMode = false;
+    this->bCanEverBeInGhostMode = false;
+    this->bLadderActive = true;
+    this->InteractableComponent = CreateDefaultSubobject<USBZInteractableComponent>(TEXT("InteractableComponent"));
+    this->NavLinkChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("NavLinkChildActorComponent"));
+    this->NavLinkDirection = ESBZLadderNavLinkDirection::BottomToTop;
+    this->NavArea = USBZNavArea_Ladder::StaticClass();
+    this->NavLinkSnapRadius = 1;
+    this->bHackUpdateLadder = false;
+    this->Scene = (USceneComponent*)RootComponent;
+    this->TriggerArea->SetupAttachment(RootComponent);
+}
 
 void ASBZLadder::ShowGhost_Implementation(bool bShow) {
 }
@@ -95,26 +124,4 @@ void ASBZLadder::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifeti
     DOREPLIFETIME(ASBZLadder, bLadderActive);
 }
 
-ASBZLadder::ASBZLadder() {
-    this->TriggerAreaThickness = 1;
-    this->TriggerAreaHeightExceed = 1;
-    this->TreadStep = 1;
-    this->LadderOrientation = ESBZLadderOrientation::FrontSide;
-    this->TriggerArea = CreateDefaultSubobject<UBoxComponent>(TEXT("TriggerArea"));
-    this->LadderPartCount = 0;
-    this->TopMesh = NULL;
-    this->MiddleMesh = NULL;
-    this->BottomMesh = NULL;
-    this->bGhostMode = false;
-    this->bServerGhostMode = false;
-    this->bCanEverBeInGhostMode = false;
-    this->bLadderActive = true;
-    this->InteractableComponent = CreateDefaultSubobject<USBZInteractableComponent>(TEXT("InteractableComponent"));
-    this->NavLinkChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("NavLinkChildActorComponent"));
-    this->NavLinkDirection = ESBZLadderNavLinkDirection::BottomToTop;
-    this->NavArea = USBZNavArea_Ladder::StaticClass();
-    this->NavLinkSnapRadius = 1;
-    this->bHackUpdateLadder = false;
-    this->Scene = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-}
 

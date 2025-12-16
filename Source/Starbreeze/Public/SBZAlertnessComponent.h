@@ -2,7 +2,6 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
-#include "AlertnessChangedDelegateDelegate.h"
 #include "AlertnessLevelChangedDelegateDelegate.h"
 #include "ESBZSenseType.h"
 #include "EnterAlertnessStateDelegateDelegate.h"
@@ -15,6 +14,7 @@
 
 class AActor;
 class AController;
+class ANavigationData;
 class ASBZAICharacter;
 class ASBZAIController;
 class ASBZHumanAICharacter;
@@ -29,9 +29,6 @@ class STARBREEZE_API USBZAlertnessComponent : public UActorComponent {
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAlertnessLevelChangedDelegate OnAlertnessLevelChanged;
-    
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FAlertnessChangedDelegate OnAlertnessValueChanged;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnRecruitedDelegate OnRecruited;
@@ -103,6 +100,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool CanHandleTargetAlertOutline;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bShowAlertWidget;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FVector LastValidInfluenceLocation;
@@ -131,9 +131,6 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FSBZAlertnessLevelIdHelper OldAlertLevel;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_AlertnessValue, meta=(AllowPrivateAccess=true))
-    uint8 PackedAlertnessValue;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_AlertnessLevel, meta=(AllowPrivateAccess=true))
     FSBZAlertnessLevelRep AlertnessLevel;
     
@@ -141,9 +138,10 @@ private:
     AActor* LastValidInfluenceTarget;
     
 public:
-    USBZAlertnessComponent();
+    USBZAlertnessComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void UpdateRecruitment(bool bStateChanged, FSBZAlertnessLevelIdHelper CurrentState, float DeltaTime);
     
@@ -182,18 +180,25 @@ public:
     
 private:
     UFUNCTION(BlueprintCallable)
-    void OnRep_AlertnessValue();
-    
-    UFUNCTION(BlueprintCallable)
     void OnRep_AlertnessLevel();
     
 public:
     UFUNCTION(BlueprintCallable)
     void OnOwnerDie();
     
+protected:
+    UFUNCTION(BlueprintCallable)
+    void OnNavMeshGenerated(ANavigationData* NavData);
+    
 private:
     UFUNCTION(BlueprintCallable)
     void OnDamageTaken(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* DamageInstigator, AActor* DamageCauser);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnArmorHit(AActor* ArmorOwner, AActor* HitArmor, float Damage, const UDamageType* DamageType, AController* DamageInstigator, AActor* DamageCauser);
+    
+    UFUNCTION(BlueprintCallable)
+    void LeaveAlertnessState(FSBZAlertnessLevelIdHelper OldState);
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -227,9 +232,6 @@ public:
     FSBZAlertnessLevelIdHelper GetCurrentAlertLevel() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    float GetAlertnessValue() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     FSBZAlertnessLevelIdHelper GetAlertLevel() const;
     
     UFUNCTION(BlueprintCallable)
@@ -237,6 +239,10 @@ public:
     
     UFUNCTION(BlueprintCallable)
     bool ForceAlertLevel(FSBZAlertnessLevelIdHelper TargetState, float Alertness);
+    
+private:
+    UFUNCTION(BlueprintCallable)
+    void EnterAlertnessState(FSBZAlertnessLevelIdHelper NewState);
     
 };
 

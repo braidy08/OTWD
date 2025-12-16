@@ -18,7 +18,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDebugVisualizeVisibleFeedback;
     
-    USBZPlayerDirectionalFeedbackComponent();
+    USBZPlayerDirectionalFeedbackComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetVisibleFeedbacksList(TArray<FSBZLocationFeedbackData>& OutArray) const;
     

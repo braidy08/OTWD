@@ -21,3 +21,4 @@ USBZWeaponAISchematic::USBZWeaponAISchematic() {
     this->BurstsBeforeMustReload = 0;
 }
 
+

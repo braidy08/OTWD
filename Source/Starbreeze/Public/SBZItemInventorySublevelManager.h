@@ -11,7 +11,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FString, FSBZPuzzleItemZone> PuzzleItemZones;
     
-    ASBZItemInventorySublevelManager();
+    ASBZItemInventorySublevelManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void DeactivateZone(const FString& ZoneName);
     

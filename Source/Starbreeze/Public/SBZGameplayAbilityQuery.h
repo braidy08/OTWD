@@ -28,5 +28,6 @@ public:
     FSBZCompositeGameplayAbilityQuery CompositeQuery;
     
     USBZGameplayAbilityQuery();
+
 };
 

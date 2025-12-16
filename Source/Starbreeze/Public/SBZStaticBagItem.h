@@ -5,7 +5,6 @@
 #include "SBZBagItem.h"
 #include "SBZStaticBagItem.generated.h"
 
-class UMeshComponent;
 class USBZOutlineComponent;
 class UStaticMeshComponent;
 
@@ -18,16 +17,11 @@ protected:
     UStaticMeshComponent* PickedUpMesh;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
-    UStaticMeshComponent* OriginalMesh;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
-    UMeshComponent* CurrentMesh;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USBZOutlineComponent* OutlineComponent;
     
 public:
-    ASBZStaticBagItem();
+    ASBZStaticBagItem(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Remove(bool bDestroyItem);
     

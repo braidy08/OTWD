@@ -8,5 +8,6 @@ class STARBREEZE_API UPathPathfinder : public UObject {
     GENERATED_BODY()
 public:
     UPathPathfinder();
+
 };
 

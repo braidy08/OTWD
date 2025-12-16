@@ -8,6 +8,5 @@ enum class EDefaultBehaviour : uint8 {
     S_Idle,
     S_ReturnHome,
     S_RandomRoaming,
-    S_Max,
 };
 

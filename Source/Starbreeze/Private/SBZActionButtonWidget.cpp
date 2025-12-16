@@ -1,5 +1,11 @@
 #include "SBZActionButtonWidget.h"
 
+USBZActionButtonWidget::USBZActionButtonWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->ClickButton = NULL;
+    this->ActionImage = NULL;
+    this->ButtonText = NULL;
+}
+
 void USBZActionButtonWidget::UnbindInput() {
 }
 
@@ -15,9 +21,4 @@ void USBZActionButtonWidget::OnInputPressed() {
 void USBZActionButtonWidget::OnButtonClicked() {
 }
 
-USBZActionButtonWidget::USBZActionButtonWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->ClickButton = NULL;
-    this->ActionImage = NULL;
-    this->ButtonText = NULL;
-}
 

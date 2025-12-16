@@ -58,6 +58,7 @@ private:
     
 public:
     USBZAbilityElementBaseWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupData(TSubclassOf<UGameplayAbility> Ability, const FGameplayAttribute& AmmoAttribute, const FName& ActionName);
     

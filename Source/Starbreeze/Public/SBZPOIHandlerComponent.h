@@ -18,6 +18,7 @@ private:
     USBZActAnimationSetSchematic* AnimationSet;
     
 public:
-    UDEPRECATED_SBZPOIHandlerComponent();
+    UDEPRECATED_SBZPOIHandlerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

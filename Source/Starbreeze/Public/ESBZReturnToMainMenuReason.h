@@ -8,6 +8,7 @@ enum class ESBZReturnToMainMenuReason : uint8 {
     UserRequest,
     PartyHostRequest,
     MatchmakingTimeout,
+    MissionEnded,
     QuickMatchLostConnectionToSession,
     MatchmakingError,
     InviteProcessing,

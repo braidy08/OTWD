@@ -26,6 +26,7 @@ protected:
     
 public:
     USBZEncounterPhase();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool DoesPhaseAllowIntenseSpawning() const;
     

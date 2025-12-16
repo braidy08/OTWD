@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
+#include "AttributeSet.h"
 #include "SBZAttributeSetOverflowBase.generated.h"
 
 UCLASS(Abstract, Blueprintable)
@@ -13,5 +14,6 @@ protected:
     
 public:
     USBZAttributeSetOverflowBase();
+
 };
 

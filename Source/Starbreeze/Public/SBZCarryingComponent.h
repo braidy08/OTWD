@@ -58,7 +58,8 @@ protected:
     FVector PlacementOffset;
     
 public:
-    USBZCarryingComponent();
+    USBZCarryingComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool UpdateCanRelease();
     

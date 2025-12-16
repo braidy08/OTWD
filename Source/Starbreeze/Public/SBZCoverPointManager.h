@@ -34,6 +34,7 @@ private:
     
 public:
     USBZCoverPointManager();
+
     UFUNCTION(BlueprintCallable)
     ASBZCoverPoint* K2GetBestCoverPointWithFSearch(UPARAM(Ref) FBoxSphereBounds& Bounds, ASBZCoverPoint* CurCoverPoint, const FSBZCoverSearch& CoverSearch, const TArray<ASBZCoverPoint*> RejectedCoverPoints);
     

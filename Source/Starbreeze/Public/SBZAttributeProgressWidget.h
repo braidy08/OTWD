@@ -48,7 +48,6 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZProgressAnimType IncreaseAnimType;
     
-private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASBZPlayerCharacter* OwnerCharacter;
     
@@ -99,6 +98,7 @@ private:
     
 public:
     USBZAttributeProgressWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UMaterialInstanceDynamic* CurrentMaterialInstance, UMaterialInstanceDynamic* DecreaseMaterialInstance, UMaterialInstanceDynamic* IncreaseMaterialInstance, UMaterialInstanceDynamic* MissingMaterialInstance, UMaterialInstanceDynamic* MissingAnimMaterialInstance);
     

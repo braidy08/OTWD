@@ -1,6 +1,21 @@
 #include "OTWDCampDefenceFortificationAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDCampDefenceFortificationAttributeSet::UOTWDCampDefenceFortificationAttributeSet() {
+    this->CampDefenceFortificationBonusUses = 1;
+    this->CampDefenceFortificationUses = 1;
+    this->BarrierFortificationBonusUses = 1;
+    this->BarrierFortificationUses = 1;
+    this->BarbedWireFortificationBonusUses = 1;
+    this->BarbedWireFortificationUses = 1;
+    this->ScrapCannonFortificationBonusUses = 1;
+    this->ScrapCannonFortificationUses = 1;
+    this->SpikeTrapFortificationBonusUses = 1;
+    this->SpikeTrapFortificationUses = 1;
+    this->ExplosiveBarrelFortificationBonusUses = 1;
+    this->ExplosiveBarrelFortificationUses = 1;
+}
+
 void UOTWDCampDefenceFortificationAttributeSet::OnRep_SpikeTrapFortificationUses(float OldValue) {
 }
 
@@ -102,18 +117,4 @@ void UOTWDCampDefenceFortificationAttributeSet::GetLifetimeReplicatedProps(TArra
     DOREPLIFETIME(UOTWDCampDefenceFortificationAttributeSet, ExplosiveBarrelFortificationUses);
 }
 
-UOTWDCampDefenceFortificationAttributeSet::UOTWDCampDefenceFortificationAttributeSet() {
-    this->CampDefenceFortificationBonusUses = 1;
-    this->CampDefenceFortificationUses = 1;
-    this->BarrierFortificationBonusUses = 1;
-    this->BarrierFortificationUses = 1;
-    this->BarbedWireFortificationBonusUses = 1;
-    this->BarbedWireFortificationUses = 1;
-    this->ScrapCannonFortificationBonusUses = 1;
-    this->ScrapCannonFortificationUses = 1;
-    this->SpikeTrapFortificationBonusUses = 1;
-    this->SpikeTrapFortificationUses = 1;
-    this->ExplosiveBarrelFortificationBonusUses = 1;
-    this->ExplosiveBarrelFortificationUses = 1;
-}
 

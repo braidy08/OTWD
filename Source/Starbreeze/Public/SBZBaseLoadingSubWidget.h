@@ -8,6 +8,7 @@ class STARBREEZE_API USBZBaseLoadingSubWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     USBZBaseLoadingSubWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetCleanOnTravel(bool CleanOnTravel);
     

@@ -8,5 +8,6 @@ class UOTWDQuestScriptObjectiveDataAsset : public UOTWDQuestObjectiveBaseDataAss
     GENERATED_BODY()
 public:
     UOTWDQuestScriptObjectiveDataAsset();
+
 };
 

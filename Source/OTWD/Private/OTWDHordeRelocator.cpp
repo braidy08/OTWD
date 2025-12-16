@@ -1,5 +1,10 @@
 #include "OTWDHordeRelocator.h"
 
+AOTWDHordeRelocator::AOTWDHordeRelocator(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bCreateRoamingVolume = false;
+    this->SpawnBehaviour = NULL;
+}
+
 void AOTWDHordeRelocator::SetRelocatorEnabled(bool bEnabled) {
 }
 
@@ -10,9 +15,4 @@ bool AOTWDHordeRelocator::IsRelocatorEnabled() {
     return false;
 }
 
-AOTWDHordeRelocator::AOTWDHordeRelocator() {
-    this->SpawnRadius = 1;
-    this->SpawnBehaviour = NULL;
-    this->bIsRelocatorEnabled = true;
-}
 

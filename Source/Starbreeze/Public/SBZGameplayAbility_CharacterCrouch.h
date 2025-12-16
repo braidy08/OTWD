@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayAbility.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbility -FallbackName=GameplayAbility
 #include "SBZGameplayAbility_CharacterCrouch.generated.h"
 
 UCLASS(Blueprintable)
@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGameplayAbility_CharacterCrouch : public UGameplayAbili
     GENERATED_BODY()
 public:
     USBZGameplayAbility_CharacterCrouch();
+
 };
 

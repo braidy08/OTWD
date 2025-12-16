@@ -19,8 +19,9 @@ class STARBREEZE_API USBZUIStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USBZUIStatics();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static void ShowLevelTutorial(const UObject* WorldContextObject, FName TutorialName);
+    static void ShowLevelTutorial(const UObject* WorldContextObject, FName TutorialName, bool bSkipAnimation);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static USBZLevelSchematic* SchematicNetworkToLevel(const UObject* WorldContextObject, const FSBZSchematicNetworkReference& NetworkSchematic);
@@ -47,7 +48,7 @@ public:
     static bool IsLoadingScreenActive(const UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static void HideLevelTutorial(const UObject* WorldContextObject);
+    static void HideLevelTutorial(const UObject* WorldContextObject, bool bSkipAnimation);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetWidgetZOrderValue(ESBZWidgetZOrdering ZOrder);

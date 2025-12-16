@@ -31,6 +31,7 @@ protected:
     
 public:
     USBZAnimNotify_MakeNoise();
+
 private:
     UFUNCTION(BlueprintCallable, meta=(WorldContext="InWorldContextObject"))
     void MakeNoise(ASBZCharacter* InCharacter, USkeletalMeshComponent* InMesh, UObject* InWorldContextObject) const;

@@ -12,6 +12,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     TArray<USBZReducedMeshComponent*> ReducedMeshComponents;
     
-    ASBZReducedMeshSwitchManager();
+    ASBZReducedMeshSwitchManager(const FObjectInitializer& ObjectInitializer);
+
 };
 

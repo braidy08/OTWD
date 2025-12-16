@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DeveloperSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "OTWDMetagameSurviorGameSettings.generated.h"
 
 class UOTWDMetaSchematic;
@@ -8,7 +8,7 @@ class UOTWDMetagameBuildingsRootDataAsset;
 class UOTWDMetagameMissionRootDataAsset;
 class UOTWDMetagameRootSurvivorDataAssets;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=OTWD)
+UCLASS(Blueprintable, DefaultConfig, Config=OTWD)
 class UOTWDMetagameSurviorGameSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -21,6 +21,7 @@ protected:
     
 public:
     UOTWDMetagameSurviorGameSettings();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UOTWDMetagameRootSurvivorDataAssets* GetSurvivorsRootData();
     

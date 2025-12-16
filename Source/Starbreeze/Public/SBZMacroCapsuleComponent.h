@@ -12,7 +12,8 @@ UCLASS(Blueprintable, Deprecated, EditInlineNew, NotPlaceable, ClassGroup=Custom
 class STARBREEZE_API UDEPRECATED_SBZMacroCapsuleComponent : public UCapsuleComponent {
     GENERATED_BODY()
 public:
-    UDEPRECATED_SBZMacroCapsuleComponent();
+    UDEPRECATED_SBZMacroCapsuleComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     static void DeactivateCollision(const FSBZMacroCollisionHandle& Handle);
     

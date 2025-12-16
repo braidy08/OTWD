@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "GameFramework/CharacterMovementComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CharacterMovementComponent -FallbackName=CharacterMovementComponent
 #include "Engine/EngineTypes.h"
 #include "ESBZPlayerMovementState.h"
 #include "SBZCharacterCapsuleSizeChangedDelegate.h"
@@ -164,7 +164,8 @@ private:
     ESBZPlayerMovementState CurrentMovementState;
     
 public:
-    USBZCharacterMovementComponent();
+    USBZCharacterMovementComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void UpdateTargetMaxSpeedMultiplier();

@@ -1,6 +1,14 @@
 #include "SBZWaypointComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZWaypointComponent::USBZWaypointComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->UIMarkerData = NULL;
+    this->UIMarker = NULL;
+    this->bStartVisible = false;
+    this->bIsVisible = false;
+}
+
 void USBZWaypointComponent::SetUIMarkerData(USBZUIMarkerData* NewMarkerData) {
 }
 
@@ -24,10 +32,4 @@ void USBZWaypointComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(USBZWaypointComponent, bIsVisible);
 }
 
-USBZWaypointComponent::USBZWaypointComponent() {
-    this->UIMarkerData = NULL;
-    this->UIMarker = NULL;
-    this->bStartVisible = false;
-    this->bIsVisible = false;
-}
 

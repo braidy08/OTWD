@@ -42,5 +42,6 @@ public:
     int32 MinimalForcePopulation;
     
     USBZEncounterTableSchematic();
+
 };
 

@@ -9,7 +9,6 @@
 class ASBZCharacter;
 class UAkAudioEvent;
 class USBZAIHumanTankComponent;
-class USBZAlertnessComponent;
 class UStaticMeshComponent;
 
 UCLASS(Abstract, Blueprintable)
@@ -38,14 +37,12 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USBZAIHumanTankComponent* TankComponent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
-    USBZAlertnessComponent* Alertness;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAkAudioEvent* HitShieldAudioEvent2D;
     
 public:
-    ASBZTankShield();
+    ASBZTankShield(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetIgnoreDamage(bool bIgnore);
     

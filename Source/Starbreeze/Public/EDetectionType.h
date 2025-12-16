@@ -2,9 +2,10 @@
 #include "CoreMinimal.h"
 #include "EDetectionType.generated.h"
 
-UENUM(BlueprintType)
-enum class EDetectionType : uint8 {
+UENUM()
+enum class EDetectionType : int32 {
     eRay,
     eShape,
+    eCustomFunction,
 };
 

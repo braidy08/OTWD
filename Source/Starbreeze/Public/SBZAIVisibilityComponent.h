@@ -20,6 +20,7 @@ protected:
     bool bHasFinishedBuilding;
     
 public:
-    USBZAIVisibilityComponent();
+    USBZAIVisibilityComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

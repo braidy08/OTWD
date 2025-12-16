@@ -12,5 +12,6 @@ public:
     FRotator Value;
     
     USBZBTTask_BBAddRotator();
+
 };
 

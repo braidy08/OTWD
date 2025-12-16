@@ -14,6 +14,7 @@ private:
     UBoxComponent* BoxComponent;
     
 public:
-    ASBZLightVisibilityBoxShape();
+    ASBZLightVisibilityBoxShape(const FObjectInitializer& ObjectInitializer);
+
 };
 

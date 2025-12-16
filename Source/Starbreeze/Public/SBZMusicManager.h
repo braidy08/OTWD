@@ -29,6 +29,7 @@ protected:
     
 public:
     USBZMusicManager();
+
     UFUNCTION(BlueprintCallable)
     void StopMusic();
     

@@ -71,5 +71,6 @@ public:
     FDateTime TimeLimitedVendorLockTime;
     
     UOTWDMetagameSaveData();
+
 };
 

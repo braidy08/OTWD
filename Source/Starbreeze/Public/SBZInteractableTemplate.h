@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
+#include "UObject/NoExportTypes.h"
 #include "EInteractionAnimationType.h"
 #include "ESBZVoiceComment.h"
 #include "SBZGameplayEffectData.h"
@@ -8,6 +9,7 @@
 #include "SBZInteractableTemplate.generated.h"
 
 class USBZGameplayAbilityQuery;
+class USBZInteractionAnimationSchematic;
 class USBZInteractionWidget;
 class UTexture2D;
 
@@ -60,6 +62,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZVoiceComment InteractSuccessVoiceComment;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FSoftClassPath, USBZInteractionAnimationSchematic*> AnimationMap;
+    
     USBZInteractableTemplate();
+
 };
 

@@ -18,5 +18,6 @@ public:
     uint8 ShootingPointTypes;
     
     USBZEnvQueryTest_ShootingPointType();
+
 };
 

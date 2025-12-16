@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Camera/PlayerCameraManager.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PlayerCameraManager -FallbackName=PlayerCameraManager
 #include "SBZCameraViewRestriction.h"
 #include "SBZLifeTimeLensParticleHandle.h"
-#include "Components/PostProcessComponent.h"
 #include "SBZPlayerCameraManager.generated.h"
 
 class AActor;
 class UParticleSystem;
 class UParticleSystemComponent;
+class UPostProcessComponent;
 class USBZDepthOfFieldComponent;
 class USBZPlayerCameraFeedbackComponent;
 
@@ -49,7 +49,8 @@ private:
     int32 ActiveCameraViewRestrictionId;
     
 public:
-    ASBZPlayerCameraManager();
+    ASBZPlayerCameraManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     UParticleSystemComponent* SpawnLensParticleEffect(UParticleSystem* ParticleSystem, float LifeTime);
     

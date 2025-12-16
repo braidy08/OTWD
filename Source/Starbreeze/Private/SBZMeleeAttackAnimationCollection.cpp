@@ -12,3 +12,4 @@ USBZMeleeAttackAnimationCollection::USBZMeleeAttackAnimationCollection() {
     this->BounceBlendSpace = NULL;
 }
 
+

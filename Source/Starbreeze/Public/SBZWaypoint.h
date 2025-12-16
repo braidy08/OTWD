@@ -69,9 +69,10 @@ private:
     USceneComponent* PivotComponent;
     
 public:
-    ASBZWaypoint();
+    ASBZWaypoint(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetTargetSceneComponent(USceneComponent* InTargetSceneComponent);
     

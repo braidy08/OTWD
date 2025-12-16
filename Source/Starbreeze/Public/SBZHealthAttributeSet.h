@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
+#include "AttributeSet.h"
 #include "SBZHealthAttributeSet.generated.h"
 
 UCLASS(Blueprintable)
@@ -32,8 +33,9 @@ public:
     float IncomingDamageMultiplier;
     
     USBZHealthAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void RegisterHealthEvents();
     

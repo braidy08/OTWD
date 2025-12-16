@@ -58,5 +58,6 @@ public:
     USBZThrowableProjectileSchematic* ThrowableProjectileSchematic;
     
     USBZProjectileSchematic();
+
 };
 

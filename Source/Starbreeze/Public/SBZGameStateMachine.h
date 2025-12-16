@@ -14,6 +14,7 @@ private:
     
 public:
     USBZGameStateMachine();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetCurrentStateNameString();
     

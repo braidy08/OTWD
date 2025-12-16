@@ -5,3 +5,4 @@ USBZAnimNotifyState_DisableFaceAnimation::USBZAnimNotifyState_DisableFaceAnimati
     this->FadeOutTime = 1;
 }
 
+

@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "GameFramework/OnlineReplStructs.h"
+#include "ChatMessageReceivedDelegate.h"
 #include "SBZChatMessage.h"
 #include "SBZWhisperInfo.h"
 #include "SBZChat.generated.h"
@@ -10,8 +11,6 @@ UCLASS(Blueprintable, NotPlaceable, Transient, Config=Game)
 class STARBREEZE_API USBZChat : public UObject {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FChatMessageReceived);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSBZChatMessage> OnlineChatHistory;
     

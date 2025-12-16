@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Templates/SubclassOf.h"
-#include "AI/Navigation/NavModifierComponent.h"
 #include "SBZNavObstacle.generated.h"
 
 class UBoxComponent;
 class UNavArea;
+class UNavModifierComponent;
 
 UCLASS(Blueprintable)
 class STARBREEZE_API ASBZNavObstacle : public AActor {
@@ -29,7 +29,8 @@ protected:
     UBoxComponent* BoxComponent;
     
 public:
-    ASBZNavObstacle();
+    ASBZNavObstacle(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEnable() const;
     

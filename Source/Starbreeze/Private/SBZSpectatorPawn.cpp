@@ -1,8 +1,8 @@
 #include "SBZSpectatorPawn.h"
-#include "Camera/CameraComponent.h"
-#include "GameFramework/SpringArmComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraComponent -FallbackName=CameraComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SpringArmComponent -FallbackName=SpringArmComponent
 
-ASBZSpectatorPawn::ASBZSpectatorPawn() {
+ASBZSpectatorPawn::ASBZSpectatorPawn(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->HUDWidgetClass = NULL;
     this->SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
     this->SpectateCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("SpectateCamera"));
@@ -10,5 +10,8 @@ ASBZSpectatorPawn::ASBZSpectatorPawn() {
     this->AttachSocket = TEXT("Hips");
     this->SpawnedHUDWidget = NULL;
     this->SpectateTarget = NULL;
+    this->SpectateCamera->SetupAttachment(SpringArm);
+    this->SpringArm->SetupAttachment(RootComponent);
 }
+
 

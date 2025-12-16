@@ -13,5 +13,6 @@ public:
     TMap<ESBZDifficulty, FSBZFiringPermissionData> ShooterDifficulty;
     
     USBZFiringPermissionSchematic();
+
 };
 

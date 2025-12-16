@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnMaterialInstanceAssetLoadedDelegate.h"
 #include "SBZLoadAsset.h"
 #include "SBZLoadMaterialInstanceAsset.generated.h"
 
@@ -10,12 +11,11 @@ UCLASS(Blueprintable)
 class STARBREEZE_API USBZLoadMaterialInstanceAsset : public USBZLoadAsset {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMaterialInstanceAssetLoaded, UMaterialInstance*, Material);
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnMaterialInstanceAssetLoaded Completed;
     
     USBZLoadMaterialInstanceAsset();
+
     UFUNCTION(BlueprintCallable)
     static USBZLoadMaterialInstanceAsset* AsyncLoadMaterialInstanceAsset(TSoftObjectPtr<UMaterialInstance> MaterialAsset);
     

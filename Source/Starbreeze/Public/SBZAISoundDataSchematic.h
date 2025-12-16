@@ -33,5 +33,6 @@ public:
     USBZNoiseSchematic* AINoiseDataRun;
     
     USBZAISoundDataSchematic();
+
 };
 

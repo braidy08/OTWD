@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Camera/CameraComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraComponent -FallbackName=CameraComponent
 #include "CameraViewportStateSignatureDelegate.h"
 #include "SBZCameraComponent.generated.h"
 
@@ -28,7 +28,8 @@ private:
     bool bCheckCollision;
     
 public:
-    USBZCameraComponent();
+    USBZCameraComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsWorldPointInsideViewport(const FVector& WorldPoint) const;
     

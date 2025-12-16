@@ -4,3 +4,4 @@ USBZBTDecorator_FiringPermissionHasToken::USBZBTDecorator_FiringPermissionHasTok
     this->bHasAnyToken = false;
 }
 
+

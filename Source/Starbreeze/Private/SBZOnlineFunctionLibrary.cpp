@@ -1,5 +1,8 @@
 #include "SBZOnlineFunctionLibrary.h"
 
+USBZOnlineFunctionLibrary::USBZOnlineFunctionLibrary() {
+}
+
 void USBZOnlineFunctionLibrary::UnmutePlayer(UObject* WorldContextObject, FUniqueNetIdRepl UniqueNetId) {
 }
 
@@ -167,6 +170,4 @@ void USBZOnlineFunctionLibrary::ActivateProfileOverlay(UObject* WorldContextObje
 void USBZOnlineFunctionLibrary::ActivatePartyInviteOverlay(UObject* WorldContextObject) {
 }
 
-USBZOnlineFunctionLibrary::USBZOnlineFunctionLibrary() {
-}
 

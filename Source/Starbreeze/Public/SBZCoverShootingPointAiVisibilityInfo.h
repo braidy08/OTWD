@@ -12,7 +12,7 @@ public:
     ESBZShootingPointType ShootingType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSBZAIVisibilityLeafNode AIVisibilityNode;
+    FSBZAIVisibilityLeafNode AiVisibilityNode;
     
     STARBREEZE_API FSBZCoverShootingPointAiVisibilityInfo();
 };

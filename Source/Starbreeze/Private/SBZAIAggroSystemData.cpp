@@ -13,6 +13,5 @@ FSBZAIAggroSystemData::FSBZAIAggroSystemData() {
     this->AggroDecayDistanceRateClose = 1;
     this->AggroDecayDistanceRateMedium = 1;
     this->AggroDecayDistanceRateFar = 1;
-    this->MaxTimeAttackingNewThreats = 1;
 }
 

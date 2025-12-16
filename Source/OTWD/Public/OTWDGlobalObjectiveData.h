@@ -11,5 +11,6 @@ public:
     FText DisplayText;
     
     UOTWDGlobalObjectiveData();
+
 };
 

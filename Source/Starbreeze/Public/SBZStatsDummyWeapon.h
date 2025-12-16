@@ -26,6 +26,7 @@ protected:
     USBZMeleeAttributeSet* MeleeAttributeSet;
     
 public:
-    ASBZStatsDummyWeapon();
+    ASBZStatsDummyWeapon(const FObjectInitializer& ObjectInitializer);
+
 };
 

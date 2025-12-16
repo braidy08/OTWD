@@ -1,10 +1,10 @@
 #include "SBZChatSettings.h"
 
+USBZChatSettings::USBZChatSettings() {
+}
+
 USBZChatGameSettings* USBZChatSettings::GetChatSettings() {
     return NULL;
 }
 
-USBZChatSettings::USBZChatSettings() {
-    this->CachedSchematic = NULL;
-}
 

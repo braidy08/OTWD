@@ -11,3 +11,4 @@ USBZBagTypeSchematic::USBZBagTypeSchematic() {
     this->MissionReward = NULL;
 }
 
+

@@ -11,6 +11,7 @@ class STARBREEZE_API USBZSpectatorTargetWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     USBZSpectatorTargetWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void SetTargetText(UTextBlock* TextWidget);

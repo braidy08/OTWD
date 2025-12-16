@@ -22,6 +22,7 @@ private:
     
 public:
     UOTWDMetaSurvivorManager();
+
     UFUNCTION(BlueprintCallable)
     void SurvivorAbandonCamp(UOTWDMetagameSurvivor* Survivor, bool& bOutDidSurvivorAbandonCamp);
     

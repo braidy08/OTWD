@@ -1,5 +1,9 @@
 #include "SBZAIVehicleServiceComponent.h"
 
+USBZAIVehicleServiceComponent::USBZAIVehicleServiceComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->PathDistance = 1;
+}
+
 void USBZAIVehicleServiceComponent::Multicast_OnPossessVehicle_Implementation(FVector RelativeLocation) {
 }
 
@@ -31,7 +35,4 @@ TArray<FVector> USBZAIVehicleServiceComponent::GetNavPath() const {
 void USBZAIVehicleServiceComponent::DebugDrawPath(const TArray<FVector>& PathToDraw) {
 }
 
-USBZAIVehicleServiceComponent::USBZAIVehicleServiceComponent() {
-    this->PathDistance = 1;
-}
 

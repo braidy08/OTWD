@@ -4,3 +4,4 @@ USBZStateMachine::USBZStateMachine() {
     this->CurrentState = NULL;
 }
 
+

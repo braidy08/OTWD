@@ -1,5 +1,6 @@
 #include "SBZNewsfeedDownloader.h"
 
-ASBZNewsfeedDownloader::ASBZNewsfeedDownloader() {
+ASBZNewsfeedDownloader::ASBZNewsfeedDownloader(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

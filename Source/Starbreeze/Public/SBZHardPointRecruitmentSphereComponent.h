@@ -7,6 +7,7 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class STARBREEZE_API USBZHardPointRecruitmentSphereComponent : public USphereComponent {
     GENERATED_BODY()
 public:
-    USBZHardPointRecruitmentSphereComponent();
+    USBZHardPointRecruitmentSphereComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

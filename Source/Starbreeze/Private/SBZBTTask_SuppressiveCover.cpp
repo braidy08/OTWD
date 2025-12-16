@@ -1,6 +1,7 @@
 #include "SBZBTTask_SuppressiveCover.h"
 
 USBZBTTask_SuppressiveCover::USBZBTTask_SuppressiveCover() {
+    this->NodeName = TEXT("Suppressive Cover");
     this->bShootFromCover = false;
     this->bUseProvider = true;
     this->RandomChanceValue = 1;
@@ -9,4 +10,5 @@ USBZBTTask_SuppressiveCover::USBZBTTask_SuppressiveCover() {
     this->CoverHeightOffset = 1;
     this->bShootAtCover = true;
 }
+
 

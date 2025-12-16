@@ -1,9 +1,34 @@
 #include "SBZVehicle.h"
-#include "Components/SphereComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 #include "Net/UnrealNetwork.h"
 #include "SBZCameraExtension.h"
 #include "SBZInteractableComponent.h"
 #include "SBZVehicleDriverComponent.h"
+#include "SBZWheeledVehicleMovementComponent4W.h"
+
+ASBZVehicle::ASBZVehicle(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USBZWheeledVehicleMovementComponent4W>(TEXT("MovementComp"))) {
+    this->bNetUseOwnerRelevancy = true;
+    this->DriverSeat = CreateDefaultSubobject<USBZVehicleDriverComponent>(TEXT("DriverSeat"));
+    this->Interaction = CreateDefaultSubobject<USBZInteractableComponent>(TEXT("Interaction"));
+    this->AvoidanceSphere = CreateDefaultSubobject<USphereComponent>(TEXT("AvoidanceSphere"));
+    this->DriverPawn = NULL;
+    this->CameraExtension = CreateDefaultSubobject<USBZCameraExtension>(TEXT("CameraExtension"));
+    this->ChargeModule = NULL;
+    this->HUDMenu = NULL;
+    this->ViewYawMin = 1;
+    this->BoostPower = 1;
+    this->BoostConsumptionSpeed = 1;
+    this->BoostRechargeSpeed = 1;
+    this->BoostRechargeTime = 1;
+    this->ViewYawMax = 1;
+    this->bIsOccupied = false;
+    this->bEnableBoost = true;
+    this->bBoost = false;
+    this->bCanBoost = true;
+    this->CameraExtension->SetupAttachment(RootComponent);
+    this->AvoidanceSphere->SetupAttachment(RootComponent);
+    this->DriverSeat->SetupAttachment(RootComponent);
+}
 
 void ASBZVehicle::SetInputEnabled(bool bEnable) {
 }
@@ -111,23 +136,4 @@ void ASBZVehicle::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifet
     DOREPLIFETIME(ASBZVehicle, bCanBoost);
 }
 
-ASBZVehicle::ASBZVehicle() {
-    this->DriverSeat = CreateDefaultSubobject<USBZVehicleDriverComponent>(TEXT("DriverSeat"));
-    this->Interaction = CreateDefaultSubobject<USBZInteractableComponent>(TEXT("Interaction"));
-    this->AvoidanceSphere = CreateDefaultSubobject<USphereComponent>(TEXT("AvoidanceSphere"));
-    this->DriverPawn = NULL;
-    this->CameraExtension = CreateDefaultSubobject<USBZCameraExtension>(TEXT("CameraExtension"));
-    this->ChargeModule = NULL;
-    this->HUDMenu = NULL;
-    this->ViewYawMin = 1;
-    this->BoostPower = 1;
-    this->BoostConsumptionSpeed = 1;
-    this->BoostRechargeSpeed = 1;
-    this->BoostRechargeTime = 1;
-    this->ViewYawMax = 1;
-    this->bIsOccupied = false;
-    this->bEnableBoost = true;
-    this->bBoost = false;
-    this->bCanBoost = true;
-}
 

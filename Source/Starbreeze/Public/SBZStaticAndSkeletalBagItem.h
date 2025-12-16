@@ -18,6 +18,7 @@ protected:
     UBoxComponent* InteractionBoxShape;
     
 public:
-    ASBZStaticAndSkeletalBagItem();
+    ASBZStaticAndSkeletalBagItem(const FObjectInitializer& ObjectInitializer);
+
 };
 

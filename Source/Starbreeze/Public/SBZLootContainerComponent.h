@@ -2,8 +2,12 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "ESBZLootInteractableState.h"
+#include "LootContainerInteractableDelegate.h"
+#include "OnIsRelevantChangedDelegate.h"
 #include "OnItemsChangedLCDelegate.h"
 #include "SBZAutoPickUpItemCount.h"
+#include "SetContainerInteractableDelegate.h"
+#include "SetupAllInteractablesDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "SBZLootContainerComponent.generated.h"
 
@@ -15,11 +19,6 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZLootContainerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSetupAllInteractables, const TArray<USBZInteractableComponent*>&, Interactables);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSetContainerInteractable, USBZInteractableComponent*, Interactable, int32, InteractableIndex);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FOnIsRelevantChanged, USBZInteractableComponent*, Interactable, USBZBaseInteractorComponent*, Interactor, bool, bIsRelevant, int32, InteractableIndex);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FLootContainerInteractable, USBZInteractableComponent*, Interactable, int32, InteractableIndex, USBZBaseInteractorComponent*, Interactor);
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLootContainerInteractable OnStartLootingContainer;
     
@@ -77,9 +76,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_ExtraInteractableStates, meta=(AllowPrivateAccess=true))
     TArray<ESBZLootInteractableState> ExtraInteractableStates;
     
-    USBZLootContainerComponent();
+    USBZLootContainerComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetNumInteractables(uint8 InNumInteractables);
     
@@ -120,26 +120,26 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     uint8 GetNumInteractables() const;
     
-    UFUNCTION(BlueprintCallable)
-    int32 GetMaxLootCapacity();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetMaxLootCapacity() const;
     
-    UFUNCTION(BlueprintCallable)
-    void GetInteractableStates(TArray<ESBZLootInteractableState>& OutStates);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    void GetInteractableStates(TArray<ESBZLootInteractableState>& OutStates) const;
     
-    UFUNCTION(BlueprintCallable)
-    ESBZLootInteractableState GetInteractableStateByIndex(uint8 InteractableIndex);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    ESBZLootInteractableState GetInteractableStateByIndex(uint8 InteractableIndex) const;
     
-    UFUNCTION(BlueprintCallable)
-    ESBZLootInteractableState GetInteractableState(USBZInteractableComponent* Interactable);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    ESBZLootInteractableState GetInteractableState(USBZInteractableComponent* Interactable) const;
     
-    UFUNCTION(BlueprintCallable)
-    int32 GetInteractableIndex(USBZInteractableComponent* Interactable);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetInteractableIndex(USBZInteractableComponent* Interactable) const;
     
-    UFUNCTION(BlueprintCallable)
-    void GetInteractableComponents(TArray<USBZInteractableComponent*>& OutComponents);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    void GetInteractableComponents(TArray<USBZInteractableComponent*>& OutComponents) const;
     
-    UFUNCTION(BlueprintCallable)
-    USBZInteractableComponent* GetInteractableByIndex(uint8 InteractableIndex);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    USBZInteractableComponent* GetInteractableByIndex(uint8 InteractableIndex) const;
     
 };
 

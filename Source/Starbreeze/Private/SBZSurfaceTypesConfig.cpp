@@ -7,6 +7,7 @@ USBZSurfaceTypesConfig::USBZSurfaceTypesConfig() {
     this->FootstepDecalAmount = 0;
     this->BloodSplatterDecalAmount = 0;
     this->DecalFadeOutDuration = 1;
-    this->SurfaceData.AddDefaulted(46);
+    this->SurfaceData.AddDefaulted(47);
 }
+
 

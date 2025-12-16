@@ -1,6 +1,28 @@
 #include "SBZAlertnessComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZAlertnessComponent::USBZAlertnessComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->bAutoActivate = true;
+    this->StateMachine = NULL;
+    this->TrackUnseenTargetDistanceLimitMultiplier = 1;
+    this->bForceInfluenceOnDamage = false;
+    this->bForceStateOnDamage = false;
+    this->ForceAlertnessOnDamage = 1;
+    this->bTriggerRecruitmentOnDamageStateChange = false;
+    this->SecondsSinceLastRecruitment = 4294967295;
+    this->CanHandleTargetAlertOutline = false;
+    this->bShowAlertWidget = true;
+    this->LastValidInfluenceSenseType = ESBZSenseType::SenseType_Sight;
+    this->RecruitmentBufferTime = 1;
+    this->TrackUnseenTargetDistanceSq = 1;
+    this->AIOwnerCharacter = NULL;
+    this->OwnerController = NULL;
+    this->HumanAIOwnerCharacter = NULL;
+    this->AggroSystemComponent = NULL;
+    this->LastValidInfluenceTarget = NULL;
+}
+
 void USBZAlertnessComponent::UpdateRecruitment_Implementation(bool bStateChanged, FSBZAlertnessLevelIdHelper CurrentState, float DeltaTime) {
 }
 
@@ -38,16 +60,22 @@ void USBZAlertnessComponent::Recruited_Implementation(USBZAlertnessComponent* Re
 void USBZAlertnessComponent::Recruit(float Radius, float Alertness, int32 Num, bool bRequireLineOfSight, bool bIsOngoingRecruitment) {
 }
 
-void USBZAlertnessComponent::OnRep_AlertnessValue() {
-}
-
 void USBZAlertnessComponent::OnRep_AlertnessLevel() {
 }
 
 void USBZAlertnessComponent::OnOwnerDie() {
 }
 
+void USBZAlertnessComponent::OnNavMeshGenerated(ANavigationData* NavData) {
+}
+
 void USBZAlertnessComponent::OnDamageTaken(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* DamageInstigator, AActor* DamageCauser) {
+}
+
+void USBZAlertnessComponent::OnArmorHit(AActor* ArmorOwner, AActor* HitArmor, float Damage, const UDamageType* DamageType, AController* DamageInstigator, AActor* DamageCauser) {
+}
+
+void USBZAlertnessComponent::LeaveAlertnessState(FSBZAlertnessLevelIdHelper OldState) {
 }
 
 USBZAlertnessStateMachine* USBZAlertnessComponent::GetStateMachine() const {
@@ -90,10 +118,6 @@ FSBZAlertnessLevelIdHelper USBZAlertnessComponent::GetCurrentAlertLevel() const 
     return FSBZAlertnessLevelIdHelper{};
 }
 
-float USBZAlertnessComponent::GetAlertnessValue() const {
-    return 0.0f;
-}
-
 FSBZAlertnessLevelIdHelper USBZAlertnessComponent::GetAlertLevel() const {
     return FSBZAlertnessLevelIdHelper{};
 }
@@ -106,31 +130,14 @@ bool USBZAlertnessComponent::ForceAlertLevel(FSBZAlertnessLevelIdHelper TargetSt
     return false;
 }
 
+void USBZAlertnessComponent::EnterAlertnessState(FSBZAlertnessLevelIdHelper NewState) {
+}
+
 void USBZAlertnessComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
-    DOREPLIFETIME(USBZAlertnessComponent, PackedAlertnessValue);
     DOREPLIFETIME(USBZAlertnessComponent, AlertnessLevel);
     DOREPLIFETIME(USBZAlertnessComponent, LastValidInfluenceTarget);
 }
 
-USBZAlertnessComponent::USBZAlertnessComponent() {
-    this->StateMachine = NULL;
-    this->TrackUnseenTargetDistanceLimitMultiplier = 1;
-    this->bForceInfluenceOnDamage = false;
-    this->bForceStateOnDamage = false;
-    this->ForceAlertnessOnDamage = 1;
-    this->bTriggerRecruitmentOnDamageStateChange = false;
-    this->SecondsSinceLastRecruitment = 4294967295;
-    this->CanHandleTargetAlertOutline = false;
-    this->LastValidInfluenceSenseType = ESBZSenseType::SenseType_Sight;
-    this->RecruitmentBufferTime = 1;
-    this->TrackUnseenTargetDistanceSq = 1;
-    this->AIOwnerCharacter = NULL;
-    this->OwnerController = NULL;
-    this->HumanAIOwnerCharacter = NULL;
-    this->AggroSystemComponent = NULL;
-    this->PackedAlertnessValue = 0;
-    this->LastValidInfluenceTarget = NULL;
-}
 

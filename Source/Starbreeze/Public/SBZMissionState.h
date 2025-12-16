@@ -5,6 +5,7 @@
 #include "ESBZLightScenario.h"
 #include "ESBZPlayerDefeatState.h"
 #include "HostMigrationInfo.h"
+#include "OnPlayerStateChangedDelegateDelegate.h"
 #include "SBZGameStateBase.h"
 #include "Templates/SubclassOf.h"
 #include "SBZMissionState.generated.h"
@@ -17,28 +18,26 @@ class ASBZAssaultManager;
 class ASBZBagManager;
 class ASBZChatReplicatedProxy;
 class ASBZCombatManager;
-class ASBZDialogManager;
 class ASBZEndMissionHandler;
 class ASBZExplosionManager;
 class ASBZGrappleManager;
 class ASBZKickingReplicatedProxy;
+class ASBZMissionState;
 class ASBZNavMeshEventManager;
 class ASBZObjectiveManager;
 class ASBZProjectileManager;
-class ASBZSpawnManager;
 class ASBZStaticMeshInstanceManager;
 class UAkAudioBank;
+class UObject;
+class USBZDialogManager;
 class USBZEndMissionSettingsSchematic;
 class USBZImpactManager;
-class USBZInventoryComponent;
 class USBZPlayerDefeatSettingsSchematic;
 
 UCLASS(Blueprintable)
 class STARBREEZE_API ASBZMissionState : public ASBZGameStateBase {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPlayerStateChangedDelegate, APlayerState*, PlayerState);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     int32 ClientMissionSeed;
     
@@ -88,7 +87,7 @@ protected:
     uint8 bReceivedInitialBunch: 1;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnSessionIdReplicated, meta=(AllowPrivateAccess=true))
-    FString SessionID;
+    FString SessionId;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ASBZGrappleManager> GrappleManagerClass;
@@ -106,13 +105,10 @@ protected:
     TSubclassOf<ASBZAssaultManager> AssaultManagerClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSubclassOf<ASBZDialogManager> DialogManagerClass;
+    TSubclassOf<USBZDialogManager> DialogManagerClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ASBZProjectileManager> ProjectileManagerClass;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSubclassOf<ASBZSpawnManager> SpawnManagerClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ASBZChatReplicatedProxy> ChatProxyClass;
@@ -148,14 +144,11 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     ASBZExplosionManager* ExplosionManager;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USBZImpactManager* ImpactManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     ASBZBagManager* BagManager;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
-    TArray<USBZInventoryComponent*> MissionInventoryComponents;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASBZCombatManager* CombatManager;
@@ -163,17 +156,14 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASBZAssaultManager* AssaultManager;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
-    ASBZDialogManager* DialogManager;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USBZDialogManager* DialogManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASBZNavMeshEventManager* NavMeshEventManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     ASBZProjectileManager* ProjectileManager;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
-    ASBZSpawnManager* SpawnManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASBZAISearch* AISearch;
@@ -182,9 +172,10 @@ private:
     TMap<AActor*, ESBZPlayerDefeatState> PlayerDefeatStates;
     
 public:
-    ASBZMissionState();
+    ASBZMissionState(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldEndMission() const;
     
@@ -239,9 +230,6 @@ public:
     ASBZStaticMeshInstanceManager* GetStaticMeshInstanceManager() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    ASBZSpawnManager* GetSpawnManager() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     ASBZProjectileManager* GetProjectileManager() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -253,14 +241,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ASBZNavMeshEventManager* GetNavMeshEventManager() const;
     
-    UFUNCTION(BlueprintCallable)
-    int32 GetMissionSeed();
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static ASBZMissionState* GetMissionState(const UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintCallable)
-    USBZInventoryComponent* GetMissionInventoryByName(FName Name);
-    
-    UFUNCTION(BlueprintCallable)
-    USBZInventoryComponent* GetMissionInventoryByIndex(int32 Index);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetMissionSeed() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLoneRespawnTimer() const;
@@ -284,10 +269,10 @@ public:
     ASBZEndMissionHandler* GetEndMissionHandler() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    ASBZDialogManager* GetDialogManager() const;
+    USBZDialogManager* GetDialogManager() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    FString GetDebugMissionSeed() const;
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static int32 GetCurrentMissionSeed(const UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ASBZCombatManager* GetCombatManager() const;

@@ -1,6 +1,11 @@
 #include "OTWDCampDefenceInteractionAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDCampDefenceInteractionAttributeSet::UOTWDCampDefenceInteractionAttributeSet() {
+    this->CraftingResourceBoxCooldownMultiplier = 1;
+    this->AmmoBoxCooldownMultiplier = 1;
+}
+
 void UOTWDCampDefenceInteractionAttributeSet::OnRep_CraftingResourceBoxCooldownMultiplier(float OldValue) {
 }
 
@@ -22,8 +27,4 @@ void UOTWDCampDefenceInteractionAttributeSet::GetLifetimeReplicatedProps(TArray<
     DOREPLIFETIME(UOTWDCampDefenceInteractionAttributeSet, AmmoBoxCooldownMultiplier);
 }
 
-UOTWDCampDefenceInteractionAttributeSet::UOTWDCampDefenceInteractionAttributeSet() {
-    this->CraftingResourceBoxCooldownMultiplier = 1;
-    this->AmmoBoxCooldownMultiplier = 1;
-}
 

@@ -23,6 +23,9 @@ public:
     TArray<FSBZGrappleAnimationPair> Intro;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UAnimSequenceBase> IntroPulledVictimOverride;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSBZGrappleAnimationPair> Struggle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

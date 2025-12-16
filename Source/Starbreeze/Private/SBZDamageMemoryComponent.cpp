@@ -1,5 +1,10 @@
 #include "SBZDamageMemoryComponent.h"
 
+USBZDamageMemoryComponent::USBZDamageMemoryComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bServerOnly = true;
+    this->bLogDamageWithoutTimestamp = false;
+}
+
 void USBZDamageMemoryComponent::OnDamageTaken(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser) {
 }
 
@@ -11,8 +16,4 @@ float USBZDamageMemoryComponent::GetDamageTakenInTheLastSeconds(const float Seco
     return 0.0f;
 }
 
-USBZDamageMemoryComponent::USBZDamageMemoryComponent() {
-    this->bServerOnly = true;
-    this->bLogDamageWithoutTimestamp = false;
-}
 

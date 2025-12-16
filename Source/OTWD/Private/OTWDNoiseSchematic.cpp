@@ -5,3 +5,4 @@ UOTWDNoiseSchematic::UOTWDNoiseSchematic() {
     this->BuildHordeAmountDefault = 1;
 }
 
+

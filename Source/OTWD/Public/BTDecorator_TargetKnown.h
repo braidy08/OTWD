@@ -21,5 +21,6 @@ public:
     FName TimerName;
     
     UBTDecorator_TargetKnown();
+
 };
 

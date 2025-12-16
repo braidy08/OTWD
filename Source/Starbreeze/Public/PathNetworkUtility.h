@@ -8,5 +8,6 @@ class STARBREEZE_API UPathNetworkUtility : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UPathNetworkUtility();
+
 };
 

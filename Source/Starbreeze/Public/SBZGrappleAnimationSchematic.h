@@ -27,5 +27,6 @@ public:
     FSBZGrappleAnimationCollection AnimationCollection;
     
     USBZGrappleAnimationSchematic();
+
 };
 

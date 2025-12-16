@@ -30,9 +30,10 @@ protected:
     FGuid ProjectileGuid;
     
 public:
-    ASBZThrowableProjectilePicker();
+    ASBZThrowableProjectilePicker(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_OnPickup(ASBZPlayerCharacter* Player);

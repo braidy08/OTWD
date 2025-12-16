@@ -4,6 +4,11 @@
 #include "Engine/EngineTypes.h"
 #include "ESBZAlignSlotState.h"
 #include "ESBZPinningType.h"
+#include "LastPinningActorReleasedDelegateDelegate.h"
+#include "PinVictimActorAddedDelegateDelegate.h"
+#include "PinVictimActorRemovedDelegateDelegate.h"
+#include "PinningActorAddedDelegateDelegate.h"
+#include "PinningActorRemovedDelegateDelegate.h"
 #include "SBZCharacterPinningComponent.generated.h"
 
 class AActor;
@@ -14,12 +19,6 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZCharacterPinningComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPinVictimActorRemovedDelegate, AActor*, PinningActor, ESBZPinningType, PinningType);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPinVictimActorAddedDelegate, AActor*, NewPinnedActor, ESBZPinningType, PinningType);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPinningActorRemovedDelegate, AActor*, PinningActor, ESBZPinningType, PinningType);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPinningActorAddedDelegate, AActor*, PinningActor, ESBZPinningType, PinningType);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FLastPinningActorReleasedDelegate, AActor*, LastPinningActor, ESBZPinningType, PinningType);
-    
     UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPinningActorAddedDelegate PinningActorAddedDelegate;
     
@@ -46,7 +45,8 @@ protected:
     FTimerHandle ResetAlignSlotsTimerHandle;
     
 public:
-    USBZCharacterPinningComponent();
+    USBZCharacterPinningComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool StopPinningTheActor(AActor* ActorToRelease, bool bCallRemovePinnedActor);
     
@@ -77,7 +77,7 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable)
-    bool GetPinnedByActor(AActor* IncomingPinningActor, ESBZPinningType PinningType, bool bWarnIncomingPinningActor);
+    bool GetPinnedByActor(AActor* IncomingPinningActor, ESBZPinningType PinningType, bool bWarnIncomingPinningActor, bool bCheckIsAlreadyPinningActor);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCurrentPinningActorsNumber() const;

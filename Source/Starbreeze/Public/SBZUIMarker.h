@@ -28,6 +28,7 @@ private:
     
 public:
     USBZUIMarker();
+
     UFUNCTION(BlueprintCallable)
     void StartFade(float InTargetAlpha, float InDelay, float InFadeSpeed);
     

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTDecorator_IsTank : public UBTDecorator {
     GENERATED_BODY()
 public:
     USBZBTDecorator_IsTank();
+
 };
 

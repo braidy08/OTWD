@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGrappleAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZGrappleAction();
+
 };
 

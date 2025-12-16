@@ -23,7 +23,8 @@ private:
     TArray<FSBZDamageMemoryData> DamageHistory;
     
 public:
-    USBZDamageMemoryComponent();
+    USBZDamageMemoryComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnDamageTaken(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser);

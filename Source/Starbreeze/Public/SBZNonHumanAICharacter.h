@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class STARBREEZE_API ASBZNonHumanAICharacter : public ASBZAICharacter {
     GENERATED_BODY()
 public:
-    ASBZNonHumanAICharacter();
+    ASBZNonHumanAICharacter(const FObjectInitializer& ObjectInitializer);
+
 };
 

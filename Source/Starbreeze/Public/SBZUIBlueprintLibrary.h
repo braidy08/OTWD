@@ -11,8 +11,9 @@ class USBZUIBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USBZUIBlueprintLibrary();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static void ShowSteamStoreOverlayForContentPack(const UObject* WorldContextObject, USBZContentPack* contentPack);
+    static void ShowSteamStoreOverlayForContentPack(const UObject* WorldContextObject, USBZContentPack* ContentPack);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void ShowSteamStoreOverlayForAppID(const UObject* WorldContextObject, const FString& AppID);

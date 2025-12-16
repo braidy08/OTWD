@@ -12,5 +12,6 @@ public:
     FFloatInterval Interval;
     
     USBZBTTask_BBSetRandomizedFloat();
+
 };
 

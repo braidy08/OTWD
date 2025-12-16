@@ -15,6 +15,7 @@ public:
     FOnOnlineSessionEventDelegate OnComplete;
     
     USBZSessionLeavePartyCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static USBZSessionLeavePartyCallbackProxy* SessionLeaveParty(UObject* WorldContextObject);
     

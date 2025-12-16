@@ -1,5 +1,13 @@
 #include "SBZProximitySensorNavLinkProxy.h"
 
+ASBZProximitySensorNavLinkProxy::ASBZProximitySensorNavLinkProxy(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->PointLinks.AddDefaulted(1);
+    this->bSmartLinkIsRelevant = true;
+    this->DesactivationCoolDownDuration = 1;
+    this->bOverrideDesactivationCoolDownDuration = false;
+    this->DesactivationCoolDownDurationOverride = 1;
+}
+
 void ASBZProximitySensorNavLinkProxy::UpdateCoolDownTimer(float DeltaTime) {
 }
 
@@ -17,9 +25,4 @@ float ASBZProximitySensorNavLinkProxy::GetDesactivationCoolDownDuration() const 
     return 0.0f;
 }
 
-ASBZProximitySensorNavLinkProxy::ASBZProximitySensorNavLinkProxy() {
-    this->DesactivationCoolDownDuration = 1;
-    this->bOverrideDesactivationCoolDownDuration = false;
-    this->DesactivationCoolDownDurationOverride = 1;
-}
 

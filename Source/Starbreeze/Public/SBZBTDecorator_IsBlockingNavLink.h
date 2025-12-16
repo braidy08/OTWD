@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTDecorator_IsBlockingNavLink : public UBTDecorator {
     GENERATED_BODY()
 public:
     USBZBTDecorator_IsBlockingNavLink();
+
 };
 

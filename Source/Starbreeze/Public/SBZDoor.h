@@ -231,9 +231,10 @@ protected:
     FSBZDoorLocalDatas LocalDatas;
     
 public:
-    ASBZDoor();
+    ASBZDoor(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void UpdateNavMeshEventListeners();
     
@@ -280,8 +281,11 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     bool Server_OpenDoor(ESBZDoorSpeedModifier InSpeedModifier, bool bFront);
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    bool Server_IsOnPath(ASBZAICharacter* AICharacter);
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
+    bool Server_IsOpening() const;
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
+    bool Server_IsOnPath(ASBZAICharacter* AICharacter) const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     bool Server_IsExecutingAction() const;
@@ -396,7 +400,7 @@ public:
     bool IsCharacterInAgglomerateDist(ASBZCharacter* Character) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsCharacterAgainstDoor(ASBZCharacter* Character, float CharacterRadius) const;
+    bool IsCharacterAgainstDoor(ASBZCharacter* Character, float CharacterRadius, bool& bInsideDoorWidth, float& FacingDistFromDoor) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBroken() const;

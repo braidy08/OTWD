@@ -12,5 +12,6 @@ public:
     FSBZNetworkSchematicPredictionConfiguration Configuration;
     
     USBZNetworkSchematic();
+
 };
 

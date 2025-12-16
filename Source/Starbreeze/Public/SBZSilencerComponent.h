@@ -14,6 +14,7 @@ protected:
     USBZSilencerStatsSchematic* SilencerStats;
     
 public:
-    USBZSilencerComponent();
+    USBZSilencerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -20,5 +20,6 @@ public:
     TSubclassOf<UEnvQueryContext> TargetContext;
     
     USBZEnvQueryTest_ShootingPointHasLoS();
+
 };
 

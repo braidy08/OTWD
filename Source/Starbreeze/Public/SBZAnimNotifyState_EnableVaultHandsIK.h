@@ -14,5 +14,6 @@ public:
     float FadeOutTime;
     
     USBZAnimNotifyState_EnableVaultHandsIK();
+
 };
 

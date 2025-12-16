@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
+#include "AttributeSet.h"
 #include "SBZHumanAIAttributeSet.generated.h"
 
 UCLASS(Blueprintable)
@@ -11,6 +12,7 @@ public:
     float AccuracyMultiplier;
     
     USBZHumanAIAttributeSet();
+
     UFUNCTION(BlueprintCallable)
     static FGameplayAttribute GetAccuracyMultiplierAttribute();
     

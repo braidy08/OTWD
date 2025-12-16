@@ -11,3 +11,4 @@ USBZOutlineSchematic::USBZOutlineSchematic() {
     this->bIgnoreGlobalOff = false;
 }
 
+

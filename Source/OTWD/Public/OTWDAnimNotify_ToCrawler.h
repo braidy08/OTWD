@@ -8,5 +8,6 @@ class OTWD_API UOTWDAnimNotify_ToCrawler : public UAnimNotify {
     GENERATED_BODY()
 public:
     UOTWDAnimNotify_ToCrawler();
+
 };
 

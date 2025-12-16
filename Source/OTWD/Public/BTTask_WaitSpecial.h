@@ -14,5 +14,6 @@ public:
     float Timer;
     
     UBTTask_WaitSpecial();
+
 };
 

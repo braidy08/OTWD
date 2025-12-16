@@ -8,5 +8,6 @@ class OTWD_API UBTTask_ZombieExplode : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UBTTask_ZombieExplode();
+
 };
 

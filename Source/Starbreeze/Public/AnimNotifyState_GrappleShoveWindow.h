@@ -11,5 +11,6 @@ public:
     bool bValidShovePeriod;
     
     UAnimNotifyState_GrappleShoveWindow();
+
 };
 

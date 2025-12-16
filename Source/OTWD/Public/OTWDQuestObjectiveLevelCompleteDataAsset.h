@@ -8,5 +8,6 @@ class UOTWDQuestObjectiveLevelCompleteDataAsset : public UOTWDQuestObjectiveInga
     GENERATED_BODY()
 public:
     UOTWDQuestObjectiveLevelCompleteDataAsset();
+
 };
 

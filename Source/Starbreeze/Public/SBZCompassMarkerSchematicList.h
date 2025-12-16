@@ -13,5 +13,6 @@ public:
     TArray<USBZCompassMarkerSchematic*> CompassMarkers;
     
     USBZCompassMarkerSchematicList();
+
 };
 

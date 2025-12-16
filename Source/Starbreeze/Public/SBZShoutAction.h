@@ -17,6 +17,7 @@ protected:
     
 public:
     USBZShoutAction();
+
 protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetGesture(bool bEnabled, ESBZPlayerGestureType Gesture);

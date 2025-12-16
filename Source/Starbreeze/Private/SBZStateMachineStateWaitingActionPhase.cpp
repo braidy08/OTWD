@@ -1,5 +1,11 @@
 #include "SBZStateMachineStateWaitingActionPhase.h"
 
+USBZStateMachineStateWaitingActionPhase::USBZStateMachineStateWaitingActionPhase() {
+    this->TransitionTimeOutTime = 1;
+    this->AsyncLoadingTimeOutTime = 1;
+    this->AsyncLoadingTimeSliceOverride = 1;
+}
+
 void USBZStateMachineStateWaitingActionPhase::PostLoadTransitionMap(UWorld* NewWorld) {
 }
 
@@ -27,9 +33,4 @@ void USBZStateMachineStateWaitingActionPhase::DelayedNetworkBeaconError() {
 void USBZStateMachineStateWaitingActionPhase::CompleteAsyncLoading() {
 }
 
-USBZStateMachineStateWaitingActionPhase::USBZStateMachineStateWaitingActionPhase() {
-    this->TransitionTimeOutTime = 1;
-    this->AsyncLoadingTimeOutTime = 1;
-    this->AsyncLoadingTimeSliceOverride = 1;
-}
 

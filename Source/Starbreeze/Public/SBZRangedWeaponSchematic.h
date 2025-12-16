@@ -93,5 +93,6 @@ public:
     TArray<FSBZJamConfig> JammingConfig;
     
     USBZRangedWeaponSchematic();
+
 };
 

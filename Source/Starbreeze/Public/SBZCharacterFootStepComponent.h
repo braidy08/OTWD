@@ -18,6 +18,9 @@ protected:
     UAkAudioEvent* OverrideSoundEvent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUseSquaredDistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float NormalStepDistance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -42,6 +45,7 @@ protected:
     UCharacterMovementComponent* OwnerCharacterMovementComponent;
     
 public:
-    USBZCharacterFootStepComponent();
+    USBZCharacterFootStepComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

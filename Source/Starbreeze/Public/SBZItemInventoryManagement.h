@@ -13,7 +13,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USBZInventoryItemManagementSchematic* InventoryItemManagementSchematic;
     
-    ASBZItemInventoryManagement();
+    ASBZItemInventoryManagement(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static ASBZItemInventoryManagement* GetItemInventoryManagement();
     

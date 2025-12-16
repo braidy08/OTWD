@@ -15,6 +15,7 @@ protected:
     
 public:
     USBZAnimNotify_BaseNotify();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool NotifyAllowed(USkeletalMeshComponent* InMesh) const;

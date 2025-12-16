@@ -1,6 +1,18 @@
 #include "SBZCharacterPedestal.h"
 #include "Templates/SubclassOf.h"
 
+ASBZCharacterPedestal::ASBZCharacterPedestal(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->PreviewSkeletalMeshComponent = NULL;
+    this->bAttachSpawnedCharacter = false;
+    this->CharacterStreamingDistanceMultiplier = 1;
+    this->PlayerIdx = 0;
+    this->DisplayedWeaponSlotIndex = 0;
+    this->bIsLobbyCharacter = true;
+    this->PlayerState = NULL;
+    this->Character = NULL;
+    this->CharacterWeaponAnimationCollection = NULL;
+}
+
 void ASBZCharacterPedestal::UpdateLocalPlayerState() {
 }
 
@@ -28,15 +40,4 @@ void ASBZCharacterPedestal::HackUpdateReadyState() {
 void ASBZCharacterPedestal::Clear() {
 }
 
-ASBZCharacterPedestal::ASBZCharacterPedestal() {
-    this->PreviewSkeletalMeshComponent = NULL;
-    this->bAttachSpawnedCharacter = false;
-    this->CharacterStreamingDistanceMultiplier = 1;
-    this->PlayerIdx = 0;
-    this->DisplayedWeaponSlotIndex = 0;
-    this->bIsLobbyCharacter = true;
-    this->PlayerState = NULL;
-    this->Character = NULL;
-    this->CharacterWeaponAnimationCollection = NULL;
-}
 

@@ -31,7 +31,8 @@ protected:
     USBZAIAggroSystemComponent* AggroComponent;
     
 public:
-    USBZAIRangedAttackHandlerBaseComponent();
+    USBZAIRangedAttackHandlerBaseComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ERangedAttackState GetCurrentAttackState() const;
     

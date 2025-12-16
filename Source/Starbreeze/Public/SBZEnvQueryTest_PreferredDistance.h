@@ -19,17 +19,17 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryContext> DistanceTo;
     
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //FAIDataProviderFloatValue HardMinimum;
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    FAIDataProviderFloatValue HardMinimum;
     
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //FAIDataProviderFloatValue PreferredMinimum;
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    FAIDataProviderFloatValue PreferredMinimum;
     
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //FAIDataProviderFloatValue PreferredMaximum;
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    FAIDataProviderFloatValue PreferredMaximum;
     
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //FAIDataProviderFloatValue HardMaximum;
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    FAIDataProviderFloatValue HardMaximum;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<ESBZDistanceScoringFunction::Type> MinimumScoring;
@@ -41,5 +41,6 @@ public:
     bool bScoreOutsideDistances;
     
     USBZEnvQueryTest_PreferredDistance();
+
 };
 

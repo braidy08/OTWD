@@ -3,16 +3,13 @@
 #include "GameFramework/Actor.h"
 #include "ESBZTrapState.h"
 #include "ESBZVoiceComment.h"
+#include "TrapDelegateDelegate.h"
 #include "SBZTrap.generated.h"
-
-class ASBZTrap;
 
 UCLASS(Blueprintable)
 class STARBREEZE_API ASBZTrap : public AActor {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTrapDelegate, ASBZTrap*, TrapActor);
-    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZTrapState LocalTrapState;
@@ -39,9 +36,10 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTrapDelegate OnTrapRearmed;
     
-    ASBZTrap();
+    ASBZTrap(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Rearm(AActor* RearmingActor);
     

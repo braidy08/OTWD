@@ -1,6 +1,21 @@
 #include "OTWDDefenceGameState.h"
 #include "Net/UnrealNetwork.h"
 
+AOTWDDefenceGameState::AOTWDDefenceGameState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bIsWin = false;
+    this->DefenceTimeEnd = 1;
+    this->WaveNumber = 0;
+    this->MaxWaveNumber = 0;
+    this->MaxStrikeNumber = 0;
+    this->StrikeNumber = 0;
+    this->bShowDefenceHud = false;
+    this->bShowFailing = false;
+    this->VoiceSwitchGroup = TEXT("char_state");
+    this->MusicSwitchGroup = TEXT("music_switch");
+    this->CurrentDefencePhase = EOTWDDefencePhase::Preparation;
+    this->CurrentDefenceMode = EOTWDDefenceMode::Military;
+}
+
 void AOTWDDefenceGameState::UpdateFortifications(bool bForceUpdate) {
 }
 
@@ -152,18 +167,4 @@ void AOTWDDefenceGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(AOTWDDefenceGameState, CurrentDefenceMode);
 }
 
-AOTWDDefenceGameState::AOTWDDefenceGameState() {
-    this->bIsWin = false;
-    this->DefenceTimeEnd = 1;
-    this->WaveNumber = 0;
-    this->MaxWaveNumber = 0;
-    this->MaxStrikeNumber = 0;
-    this->StrikeNumber = 0;
-    this->bShowDefenceHud = false;
-    this->bShowFailing = false;
-    this->VoiceSwitchGroup = TEXT("char_state");
-    this->MusicSwitchGroup = TEXT("music_switch");
-    this->CurrentDefencePhase = EOTWDDefencePhase::Preparation;
-    this->CurrentDefenceMode = EOTWDDefenceMode::Military;
-}
 

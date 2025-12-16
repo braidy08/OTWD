@@ -1,6 +1,10 @@
 #include "SBZInventoryComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZInventoryComponent::USBZInventoryComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+}
+
 void USBZInventoryComponent::UpdateItemsReplication() {
 }
 
@@ -91,6 +95,4 @@ void USBZInventoryComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
     DOREPLIFETIME(USBZInventoryComponent, ItemsArray);
 }
 
-USBZInventoryComponent::USBZInventoryComponent() {
-}
 

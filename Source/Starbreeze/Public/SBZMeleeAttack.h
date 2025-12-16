@@ -1,7 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "Engine/DataTable.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataTableRowHandle -FallbackName=DataTableRowHandle
+#include "ESBZMeleeWeaponType.h"
 #include "SBZMeleeAttack.generated.h"
 
 class UCurveFloat;
@@ -17,6 +18,18 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USBZMeleeAttackAnimationCollection* ThirdPersonPlayer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESBZMeleeWeaponType ImpactType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bImpactTypeCopied;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESBZMeleeWeaponType VisualImpactType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESBZMeleeWeaponType AudioImpactType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDataTableRowHandle AttackData;
@@ -37,5 +50,6 @@ public:
     UForceFeedbackEffect* ForceFeedbackEffect;
     
     USBZMeleeAttack();
+
 };
 

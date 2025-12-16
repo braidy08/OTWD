@@ -1,5 +1,11 @@
 #include "SBZTankArmorPartComponent.h"
 
+USBZTankArmorPartComponent::USBZTankArmorPartComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->PartRemovedEvent = NULL;
+    this->OverridePhysicalMaterial = NULL;
+    this->DefaultDurability = 1;
+}
+
 void USBZTankArmorPartComponent::Replenish() {
 }
 
@@ -15,9 +21,4 @@ float USBZTankArmorPartComponent::GetDurabilityCurrent() const {
     return 0.0f;
 }
 
-USBZTankArmorPartComponent::USBZTankArmorPartComponent() {
-    this->PartRemovedEvent = NULL;
-    this->OverridePhysicalMaterial = NULL;
-    this->DefaultDurability = 1;
-}
 

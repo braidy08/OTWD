@@ -1,5 +1,19 @@
 #include "SBZCharacterMVComponent.h"
 
+USBZCharacterMVComponent::USBZCharacterMVComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->VaultingSchematic = NULL;
+    this->MantlingSchematic = NULL;
+    this->bAutoComputeTrajectories = false;
+    this->AutoComputeTimeRate = 1;
+    this->CameraBlendTotalTimePercentage = 1;
+    this->CameraMaxYawFromAnimation = 1;
+    this->CameraMaxPitchFromAnimation = 1;
+    this->bIgnoreMVVolumes = false;
+    this->OwningCharacter = NULL;
+    this->OwningPlayerCameraManager = NULL;
+    this->VaultingStartHeight = 1;
+}
+
 void USBZCharacterMVComponent::TickMantlingVaulting(float DeltaTime) {
 }
 
@@ -80,17 +94,4 @@ bool USBZCharacterMVComponent::CanExecuteMoveToInteraction() {
     return false;
 }
 
-USBZCharacterMVComponent::USBZCharacterMVComponent() {
-    this->VaultingSchematic = NULL;
-    this->MantlingSchematic = NULL;
-    this->bAutoComputeTrajectories = false;
-    this->AutoComputeTimeRate = 1;
-    this->CameraBlendTotalTimePercentage = 1;
-    this->CameraMaxYawFromAnimation = 1;
-    this->CameraMaxPitchFromAnimation = 1;
-    this->bIgnoreMVVolumes = false;
-    this->OwningCharacter = NULL;
-    this->OwningPlayerCameraManager = NULL;
-    this->VaultingStartHeight = 1;
-}
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "SBZTech.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZTech -FallbackName=SBZTech
 #include "OTWDAbilityTechSchematic.generated.h"
 
 class UGameplayAbility;
@@ -56,5 +56,6 @@ public:
     FString VideoPath;
     
     UOTWDAbilityTechSchematic();
+
 };
 

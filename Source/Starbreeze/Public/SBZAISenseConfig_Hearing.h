@@ -16,5 +16,6 @@ public:
     TArray<FSBZAISenseHearing> IntensityOfAlertnessLevel;
     
     USBZAISenseConfig_Hearing();
+
 };
 

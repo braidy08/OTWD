@@ -5,3 +5,4 @@ USBZDebugPanel::USBZDebugPanel() {
     this->ParentPanel = NULL;
 }
 
+

@@ -32,6 +32,7 @@ public:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatInterval SpiralFrequencyRange;
     
-    USBZRocketProjectileMovementComponent();
+    USBZRocketProjectileMovementComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

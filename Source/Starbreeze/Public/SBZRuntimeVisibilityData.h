@@ -14,6 +14,7 @@ class STARBREEZE_API USBZRuntimeVisibilityData : public UDataAsset {
     GENERATED_BODY()
 public:
     USBZRuntimeVisibilityData();
+
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     ESBZVisibilityResult K2_IsPointVisibleFromPoints(const UObject* WorldContextObject, const FVector& Target, const TArray<FVector>& Sources) const;
     

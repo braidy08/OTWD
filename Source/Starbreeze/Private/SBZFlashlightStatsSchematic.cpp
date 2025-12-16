@@ -6,3 +6,4 @@ USBZFlashlightStatsSchematic::USBZFlashlightStatsSchematic() {
     this->OffEvent = NULL;
 }
 
+

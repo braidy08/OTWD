@@ -1,5 +1,6 @@
 #include "SBZPlayerShoveHandlerComponent.h"
 
-USBZPlayerShoveHandlerComponent::USBZPlayerShoveHandlerComponent() {
+USBZPlayerShoveHandlerComponent::USBZPlayerShoveHandlerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

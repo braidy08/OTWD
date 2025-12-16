@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBloodSplatterImpactSchematic : public USBZImpactSchemat
     GENERATED_BODY()
 public:
     USBZBloodSplatterImpactSchematic();
+
 };
 

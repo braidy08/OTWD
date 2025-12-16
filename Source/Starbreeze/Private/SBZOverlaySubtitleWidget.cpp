@@ -1,5 +1,11 @@
 #include "SBZOverlaySubtitleWidget.h"
 
+USBZOverlaySubtitleWidget::USBZOverlaySubtitleWidget() {
+    this->TextWidget = NULL;
+    this->CurrentOverlay = NULL;
+    this->MediaPlayerRef = NULL;
+}
+
 void USBZOverlaySubtitleWidget::UpdateText(FTimespan AtTime) {
 }
 
@@ -18,9 +24,4 @@ void USBZOverlaySubtitleWidget::SetOverlay(ULocalizedOverlays* InOverlay) {
 void USBZOverlaySubtitleWidget::SetMediaPlayerRef(UMediaPlayer* InMediaPlayerRef) {
 }
 
-USBZOverlaySubtitleWidget::USBZOverlaySubtitleWidget() {
-    this->TextWidget = NULL;
-    this->CurrentOverlay = NULL;
-    this->MediaPlayerRef = NULL;
-}
 

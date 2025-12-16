@@ -8,5 +8,6 @@ class STARBREEZE_API USBZChargeModule : public UObject {
     GENERATED_BODY()
 public:
     USBZChargeModule();
+
 };
 

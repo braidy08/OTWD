@@ -9,3 +9,4 @@ USBZBTDecorator_DistanceToThreat::USBZBTDecorator_DistanceToThreat() {
     this->bCheckVisibility = false;
 }
 
+

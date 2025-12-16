@@ -51,5 +51,6 @@ public:
     bool bShowDistance;
     
     USBZUIMarkerData();
+
 };
 

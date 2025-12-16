@@ -14,5 +14,6 @@ private:
     
 public:
     UBTTask_GetRandomLocationInWorld();
+
 };
 

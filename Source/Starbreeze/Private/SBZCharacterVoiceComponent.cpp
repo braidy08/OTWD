@@ -1,5 +1,16 @@
 #include "SBZCharacterVoiceComponent.h"
 
+USBZCharacterVoiceComponent::USBZCharacterVoiceComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAutoActivate = true;
+    this->VoiceAttachPoint = TEXT("Head");
+    this->CharacterEvent = NULL;
+    this->OnDamageEvent = NULL;
+    this->OnDeathEvent = NULL;
+    this->CommentConfig = NULL;
+    this->AkComponentVoice = NULL;
+    this->SBZCharacterOwner = NULL;
+}
+
 void USBZCharacterVoiceComponent::StopTalking() {
 }
 
@@ -48,13 +59,4 @@ void USBZCharacterVoiceComponent::Multicast_SaySystemComment_ServerInstigated_Im
 void USBZCharacterVoiceComponent::Multicast_SaySystemComment_Implementation(ESBZVoiceComment Comment, ESBZVoicePriority InPlayingPriority) {
 }
 
-USBZCharacterVoiceComponent::USBZCharacterVoiceComponent() {
-    this->VoiceAttachPoint = TEXT("Head");
-    this->CharacterEvent = NULL;
-    this->OnDamageEvent = NULL;
-    this->OnDeathEvent = NULL;
-    this->CommentConfig = NULL;
-    this->AkComponentVoice = NULL;
-    this->SBZCharacterOwner = NULL;
-}
 

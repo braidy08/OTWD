@@ -8,5 +8,6 @@ class OTWD_API UOTWDAnimNotify_DecapitateZombie : public UAnimNotify {
     GENERATED_BODY()
 public:
     UOTWDAnimNotify_DecapitateZombie();
+
 };
 

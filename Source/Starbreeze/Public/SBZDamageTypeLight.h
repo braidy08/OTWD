@@ -8,5 +8,6 @@ class STARBREEZE_API USBZDamageTypeLight : public USBZDamageType {
     GENERATED_BODY()
 public:
     USBZDamageTypeLight();
+
 };
 

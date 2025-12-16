@@ -4,7 +4,7 @@
 #include "SBZGameStateMachineState.h"
 #include "SBZStateMachineStateWaitSoloGame.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class STARBREEZE_API USBZStateMachineStateWaitSoloGame : public USBZGameStateMachineState {
     GENERATED_BODY()
 public:
@@ -17,7 +17,11 @@ protected:
     
 public:
     USBZStateMachineStateWaitSoloGame();
+
 protected:
+    UFUNCTION(BlueprintCallable)
+    void HandleCinematicStopped();
+    
     UFUNCTION(BlueprintCallable)
     void HandleBufferLevelLoadingFinished();
     

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimNotifyState_TurnAnimCanEnd : public UAnimNotifyStat
     GENERATED_BODY()
 public:
     USBZAnimNotifyState_TurnAnimCanEnd();
+
 };
 

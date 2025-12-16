@@ -4,3 +4,4 @@ UOTWDMetaSurvivorReward::UOTWDMetaSurvivorReward() {
     this->ClassOverride = NULL;
 }
 
+

@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZIrradianceOccluderComponent : public USceneComponent {
     GENERATED_BODY()
 public:
-    USBZIrradianceOccluderComponent();
+    USBZIrradianceOccluderComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

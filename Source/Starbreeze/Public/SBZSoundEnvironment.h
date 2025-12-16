@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Volume.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Volume -FallbackName=Volume
 #include "SBZSoundEnvironment.generated.h"
 
 class UAkAudioEvent;
@@ -32,6 +32,7 @@ private:
     UAkComponent* AkComponent;
     
 public:
-    ASBZSoundEnvironment();
+    ASBZSoundEnvironment(const FObjectInitializer& ObjectInitializer);
+
 };
 

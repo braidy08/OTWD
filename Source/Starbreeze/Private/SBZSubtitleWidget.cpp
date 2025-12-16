@@ -1,11 +1,5 @@
 #include "SBZSubtitleWidget.h"
 
-void USBZSubtitleWidget::SetSubtitleTextPanel(UTextBlock* TextWidget) {
-}
-
-void USBZSubtitleWidget::SetGameUserSettings(USBZGameUserSettings* InGameUserSettings) {
-}
-
 USBZSubtitleWidget::USBZSubtitleWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->MinDisplayTime = 1;
     this->DisplayTimePerCharacter = 1;
@@ -13,4 +7,11 @@ USBZSubtitleWidget::USBZSubtitleWidget() : UUserWidget(FObjectInitializer::Get()
     this->SubtitleText = NULL;
     this->GameSettings = NULL;
 }
+
+void USBZSubtitleWidget::SetSubtitleTextPanel(UTextBlock* TextWidget) {
+}
+
+void USBZSubtitleWidget::SetGameUserSettings(USBZGameUserSettings* InGameUserSettings) {
+}
+
 

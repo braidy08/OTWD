@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
+#include "AttributeSet.h"
 #include "OTWDAbilityItemsAttributeSet.generated.h"
 
 UCLASS(Blueprintable)
@@ -29,8 +30,9 @@ public:
     float AbilityItemToolCostChance;
     
     UOTWDAbilityItemsAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_AbilityItemToolMaximum(float OldValue);
     

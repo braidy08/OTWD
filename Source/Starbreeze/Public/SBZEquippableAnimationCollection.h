@@ -19,5 +19,6 @@ public:
     UAnimSequenceBase* TertiaryActivation;
     
     USBZEquippableAnimationCollection();
+
 };
 

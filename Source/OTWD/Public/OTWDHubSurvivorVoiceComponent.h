@@ -24,7 +24,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName VoiceAttachPoint;
     
-    UOTWDHubSurvivorVoiceComponent();
+    UOTWDHubSurvivorVoiceComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Say(UAkAudioEvent* AudioEvent);
     

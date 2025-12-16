@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayCueNotify_Actor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayCueNotify_Actor -FallbackName=GameplayCueNotify_Actor
 #include "SBZStatusEffectAudioHandle.h"
 #include "SBZStatusEffectAudioInfo.h"
 #include "SBZStatusEffectPostProcessHandle.h"
@@ -31,6 +31,7 @@ private:
     FSBZStatusEffectAudioHandle EffectAudioHandle;
     
 public:
-    ASBZGameplayCue_PlayerEffect();
+    ASBZGameplayCue_PlayerEffect(const FObjectInitializer& ObjectInitializer);
+
 };
 

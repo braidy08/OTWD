@@ -1,5 +1,6 @@
 #include "OTWDHumanAIMovementComponent.h"
 
-UOTWDHumanAIMovementComponent::UOTWDHumanAIMovementComponent() {
+UOTWDHumanAIMovementComponent::UOTWDHumanAIMovementComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

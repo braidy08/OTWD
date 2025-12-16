@@ -8,3 +8,4 @@ USBZEnvQueryTest_Elevation::USBZEnvQueryTest_Elevation() {
     this->ElevtionWeight = 1;
 }
 
+

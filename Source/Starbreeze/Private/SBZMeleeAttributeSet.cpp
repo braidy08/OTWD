@@ -1,6 +1,12 @@
 #include "SBZMeleeAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZMeleeAttributeSet::USBZMeleeAttributeSet() {
+    this->StaminaCostMultiplier = 1;
+    this->LightDamageMultiplier = 1;
+    this->HeavyDamageMultiplier = 1;
+}
+
 void USBZMeleeAttributeSet::OnRep_StaminaCostMultiplier(float OldValue) {
 }
 
@@ -30,9 +36,4 @@ void USBZMeleeAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(USBZMeleeAttributeSet, HeavyDamageMultiplier);
 }
 
-USBZMeleeAttributeSet::USBZMeleeAttributeSet() {
-    this->StaminaCostMultiplier = 1;
-    this->LightDamageMultiplier = 1;
-    this->HeavyDamageMultiplier = 1;
-}
 

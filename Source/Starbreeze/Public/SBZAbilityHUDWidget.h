@@ -49,6 +49,7 @@ private:
     
 public:
     USBZAbilityHUDWidget();
+
     UFUNCTION(BlueprintCallable)
     void RefreshAbilities();
     

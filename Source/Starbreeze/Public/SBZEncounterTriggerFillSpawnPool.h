@@ -8,5 +8,6 @@ class STARBREEZE_API USBZEncounterTriggerFillSpawnPool : public USBZEncounterTri
     GENERATED_BODY()
 public:
     USBZEncounterTriggerFillSpawnPool();
+
 };
 

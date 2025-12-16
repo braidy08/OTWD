@@ -15,5 +15,6 @@ public:
     bool bSetAsInvalidLocation;
     
     USBZBTTask_BBSetVector();
+
 };
 

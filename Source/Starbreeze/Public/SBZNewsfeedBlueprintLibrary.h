@@ -11,6 +11,7 @@ class STARBREEZE_API USBZNewsfeedBlueprintLibrary : public UBlueprintFunctionLib
     GENERATED_BODY()
 public:
     USBZNewsfeedBlueprintLibrary();
+
     UFUNCTION(BlueprintCallable)
     static void FetchNewsfeed(const APlayerController* PlayerController, const FNewsfeedFetchCompletedSignature& NewsfeedFetchCompleted);
     

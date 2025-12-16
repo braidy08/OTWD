@@ -5,3 +5,4 @@ USBZIsAbilityActiveApplicationRequirement::USBZIsAbilityActiveApplicationRequire
     this->bInvertResult = false;
 }
 
+

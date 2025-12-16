@@ -14,5 +14,6 @@ public:
     TSubclassOf<ASkeletalMeshActor> SkeletalMeshActorClass;
     
     UDEPRECATED_SBZCosmeticSkeletalMeshActor();
+
 };
 

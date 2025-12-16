@@ -29,8 +29,9 @@ public:
     float LureDuration;
     
     UOTWDFlashbangAbilityAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_StunRadius();
     

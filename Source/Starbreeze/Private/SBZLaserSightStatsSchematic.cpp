@@ -1,6 +1,11 @@
 #include "SBZLaserSightStatsSchematic.h"
 
 USBZLaserSightStatsSchematic::USBZLaserSightStatsSchematic() {
+    this->bStartEnabled = false;
+    this->bStartEnabledEquipped = true;
+    this->bDisableOnExpire = false;
+    this->bHideOnExpire = false;
+    this->bHiddenWhileDisabled = false;
     this->ActorAttachPoint = TEXT("SOCKET_Laser");
     this->SightEffectDistance3P = 1;
     this->SightEffectDistanceMultiplier = 1;
@@ -11,4 +16,5 @@ USBZLaserSightStatsSchematic::USBZLaserSightStatsSchematic() {
     this->MaximumDotVisibilityDistance = 1;
     this->BaseIntensity = 1;
 }
+
 

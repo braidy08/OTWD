@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/OnlineSession.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnlineSession -FallbackName=OnlineSession
 #include "GameFramework/OnlineReplStructs.h"
 #include "EOnlineSessionInfo.h"
 #include "ESBZButtonInputType.h"
@@ -30,7 +30,7 @@ class USBZMatchmaking;
 class USBZParty;
 class USBZPopupWidget;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, Config=Engine)
 class STARBREEZE_API USBZOnlineSession : public UOnlineSession {
     GENERATED_BODY()
 public:
@@ -155,6 +155,7 @@ private:
     
 public:
     USBZOnlineSession();
+
     UFUNCTION(BlueprintCallable)
     void StopMatchmaking();
     

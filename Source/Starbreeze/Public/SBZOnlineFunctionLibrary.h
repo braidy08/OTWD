@@ -18,6 +18,7 @@ class STARBREEZE_API USBZOnlineFunctionLibrary : public UBlueprintFunctionLibrar
     GENERATED_BODY()
 public:
     USBZOnlineFunctionLibrary();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void UnmutePlayer(UObject* WorldContextObject, FUniqueNetIdRepl UniqueNetId);
     

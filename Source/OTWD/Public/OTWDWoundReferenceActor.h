@@ -64,6 +64,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<int32, FOTWDLastValidWoundData> LastValidDataForWound;
     
-    AOTWDWoundReferenceActor();
+    AOTWDWoundReferenceActor(const FObjectInitializer& ObjectInitializer);
+
 };
 

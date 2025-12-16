@@ -26,6 +26,7 @@ public class Starbreeze : ModuleRules {
             "PhysXVehicles",
             "ProceduralMeshComponent",
             "SBZAnalytics",
+            "SBZWorldRuntime",
             "SignificanceManager",
             "Slate",
             "SlateCore",

@@ -11,6 +11,9 @@
 #include "SBZNonHumanAICharacter.h"
 #include "OTWDWoundEffectArray.h"
 #include "OTWDWoundSlots.h"
+#include "OnBecomeCrawlerDelegateDelegate.h"
+#include "OnHurtMontageHasEndedDelegate.h"
+#include "OnZombieExplodedDelegate.h"
 #include "SBZExplodeLimbMappingArray.h"
 #include "SBZExplodePrediction.h"
 #include "SBZLungePrediction.h"
@@ -21,7 +24,6 @@ class AActor;
 class AOTWDCosmeticCharacterVariation;
 class AOTWDWoundReferenceActor;
 class ASBZCharacter;
-class AZombieCharacter;
 class UAISchematicZombie;
 class UAkAudioEvent;
 class UAnimMontage;
@@ -37,16 +39,13 @@ class USBZDamageType;
 class USBZGeneralZombieAIAnimationCollection;
 class USBZHurtReaction;
 class USBZLocalPlayerFeedback;
+class USBZSpawnRegionBoxComponent;
 class USkeletalMesh;
 
 UCLASS(Blueprintable)
 class OTWD_API AZombieCharacter : public ASBZNonHumanAICharacter {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnZombieExploded, AZombieCharacter*, ExplodedZombie);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHurtMontageHasEnded, AActor*, InInstigator, ESBZHurtReactionWeight, Weight);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBecomeCrawlerDelegate, AZombieCharacter*, Zombie);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AOTWDWoundReferenceActor> WoundReferenceClass;
     
@@ -142,6 +141,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequenceBase* CrowdGrapplAnimEndLose;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UAnimationAsset* CrowdFallingAnimation;
+    
     UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_RandomStumbleAnim, meta=(AllowPrivateAccess=true))
     int8 RandomStumbleAnim;
     
@@ -218,6 +220,9 @@ public:
     FGameplayTag StunnedTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTag LureTag;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MeshOffsetCrawler;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -263,6 +268,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USBZAIAimTargetComponent* Target_Head;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USBZSpawnRegionBoxComponent* MonsterClosetSpawnRegion;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UAISchematicZombie* ZombieSchematic;
@@ -289,9 +297,10 @@ public:
     UPROPERTY(EditAnywhere, Replicated, SaveGame, meta=(AllowPrivateAccess=true))
     uint32 HashedAISchematic;
     
-    AZombieCharacter();
+    AZombieCharacter(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void TryExplodeZombie();
     
@@ -306,6 +315,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetTryingToGrapple(bool bNewState);
+    
+    UFUNCTION(BlueprintCallable)
+    bool SetLureTarget(const FVector& Location, FSBZAlertnessLevelIdHelper AlertnessLevel);
     
     UFUNCTION(BlueprintCallable)
     void SetIsCrawler();

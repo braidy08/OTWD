@@ -1,10 +1,7 @@
 #include "SBZFragGrenade.h"
 #include "SBZExplosionDamageType.h"
 
-void ASBZFragGrenade::OnDetonate() {
-}
-
-ASBZFragGrenade::ASBZFragGrenade() {
+ASBZFragGrenade::ASBZFragGrenade(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->Damage = 1;
     this->DamageFalloff = 1;
     this->DamageOuterRadius = 1;
@@ -12,4 +9,8 @@ ASBZFragGrenade::ASBZFragGrenade() {
     this->DamageType = USBZExplosionDamageType::StaticClass();
     this->DestroyDelay = 1;
 }
+
+void ASBZFragGrenade::OnDetonate() {
+}
+
 

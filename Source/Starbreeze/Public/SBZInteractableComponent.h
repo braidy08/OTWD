@@ -14,7 +14,7 @@
 #include "OnInteractionStateChangedDelegate.h"
 #include "OnInteractionSuccessfulDelegate.h"
 #include "OnInteractionTickDelegate.h"
-#include "OnIsRelevantChangedDelegate.h"
+#include "OnInterationIsRelevantChangedDelegate.h"
 #include "SBZFactionIdHelper.h"
 #include "SBZGameplayEffectData.h"
 #include "SBZLookAtShapeToOutlineComponentMap.h"
@@ -27,6 +27,7 @@ class USBZBaseInteractorComponent;
 class USBZGameplayAbilityQuery;
 class USBZInteractableComponent;
 class USBZInteractableTemplate;
+class USBZInteractionAnimationSchematic;
 class USBZInteractionWidget;
 class USBZOutlineComponent;
 class USBZOutlineSchematic;
@@ -55,7 +56,7 @@ public:
     FOnInteractionTick OnInteractionTick;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FOnIsRelevantChanged OnIsRelevantChanged;
+    FOnInterationIsRelevantChanged OnIsRelevantChanged;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnInteractionSuccessful OnLocalInteractionSuccessful;
@@ -184,6 +185,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EInteractionFactionRestriction RestrictTo;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FSoftClassPath, USBZInteractionAnimationSchematic*> AnimationMap;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UPrimitiveComponent*> LookAtShapes;
@@ -207,9 +211,10 @@ private:
     float InteractionProgress;
     
 public:
-    USBZInteractableComponent();
+    USBZInteractableComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetTemplate(TSubclassOf<USBZInteractableTemplate> NewTemplate);
     

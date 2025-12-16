@@ -1,5 +1,10 @@
 #include "SBZWeaponModdingSession.h"
 
+USBZWeaponModdingSession::USBZWeaponModdingSession() {
+    this->DuplicateProfileSaveData = NULL;
+    this->WorldContextObject = NULL;
+}
+
 FGuid USBZWeaponModdingSession::RetrievePartInSlot(const USBZWeaponPartSlot* Slot) const {
     return FGuid{};
 }
@@ -28,8 +33,4 @@ bool USBZWeaponModdingSession::ApplyModifications(USBZProfileSaveData* ProfileSa
     return false;
 }
 
-USBZWeaponModdingSession::USBZWeaponModdingSession() {
-    this->DuplicateProfileSaveData = NULL;
-    this->WorldContextObject = NULL;
-}
 

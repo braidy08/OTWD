@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/GameStateBase.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameStateBase -FallbackName=GameStateBase
 #include "SBZGameStateBase.generated.h"
 
 class ASBZStatsDummyWeapon;
@@ -15,9 +15,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASBZStatsDummyWeapon* StatsDummyWeapon;
     
-    ASBZGameStateBase();
+    ASBZGameStateBase(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_ElapsedTime();
     

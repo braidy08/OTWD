@@ -4,3 +4,4 @@ UOTWDAICharacterSchematic::UOTWDAICharacterSchematic() {
     this->bCanSpawnAsCrowd = false;
 }
 
+

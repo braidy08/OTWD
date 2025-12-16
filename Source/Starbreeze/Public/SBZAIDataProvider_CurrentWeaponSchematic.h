@@ -21,5 +21,6 @@ public:
     bool BoolValue;
     
     USBZAIDataProvider_CurrentWeaponSchematic();
+
 };
 

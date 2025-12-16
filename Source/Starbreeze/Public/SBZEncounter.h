@@ -1,10 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Info.h"
+#include "AutomaticReinforcement.h"
+#include "BossSpawnLimitTracker.h"
 #include "EEncounterState.h"
 #include "EncounterPhaseDelegateDelegate.h"
 #include "PawnGroupSpawnedSignatureDelegate.h"
 #include "SBZEncounterSettings.h"
+#include "SBZGameTimeSince.h"
+#include "SpawnerManualWeights.h"
+#include "WeightedEncounterSpawn.h"
+#include "WeightedSpawner.h"
 #include "SBZEncounter.generated.h"
 
 class AActor;
@@ -12,7 +18,9 @@ class APawn;
 class ASBZCharacter;
 class ASBZCombatArea;
 class ASBZEncounterVolume;
+class ASBZPlayerCharacter;
 class ASBZSpawnerBase;
+class USBZAICharacterSchematic;
 class USBZBaseSpawnBehaviour;
 class USBZEncounterGroupSchematic;
 class USBZEncounterPhase;
@@ -66,8 +74,40 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<APawn*> EncounterPawns;
     
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USBZEncounterPhase* CurrentPhase;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FSBZGameTimeSince TimeSinceEnteredPhase;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FSBZGameTimeSince TimeSinceLastSpawnedEnemies;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FWeightedSpawner> WeightedSpawners;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FWeightedEncounterSpawn> PotentialSpawns;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TMap<USBZAICharacterSchematic*, FBossSpawnLimitTracker> BossSpawnLimits;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TMap<ASBZSpawnerBase*, FSpawnerManualWeights> SpawnerManualWeights;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASBZPlayerCharacter*> CurrentPlayerCharacters;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FAutomaticReinforcement> AutomaticReinforcements;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FSBZGameTimeSince TimeSinceUpdatedSpawnWeights;
+    
 public:
-    ASBZEncounter();
+    ASBZEncounter(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintNativeEvent)
     void StartEncounter();
     

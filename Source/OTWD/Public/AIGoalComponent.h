@@ -15,6 +15,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIGoalChangedDelegate OnGoalChanged;
     
-    UAIGoalComponent();
+    UAIGoalComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

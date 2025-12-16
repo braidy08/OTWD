@@ -1,6 +1,7 @@
 #include "OTWDAISpawner.h"
 
-AOTWDAISpawner::AOTWDAISpawner() {
+AOTWDAISpawner::AOTWDAISpawner(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bAddZombiesToHorde = true;
 }
+
 

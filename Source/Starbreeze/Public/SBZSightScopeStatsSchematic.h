@@ -64,5 +64,6 @@ public:
     FSBZWeaponDOFSettings DOFSettings;
     
     USBZSightScopeStatsSchematic();
+
 };
 

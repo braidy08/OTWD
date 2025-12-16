@@ -42,7 +42,8 @@ private:
     ASBZPlayerController* OwnerPlayerController;
     
 public:
-    USBZPlayerDramaComponent();
+    USBZPlayerDramaComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnPlayerDefeatStateChanged(ESBZPlayerDefeatState NewState, AActor* InOwner);

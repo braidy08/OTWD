@@ -30,5 +30,6 @@ public:
     float SuccessPenalty;
     
     UOTWDMetagameMissionThreat();
+
 };
 

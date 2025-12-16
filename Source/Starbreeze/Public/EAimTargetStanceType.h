@@ -7,8 +7,8 @@ enum class EAimTargetStanceType : uint8 {
     None,
     Crouching,
     Prone,
-    Sliding = 0x4,
-    PeekingLeft = 0x8,
-    PeekingRight = 0x10,
+    Sliding = 4,
+    PeekingLeft = 8,
+    PeekingRight = 16,
 };
 

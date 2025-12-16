@@ -1,5 +1,10 @@
 #include "SBZInputUserSettings.h"
 
+USBZInputUserSettings::USBZInputUserSettings() {
+    this->ActionMappings.AddDefaulted(24);
+    this->AxisMappings.AddDefaulted(6);
+}
+
 void USBZInputUserSettings::StopRebinding(ASBZPlayerController* Controller) {
 }
 
@@ -32,8 +37,4 @@ FKey USBZInputUserSettings::GetReboundActionKey(FName Action, int32 BindingIndex
 void USBZInputUserSettings::ApplySettings() {
 }
 
-USBZInputUserSettings::USBZInputUserSettings() {
-    this->ActionMappings.AddDefaulted(25);
-    this->AxisMappings.AddDefaulted(6);
-}
 

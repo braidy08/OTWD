@@ -1,6 +1,11 @@
 #include "SBZGameStateBase.h"
 #include "Net/UnrealNetwork.h"
 
+ASBZGameStateBase::ASBZGameStateBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ElapsedTime = 0;
+    this->StatsDummyWeapon = NULL;
+}
+
 void ASBZGameStateBase::OnRep_ElapsedTime() {
 }
 
@@ -10,8 +15,4 @@ void ASBZGameStateBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     DOREPLIFETIME(ASBZGameStateBase, ElapsedTime);
 }
 
-ASBZGameStateBase::ASBZGameStateBase() {
-    this->ElapsedTime = 0;
-    this->StatsDummyWeapon = NULL;
-}
 

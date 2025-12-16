@@ -8,6 +8,7 @@ class STARBREEZE_API USBZMissionEventTracker : public UObject {
     GENERATED_BODY()
 public:
     USBZMissionEventTracker();
+
     UFUNCTION(BlueprintCallable)
     void HandleReturnedToMainMenu();
     

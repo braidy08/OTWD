@@ -1,6 +1,6 @@
 #include "SBZAutoPeekComponent.h"
 
-USBZAutoPeekComponent::USBZAutoPeekComponent() {
+USBZAutoPeekComponent::USBZAutoPeekComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bEnabled = false;
     this->ForwardCheckMinDistToWall = 1;
     this->TriggerPeekDistancePrecentage = 1;
@@ -14,4 +14,5 @@ USBZAutoPeekComponent::USBZAutoPeekComponent() {
     this->ThicknessCheckRayCount = 0;
     this->ThicknessCheckPassCount = 0;
 }
+
 

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZEnvQueryItemType_Vector : public UEnvQueryItemType_Vect
     GENERATED_BODY()
 public:
     USBZEnvQueryItemType_Vector();
+
 };
 

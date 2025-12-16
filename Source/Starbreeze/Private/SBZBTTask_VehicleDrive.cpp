@@ -1,6 +1,7 @@
 #include "SBZBTTask_VehicleDrive.h"
 
 USBZBTTask_VehicleDrive::USBZBTTask_VehicleDrive() {
+    this->NodeName = TEXT("Vehicle Drive");
     this->Speed = 1;
     this->SteerAngleForSpeedMult = 1;
     this->SteerAngleForBrakeMult = 1;
@@ -11,4 +12,5 @@ USBZBTTask_VehicleDrive::USBZBTTask_VehicleDrive() {
     this->TargetLineForwardOffset = 1;
     this->bAlwaysSuccessful = false;
 }
+
 

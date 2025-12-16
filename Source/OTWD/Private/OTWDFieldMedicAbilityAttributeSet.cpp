@@ -1,6 +1,16 @@
 #include "OTWDFieldMedicAbilityAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDFieldMedicAbilityAttributeSet::UOTWDFieldMedicAbilityAttributeSet() {
+    this->ReviveSpeedMod = 1;
+    this->ReviveHealthMod = 1;
+    this->DamageResistMod = 1;
+    this->HealthRegenMod = 1;
+    this->HealthRegenDelayMod = 1;
+    this->SpeedBuffMod = 1;
+    this->BuffDuration = 1;
+}
+
 void UOTWDFieldMedicAbilityAttributeSet::OnRep_SpeedBuffMod() {
 }
 
@@ -34,13 +44,4 @@ void UOTWDFieldMedicAbilityAttributeSet::GetLifetimeReplicatedProps(TArray<FLife
     DOREPLIFETIME(UOTWDFieldMedicAbilityAttributeSet, BuffDuration);
 }
 
-UOTWDFieldMedicAbilityAttributeSet::UOTWDFieldMedicAbilityAttributeSet() {
-    this->ReviveSpeedMod = 1;
-    this->ReviveHealthMod = 1;
-    this->DamageResistMod = 1;
-    this->HealthRegenMod = 1;
-    this->HealthRegenDelayMod = 1;
-    this->SpeedBuffMod = 1;
-    this->BuffDuration = 1;
-}
 

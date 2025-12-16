@@ -33,5 +33,6 @@ public:
     UDataTable* LevelDataTable;
     
     UOTWDCharacterLevelsDataAsset();
+
 };
 

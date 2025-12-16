@@ -11,6 +11,7 @@ class STARBREEZE_API USBZCosmeticTypeHelper : public UObject {
     GENERATED_BODY()
 public:
     USBZCosmeticTypeHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTypeIndex(const TSubclassOf<USBZCosmetic>& CosmeticSubclass) const;
     

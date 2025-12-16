@@ -8,5 +8,6 @@ class STARBREEZE_API USBZClimbAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZClimbAction();
+
 };
 

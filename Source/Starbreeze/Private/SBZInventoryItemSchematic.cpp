@@ -4,3 +4,4 @@ USBZInventoryItemSchematic::USBZInventoryItemSchematic() {
     this->bLootToMissionInventory = false;
 }
 
+

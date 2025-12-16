@@ -8,5 +8,6 @@ class STARBREEZE_API USBZHeavyShoveDamageType : public USBZDamageType {
     GENERATED_BODY()
 public:
     USBZHeavyShoveDamageType();
+
 };
 

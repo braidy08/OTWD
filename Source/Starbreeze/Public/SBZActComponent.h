@@ -28,6 +28,7 @@ private:
     USBZAIActEditorPreviewComponent* EditorPreviewComponent;
     
 public:
-    USBZActComponent();
+    USBZActComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

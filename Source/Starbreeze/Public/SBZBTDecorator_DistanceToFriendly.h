@@ -5,8 +5,8 @@
 #include "ESBZNumericComparison.h"
 #include "SBZBTDecorator_DistanceToFriendly.generated.h"
 
-UCLASS(Blueprintable)
-class STARBREEZE_API USBZBTDecorator_DistanceToFriendly : public UBTDecorator {
+UCLASS(Blueprintable, Deprecated, NotPlaceable)
+class STARBREEZE_API UDEPRECATED_SBZBTDecorator_DistanceToFriendly : public UBTDecorator {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -24,6 +24,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseDistanceKey;
     
-    USBZBTDecorator_DistanceToFriendly();
+    UDEPRECATED_SBZBTDecorator_DistanceToFriendly();
+
 };
 

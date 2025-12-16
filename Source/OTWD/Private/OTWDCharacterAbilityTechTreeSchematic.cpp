@@ -1,5 +1,8 @@
 #include "OTWDCharacterAbilityTechTreeSchematic.h"
 
+UOTWDCharacterAbilityTechTreeSchematic::UOTWDCharacterAbilityTechTreeSchematic() {
+}
+
 USBZGameplayAbilityData* UOTWDCharacterAbilityTechTreeSchematic::GetDefaultToolAbilityData() {
     return NULL;
 }
@@ -16,9 +19,4 @@ TMap<TSoftClassPtr<APawn>, UOTWDAbilityTechListSchematic*> UOTWDCharacterAbility
     return TMap<TSoftClassPtr<APawn>, UOTWDAbilityTechListSchematic*>();
 }
 
-UOTWDCharacterAbilityTechTreeSchematic::UOTWDCharacterAbilityTechTreeSchematic() {
-    this->CachedDefaultSecondaryAbilityData = NULL;
-    this->CachedDefaultToolAbilityData = NULL;
-    this->CachedDefaultDefenceAbilityData = NULL;
-}
 

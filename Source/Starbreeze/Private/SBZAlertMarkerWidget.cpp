@@ -1,5 +1,17 @@
 #include "SBZAlertMarkerWidget.h"
 
+USBZAlertMarkerWidget::USBZAlertMarkerWidget() {
+    this->ProgressMaterial = NULL;
+    this->CurrentTarget = NULL;
+    this->CurrentLevel = 0;
+    this->SuspiciousDefaultAnim = NULL;
+    this->SuspiciousAnim = NULL;
+    this->InvestigatingDefaultAnim = NULL;
+    this->InvestigatingAnim = NULL;
+    this->CombatAnim = NULL;
+    this->NewTargetAnim = NULL;
+}
+
 void USBZAlertMarkerWidget::SetupWidgets(UMaterialInstanceDynamic* ProgressMaterialWidget) {
 }
 
@@ -15,15 +27,4 @@ void USBZAlertMarkerWidget::OnInvestigatingFinished() {
 void USBZAlertMarkerWidget::OnCombatAnimationFinished() {
 }
 
-USBZAlertMarkerWidget::USBZAlertMarkerWidget() {
-    this->ProgressMaterial = NULL;
-    this->CurrentTarget = NULL;
-    this->CurrentLevel = 0;
-    this->SuspiciousDefaultAnim = NULL;
-    this->SuspiciousAnim = NULL;
-    this->InvestigatingDefaultAnim = NULL;
-    this->InvestigatingAnim = NULL;
-    this->CombatAnim = NULL;
-    this->NewTargetAnim = NULL;
-}
 

@@ -13,5 +13,15 @@ UOTWDCampVendorSettings::UOTWDCampVendorSettings() {
     this->BlackmarkeGoldProgressAmount = 1;
     this->BlackmarkeMetaTurnsUntilItemsCollectable = 0;
     this->CachedVendorDataAsset = NULL;
+    this->CachedWeaponStashDataAsset = NULL;
 }
+
+UOTWDWeaponStashCollection* UOTWDCampVendorSettings::GetWeaponStashCollection() {
+    return NULL;
+}
+
+UOTWDVendorInventoryCollection* UOTWDCampVendorSettings::GetVendorInventoryCollection() {
+    return NULL;
+}
+
 

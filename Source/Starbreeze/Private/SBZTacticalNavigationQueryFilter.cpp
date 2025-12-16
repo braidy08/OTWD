@@ -9,5 +9,10 @@ USBZTacticalNavigationQueryFilter::USBZTacticalNavigationQueryFilter() {
     this->VisibilityScoreBoostMultiplier = 1;
     this->RejectingHeightDiffBetweenNodeAndEnemy = 1;
     this->bActive = true;
+    this->AreaFixedSizeMinAdditionnalLength = 0;
+    this->AreaFixedSizeMaxAdditionnalLength = 0;
+    this->AreaFixedSizeMinAdditionnalWidth = 0;
+    this->AreaFixedSizeMaxAdditionnalWidth = 0;
 }
+
 

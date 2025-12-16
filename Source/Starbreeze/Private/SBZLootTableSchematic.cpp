@@ -4,3 +4,4 @@ USBZLootTableSchematic::USBZLootTableSchematic() {
     this->AlreadyLootedRatio = 1;
 }
 
+

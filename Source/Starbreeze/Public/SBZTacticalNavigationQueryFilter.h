@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AI/Navigation/NavFilters/NavigationQueryFilter.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavigationQueryFilter -FallbackName=NavigationQueryFilter
 #include "SBZTacticalNavigationQueryFilter.generated.h"
 
 UCLASS(Abstract, Blueprintable)
@@ -32,7 +32,20 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bActive;
     
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint16 AreaFixedSizeMinAdditionnalLength;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint16 AreaFixedSizeMaxAdditionnalLength;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint16 AreaFixedSizeMinAdditionnalWidth;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint16 AreaFixedSizeMaxAdditionnalWidth;
+    
 public:
     USBZTacticalNavigationQueryFilter();
+
 };
 

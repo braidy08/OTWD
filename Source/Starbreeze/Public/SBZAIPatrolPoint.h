@@ -44,6 +44,7 @@ private:
     USphereComponent* SphereComponent;
     
 public:
-    ASBZAIPatrolPoint();
+    ASBZAIPatrolPoint(const FObjectInitializer& ObjectInitializer);
+
 };
 

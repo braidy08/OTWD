@@ -8,5 +8,6 @@ class STARBREEZE_API UAnimNotify_AllowMeleeCombos : public UAnimNotify {
     GENERATED_BODY()
 public:
     UAnimNotify_AllowMeleeCombos();
+
 };
 

@@ -1,5 +1,8 @@
 #include "SBZGameplayAbilityQueryLibrary.h"
 
+USBZGameplayAbilityQueryLibrary::USBZGameplayAbilityQueryLibrary() {
+}
+
 bool USBZGameplayAbilityQueryLibrary::QueryGameplayTagFromActor(AActor* Actor, const FSBZGameplayTagComparison& Comparison) {
     return false;
 }
@@ -48,6 +51,4 @@ bool USBZGameplayAbilityQueryLibrary::QueryCompositeFromAbilitySystemComponent(U
     return false;
 }
 
-USBZGameplayAbilityQueryLibrary::USBZGameplayAbilityQueryLibrary() {
-}
 

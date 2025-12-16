@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class STARBREEZE_API ASBZMovableCheckpoint : public ASBZCheckpoint {
     GENERATED_BODY()
 public:
-    ASBZMovableCheckpoint();
+    ASBZMovableCheckpoint(const FObjectInitializer& ObjectInitializer);
+
 };
 

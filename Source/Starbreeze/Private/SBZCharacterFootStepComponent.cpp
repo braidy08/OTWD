@@ -1,7 +1,8 @@
 #include "SBZCharacterFootStepComponent.h"
 
-USBZCharacterFootStepComponent::USBZCharacterFootStepComponent() {
+USBZCharacterFootStepComponent::USBZCharacterFootStepComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->OverrideSoundEvent = NULL;
+    this->bUseSquaredDistance = false;
     this->NormalStepDistance = 1;
     this->CrouchStepDistance = 1;
     this->RunStepDistance = 1;
@@ -11,4 +12,5 @@ USBZCharacterFootStepComponent::USBZCharacterFootStepComponent() {
     this->OwnerCharacter = NULL;
     this->OwnerCharacterMovementComponent = NULL;
 }
+
 

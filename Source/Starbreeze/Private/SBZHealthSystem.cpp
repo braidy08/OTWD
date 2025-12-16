@@ -1,5 +1,12 @@
 #include "SBZHealthSystem.h"
 
+USBZHealthSystem::USBZHealthSystem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->HealthClass = NULL;
+    this->ArmorClass = NULL;
+    this->ArmorModifierClass = NULL;
+    this->ArmorRechargeDelay = 1;
+}
+
 void USBZHealthSystem::Initialize(USBZPropertyComponent* Component) {
 }
 
@@ -27,10 +34,4 @@ float USBZHealthSystem::GetArmorPercentage() const {
     return 0.0f;
 }
 
-USBZHealthSystem::USBZHealthSystem() {
-    this->HealthClass = NULL;
-    this->ArmorClass = NULL;
-    this->ArmorModifierClass = NULL;
-    this->ArmorRechargeDelay = 1;
-}
 

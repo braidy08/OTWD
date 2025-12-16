@@ -18,5 +18,6 @@ public:
     bool bAttach;
     
     USBZAnimNotify_PlayLadderClimbingSound();
+
 };
 

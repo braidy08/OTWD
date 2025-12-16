@@ -20,5 +20,6 @@ public:
     TArray<USBZLevelGroupSchematic*> LevelGroups;
     
     USBZLevelsSchematic();
+
 };
 

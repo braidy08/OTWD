@@ -1,6 +1,14 @@
 #include "SBZShoveAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZShoveAttributeSet::USBZShoveAttributeSet() {
+    this->ShoveDamage = 1;
+    this->ShoveRange = 1;
+    this->ShoveImpulse = 1;
+    this->ShoveArcAngle = 1;
+    this->RecoveryDuration = 1;
+}
+
 void USBZShoveAttributeSet::OnRep_ShoveRange(float OldValue) {
 }
 
@@ -46,11 +54,4 @@ void USBZShoveAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(USBZShoveAttributeSet, RecoveryDuration);
 }
 
-USBZShoveAttributeSet::USBZShoveAttributeSet() {
-    this->ShoveDamage = 1;
-    this->ShoveRange = 1;
-    this->ShoveImpulse = 1;
-    this->ShoveArcAngle = 1;
-    this->RecoveryDuration = 1;
-}
 

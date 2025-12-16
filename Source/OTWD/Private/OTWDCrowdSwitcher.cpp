@@ -1,5 +1,6 @@
 #include "OTWDCrowdSwitcher.h"
 
-AOTWDCrowdSwitcher::AOTWDCrowdSwitcher() {
+AOTWDCrowdSwitcher::AOTWDCrowdSwitcher(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

@@ -46,6 +46,9 @@ public:
     bool IsValidGrappleOpponent(AActor* InOpponent);
     
     UFUNCTION()
+    virtual void GrappleWillKill(const FSBZGrappleEventStateProperties& EventProperties) PURE_VIRTUAL(GrappleWillKill,);
+    
+    UFUNCTION()
     virtual bool GrappleWantFinisher(const FSBZGrappleEventStateProperties& EventProperties) PURE_VIRTUAL(GrappleWantFinisher, return false;);
     
     UFUNCTION()

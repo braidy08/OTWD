@@ -34,5 +34,6 @@ public:
     UAkAudioEvent* OffEvent;
     
     USBZFlashlightStatsSchematic();
+
 };
 

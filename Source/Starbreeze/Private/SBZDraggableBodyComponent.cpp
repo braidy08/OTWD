@@ -1,5 +1,11 @@
 #include "SBZDraggableBodyComponent.h"
 
+USBZDraggableBodyComponent::USBZDraggableBodyComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->GrabbedComponennt = NULL;
+    this->bRestrictCameraView = false;
+    this->bFullBodyRagdoll = false;
+}
+
 void USBZDraggableBodyComponent::OnDragStarted_Implementation(USBZBodyDraggingComponent* Component) {
 }
 
@@ -14,9 +20,4 @@ USBZBodyDraggingComponent* USBZDraggableBodyComponent::GetDraggedBy() const {
     return NULL;
 }
 
-USBZDraggableBodyComponent::USBZDraggableBodyComponent() {
-    this->GrabbedComponennt = NULL;
-    this->bRestrictCameraView = false;
-    this->bFullBodyRagdoll = false;
-}
 

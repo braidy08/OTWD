@@ -26,8 +26,9 @@ public:
     float ExplosionDamage;
     
     UOTWDMolotovAbilityAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_FireSpeedMod();
     

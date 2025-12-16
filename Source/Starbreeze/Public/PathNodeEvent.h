@@ -2,6 +2,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Info.h"
 #include "EPathEventFinishType.h"
+#include "EventFinishedDelegateDelegate.h"
+#include "EventStartedDelegateDelegate.h"
 #include "PathConnection.h"
 #include "PathNodeEvent.generated.h"
 
@@ -12,9 +14,6 @@ UCLASS(Abstract, Blueprintable)
 class STARBREEZE_API APathNodeEvent : public AInfo {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEventStartedDelegate);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEventFinishedDelegate, const EPathEventFinishType, FinishType);
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEventStartedDelegate OnEventStarted;
     
@@ -32,7 +31,8 @@ protected:
     TArray<APathNode*> ReservedNodes;
     
 public:
-    APathNodeEvent();
+    APathNodeEvent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnSetupEvent(const UNodeEventCategory* Category, const uint8 Intensity);
     

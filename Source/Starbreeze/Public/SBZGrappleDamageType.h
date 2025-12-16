@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGrappleDamageType : public USBZDamageType {
     GENERATED_BODY()
 public:
     USBZGrappleDamageType();
+
 };
 

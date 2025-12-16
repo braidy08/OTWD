@@ -1,5 +1,8 @@
 #include "OTWDMetagameSurviorGameSettings.h"
 
+UOTWDMetagameSurviorGameSettings::UOTWDMetagameSurviorGameSettings() {
+}
+
 UOTWDMetagameRootSurvivorDataAssets* UOTWDMetagameSurviorGameSettings::GetSurvivorsRootData() {
     return NULL;
 }
@@ -16,6 +19,4 @@ UOTWDMetagameBuildingsRootDataAsset* UOTWDMetagameSurviorGameSettings::GetBuildi
     return NULL;
 }
 
-UOTWDMetagameSurviorGameSettings::UOTWDMetagameSurviorGameSettings() {
-}
 

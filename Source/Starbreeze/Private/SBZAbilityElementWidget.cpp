@@ -1,8 +1,5 @@
 #include "SBZAbilityElementWidget.h"
 
-void USBZAbilityElementWidget::SetupWidgets(UImage* AbilityIconWidget, UTextBlock* AmmoTextWidget, USBZActionImageWidget* ActionImageWidget, UImage* ResourceImageWidget, UWidgetAnimation* AbilityNotUseableAnimation, UWidgetAnimation* AbilityUseableAnimation, UWidgetAnimation* AbilityNotUseableDefaultAnimation, UWidgetAnimation* AbilityUseableDefaultAnimation, UWidgetAnimation* AbilityUsedAnimation, UWidgetAnimation* AbilityCraftedAnimation, UWidgetAnimation* ResourceUpdatedAnimation, UWidgetAnimation* FadeInAnimation, UWidgetAnimation* FadeOutAnimation, UWidgetAnimation* AbilityFailedAnimation, UWidgetAnimation* ShowCraftableAnimation, UWidgetAnimation* HideCraftableAnimation, UWidgetAnimation* ShowCraftableDefaultAnimation, UWidgetAnimation* HideCraftableDefaultAnimation, UWidgetAnimation* AbilityActivationAnimation) {
-}
-
 USBZAbilityElementWidget::USBZAbilityElementWidget() {
     this->AbilityIcon = NULL;
     this->AmmoText = NULL;
@@ -24,4 +21,8 @@ USBZAbilityElementWidget::USBZAbilityElementWidget() {
     this->AbilityFailedAnim = NULL;
     this->AbilityActivationAnim = NULL;
 }
+
+void USBZAbilityElementWidget::SetupWidgets(UImage* AbilityIconWidget, UTextBlock* AmmoTextWidget, USBZActionImageWidget* ActionImageWidget, UImage* ResourceImageWidget, UWidgetAnimation* AbilityNotUseableAnimation, UWidgetAnimation* AbilityUseableAnimation, UWidgetAnimation* AbilityNotUseableDefaultAnimation, UWidgetAnimation* AbilityUseableDefaultAnimation, UWidgetAnimation* AbilityUsedAnimation, UWidgetAnimation* AbilityCraftedAnimation, UWidgetAnimation* ResourceUpdatedAnimation, UWidgetAnimation* FadeInAnimation, UWidgetAnimation* FadeOutAnimation, UWidgetAnimation* AbilityFailedAnimation, UWidgetAnimation* ShowCraftableAnimation, UWidgetAnimation* HideCraftableAnimation, UWidgetAnimation* ShowCraftableDefaultAnimation, UWidgetAnimation* HideCraftableDefaultAnimation, UWidgetAnimation* AbilityActivationAnimation) {
+}
+
 

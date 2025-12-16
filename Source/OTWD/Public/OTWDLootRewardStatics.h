@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "ESBZDifficulty.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
 #include "ESBZWeaponRarity.h"
 #include "OTWDLootRewardStatics.generated.h"
 
@@ -16,6 +16,7 @@ class OTWD_API UOTWDLootRewardStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOTWDLootRewardStatics();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<float> GetRarityWeightsFromPlayer(const UOTWDProfileSaveData* ProfileSaveData, const UOTWDMetagameWeaponDataAsset* MetagameWeaponAsset, ESBZDifficulty Difficulty);
     

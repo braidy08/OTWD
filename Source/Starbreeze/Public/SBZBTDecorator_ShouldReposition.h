@@ -20,5 +20,6 @@ public:
     float RandomMoveChance;
     
     USBZBTDecorator_ShouldReposition();
+
 };
 

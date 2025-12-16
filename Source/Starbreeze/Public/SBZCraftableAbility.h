@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayAbility.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbility -FallbackName=GameplayAbility
 #include "Templates/SubclassOf.h"
 #include "SBZCraftableAbility.generated.h"
 
@@ -12,6 +12,7 @@ public:
     TSubclassOf<UGameplayAbility> CraftingAbility;
     
     USBZCraftableAbility();
+
     UFUNCTION(BlueprintCallable)
     TSubclassOf<UGameplayAbility> GetCraftableAbility();
     

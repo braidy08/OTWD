@@ -33,9 +33,10 @@ private:
     TArray<FSBZDynamicGameProperty> DynamicGameProperties;
     
 public:
-    USBZPropertyComponent();
+    USBZPropertyComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void SetDynamicTarget(const int32 PropertyID, const float NewValue);
     

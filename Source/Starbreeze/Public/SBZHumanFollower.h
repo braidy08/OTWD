@@ -3,8 +3,12 @@
 #include "GameplayEffectTypes.h"
 #include "EClimbType.h"
 #include "EHumanFollowerStatus.h"
+#include "ESBZHumanAICharacterDefeatAnimationState.h"
 #include "ESBZLadderClimbActionType.h"
 #include "ESBZVoiceComment.h"
+#include "FollowerStatusChangedDelegateDelegate.h"
+#include "GrappleEndedDelegateDelegate.h"
+#include "GrappleStartedDelegateDelegate.h"
 #include "SBZHumanAICharacter.h"
 #include "Templates/SubclassOf.h"
 #include "SBZHumanFollower.generated.h"
@@ -22,10 +26,6 @@ UCLASS(Blueprintable)
 class STARBREEZE_API ASBZHumanFollower : public ASBZHumanAICharacter {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGrappleStartedDelegate, AActor*, MainAttackerActor);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGrappleEndedDelegate, bool, bFollowerLost, AActor*, MainAttackerActor);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFollowerStatusChangedDelegate, EHumanFollowerStatus, NewStatus, ASBZCharacter*, ByCharacter);
-    
     UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFollowerStatusChangedDelegate OnFollowerStatusChangedDelegate;
     
@@ -55,10 +55,16 @@ public:
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASBZCharacter* FollowedCharacter;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USBZPlayerDefeatSettingsSchematic* DefeatSettings;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_FollowerStatusChanged, meta=(AllowPrivateAccess=true))
     EHumanFollowerStatus FollowerStatus;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_AnimDefeatStateUpdated, meta=(AllowPrivateAccess=true))
+    ESBZHumanAICharacterDefeatAnimationState AnimDefeatState;
     
     UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGrappleStartedDelegate OnGrappleStartedDelegate;
@@ -70,7 +76,10 @@ protected:
     USBZInteractableComponent* FollowerInteractableComponent;
     
 public:
-    ASBZHumanFollower();
+    ASBZHumanFollower(const FObjectInitializer& ObjectInitializer);
+
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintCallable)
     bool ShouldAlwaysSurviveWhenLosingGrapple();
     
@@ -85,13 +94,19 @@ public:
     
 protected:
     UFUNCTION(BlueprintCallable)
+    void OnReviveAnimationEnded();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_FollowerStatusChanged();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_AnimDefeatStateUpdated();
+    
+    UFUNCTION(BlueprintCallable)
     void OnMVComponentClimbStateChanged(EClimbType MVActionType);
     
     UFUNCTION(BlueprintCallable)
     void OnClimbComponentClimbStateChanged(ESBZLadderClimbActionType ClimbActionType);
-    
-    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
-    void NetMulticast_UpdateNewStatusParams(EHumanFollowerStatus NewStatus);
     
 public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
@@ -141,8 +156,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void DoCrouch();
     
+protected:
     UFUNCTION(BlueprintCallable)
-    void ChangeFollowerStatus(EHumanFollowerStatus NewStatus, ASBZCharacter* ByCharacter);
+    void ChangeFollowerStatus_Internal(EHumanFollowerStatus NewStatus, ASBZCharacter* ByCharacter);
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void ChangeFollowerStatus(EHumanFollowerStatus NewStatus, ASBZCharacter* ByCharacter, bool bImmediate);
     
 };
 

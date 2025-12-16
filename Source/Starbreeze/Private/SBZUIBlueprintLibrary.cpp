@@ -1,6 +1,9 @@
 #include "SBZUIBlueprintLibrary.h"
 
-void USBZUIBlueprintLibrary::ShowSteamStoreOverlayForContentPack(const UObject* WorldContextObject, USBZContentPack* contentPack) {
+USBZUIBlueprintLibrary::USBZUIBlueprintLibrary() {
+}
+
+void USBZUIBlueprintLibrary::ShowSteamStoreOverlayForContentPack(const UObject* WorldContextObject, USBZContentPack* ContentPack) {
 }
 
 void USBZUIBlueprintLibrary::ShowSteamStoreOverlayForAppID(const UObject* WorldContextObject, const FString& AppID) {
@@ -26,6 +29,4 @@ int32 USBZUIBlueprintLibrary::GetMaxPlayers(const UObject* WorldContextObject) {
     return 0;
 }
 
-USBZUIBlueprintLibrary::USBZUIBlueprintLibrary() {
-}
 

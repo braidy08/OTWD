@@ -7,6 +7,7 @@ UCLASS(Abstract, Blueprintable)
 class ASBZLightVisibilityShape : public AActor {
     GENERATED_BODY()
 public:
-    ASBZLightVisibilityShape();
+    ASBZLightVisibilityShape(const FObjectInitializer& ObjectInitializer);
+
 };
 

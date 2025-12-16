@@ -20,8 +20,8 @@ USBZMantlingVaultingSchematic::USBZMantlingVaultingSchematic() {
     this->CollisionProfileName = TEXT("PlayerPawn");
     this->bDebugDraw = false;
     this->MantleOffsetFromWallDist = 1;
-    this->bHideWeapon = false;
     this->SnapRotationDuration = 1;
     this->SoundEvent = NULL;
 }
+
 

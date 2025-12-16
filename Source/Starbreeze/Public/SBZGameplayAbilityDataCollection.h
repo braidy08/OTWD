@@ -15,6 +15,7 @@ public:
     TArray<USBZGameplayAbilityData*> Collection;
     
     USBZGameplayAbilityDataCollection();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     USBZGameplayAbilityData* FindDataForGameplayAbility(TSubclassOf<UGameplayAbility> GameplayAbilityClass) const;
     

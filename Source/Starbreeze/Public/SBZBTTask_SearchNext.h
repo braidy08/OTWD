@@ -8,5 +8,6 @@ class USBZBTTask_SearchNext : public UBTTaskNode {
     GENERATED_BODY()
 public:
     USBZBTTask_SearchNext();
+
 };
 

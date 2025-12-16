@@ -19,7 +19,6 @@ class APawn;
 class ASBZAICharacter;
 class ASBZAIPatrolPoint;
 class ASBZCharacter;
-class ASBZCoverPoint;
 class ASBZHumanAICharacter;
 class USBZAIPerceptionComponent;
 class USBZAIPerceptionMemoryComponent;
@@ -111,7 +110,8 @@ protected:
     ASBZCharacter* CurrentTarget;
     
 public:
-    ASBZAIController();
+    ASBZAIController(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool SetStance(const FSBZAIStanceIdHelper& Stance);
     
@@ -128,16 +128,7 @@ public:
     void RemoveSingleLogicBlocker();
     
     UFUNCTION(BlueprintCallable)
-    void RememberCoverPoint(ASBZCoverPoint* CoverPoint);
-    
-    UFUNCTION(BlueprintCallable)
-    bool IsRememberingCoverPoint(ASBZCoverPoint* CoverPoint);
-    
-    UFUNCTION(BlueprintCallable)
     void GetCurrentStanceName(FString& StanceName);
-    
-    UFUNCTION(BlueprintCallable)
-    float GetCoverPointMemoryScore(ASBZCoverPoint* CoverPoint);
     
     UFUNCTION(BlueprintCallable)
     void ApplyStateMachineConfig();

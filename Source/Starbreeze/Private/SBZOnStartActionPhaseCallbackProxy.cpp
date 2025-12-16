@@ -1,5 +1,8 @@
 #include "SBZOnStartActionPhaseCallbackProxy.h"
 
+USBZOnStartActionPhaseCallbackProxy::USBZOnStartActionPhaseCallbackProxy() {
+}
+
 USBZOnStartActionPhaseCallbackProxy* USBZOnStartActionPhaseCallbackProxy::WaitActionPhase(UObject* WorldContextObject) {
     return NULL;
 }
@@ -7,6 +10,4 @@ USBZOnStartActionPhaseCallbackProxy* USBZOnStartActionPhaseCallbackProxy::WaitAc
 void USBZOnStartActionPhaseCallbackProxy::OnStateEntered(FName StateName) {
 }
 
-USBZOnStartActionPhaseCallbackProxy::USBZOnStartActionPhaseCallbackProxy() {
-}
 

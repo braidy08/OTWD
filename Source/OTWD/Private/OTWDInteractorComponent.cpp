@@ -1,5 +1,6 @@
 #include "OTWDInteractorComponent.h"
 
-UOTWDInteractorComponent::UOTWDInteractorComponent() {
+UOTWDInteractorComponent::UOTWDInteractorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

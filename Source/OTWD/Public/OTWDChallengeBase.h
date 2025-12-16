@@ -1,7 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZChallengeBase.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZChallengeBase -FallbackName=SBZChallengeBase
 #include "EChallengeName.h"
+#include "OTWDChallengeRequirements.h"
 #include "OTWDChallengeUnlocks.h"
 #include "OTWDChallengeBase.generated.h"
 
@@ -14,6 +15,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOTWDChallengeUnlocks Unlocks;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOTWDChallengeRequirements Requirements;
     
     FOTWDChallengeBase();
 };

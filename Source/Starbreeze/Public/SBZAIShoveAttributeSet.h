@@ -18,8 +18,9 @@ public:
     float CoolDown;
     
     USBZAIShoveAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_RecoverTime(float OldValue);
     

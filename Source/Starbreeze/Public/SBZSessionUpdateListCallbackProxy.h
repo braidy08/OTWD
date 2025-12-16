@@ -16,6 +16,7 @@ public:
     FOnOnlineSessionSearchEventDelegate OnComplete;
     
     USBZSessionUpdateListCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static USBZSessionUpdateListCallbackProxy* SessionUpdateList(UObject* WorldContextObject, const FSBZOnlineSessionParams& InSearchParams);
     

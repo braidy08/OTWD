@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
+#include "AttributeSet.h"
 #include "OTWDCampDefenceFortificationAttributeSet.generated.h"
 
 UCLASS(Blueprintable)
@@ -44,8 +45,9 @@ public:
     float ExplosiveBarrelFortificationUses;
     
     UOTWDCampDefenceFortificationAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_SpikeTrapFortificationUses(float OldValue);
     

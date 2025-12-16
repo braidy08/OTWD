@@ -15,6 +15,7 @@ class OTWD_API UOTWDOnlineFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOTWDOnlineFunctionLibrary();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void OpenWeaponReward(const UObject* WorldContextObject, const ESBZRewardType& RewardType, const FOTWDWeaponSavedData& SaveData);
     

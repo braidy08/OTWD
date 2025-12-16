@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTTask_HandleMoveToInteractionBT : public UBTTaskNode {
     GENERATED_BODY()
 public:
     USBZBTTask_HandleMoveToInteractionBT();
+
 };
 

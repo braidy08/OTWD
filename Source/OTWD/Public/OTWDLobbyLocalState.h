@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZLobbyLocalState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZLobbyLocalState -FallbackName=SBZLobbyLocalState
 #include "ESBZRewardType.h"
 #include "OTWDWeaponPartSavedData.h"
 #include "OTWDWeaponSavedData.h"
@@ -11,6 +11,7 @@ class OTWD_API UOTWDLobbyLocalState : public USBZLobbyLocalState {
     GENERATED_BODY()
 public:
     UOTWDLobbyLocalState();
+
     UFUNCTION(BlueprintCallable)
     void OpenWeaponReward(const FOTWDWeaponSavedData& WeaponSavedData, const ESBZRewardType& RewardType, bool bNotify);
     

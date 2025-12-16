@@ -4,3 +4,4 @@ USBZMarkerConstruct::USBZMarkerConstruct() {
     this->CompassMarker = NULL;
 }
 
+

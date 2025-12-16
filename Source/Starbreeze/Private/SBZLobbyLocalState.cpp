@@ -1,6 +1,9 @@
 #include "SBZLobbyLocalState.h"
 
-void USBZLobbyLocalState::OnCompleteAsyncChangeLoadout(FGuid RequestID, FAsyncChangeLoadoutPayload Payload, FUniqueNetIdRepl PlayerUId) {
+USBZLobbyLocalState::USBZLobbyLocalState() {
+}
+
+void USBZLobbyLocalState::OnCompleteAsyncChangeLoadout(FGuid RequestID, FAsyncChangeLoadoutPayload Payload, FUniqueNetIdRepl PlayerUid) {
 }
 
 void USBZLobbyLocalState::HandleLoadoutChanged() {
@@ -16,6 +19,4 @@ UTexture2D* USBZLobbyLocalState::GetPlayerAvatar(int32 PlayerIndex) {
     return NULL;
 }
 
-USBZLobbyLocalState::USBZLobbyLocalState() {
-}
 

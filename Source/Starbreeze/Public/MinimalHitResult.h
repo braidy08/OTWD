@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/NetSerialization.h"
-#include "Engine/NetSerialization.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantizeNormal -FallbackName=Vector_NetQuantizeNormal
 #include "MinimalHitResult.generated.h"
 
 class UPhysicalMaterial;
@@ -11,10 +11,10 @@ USTRUCT(BlueprintType)
 struct FMinimalHitResult {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UPrimitiveComponent> Component;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UPhysicalMaterial> PhysMaterial;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

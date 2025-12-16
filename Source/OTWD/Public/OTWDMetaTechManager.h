@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
+#include "ChangedMetaTechTreeDelegate.h"
 #include "EMetaTechState.h"
 #include "OTWDMetaTechManager.generated.h"
 
@@ -11,12 +12,11 @@ UCLASS(Blueprintable)
 class OTWD_API UOTWDMetaTechManager : public UObject {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FChangedMetaTechTree);
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FChangedMetaTechTree OnMetaTechTreeChanged;
     
     UOTWDMetaTechManager();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     void PurchaseTech(const UObject* WorldContextObject, const UOTWDMetaTechSchematic* Tech);
     

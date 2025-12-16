@@ -6,6 +6,7 @@ FSBZGrappleEventSettings::FSBZGrappleEventSettings() {
     this->bAddsJoinEndStage = false;
     this->bKillVictimOnLose = false;
     this->bKillAttackerOnLose = false;
+    this->bPullVictimToAttacker = false;
     this->GrapplyImmunityDuration = 1;
     this->RandomSeed = 0;
 }

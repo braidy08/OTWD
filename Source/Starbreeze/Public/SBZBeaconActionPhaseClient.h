@@ -15,9 +15,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_CharactersInfo, meta=(AllowPrivateAccess=true))
     TArray<FSBZLobbyCharacterInfo> PlayersInfo;
     
-    ASBZBeaconActionPhaseClient();
+    ASBZBeaconActionPhaseClient(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSetPlayerInfo(const FSBZLobbyCharacterInfo& PlayerInfo);
     

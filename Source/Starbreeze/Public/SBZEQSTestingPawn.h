@@ -28,6 +28,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZFactionIdHelper Faction;
     
-    ASBZEQSTestingPawn();
+    ASBZEQSTestingPawn(const FObjectInitializer& ObjectInitializer);
+
 };
 

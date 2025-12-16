@@ -21,6 +21,7 @@ private:
     
 public:
     USBZObjectiveDescriptionWidget();
+
     UFUNCTION(BlueprintCallable)
     USBZObjectiveSchematic* SetupObjectiveDescription(const FSBZObjectiveEvent& ObjectiveEvent, UTextBlock* DescriptionText);
     

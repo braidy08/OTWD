@@ -6,3 +6,4 @@ USBZEquippableAnimationCollection::USBZEquippableAnimationCollection() {
     this->TertiaryActivation = NULL;
 }
 
+

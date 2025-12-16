@@ -6,13 +6,14 @@
 
 class UEnvQueryContext;
 
-UCLASS(Blueprintable)
-class USBZEnvQueryTest_RememberedCoverPoint : public UEnvQueryTest {
+UCLASS(Blueprintable, Deprecated, NotPlaceable)
+class UDEPRECATED_SBZEnvQueryTest_RememberedCoverPoint : public UEnvQueryTest {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryContext> AgentContext;
     
-    USBZEnvQueryTest_RememberedCoverPoint();
+    UDEPRECATED_SBZEnvQueryTest_RememberedCoverPoint();
+
 };
 

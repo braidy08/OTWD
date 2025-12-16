@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Info.h"
+#include "UObject/Object.h"
 #include "BPOnDialogEnded_DelegateDelegate.h"
 #include "ESBZPlayDialogResult.h"
 #include "SBZActiveDialogData.h"
@@ -9,14 +9,13 @@
 
 class AActor;
 class ASBZAISmallTalk;
-class ASBZDialogManager;
 class ASBZNarrator;
 class UAkAudioEvent;
-class UObject;
 class USBZDialogData;
+class USBZDialogManager;
 
-UCLASS(Blueprintable)
-class STARBREEZE_API ASBZDialogManager : public AInfo {
+UCLASS(Blueprintable, DefaultToInstanced)
+class STARBREEZE_API USBZDialogManager : public UObject {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -37,7 +36,8 @@ private:
     ASBZAISmallTalk* AISmallTalk;
     
 public:
-    ASBZDialogManager();
+    USBZDialogManager();
+
     UFUNCTION(BlueprintCallable)
     void PlayLine(AActor* Performer, UAkAudioEvent* AudioEvent, const FString& CommentState);
     
@@ -51,7 +51,7 @@ public:
     ASBZNarrator* GetNarrator();
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
-    static ASBZDialogManager* GetDialogManager(UObject* WorldContextObject);
+    static USBZDialogManager* GetDialogManager(UObject* WorldContextObject);
     
 };
 

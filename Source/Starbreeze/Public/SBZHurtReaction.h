@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PrimaryDataAsset -FallbackName=PrimaryDataAsset
 #include "GameplayTagContainer.h"
 #include "SBZArrayHurtReaction.h"
 #include "SBZHurtReactionPose.h"
@@ -29,5 +29,6 @@ public:
     TMap<FGameplayTag, FSBZArrayHurtReaction> GameplayTagMap;
     
     USBZHurtReaction();
+
 };
 

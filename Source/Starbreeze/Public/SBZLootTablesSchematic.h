@@ -5,8 +5,8 @@
 
 class USBZLootTableSchematic;
 
-UCLASS(Blueprintable)
-class STARBREEZE_API USBZLootTablesSchematic : public USBZSchematic {
+UCLASS(Blueprintable, Deprecated, NotPlaceable)
+class STARBREEZE_API UDEPRECATED_SBZLootTablesSchematic : public USBZSchematic {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -15,6 +15,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USBZLootTableSchematic* DefaultLootTable;
     
-    USBZLootTablesSchematic();
+    UDEPRECATED_SBZLootTablesSchematic();
+
 };
 

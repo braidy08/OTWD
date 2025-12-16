@@ -1,5 +1,9 @@
 #include "OTWDUIBindings.h"
 
+UOTWDUIBindings::UOTWDUIBindings() {
+    this->bShowMissionReport = false;
+}
+
 void UOTWDUIBindings::SetNextMenuMissionReport() {
 }
 
@@ -20,7 +24,4 @@ bool UOTWDUIBindings::CanShowLobby() {
     return false;
 }
 
-UOTWDUIBindings::UOTWDUIBindings() {
-    this->bShowMissionReport = false;
-}
 

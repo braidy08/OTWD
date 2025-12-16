@@ -7,7 +7,7 @@ USBZAlertManagerWidget::USBZAlertManagerWidget() : UUserWidget(FObjectInitialize
     this->MaxDistanceFromPlayer = 1;
     this->ManagerFPSLockPC = 0;
     this->ManagerFPSLockConsole = 0;
-    this->WorldSettings = NULL;
     this->MaxDistanceSquared = 1;
 }
+
 

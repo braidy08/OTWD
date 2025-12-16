@@ -33,6 +33,7 @@ private:
     
 public:
     USBZDeathWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UTextBlock* MinTextWidget, UTextBlock* SecsTextWidget, UPanelWidget* TextPanelWidget);
     

@@ -45,8 +45,15 @@ protected:
     
 public:
     USBZBaseAction();
+
+    UFUNCTION(BlueprintCallable)
+    void SetForbidden(bool bInIsForbidden);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsQueued() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsForbidden() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEnabled() const;

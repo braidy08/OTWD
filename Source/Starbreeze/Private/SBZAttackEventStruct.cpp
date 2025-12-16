@@ -7,6 +7,6 @@ FSBZAttackEventStruct::FSBZAttackEventStruct() {
     this->EnemyClass = NULL;
     this->EnemiesHit = 0;
     this->DamageDone = 0;
-    this->bIsAds = false;
+    this->bIsADS = false;
 }
 

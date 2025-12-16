@@ -1,6 +1,15 @@
 #include "OTWDSmokeBombAbilityAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDSmokeBombAbilityAttributeSet::UOTWDSmokeBombAbilityAttributeSet() {
+    this->SmokeRadius = 1;
+    this->SmokeDuration = 1;
+    this->SmokeDamageMod = 1;
+    this->SlowRadius = 1;
+    this->SlowDuration = 1;
+    this->ChokeDuration = 1;
+}
+
 void UOTWDSmokeBombAbilityAttributeSet::OnRep_SmokeRadius() {
 }
 
@@ -30,12 +39,4 @@ void UOTWDSmokeBombAbilityAttributeSet::GetLifetimeReplicatedProps(TArray<FLifet
     DOREPLIFETIME(UOTWDSmokeBombAbilityAttributeSet, ChokeDuration);
 }
 
-UOTWDSmokeBombAbilityAttributeSet::UOTWDSmokeBombAbilityAttributeSet() {
-    this->SmokeRadius = 1;
-    this->SmokeDuration = 1;
-    this->SmokeDamageMod = 1;
-    this->SlowRadius = 1;
-    this->SlowDuration = 1;
-    this->ChokeDuration = 1;
-}
 

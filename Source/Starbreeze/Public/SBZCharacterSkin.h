@@ -22,6 +22,7 @@ public:
     FSBZCharacterMeshSkin ThirdPerson;
     
     USBZCharacterSkin();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static TSoftObjectPtr<USBZCharacterSkin> GetUnlockableAsCharacterSkin(const USBZUnlockableMetadata* UnlockableMetadata);
     

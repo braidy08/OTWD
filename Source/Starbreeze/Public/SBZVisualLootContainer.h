@@ -14,9 +14,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bChangedRootMeshToMatchItems;
     
-    ASBZVisualLootContainer();
+    ASBZVisualLootContainer(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnLootChanged(const TArray<FSBZAutoPickUpItemCount>& CurrentLoot);
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void NetMulticast_OnDisableLootContainer();
     
 };
 

@@ -14,6 +14,7 @@ class STARBREEZE_API USBZAlertnessFunctionLibrary : public UBlueprintFunctionLib
     GENERATED_BODY()
 public:
     USBZAlertnessFunctionLibrary();
+
     UFUNCTION(BlueprintCallable)
     static bool NotEqual_AlertLevelNameName(const FSBZAlertnessLevelNameHelper& A, FName B);
     

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTTask_SetHighestAggroTarget : public UBTTask_Blackboar
     GENERATED_BODY()
 public:
     USBZBTTask_SetHighestAggroTarget();
+
 };
 

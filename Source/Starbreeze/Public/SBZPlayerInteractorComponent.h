@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ETraceTypeQuery -FallbackName=ETraceTypeQuery
 #include "SBZBaseInteractorComponent.h"
 #include "SBZInteractionData.h"
 #include "Templates/SubclassOf.h"
@@ -70,9 +70,10 @@ private:
     APawn* PawnOwner;
     
 public:
-    USBZPlayerInteractorComponent();
+    USBZPlayerInteractorComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 private:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void UpdateInteractionData(const FSBZInteractionData& InInteractionData);

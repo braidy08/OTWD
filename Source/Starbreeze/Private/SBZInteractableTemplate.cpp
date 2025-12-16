@@ -14,3 +14,4 @@ USBZInteractableTemplate::USBZInteractableTemplate() {
     this->InteractSuccessVoiceComment = ESBZVoiceComment::None;
 }
 
+

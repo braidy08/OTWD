@@ -1,5 +1,20 @@
 #include "OTWDRescuableFollower.h"
 
+AOTWDRescuableFollower::AOTWDRescuableFollower(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Tags.AddDefaulted(1);
+    this->ExplosionLineTraceBones.AddDefaulted(6);
+    this->bIsKillable = false;
+    this->RescuableName = ERescuableFollowerName::Unknown;
+    this->RescuableType = ERescuableFollowerType::Random;
+    this->PinningReEnableDelaySeconds = 1;
+    this->AllowCrouchMaxDistance = 1;
+    this->NeutralGeneralAnimations = NULL;
+    this->ScaredGeneralAnimations = NULL;
+    this->BeingTargetedOnReviveDelay = 1;
+    this->MetersAwayWhenRevived = 1;
+    this->bAllowBeingTarget = true;
+}
+
 bool AOTWDRescuableFollower::ShouldBeCrouched() {
     return false;
 }
@@ -10,6 +25,9 @@ bool AOTWDRescuableFollower::SetScaredAnimationCollection() {
 
 bool AOTWDRescuableFollower::SetNeutralAnimationCollection() {
     return false;
+}
+
+void AOTWDRescuableFollower::SetAllowBeingTarget(bool bNowAllowedToBeTarget) {
 }
 
 void AOTWDRescuableFollower::RescueCompleted() {
@@ -33,12 +51,6 @@ void AOTWDRescuableFollower::OnClimbComponentClimbStateChanged(ESBZLadderClimbAc
 void AOTWDRescuableFollower::NetMulticast_SetGeneralAnimationCollection_Implementation(ERescuableFollowerAnimCollection SelectedAnimSet) {
 }
 
-void AOTWDRescuableFollower::NetMulticast_LastPinnerReleased_Implementation() {
-}
-
-void AOTWDRescuableFollower::NetMulticast_FirstPinnerAdded_Implementation() {
-}
-
 void AOTWDRescuableFollower::MoveToIndependentLocation(FVector IndependentLocation, bool bLimitMoveTime) {
 }
 
@@ -57,21 +69,10 @@ void AOTWDRescuableFollower::HandleFollowedCharacterCrouchChanged(bool bIsNowCro
 void AOTWDRescuableFollower::HandleDestinationReached(AActor* DestinationActor) {
 }
 
-void AOTWDRescuableFollower::ChangeFollowerStatus(EHumanFollowerStatus NewStatus, ASBZCharacter* ByCharacter) {
+void AOTWDRescuableFollower::ChangeFollowerStatus_Internal(EHumanFollowerStatus NewStatus, ASBZCharacter* ByCharacter) {
 }
 
 void AOTWDRescuableFollower::ApplySurvivorData() {
 }
 
-AOTWDRescuableFollower::AOTWDRescuableFollower() {
-    this->EatenByZombiesAct = NULL;
-    this->RescuableName = ERescuableFollowerName::Unknown;
-    this->RescuableType = ERescuableFollowerType::Random;
-    this->PinningReEnableDelaySeconds = 1;
-    this->AllowCrouchMaxDistance = 1;
-    this->NeutralGeneralAnimations = NULL;
-    this->ScaredGeneralAnimations = NULL;
-    this->BeingTargetedOnReviveDelay = 1;
-    this->MetersAwayWhenRevived = 1;
-}
 

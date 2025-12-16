@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
+#include "AttributeSet.h"
 #include "SBZNoiseAttributeSet.generated.h"
 
 UCLASS(Blueprintable)
@@ -17,8 +18,9 @@ public:
     float TakedownNoiseRangeMultiplier;
     
     USBZNoiseAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_WalkingNoiseRangeMultiplier(float OldValue);
     

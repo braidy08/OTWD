@@ -43,5 +43,6 @@ public:
     bool bMoveTooFar;
     
     UBTTask_TryGrapple();
+
 };
 

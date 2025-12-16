@@ -11,5 +11,8 @@ UOTWDChallengeSchematic::UOTWDChallengeSchematic() {
     this->ObjectiveChallengesTable = NULL;
     this->LoreChallengesTable = NULL;
     this->QuestChallengesTable = NULL;
+    this->WeaponCollectChallengesTable = NULL;
+    this->CharacterLevelChallangesTable = NULL;
 }
+
 

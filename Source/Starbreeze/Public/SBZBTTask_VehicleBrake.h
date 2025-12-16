@@ -8,5 +8,6 @@ class USBZBTTask_VehicleBrake : public UBTTaskNode {
     GENERATED_BODY()
 public:
     USBZBTTask_VehicleBrake();
+
 };
 

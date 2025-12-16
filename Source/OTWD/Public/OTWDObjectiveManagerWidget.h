@@ -36,6 +36,7 @@ private:
     
 public:
     UOTWDObjectiveManagerWidget();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnObjectiveTimerElapsedInternal(const FOTWDObjectiveEvent& ObjectiveEvent, float RemainingTime);

@@ -1,12 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Volume.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Volume -FallbackName=Volume
 #include "SBZEncounterVolume.generated.h"
 
 UCLASS(Blueprintable)
 class STARBREEZE_API ASBZEncounterVolume : public AVolume {
     GENERATED_BODY()
 public:
-    ASBZEncounterVolume();
+    ASBZEncounterVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

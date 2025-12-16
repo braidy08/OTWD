@@ -21,6 +21,7 @@ private:
     ASBZAICharacter* OwningCharacter;
     
 public:
-    USBZMoveToInteractionHandlerComponent();
+    USBZMoveToInteractionHandlerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

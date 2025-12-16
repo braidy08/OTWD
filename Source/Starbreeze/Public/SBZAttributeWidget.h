@@ -14,6 +14,7 @@ protected:
     
 public:
     USBZAttributeWidget();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSetup(const FGameplayAttribute& Attribute, float InitValue);

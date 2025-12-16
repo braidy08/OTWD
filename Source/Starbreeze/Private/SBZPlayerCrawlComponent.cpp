@@ -1,6 +1,15 @@
 #include "SBZPlayerCrawlComponent.h"
 #include "Net/UnrealNetwork.h"
 
+USBZPlayerCrawlComponent::USBZPlayerCrawlComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->InteractableToSpawn = NULL;
+    this->UIWidgetClass = NULL;
+    this->SpawnedInteractable = NULL;
+    this->UIWidget = NULL;
+    this->bIsCrawling = false;
+}
+
 void USBZPlayerCrawlComponent::StopCrawling() {
 }
 
@@ -71,11 +80,4 @@ void USBZPlayerCrawlComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProper
     DOREPLIFETIME(USBZPlayerCrawlComponent, bIsCrawling);
 }
 
-USBZPlayerCrawlComponent::USBZPlayerCrawlComponent() {
-    this->InteractableToSpawn = NULL;
-    this->UIWidgetClass = NULL;
-    this->SpawnedInteractable = NULL;
-    this->UIWidget = NULL;
-    this->bIsCrawling = false;
-}
 

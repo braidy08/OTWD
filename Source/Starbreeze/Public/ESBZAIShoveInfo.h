@@ -11,6 +11,5 @@ enum class ESBZAIShoveInfo : uint8 {
     SI_FAILED,
     SI_RECOVER_DONE,
     SI_INTERRUPTED,
-    SI_MAX UMETA(Hidden),
 };
 

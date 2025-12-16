@@ -1,5 +1,7 @@
 #include "OTWDScavengerMode.h"
 
-AOTWDScavengerMode::AOTWDScavengerMode() {
+AOTWDScavengerMode::AOTWDScavengerMode(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->TwitchVotePool.AddDefaulted(7);
 }
+
 

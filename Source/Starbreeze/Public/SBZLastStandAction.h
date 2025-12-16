@@ -8,5 +8,6 @@ class STARBREEZE_API USBZLastStandAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZLastStandAction();
+
 };
 

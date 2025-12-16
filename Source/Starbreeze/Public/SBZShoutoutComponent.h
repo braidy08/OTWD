@@ -34,7 +34,8 @@ protected:
     UAbilitySystemComponent* AbilitySystem;
     
 public:
-    USBZShoutoutComponent();
+    USBZShoutoutComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetMarkLimit(int32 NewLimit);
     

@@ -1,6 +1,11 @@
 #include "DamageableComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UDamageableComponent::UDamageableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->PropertyComponent = NULL;
+}
+
 void UDamageableComponent::Suicide() {
 }
 
@@ -16,7 +21,4 @@ void UDamageableComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(UDamageableComponent, StateDataServer);
 }
 
-UDamageableComponent::UDamageableComponent() {
-    this->PropertyComponent = NULL;
-}
 

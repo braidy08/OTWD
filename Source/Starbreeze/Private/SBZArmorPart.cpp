@@ -1,17 +1,25 @@
 #include "SBZArmorPart.h"
-#include "Components/StaticMeshComponent.h"
-#include "Net/UnrealNetwork.h"
 
-void ASBZArmorPart::SetStaticMesh(UStaticMesh* NewStaticMesh) {
+ASBZArmorPart::ASBZArmorPart(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bCanBeDamaged = true;
+    this->DurabilityByDifficulty[0] = 1;
+    this->DurabilityByDifficulty[1] = 1;
+    this->DurabilityByDifficulty[2] = 1;
+    this->DurabilityByDifficulty[3] = 1;
+    this->DefaultDurability = 1;
+    this->SpecialArmorType = ESBZSpecialArmorType::None;
+    this->Mesh = NULL;
+    this->DetachedArrmorPartLifeTime = 1;
+    this->bApplyLeftoverDamage = true;
+    this->HitArmorAudioEvent2D = NULL;
+    this->PopAudioEvent2D = NULL;
+    this->PopAudioEvent3D = NULL;
 }
 
 void ASBZArmorPart::ReplenishArmor() {
 }
 
-void ASBZArmorPart::PopArmor(const FVector& HitDirection) {
-}
-
-void ASBZArmorPart::OnRep_StaticMesh() {
+void ASBZArmorPart::PopGear(const FVector& HitDirection) {
 }
 
 void ASBZArmorPart::Multicast_PopArmor_Implementation(FVector HitDirection) {
@@ -19,10 +27,6 @@ void ASBZArmorPart::Multicast_PopArmor_Implementation(FVector HitDirection) {
 
 bool ASBZArmorPart::HasPopped() const {
     return false;
-}
-
-UStaticMeshComponent* ASBZArmorPart::GetMesh() const {
-    return NULL;
 }
 
 float ASBZArmorPart::GetDurabilityMaximum() const {
@@ -33,25 +37,4 @@ float ASBZArmorPart::GetDurabilityCurrent() const {
     return 0.0f;
 }
 
-void ASBZArmorPart::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
-    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-    
-    DOREPLIFETIME(ASBZArmorPart, StaticMesh);
-}
-
-ASBZArmorPart::ASBZArmorPart() {
-    this->DefaultDurability = 1;
-    this->StaticMesh = NULL;
-    this->ParentCharacter = NULL;
-    this->Alertness = NULL;
-    this->Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
-    this->DetachedArrmorPartLifeTime = 1;
-    this->DirectionalImpulse = 1;
-    this->HitImpulse = 1;
-    this->TorqueImpulse = 1;
-    this->bApplyLeftoverDamage = true;
-    this->HitArmorAudioEvent2D = NULL;
-    this->PopAudioEvent2D = NULL;
-    this->PopAudioEvent3D = NULL;
-}
 

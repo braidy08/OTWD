@@ -8,5 +8,6 @@ class STARBREEZE_API USBZMeleeDamagePattern : public UObject {
     GENERATED_BODY()
 public:
     USBZMeleeDamagePattern();
+
 };
 

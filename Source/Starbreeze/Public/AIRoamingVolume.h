@@ -20,6 +20,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZBTTask_GetWanderLocation_Method Method;
     
-    AAIRoamingVolume();
+    AAIRoamingVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

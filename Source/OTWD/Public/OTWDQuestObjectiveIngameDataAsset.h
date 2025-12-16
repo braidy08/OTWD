@@ -13,5 +13,6 @@ public:
     TSet<TSoftClassPtr<ASBZCharacter>> RequiredPlayerPawn;
     
     UOTWDQuestObjectiveIngameDataAsset();
+
 };
 

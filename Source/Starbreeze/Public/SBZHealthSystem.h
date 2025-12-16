@@ -26,7 +26,8 @@ private:
     float ArmorRechargeDelay;
     
 public:
-    USBZHealthSystem();
+    USBZHealthSystem(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Initialize(USBZPropertyComponent* Component);
     

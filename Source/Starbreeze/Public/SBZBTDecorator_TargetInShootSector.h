@@ -21,5 +21,6 @@ public:
     bool bUseCustomAngle;
     
     USBZBTDecorator_TargetInShootSector();
+
 };
 

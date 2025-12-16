@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTDecorator_CanCloseCurrentDoor : public UBTDecorator {
     GENERATED_BODY()
 public:
     USBZBTDecorator_CanCloseCurrentDoor();
+
 };
 

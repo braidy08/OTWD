@@ -13,6 +13,7 @@ class STARBREEZE_API USBZSubObjectiveDescriptionWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     USBZSubObjectiveDescriptionWidget();
+
     UFUNCTION(BlueprintCallable)
     USBZObjectiveSchematic* SetupSubObjectiveDescription(const FSBZObjectiveEvent& ObjectiveEvent, UTextBlock* DescriptionText);
     

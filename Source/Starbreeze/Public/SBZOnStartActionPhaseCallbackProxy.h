@@ -15,6 +15,7 @@ public:
     FOnStartActionPhaseDynamicDelegate OnSuccess;
     
     USBZOnStartActionPhaseCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static USBZOnStartActionPhaseCallbackProxy* WaitActionPhase(UObject* WorldContextObject);
     

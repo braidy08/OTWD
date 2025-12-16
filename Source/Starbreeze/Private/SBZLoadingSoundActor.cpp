@@ -1,5 +1,9 @@
 #include "SBZLoadingSoundActor.h"
-#include "MediaSoundComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MediaAssets -ObjectName=MediaSoundComponent -FallbackName=MediaSoundComponent
+
+ASBZLoadingSoundActor::ASBZLoadingSoundActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->SoundComponent = CreateDefaultSubobject<UMediaSoundComponent>(TEXT("SoundComponent"));
+}
 
 bool ASBZLoadingSoundActor::IsReady() const {
     return false;
@@ -8,7 +12,4 @@ bool ASBZLoadingSoundActor::IsReady() const {
 void ASBZLoadingSoundActor::HandleGameReady() {
 }
 
-ASBZLoadingSoundActor::ASBZLoadingSoundActor() {
-    this->SoundComponent = CreateDefaultSubobject<UMediaSoundComponent>(TEXT("SoundComponent"));
-}
 

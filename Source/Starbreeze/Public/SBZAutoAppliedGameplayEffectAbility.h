@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayAbility.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbility -FallbackName=GameplayAbility
 #include "Templates/SubclassOf.h"
 #include "SBZAutoAppliedGameplayEffectAbility.generated.h"
 
@@ -14,5 +14,6 @@ public:
     TArray<TSubclassOf<UGameplayEffect>> PossibleGameplayEffects;
     
     USBZAutoAppliedGameplayEffectAbility();
+
 };
 

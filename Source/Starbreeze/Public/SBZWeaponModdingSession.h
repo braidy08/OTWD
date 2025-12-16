@@ -27,6 +27,7 @@ protected:
     
 public:
     USBZWeaponModdingSession();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FGuid RetrievePartInSlot(const USBZWeaponPartSlot* Slot) const;
     

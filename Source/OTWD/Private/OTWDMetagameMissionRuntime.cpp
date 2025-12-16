@@ -1,5 +1,15 @@
 #include "OTWDMetagameMissionRuntime.h"
 
+UOTWDMetagameMissionRuntime::UOTWDMetagameMissionRuntime() {
+    this->TurnsActive = 0;
+    this->SuccessChance = 1;
+    this->bIsMissionComplete = false;
+    this->bWasMissionASuccess = false;
+    this->bDidSurvivorsDieOnMission = false;
+    this->bIsOldestMission = false;
+    this->bIsNew = false;
+}
+
 void UOTWDMetagameMissionRuntime::StartMission(const TArray<UOTWDMetagameSurvivor*>& SurvivorList, UOTWDMetagameSurvivorCampMoraleLevelData* CampMoraleLevelOnMissionStart) {
 }
 
@@ -26,13 +36,4 @@ int32 UOTWDMetagameMissionRuntime::GetActualTurnsToCompletion() {
     return 0;
 }
 
-UOTWDMetagameMissionRuntime::UOTWDMetagameMissionRuntime() {
-    this->TurnsActive = 0;
-    this->SuccessChance = 1;
-    this->bIsMissionComplete = false;
-    this->bWasMissionASuccess = false;
-    this->bDidSurvivorsDieOnMission = false;
-    this->bIsOldestMission = false;
-    this->bIsNew = false;
-}
 

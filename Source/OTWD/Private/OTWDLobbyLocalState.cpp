@@ -1,5 +1,8 @@
 #include "OTWDLobbyLocalState.h"
 
+UOTWDLobbyLocalState::UOTWDLobbyLocalState() {
+}
+
 void UOTWDLobbyLocalState::OpenWeaponReward(const FOTWDWeaponSavedData& WeaponSavedData, const ESBZRewardType& RewardType, bool bNotify) {
 }
 
@@ -15,6 +18,4 @@ void UOTWDLobbyLocalState::NotifyOpenedRewards() {
 void UOTWDLobbyLocalState::HandleGameStateLeft(FName LeftState) {
 }
 
-UOTWDLobbyLocalState::UOTWDLobbyLocalState() {
-}
 

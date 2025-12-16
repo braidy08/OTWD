@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESBZDifficulty.h"
-#include "SBZMissionCompletionRewards.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZMissionCompletionRewards -FallbackName=SBZMissionCompletionRewards
 #include "OTWDMetagameCurrency.h"
 #include "OTWDMetagameCurrencyRewards.h"
 #include "OTWDMetagameFloatCurrency.h"
@@ -38,6 +38,7 @@ public:
     TMap<ESBZDifficulty, float> CampCurrencyDifficultyRewardModifier;
     
     UOTWDMissionRewards();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FOTWDPotentialMissionCompletionRewardData GetPotentialRewardsAt(ESBZDifficulty Difficulty) const;
     

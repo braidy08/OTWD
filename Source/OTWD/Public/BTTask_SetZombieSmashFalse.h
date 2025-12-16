@@ -8,5 +8,6 @@ class OTWD_API UBTTask_SetZombieSmashFalse : public UBTTask_BP_CPP_Base {
     GENERATED_BODY()
 public:
     UBTTask_SetZombieSmashFalse();
+
 };
 

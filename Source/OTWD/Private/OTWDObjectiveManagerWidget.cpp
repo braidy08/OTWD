@@ -1,5 +1,15 @@
 #include "OTWDObjectiveManagerWidget.h"
 
+UOTWDObjectiveManagerWidget::UOTWDObjectiveManagerWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->NewObjectiveSoundEvent = NULL;
+    this->UpdatedObjectiveSoundEvent = NULL;
+    this->SideCompleteSoundEvent = NULL;
+    this->GlobalCompleteSoundEvent = NULL;
+    this->MainCompleteSoundEvent = NULL;
+    this->FailedObjectiveSoundEvent = NULL;
+    this->ObjectiveManager = NULL;
+}
+
 void UOTWDObjectiveManagerWidget::OnObjectiveTimerElapsedInternal(const FOTWDObjectiveEvent& ObjectiveEvent, float RemainingTime) {
 }
 
@@ -34,13 +44,4 @@ void UOTWDObjectiveManagerWidget::OnGlobalObjectiveTextChangedInternal(const FTe
 }
 
 
-UOTWDObjectiveManagerWidget::UOTWDObjectiveManagerWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->NewObjectiveSoundEvent = NULL;
-    this->UpdatedObjectiveSoundEvent = NULL;
-    this->SideCompleteSoundEvent = NULL;
-    this->GlobalCompleteSoundEvent = NULL;
-    this->MainCompleteSoundEvent = NULL;
-    this->FailedObjectiveSoundEvent = NULL;
-    this->ObjectiveManager = NULL;
-}
 

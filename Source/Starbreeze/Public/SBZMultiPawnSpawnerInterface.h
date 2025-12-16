@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
-#include "Engine/LatentActionManager.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
 #include "SBZPawnSpawnData.h"
 #include "SBZMultiPawnSpawnerInterface.generated.h"
 
@@ -20,7 +20,7 @@ public:
     virtual void SpawnWithDataLatent(const UObject* WorldContextObject, const TArray<FSBZPawnSpawnData>& SpawnData, FLatentActionInfo LatentInfo) PURE_VIRTUAL(SpawnWithDataLatent,);
     
     UFUNCTION(BlueprintCallable)
-    virtual void SpawnWithData(UPARAM(Ref) TArray<FSBZPawnSpawnData>& SpawnData, TArray<APawn*>& OutPawns) PURE_VIRTUAL(SpawnWithData,);
+    virtual void SpawnWithData(const TArray<FSBZPawnSpawnData>& SpawnData, TArray<APawn*>& OutPawns) PURE_VIRTUAL(SpawnWithData,);
     
 };
 

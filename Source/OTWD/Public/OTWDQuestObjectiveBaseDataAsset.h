@@ -27,5 +27,6 @@ public:
     EOTWDQuestObjectiveType ObjectiveType;
     
     UOTWDQuestObjectiveBaseDataAsset();
+
 };
 

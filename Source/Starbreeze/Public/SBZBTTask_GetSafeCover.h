@@ -15,5 +15,6 @@ public:
     FBlackboardKeySelector EnemyKey;
     
     USBZBTTask_GetSafeCover();
+
 };
 

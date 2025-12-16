@@ -1,5 +1,23 @@
 #include "SBZAmbientSoundWithVFX.h"
 
+ASBZAmbientSoundWithVFX::ASBZAmbientSoundWithVFX(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->AkAudioParticleSpawnEvent = NULL;
+    this->AkAudioParticleCollideEvent = NULL;
+    this->AkAudioParticleDeathEvent = NULL;
+    this->bAttachSoundsAndEmitter = true;
+    this->bTurnOffAmbientSoundOnParticleDeath = false;
+    this->bUseAverageParticleCollisionLocation = false;
+    this->NumberOfParticlesToSampleForAmbientSound = 0;
+    this->ParticleEmitterSpawnType = ESBZParticleEmitterSpawnType::SpawnOnBegin;
+    this->StaticMesh = NULL;
+    this->ParticleSystem = NULL;
+    this->bSpawnEmitterOnBeginPlay = true;
+    this->ParticleSystemComponent = NULL;
+    this->bIsActive = false;
+    this->bTurnedOff = false;
+    this->bHasCalculatedAverageLocation = false;
+}
+
 void ASBZAmbientSoundWithVFX::StartEmitter() {
 }
 
@@ -15,16 +33,4 @@ void ASBZAmbientSoundWithVFX::OnParticleCollided(FName InEventName, float InEmit
 void ASBZAmbientSoundWithVFX::OnEffectDone(UParticleSystemComponent* InParticleSystemComponent) {
 }
 
-ASBZAmbientSoundWithVFX::ASBZAmbientSoundWithVFX() {
-    this->AkAudioParticleSpawnEvent = NULL;
-    this->AkAudioParticleCollideEvent = NULL;
-    this->AkAudioParticleDeathEvent = NULL;
-    this->bAttachSoundsAndEmitter = true;
-    this->bTurnOffAmbientSoundOnParticleDeath = false;
-    this->ParticleEmitterSpawnType = ESBZParticleEmitterSpawnType::SpawnOnBegin;
-    this->StaticMesh = NULL;
-    this->ParticleSystem = NULL;
-    this->bSpawnEmitterOnBeginPlay = true;
-    this->ParticleSystemComponent = NULL;
-}
 

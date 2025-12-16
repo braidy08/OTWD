@@ -1,5 +1,16 @@
 #include "SBZAIHumanTankComponent.h"
 
+USBZAIHumanTankComponent::USBZAIHumanTankComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->DamageMultiplier = 1;
+    this->HeadshotMultiplier = 1;
+    this->StaggerTime = 1;
+    this->DefaultDamageUntilStagger = 1;
+    this->LowHurtReaction = NULL;
+    this->MidHurtReaction = NULL;
+    this->HighHurtReaction = NULL;
+}
+
 void USBZAIHumanTankComponent::OnTimerEnd() {
 }
 
@@ -23,13 +34,4 @@ float USBZAIHumanTankComponent::GetCurrentDamageUntilStagger() const {
     return 0.0f;
 }
 
-USBZAIHumanTankComponent::USBZAIHumanTankComponent() {
-    this->DamageMultiplier = 1;
-    this->HeadshotMultiplier = 1;
-    this->StaggerTime = 1;
-    this->DefaultDamageUntilStagger = 1;
-    this->LowHurtReaction = NULL;
-    this->MidHurtReaction = NULL;
-    this->HighHurtReaction = NULL;
-}
 

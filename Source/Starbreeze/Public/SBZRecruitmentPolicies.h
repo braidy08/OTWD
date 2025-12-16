@@ -4,6 +4,7 @@
 #include "ESBZRecruitmentLeadership_LeadershipPolicy.h"
 #include "ESBZRecruitmentLeadership_RecruitmenyPolicy.h"
 #include "ESBZRecruitmentLeadership_RetainLeaderPolicy.h"
+#include "ESBZRecruitmentLeadership_TeamPolicy.h"
 #include "SBZRecruitmentPolicies.generated.h"
 
 USTRUCT(BlueprintType)
@@ -21,6 +22,9 @@ public:
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZRecruitmentLeadership_RetainLeaderPolicy RetainLeaderPolicy;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESBZRecruitmentLeadership_TeamPolicy TeamPolicy;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAllowInidividualDeesclation;

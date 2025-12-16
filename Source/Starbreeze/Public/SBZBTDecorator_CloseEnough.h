@@ -20,6 +20,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseAcceptableDistanceKey;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUse2DDistance;
+    
     USBZBTDecorator_CloseEnough();
+
 };
 

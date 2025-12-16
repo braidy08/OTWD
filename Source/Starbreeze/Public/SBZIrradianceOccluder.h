@@ -14,6 +14,7 @@ private:
     USBZIrradianceOccluderComponent* IrradianceOccluderComponent;
     
 public:
-    ASBZIrradianceOccluder();
+    ASBZIrradianceOccluder(const FObjectInitializer& ObjectInitializer);
+
 };
 

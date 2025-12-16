@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
-#include "Kismet/GameplayStaticsTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ESuggestProjVelocityTraceOption -FallbackName=ESuggestProjVelocityTraceOption
 #include "EAimThrowType.h"
 #include "SBZSchematic.h"
 #include "SBZAIAimThrowSchematic.generated.h"
@@ -59,5 +59,6 @@ public:
     FVector PredictionOffset;
     
     USBZAIAimThrowSchematic();
+
 };
 

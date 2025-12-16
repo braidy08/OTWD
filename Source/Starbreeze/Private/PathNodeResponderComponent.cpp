@@ -1,5 +1,10 @@
 #include "PathNodeResponderComponent.h"
 
+UPathNodeResponderComponent::UPathNodeResponderComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->AllowedUsages = 15;
+    this->bRespondWhenActivated = true;
+}
+
 void UPathNodeResponderComponent::OnNodeReset_Implementation() {
 }
 
@@ -13,8 +18,4 @@ bool UPathNodeResponderComponent::IsUsageAllowed(const EPathNodeActualUsage Usag
     return false;
 }
 
-UPathNodeResponderComponent::UPathNodeResponderComponent() {
-    this->AllowedUsages = 15;
-    this->bRespondWhenActivated = true;
-}
 

@@ -13,6 +13,7 @@ protected:
     TArray<FSBZAmmoLootTypes> LootAmmo;
     
 public:
-    ASBZAutoPickUpItemAmmo();
+    ASBZAutoPickUpItemAmmo(const FObjectInitializer& ObjectInitializer);
+
 };
 

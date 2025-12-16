@@ -16,6 +16,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* TransparencyFadeOutDistance;
     
-    AOTWDUIVendorIcon();
+    AOTWDUIVendorIcon(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -4,3 +4,4 @@ USBZEncounterPhaseHasTimeExpiredRule::USBZEncounterPhaseHasTimeExpiredRule() {
     this->TimeInPhase = 1;
 }
 
+

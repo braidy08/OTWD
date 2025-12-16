@@ -26,6 +26,9 @@ protected:
     TArray<FGameplayAttribute> ResourceAttributes;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FGameplayAttribute> StrictVisibilityResourceAttributes;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<USBZAbilityCraftingResourceWidget> ResourceBlueprint;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -91,6 +94,7 @@ private:
     
 public:
     UOTWDAbilityCraftingWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UPanelWidget* ResourcePanelWidget, UPanelWidget* SignaturePanelWidget, UPanelWidget* SecondaryPanelWidget, UPanelWidget* ToolPanelWidget, UWidgetAnimation* FadeInAnimation, UWidgetAnimation* FadeOutAnimation);
     

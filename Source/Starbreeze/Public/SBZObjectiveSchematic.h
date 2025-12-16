@@ -62,6 +62,7 @@ private:
     
 public:
     USBZObjectiveSchematic();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetTimer(ESBZDifficulty Difficulty) const;
     

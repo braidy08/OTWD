@@ -18,5 +18,6 @@ public:
     bool bCheckObstacles;
     
     UBTDecorator_IsAtGrappleDistance();
+
 };
 

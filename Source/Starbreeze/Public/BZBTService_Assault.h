@@ -27,5 +27,6 @@ public:
     bool bCheckFriendlyFire;
     
     UBZBTService_Assault();
+
 };
 

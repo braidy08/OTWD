@@ -48,6 +48,7 @@ public:
     bool bIsNew;
     
     UOTWDMetagameMissionRuntime();
+
     UFUNCTION(BlueprintCallable)
     void StartMission(const TArray<UOTWDMetagameSurvivor*>& SurvivorList, UOTWDMetagameSurvivorCampMoraleLevelData* CampMoraleLevelOnMissionStart);
     

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "WheeledVehicle.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=PhysXVehicles -ObjectName=WheeledVehicle -FallbackName=WheeledVehicle
 #include "Templates/SubclassOf.h"
 #include "SBZVehicle.generated.h"
 
@@ -75,9 +75,10 @@ private:
     bool bCanBoost;
     
 public:
-    ASBZVehicle();
+    ASBZVehicle(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetInputEnabled(bool bEnable);
     

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAlertness : public UObject {
     GENERATED_BODY()
 public:
     USBZAlertness();
+
 };
 

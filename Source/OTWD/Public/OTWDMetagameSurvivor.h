@@ -57,6 +57,7 @@ protected:
     
 public:
     UOTWDMetagameSurvivor();
+
     UFUNCTION(BlueprintCallable)
     void SetSurvivorVoice(TSoftObjectPtr<UOTWDSurvivorVoiceDataAsset> NewVoice);
     

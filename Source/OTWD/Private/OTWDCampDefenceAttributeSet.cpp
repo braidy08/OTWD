@@ -1,6 +1,10 @@
 #include "OTWDCampDefenceAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDCampDefenceAttributeSet::UOTWDCampDefenceAttributeSet() {
+    this->CampDefencePreparationTimerModifier = 1;
+}
+
 void UOTWDCampDefenceAttributeSet::OnRep_CampDefencePreparationTimerModifier(float OldValue) {
 }
 
@@ -14,7 +18,4 @@ void UOTWDCampDefenceAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimePr
     DOREPLIFETIME(UOTWDCampDefenceAttributeSet, CampDefencePreparationTimerModifier);
 }
 
-UOTWDCampDefenceAttributeSet::UOTWDCampDefenceAttributeSet() {
-    this->CampDefencePreparationTimerModifier = 1;
-}
 

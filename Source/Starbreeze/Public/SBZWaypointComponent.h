@@ -24,9 +24,10 @@ private:
     bool bIsVisible;
     
 public:
-    USBZWaypointComponent();
+    USBZWaypointComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetUIMarkerData(USBZUIMarkerData* NewMarkerData);
     

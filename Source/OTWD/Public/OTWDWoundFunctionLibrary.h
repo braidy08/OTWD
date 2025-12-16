@@ -14,6 +14,13 @@ class OTWD_API UOTWDWoundFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOTWDWoundFunctionLibrary();
+
+    UFUNCTION(BlueprintCallable)
+    static void SetWoundInSlot(UPARAM(Ref) FOTWDWoundSlots& WoundSlots, int32 Slot, int32 WoundIndex);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static int32 GetWoundInSlot(UPARAM(Ref) FOTWDWoundSlots& WoundSlots, int32 Slot);
+    
     UFUNCTION(BlueprintCallable)
     static void ApplyWoundSlotDataWithTransforms(UMeshComponent* MeshComponent, const TArray<FTransform>& WoundTransforms, const FOTWDWoundSlots& Slots);
     

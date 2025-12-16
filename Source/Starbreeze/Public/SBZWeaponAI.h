@@ -3,6 +3,7 @@
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Accuracy.h"
+#include "ESBZAggroTargetPolicy.h"
 #include "ESBZCoverPointSelectionStrategy.h"
 #include "ESBZDifficulty.h"
 #include "SBZPreferenceRange.h"
@@ -18,9 +19,6 @@ class STARBREEZE_API ASBZWeaponAI : public ASBZRangedWeapon {
 public:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatInterval CoverDistanceToEnemy;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float PeekChance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZPreferenceRange CoverElevation;
@@ -39,6 +37,12 @@ public:
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatInterval PreferredRange;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float RetreatDistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    float OptimalAttackDistance;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FInt32Interval BurstShotCount;
@@ -122,6 +126,24 @@ public:
     int32 BurstsBeforeMustReload;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESBZAggroTargetPolicy AggroTargetingPolicy;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUseProximityZone;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ProximityZoneRadius;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUseProximityElevation;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    FFloatInterval ProximityElevation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bProximityTargetRequireLOS;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZWeaponIKPlayerSchematic PatrolLeftHandIK;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -133,7 +155,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AccuracyForMovingTargetMultiplier;
     
-    ASBZWeaponAI();
+    ASBZWeaponAI(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_SetIsShoving(bool bValue);
     

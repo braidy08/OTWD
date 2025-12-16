@@ -11,5 +11,6 @@ public:
     bool bExitLoopOnFailure;
     
     USBZBTDecorator_ConditionalWhileLoop();
+
 };
 

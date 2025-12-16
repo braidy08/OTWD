@@ -11,6 +11,7 @@ class STARBREEZE_API USBZStealthIndicatorWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     USBZStealthIndicatorWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetRotationPanel(UCanvasPanel* Panel);
     

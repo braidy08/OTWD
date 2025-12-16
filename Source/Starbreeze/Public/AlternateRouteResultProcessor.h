@@ -25,6 +25,7 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<APathNode*> AlternateRouteInnerNodes;
     
-    AAlternateRouteResultProcessor();
+    AAlternateRouteResultProcessor(const FObjectInitializer& ObjectInitializer);
+
 };
 

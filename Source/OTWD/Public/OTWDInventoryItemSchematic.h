@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZInventoryItemSchematic.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZInventoryItemSchematic -FallbackName=SBZInventoryItemSchematic
 #include "OTWDMetagameCurrency.h"
 #include "OTWDInventoryItemSchematic.generated.h"
 
@@ -12,5 +12,6 @@ public:
     FOTWDMetagameCurrency MetagameCurrencyRewards;
     
     UOTWDInventoryItemSchematic();
+
 };
 

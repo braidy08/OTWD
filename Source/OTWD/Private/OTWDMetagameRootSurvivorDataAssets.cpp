@@ -11,3 +11,4 @@ UOTWDMetagameRootSurvivorDataAssets::UOTWDMetagameRootSurvivorDataAssets() {
     this->MinimumBanishedSurvivorProvisionCost = 0;
 }
 
+

@@ -26,18 +26,22 @@ private:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnOnlineSessionEventDelegate CharacterInfoChanged;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_LobbyTimeout, meta=(AllowPrivateAccess=true))
     int32 LobbyTimeout;
     
 public:
-    ASBZLobbyRemoteState();
+    ASBZLobbyRemoteState(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void TryToFreeSlot(FUniqueNetIdRepl ReserverPlayerId);
     
 private:
+    UFUNCTION(BlueprintCallable)
+    void OnRep_LobbyTimeout();
+    
     UFUNCTION(BlueprintCallable)
     void OnRep_LobbyInfo();
     

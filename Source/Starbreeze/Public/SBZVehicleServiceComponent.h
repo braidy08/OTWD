@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZVehicleServiceComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    USBZVehicleServiceComponent();
+    USBZVehicleServiceComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

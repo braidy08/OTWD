@@ -3,7 +3,6 @@
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "ESBZSpawnSignificance.h"
-#include "ESpawnActivationType.h"
 #include "SBZSpawnerBase.h"
 #include "SBZAISpawner.generated.h"
 
@@ -27,9 +26,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZSpawnSignificance SpawnSignificance;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ESpawnActivationType ActivationType;
-    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector GeneratedSpawnLocation;
@@ -37,8 +33,12 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRotator GeneratedSpawnRotation;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bHasGeneratedSpawnLocation;
+    
 public:
-    ASBZAISpawner();
+    ASBZAISpawner(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     APawn* GetLastSpawnedPawn();
     

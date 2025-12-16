@@ -18,6 +18,7 @@ private:
     USpotLightComponent* DotSpotLightComponent;
     
 public:
-    USBZLaserSightComponent();
+    USBZLaserSightComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

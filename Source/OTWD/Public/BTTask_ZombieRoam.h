@@ -44,5 +44,6 @@ public:
     TSubclassOf<UNavigationQueryFilter> FilterClass;
     
     UBTTask_ZombieRoam();
+
 };
 

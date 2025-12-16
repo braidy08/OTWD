@@ -13,5 +13,6 @@ public:
     UParticleSystem* ParticleSystem;
     
     UAnimNotify_SpawnLensParticleEffect();
+
 };
 

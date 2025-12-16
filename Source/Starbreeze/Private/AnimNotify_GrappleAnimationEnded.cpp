@@ -4,3 +4,4 @@ UAnimNotify_GrappleAnimationEnded::UAnimNotify_GrappleAnimationEnded() {
     this->AnimationState = ESBZGrappleState::None;
 }
 
+

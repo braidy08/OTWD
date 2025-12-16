@@ -1,7 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "GameFramework/PlayerController.h"
+#include "UObject/NoExportTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PlayerController -FallbackName=PlayerController
 #include "GameFramework/OnlineReplStructs.h"
 #include "AttributeSet.h"
 #include "AsyncChangeLoadoutNotificationSignatureDelegate.h"
@@ -12,6 +13,7 @@
 #include "ESBZPlayerDefeatState.h"
 #include "OnLowAmmoDelegateDelegate.h"
 #include "OnPlayerPawnAvailableDelegate.h"
+#include "OnPossessedPawnDelegate.h"
 #include "ProjectileHitScanResult.h"
 #include "RenderTargetData.h"
 #include "SBZChatMessage.h"
@@ -36,6 +38,7 @@ class ULocalPlayer;
 class USBZCosmetic;
 class USBZPlayerDefeatSettingsSchematic;
 class USBZPlayerDramaComponent;
+class USBZRemoteActorVisibility;
 class USBZTech;
 
 UCLASS(Blueprintable)
@@ -45,8 +48,14 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USBZPlayerDramaComponent* DramaComponent;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USBZRemoteActorVisibility* RemoteSpawnerVisibility;
+    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnPlayerPawnAvailable OnPlayerPawnAvailable;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnPossessedPawn OnPossessedPawn;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
@@ -102,9 +111,10 @@ private:
     FString AnalyticsPlayerId;
     
 public:
-    ASBZPlayerController();
+    ASBZPlayerController(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void ToggleInGameMenu();
     
@@ -140,6 +150,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_DrawAreaBroadcastActionBuffer(int32 PlayerId, const FName& DrawArea, const FDrawAreaActionBuffer& ActionBuffer);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    void Server_DebugTeleportTo(const FVector Location, const float Yaw);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_ClientVoteToKick(FUniqueNetIdRepl PlayerIdToKick, FUniqueNetIdRepl PlayerProposingKick, ESBZKickingMode ModeKick);

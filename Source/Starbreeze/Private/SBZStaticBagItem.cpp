@@ -1,6 +1,14 @@
 #include "SBZStaticBagItem.h"
 #include "Components/StaticMeshComponent.h"
 
+ASBZStaticBagItem::ASBZStaticBagItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bCanBeInCluster = true;
+    this->bStaticMeshReplicateMovement = true;
+    this->PickedUpMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PickedUpMesh"));
+    this->OutlineComponent = NULL;
+    this->PickedUpMesh->SetupAttachment(RootComponent);
+}
+
 void ASBZStaticBagItem::Remove(bool bDestroyItem) {
 }
 
@@ -16,10 +24,4 @@ void ASBZStaticBagItem::DetachWorldHidden(const FTransform& DetachTransform) {
 void ASBZStaticBagItem::AttachWorldHidden() {
 }
 
-ASBZStaticBagItem::ASBZStaticBagItem() {
-    this->PickedUpMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PickedUpMesh"));
-    this->OriginalMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("OriginalMesh"));
-    this->CurrentMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CurrentMesh"));
-    this->OutlineComponent = NULL;
-}
 

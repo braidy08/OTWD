@@ -21,5 +21,6 @@ public:
     float Distance;
     
     USBZBTTask_GetCoverDirection();
+
 };
 

@@ -11,6 +11,7 @@ class STARBREEZE_API USBZAIRoamingVolumeManager : public UObject {
     GENERATED_BODY()
 public:
     USBZAIRoamingVolumeManager();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static USBZAIRoamingVolumeManager* GetAIRoamingVolumeManagerFromWorld(UWorld* World);
     

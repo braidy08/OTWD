@@ -11,5 +11,6 @@ enum class ESBZRangedAttackFinishReason : uint8 {
     NoValidTarget,
     Grappled,
     DamageTaken,
+    TargetChanged,
 };
 

@@ -1,5 +1,10 @@
 #include "OTWDDoor.h"
 
+AOTWDDoor::AOTWDDoor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->DoorHitSoundEvent = NULL;
+    this->DoorHitMuffledSoundEvent = NULL;
+}
+
 void AOTWDDoor::SetHealth(float InHealth) {
 }
 
@@ -18,8 +23,4 @@ void AOTWDDoor::OnBarricadePlankAdded(int32 BarricadePlankIndex) {
 void AOTWDDoor::Multicast_SetPendingAction_Implementation(ESBZDoorActionType PengingActionType) {
 }
 
-AOTWDDoor::AOTWDDoor() {
-    this->DoorHitSoundEvent = NULL;
-    this->DoorHitMuffledSoundEvent = NULL;
-}
 

@@ -16,5 +16,6 @@ public:
     EDramaPlayersRule PlayersRule;
     
     USBZEncounterPhasePlayerDramaRule();
+
 };
 

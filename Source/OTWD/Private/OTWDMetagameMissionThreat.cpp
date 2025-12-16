@@ -5,3 +5,4 @@ UOTWDMetagameMissionThreat::UOTWDMetagameMissionThreat() {
     this->SuccessPenalty = 1;
 }
 
+

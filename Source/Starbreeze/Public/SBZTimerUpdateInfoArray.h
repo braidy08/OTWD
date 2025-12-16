@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/NetSerialization.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=FastArraySerializer -FallbackName=FastArraySerializer
 #include "SBZTimerUpdateInfo.h"
 #include "SBZTimerUpdateInfoArray.generated.h"
 

@@ -27,6 +27,7 @@ private:
     
 public:
     USBZCheatManager();
+
     UFUNCTION(BlueprintCallable, Exec)
     void UnlockMissions(bool bShouldUnlock);
     
@@ -68,6 +69,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void ToggleMuteMusic();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void ToggleIntCvar(const FString& Cvar, int32 First, int32 Second);
     
     UFUNCTION(BlueprintCallable, Exec)
     void ToggleIgnoreZoneDebugDraw();
@@ -167,6 +171,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void ToggleCheatsMenu();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void ToggleBooleanCvar(const FString& Cvar);
     
     UFUNCTION(BlueprintCallable, Exec)
     void ToggleAIRecruitmentDebug();
@@ -331,7 +338,13 @@ public:
     void FailAllObjectives();
     
     UFUNCTION(BlueprintCallable, Exec)
+    void ExecF(const FString& File);
+    
+    UFUNCTION(BlueprintCallable, Exec)
     void EndMission(ESBZEndMissionState NewEndMission);
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void DevSlomo(float NewTimeDilation);
     
     UFUNCTION(BlueprintCallable, Exec)
     void DestroyAllAi();
@@ -343,13 +356,19 @@ public:
     void DamageSelf(float DamageAmount);
     
     UFUNCTION(BlueprintCallable, Exec)
-    void ContentPackSetUnlocked(const FString& contentPack, bool unlock);
+    void ContentPackSetUnlocked(const FString& ContentPack, bool unlock);
     
     UFUNCTION(BlueprintCallable, Exec)
     void ContentPackList();
     
     UFUNCTION(BlueprintCallable, Exec)
     void CompleteAllObjectives();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void ClearRagdollBuffer();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void ClearDebrisBuffer();
     
     UFUNCTION(BlueprintCallable, Exec)
     void ClearAllTutorialFlags();

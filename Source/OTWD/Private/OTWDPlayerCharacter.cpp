@@ -1,11 +1,38 @@
 #include "OTWDPlayerCharacter.h"
-#include "SBZHealthChunkAttributeSet.h"
-#include "SBZShoutTargetComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZHealthChunkAttributeSet -FallbackName=SBZHealthChunkAttributeSet
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZShoutTargetComponent -FallbackName=SBZShoutTargetComponent
 #include "Net/UnrealNetwork.h"
 #include "OTWDAbilityItemsAttributeSet.h"
 #include "OTWDCraftingResourceAttributeSet.h"
 #include "OTWDMetaResourceAttributeSet.h"
+#include "OTWDPlayerActionHandler.h"
 #include "OTWDReviveShoutTargetComponent.h"
+
+AOTWDPlayerCharacter::AOTWDPlayerCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UOTWDPlayerActionHandler>(TEXT("PlayerActionHandler"))) {
+    this->Tags.AddDefaulted(1);
+    this->ExplosionLineTraceBones.AddDefaulted(6);
+    this->CarryingComponent = NULL;
+    this->AutoPeekComponent = NULL;
+    this->UnequippedTakedownWeaponSocket = TEXT("RightAccessory");
+    this->PrimaryAccessorySocket = TEXT("LeftAccessory");
+    this->UnequippedFlareGunSocket = TEXT("LeftFrontAccessory");
+    this->DefaultFlareGunClass = NULL;
+    this->ReviveShoutTarget = CreateDefaultSubobject<UOTWDReviveShoutTargetComponent>(TEXT("OTWDReviveShoutTargetComponent"));
+    this->CalloutShoutTarget = CreateDefaultSubobject<USBZShoutTargetComponent>(TEXT("SBZShoutTargetComponent"));
+    this->AbilityItemAttributeSet = CreateDefaultSubobject<UOTWDAbilityItemsAttributeSet>(TEXT("OTWDAbilityItemsAttributeSet"));
+    this->CraftingResourceAttributeSet = CreateDefaultSubobject<UOTWDCraftingResourceAttributeSet>(TEXT("OTWDCraftingResourceAttributeSet"));
+    this->MetaResourceAttributeSet = CreateDefaultSubobject<UOTWDMetaResourceAttributeSet>(TEXT("OTWDMetaResourceAttributeSet"));
+    this->HealthChunkAttributeSet = CreateDefaultSubobject<USBZHealthChunkAttributeSet>(TEXT("SBZHealthChunkAttributeSet"));
+    this->bWeaponsHolstered = false;
+    this->PrimaryAccessory = NULL;
+    this->FlareGun = NULL;
+    this->WalkerFastKillsAchievementCommentDuration = 1;
+    this->WalkerFastKillsAchievementCommentNeeded = 0;
+    this->HumanFastKillsAchievementCommentDuration = 1;
+    this->HumanFastKillsAchievementCommentNeeded = 0;
+    this->ReviveSound = NULL;
+    this->bHasValidIngameName = false;
+}
 
 void AOTWDPlayerCharacter::UnholsterWeapons() {
 }
@@ -83,25 +110,4 @@ void AOTWDPlayerCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(AOTWDPlayerCharacter, bWeaponsHolstered);
 }
 
-AOTWDPlayerCharacter::AOTWDPlayerCharacter() {
-    this->UnequippedTakedownWeaponSocket = TEXT("RightAccessory");
-    this->PrimaryAccessorySocket = TEXT("LeftAccessory");
-    this->UnequippedFlareGunSocket = TEXT("LeftFrontAccessory");
-    this->DefaultFlareGunClass = NULL;
-    this->ReviveShoutTarget = CreateDefaultSubobject<UOTWDReviveShoutTargetComponent>(TEXT("OTWDReviveShoutTargetComponent"));
-    this->CalloutShoutTarget = CreateDefaultSubobject<USBZShoutTargetComponent>(TEXT("SBZShoutTargetComponent"));
-    this->AbilityItemAttributeSet = CreateDefaultSubobject<UOTWDAbilityItemsAttributeSet>(TEXT("OTWDAbilityItemsAttributeSet"));
-    this->CraftingResourceAttributeSet = CreateDefaultSubobject<UOTWDCraftingResourceAttributeSet>(TEXT("OTWDCraftingResourceAttributeSet"));
-    this->MetaResourceAttributeSet = CreateDefaultSubobject<UOTWDMetaResourceAttributeSet>(TEXT("OTWDMetaResourceAttributeSet"));
-    this->HealthChunkAttributeSet = CreateDefaultSubobject<USBZHealthChunkAttributeSet>(TEXT("SBZHealthChunkAttributeSet"));
-    this->bWeaponsHolstered = false;
-    this->PrimaryAccessory = NULL;
-    this->FlareGun = NULL;
-    this->WalkerFastKillsAchievementCommentDuration = 1;
-    this->WalkerFastKillsAchievementCommentNeeded = 0;
-    this->HumanFastKillsAchievementCommentDuration = 1;
-    this->HumanFastKillsAchievementCommentNeeded = 0;
-    this->ReviveSound = NULL;
-    this->bHasValidIngameName = false;
-}
 

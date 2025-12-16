@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/SaveGame.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SaveGame -FallbackName=SaveGame
 #include "SBZSaveData.generated.h"
 
 class UObject;
@@ -13,14 +13,18 @@ public:
     FString UserUniqueNetIdString;
     
     USBZSaveData();
-    UFUNCTION(BlueprintCallable)
-    void Wipe();
+
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    void Wipe(const UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintCallable)
-    void Validate(bool bIsSaving);
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    void Validate(const UObject* WorldContextObject, bool bIsSaving);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     bool Save(const UObject* WorldContextObject);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure=false, meta=(WorldContext="WorldContextObject"))
+    void LogSaveData(const UObject* WorldContextObject) const;
     
 };
 

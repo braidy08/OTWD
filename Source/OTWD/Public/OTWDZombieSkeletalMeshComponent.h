@@ -7,6 +7,7 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class OTWD_API UOTWDZombieSkeletalMeshComponent : public USkeletalMeshComponent {
     GENERATED_BODY()
 public:
-    UOTWDZombieSkeletalMeshComponent();
+    UOTWDZombieSkeletalMeshComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

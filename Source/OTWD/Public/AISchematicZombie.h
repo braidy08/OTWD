@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESBZDifficulty.h"
-#include "SBZGrappleAlignmentPullDownSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZGrappleAlignmentPullDownSettings -FallbackName=SBZGrappleAlignmentPullDownSettings
 #include "LurkerZombieData.h"
 #include "OTWDAISchematic.h"
 #include "ZombieDefaultBehaviourData.h"
@@ -57,6 +57,7 @@ public:
     FZombieTryReachingData TryReachingData;
     
     UAISchematicZombie();
+
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     float GetGrappleDistanceHeight(const UObject* WorldContextObject);
     

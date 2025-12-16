@@ -1,5 +1,13 @@
 #include "SBZWeaponData.h"
 
+USBZWeaponData::USBZWeaponData() {
+    this->Manufacturer = NULL;
+    this->Family = ESBZWeaponFamily::None;
+    this->RestrictedWeaponSlot = 0;
+    this->PowerRangeMaximum0 = 0;
+    this->PowerRangeMaximum1 = 0;
+}
+
 void USBZWeaponData::RefreshDataFromBlueprint() const {
 }
 
@@ -22,10 +30,4 @@ bool USBZWeaponData::CanBeAssignedToSlot(int32 Slot) const {
     return false;
 }
 
-USBZWeaponData::USBZWeaponData() {
-    this->Manufacturer = NULL;
-    this->Family = ESBZWeaponFamily::None;
-    this->RestrictedWeaponSlot = 0;
-    this->PowerRangeMaximum0 = 0;
-}
 

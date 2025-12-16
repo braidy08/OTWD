@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DeveloperSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "Templates/SubclassOf.h"
 #include "SBZUnlockableSettings.generated.h"
 
@@ -9,7 +9,7 @@ class USBZCosmeticCollection;
 class USBZCosmeticTypeHelper;
 class USBZUnlockableMetadataCollection;
 
-UCLASS(Blueprintable, Config=Engine, Const, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, Const, DefaultConfig, Config=Starbreeze)
 class STARBREEZE_API USBZUnlockableSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -37,5 +37,6 @@ protected:
     
 public:
     USBZUnlockableSettings();
+
 };
 

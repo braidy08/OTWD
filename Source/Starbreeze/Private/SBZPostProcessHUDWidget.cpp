@@ -1,5 +1,14 @@
 #include "SBZPostProcessHUDWidget.h"
 
+USBZPostProcessHUDWidget::USBZPostProcessHUDWidget() {
+    this->PresetDataAsset = NULL;
+    this->PostProcessPriority = 1;
+    this->PostProcessBlendWeight = 1;
+    this->bAttachedToViewport = true;
+    this->bIsPostProcessEnabled = true;
+    this->PostProcessComponent = NULL;
+}
+
 void USBZPostProcessHUDWidget::SetPostProcessSettings(const USBZPostProcessSettingsPresetDataAsset* InPostProcessSettings) {
 }
 
@@ -23,12 +32,4 @@ APlayerController* USBZPostProcessHUDWidget::GetOwningPlayer() const {
     return NULL;
 }
 
-USBZPostProcessHUDWidget::USBZPostProcessHUDWidget() {
-    this->PresetDataAsset = NULL;
-    this->PostProcessPriority = 1;
-    this->PostProcessBlendWeight = 1;
-    this->bAttachedToViewport = true;
-    this->bIsPostProcessEnabled = true;
-    this->PostProcessComponent = NULL;
-}
 

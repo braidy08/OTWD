@@ -1,5 +1,9 @@
 #include "SBZReturnToMainMenuCallbackProxy.h"
 
+USBZReturnToMainMenuCallbackProxy::USBZReturnToMainMenuCallbackProxy() {
+    this->WorldContextObject = NULL;
+}
+
 USBZReturnToMainMenuCallbackProxy* USBZReturnToMainMenuCallbackProxy::WaitReturnToMainMenu(UObject* NewWorldContextObject) {
     return NULL;
 }
@@ -7,7 +11,4 @@ USBZReturnToMainMenuCallbackProxy* USBZReturnToMainMenuCallbackProxy::WaitReturn
 void USBZReturnToMainMenuCallbackProxy::OnStateEntered(FName StateName) {
 }
 
-USBZReturnToMainMenuCallbackProxy::USBZReturnToMainMenuCallbackProxy() {
-    this->WorldContextObject = NULL;
-}
 

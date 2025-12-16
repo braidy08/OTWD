@@ -16,6 +16,7 @@ public:
     TSubclassOf<AActor> ActorClass;
     
     USBZCosmeticActor();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static TSoftObjectPtr<USBZCosmeticActor> GetUnlockableAsCosmeticActor(const USBZUnlockableMetadata* UnlockableMetadata);
     

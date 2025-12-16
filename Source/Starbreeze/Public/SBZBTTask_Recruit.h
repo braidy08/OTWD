@@ -18,5 +18,6 @@ public:
     bool bRecruitsArray;
     
     USBZBTTask_Recruit();
+
 };
 

@@ -1,6 +1,7 @@
 #include "BTTask_ZombieRoam.h"
 
 UBTTask_ZombieRoam::UBTTask_ZombieRoam() {
+    this->NodeName = TEXT("Zombie Roam");
     this->bUseDirectionKey = false;
     this->bUseMethodKey = false;
     this->Method = ESBZBTTask_GetWanderLocation_Method::None;
@@ -8,4 +9,5 @@ UBTTask_ZombieRoam::UBTTask_ZombieRoam() {
     this->bUpdateRoamingInfo = false;
     this->FilterClass = NULL;
 }
+
 

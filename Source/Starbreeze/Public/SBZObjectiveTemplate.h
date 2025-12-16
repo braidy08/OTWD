@@ -7,6 +7,7 @@ UCLASS(Abstract, Blueprintable, Deprecated, NotPlaceable, ClassGroup=Custom, met
 class STARBREEZE_API UDEPRECATED_SBZObjectiveTemplate : public USBZObjectiveComponent {
     GENERATED_BODY()
 public:
-    UDEPRECATED_SBZObjectiveTemplate();
+    UDEPRECATED_SBZObjectiveTemplate(const FObjectInitializer& ObjectInitializer);
+
 };
 

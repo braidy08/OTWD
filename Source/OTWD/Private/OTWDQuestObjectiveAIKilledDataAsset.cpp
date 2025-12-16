@@ -4,3 +4,4 @@ UOTWDQuestObjectiveAIKilledDataAsset::UOTWDQuestObjectiveAIKilledDataAsset() {
     this->bRequiresHeadshot = false;
 }
 
+

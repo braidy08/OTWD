@@ -29,5 +29,6 @@ public:
     TMap<TSoftObjectPtr<USBZCharacterSchematic>, USBZUnlockableMetadata*> CharacterLockedByMetaData;
     
     UOTWDGameProgressionRootDataAsset();
+
 };
 

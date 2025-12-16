@@ -1,6 +1,28 @@
 #include "SBZTriggerPoint.h"
-#include "Components/BoxComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
 #include "Net/UnrealNetwork.h"
+
+ASBZTriggerPoint::ASBZTriggerPoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+    this->RootComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("TriggerArea"));
+    this->PlayBubble = NULL;
+    this->bAllPlayersEntered = false;
+    this->bAllItems = false;
+    this->bFilterArePassed = false;
+    this->bStartActive = true;
+    this->TriggerArea = (UBoxComponent*)RootComponent;
+    this->bDisableAfterOnPlayerEntered = false;
+    this->bDisableAfterOnAllPlayersEnter = false;
+    this->bDisableAfterOnPlayerLeft = false;
+    this->bDisableAfterOnItemEntered = false;
+    this->bDisableAfterOnAllItems = false;
+    this->bDisableAfterOnAllPlayersAndItems = false;
+    this->bAllPlayersInside = false;
+    this->bAllPlayersAndItemsInside = false;
+}
 
 void ASBZTriggerPoint::ToggleActiveServer_Implementation(bool bIsActive) {
 }
@@ -89,20 +111,4 @@ void ASBZTriggerPoint::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(ASBZTriggerPoint, bFilterArePassed);
 }
 
-ASBZTriggerPoint::ASBZTriggerPoint() {
-    this->PlayBubble = NULL;
-    this->bAllPlayersEntered = false;
-    this->bAllItems = false;
-    this->bFilterArePassed = false;
-    this->bStartActive = true;
-    this->TriggerArea = CreateDefaultSubobject<UBoxComponent>(TEXT("TriggerArea"));
-    this->bDisableAfterOnPlayerEntered = false;
-    this->bDisableAfterOnAllPlayersEnter = false;
-    this->bDisableAfterOnPlayerLeft = false;
-    this->bDisableAfterOnItemEntered = false;
-    this->bDisableAfterOnAllItems = false;
-    this->bDisableAfterOnAllPlayersAndItems = false;
-    this->bAllPlayersInside = false;
-    this->bAllPlayersAndItemsInside = false;
-}
 

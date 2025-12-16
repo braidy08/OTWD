@@ -4,3 +4,4 @@ USBZAICrowdNavigationData::USBZAICrowdNavigationData() {
     this->bUseCrowdSeparation = true;
 }
 
+

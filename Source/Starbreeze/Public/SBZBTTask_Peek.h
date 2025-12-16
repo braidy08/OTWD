@@ -25,5 +25,6 @@ public:
     bool bExitingCover;
     
     USBZBTTask_Peek();
+
 };
 

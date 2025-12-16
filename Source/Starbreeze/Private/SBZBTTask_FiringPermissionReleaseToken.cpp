@@ -4,3 +4,4 @@ USBZBTTask_FiringPermissionReleaseToken::USBZBTTask_FiringPermissionReleaseToken
     this->bTokenForUsingWeapon = false;
 }
 
+

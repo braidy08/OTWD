@@ -10,6 +10,7 @@ class STARBREEZE_API USBZEncounterPhaseRule : public UObject {
     GENERATED_BODY()
 public:
     USBZEncounterPhaseRule();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     bool IsRuleStatisfied(ASBZEncounter* Encounter) const;
     

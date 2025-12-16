@@ -5,3 +5,4 @@ UOTWDTwitchSpawnSchematic::UOTWDTwitchSpawnSchematic() {
     this->SpawnBehaviour = NULL;
 }
 
+

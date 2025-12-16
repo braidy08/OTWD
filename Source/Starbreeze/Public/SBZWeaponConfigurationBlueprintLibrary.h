@@ -17,6 +17,7 @@ class STARBREEZE_API USBZWeaponConfigurationBlueprintLibrary : public UBlueprint
     GENERATED_BODY()
 public:
     USBZWeaponConfigurationBlueprintLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText UIStatToDisplayName(FName StatName);
     

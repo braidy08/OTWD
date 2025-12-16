@@ -10,7 +10,8 @@ UCLASS(Blueprintable)
 class STARBREEZE_API ASBZNavMeshEventManager : public AActor {
     GENERATED_BODY()
 public:
-    ASBZNavMeshEventManager();
+    ASBZNavMeshEventManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static ASBZNavMeshEventManager* GetNavMeshEventManager(UObject* WorldContextObject);
     

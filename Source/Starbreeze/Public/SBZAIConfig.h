@@ -7,7 +7,7 @@
 #include "SBZFactionInfo.h"
 #include "SBZAIConfig.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class STARBREEZE_API USBZAIConfig : public UObject {
     GENERATED_BODY()
 public:
@@ -35,6 +35,16 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAllowedToThrowItems;
     
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ChangeAggroTargetCooldown;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ChangeProximityTargetCooldown;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bWeaponAggroMethodAllowed;
+    
     USBZAIConfig();
+
 };
 

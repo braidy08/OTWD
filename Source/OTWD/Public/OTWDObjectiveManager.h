@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZObjectiveManager.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZObjectiveManager -FallbackName=SBZObjectiveManager
 #include "OnGlobalObjectiveTextChangedDelegate.h"
 #include "OTWDObjectiveManager.generated.h"
 
@@ -23,9 +23,10 @@ protected:
     UOTWDGlobalObjectiveData* CurrentGlobalObjective;
     
 public:
-    AOTWDObjectiveManager();
+    AOTWDObjectiveManager(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void SetGlobalObjectiveText(UObject* WorldContextObject, const FText& NewGlobalObjectiveText);
     

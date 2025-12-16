@@ -1,5 +1,8 @@
 #include "SBZLineBatchComponentFunctionLibrary.h"
 
+USBZLineBatchComponentFunctionLibrary::USBZLineBatchComponentFunctionLibrary() {
+}
+
 void USBZLineBatchComponentFunctionLibrary::Flush(ULineBatchComponent* LineBatcher) {
 }
 
@@ -45,6 +48,4 @@ void USBZLineBatchComponentFunctionLibrary::DrawBox(ULineBatchComponent* LineBat
 void USBZLineBatchComponentFunctionLibrary::DrawArrow(ULineBatchComponent* LineBatcher, const FVector LineStart, const FVector LineEnd, float ArrowSize, FLinearColor LineColor, float Duration, float Thickness) {
 }
 
-USBZLineBatchComponentFunctionLibrary::USBZLineBatchComponentFunctionLibrary() {
-}
 

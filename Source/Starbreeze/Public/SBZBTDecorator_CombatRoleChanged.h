@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector CombatRoleKey;
     
     USBZBTDecorator_CombatRoleChanged();
+
 };
 

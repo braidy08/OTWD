@@ -16,6 +16,7 @@ public:
     FOnEnterGameStateDynamicDelegate OnSuccess;
     
     USBZWaitStateMachineStateCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static USBZWaitStateMachineStateCallbackProxy* WaitGameStateMachineState(UObject* WorldContextObject, const TEnumAsByte<ESBZGameStateMachineState>& StateToWait);
     

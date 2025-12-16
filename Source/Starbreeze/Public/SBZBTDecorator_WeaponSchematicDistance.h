@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTDecorator.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
+#include "GameplayTagContainer.h"
 #include "ESBZNumericComparison.h"
 #include "SBZPropertyProvider.h"
 #include "SBZBTDecorator_WeaponSchematicDistance.generated.h"
@@ -24,9 +25,13 @@ private:
     FSBZPropertyProvider Property;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTag WeaponTag;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ValueOffset;
     
 public:
     USBZBTDecorator_WeaponSchematicDistance();
+
 };
 

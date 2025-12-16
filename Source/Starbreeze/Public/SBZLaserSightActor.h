@@ -35,6 +35,7 @@ protected:
     float MaxLightOffsetIn;
     
 public:
-    ASBZLaserSightActor();
+    ASBZLaserSightActor(const FObjectInitializer& ObjectInitializer);
+
 };
 

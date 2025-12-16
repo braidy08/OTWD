@@ -14,5 +14,6 @@ public:
     TSubclassOf<UEnvQueryContext> AgentContext;
     
     USBZEnvQueryTest_Hardpoint();
+
 };
 

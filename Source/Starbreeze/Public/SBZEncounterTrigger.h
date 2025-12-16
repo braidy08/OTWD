@@ -14,6 +14,7 @@ public:
     EEncounterPhaseState TriggerOnEnterPhaseState;
     
     USBZEncounterTrigger();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Trigger(ASBZEncounter* Encounter);
     

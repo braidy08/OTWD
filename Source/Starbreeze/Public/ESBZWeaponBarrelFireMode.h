@@ -4,10 +4,10 @@
 
 UENUM(BlueprintType)
 enum class ESBZWeaponBarrelFireMode : uint8 {
-	Hitscan = 0x0,
+    Hitscan,
     Continuous,
     Projectiles,
     MAX,
-    DEFAULT = 0x0,
+    DEFAULT = Hitscan,
 };
 

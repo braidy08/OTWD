@@ -16,8 +16,6 @@ UCLASS(Abstract, Blueprintable)
 class STARBREEZE_API ASBZGrenade : public ASBZThrowable {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDetonateSignature);
-    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Radius;
@@ -54,7 +52,8 @@ private:
     bool bDetonateOnCollision;
     
 public:
-    ASBZGrenade();
+    ASBZGrenade(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnHit(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     

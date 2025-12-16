@@ -8,5 +8,6 @@ class SBZANALYTICS_API USBZPlayFabAnalyticsProvider : public USBZAnalyticsProvid
     GENERATED_BODY()
 public:
     USBZPlayFabAnalyticsProvider();
+
 };
 

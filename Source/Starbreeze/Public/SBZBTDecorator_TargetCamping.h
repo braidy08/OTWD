@@ -16,5 +16,6 @@ public:
     FFloatInterval DistanceInterval;
     
     USBZBTDecorator_TargetCamping();
+
 };
 

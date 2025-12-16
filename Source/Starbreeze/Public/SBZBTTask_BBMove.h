@@ -15,5 +15,6 @@ public:
     FBlackboardKeySelector TargetBlackboardKey;
     
     USBZBTTask_BBMove();
+
 };
 

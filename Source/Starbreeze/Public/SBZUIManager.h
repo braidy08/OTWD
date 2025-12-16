@@ -103,6 +103,7 @@ protected:
     
 public:
     USBZUIManager();
+
     UFUNCTION(BlueprintCallable)
     void ToggleNotification(bool bCanShow);
     

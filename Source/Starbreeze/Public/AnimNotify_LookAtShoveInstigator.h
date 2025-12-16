@@ -17,5 +17,6 @@ public:
     float InterpSpeedOut;
     
     UAnimNotify_LookAtShoveInstigator();
+
 };
 

@@ -5,3 +5,4 @@ USBZPropertyModifier::USBZPropertyModifier() {
     this->TargetProperty = NULL;
 }
 
+

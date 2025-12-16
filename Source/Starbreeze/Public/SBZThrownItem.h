@@ -1,6 +1,5 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "SBZPickupItem.h"
 #include "Templates/SubclassOf.h"
 #include "SBZThrownItem.generated.h"
@@ -28,9 +27,7 @@ protected:
     float ToleratedPositionDifferenceSquared;
     
 public:
-    ASBZThrownItem();
-    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
-    void ThrowCompleted(FTransform ServerTransform);
-    
+    ASBZThrownItem(const FObjectInitializer& ObjectInitializer);
+
 };
 

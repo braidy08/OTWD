@@ -18,6 +18,7 @@ class OTWD_API UOTWDQuestStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOTWDQuestStatics();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void UpdateBountyData(const UObject* WorldContextObject);
     

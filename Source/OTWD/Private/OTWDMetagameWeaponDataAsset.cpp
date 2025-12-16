@@ -1,8 +1,5 @@
 #include "OTWDMetagameWeaponDataAsset.h"
 
-void UOTWDMetagameWeaponDataAsset::ParseDataTables() {
-}
-
 UOTWDMetagameWeaponDataAsset::UOTWDMetagameWeaponDataAsset() {
     this->WeaponMetaDataByRarity = NULL;
     this->WeaponMetaDataByFamily = NULL;
@@ -12,4 +9,8 @@ UOTWDMetagameWeaponDataAsset::UOTWDMetagameWeaponDataAsset() {
     this->MaxAmountInPostmaster = 0;
     this->MaxWeaponPowerLevel = 0;
 }
+
+void UOTWDMetagameWeaponDataAsset::ParseDataTables() {
+}
+
 

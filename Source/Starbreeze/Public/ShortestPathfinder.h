@@ -8,5 +8,6 @@ class STARBREEZE_API UShortestPathfinder : public UPathPathfinder {
     GENERATED_BODY()
 public:
     UShortestPathfinder();
+
 };
 

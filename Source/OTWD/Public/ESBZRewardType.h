@@ -4,11 +4,11 @@
 
 UENUM(BlueprintType)
 enum class ESBZRewardType : uint8 {
-	NotReward = 0x0,
+    NotReward,
     MissionReward,
     ExtractionReward,
     QuestReward,
     MAX,
-    Default = 0x0,
+    Default = NotReward,
 };
 

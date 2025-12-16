@@ -34,6 +34,7 @@ public:
     bool bIsCooldownIgnored;
     
     USBZNoiseSchematic();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     void OnNoiseGenerated(const UObject* WorldContextObject, float Multiplier);
     

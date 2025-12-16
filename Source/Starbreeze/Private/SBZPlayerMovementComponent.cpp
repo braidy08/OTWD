@@ -1,6 +1,6 @@
 #include "SBZPlayerMovementComponent.h"
 
-USBZPlayerMovementComponent::USBZPlayerMovementComponent() {
+USBZPlayerMovementComponent::USBZPlayerMovementComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->StartWalkAudioEvent = NULL;
     this->StartRunAudioEvent = NULL;
     this->WalkToRunAudioEvent = NULL;
@@ -8,4 +8,5 @@ USBZPlayerMovementComponent::USBZPlayerMovementComponent() {
     this->StopWalkAudioEvent = NULL;
     this->StopRunAudioEvent = NULL;
 }
+
 

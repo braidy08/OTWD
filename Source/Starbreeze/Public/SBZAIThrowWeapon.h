@@ -21,5 +21,6 @@ public:
     USBZAIAimThrowSchematic* AimSchematic;
     
     USBZAIThrowWeapon();
+
 };
 

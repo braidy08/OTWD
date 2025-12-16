@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZQuest.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZQuest -FallbackName=SBZQuest
 #include "EOTWDQuestType.h"
 #include "OTWDQuestMainObjective.h"
 #include "OTWDQuestRewards.h"
@@ -57,6 +57,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsQuestHidden;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float WeightedChance;
+    
     UOTWDQuestDataAsset();
+
 };
 

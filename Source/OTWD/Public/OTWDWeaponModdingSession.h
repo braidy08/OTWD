@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "SBZWeaponModdingSession.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZWeaponModdingSession -FallbackName=SBZWeaponModdingSession
 #include "OTWDMetagameCurrency.h"
 #include "OTWDWeaponPartSavedData.h"
 #include "OTWDWeaponSavedData.h"
@@ -15,6 +15,7 @@ class UOTWDWeaponModdingSession : public USBZWeaponModdingSession {
     GENERATED_BODY()
 public:
     UOTWDWeaponModdingSession();
+
     UFUNCTION(BlueprintCallable)
     bool RepairWeapon();
     

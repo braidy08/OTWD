@@ -6,3 +6,4 @@ USBZHeadshotBoxDamagePattern::USBZHeadshotBoxDamagePattern() {
     this->BoxRotationAngle = 1;
 }
 
+

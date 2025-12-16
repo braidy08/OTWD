@@ -13,5 +13,6 @@ public:
     UObject* Value;
     
     USBZBTTask_BBSetObject();
+
 };
 

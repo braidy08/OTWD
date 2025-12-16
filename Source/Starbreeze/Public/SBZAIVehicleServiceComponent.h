@@ -16,7 +16,8 @@ private:
     FName PathTag;
     
 public:
-    USBZAIVehicleServiceComponent();
+    USBZAIVehicleServiceComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_OnPossessVehicle(FVector RelativeLocation);

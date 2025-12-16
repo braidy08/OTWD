@@ -11,5 +11,6 @@ public:
     bool bCheckRepeatability;
     
     USBZBTTask_RestartActSpawnBehaviour();
+
 };
 

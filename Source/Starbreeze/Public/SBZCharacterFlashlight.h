@@ -18,6 +18,7 @@ protected:
     USBZFlashlightComponent* FlashlightComponent;
     
 public:
-    ASBZCharacterFlashlight();
+    ASBZCharacterFlashlight(const FObjectInitializer& ObjectInitializer);
+
 };
 

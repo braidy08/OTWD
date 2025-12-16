@@ -88,9 +88,6 @@ public:
     float MantleOffsetFromWallDist;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bHideWeapon;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SnapRotationDuration;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -100,5 +97,6 @@ public:
     FName SoundAttachSocketName;
     
     USBZMantlingVaultingSchematic();
+
 };
 

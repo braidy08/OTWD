@@ -208,5 +208,6 @@ public:
     UBlendSpaceBase* LocomotionUpperBodyAdditive;
     
     USBZGeneralAnimationCollection();
+
 };
 

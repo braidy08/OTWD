@@ -1,5 +1,11 @@
 #include "OTWDZombieDefenceMeterWidget.h"
 
+UOTWDZombieDefenceMeterWidget::UOTWDZombieDefenceMeterWidget() {
+    this->GateWidgetClass = NULL;
+    this->TimerText = NULL;
+    this->ContainerGate = NULL;
+}
+
 void UOTWDZombieDefenceMeterWidget::UpdateGatesState() {
 }
 
@@ -15,9 +21,4 @@ void UOTWDZombieDefenceMeterWidget::OnUpdatePhase() {
 void UOTWDZombieDefenceMeterWidget::InitDefenceMeter() {
 }
 
-UOTWDZombieDefenceMeterWidget::UOTWDZombieDefenceMeterWidget() {
-    this->GateWidgetClass = NULL;
-    this->TimerText = NULL;
-    this->ContainerGate = NULL;
-}
 

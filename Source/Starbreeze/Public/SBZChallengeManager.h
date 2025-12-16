@@ -16,6 +16,7 @@ protected:
     
 public:
     USBZChallengeManager();
+
 private:
     UFUNCTION(BlueprintCallable)
     void HandleGameReady();

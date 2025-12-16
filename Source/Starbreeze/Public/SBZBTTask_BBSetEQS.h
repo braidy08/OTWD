@@ -13,5 +13,6 @@ public:
     UEnvQuery* QueryTemplate;
     
     USBZBTTask_BBSetEQS();
+
 };
 

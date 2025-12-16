@@ -4,3 +4,4 @@ UAnimNotify_GrappleSetKnifeEnabled::UAnimNotify_GrappleSetKnifeEnabled() {
     this->bEnableKnife = false;
 }
 
+

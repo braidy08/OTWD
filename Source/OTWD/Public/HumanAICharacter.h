@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class OTWD_API AHumanAICharacter : public ASBZHumanAICharacter {
     GENERATED_BODY()
 public:
-    AHumanAICharacter();
+    AHumanAICharacter(const FObjectInitializer& ObjectInitializer);
+
 };
 

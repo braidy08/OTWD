@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Pawn -FallbackName=Pawn
 #include "ECameraMode.h"
 #include "SBZVehicleSeatPawn.generated.h"
 
@@ -42,9 +42,10 @@ protected:
     bool bIsOccupied;
     
 public:
-    ASBZVehicleSeatPawn();
+    ASBZVehicleSeatPawn(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SwitchCameraMode();
     

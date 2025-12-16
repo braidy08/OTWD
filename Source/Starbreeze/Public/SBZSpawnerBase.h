@@ -6,11 +6,14 @@
 #include "Engine/EngineTypes.h"
 #include "Engine/LatentActionManager.h"
 #include "GameplayTagContainer.h"
-#include "GameplayTagContainer.h"
-#include "SBZPawnSpawnedInfo.h"
+#include "ESBZSpawnerUsageState.h"
+#include "ESpawnActivationType.h"
+#include "SBZActFinishedDelegateDelegate.h"
+#include "SBZPawnSpawnedDelegateDelegate.h"
 #include "SBZPawnTypeRequest.h"
 #include "SBZRequestGroupHandle.h"
-#include "SBZSpawnedPawnDieInfo.h"
+#include "SBZSpawnedPawnDieDelegateDelegate.h"
+#include "SBZSpawnerRotationHandlingMethod.h"
 #include "SBZSpawnerBase.generated.h"
 
 class APawn;
@@ -23,9 +26,31 @@ UCLASS(Abstract, Blueprintable)
 class STARBREEZE_API ASBZSpawnerBase : public AActor {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSBZSpawnedPawnDieDelegate, const FSBZSpawnedPawnDieInfo&, PawnDieInfo);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSBZPawnSpawnedDelegate, const FSBZPawnSpawnedInfo&, SpawnInfo);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSBZActFinishedDelegate, APawn*, Pawn, const FGameplayTag, ActTag);
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bCreatePredefinedPawnsOnBeginPlay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESBZSpawnerUsageState UsageState;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 Seed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bRandomizeSpawnTransformStartingIndex;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZSpawnerRotationHandlingMethod RotationHandling;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FVector4> GeneratedSpawnTransforms;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    int32 PreviousSpawnTransformIndex;
+    
+public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESpawnActivationType ActivationType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer DisallowedEnemyTypeTags;
@@ -54,16 +79,14 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSBZActFinishedDelegate OnActFinished;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZCombatArea> AssignedCombatArea;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASBZHardPoint* PreassignedHardPoint;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ESpawnActorCollisionHandlingMethod SpawnActorCollisionHandling;
-    
-    ASBZSpawnerBase();
+    ASBZSpawnerBase(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void StartSpawnCooldown();
     
@@ -77,16 +100,28 @@ public:
     void Spawn(TArray<APawn*>& OutPawns);
     
     UFUNCTION(BlueprintCallable)
+    void SetUsageState(ESBZSpawnerUsageState NewUsageState);
+    
+    UFUNCTION(BlueprintCallable)
     void SetPreassignedHardPoint(ASBZHardPoint* InPreassignedHardPoint);
     
     UFUNCTION(BlueprintCallable)
     void SetEnabledForEncounterSpawning(bool bEnableForEncounters);
     
     UFUNCTION(BlueprintCallable)
+    static void SetAttachedSpawnerUsageStates(const AActor* Parent, ESBZSpawnerUsageState NewUsageState);
+    
+    UFUNCTION(BlueprintCallable)
     void Reset();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsOnSpawnCooldown() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    ESBZSpawnerUsageState GetUsageState() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetSupportedSpawnTransformCount() const;
     
     UFUNCTION(BlueprintCallable)
     void GetSpawnedPawnsCount(bool bAliveOnly, int32& OutCount);

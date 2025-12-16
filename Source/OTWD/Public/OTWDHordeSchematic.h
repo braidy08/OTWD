@@ -74,5 +74,6 @@ public:
     FHordePhaseData RelaxPhase;
     
     UOTWDHordeSchematic();
+
 };
 

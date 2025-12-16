@@ -21,5 +21,6 @@ public:
     TArray<FSBZTakedownAnimationEventSet> Takedowns;
     
     USBZTakedownAnimationSetSchematic();
+
 };
 

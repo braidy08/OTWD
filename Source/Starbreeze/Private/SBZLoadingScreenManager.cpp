@@ -1,5 +1,14 @@
 #include "SBZLoadingScreenManager.h"
 
+USBZLoadingScreenManager::USBZLoadingScreenManager() {
+    this->DefaultLoadingVideo = NULL;
+    this->LoadingWidgetClass = NULL;
+    this->LoadingWidget = NULL;
+    this->ForceStopCinematicTime = 1;
+    this->StartTipTime = 1;
+    this->bIsAsyncLoadingProgress = false;
+}
+
 void USBZLoadingScreenManager::SetupLoadingScreen() {
 }
 
@@ -67,12 +76,4 @@ FSBZCinematicLoadingData USBZLoadingScreenManager::GetCinematicData(USBZLevelSch
 void USBZLoadingScreenManager::ForceStopCinematic() {
 }
 
-USBZLoadingScreenManager::USBZLoadingScreenManager() {
-    this->DefaultLoadingVideo = NULL;
-    this->LoadingWidgetClass = NULL;
-    this->LoadingWidget = NULL;
-    this->ForceStopCinematicTime = 1;
-    this->StartTipTime = 1;
-    this->bIsAsyncLoadingProgress = false;
-}
 

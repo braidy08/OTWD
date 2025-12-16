@@ -8,6 +8,5 @@ enum class EObjectiveActivity : uint8 {
     OA_Fail,
     OA_Increment,
     OA_Decrement,
-    OA_MAX UMETA(Hidden),
 };
 

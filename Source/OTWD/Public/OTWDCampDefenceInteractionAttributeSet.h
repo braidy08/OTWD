@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
+#include "AttributeSet.h"
 #include "OTWDCampDefenceInteractionAttributeSet.generated.h"
 
 UCLASS(Blueprintable)
@@ -14,8 +15,9 @@ public:
     float AmmoBoxCooldownMultiplier;
     
     UOTWDCampDefenceInteractionAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_CraftingResourceBoxCooldownMultiplier(float OldValue);
     

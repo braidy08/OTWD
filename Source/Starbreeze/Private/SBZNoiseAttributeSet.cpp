@@ -1,6 +1,12 @@
 #include "SBZNoiseAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZNoiseAttributeSet::USBZNoiseAttributeSet() {
+    this->WalkingNoiseRangeMultiplier = 1;
+    this->RunningNoiseRangeMultiplier = 1;
+    this->TakedownNoiseRangeMultiplier = 1;
+}
+
 void USBZNoiseAttributeSet::OnRep_WalkingNoiseRangeMultiplier(float OldValue) {
 }
 
@@ -30,9 +36,4 @@ void USBZNoiseAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(USBZNoiseAttributeSet, TakedownNoiseRangeMultiplier);
 }
 
-USBZNoiseAttributeSet::USBZNoiseAttributeSet() {
-    this->WalkingNoiseRangeMultiplier = 1;
-    this->RunningNoiseRangeMultiplier = 1;
-    this->TakedownNoiseRangeMultiplier = 1;
-}
 

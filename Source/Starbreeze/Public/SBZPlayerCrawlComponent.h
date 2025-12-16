@@ -39,9 +39,10 @@ private:
     bool bIsCrawling;
     
 public:
-    USBZPlayerCrawlComponent();
+    USBZPlayerCrawlComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void StopCrawling();
     

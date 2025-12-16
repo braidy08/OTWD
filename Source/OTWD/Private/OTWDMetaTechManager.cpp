@@ -1,5 +1,8 @@
 #include "OTWDMetaTechManager.h"
 
+UOTWDMetaTechManager::UOTWDMetaTechManager() {
+}
+
 void UOTWDMetaTechManager::PurchaseTech(const UObject* WorldContextObject, const UOTWDMetaTechSchematic* Tech) {
 }
 
@@ -47,6 +50,4 @@ TArray<UOTWDMetaTechSchematic*> UOTWDMetaTechManager::GetTechList(const UObject*
     return TArray<UOTWDMetaTechSchematic*>();
 }
 
-UOTWDMetaTechManager::UOTWDMetaTechManager() {
-}
 

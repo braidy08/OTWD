@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZNonHumanAICharacterAnimation.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZNonHumanAICharacterAnimation -FallbackName=SBZNonHumanAICharacterAnimation
 #include "OTWDZombieCharacterAnimation.generated.h"
 
 class AZombieCharacter;
@@ -55,6 +55,9 @@ protected:
     UBlendSpaceBase* WalkVariationPatrol;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkVariationPatrolObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* TurnVariationPatrol;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -64,6 +67,9 @@ protected:
     UBlendSpaceBase* WalkVariationInvestigate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkVariationInvestigateObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* TurnVariationInvestigate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -71,6 +77,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* WalkVariationCombat;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkVariationCombatObstructed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* TurnVariationCombat;
@@ -97,10 +106,19 @@ protected:
     UBlendSpaceBase* WalkCrawlerVariationPatrol;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkCrawlerVariationPatrolObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* WalkCrawlerLeftHandVariationPatrol;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkCrawlerLeftHandVariationPatrolObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* WalkCrawlerRightHandVariationPatrol;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkCrawlerRightHandVariationPatrolObstructed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* TurnCrawlerVariationPatrol;
@@ -124,10 +142,19 @@ protected:
     UBlendSpaceBase* WalkCrawlerVariationInvestigate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkCrawlerVariationInvestigateObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* WalkCrawlerLeftHandVariationInvestigate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkCrawlerLeftHandVariationInvestigateObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* WalkCrawlerRightHandVariationInvestigate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkCrawlerRightHandVariationInvestigateObstructed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* TurnCrawlerVariationInvestigate;
@@ -151,10 +178,19 @@ protected:
     UBlendSpaceBase* WalkCrawlerVariationCombat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkCrawlerVariationCombatObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* WalkCrawlerLeftHandVariationCombat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkCrawlerLeftHandVariationCombatObstructed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* WalkCrawlerRightHandVariationCombat;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* WalkCrawlerRightHandVariationCombatObstructed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* TurnCrawlerVariationCombat;
@@ -182,6 +218,7 @@ public:
     float CrawlerRagdollBlend;
     
     UOTWDZombieCharacterAnimation();
+
     UFUNCTION(BlueprintCallable)
     void AnimNotify_WakingUpStarted();
     

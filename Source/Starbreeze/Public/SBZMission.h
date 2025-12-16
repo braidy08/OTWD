@@ -15,8 +15,7 @@ class USBZAIRoamingVolumeManager;
 class USBZAnalyticsPoseTracker;
 class USBZCoverPointManager;
 class USBZGameEventPlayerAttackTracker;
-class USBZLootTableSchematic;
-class USBZLootTablesSchematic;
+class USBZSpawnManager;
 
 UCLASS(Blueprintable, NonTransient)
 class STARBREEZE_API ASBZMission : public ASBZGameModeBase {
@@ -28,6 +27,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bCanPlayerBeDamaged: 1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USBZSpawnManager* SpawnManager;
     
 public:
     //UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess = true))
@@ -89,9 +91,13 @@ protected:
     TArray<ASBZPlayerController*> FailedSpawnPlayers;
     
 public:
-    ASBZMission();
+    ASBZMission(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void StartMatch();
+    
+    UFUNCTION(BlueprintCallable)
+    static void SetDebugMissionSeedFromString(const FString& NewMissionSeed);
     
     UFUNCTION(BlueprintCallable)
     void SetCurrentCheckpoints(const TArray<ASBZCheckpoint*>& NewCheckpoints);
@@ -111,13 +117,18 @@ public:
     bool IsMatchInProgress() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    static bool HasDebugMissionSeed();
+    
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void HandleMatchHasStarted();
+    
+public:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ASBZProximitySensorNavLinkManager* GetProximitySensorNavLinkManager() const;
     
-    UFUNCTION(BlueprintCallable)
-    USBZLootTablesSchematic* GetLootTablesSchematic();
-    
-    UFUNCTION(BlueprintCallable)
-    USBZLootTableSchematic* GetCurrentLootTableSchematic();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static int32 GetDebugMissionSeed();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     USBZCoverPointManager* GetCoverPointManager() const;

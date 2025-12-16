@@ -9,7 +9,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZOnKillObjective : public USBZObjectiveComponent {
     GENERATED_BODY()
 public:
-    USBZOnKillObjective();
+    USBZOnKillObjective(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnKilled(ASBZCharacter* KilledCharacter);

@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGameStateMachineState : public USBZStateMachineState {
     GENERATED_BODY()
 public:
     USBZGameStateMachineState();
+
 };
 

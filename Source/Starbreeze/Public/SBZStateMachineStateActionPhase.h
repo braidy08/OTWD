@@ -6,7 +6,7 @@
 
 class USBZStateMachineDataActionPhase;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class STARBREEZE_API USBZStateMachineStateActionPhase : public USBZGameStateMachineState {
     GENERATED_BODY()
 public:
@@ -19,6 +19,7 @@ private:
     
 public:
     USBZStateMachineStateActionPhase();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnPawnObtained();

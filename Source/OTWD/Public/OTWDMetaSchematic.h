@@ -2,7 +2,6 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "SBZSchematic.h"
-#include "EOTWDInstancedQuestType.h"
 #include "OTWDMetaSurvivorIngameData.h"
 #include "OTWDMetagameCurrency.h"
 #include "OTWDMetaSchematic.generated.h"
@@ -128,9 +127,6 @@ public:
     int32 MaximumCampDefenceInstancedAmount;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<EOTWDInstancedQuestType, float> ChanceOfSpawnPerInstanceType;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FOTWDMetaSurvivorIngameData> EventSystemSurvivorOptions;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -146,9 +142,6 @@ public:
     int32 MaxTurnsBetweenInstancedMission;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<EOTWDInstancedQuestType, float> ChanceOfSpawnPerInstanceTypeEventSystem;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UOTWDMetagameRootSurvivorDataAssets* SurvivorRootData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -158,5 +151,6 @@ public:
     UOTWDMetagameMissionRootDataAsset* MissionsRootData;
     
     UOTWDMetaSchematic();
+
 };
 

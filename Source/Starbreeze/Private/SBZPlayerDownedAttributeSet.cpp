@@ -1,6 +1,11 @@
 #include "SBZPlayerDownedAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZPlayerDownedAttributeSet::USBZPlayerDownedAttributeSet() {
+    this->LastStandDuration = 1;
+    this->MaxLastStands = 1;
+}
+
 void USBZPlayerDownedAttributeSet::OnRep_MaxLastStands(float OldValue) {
 }
 
@@ -22,8 +27,4 @@ void USBZPlayerDownedAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimePr
     DOREPLIFETIME(USBZPlayerDownedAttributeSet, MaxLastStands);
 }
 
-USBZPlayerDownedAttributeSet::USBZPlayerDownedAttributeSet() {
-    this->LastStandDuration = 1;
-    this->MaxLastStands = 1;
-}
 

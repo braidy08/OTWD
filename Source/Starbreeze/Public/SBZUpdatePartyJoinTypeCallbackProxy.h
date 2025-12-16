@@ -16,6 +16,7 @@ public:
     FOnOnlineSessionEventDelegate OnSuccess;
     
     USBZUpdatePartyJoinTypeCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static USBZUpdatePartyJoinTypeCallbackProxy* UpdatePartyJoinType(UObject* WorldContextObject, ESBZOnlineJoinType InNewJoinType);
     

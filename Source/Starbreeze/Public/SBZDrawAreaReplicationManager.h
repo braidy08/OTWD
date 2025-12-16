@@ -18,9 +18,10 @@ private:
     TArray<FName> DrawAreaForBroadcast;
     
 public:
-    ASBZDrawAreaReplicationManager();
+    ASBZDrawAreaReplicationManager(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void InitLocalPlayerID(ASBZPlayerState* PlayerState);

@@ -1,8 +1,27 @@
 #include "OTWDGameInstance.h"
 #include "OTWDMetaManager.h"
 #include "OTWDMetaTechManager.h"
+#include "OTWDMissionSaveData.h"
+#include "OTWDProfileSaveData.h"
 #include "OTWDUIBindings.h"
+#include "OTWDUISaveData.h"
 #include "TwitchCore.h"
+
+UOTWDGameInstance::UOTWDGameInstance() {
+    this->UISaveDataClass = UOTWDUISaveData::StaticClass();
+    this->ProfileSaveDataClass = UOTWDProfileSaveData::StaticClass();
+    this->MissionSaveDataClass = UOTWDMissionSaveData::StaticClass();
+    this->OTWDUIBindings = CreateDefaultSubobject<UOTWDUIBindings>(TEXT("OTWDUIBindings"));
+    this->CharacterManagerClass = NULL;
+    this->WeaponLootMetaData = NULL;
+    this->bAuthenticatedOnTwitch = false;
+    this->bShitHitsTheFan = false;
+    this->TwitchCore = CreateDefaultSubobject<UTwitchCore>(TEXT("OTWDTwitchCore"));
+    this->MetaManager = CreateDefaultSubobject<UOTWDMetaManager>(TEXT("OTWDMetaManager"));
+    this->MetaTechManager = CreateDefaultSubobject<UOTWDMetaTechManager>(TEXT("OTWDMetaTechManager"));
+    this->CharacterManager = NULL;
+    this->QuestManager = NULL;
+}
 
 void UOTWDGameInstance::StartTwitchConnection() {
 }
@@ -59,16 +78,4 @@ bool UOTWDGameInstance::CanEnterMatchmaking() {
     return false;
 }
 
-UOTWDGameInstance::UOTWDGameInstance() {
-    this->OTWDUIBindings = CreateDefaultSubobject<UOTWDUIBindings>(TEXT("OTWDUIBindings"));
-    this->CharacterManagerClass = NULL;
-    this->WeaponLootMetaData = NULL;
-    this->bAuthenticatedOnTwitch = false;
-    this->bShitHitsTheFan = false;
-    this->TwitchCore = CreateDefaultSubobject<UTwitchCore>(TEXT("OTWDTwitchCore"));
-    this->MetaManager = CreateDefaultSubobject<UOTWDMetaManager>(TEXT("OTWDMetaManager"));
-    this->MetaTechManager = CreateDefaultSubobject<UOTWDMetaTechManager>(TEXT("OTWDMetaTechManager"));
-    this->CharacterManager = NULL;
-    this->QuestManager = NULL;
-}
 

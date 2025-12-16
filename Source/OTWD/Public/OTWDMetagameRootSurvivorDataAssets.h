@@ -46,5 +46,6 @@ public:
     int32 MinimumBanishedSurvivorProvisionCost;
     
     UOTWDMetagameRootSurvivorDataAssets();
+
 };
 

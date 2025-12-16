@@ -8,5 +8,6 @@ class STARBREEZE_API USBZVehiclePassengerAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZVehiclePassengerAction();
+
 };
 

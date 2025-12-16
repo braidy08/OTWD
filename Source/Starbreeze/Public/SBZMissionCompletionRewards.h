@@ -8,5 +8,6 @@ class STARBREEZE_API USBZMissionCompletionRewards : public UDataAsset {
     GENERATED_BODY()
 public:
     USBZMissionCompletionRewards();
+
 };
 

@@ -10,6 +10,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHasInfiniteAmmo;
     
-    ASBZTurretWeapon();
+    ASBZTurretWeapon(const FObjectInitializer& ObjectInitializer);
+
 };
 

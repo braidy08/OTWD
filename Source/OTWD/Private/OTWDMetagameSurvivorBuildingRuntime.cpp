@@ -1,5 +1,9 @@
 #include "OTWDMetagameSurvivorBuildingRuntime.h"
 
+UOTWDMetagameSurvivorBuildingRuntime::UOTWDMetagameSurvivorBuildingRuntime() {
+    this->BuildingData = NULL;
+}
+
 void UOTWDMetagameSurvivorBuildingRuntime::RemoveSurvivorFromBuilding(UOTWDMetagameSurvivor* SurvivorToRemove, bool& WasRemovalSuccess) {
 }
 
@@ -43,7 +47,4 @@ float UOTWDMetagameSurvivorBuildingRuntime::CalculateBonusProgressionChangeOnAss
 void UOTWDMetagameSurvivorBuildingRuntime::AssignSurvivorToBuilding(UOTWDMetagameSurvivor* SurvivorToAssign, bool& WasAssignSuccess) {
 }
 
-UOTWDMetagameSurvivorBuildingRuntime::UOTWDMetagameSurvivorBuildingRuntime() {
-    this->BuildingData = NULL;
-}
 

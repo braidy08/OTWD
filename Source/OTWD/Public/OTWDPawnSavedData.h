@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZPawnSavedData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPawnSavedData -FallbackName=SBZPawnSavedData
 #include "OTWDPawnSavedData.generated.h"
 
 USTRUCT(BlueprintType)

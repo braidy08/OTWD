@@ -2,6 +2,8 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
+#include "ClimbActionEndedDelegateDelegate.h"
+#include "ClimbActionStartedDelegateDelegate.h"
 #include "ESBZLadderClimbActionType.h"
 #include "ESBZLadderDirection.h"
 #include "ESBZLadderSoundType.h"
@@ -20,9 +22,6 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZClimbComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClimbActionStartedDelegate, ESBZLadderClimbActionType, StartedClimbAction);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClimbActionEndedDelegate, ESBZLadderClimbActionType, EndedClimbAction);
-    
     UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FClimbActionStartedDelegate OnClimbActionStartedDelegate;
     
@@ -36,28 +35,29 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_ServerClimbDatas, meta=(AllowPrivateAccess=true))
     FSBZClimbDatas ServerClimbDatas;
     
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZLadder> CurrentLadder;
     
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZLadder> CurrentWaitingForLadder;
     
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZCharacter> OwningCharacter;
     
-    UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<USBZCharacterMovementComponent> MovementComponent;
     
-    UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UCapsuleComponent> CapsuleComponent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UAnimMontage* CurrentPlayingMontage;
     
 public:
-    USBZClimbComponent();
+    USBZClimbComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool WantToClimb(bool bCheckAngle) const;
     

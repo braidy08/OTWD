@@ -39,6 +39,7 @@ protected:
     bool bPassedValidation;
     
 public:
-    APathRouteData();
+    APathRouteData(const FObjectInitializer& ObjectInitializer);
+
 };
 

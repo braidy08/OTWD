@@ -27,6 +27,7 @@ private:
     
 public:
     USBZBindingActionImageWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void SetAction(FName Action);

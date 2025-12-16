@@ -1,5 +1,8 @@
 #include "SBZWeaponConfigurationBlueprintLibrary.h"
 
+USBZWeaponConfigurationBlueprintLibrary::USBZWeaponConfigurationBlueprintLibrary() {
+}
+
 FText USBZWeaponConfigurationBlueprintLibrary::UIStatToDisplayName(FName StatName) {
     return FText::GetEmpty();
 }
@@ -40,6 +43,4 @@ FText USBZWeaponConfigurationBlueprintLibrary::ConditionToDisplayName(ESBZWeapon
     return FText::GetEmpty();
 }
 
-USBZWeaponConfigurationBlueprintLibrary::USBZWeaponConfigurationBlueprintLibrary() {
-}
 

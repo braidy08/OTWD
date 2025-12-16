@@ -1,5 +1,11 @@
 #include "OTWDCheatManager.h"
 
+UOTWDCheatManager::UOTWDCheatManager() {
+    this->CachedSecondaryAbilitiesCollection = NULL;
+    this->CachedToolAbilitiesCollection = NULL;
+    this->CachedDefenseAbilitiesCollection = NULL;
+}
+
 void UOTWDCheatManager::WipeWeaponsAndParts() {
 }
 
@@ -42,6 +48,9 @@ void UOTWDCheatManager::SetPrimaryQuestsToAwaitingTurnIn() {
 void UOTWDCheatManager::SetDefenseAbility(const FString& DefenseAbilityName) {
 }
 
+void UOTWDCheatManager::SetCrawlerMeshOffset(float OffsetX) {
+}
+
 void UOTWDCheatManager::SaveProfileData() {
 }
 
@@ -66,13 +75,25 @@ void UOTWDCheatManager::RepairAllRangedWeapons(bool bIgnoreRepairCost) {
 void UOTWDCheatManager::RemoveGlobalAbilityTech(const FName& TechName) {
 }
 
-void UOTWDCheatManager::PurchaseGlobalAbilityTech(const FName& TechName, bool bApplyImmediately, bool bFinalizePurchase) {
+void UOTWDCheatManager::PurchaseGlobalAbilityTech(const FName& TechName, bool bApplyImmediately, bool bFinalizePurchase, bool bSkipCosts) {
 }
 
-void UOTWDCheatManager::PurchaseCharacterAbilityTech(const FName& TechName, bool bApplyImmediately, bool bFinalizePurchase) {
+void UOTWDCheatManager::PurchaseCharacterAbilityTech(const FName& TechName, bool bApplyImmediately, bool bFinalizePurchase, bool bSkipCosts) {
 }
 
 void UOTWDCheatManager::ProgressChallenge(EChallengeName ChallengeName) {
+}
+
+void UOTWDCheatManager::PrintWeaponStatistics() const {
+}
+
+void UOTWDCheatManager::PrintStatistics() const {
+}
+
+void UOTWDCheatManager::PrintKillStatistics() const {
+}
+
+void UOTWDCheatManager::PrintInstancedQuestChances() const {
 }
 
 void UOTWDCheatManager::MetagameWipe() {
@@ -132,6 +153,9 @@ void UOTWDCheatManager::FillTheVault(int32 Amount, ESBZWeaponRarity MaxRarity, E
 void UOTWDCheatManager::EnableCrowd() {
 }
 
+void UOTWDCheatManager::DisplayActiveQuests() {
+}
+
 void UOTWDCheatManager::DisableCrowd() {
 }
 
@@ -186,9 +210,4 @@ void UOTWDCheatManager::AddEveryWeaponPartSavedData(ESBZWeaponRarity Rarity) {
 void UOTWDCheatManager::AddDebugPlayFabQuestData() {
 }
 
-UOTWDCheatManager::UOTWDCheatManager() {
-    this->CachedSecondaryAbilitiesCollection = NULL;
-    this->CachedToolAbilitiesCollection = NULL;
-    this->CachedDefenseAbilitiesCollection = NULL;
-}
 

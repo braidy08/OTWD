@@ -47,5 +47,6 @@ public:
     TSoftObjectPtr<UOTWDSurvivorVoiceDataAsset> SurvivorVoice;
     
     UOTWDMetagameSurvivorDataAsset();
+
 };
 

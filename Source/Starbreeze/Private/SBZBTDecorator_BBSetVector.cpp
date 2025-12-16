@@ -5,3 +5,4 @@ USBZBTDecorator_BBSetVector::USBZBTDecorator_BBSetVector() {
     this->SetCondition = ESBZBTDecorator_SetCondition::OnNodeActivation;
 }
 
+

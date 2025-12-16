@@ -5,3 +5,4 @@ UOTWDMetagameSurvivorBuildingDataAsset::UOTWDMetagameSurvivorBuildingDataAsset()
     this->NumberOfSurvivorSlots = 0;
 }
 
+

@@ -25,6 +25,7 @@ class STARBREEZE_API USBZUtility : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USBZUtility();
+
     UFUNCTION(BlueprintCallable)
     static void SortObjectArrayByName(UPARAM(Ref) TArray<UObject*>& Array, bool Reverse);
     

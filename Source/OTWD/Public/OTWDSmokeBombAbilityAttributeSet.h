@@ -26,8 +26,9 @@ public:
     float ChokeDuration;
     
     UOTWDSmokeBombAbilityAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_SmokeRadius();
     

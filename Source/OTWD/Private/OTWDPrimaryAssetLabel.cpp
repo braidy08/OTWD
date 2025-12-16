@@ -6,3 +6,4 @@ UOTWDPrimaryAssetLabel::UOTWDPrimaryAssetLabel() {
     this->PlatformRestriction = 0;
 }
 
+

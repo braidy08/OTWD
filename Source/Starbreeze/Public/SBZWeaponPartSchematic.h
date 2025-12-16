@@ -13,6 +13,7 @@ class USBZWeaponData;
 class USBZWeaponMaterialSchematic;
 class USBZWeaponPartSlot;
 class USBZWeaponPartStatsSchematic;
+class USkeletalMesh;
 class UTexture2D;
 
 UCLASS(Blueprintable)
@@ -30,6 +31,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USBZWeaponPartSlot* SlotType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<USkeletalMesh> DisplayMesh;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bOverrideWeaponRarity;
@@ -74,6 +78,7 @@ public:
     TArray<USBZWeaponData*> CompatibilityReferences;
     
     USBZWeaponPartSchematic();
+
     UFUNCTION(BlueprintCallable)
     void GenerateUIStats();
     

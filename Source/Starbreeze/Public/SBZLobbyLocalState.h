@@ -4,6 +4,7 @@
 #include "UObject/Object.h"
 #include "GameFramework/OnlineReplStructs.h"
 #include "AsyncChangeLoadoutPayload.h"
+#include "OnLobbyEventDelegateDelegate.h"
 #include "SBZLobbyCharacterInfoUi.h"
 #include "SBZLobbyLocalState.generated.h"
 
@@ -13,8 +14,6 @@ UCLASS(Blueprintable, NotPlaceable, Transient)
 class STARBREEZE_API USBZLobbyLocalState : public UObject {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLobbyEventDelegate);
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnLobbyEventDelegate OnPlayerCountChanged;
     
@@ -33,9 +32,10 @@ protected:
     
 public:
     USBZLobbyLocalState();
+
 protected:
     UFUNCTION(BlueprintCallable)
-    void OnCompleteAsyncChangeLoadout(FGuid RequestID, FAsyncChangeLoadoutPayload Payload, FUniqueNetIdRepl PlayerUId);
+    void OnCompleteAsyncChangeLoadout(FGuid RequestID, FAsyncChangeLoadoutPayload Payload, FUniqueNetIdRepl PlayerUid);
     
     UFUNCTION(BlueprintCallable)
     void HandleLoadoutChanged();

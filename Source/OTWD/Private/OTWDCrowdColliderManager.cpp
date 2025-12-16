@@ -1,5 +1,6 @@
 #include "OTWDCrowdColliderManager.h"
 
-AOTWDCrowdColliderManager::AOTWDCrowdColliderManager() {
+AOTWDCrowdColliderManager::AOTWDCrowdColliderManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

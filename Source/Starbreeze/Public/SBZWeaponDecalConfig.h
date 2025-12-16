@@ -29,5 +29,6 @@ public:
     TSet<UPhysicalMaterial*> RequiredPhysicalMaterialSet;
     
     USBZWeaponDecalConfig();
+
 };
 

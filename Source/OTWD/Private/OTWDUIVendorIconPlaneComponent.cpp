@@ -1,7 +1,8 @@
 #include "OTWDUIVendorIconPlaneComponent.h"
 
-UOTWDUIVendorIconPlaneComponent::UOTWDUIVendorIconPlaneComponent() {
+UOTWDUIVendorIconPlaneComponent::UOTWDUIVendorIconPlaneComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->TransparencyFadeOutDistance = NULL;
     this->IconTransparencyValue = 1;
 }
+
 

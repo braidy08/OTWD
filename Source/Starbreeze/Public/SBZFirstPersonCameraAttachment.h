@@ -20,7 +20,8 @@ private:
     ASBZWeapon* CurrentWeapon;
     
 public:
-    USBZFirstPersonCameraAttachment();
+    USBZFirstPersonCameraAttachment(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetSwayEnabled(bool bEnabled);
     

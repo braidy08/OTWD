@@ -8,5 +8,6 @@ class STARBREEZE_API USBZAnimationCollection : public UObject {
     GENERATED_BODY()
 public:
     USBZAnimationCollection();
+
 };
 

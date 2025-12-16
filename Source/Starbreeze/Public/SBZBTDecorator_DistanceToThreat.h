@@ -31,5 +31,6 @@ public:
     bool bCheckVisibility;
     
     USBZBTDecorator_DistanceToThreat();
+
 };
 

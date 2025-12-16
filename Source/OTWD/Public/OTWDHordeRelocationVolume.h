@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Volume.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Volume -FallbackName=Volume
 #include "EHordeRelocationType.h"
 #include "OTWDHordeRelocationVolume.generated.h"
 
@@ -11,7 +11,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EHordeRelocationType RelocationType;
     
-    AOTWDHordeRelocationVolume();
+    AOTWDHordeRelocationVolume(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void BlockHordeRelocation();
     

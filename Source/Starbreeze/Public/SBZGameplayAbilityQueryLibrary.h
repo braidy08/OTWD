@@ -18,6 +18,7 @@ class STARBREEZE_API USBZGameplayAbilityQueryLibrary : public UBlueprintFunction
     GENERATED_BODY()
 public:
     USBZGameplayAbilityQueryLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool QueryGameplayTagFromActor(AActor* Actor, const FSBZGameplayTagComparison& Comparison);
     

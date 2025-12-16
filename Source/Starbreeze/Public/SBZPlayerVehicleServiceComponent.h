@@ -15,9 +15,10 @@ private:
     ASBZVehicle* Vehicle;
     
 public:
-    USBZPlayerVehicleServiceComponent();
+    USBZPlayerVehicleServiceComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 private:
     UFUNCTION(BlueprintCallable, Client, Reliable)
     void SetViewYawLimit(float ViewYawMin, float ViewYawMax);

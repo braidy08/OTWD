@@ -19,7 +19,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bCanRescueWanderer;
     
-    AOTWDPlayerState();
+    AOTWDPlayerState(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AbilityTask.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=AbilityTask -FallbackName=AbilityTask
 #include "SBZTickPercentageDoneDelegate.h"
 #include "SBZWaitTaskDelegateDelegate.h"
 #include "SBZAbilityTaskHeld.generated.h"
@@ -22,6 +22,7 @@ public:
     FSBZWaitTaskDelegate OnRelease;
     
     USBZAbilityTaskHeld();
+
     UFUNCTION(BlueprintCallable)
     static USBZAbilityTaskHeld* WaitInputWithTimer(UGameplayAbility* OwningAbility, bool bTestAlreadyReleased, float TimeToHold, bool bUseRegularInput);
     

@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/GameUserSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameUserSettings -FallbackName=GameUserSettings
 #include "ESBZChatSettings.h"
 #include "ESBZTutorialTipSettings.h"
 #include "SBZGameUserSettings.generated.h"
 
 class USBZGameInstance;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, Config=Engine)
 class STARBREEZE_API USBZGameUserSettings : public UGameUserSettings {
     GENERATED_BODY()
 public:
@@ -116,6 +116,7 @@ protected:
     
 public:
     USBZGameUserSettings();
+
     UFUNCTION(BlueprintCallable)
     void SetZoomSensitivity(float InSensitivity);
     

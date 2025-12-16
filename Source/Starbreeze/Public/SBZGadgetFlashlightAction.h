@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGadgetFlashlightAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZGadgetFlashlightAction();
+
 };
 

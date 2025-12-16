@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
-#include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RadialDamageParams -FallbackName=RadialDamageParams
 #include "SBZThrowActorData.h"
 #include "SBZThrowItemData.h"
 #include "SBZThrowProjectileData.h"
@@ -32,7 +32,8 @@ private:
     float CharacterMovementVelocityModifier;
     
 public:
-    USBZThrowingComponent();
+    USBZThrowingComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void ThrowActorNetMulticast(const FSBZThrowActorData& ActorData, const FTransform& OwnerTransform);
@@ -62,6 +63,9 @@ private:
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void OnThrowItem(const FSBZThrowItemData& ThrowData);
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void NetMulticast_ThrowActorCompleted(AActor* Actor, FTransform ServerTransform);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void NetMulticast_SpawnAndThrowThrowableProjectile(const FSBZThrowProjectileData& ThrowData);

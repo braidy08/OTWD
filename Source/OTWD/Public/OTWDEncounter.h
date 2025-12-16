@@ -22,6 +22,6 @@ protected:
     TArray<ASBZAICharacter*> CrowdCharacters;
     
 public:
-    AOTWDEncounter();
+    AOTWDEncounter(const FObjectInitializer& ObjectInitializer);
 };
 

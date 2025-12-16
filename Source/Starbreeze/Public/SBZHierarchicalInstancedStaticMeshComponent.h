@@ -15,7 +15,8 @@ private:
     TMap<ULevel*, FInt32Interval> LevelToInstanceIndices;
     
 public:
-    USBZHierarchicalInstancedStaticMeshComponent();
+    USBZHierarchicalInstancedStaticMeshComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     bool RemoveInstanceMaintainOrder(int32 InstanceIndex);

@@ -7,6 +7,7 @@ UCLASS(Blueprintable, NonTransient)
 class OTWD_API AOTWDDefenceMode : public AOTWDMission {
     GENERATED_BODY()
 public:
-    AOTWDDefenceMode();
+    AOTWDDefenceMode(const FObjectInitializer& ObjectInitializer);
+
 };
 

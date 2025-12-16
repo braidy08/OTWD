@@ -1,11 +1,8 @@
 #include "SBZAnimatedBagItem.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 
-
-
-
-
-ASBZAnimatedBagItem::ASBZAnimatedBagItem() {
+ASBZAnimatedBagItem::ASBZAnimatedBagItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bCanBeInCluster = true;
     this->Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
     this->StopRagdollSpeedThreshold = 1;
     this->StopRagdollTimeThreshold = 1;
@@ -17,5 +14,11 @@ ASBZAnimatedBagItem::ASBZAnimatedBagItem() {
     this->bIsRecovering = false;
     this->NetSyncDist = 1;
     this->NetIterpSpeed = 1;
+    this->Mesh->SetupAttachment(RootComponent);
 }
+
+
+
+
+
 

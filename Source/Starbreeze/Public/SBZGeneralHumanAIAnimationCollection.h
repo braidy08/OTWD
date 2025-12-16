@@ -12,6 +12,9 @@ class STARBREEZE_API USBZGeneralHumanAIAnimationCollection : public USBZAnimatio
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* CrouchMoveObstructedBlendSpace;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequenceBase* PatrolIdle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -19,6 +22,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* PatrolStandMoveBlendSpace;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* PatrolStandMoveObstructedBlendSpace;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* PatrolStandIdleTurnAroundBlendSpace;
@@ -31,6 +37,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* InvestigateStandMoveBlendSpace;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* InvestigateStandMoveObstructedBlendSpace;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* InvestigateStandIdleTurnAroundBlendSpace;
@@ -54,16 +63,28 @@ public:
     UBlendSpaceBase* SearchStandMoveBlendSpace;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* SearchStandMoveObstructedBlendSpace;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequenceBase* CombatIdle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* CombatStandMoveBlendSpace;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* CombatStandMoveObstructedBlendSpace;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* CombatStandMoveJogBlendSpace;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* CombatStandMoveJogObstructedBlendSpace;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlendSpaceBase* CombatStandMoveSprintBlendSpace;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBlendSpaceBase* CombatStandMoveSprintObstructedBlendSpace;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequenceBase* TankShoveAnticipation;
@@ -216,5 +237,6 @@ public:
     UAnimSequenceBase* TransitionSprintToIdleBackwardRight;
     
     USBZGeneralHumanAIAnimationCollection();
+
 };
 

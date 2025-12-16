@@ -19,5 +19,6 @@ public:
     TSoftObjectPtr<UTexture2D> Logo;
     
     USBZWeaponManufacturer();
+
 };
 

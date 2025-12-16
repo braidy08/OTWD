@@ -19,5 +19,6 @@ public:
     FAIDataProviderFloatValue MaxDuration;
     
     USBZBTTask_ResetTimer();
+
 };
 

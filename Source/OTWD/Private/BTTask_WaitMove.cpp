@@ -1,6 +1,7 @@
 #include "BTTask_WaitMove.h"
 
 UBTTask_WaitMove::UBTTask_WaitMove() {
+    this->NodeName = TEXT("Wait Move");
     this->Target = NULL;
     this->Timer = 1;
     this->MaxTime = 1;
@@ -9,4 +10,5 @@ UBTTask_WaitMove::UBTTask_WaitMove() {
     this->DistanceThreshold = 1;
     this->bMoveTooFar = false;
 }
+
 

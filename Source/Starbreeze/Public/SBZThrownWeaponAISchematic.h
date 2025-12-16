@@ -32,5 +32,6 @@ public:
     ESBZVoiceComment ThrowVoiceComment;
     
     USBZThrownWeaponAISchematic();
+
 };
 

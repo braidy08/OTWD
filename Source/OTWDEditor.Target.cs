@@ -7,6 +7,8 @@ public class OTWDEditorTarget : TargetRules {
 			"OTWD",
 			"SBZAnalytics",
 			"SBZScriptRemapper",
+			"SBZSignificanceManager",
+			"SBZWorldRuntime",
 			"Starbreeze"
 		});
 	}

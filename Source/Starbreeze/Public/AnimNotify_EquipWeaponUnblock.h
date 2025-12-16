@@ -8,5 +8,6 @@ class STARBREEZE_API UAnimNotify_EquipWeaponUnblock : public UAnimNotify {
     GENERATED_BODY()
 public:
     UAnimNotify_EquipWeaponUnblock();
+
 };
 

@@ -11,6 +11,7 @@ class STARBREEZE_API USBZHitIndicatorWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     USBZHitIndicatorWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetRotationPanel(UCanvasPanel* Panel);
     

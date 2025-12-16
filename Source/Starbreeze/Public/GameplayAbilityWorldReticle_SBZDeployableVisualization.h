@@ -19,6 +19,7 @@ private:
     UCapsuleComponent* CollisionComponent;
     
 public:
-    AGameplayAbilityWorldReticle_SBZDeployableVisualization();
+    AGameplayAbilityWorldReticle_SBZDeployableVisualization(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -1,13 +1,8 @@
 #include "OTWDProfileSaveData.h"
 
-bool UOTWDProfileSaveData::HaveAnyMissionReports() {
-    return false;
-}
-
-void UOTWDProfileSaveData::AssignPawnLevelingData(const FGuid& SavedDataGuid, int32 Level, int32 Exp, int32 Skillpoints) {
-}
-
 UOTWDProfileSaveData::UOTWDProfileSaveData() {
+    this->CachedMaxAmountInVault = 0;
+    this->CachedMaxAmountInPostmaster = 0;
     this->RewardsSinceLastDrop_WeaponSlot[0] = 0;
     this->RewardsSinceLastDrop_WeaponSlot[1] = 0;
     this->RewardsSinceLastDrop_WeaponSlot[2] = 0;
@@ -24,6 +19,26 @@ UOTWDProfileSaveData::UOTWDProfileSaveData() {
     this->RewardsSinceLastDrop_WeaponFamily[10] = 0;
     this->RewardsSinceLastDrop_WeaponFamily[11] = 0;
     this->RewardsSinceLastDrop_WeaponFamily[12] = 0;
+    this->RewardsSinceLastDrop_WeaponFamily[13] = 0;
+    this->RewardsSinceLastDrop_WeaponFamily[14] = 0;
     this->bUseNewSaveData = false;
+    this->HeatherPawnData = NULL;
+    this->ReinaPawnData = NULL;
 }
+
+bool UOTWDProfileSaveData::HaveValidationChangedLoadout() {
+    return false;
+}
+
+bool UOTWDProfileSaveData::HaveAnyMissionReports() {
+    return false;
+}
+
+bool UOTWDProfileSaveData::CreateReinaSaveData() {
+    return false;
+}
+
+void UOTWDProfileSaveData::AssignPawnLevelingData(const FGuid& SavedDataGuid, int32 Level, int32 Exp, int32 Skillpoints) {
+}
+
 

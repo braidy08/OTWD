@@ -7,8 +7,8 @@ enum class ESBZWeaponCondition : uint8 {
     BattleWorn,
     BrokenIn,
     WellUsed,
-	MintCondition = 0x3,
+    MintCondition,
     MAX,
-    DEFAULT = 0x3,
+    DEFAULT = MintCondition,
 };
 

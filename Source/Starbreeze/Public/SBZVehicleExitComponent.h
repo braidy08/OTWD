@@ -18,6 +18,7 @@ private:
     float GroundDistance;
     
 public:
-    USBZVehicleExitComponent();
+    USBZVehicleExitComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -3,7 +3,8 @@
 #include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "ClimbTrajectory.h"
-#include "EClimbType.h"
+#include "MVActionEndedDelegateDelegate.h"
+#include "MVActionStartedDelegateDelegate.h"
 #include "MinimalClimbTrajectory.h"
 #include "OnCanVaultMantleChangeDelegate.h"
 #include "SBZCharacterMVComponent.generated.h"
@@ -17,9 +18,6 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZCharacterMVComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMVActionStartedDelegate, EClimbType, StartedMVAction);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMVActionEndedDelegate, EClimbType, EndedMVAction);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USBZMantlingVaultingSchematic* VaultingSchematic;
     
@@ -57,7 +55,7 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASBZCharacter* OwningCharacter;
     
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZMVNavLinkProxy> CurNavLink;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -67,7 +65,8 @@ private:
     float VaultingStartHeight;
     
 public:
-    USBZCharacterMVComponent();
+    USBZCharacterMVComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void TickMantlingVaulting(float DeltaTime);
     

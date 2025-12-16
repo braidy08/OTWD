@@ -1,5 +1,8 @@
 #include "SBZGameEventBroker.h"
 
+USBZGameEventBroker::USBZGameEventBroker() {
+}
+
 void USBZGameEventBroker::PostOnPlayerCharacterPossessed(AController* Controller) {
 }
 
@@ -12,6 +15,4 @@ void USBZGameEventBroker::PostOnActorMarked(AActor* Actor, bool bIsMarked) {
 void USBZGameEventBroker::BroadcastCinematicStopped() {
 }
 
-USBZGameEventBroker::USBZGameEventBroker() {
-}
 

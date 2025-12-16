@@ -10,3 +10,4 @@ UOTWDMetagameSurvivorCampMoraleLevelData::UOTWDMetagameSurvivorCampMoraleLevelDa
     this->MoraleLevel = 0;
 }
 
+

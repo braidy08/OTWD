@@ -1,9 +1,10 @@
 #include "SBZStateMachineStateWaitingReturnToIIS.h"
 
-void USBZStateMachineStateWaitingReturnToIIS::HandlePostLoadMap(UWorld* NewWorld) {
-}
-
 USBZStateMachineStateWaitingReturnToIIS::USBZStateMachineStateWaitingReturnToIIS() {
     this->ReturnReason = NULL;
 }
+
+void USBZStateMachineStateWaitingReturnToIIS::HandlePostLoadMap(UWorld* NewWorld) {
+}
+
 

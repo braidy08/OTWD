@@ -7,3 +7,4 @@ USBZAnimNotify_SpawnDecal::USBZAnimNotify_SpawnDecal() {
     this->TraceLength = 1;
 }
 
+

@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/Widget.h"
-#include "Components/PostProcessComponent.h"
 #include "SBZPostProcessHUDWidget.generated.h"
 
 class APawn;
 class APlayerController;
+class UPostProcessComponent;
 class USBZPostProcessSettingsPresetDataAsset;
 
 UCLASS(Blueprintable)
@@ -39,6 +39,7 @@ private:
     
 public:
     USBZPostProcessHUDWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetPostProcessSettings(const USBZPostProcessSettingsPresetDataAsset* InPostProcessSettings);
     

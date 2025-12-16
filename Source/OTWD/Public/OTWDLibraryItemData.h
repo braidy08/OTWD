@@ -3,6 +3,7 @@
 #include "Engine/DataAsset.h"
 #include "OTWDLibraryItemData.generated.h"
 
+class ULocalizedOverlays;
 class UOTWDLibraryItemData;
 class UTexture2D;
 
@@ -47,8 +48,18 @@ public:
     FString VideoPath;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bShouldMuteMenuMusic;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bShouldLoop;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ULocalizedOverlays* LocalizedSubtitlesOverlay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UOTWDLibraryItemData*> ItemRequirements;
     
     UOTWDLibraryItemData();
+
 };
 

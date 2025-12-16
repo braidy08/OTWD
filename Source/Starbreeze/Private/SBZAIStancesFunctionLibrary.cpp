@@ -1,5 +1,8 @@
 #include "SBZAIStancesFunctionLibrary.h"
 
+USBZAIStancesFunctionLibrary::USBZAIStancesFunctionLibrary() {
+}
+
 bool USBZAIStancesFunctionLibrary::NotEqual_AIStanceNameName(const FSBZAIStanceNameHelper& A, FName B) {
     return false;
 }
@@ -51,6 +54,4 @@ FString USBZAIStancesFunctionLibrary::AIStanceIdToDisplayName(const FSBZAIStance
     return TEXT("");
 }
 
-USBZAIStancesFunctionLibrary::USBZAIStancesFunctionLibrary() {
-}
 

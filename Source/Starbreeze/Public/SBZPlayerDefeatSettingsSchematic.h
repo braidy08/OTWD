@@ -230,5 +230,6 @@ public:
     FSBZPlayerDefeatRTPC LastStandRTPC;
     
     USBZPlayerDefeatSettingsSchematic();
+
 };
 

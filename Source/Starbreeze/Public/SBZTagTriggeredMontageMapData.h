@@ -13,5 +13,6 @@ public:
     TMap<FGameplayTag, FSBZTagTriggeredMontageActivationData> Map;
     
     USBZTagTriggeredMontageMapData();
+
 };
 

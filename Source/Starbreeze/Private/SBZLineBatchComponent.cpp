@@ -1,5 +1,11 @@
 #include "SBZLineBatchComponent.h"
 
+USBZLineBatchComponent::USBZLineBatchComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAutoActivate = false;
+    this->bIsEditorOnly = true;
+    this->bHiddenInGame = true;
+}
+
 void USBZLineBatchComponent::DrawSolidBox(const FTransform& Transform, const FVector HalfSize, const FColor Color, uint8 DepthPriority, float LifeTime) {
 }
 
@@ -21,6 +27,4 @@ void USBZLineBatchComponent::DrawBox(const FTransform& Transform, const FVector 
 void USBZLineBatchComponent::ClearAllDraw() {
 }
 
-USBZLineBatchComponent::USBZLineBatchComponent() {
-}
 

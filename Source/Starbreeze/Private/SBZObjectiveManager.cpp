@@ -1,6 +1,14 @@
 #include "SBZObjectiveManager.h"
 #include "Net/UnrealNetwork.h"
 
+ASBZObjectiveManager::ASBZObjectiveManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+}
+
 void ASBZObjectiveManager::UpdateTimersLoop() {
 }
 
@@ -163,6 +171,4 @@ void ASBZObjectiveManager::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(ASBZObjectiveManager, ReplicatedTimers);
 }
 
-ASBZObjectiveManager::ASBZObjectiveManager() {
-}
 

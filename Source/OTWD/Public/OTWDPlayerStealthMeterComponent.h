@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZPlayerStealthMeterComponent.h"
-#include "SBZStealthMeterFaction.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPlayerStealthMeterComponent -FallbackName=SBZPlayerStealthMeterComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZStealthMeterFaction -FallbackName=SBZStealthMeterFaction
 #include "OTWDPlayerStealthMeterComponent.generated.h"
 
 class AActor;
@@ -32,9 +32,10 @@ private:
     TArray<AActor*> SniperThreats;
     
 public:
-    UOTWDPlayerStealthMeterComponent();
+    UOTWDPlayerStealthMeterComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetSniperThreats(TArray<AActor*>& OutArray) const;
     

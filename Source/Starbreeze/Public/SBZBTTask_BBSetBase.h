@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTTask_BBSetBase : public UBTTask_BlackboardBase {
     GENERATED_BODY()
 public:
     USBZBTTask_BBSetBase();
+
 };
 

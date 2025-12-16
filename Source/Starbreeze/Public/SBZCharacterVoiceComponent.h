@@ -75,7 +75,8 @@ private:
     ASBZCharacter* SBZCharacterOwner;
     
 public:
-    USBZCharacterVoiceComponent();
+    USBZCharacterVoiceComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void StopTalking();
     

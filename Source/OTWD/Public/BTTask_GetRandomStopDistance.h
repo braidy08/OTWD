@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector StopDistanceKey;
     
     UBTTask_GetRandomStopDistance();
+
 };
 

@@ -4,3 +4,4 @@ USBZStateMachineData::USBZStateMachineData() {
     this->PreviousState = NULL;
 }
 
+

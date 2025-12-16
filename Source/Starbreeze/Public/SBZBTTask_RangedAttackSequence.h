@@ -31,6 +31,9 @@ public:
     bool bVerifyAim;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bVerifyAggroTarget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bShootingFromCover;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -46,5 +49,6 @@ public:
     bool bOverridePeekType;
     
     USBZBTTask_RangedAttackSequence();
+
 };
 

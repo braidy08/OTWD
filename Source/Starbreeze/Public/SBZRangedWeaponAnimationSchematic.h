@@ -77,5 +77,6 @@ public:
     bool bCanEnterUnjamLoopFromJam;
     
     UDEPRECATED_SBZRangedWeaponAnimationSchematic();
+
 };
 

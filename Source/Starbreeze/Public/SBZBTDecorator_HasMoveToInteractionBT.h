@@ -8,5 +8,6 @@ class STARBREEZE_API USBZBTDecorator_HasMoveToInteractionBT : public UBTDecorato
     GENERATED_BODY()
 public:
     USBZBTDecorator_HasMoveToInteractionBT();
+
 };
 

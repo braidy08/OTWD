@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTDecorator.h"
-#include "GameplayTagContainer.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=EGameplayContainerMatchType -FallbackName=EGameplayContainerMatchType
 #include "GameplayTagContainer.h"
 #include "SBZBTDecorator_CheckWeaponGameplayTag.generated.h"
 
@@ -16,5 +16,6 @@ public:
     FGameplayTagContainer GameplayTags;
     
     USBZBTDecorator_CheckWeaponGameplayTag();
+
 };
 

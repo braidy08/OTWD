@@ -1,5 +1,10 @@
 #include "OTWDQuestManager.h"
 
+UOTWDQuestManager::UOTWDQuestManager() {
+    this->BountySaveData = NULL;
+    this->GameInstance = NULL;
+}
+
 bool UOTWDQuestManager::UnlockQuest(const UOTWDQuestDataAsset* InQuestData) {
     return false;
 }
@@ -24,8 +29,4 @@ bool UOTWDQuestManager::CanQuestBeUnlocked(const UOTWDQuestDataAsset* InQuestDat
     return false;
 }
 
-UOTWDQuestManager::UOTWDQuestManager() {
-    this->BountySaveData = NULL;
-    this->GameInstance = NULL;
-}
 

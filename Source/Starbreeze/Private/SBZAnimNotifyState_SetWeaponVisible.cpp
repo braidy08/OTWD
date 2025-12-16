@@ -4,3 +4,4 @@ USBZAnimNotifyState_SetWeaponVisible::USBZAnimNotifyState_SetWeaponVisible() {
     this->bVisible = false;
 }
 
+

@@ -3,7 +3,7 @@
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
-#include "Engine/EngineTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAttachLocation -FallbackName=EAttachLocation
 #include "Engine/EngineTypes.h"
 #include "SBZImpactActor.generated.h"
 
@@ -24,7 +24,8 @@ private:
     USBZImpactManager* CachedImpactManager;
     
 public:
-    ASBZImpactActor();
+    ASBZImpactActor(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     UDecalComponent* SpawnManagedDecalAttached(UMaterialInterface* DecalMaterial, FVector DecalSize, USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, TEnumAsByte<EAttachLocation::Type> LocationType, float LifeSpan);

@@ -15,7 +15,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float EnagageCooldown;
     
-    ASBZAssaultManager();
+    ASBZAssaultManager(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnActorKilled(ASBZCharacter* KilledCharacter);

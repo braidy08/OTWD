@@ -1,5 +1,12 @@
 #include "OTWDProgressTrigger.h"
+#include "Components/SceneComponent.h"
 #include "Net/UnrealNetwork.h"
+
+AOTWDProgressTrigger::AOTWDProgressTrigger(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+    this->bTriggered = false;
+    this->bTriggerOnPlayerEnter = true;
+}
 
 void AOTWDProgressTrigger::Trigger() {
 }
@@ -10,8 +17,4 @@ void AOTWDProgressTrigger::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(AOTWDProgressTrigger, bTriggered);
 }
 
-AOTWDProgressTrigger::AOTWDProgressTrigger() {
-    this->bTriggered = false;
-    this->bTriggerOnPlayerEnter = true;
-}
 

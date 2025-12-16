@@ -1,5 +1,151 @@
 #include "SBZPlayerAnimation.h"
 
+USBZPlayerAnimation::USBZPlayerAnimation() {
+    this->EquipSpeed = 1;
+    this->PendingMeleeWeaponAnimationCollection = NULL;
+    this->PendingInteractionAnimationCollection = NULL;
+    this->OwningPlayerCharacter = NULL;
+    this->bIsLocallyControlled = false;
+    this->bIsPrimaryAttackPressed = false;
+    this->bIsSecondaryAttackPressed = false;
+    this->bIsPrimaryAttackPressedLast = false;
+    this->bIsActivatingEquippable = false;
+    this->bIsJumping = false;
+    this->bIsInAir = false;
+    this->bIsLanding = false;
+    this->bIsProne = false;
+    this->bIsRunExiting = false;
+    this->bIsTurning = false;
+    this->bIsTurningInterrupted = false;
+    this->TurnYaw = 1;
+    this->TurnSpeed = 1;
+    this->AdditiveLocomotionAlpha = 1;
+    this->WalkSpeed = 1;
+    this->HeadAimPitch = 1;
+    this->HeadAimYaw = 1;
+    this->bIsInteracting = false;
+    this->bIsInteractInterrupted = false;
+    this->bIsUnequippingOutsideScreen = false;
+    this->bIsUnequipped = false;
+    this->bIsMeleeWindupFromIdle = false;
+    this->bIsMeleeComboWindowTriggered = false;
+    this->bIsGesturing = false;
+    this->bIsInteractionAnimationCollectionValid = false;
+    this->IdleADSJammedAnimation = NULL;
+    this->WalkJammedAnimation = NULL;
+    this->RunJammedEnterAnimation = NULL;
+    this->RunJammedLoopAnimation = NULL;
+    this->JumpJammedEnterAnimation = NULL;
+    this->JumpJammedLoopAnimation = NULL;
+    this->JumpJammedExitAnimation = NULL;
+    this->EquipJammedAnimation = NULL;
+    this->UnequipJammedAnimation = NULL;
+    this->PointingJammedAnimation = NULL;
+    this->IdleADSAnimation = NULL;
+    this->StandTurnBlendSpaceAnimation = NULL;
+    this->CrouchTurnBlendSpaceAnimation = NULL;
+    this->WalkAnimation = NULL;
+    this->RunEnterAnimation = NULL;
+    this->RunLoopAnimation = NULL;
+    this->ProneMoveBlendSpaceAnimation = NULL;
+    this->ProneIdleAimOffsetAnimation = NULL;
+    this->ProneMoveAimOffsetAnimation = NULL;
+    this->JumpEnterAnimation = NULL;
+    this->JumpLoopAnimation = NULL;
+    this->JumpExitAnimation = NULL;
+    this->ToProneAnimation = NULL;
+    this->CrouchToProneAnimation = NULL;
+    this->ProneToCrouchAnimation = NULL;
+    this->IdleProneAnimation = NULL;
+    this->EquipAnimation = NULL;
+    this->UnequipAnimation = NULL;
+    this->ShoveAnimation = NULL;
+    this->ShoveBlendSpaceAnimation = NULL;
+    this->CurrentGestureAnimation = NULL;
+    this->CurrentGestureBlendSpaceAnimation = NULL;
+    this->StandRecoilAimOffsetAnimation = NULL;
+    this->CrouchRecoilAimOffsetAnimation = NULL;
+    this->PointingGestureAnimation = NULL;
+    this->SprintBlendSpaceAnimation = NULL;
+    this->LocomotionUpperBodyAdditiveAnimation = NULL;
+    this->bUseGunKickAnimation = false;
+    this->GunKickAimOffsetAnimation = NULL;
+    this->EnterExitOffset = 1;
+    this->DefeatState = ESBZPlayerDefeatAnimationState::None;
+    this->DefeatCondition = ESBZPlayerDefeatAnimationExtraCondition::None;
+    this->DefeatTransitionState = ESBZPlayerDefeatAnimationTransition::None;
+    this->bIsMeleeAttacking = false;
+    this->bIsMeleeComboAllowed = false;
+    this->bCanBlock = false;
+    this->bIsExitingMeleeBlock = false;
+    this->bIsInMeleeShove = false;
+    this->bIsMeleeLightAttackAllowed = false;
+    this->bDidMeleeAttackBounce = false;
+    this->bIsEnterDefeatCrouching = false;
+    this->HeavyWindupAnimationScale = 1;
+    this->LightWindupAnimationScale = 1;
+    this->HeavySwingAnimationScale = 1;
+    this->LightSwingAnimationScale = 1;
+    this->bIsMeleeLightAttack = false;
+    this->bIsMeleeAttack1 = false;
+    this->HeavyWindupAnimation1 = NULL;
+    this->HeavyWindupAnimation2 = NULL;
+    this->HeavyWindupBlendSpaceAnimation1 = NULL;
+    this->HeavyWindupBlendSpaceAnimation2 = NULL;
+    this->HeavySwingAnimation1 = NULL;
+    this->HeavySwingAnimation2 = NULL;
+    this->HeavySwingBlendSpaceAnimation1 = NULL;
+    this->HeavySwingBlendSpaceAnimation2 = NULL;
+    this->HeavyBounceAnimation1 = NULL;
+    this->HeavyBounceAnimation2 = NULL;
+    this->HeavyBounceBlendSpaceAnimation1 = NULL;
+    this->HeavyBounceBlendSpaceAnimation2 = NULL;
+    this->LightWindupAnimation1 = NULL;
+    this->LightWindupAnimation2 = NULL;
+    this->LightWindupBlendSpaceAnimation1 = NULL;
+    this->LightWindupBlendSpaceAnimation2 = NULL;
+    this->LightSwingAnimation1 = NULL;
+    this->LightSwingAnimation2 = NULL;
+    this->LightSwingBlendSpaceAnimation1 = NULL;
+    this->LightSwingBlendSpaceAnimation2 = NULL;
+    this->LightBounceAnimation1 = NULL;
+    this->LightBounceAnimation2 = NULL;
+    this->LightBounceBlendSpaceAnimation1 = NULL;
+    this->LightBounceBlendSpaceAnimation2 = NULL;
+    this->DefeatBleedOutEnter = NULL;
+    this->DefeatBleedOutToAlive = NULL;
+    this->DefeatBleedOutToDead = NULL;
+    this->DefeatBleedOutToDowned = NULL;
+    this->DefeatStandingToDead = NULL;
+    this->DefeatDead = NULL;
+    this->DefeatDownedToAlive = NULL;
+    this->DefeatDownedNoZombie = NULL;
+    this->DefeatDownedWithZombie = NULL;
+    this->DefeatDownedZombieToNo = NULL;
+    this->DefeatDownedWithZombieToDead = NULL;
+    this->DefeatDownedNoZombieToDead = NULL;
+    this->FacialBleedOut = NULL;
+    this->FacialBleedOutEnter = NULL;
+    this->FacialIdle = NULL;
+    this->FacialRun = NULL;
+    this->FacialDeathLight = NULL;
+    this->FacialDeathMedium = NULL;
+    this->FacialDeathHeavy = NULL;
+    this->FacialDeathHurt = NULL;
+    this->FacialMelee = NULL;
+    this->bIsLeftTurnFootIKEnabled = false;
+    this->LeftTurnFootIK = 1;
+    this->LeftTurnFootIKFadeTime = 1;
+    this->bIsRightTurnFootIKEnabled = false;
+    this->RightTurnFootIK = 1;
+    this->RightTurnFootIKFadeTime = 1;
+    this->ActionTwistAngle = 1;
+    this->ActionTwistInterpSpeed = 1;
+    this->ResetZeroActionTwistInterpSpeed = 1;
+    this->bIsFullbodyAction = false;
+    this->PlayerActionHandler = NULL;
+}
+
 bool USBZPlayerAnimation::IsMeleeAttack1() {
     return false;
 }
@@ -36,6 +182,10 @@ UAnimSequenceBase* USBZPlayerAnimation::GetPointingAnimation() const {
     return NULL;
 }
 
+USBZMeleeWeaponAnimationCollection* USBZPlayerAnimation::GetMeleeWeaponAnimationCollection() const {
+    return NULL;
+}
+
 UAnimSequenceBase* USBZPlayerAnimation::GetJumpLoopAnimation() const {
     return NULL;
 }
@@ -48,7 +198,35 @@ UAnimSequenceBase* USBZPlayerAnimation::GetJumpEnterAnimation() const {
     return NULL;
 }
 
+USBZInteractionAnimationCollection* USBZPlayerAnimation::GetInteractionAnimationCollection() const {
+    return NULL;
+}
+
 UAnimSequenceBase* USBZPlayerAnimation::GetIdleADSAnimation() const {
+    return NULL;
+}
+
+UBlendSpaceBase* USBZPlayerAnimation::GetBlockLoopBlendSpaceAnimation() const {
+    return NULL;
+}
+
+UAnimSequenceBase* USBZPlayerAnimation::GetBlockLoopAnimation() const {
+    return NULL;
+}
+
+UBlendSpaceBase* USBZPlayerAnimation::GetBlockExitBlendSpaceAnimation() const {
+    return NULL;
+}
+
+UAnimSequenceBase* USBZPlayerAnimation::GetBlockExitAnimation() const {
+    return NULL;
+}
+
+UBlendSpaceBase* USBZPlayerAnimation::GetBlockEnterBlendSpaceAnimation() const {
+    return NULL;
+}
+
+UAnimSequenceBase* USBZPlayerAnimation::GetBlockEnterAnimation() const {
     return NULL;
 }
 
@@ -127,7 +305,7 @@ void USBZPlayerAnimation::AnimNotify_LeftRunEnter() {
 void USBZPlayerAnimation::AnimNotify_LeftJumpEnter() {
 }
 
-void USBZPlayerAnimation::AnimNotify_LeftInteractExit() {
+void USBZPlayerAnimation::AnimNotify_LeftInteractEquip() {
 }
 
 void USBZPlayerAnimation::AnimNotify_LandingEnded() {
@@ -184,10 +362,13 @@ void USBZPlayerAnimation::AnimNotify_EnteredResetLocomotion() {
 void USBZPlayerAnimation::AnimNotify_EnteredResetAdditiveLocomotion() {
 }
 
-void USBZPlayerAnimation::AnimNotify_EnteredInteractExit() {
+void USBZPlayerAnimation::AnimNotify_EnteredMeleeBlockExit() {
 }
 
-void USBZPlayerAnimation::AnimNotify_EnteredInteractEnter() {
+void USBZPlayerAnimation::AnimNotify_EnteredInteractUnequip() {
+}
+
+void USBZPlayerAnimation::AnimNotify_EnteredInteractEquip() {
 }
 
 void USBZPlayerAnimation::AnimNotify_DefeatTransitionStarted() {
@@ -205,144 +386,4 @@ void USBZPlayerAnimation::AnimNotify_ActionsMeleeExit() {
 void USBZPlayerAnimation::AnimNotify_ActionsMeleeEnter() {
 }
 
-USBZPlayerAnimation::USBZPlayerAnimation() {
-    this->EquipSpeed = 1;
-    this->MeleeWeaponAnimationCollection = NULL;
-    this->OwningPlayerCharacter = NULL;
-    this->bIsLocallyControlled = false;
-    this->bIsPrimaryAttackPressed = false;
-    this->bIsSecondaryAttackPressed = false;
-    this->bIsPrimaryAttackPressedLast = false;
-    this->bIsActivatingEquippable = false;
-    this->bIsJumping = false;
-    this->bIsInAir = false;
-    this->bIsLanding = false;
-    this->bIsProne = false;
-    this->bIsRunExiting = false;
-    this->bIsTurning = false;
-    this->bIsTurningInterrupted = false;
-    this->TurnYaw = 1;
-    this->TurnSpeed = 1;
-    this->AdditiveLocomotionAlpha = 1;
-    this->WalkSpeed = 1;
-    this->HeadAimPitch = 1;
-    this->HeadAimYaw = 1;
-    this->bIsInteracting = false;
-    this->bIsInteractInterrupted = false;
-    this->bIsUnequippingOutsideScreen = false;
-    this->bIsUnequipped = false;
-    this->bIsMeleeWindupFromIdle = false;
-    this->bIsMeleeComboWindowTriggered = false;
-    this->bIsGesturing = false;
-    this->IdleADSJammedAnimation = NULL;
-    this->WalkJammedAnimation = NULL;
-    this->RunJammedEnterAnimation = NULL;
-    this->RunJammedLoopAnimation = NULL;
-    this->JumpJammedEnterAnimation = NULL;
-    this->JumpJammedLoopAnimation = NULL;
-    this->JumpJammedExitAnimation = NULL;
-    this->EquipJammedAnimation = NULL;
-    this->UnequipJammedAnimation = NULL;
-    this->PointingJammedAnimation = NULL;
-    this->IdleADSAnimation = NULL;
-    this->StandTurnBlendSpaceAnimation = NULL;
-    this->CrouchTurnBlendSpaceAnimation = NULL;
-    this->WalkAnimation = NULL;
-    this->RunEnterAnimation = NULL;
-    this->RunLoopAnimation = NULL;
-    this->ProneMoveBlendSpaceAnimation = NULL;
-    this->ProneIdleAimOffsetAnimation = NULL;
-    this->ProneMoveAimOffsetAnimation = NULL;
-    this->JumpEnterAnimation = NULL;
-    this->JumpLoopAnimation = NULL;
-    this->JumpExitAnimation = NULL;
-    this->ToProneAnimation = NULL;
-    this->CrouchToProneAnimation = NULL;
-    this->ProneToCrouchAnimation = NULL;
-    this->IdleProneAnimation = NULL;
-    this->EquipAnimation = NULL;
-    this->UnequipAnimation = NULL;
-    this->ShoveAnimation = NULL;
-    this->ShoveBlendSpaceAnimation = NULL;
-    this->CurrentGestureAnimation = NULL;
-    this->CurrentGestureBlendSpaceAnimation = NULL;
-    this->StandRecoilAimOffsetAnimation = NULL;
-    this->CrouchRecoilAimOffsetAnimation = NULL;
-    this->PointingGestureAnimation = NULL;
-    this->SprintBlendSpaceAnimation = NULL;
-    this->LocomotionUpperBodyAdditiveAnimation = NULL;
-    this->bUseGunKickAnimation = false;
-    this->GunKickAimOffsetAnimation = NULL;
-    this->EnterExitOffset = 1;
-    this->DefeatState = ESBZPlayerDefeatAnimationState::None;
-    this->DefeatCondition = ESBZPlayerDefeatAnimationExtraCondition::None;
-    this->DefeatTransitionState = ESBZPlayerDefeatAnimationTransition::None;
-    this->bIsMeleeAttacking = false;
-    this->bIsMeleeComboAllowed = false;
-    this->bIsMeleeLightAttackAllowed = false;
-    this->bDidMeleeAttackBounce = false;
-    this->bIsEnterDefeatCrouching = false;
-    this->HeavyWindupAnimationScale = 1;
-    this->LightWindupAnimationScale = 1;
-    this->HeavySwingAnimationScale = 1;
-    this->LightSwingAnimationScale = 1;
-    this->bIsMeleeLightAttack = false;
-    this->bIsMeleeAttack1 = false;
-    this->HeavyWindupAnimation1 = NULL;
-    this->HeavyWindupAnimation2 = NULL;
-    this->HeavyWindupBlendSpaceAnimation1 = NULL;
-    this->HeavyWindupBlendSpaceAnimation2 = NULL;
-    this->HeavySwingAnimation1 = NULL;
-    this->HeavySwingAnimation2 = NULL;
-    this->HeavySwingBlendSpaceAnimation1 = NULL;
-    this->HeavySwingBlendSpaceAnimation2 = NULL;
-    this->HeavyBounceAnimation1 = NULL;
-    this->HeavyBounceAnimation2 = NULL;
-    this->HeavyBounceBlendSpaceAnimation1 = NULL;
-    this->HeavyBounceBlendSpaceAnimation2 = NULL;
-    this->LightWindupAnimation1 = NULL;
-    this->LightWindupAnimation2 = NULL;
-    this->LightWindupBlendSpaceAnimation1 = NULL;
-    this->LightWindupBlendSpaceAnimation2 = NULL;
-    this->LightSwingAnimation1 = NULL;
-    this->LightSwingAnimation2 = NULL;
-    this->LightSwingBlendSpaceAnimation1 = NULL;
-    this->LightSwingBlendSpaceAnimation2 = NULL;
-    this->LightBounceAnimation1 = NULL;
-    this->LightBounceAnimation2 = NULL;
-    this->LightBounceBlendSpaceAnimation1 = NULL;
-    this->LightBounceBlendSpaceAnimation2 = NULL;
-    this->DefeatBleedOutEnter = NULL;
-    this->DefeatBleedOutToAlive = NULL;
-    this->DefeatBleedOutToDead = NULL;
-    this->DefeatBleedOutToDowned = NULL;
-    this->DefeatStandingToDead = NULL;
-    this->DefeatDead = NULL;
-    this->DefeatDownedToAlive = NULL;
-    this->DefeatDownedNoZombie = NULL;
-    this->DefeatDownedWithZombie = NULL;
-    this->DefeatDownedZombieToNo = NULL;
-    this->DefeatDownedWithZombieToDead = NULL;
-    this->DefeatDownedNoZombieToDead = NULL;
-    this->FacialBleedOut = NULL;
-    this->FacialBleedOutEnter = NULL;
-    this->FacialIdle = NULL;
-    this->FacialRun = NULL;
-    this->FacialDeathLight = NULL;
-    this->FacialDeathMedium = NULL;
-    this->FacialDeathHeavy = NULL;
-    this->FacialDeathHurt = NULL;
-    this->FacialMelee = NULL;
-    this->bIsLeftTurnFootIKEnabled = false;
-    this->LeftTurnFootIK = 1;
-    this->LeftTurnFootIKFadeTime = 1;
-    this->bIsRightTurnFootIKEnabled = false;
-    this->RightTurnFootIK = 1;
-    this->RightTurnFootIKFadeTime = 1;
-    this->ActionTwistAngle = 1;
-    this->ActionTwistInterpSpeed = 1;
-    this->ResetZeroActionTwistInterpSpeed = 1;
-    this->bIsFullbodyAction = false;
-    this->PlayerActionHandler = NULL;
-}
 

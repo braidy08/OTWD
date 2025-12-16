@@ -9,7 +9,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZOnExplosionObjective : public USBZObjectiveComponent {
     GENERATED_BODY()
 public:
-    USBZOnExplosionObjective();
+    USBZOnExplosionObjective(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnExplosion(AController* Instigator);

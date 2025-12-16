@@ -31,7 +31,7 @@ protected:
     FSBZAIvisibilitySerializablePayload AIVisibilityPayload;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    FSBZAIVisibilityLeafNode AIVisibilityNode;
+    FSBZAIVisibilityLeafNode AiVisibilityNode;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESBZAIVisibilityNodeComputationFrequency AIVisibilityNodeComputationFrequency;
@@ -41,7 +41,8 @@ private:
     float LinkRadius;
     
 public:
-    ASBZCoverPoint();
+    ASBZCoverPoint(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetBlocked(bool bInBlocked);
     

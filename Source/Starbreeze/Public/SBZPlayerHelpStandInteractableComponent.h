@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class STARBREEZE_API USBZPlayerHelpStandInteractableComponent : public USBZInteractableComponent {
     GENERATED_BODY()
 public:
-    USBZPlayerHelpStandInteractableComponent();
+    USBZPlayerHelpStandInteractableComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

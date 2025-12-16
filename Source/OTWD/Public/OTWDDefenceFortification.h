@@ -19,9 +19,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     EOTWDFortificationState SaveState;
     
-    AOTWDDefenceFortification();
+    AOTWDDefenceFortification(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetState(EOTWDFortificationState NewState);
     

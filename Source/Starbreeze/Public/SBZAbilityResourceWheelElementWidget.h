@@ -26,6 +26,7 @@ private:
     
 public:
     USBZAbilityResourceWheelElementWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetupWidgets(UImage* ResourceIconWidget, UCanvasPanel* RotationPanelWidget);
     

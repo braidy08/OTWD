@@ -1,5 +1,6 @@
 #include "SBZPlayerHelpStandInteractableComponent.h"
 
-USBZPlayerHelpStandInteractableComponent::USBZPlayerHelpStandInteractableComponent() {
+USBZPlayerHelpStandInteractableComponent::USBZPlayerHelpStandInteractableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

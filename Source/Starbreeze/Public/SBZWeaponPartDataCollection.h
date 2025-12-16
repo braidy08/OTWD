@@ -13,6 +13,7 @@ public:
     TArray<USBZWeaponPartSchematic*> Collection;
     
     USBZWeaponPartDataCollection();
+
     UFUNCTION(BlueprintCallable)
     void GenerateUIStats() const;
     

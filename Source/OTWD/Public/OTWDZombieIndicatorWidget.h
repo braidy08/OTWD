@@ -23,6 +23,7 @@ public:
     float MaxOpacity;
     
     UOTWDZombieIndicatorWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetRotationPanel(UCanvasPanel* Panel);
     

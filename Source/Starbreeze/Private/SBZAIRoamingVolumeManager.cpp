@@ -1,5 +1,8 @@
 #include "SBZAIRoamingVolumeManager.h"
 
+USBZAIRoamingVolumeManager::USBZAIRoamingVolumeManager() {
+}
+
 USBZAIRoamingVolumeManager* USBZAIRoamingVolumeManager::GetAIRoamingVolumeManagerFromWorld(UWorld* World) {
     return NULL;
 }
@@ -8,6 +11,4 @@ USBZAIRoamingVolumeManager* USBZAIRoamingVolumeManager::GetAIRoamingVolumeManage
     return NULL;
 }
 
-USBZAIRoamingVolumeManager::USBZAIRoamingVolumeManager() {
-}
 

@@ -1,5 +1,13 @@
 #include "OTWDMetaManager.h"
 
+UOTWDMetaManager::UOTWDMetaManager() {
+    this->bWasUpKeepPaidThisTurn = false;
+    this->SurvivorManager = NULL;
+    this->SavedData = NULL;
+    this->GameInstance = NULL;
+    this->WandererRescuableMission = NULL;
+}
+
 void UOTWDMetaManager::UpdateOldestMission() {
 }
 
@@ -194,11 +202,4 @@ void UOTWDMetaManager::AddNewAvailableMission() {
 void UOTWDMetaManager::AddMissionsForNewDay() {
 }
 
-UOTWDMetaManager::UOTWDMetaManager() {
-    this->bWasUpKeepPaidThisTurn = false;
-    this->SurvivorManager = NULL;
-    this->SavedData = NULL;
-    this->GameInstance = NULL;
-    this->WandererRescuableMission = NULL;
-}
 

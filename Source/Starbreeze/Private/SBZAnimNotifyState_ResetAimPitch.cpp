@@ -5,3 +5,4 @@ USBZAnimNotifyState_ResetAimPitch::USBZAnimNotifyState_ResetAimPitch() {
     this->BlendOut = 1;
 }
 
+

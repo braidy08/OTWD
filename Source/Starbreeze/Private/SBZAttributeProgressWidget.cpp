@@ -1,14 +1,5 @@
 #include "SBZAttributeProgressWidget.h"
 
-void USBZAttributeProgressWidget::SetupWidgets(UMaterialInstanceDynamic* CurrentMaterialInstance, UMaterialInstanceDynamic* DecreaseMaterialInstance, UMaterialInstanceDynamic* IncreaseMaterialInstance, UMaterialInstanceDynamic* MissingMaterialInstance, UMaterialInstanceDynamic* MissingAnimMaterialInstance) {
-}
-
-void USBZAttributeProgressWidget::SetupAnimations(UWidgetAnimation* OnShowDecreaseAnimation, UWidgetAnimation* OnDecreaseStartAnimation, UWidgetAnimation* OnDecreaseStopAnimation, UWidgetAnimation* OnDecreaseInterruptedAnimation, UWidgetAnimation* OnIncreaseStartAnimation, UWidgetAnimation* OnIncreaseStopAnimation, UWidgetAnimation* OnIncreaseInterruptedAnimation, UWidgetAnimation* OnShowMissingAnimation, UWidgetAnimation* OnHideMissingAnimation) {
-}
-
-void USBZAttributeProgressWidget::SetOwner(ASBZPlayerCharacter* Owner) {
-}
-
 USBZAttributeProgressWidget::USBZAttributeProgressWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->DecreaseCooldownTime = 1;
     this->DecreaseMaxTime = 1;
@@ -35,4 +26,14 @@ USBZAttributeProgressWidget::USBZAttributeProgressWidget() : UUserWidget(FObject
     this->OnShowMissingAnim = NULL;
     this->OnHideMissingAnim = NULL;
 }
+
+void USBZAttributeProgressWidget::SetupWidgets(UMaterialInstanceDynamic* CurrentMaterialInstance, UMaterialInstanceDynamic* DecreaseMaterialInstance, UMaterialInstanceDynamic* IncreaseMaterialInstance, UMaterialInstanceDynamic* MissingMaterialInstance, UMaterialInstanceDynamic* MissingAnimMaterialInstance) {
+}
+
+void USBZAttributeProgressWidget::SetupAnimations(UWidgetAnimation* OnShowDecreaseAnimation, UWidgetAnimation* OnDecreaseStartAnimation, UWidgetAnimation* OnDecreaseStopAnimation, UWidgetAnimation* OnDecreaseInterruptedAnimation, UWidgetAnimation* OnIncreaseStartAnimation, UWidgetAnimation* OnIncreaseStopAnimation, UWidgetAnimation* OnIncreaseInterruptedAnimation, UWidgetAnimation* OnShowMissingAnimation, UWidgetAnimation* OnHideMissingAnimation) {
+}
+
+void USBZAttributeProgressWidget::SetOwner(ASBZPlayerCharacter* Owner) {
+}
+
 

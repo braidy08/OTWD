@@ -1,20 +1,6 @@
 #include "SBZShoutTargetComponent.h"
 
-void USBZShoutTargetComponent::MakeComponentsShoutTargetable(TArray<UPrimitiveComponent*> Components) {
-}
-
-void USBZShoutTargetComponent::MakeComponentShoutTargetable(UPrimitiveComponent* Component) {
-}
-
-FVector USBZShoutTargetComponent::GetTargetLocation() {
-    return FVector{};
-}
-
-bool USBZShoutTargetComponent::CheckPriority_Implementation(AActor* TargetedBy, float& OutBase, float& OutDistMod) {
-    return false;
-}
-
-USBZShoutTargetComponent::USBZShoutTargetComponent() {
+USBZShoutTargetComponent::USBZShoutTargetComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bEnabled = true;
     this->BasePriority = 1;
     this->DistModPriority = 1;
@@ -32,4 +18,19 @@ USBZShoutTargetComponent::USBZShoutTargetComponent() {
     this->PositionComponent = NULL;
     this->OutlineComponent = NULL;
 }
+
+void USBZShoutTargetComponent::MakeComponentsShoutTargetable(TArray<UPrimitiveComponent*> Components) {
+}
+
+void USBZShoutTargetComponent::MakeComponentShoutTargetable(UPrimitiveComponent* Component) {
+}
+
+FVector USBZShoutTargetComponent::GetTargetLocation() {
+    return FVector{};
+}
+
+bool USBZShoutTargetComponent::CheckPriority_Implementation(AActor* TargetedBy, float& OutBase, float& OutDistMod) {
+    return false;
+}
+
 

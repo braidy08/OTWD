@@ -1,5 +1,9 @@
 #include "SBZMaterialReplacements.h"
 
+USBZMaterialReplacements::USBZMaterialReplacements() {
+    this->BaseMaterialInterface = NULL;
+}
+
 UMaterialInterface* USBZMaterialReplacements::FindReplacement(const UMaterialInterface* MaterialInterface) const {
     return NULL;
 }
@@ -11,7 +15,4 @@ UMaterialInstanceDynamic* USBZMaterialReplacements::CreateDynamicMaterial(const 
 void USBZMaterialReplacements::ApplyToMeshComponent(UMeshComponent* MeshComponent) const {
 }
 
-USBZMaterialReplacements::USBZMaterialReplacements() {
-    this->BaseMaterialInterface = NULL;
-}
 

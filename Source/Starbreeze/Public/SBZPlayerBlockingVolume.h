@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class STARBREEZE_API ASBZPlayerBlockingVolume : public ASBZBlockingVolume {
     GENERATED_BODY()
 public:
-    ASBZPlayerBlockingVolume();
+    ASBZPlayerBlockingVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

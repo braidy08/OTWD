@@ -7,3 +7,4 @@ UOTWDHordeSchematic::UOTWDHordeSchematic() {
     this->HordeNoiseCutoff = 1;
 }
 
+

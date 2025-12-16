@@ -24,6 +24,7 @@ protected:
     USBZOutlineSchematic* IsInteractableOutlineSchematic;
     
 public:
-    ASBZLootContainer();
+    ASBZLootContainer(const FObjectInitializer& ObjectInitializer);
+
 };
 

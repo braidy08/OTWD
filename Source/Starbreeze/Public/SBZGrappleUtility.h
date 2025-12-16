@@ -8,5 +8,6 @@ class STARBREEZE_API USBZGrappleUtility : public UObject {
     GENERATED_BODY()
 public:
     USBZGrappleUtility();
+
 };
 

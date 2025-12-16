@@ -1,5 +1,8 @@
 #include "SBZRuntimeVisibilityData.h"
 
+USBZRuntimeVisibilityData::USBZRuntimeVisibilityData() {
+}
+
 ESBZVisibilityResult USBZRuntimeVisibilityData::K2_IsPointVisibleFromPoints(const UObject* WorldContextObject, const FVector& Target, const TArray<FVector>& Sources) const {
     return ESBZVisibilityResult::Lowest;
 }
@@ -20,6 +23,4 @@ USBZRuntimeVisibilityData* USBZRuntimeVisibilityData::GetRuntimeVisibilityData(c
     return NULL;
 }
 
-USBZRuntimeVisibilityData::USBZRuntimeVisibilityData() {
-}
 

@@ -1,10 +1,10 @@
 #include "OTWDMetagameWeaponGameSettings.h"
 
+UOTWDMetagameWeaponGameSettings::UOTWDMetagameWeaponGameSettings() {
+}
+
 UOTWDMetagameWeaponDataAsset* UOTWDMetagameWeaponGameSettings::GetMetaDataAsset() {
     return NULL;
 }
 
-UOTWDMetagameWeaponGameSettings::UOTWDMetagameWeaponGameSettings() {
-    this->CachedMetaDataAsset = NULL;
-}
 

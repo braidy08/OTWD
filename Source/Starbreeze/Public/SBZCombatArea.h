@@ -55,7 +55,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnCombatAreaStarted OnStartedCombat;
     
-    ASBZCombatArea();
+    ASBZCombatArea(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetSeekOutPlayersInCombat(bool bValue);
     

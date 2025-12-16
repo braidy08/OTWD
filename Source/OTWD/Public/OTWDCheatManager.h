@@ -5,6 +5,7 @@
 #include "ESBZWeaponCondition.h"
 #include "ESBZWeaponRarity.h"
 #include "SBZCheatManager.h"
+#include "DebugTurnFinishedDelegate.h"
 #include "EChallengeName.h"
 #include "OTWDCheatManager.generated.h"
 
@@ -24,8 +25,6 @@ UCLASS(Blueprintable)
 class OTWD_API UOTWDCheatManager : public USBZCheatManager {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDebugTurnFinished);
-    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USBZGameplayAbilityDataCollection* CachedSecondaryAbilitiesCollection;
@@ -55,6 +54,7 @@ private:
     
 public:
     UOTWDCheatManager();
+
     UFUNCTION(BlueprintCallable, Exec)
     void WipeWeaponsAndParts();
     
@@ -97,6 +97,11 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void SetDefenseAbility(const FString& DefenseAbilityName);
     
+protected:
+    UFUNCTION(BlueprintCallable, Exec)
+    void SetCrawlerMeshOffset(float OffsetX);
+    
+public:
     UFUNCTION(BlueprintCallable, Exec)
     void SaveProfileData();
     
@@ -122,14 +127,28 @@ public:
     void RemoveGlobalAbilityTech(const FName& TechName);
     
     UFUNCTION(BlueprintCallable, Exec)
-    void PurchaseGlobalAbilityTech(const FName& TechName, bool bApplyImmediately, bool bFinalizePurchase);
+    void PurchaseGlobalAbilityTech(const FName& TechName, bool bApplyImmediately, bool bFinalizePurchase, bool bSkipCosts);
     
     UFUNCTION(BlueprintCallable, Exec)
-    void PurchaseCharacterAbilityTech(const FName& TechName, bool bApplyImmediately, bool bFinalizePurchase);
+    void PurchaseCharacterAbilityTech(const FName& TechName, bool bApplyImmediately, bool bFinalizePurchase, bool bSkipCosts);
     
     UFUNCTION(BlueprintCallable, Exec)
     void ProgressChallenge(EChallengeName ChallengeName);
     
+protected:
+    UFUNCTION(BlueprintCallable, Exec)
+    void PrintWeaponStatistics() const;
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void PrintStatistics() const;
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void PrintKillStatistics() const;
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void PrintInstancedQuestChances() const;
+    
+public:
     UFUNCTION(BlueprintCallable, Exec)
     void MetagameWipe();
     
@@ -186,6 +205,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void EnableCrowd();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void DisplayActiveQuests();
     
     UFUNCTION(BlueprintCallable, Exec)
     void DisableCrowd();

@@ -1,5 +1,6 @@
 #include "AIPatrolPoint.h"
 
-AAIPatrolPoint::AAIPatrolPoint() {
+AAIPatrolPoint::AAIPatrolPoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

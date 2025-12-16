@@ -8,5 +8,6 @@ class USBZEnvQueryTest_DistanceToNavLink : public UEnvQueryTest {
     GENERATED_BODY()
 public:
     USBZEnvQueryTest_DistanceToNavLink();
+
 };
 

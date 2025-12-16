@@ -36,7 +36,8 @@ protected:
     AZombieCharacter* ZombieCharacter;
     
 public:
-    AZombieAIController();
+    AZombieAIController(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool TryLungeDefaultSettings(ASBZCharacter* TargetCharacter);
     

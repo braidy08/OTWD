@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class ASBZNavEdgeProvider : public AActor {
     GENERATED_BODY()
 public:
-    ASBZNavEdgeProvider();
+    ASBZNavEdgeProvider(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -5,3 +5,4 @@ USBZImpactSchematic::USBZImpactSchematic() {
     this->TranslucentSortPriority = 0;
 }
 
+

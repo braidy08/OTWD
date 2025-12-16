@@ -1,5 +1,6 @@
 #include "SBZVehicleDriverComponent.h"
 
-USBZVehicleDriverComponent::USBZVehicleDriverComponent() {
+USBZVehicleDriverComponent::USBZVehicleDriverComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

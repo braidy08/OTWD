@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZPlayerController.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPlayerController -FallbackName=SBZPlayerController
 #include "OnUnlockedLibraryItemDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "OTWDPlayerController.generated.h"
@@ -14,7 +14,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnUnlockedLibraryItem OnUnlockedLibraryItemDelegate;
     
-    AOTWDPlayerController();
+    AOTWDPlayerController(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     TSubclassOf<UGameplayAbility> GetToolAbility();
     

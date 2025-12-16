@@ -5,3 +5,4 @@ UDEPRECATED_SBZEnvQueryTest_Danger::UDEPRECATED_SBZEnvQueryTest_Danger() {
     this->AgentContext = UEnvQueryContext_Querier::StaticClass();
 }
 
+

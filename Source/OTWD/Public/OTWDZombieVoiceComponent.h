@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZAlertnessLevelIdHelper.h"
-#include "SBZCharacterVoiceComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZAlertnessLevelIdHelper -FallbackName=SBZAlertnessLevelIdHelper
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZCharacterVoiceComponent -FallbackName=SBZCharacterVoiceComponent
 #include "OTWDZombieVoiceComponent.generated.h"
 
 class UAkAudioEvent;
@@ -29,7 +29,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FString, FString> LoopEventSwitchStates;
     
-    UOTWDZombieVoiceComponent();
+    UOTWDZombieVoiceComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnAlertnessChanged(USBZAlertnessComponent* Sender, FSBZAlertnessLevelIdHelper NewLevel, FSBZAlertnessLevelIdHelper OldLevel);

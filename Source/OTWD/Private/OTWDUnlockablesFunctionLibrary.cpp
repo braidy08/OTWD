@@ -1,5 +1,8 @@
 #include "OTWDUnlockablesFunctionLibrary.h"
 
+UOTWDUnlockablesFunctionLibrary::UOTWDUnlockablesFunctionLibrary() {
+}
+
 USBZUnlockableMetadataCollection* UOTWDUnlockablesFunctionLibrary::GetTakedownWeaponCosmeticMetadataCollection(const USBZCharacterSchematic* PlayerPawnData) {
     return NULL;
 }
@@ -24,6 +27,4 @@ USBZUnlockableMetadataCollection* UOTWDUnlockablesFunctionLibrary::GetCharacterS
     return NULL;
 }
 
-UOTWDUnlockablesFunctionLibrary::UOTWDUnlockablesFunctionLibrary() {
-}
 

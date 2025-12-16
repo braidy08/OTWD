@@ -45,7 +45,8 @@ private:
     bool bDestroyOnExplosion;
     
 public:
-    ASBZExplodable();
+    ASBZExplodable(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Explode(AController* ExplosionInstigator);
     

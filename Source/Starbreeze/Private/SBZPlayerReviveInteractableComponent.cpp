@@ -1,5 +1,6 @@
 #include "SBZPlayerReviveInteractableComponent.h"
 
-USBZPlayerReviveInteractableComponent::USBZPlayerReviveInteractableComponent() {
+USBZPlayerReviveInteractableComponent::USBZPlayerReviveInteractableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

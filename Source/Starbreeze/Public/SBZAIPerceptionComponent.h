@@ -4,6 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "SBZAIPerceptionComponent.generated.h"
 
+class ASBZAICharacter;
 class ASBZAIController;
 class USBZAIAggroSystemComponent;
 class USBZAIIgnoreFactionComponent;
@@ -40,8 +41,12 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASBZAIController* OwnerController;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASBZAICharacter* AIOwnerCharacter;
+    
 public:
-    USBZAIPerceptionComponent();
+    USBZAIPerceptionComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void RemoveIgnoreTag(const FGameplayTag& Tag);
     
@@ -52,16 +57,25 @@ public:
     bool IsHearingEnabled();
     
     UFUNCTION(BlueprintCallable)
+    bool IsDecoyEnabled();
+    
+    UFUNCTION(BlueprintCallable)
     void EnableSight();
     
     UFUNCTION(BlueprintCallable)
     void EnableHearing();
     
     UFUNCTION(BlueprintCallable)
+    void EnableDecoy();
+    
+    UFUNCTION(BlueprintCallable)
     void DisableSight();
     
     UFUNCTION(BlueprintCallable)
     void DisableHearing();
+    
+    UFUNCTION(BlueprintCallable)
+    void DisableDecoy();
     
     UFUNCTION(BlueprintCallable)
     void AddIgnoreTag(const FGameplayTag& Tag);

@@ -1,6 +1,14 @@
 #include "SBZStaminaAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZStaminaAttributeSet::USBZStaminaAttributeSet() {
+    this->Stamina = 1;
+    this->StaminaMaximum = 1;
+    this->StaminaLowThreshhold = 1;
+    this->StaminaRegenRate = 1;
+    this->StaminaDrainMultiplier = 1;
+}
+
 void USBZStaminaAttributeSet::RegisterStaminaEvents() {
 }
 
@@ -49,11 +57,4 @@ void USBZStaminaAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimePropert
     DOREPLIFETIME(USBZStaminaAttributeSet, StaminaDrainMultiplier);
 }
 
-USBZStaminaAttributeSet::USBZStaminaAttributeSet() {
-    this->Stamina = 1;
-    this->StaminaMaximum = 1;
-    this->StaminaLowThreshhold = 1;
-    this->StaminaRegenRate = 1;
-    this->StaminaDrainMultiplier = 1;
-}
 

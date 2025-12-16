@@ -1,5 +1,23 @@
 #include "SBZPopupWidget.h"
 
+USBZPopupWidget::USBZPopupWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->MinDisplayTime = 1;
+    this->TitleText = NULL;
+    this->BodyPanel = NULL;
+    this->ActionButtonPanel = NULL;
+    this->ControllerType = ESBZControllerUIType::Keyboard;
+    this->BackgroundFadeInAnim = NULL;
+    this->BackgroundFadeInDefaultAnim = NULL;
+    this->FadeInAnim = NULL;
+    this->FadeOutAnim = NULL;
+    this->ShowHeaderAnim = NULL;
+    this->HideHeaderAnim = NULL;
+    this->ShowButtonAnim = NULL;
+    this->HideButtonAnim = NULL;
+    this->bWasUsingCursor = false;
+    this->CurrentDisplayTime = 1;
+}
+
 void USBZPopupWidget::ShowPopup(const FText& Title, UUserWidget* BodyWidget, const TArray<FName>& InActionNames, const TArray<FText>& InButtonLabels, bool bImportantPopup) {
 }
 
@@ -18,21 +36,4 @@ void USBZPopupWidget::OnActionPanelInteraction(const FName Action, ESBZButtonInp
 void USBZPopupWidget::ClosePopup(bool bIsCritical) {
 }
 
-USBZPopupWidget::USBZPopupWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->MinDisplayTime = 1;
-    this->TitleText = NULL;
-    this->BodyPanel = NULL;
-    this->ActionButtonPanel = NULL;
-    this->ControllerType = ESBZControllerUIType::Keyboard;
-    this->BackgroundFadeInAnim = NULL;
-    this->BackgroundFadeInDefaultAnim = NULL;
-    this->FadeInAnim = NULL;
-    this->FadeOutAnim = NULL;
-    this->ShowHeaderAnim = NULL;
-    this->HideHeaderAnim = NULL;
-    this->ShowButtonAnim = NULL;
-    this->HideButtonAnim = NULL;
-    this->bWasUsingCursor = false;
-    this->CurrentDisplayTime = 1;
-}
 

@@ -19,5 +19,6 @@ public:
     float Alertness;
     
     USBZBTTask_FinishSearch();
+
 };
 

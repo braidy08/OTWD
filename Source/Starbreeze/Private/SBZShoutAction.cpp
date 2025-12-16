@@ -1,5 +1,8 @@
 #include "SBZShoutAction.h"
 
+USBZShoutAction::USBZShoutAction() {
+}
+
 void USBZShoutAction::Server_SetGesture_Implementation(bool bEnabled, ESBZPlayerGestureType Gesture) {
 }
 bool USBZShoutAction::Server_SetGesture_Validate(bool bEnabled, ESBZPlayerGestureType Gesture) {
@@ -9,6 +12,4 @@ bool USBZShoutAction::Server_SetGesture_Validate(bool bEnabled, ESBZPlayerGestur
 void USBZShoutAction::Multicast_SetGesture_Implementation(bool bEnabled, ESBZPlayerGestureType Gesture) {
 }
 
-USBZShoutAction::USBZShoutAction() {
-}
 

@@ -6,3 +6,4 @@ USBZAnimNotifyState_EnableTurnFootIK::USBZAnimNotifyState_EnableTurnFootIK() {
     this->FadeOutTime = 1;
 }
 
+

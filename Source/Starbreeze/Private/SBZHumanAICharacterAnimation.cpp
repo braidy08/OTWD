@@ -1,63 +1,5 @@
 #include "SBZHumanAICharacterAnimation.h"
 
-void USBZHumanAICharacterAnimation::PlayMontageTransition(UAnimMontage* MontageTransition) {
-}
-
-void USBZHumanAICharacterAnimation::OverrideRotationRateDuringTransition(float YawSpeedPerSec) {
-}
-
-USBZAIShoveHandlerComponent* USBZHumanAICharacterAnimation::GetShoveHandler() const {
-    return NULL;
-}
-
-float USBZHumanAICharacterAnimation::GetClampedWeightFromValueInRange(float InputValue, float RangeMin, float RangeMax) {
-    return 0.0f;
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_StaggerExit() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_StaggerEnter() {
-}
-
-
-
-void USBZHumanAICharacterAnimation::AnimNotify_SetShoveDisabled() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_ReloadStarted() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_ReloadEnded() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_OnPeekUpExit() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_OnPeekUpEnter() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_OnPeekRightExit() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_OnPeekRightEnter() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_OnPeekLeftExit() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_OnPeekLeftEnter() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_OnIdleEnter() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_IdleToStringStartMove() {
-}
-
-void USBZHumanAICharacterAnimation::AnimNotify_DefeatReviveEnded() {
-}
-
 USBZHumanAICharacterAnimation::USBZHumanAICharacterAnimation() {
     this->bForceDisableAimOffset = false;
     this->LeftHandIKEffectorBarricadePositionAlpha = 1;
@@ -173,4 +115,63 @@ USBZHumanAICharacterAnimation::USBZHumanAICharacterAnimation() {
     this->bWaitingForWalkAfterMontageTransition = false;
     this->DefeatState = ESBZHumanAICharacterDefeatAnimationState::None;
 }
+
+void USBZHumanAICharacterAnimation::PlayMontageTransition(UAnimMontage* MontageTransition) {
+}
+
+void USBZHumanAICharacterAnimation::OverrideRotationRateDuringTransition(float YawSpeedPerSec) {
+}
+
+USBZAIShoveHandlerComponent* USBZHumanAICharacterAnimation::GetShoveHandler() const {
+    return NULL;
+}
+
+float USBZHumanAICharacterAnimation::GetClampedWeightFromValueInRange(float InputValue, float RangeMin, float RangeMax) {
+    return 0.0f;
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_StaggerExit() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_StaggerEnter() {
+}
+
+
+
+void USBZHumanAICharacterAnimation::AnimNotify_SetShoveDisabled() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_ReloadStarted() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_ReloadEnded() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_OnPeekUpExit() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_OnPeekUpEnter() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_OnPeekRightExit() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_OnPeekRightEnter() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_OnPeekLeftExit() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_OnPeekLeftEnter() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_OnIdleEnter() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_IdleToStringStartMove() {
+}
+
+void USBZHumanAICharacterAnimation::AnimNotify_DefeatReviveEnded() {
+}
+
 

@@ -149,5 +149,6 @@ public:
     UAnimSequenceBase* MantleJammedExit;
     
     USBZRangedWeaponAnimationCollection();
+
 };
 

@@ -13,3 +13,4 @@ USBZSightScopeStatsSchematic::USBZSightScopeStatsSchematic() {
     this->bUseDOFSettings = false;
 }
 
+

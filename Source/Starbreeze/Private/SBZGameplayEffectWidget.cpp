@@ -1,5 +1,9 @@
 #include "SBZGameplayEffectWidget.h"
 
+USBZGameplayEffectWidget::USBZGameplayEffectWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->bBlueprintShouldGameplayEffectBeAddedEnabled = false;
+}
+
 void USBZGameplayEffectWidget::UnbindEvents() {
 }
 
@@ -22,7 +26,4 @@ void USBZGameplayEffectWidget::GameplayEffectStackCountChanged(FActiveGameplayEf
 void USBZGameplayEffectWidget::BindEvents() {
 }
 
-USBZGameplayEffectWidget::USBZGameplayEffectWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->bBlueprintShouldGameplayEffectBeAddedEnabled = false;
-}
 

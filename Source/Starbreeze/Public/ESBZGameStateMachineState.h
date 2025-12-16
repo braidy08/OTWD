@@ -23,6 +23,5 @@ enum ESBZGameStateMachineState {
     SM_GameError,
     SM_WaitingReturnToIIS,
     SM_Undefined,
-    SM_MAX UMETA(Hidden),
 };
 

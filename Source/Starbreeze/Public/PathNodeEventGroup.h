@@ -10,6 +10,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<APathNodeEvent*> NodeEventActors;
     
-    APathNodeEventGroup();
+    APathNodeEventGroup(const FObjectInitializer& ObjectInitializer);
+
 };
 

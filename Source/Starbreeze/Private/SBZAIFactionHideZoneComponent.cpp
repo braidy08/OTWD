@@ -1,5 +1,6 @@
 #include "SBZAIFactionHideZoneComponent.h"
 
-USBZAIFactionHideZoneComponent::USBZAIFactionHideZoneComponent() {
+USBZAIFactionHideZoneComponent::USBZAIFactionHideZoneComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

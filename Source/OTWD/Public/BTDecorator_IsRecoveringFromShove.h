@@ -11,5 +11,6 @@ public:
     bool bReset;
     
     UBTDecorator_IsRecoveringFromShove();
+
 };
 

@@ -48,11 +48,12 @@ protected:
     float CoolDownDurationAfterUseOverride;
     
 private:
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASBZCharacter> CurrentOccupant;
     
 public:
-    ASBZMVNavLinkProxy();
+    ASBZMVNavLinkProxy(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void UseLink();
     

@@ -1,17 +1,25 @@
 #include "SBZProjectileManager.h"
 #include "Templates/SubclassOf.h"
 
+ASBZProjectileManager::ASBZProjectileManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+}
+
 void ASBZProjectileManager::SpawnProjectilePicker(const ASBZThrowableProjectile* Projectile) {
 }
 
-ASBZThrowableProjectile* ASBZProjectileManager::SpawnProjectile(UWorld* World, TSubclassOf<ASBZThrowableProjectile> ProjectileClass, AActor* InOwner, FGuid CurrentGuid) {
+ASBZRangedProjectile* ASBZProjectileManager::SpawnProjectile(UWorld* World, TSubclassOf<ASBZRangedProjectile> ProjectileClass, AActor* InOwner, FGuid CurrentGuid) {
     return NULL;
 }
 
 void ASBZProjectileManager::NetMulticast_ProjectileHit_Implementation(FProjectileHitScanResult OutHit) {
 }
 
-ASBZThrowableProjectile* ASBZProjectileManager::GetSpawnedProjectile(FGuid Guid) {
+ASBZRangedProjectile* ASBZProjectileManager::GetSpawnedProjectile(FGuid Guid) {
     return NULL;
 }
 
@@ -22,6 +30,4 @@ ASBZProjectileManager* ASBZProjectileManager::GetProjectileManager(UObject* Worl
 void ASBZProjectileManager::DestroyProjectile(FGuid Guid) {
 }
 
-ASBZProjectileManager::ASBZProjectileManager() {
-}
 

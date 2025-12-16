@@ -12,6 +12,7 @@
 class ASBZPlayerCharacter;
 class UAnimSequenceBase;
 class UBlendSpaceBase;
+class USBZInteractionAnimationCollection;
 class USBZMeleeWeaponAnimationCollection;
 class USBZPlayerActionHandler;
 
@@ -25,6 +26,15 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USBZMeleeWeaponAnimationCollection* MeleeWeaponAnimationCollection;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USBZMeleeWeaponAnimationCollection* PendingMeleeWeaponAnimationCollection;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USBZInteractionAnimationCollection* InteractionAnimationCollection;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USBZInteractionAnimationCollection* PendingInteractionAnimationCollection;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASBZPlayerCharacter* OwningPlayerCharacter;
@@ -103,6 +113,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsGesturing;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bIsInteractionAnimationCollectionValid;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UAnimSequenceBase* IdleADSJammedAnimation;
@@ -241,6 +254,15 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsMeleeComboAllowed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 bCanBlock: 1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 bIsExitingMeleeBlock: 1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 bIsInMeleeShove: 1;
     
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -454,6 +476,7 @@ private:
     
 public:
     USBZPlayerAnimation();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsMeleeAttack1();
     
@@ -485,6 +508,9 @@ public:
     
 protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    USBZMeleeWeaponAnimationCollection* GetMeleeWeaponAnimationCollection() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAnimSequenceBase* GetJumpLoopAnimation() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -494,7 +520,28 @@ protected:
     UAnimSequenceBase* GetJumpEnterAnimation() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    USBZInteractionAnimationCollection* GetInteractionAnimationCollection() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAnimSequenceBase* GetIdleADSAnimation() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UBlendSpaceBase* GetBlockLoopBlendSpaceAnimation() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UAnimSequenceBase* GetBlockLoopAnimation() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UBlendSpaceBase* GetBlockExitBlendSpaceAnimation() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UAnimSequenceBase* GetBlockExitAnimation() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UBlendSpaceBase* GetBlockEnterBlendSpaceAnimation() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UAnimSequenceBase* GetBlockEnterAnimation() const;
     
 private:
     UFUNCTION(BlueprintCallable)
@@ -573,7 +620,7 @@ private:
     void AnimNotify_LeftJumpEnter();
     
     UFUNCTION(BlueprintCallable)
-    void AnimNotify_LeftInteractExit();
+    void AnimNotify_LeftInteractEquip();
     
     UFUNCTION(BlueprintCallable)
     void AnimNotify_LandingEnded();
@@ -630,10 +677,13 @@ private:
     void AnimNotify_EnteredResetAdditiveLocomotion();
     
     UFUNCTION(BlueprintCallable)
-    void AnimNotify_EnteredInteractExit();
+    void AnimNotify_EnteredMeleeBlockExit();
     
     UFUNCTION(BlueprintCallable)
-    void AnimNotify_EnteredInteractEnter();
+    void AnimNotify_EnteredInteractUnequip();
+    
+    UFUNCTION(BlueprintCallable)
+    void AnimNotify_EnteredInteractEquip();
     
     UFUNCTION(BlueprintCallable)
     void AnimNotify_DefeatTransitionStarted();

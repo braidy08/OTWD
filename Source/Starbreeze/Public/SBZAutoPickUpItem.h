@@ -30,7 +30,8 @@ protected:
     USBZOutlineComponent* OutlineComponent;
     
 public:
-    ASBZAutoPickUpItem();
+    ASBZAutoPickUpItem(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool TryPickUpItem(APlayerController* PlayerController);
     

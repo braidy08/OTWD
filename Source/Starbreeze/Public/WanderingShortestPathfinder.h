@@ -12,5 +12,6 @@ public:
     FInt32Interval CostModifierRange;
     
     UWanderingShortestPathfinder();
+
 };
 

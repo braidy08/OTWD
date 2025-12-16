@@ -29,8 +29,9 @@ public:
     float StaminaMod;
     
     UOTWDMedBagAbilityAttributeSet();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRep_UseTime();
     

@@ -23,6 +23,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 DummyVisCount;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float HorizontalSpeed;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USBZGeneralAnimationCollection* GeneralAnimationCollection;
@@ -47,9 +50,6 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FaceAlpha;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float HorizontalSpeed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MoveDirection;
@@ -194,6 +194,7 @@ protected:
     
 public:
     USBZCharacterAnimation();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSetupAimOffset();
     

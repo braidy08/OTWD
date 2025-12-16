@@ -1,5 +1,14 @@
 #include "SBZCompassWidget.h"
 
+USBZCompassWidget::USBZCompassWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->CompassMarkerWidget = NULL;
+    this->MinimumPlayerDistance = 1;
+    this->MarkerUpdateRange = 1;
+    this->MetricDivider = 1;
+    this->bDisableNativeCompass = false;
+    this->bDisableNativeMarkers = false;
+}
+
 void USBZCompassWidget::SetupCompass(UImage* CompassGrid, UCanvasPanel* CanvasPanel) {
 }
 
@@ -25,12 +34,4 @@ void USBZCompassWidget::AddActorMarker(int32 UID, AActor* TargetActor, USBZCompa
 void USBZCompassWidget::AddActorCompassMarker(USBZObjectiveSchematic* ObjectiveSchematic, USBZCompassMarkerSchematic* ActorMarkerSchematic, int32 ObjectiveSchematicIndex, AActor* OwnerActor) {
 }
 
-USBZCompassWidget::USBZCompassWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->CompassMarkerWidget = NULL;
-    this->MinimumPlayerDistance = 1;
-    this->MarkerUpdateRange = 1;
-    this->MetricDivider = 1;
-    this->bDisableNativeCompass = false;
-    this->bDisableNativeMarkers = false;
-}
 

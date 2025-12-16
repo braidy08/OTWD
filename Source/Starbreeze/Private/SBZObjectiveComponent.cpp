@@ -1,5 +1,11 @@
 #include "SBZObjectiveComponent.h"
 
+USBZObjectiveComponent::USBZObjectiveComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ObjectiveSchematic = NULL;
+    this->Activity = EObjectiveActivity::OA_Complete;
+    this->bAutoAdd = true;
+}
+
 void USBZObjectiveComponent::SetSleep(bool bSleep) {
 }
 
@@ -27,9 +33,4 @@ void USBZObjectiveComponent::CompleteObjective() {
 void USBZObjectiveComponent::AddObjective() {
 }
 
-USBZObjectiveComponent::USBZObjectiveComponent() {
-    this->ObjectiveSchematic = NULL;
-    this->Activity = EObjectiveActivity::OA_Complete;
-    this->bAutoAdd = true;
-}
 

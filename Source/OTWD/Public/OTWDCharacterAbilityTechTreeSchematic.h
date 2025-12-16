@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DeveloperSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "OTWDCharacterAbilityTechTreeSchematic.generated.h"
 
 class APawn;
 class UOTWDAbilityTechListSchematic;
 class USBZGameplayAbilityData;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=OTWD)
+UCLASS(Blueprintable, DefaultConfig, Config=OTWD)
 class OTWD_API UOTWDCharacterAbilityTechTreeSchematic : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -36,6 +36,7 @@ public:
     USBZGameplayAbilityData* CachedDefaultDefenceAbilityData;
     
     UOTWDCharacterAbilityTechTreeSchematic();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static USBZGameplayAbilityData* GetDefaultToolAbilityData();
     

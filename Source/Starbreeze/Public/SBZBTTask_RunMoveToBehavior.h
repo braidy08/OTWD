@@ -2,6 +2,8 @@
 #include "CoreMinimal.h"
 #include "BehaviorTree/Tasks/BTTask_RunBehavior.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
+#include "ESBZFocusOperation.h"
+#include "SBZAIStanceIdHelper.h"
 #include "Templates/SubclassOf.h"
 #include "SBZBTTask_RunMoveToBehavior.generated.h"
 
@@ -50,6 +52,22 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector BlackboardKey;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSBZAIStanceIdHelper Stance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bSetStance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESBZFocusOperation FocusOperation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FBlackboardKeySelector FocusActorKey;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bCanEditFocusActor;
+    
     USBZBTTask_RunMoveToBehavior();
+
 };
 

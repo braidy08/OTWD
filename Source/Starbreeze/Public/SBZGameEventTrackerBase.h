@@ -8,5 +8,6 @@ class USBZGameEventTrackerBase : public UObject {
     GENERATED_BODY()
 public:
     USBZGameEventTrackerBase();
+
 };
 

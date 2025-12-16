@@ -11,6 +11,7 @@ class OTWD_API UOTWDLibraryStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOTWDLibraryStatics();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void UnlockLibraryItem(const UObject* WorldContextObject, UOTWDLibraryItemData* ItemToUnlock);
     

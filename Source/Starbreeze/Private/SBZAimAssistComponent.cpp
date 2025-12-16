@@ -1,5 +1,15 @@
 #include "SBZAimAssistComponent.h"
 
+USBZAimAssistComponent::USBZAimAssistComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bDebug = false;
+    this->HeadBoneName = TEXT("Head");
+    this->CurTarget = NULL;
+    this->CurPlayer = NULL;
+    this->CurPlayerController = NULL;
+    this->CurWeapon = NULL;
+    this->CurSchematics = NULL;
+}
+
 FSBZAimAssistResult USBZAimAssistComponent::TickAimAssist(float DeltaTime, bool bHandlePlayerRotation) {
     return FSBZAimAssistResult{};
 }
@@ -11,13 +21,4 @@ bool USBZAimAssistComponent::GetBulletDeviation(FVector Start, FVector Direction
     return false;
 }
 
-USBZAimAssistComponent::USBZAimAssistComponent() {
-    this->bDebug = false;
-    this->HeadBoneName = TEXT("Head");
-    this->CurTarget = NULL;
-    this->CurPlayer = NULL;
-    this->CurPlayerController = NULL;
-    this->CurWeapon = NULL;
-    this->CurSchematics = NULL;
-}
 

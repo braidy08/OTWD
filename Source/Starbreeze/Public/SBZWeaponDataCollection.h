@@ -14,6 +14,7 @@ public:
     TArray<USBZWeaponData*> Collection;
     
     USBZWeaponDataCollection();
+
     UFUNCTION(BlueprintCallable)
     void GenerateUIStats() const;
     

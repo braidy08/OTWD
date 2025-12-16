@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/PostProcessComponent.h"
-#include "Components/ActorComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PostProcessComponent -FallbackName=PostProcessComponent
 #include "SBZDepthOfFieldSettings.h"
 #include "SBZDepthOfFieldComponent.generated.h"
 
 UCLASS(Blueprintable, CollapseCategories, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
-class STARBREEZE_API USBZDepthOfFieldComponent : public USceneComponent {//UPostProcessComponent {
+class STARBREEZE_API USBZDepthOfFieldComponent : public UPostProcessComponent {
     GENERATED_BODY()
 public:
-    USBZDepthOfFieldComponent();
+    USBZDepthOfFieldComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void StartDOF(const FSBZDepthOfFieldSettings& InSettings, float BlendInTime);
     

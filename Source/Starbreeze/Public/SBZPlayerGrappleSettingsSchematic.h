@@ -73,5 +73,6 @@ public:
     TArray<FSBZPlayerGameplayEffect> PostGrappleGameplayEffects;
     
     USBZPlayerGrappleSettingsSchematic();
+
 };
 

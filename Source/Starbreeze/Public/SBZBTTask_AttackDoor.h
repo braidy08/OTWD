@@ -7,7 +7,7 @@ UCLASS(Blueprintable)
 class STARBREEZE_API USBZBTTask_AttackDoor : public UBTTaskNode {
     GENERATED_BODY()
 public:
-private:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bCanBreakDoor;
     
@@ -20,7 +20,17 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MinAglomerateDist;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float FacingAngle;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float MinDistFromDoorToPlayNotAgainstAnimations;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float RotationLerpSpeed;
+    
 public:
     USBZBTTask_AttackDoor();
+
 };
 

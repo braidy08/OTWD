@@ -8,3 +8,4 @@ USBZEncounterTableSchematic::USBZEncounterTableSchematic() {
     this->MinimalForcePopulation = 0;
 }
 
+

@@ -37,6 +37,7 @@ private:
     
 public:
     USBZMarkedManagerWidget();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnCharacterKilled(ASBZCharacter* KilledCharacter);

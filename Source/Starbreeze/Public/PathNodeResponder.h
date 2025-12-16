@@ -17,7 +17,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     APathNode* Node;
     
-    APathNodeResponder();
+    APathNodeResponder(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnNodeReset();

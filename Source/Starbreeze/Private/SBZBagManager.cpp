@@ -1,6 +1,15 @@
 #include "SBZBagManager.h"
 #include "Net/UnrealNetwork.h"
 
+ASBZBagManager::ASBZBagManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+    this->NumberOfBagsNeeded = 0;
+}
+
 void ASBZBagManager::SetNumberOfBagsNeeded(int32 NumberNeeded) {
 }
 
@@ -53,7 +62,4 @@ void ASBZBagManager::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
     DOREPLIFETIME(ASBZBagManager, SecuredBags);
 }
 
-ASBZBagManager::ASBZBagManager() {
-    this->NumberOfBagsNeeded = 0;
-}
 

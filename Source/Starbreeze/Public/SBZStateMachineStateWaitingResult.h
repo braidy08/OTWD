@@ -7,7 +7,7 @@
 
 class USBZStateMachineDataWaitResult;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Starbreeze)
+UCLASS(Blueprintable, DefaultConfig, Config=Starbreeze)
 class STARBREEZE_API USBZStateMachineStateWaitingResult : public USBZGameStateMachineState {
     GENERATED_BODY()
 public:
@@ -29,6 +29,7 @@ private:
     
 public:
     USBZStateMachineStateWaitingResult();
+
 private:
     UFUNCTION(BlueprintCallable)
     void TryCheckCachedPlayers();

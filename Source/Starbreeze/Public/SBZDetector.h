@@ -37,7 +37,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> CompareNameTags;
     
-    ASBZDetector();
+    ASBZDetector(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnTargetPerceptionUpdated(AActor* Actor, FAIStimulus Stimulus);

@@ -1,6 +1,9 @@
 #include "SBZGameplayStatics.h"
 #include "Templates/SubclassOf.h"
 
+USBZGameplayStatics::USBZGameplayStatics() {
+}
+
 FText USBZGameplayStatics::WarnUnusedFormattingArguments(const FText& Text) {
     return FText::GetEmpty();
 }
@@ -24,6 +27,10 @@ ASBZWeapon* USBZGameplayStatics::SpawnWeaponFromClass(const UObject* WorldContex
     return NULL;
 }
 
+UParticleSystemComponent* USBZGameplayStatics::SpawnPooledEmitterAtLocation(const UObject* WorldContextObject, UParticleSystem* EmitterTemplate, FVector Location, FRotator Rotation, FVector Scale) {
+    return NULL;
+}
+
 void USBZGameplayStatics::SpawnPickupItems(const UObject* WorldContextObject, const TSubclassOf<ASBZAutoPickUpItem>& PickupItemClass, const FVector& Location, int32 Count, float DistributionRadius) {
 }
 
@@ -37,7 +44,7 @@ UAkComponent* USBZGameplayStatics::SpawnAkComponentAttached(UAkAudioEvent* AkEve
 void USBZGameplayStatics::SetPrimitiveComponentEnabled(UPrimitiveComponent* Component, const bool bShouldBeHidden, const TEnumAsByte<ECollisionEnabled::Type> DesiredCollision, const bool bShouldTick) {
 }
 
-void USBZGameplayStatics::SetCheckpointsAndDisallowPlayBubbles(const UObject* WorldContextObject, const TArray<ASBZCheckpoint*>& Checkpoints, TArray<ASBZPlayBubble*> Bubbles, float Timer, bool bAddDefaultWarningTime) {
+void USBZGameplayStatics::SetCheckpointsAndDisallowPlayBubbles(const UObject* WorldContextObject, const TArray<ASBZCheckpoint*>& Checkpoints, TArray<ASBZPlayBubble*> Bubbles, float Timer, bool bAddDefaultWarningTime, bool bResetActiveTimer) {
 }
 
 void USBZGameplayStatics::SetCheckpoints(const UObject* WorldContextObject, const TArray<ASBZCheckpoint*>& Checkpoints) {
@@ -46,7 +53,10 @@ void USBZGameplayStatics::SetCheckpoints(const UObject* WorldContextObject, cons
 void USBZGameplayStatics::SetActorEnabled(AActor* Actor, const bool bShouldBeHidden, const bool bShouldHaveCollision, const bool bShouldTick) {
 }
 
-void USBZGameplayStatics::SaySystemCommentWithSuitablePlayer(UObject* WorldContextObject, ESBZVoiceComment VoiceComment, const FVector& Location, float Distance) {
+void USBZGameplayStatics::SaySystemCommentWithSuitablePlayer(UObject* WorldContextObject, ESBZVoiceComment VoiceComment, const FVector& Location, float Distance, bool bPrioritizeClosest) {
+}
+
+void USBZGameplayStatics::SaySystemCommentWithPlayer(ASBZPlayerCharacter* PlayerCharacter, ESBZVoiceComment VoiceComment) {
 }
 
 void USBZGameplayStatics::RequestDestroyAi(APawn* Actor) {
@@ -58,8 +68,15 @@ void USBZGameplayStatics::PrintWarning(UObject* WorldContextObject, const FStrin
 void USBZGameplayStatics::PrintError(UObject* WorldContextObject, const FString& String, bool bPrintToScreen, bool bShowDialog, FLinearColor TextColor, float Duration) {
 }
 
-ESBZPlayDialogResult USBZGameplayStatics::PlayDialogWithSuitablePlayers(UObject* WorldContextObject, FName DialogID, const FBPOnDialogEnded_Delegate& OnDialogEnded, AActor* DialogInstigator) {
+ESBZPlayDialogResult USBZGameplayStatics::PlayDialogWithSuitablePlayers(UObject* WorldContextObject, FName DialogID, const FBPOnDialogEnded_Delegate& OnDialogEnded) {
     return ESBZPlayDialogResult::Successful;
+}
+
+ESBZPlayDialogResult USBZGameplayStatics::PlayDialogByName(UObject* WorldContextObject, FName DialogID, const TArray<AActor*>& Performers, const FBPOnDialogEnded_Delegate& OnDialogEnded, AActor* DialogInstigator) {
+    return ESBZPlayDialogResult::Successful;
+}
+
+void USBZGameplayStatics::ModifyStreamWithMissionSeed(const UObject* WorldContextObject, FRandomStream& Stream) {
 }
 
 void USBZGameplayStatics::LoadStreamLevelSync(ULevelStreaming* LevelStreamingObject, bool bMakeVisibleAfterLoad, bool bShouldBlockOnLoad) {
@@ -72,6 +89,10 @@ void USBZGameplayStatics::LoadAssetSynchronous(const TSoftObjectPtr<UObject>& As
 }
 
 bool USBZGameplayStatics::IsTargetWithinVisualPerception(UObject* WorldContextObject, const FSBZVisualPerceptionInfo& VisualPerception, bool bDebugDraw, float Length, const FLinearColor& ColorSide, const FLinearColor& ColorTop, float DebugDrawDuration) {
+    return false;
+}
+
+bool USBZGameplayStatics::IsSolo(const UObject* WorldContextObject) {
     return false;
 }
 
@@ -89,6 +110,10 @@ bool USBZGameplayStatics::InterruptMissionSuccess(const UObject* WorldContextObj
 
 bool USBZGameplayStatics::InterruptMissionNeutralCountdown(const UObject* WorldContextObject) {
     return false;
+}
+
+UParticleSystemComponent* USBZGameplayStatics::InternalSpawnPooledEmitterAtLocation(UWorld* World, UParticleSystem* EmitterTemplate, FVector SpawnLocation, FRotator SpawnRotation, FVector SpawnScale) {
+    return NULL;
 }
 
 ULevelStreaming* USBZGameplayStatics::GetStreamingLevelForWorld(const UObject* WorldContextObject, const TSoftObjectPtr<UWorld>& WorldAssetReference) {
@@ -151,7 +176,11 @@ FText USBZGameplayStatics::FormatTextWithArguments(const FText& Format, const TM
 void USBZGameplayStatics::ForceDestroyActor(AActor* Actor) {
 }
 
-ASBZPlayerCharacter* USBZGameplayStatics::FindSuitablePlayer(UObject* WorldContextObject, const FVector& Location, float Distance) {
+ASBZPlayerCharacter* USBZGameplayStatics::FindSuitablePlayer(UObject* WorldContextObject, const FVector& Location, float Distance, bool bPrioritizeClosest) {
+    return NULL;
+}
+
+AActor* USBZGameplayStatics::FindNearestActorFromContainer(const USBZActorContainer* Container, const FVector& Location) {
     return NULL;
 }
 
@@ -207,6 +236,10 @@ void USBZGameplayStatics::DestroyAllAi(const UObject* WorldContextObject) {
 void USBZGameplayStatics::DeactivatePawnCollision(const FSBZDetailedCollisionHandle& Handle) {
 }
 
+FRandomStream USBZGameplayStatics::CreateStreamWithMissionSeed(const UObject* WorldContextObject, int32 InitialSeed) {
+    return FRandomStream{};
+}
+
 void USBZGameplayStatics::CalculatePlayersInsideBubblesAndTriggerPoints(const UObject* WorldContextObject, const TArray<ASBZPlayBubble*>& Bubbles, const TArray<ASBZTriggerPoint*> Triggers, int32& OutNumPlayersInside, int32& OutNumCurrentPlayersAlive) {
 }
 
@@ -230,6 +263,4 @@ FSBZDetailedCollisionHandle USBZGameplayStatics::ActivatePawnCollisionInLine(con
     return FSBZDetailedCollisionHandle{};
 }
 
-USBZGameplayStatics::USBZGameplayStatics() {
-}
 

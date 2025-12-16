@@ -16,5 +16,6 @@ public:
     TArray<UOTWDMetaTechSchematic*> PrePurchasedTechs;
     
     UOTWDMetaTechListSchematic();
+
 };
 

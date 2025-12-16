@@ -4,3 +4,4 @@ USBZBTDecorator_FiringPermissionRequestToken::USBZBTDecorator_FiringPermissionRe
     this->bTokenForUsingThrowWeapon = false;
 }
 
+

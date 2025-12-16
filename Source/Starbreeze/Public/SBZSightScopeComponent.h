@@ -28,7 +28,8 @@ protected:
     USkeletalMeshComponent* TargetingMeshComponent;
     
 public:
-    USBZSightScopeComponent();
+    USBZSightScopeComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnLeaveTargeting();

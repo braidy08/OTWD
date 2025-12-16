@@ -6,3 +6,4 @@ USBZWeaponAnimation::USBZWeaponAnimation() {
     this->IdleJammedAnimation = NULL;
 }
 
+

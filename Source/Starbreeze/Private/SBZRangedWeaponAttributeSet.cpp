@@ -1,6 +1,65 @@
 #include "SBZRangedWeaponAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZRangedWeaponAttributeSet::USBZRangedWeaponAttributeSet() {
+    this->TargetingTransitionTime = 1;
+    this->VerticalSpreadMultiplier = 1;
+    this->HipFireSpreadStart = 1;
+    this->HipFireSpreadCap = 1;
+    this->HipFireSpreadIncrease = 1;
+    this->HipFireSpreadDecayRate = 1;
+    this->HipFireSpreadResetTime = 1;
+    this->ADSFireSpreadStart = 1;
+    this->ADSFireSpreadCap = 1;
+    this->ADSFireSpreadIncrease = 1;
+    this->ADSFireSpreadDecayRate = 1;
+    this->ADSFireSpreadResetTime = 1;
+    this->RecoilRecoverySpeed = 1;
+    this->RecoilRecoveryWaitTime = 1;
+    this->RecoilTime = 1;
+    this->HipRecoilVerticalMin = 1;
+    this->HipRecoilVerticalMax = 1;
+    this->HipRecoilHorizontalMin = 1;
+    this->HipRecoilHorizontalMax = 1;
+    this->ADSRecoilVerticalMin = 1;
+    this->ADSRecoilVerticalMax = 1;
+    this->ADSRecoilHorizontalMin = 1;
+    this->ADSRecoilHorizontalMax = 1;
+    this->RecoilShotMultiplier = 1;
+    this->SilencerDurability = 1;
+    this->FlashlightFlickerSpeed = 1;
+    this->MagazineInventoryInitial = 1;
+    this->MagazineInventoryMax = 1;
+    this->MagazineLoadedInitial = 1;
+    this->MagazineLoadedMax = 1;
+    this->MagazinePickupMinMultiplier = 1;
+    this->MagazinePickupMaxMultiplier = 1;
+    this->MagazineReloadSpeedMultiplier = 1;
+    this->JamBaseMultiplier = 1;
+    this->JamIncreaseMultiplier = 1;
+    this->JamSafeShotsMultiplier = 1;
+    this->UnjamTimeMultiplier = 1;
+    this->UnjamSpeedStartMultiplier = 1;
+    this->UnjamSpeedIncreaseMultiplier = 1;
+    this->UnjamSpeedCooldownMultiplier = 1;
+    this->UnjamSpeedMaxMultiplier = 1;
+    this->DamageNear = 1;
+    this->DamageFar = 1;
+    this->DamageFalloffStart = 1;
+    this->DamageFalloffEnd = 1;
+    this->DamageFalloffExponent = 1;
+    this->ThrowableProjectileGravityScale = 1;
+    this->ThrowableProjectileMaxSpeed = 1;
+    this->NoiseDefaultRange = 1;
+    this->NoiseRangeMultiplier = 1;
+    this->NoiseIntensityMultiplier = 1;
+    this->NoiseGeneratedMultiplier = 1;
+    this->FireRecoveryTime = 1;
+    this->FireShotsPerMinute = 1;
+    this->BreathingMagnitudeMultiplier = 1;
+    this->BreathingSpeedMultiplier = 1;
+}
+
 void USBZRangedWeaponAttributeSet::OnRep_VerticalSpreadMultiplier(float OldValue) {
 }
 
@@ -454,62 +513,4 @@ void USBZRangedWeaponAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimePr
     DOREPLIFETIME(USBZRangedWeaponAttributeSet, BreathingSpeedMultiplier);
 }
 
-USBZRangedWeaponAttributeSet::USBZRangedWeaponAttributeSet() {
-    this->TargetingTransitionTime = 1;
-    this->VerticalSpreadMultiplier = 1;
-    this->HipFireSpreadStart = 1;
-    this->HipFireSpreadCap = 1;
-    this->HipFireSpreadIncrease = 1;
-    this->HipFireSpreadDecayRate = 1;
-    this->HipFireSpreadResetTime = 1;
-    this->ADSFireSpreadStart = 1;
-    this->ADSFireSpreadCap = 1;
-    this->ADSFireSpreadIncrease = 1;
-    this->ADSFireSpreadDecayRate = 1;
-    this->ADSFireSpreadResetTime = 1;
-    this->RecoilRecoverySpeed = 1;
-    this->RecoilRecoveryWaitTime = 1;
-    this->RecoilTime = 1;
-    this->HipRecoilVerticalMin = 1;
-    this->HipRecoilVerticalMax = 1;
-    this->HipRecoilHorizontalMin = 1;
-    this->HipRecoilHorizontalMax = 1;
-    this->ADSRecoilVerticalMin = 1;
-    this->ADSRecoilVerticalMax = 1;
-    this->ADSRecoilHorizontalMin = 1;
-    this->ADSRecoilHorizontalMax = 1;
-    this->RecoilShotMultiplier = 1;
-    this->SilencerDurability = 1;
-    this->FlashlightFlickerSpeed = 1;
-    this->MagazineInventoryInitial = 1;
-    this->MagazineInventoryMax = 1;
-    this->MagazineLoadedInitial = 1;
-    this->MagazineLoadedMax = 1;
-    this->MagazinePickupMinMultiplier = 1;
-    this->MagazinePickupMaxMultiplier = 1;
-    this->MagazineReloadSpeedMultiplier = 1;
-    this->JamBaseMultiplier = 1;
-    this->JamIncreaseMultiplier = 1;
-    this->JamSafeShotsMultiplier = 1;
-    this->UnjamTimeMultiplier = 1;
-    this->UnjamSpeedStartMultiplier = 1;
-    this->UnjamSpeedIncreaseMultiplier = 1;
-    this->UnjamSpeedCooldownMultiplier = 1;
-    this->UnjamSpeedMaxMultiplier = 1;
-    this->DamageNear = 1;
-    this->DamageFar = 1;
-    this->DamageFalloffStart = 1;
-    this->DamageFalloffEnd = 1;
-    this->DamageFalloffExponent = 1;
-    this->ThrowableProjectileGravityScale = 1;
-    this->ThrowableProjectileMaxSpeed = 1;
-    this->NoiseDefaultRange = 1;
-    this->NoiseRangeMultiplier = 1;
-    this->NoiseIntensityMultiplier = 1;
-    this->NoiseGeneratedMultiplier = 1;
-    this->FireRecoveryTime = 1;
-    this->FireShotsPerMinute = 1;
-    this->BreathingMagnitudeMultiplier = 1;
-    this->BreathingSpeedMultiplier = 1;
-}
 

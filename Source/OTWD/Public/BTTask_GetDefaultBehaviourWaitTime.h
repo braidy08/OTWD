@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector WaitTimeKey;
     
     UBTTask_GetDefaultBehaviourWaitTime();
+
 };
 

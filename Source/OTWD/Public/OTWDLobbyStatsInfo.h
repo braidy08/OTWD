@@ -9,7 +9,7 @@ struct OTWD_API FOTWDLobbyStatsInfo {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FUniqueNetIdRepl PlayerUId;
+    FUniqueNetIdRepl PlayerUid;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOTWDCollectedGameStatistics Statistics;

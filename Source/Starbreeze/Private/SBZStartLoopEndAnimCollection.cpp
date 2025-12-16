@@ -9,3 +9,4 @@ USBZStartLoopEndAnimCollection::USBZStartLoopEndAnimCollection() {
     this->EndBlendSpace = NULL;
 }
 
+

@@ -4,3 +4,4 @@ UAnimNotifyState_GrappleShoveWindow::UAnimNotifyState_GrappleShoveWindow() {
     this->bValidShovePeriod = true;
 }
 
+

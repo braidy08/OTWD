@@ -1,5 +1,6 @@
 #include "SBZLightVisibilityShape.h"
 
-ASBZLightVisibilityShape::ASBZLightVisibilityShape() {
+ASBZLightVisibilityShape::ASBZLightVisibilityShape(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

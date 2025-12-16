@@ -1,6 +1,15 @@
 #include "OTWDSixthSenseAbilityAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UOTWDSixthSenseAbilityAttributeSet::UOTWDSixthSenseAbilityAttributeSet() {
+    this->HoldTime = 1;
+    this->Range = 1;
+    this->Duration = 1;
+    this->CoolDown = 1;
+    this->DisarmTimeMod = 1;
+    this->InteractTimeMod = 1;
+}
+
 void UOTWDSixthSenseAbilityAttributeSet::OnRep_Range() {
 }
 
@@ -30,12 +39,4 @@ void UOTWDSixthSenseAbilityAttributeSet::GetLifetimeReplicatedProps(TArray<FLife
     DOREPLIFETIME(UOTWDSixthSenseAbilityAttributeSet, InteractTimeMod);
 }
 
-UOTWDSixthSenseAbilityAttributeSet::UOTWDSixthSenseAbilityAttributeSet() {
-    this->HoldTime = 1;
-    this->Range = 1;
-    this->Duration = 1;
-    this->CoolDown = 1;
-    this->DisarmTimeMod = 1;
-    this->InteractTimeMod = 1;
-}
 

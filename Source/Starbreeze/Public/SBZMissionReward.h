@@ -22,6 +22,7 @@ public:
     TSoftObjectPtr<UTexture2D> Icon;
     
     USBZMissionReward();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasExplicitRarity() const;
     

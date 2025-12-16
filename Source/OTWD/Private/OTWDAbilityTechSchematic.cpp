@@ -5,3 +5,4 @@ UOTWDAbilityTechSchematic::UOTWDAbilityTechSchematic() {
     this->NumberOptionalTechsRequired = 0;
 }
 
+

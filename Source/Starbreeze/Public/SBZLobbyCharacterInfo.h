@@ -9,7 +9,7 @@ struct FSBZLobbyCharacterInfo {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FUniqueNetIdRepl PlayerUId;
+    FUniqueNetIdRepl PlayerUid;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bIsPlayerReady;

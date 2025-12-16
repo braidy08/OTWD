@@ -1,6 +1,9 @@
 #include "SBZUIStatics.h"
 
-void USBZUIStatics::ShowLevelTutorial(const UObject* WorldContextObject, FName TutorialName) {
+USBZUIStatics::USBZUIStatics() {
+}
+
+void USBZUIStatics::ShowLevelTutorial(const UObject* WorldContextObject, FName TutorialName, bool bSkipAnimation) {
 }
 
 USBZLevelSchematic* USBZUIStatics::SchematicNetworkToLevel(const UObject* WorldContextObject, const FSBZSchematicNetworkReference& NetworkSchematic) {
@@ -29,7 +32,7 @@ bool USBZUIStatics::IsLoadingScreenActive(const UObject* WorldContextObject) {
     return false;
 }
 
-void USBZUIStatics::HideLevelTutorial(const UObject* WorldContextObject) {
+void USBZUIStatics::HideLevelTutorial(const UObject* WorldContextObject, bool bSkipAnimation) {
 }
 
 int32 USBZUIStatics::GetWidgetZOrderValue(ESBZWidgetZOrdering ZOrder) {
@@ -56,6 +59,4 @@ ASBZPlayerCharacter* USBZUIStatics::FindCharacterForPlayerIndex(const UObject* W
     return NULL;
 }
 
-USBZUIStatics::USBZUIStatics() {
-}
 

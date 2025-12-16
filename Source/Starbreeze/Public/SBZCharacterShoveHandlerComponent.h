@@ -28,7 +28,8 @@ private:
     bool bIgnorePlayers;
     
 public:
-    USBZCharacterShoveHandlerComponent();
+    USBZCharacterShoveHandlerComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Shove();
     

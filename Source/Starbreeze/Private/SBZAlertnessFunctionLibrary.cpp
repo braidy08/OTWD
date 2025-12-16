@@ -1,5 +1,8 @@
 #include "SBZAlertnessFunctionLibrary.h"
 
+USBZAlertnessFunctionLibrary::USBZAlertnessFunctionLibrary() {
+}
+
 bool USBZAlertnessFunctionLibrary::NotEqual_AlertLevelNameName(const FSBZAlertnessLevelNameHelper& A, FName B) {
     return false;
 }
@@ -100,6 +103,4 @@ FString USBZAlertnessFunctionLibrary::AlertnessInfluenceIdToDisplayName(const FS
     return TEXT("");
 }
 
-USBZAlertnessFunctionLibrary::USBZAlertnessFunctionLibrary() {
-}
 

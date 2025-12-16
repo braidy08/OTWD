@@ -12,5 +12,6 @@ public:
     FBlackboardKeySelector EnemyKey;
     
     USBZBTDecorator_CanCrouch();
+
 };
 

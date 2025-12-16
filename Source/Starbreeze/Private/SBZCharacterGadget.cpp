@@ -1,5 +1,6 @@
 #include "SBZCharacterGadget.h"
 
-ASBZCharacterGadget::ASBZCharacterGadget() {
+ASBZCharacterGadget::ASBZCharacterGadget(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

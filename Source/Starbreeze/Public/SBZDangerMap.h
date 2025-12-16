@@ -19,6 +19,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxDangerSearchRadius;
     
-    ADEPRECATED_SBZDangerMap();
+    ADEPRECATED_SBZDangerMap(const FObjectInitializer& ObjectInitializer);
+
 };
 

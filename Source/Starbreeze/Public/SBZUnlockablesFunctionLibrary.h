@@ -7,6 +7,7 @@
 
 class APlayerController;
 class UObject;
+class USBZContentPack;
 class USBZUnlockable;
 class USBZUnlockableMetadata;
 
@@ -15,8 +16,9 @@ class STARBREEZE_API USBZUnlockablesFunctionLibrary : public UBlueprintFunctionL
     GENERATED_BODY()
 public:
     USBZUnlockablesFunctionLibrary();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static bool UpdatePurchasedContentPacks(const UObject* WorldContextObject, TArray<USBZUnlockableMetadata*>& OutUnlocked);
+    static bool UpdatePurchasedContentPacks(const UObject* WorldContextObject, TArray<USBZContentPack*>& OutNewContentPacks, TArray<USBZUnlockableMetadata*>& OutUnlocked);
     
     UFUNCTION(BlueprintCallable)
     static bool MeetsTechRequirements(const USBZUnlockableMetadata* UnlockableMetadata, const TArray<USBZUnlockableMetadata*>& AcquiredTechs, TArray<USBZUnlockableMetadata*>& MissingRequiredTechs);

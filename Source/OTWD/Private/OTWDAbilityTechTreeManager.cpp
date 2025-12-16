@@ -1,5 +1,8 @@
 #include "OTWDAbilityTechTreeManager.h"
 
+UOTWDAbilityTechTreeManager::UOTWDAbilityTechTreeManager() {
+}
+
 bool UOTWDAbilityTechTreeManager::ValidateAbilityTechLoadout(const UObject* WorldContextObject, const TSoftClassPtr<APawn>& CharacterClass, const TArray<USBZTech*>& Techs) {
     return false;
 }
@@ -25,11 +28,11 @@ int32 UOTWDAbilityTechTreeManager::RefundAllPurchasedTech(const UObject* WorldCo
     return 0;
 }
 
-bool UOTWDAbilityTechTreeManager::PurchaseTech(const UObject* WorldContextObject, const FGuid& CharacterSavedDataGuid, UOTWDAbilityTechSchematic* Tech, bool bFinalizeImmediately) {
+bool UOTWDAbilityTechTreeManager::PurchaseTech(const UObject* WorldContextObject, const FGuid& CharacterSavedDataGuid, UOTWDAbilityTechSchematic* Tech, bool bFinalizeImmediately, bool bSkipCosts) {
     return false;
 }
 
-bool UOTWDAbilityTechTreeManager::PurchaseGlobalTech(const UObject* WorldContextObject, UOTWDAbilityTechSchematic* Tech, bool bFinalizeImmediately) {
+bool UOTWDAbilityTechTreeManager::PurchaseGlobalTech(const UObject* WorldContextObject, UOTWDAbilityTechSchematic* Tech, bool bFinalizeImmediately, bool bSkipCosts) {
     return false;
 }
 
@@ -37,7 +40,7 @@ bool UOTWDAbilityTechTreeManager::IsTechPurchased(const UObject* WorldContextObj
     return false;
 }
 
-bool UOTWDAbilityTechTreeManager::IsTechPurchasable(const UObject* WorldContextObject, const FGuid& CharacterSavedDataGuid, UOTWDAbilityTechSchematic* Tech, bool bGlobalTech) {
+bool UOTWDAbilityTechTreeManager::IsTechPurchasable(const UObject* WorldContextObject, const FGuid& CharacterSavedDataGuid, UOTWDAbilityTechSchematic* Tech, bool bGlobalTech, bool bSkipCosts) {
     return false;
 }
 
@@ -79,6 +82,4 @@ void UOTWDAbilityTechTreeManager::FinalizePurchases(const UObject* WorldContextO
 void UOTWDAbilityTechTreeManager::FinalizeGlobalPurchases(const UObject* WorldContextObject) {
 }
 
-UOTWDAbilityTechTreeManager::UOTWDAbilityTechTreeManager() {
-}
 

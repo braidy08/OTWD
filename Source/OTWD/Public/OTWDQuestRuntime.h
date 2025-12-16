@@ -28,6 +28,7 @@ public:
     bool bIsQuestComplete;
     
     UOTWDQuestRuntime();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsQuestChangedFlagSet() const;
     

@@ -6,6 +6,7 @@
 #include "SBZPickupItem.generated.h"
 
 class ASBZCharacter;
+class UPrimitiveComponent;
 class USBZBaseInteractorComponent;
 class USBZInteractableComponent;
 
@@ -17,19 +18,21 @@ public:
     FOnPickedUpStateChanged OnPickedUpStateChanged;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_PickedUpState, meta=(AllowPrivateAccess=true))
-    ESBZPickedUpState PickedUpState;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USBZInteractableComponent* InteractableComponent;
+    
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_PickedUpState, meta=(AllowPrivateAccess=true))
+    ESBZPickedUpState PickedUpState;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_ChangedOwner, meta=(AllowPrivateAccess=true))
     ASBZCharacter* OwnerCharacter;
     
 public:
-    ASBZPickupItem();
+    ASBZPickupItem(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetPickedUp(ASBZCharacter* Character);
     
@@ -46,6 +49,12 @@ protected:
 public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void OnPickup(ASBZCharacter* Character);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnMeshComponentWake(UPrimitiveComponent* WakingComponent, FName BoneName);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnMeshComponentSleep(UPrimitiveComponent* WakingComponent, FName BoneName);
     
     UFUNCTION(BlueprintCallable)
     void OnIsRelevantChanged(USBZInteractableComponent* Interactable, USBZBaseInteractorComponent* Interactor, bool bIsRelevant);

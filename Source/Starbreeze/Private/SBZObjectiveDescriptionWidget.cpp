@@ -1,5 +1,8 @@
 #include "SBZObjectiveDescriptionWidget.h"
 
+USBZObjectiveDescriptionWidget::USBZObjectiveDescriptionWidget() : UUserWidget(FObjectInitializer::Get()) {
+}
+
 USBZObjectiveSchematic* USBZObjectiveDescriptionWidget::SetupObjectiveDescription(const FSBZObjectiveEvent& ObjectiveEvent, UTextBlock* DescriptionText) {
     return NULL;
 }
@@ -29,6 +32,4 @@ void USBZObjectiveDescriptionWidget::OnObjectiveAdded(const FSBZObjectiveEvent& 
 void USBZObjectiveDescriptionWidget::AddSubObjective(USBZObjectiveDescriptionBuffer* Buffer, const FSBZObjectiveEvent& ObjectiveEvent) {
 }
 
-USBZObjectiveDescriptionWidget::USBZObjectiveDescriptionWidget() : UUserWidget(FObjectInitializer::Get()) {
-}
 

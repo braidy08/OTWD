@@ -1,6 +1,12 @@
 #include "SBZHostMigration.h"
 #include "SBZMigrationGameSave.h"
 
+USBZHostMigration::USBZHostMigration() {
+    this->GameSaveDataClass = USBZMigrationGameSave::StaticClass();
+    this->MyHostIdx = 0;
+    this->MigrationCheckpoint = NULL;
+}
+
 void USBZHostMigration::SetNextHost() {
 }
 
@@ -22,9 +28,4 @@ int32 USBZHostMigration::GetCurrentLevelScriptCheckpoint() const {
     return 0;
 }
 
-USBZHostMigration::USBZHostMigration() {
-    this->GameSaveDataClass = USBZMigrationGameSave::StaticClass();
-    this->MyHostIdx = 0;
-    this->MigrationCheckpoint = NULL;
-}
 

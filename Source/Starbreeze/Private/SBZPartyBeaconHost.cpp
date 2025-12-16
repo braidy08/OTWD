@@ -1,4 +1,15 @@
 #include "SBZPartyBeaconHost.h"
+#include "SBZPartyBeaconClient.h"
+
+ASBZPartyBeaconHost::ASBZPartyBeaconHost(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->BeaconTypeName = TEXT("SBZPartyBeaconClient");
+    this->ClientBeaconActorClass = ASBZPartyBeaconClient::StaticClass();
+    this->PartyTravelTimeout = 1;
+    this->PartyDisconnectTimeout = 1;
+}
+
+void ASBZPartyBeaconHost::NotifyClientLeftLobby(const FUniqueNetIdRepl& PartyMemberId) {
+}
 
 void ASBZPartyBeaconHost::NotifyClientFailedConnectionToLobby(const FUniqueNetIdRepl& PartyMemberNetId) {
 }
@@ -9,13 +20,16 @@ void ASBZPartyBeaconHost::NotifyClientConnectedToLobby(const FUniqueNetIdRepl& P
 void ASBZPartyBeaconHost::HandlePartyTravelTimeout() {
 }
 
+void ASBZPartyBeaconHost::HandlePartyLeaveLobbyTimeout() {
+}
+
 void ASBZPartyBeaconHost::FirePartyUpdated(APlayerState* ChangedPlayerState) {
 }
 
 void ASBZPartyBeaconHost::BroadcastPartyTravelled(ESBZOnlineCode Result) {
 }
 
-ASBZPartyBeaconHost::ASBZPartyBeaconHost() {
-    this->PartyTravelTimeout = 1;
+void ASBZPartyBeaconHost::BroadcastPartyLeftLobby(ESBZOnlineCode Result) {
 }
+
 

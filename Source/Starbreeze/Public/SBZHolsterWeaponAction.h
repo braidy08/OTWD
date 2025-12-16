@@ -8,5 +8,6 @@ class STARBREEZE_API USBZHolsterWeaponAction : public USBZBasePlayerAction {
     GENERATED_BODY()
 public:
     USBZHolsterWeaponAction();
+
 };
 

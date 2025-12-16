@@ -1,12 +1,64 @@
 #include "SBZDoor.h"
-#include "Components/BoxComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
 #include "Components/SceneComponent.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "Components/StaticMeshComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "SBZInteractableComponent.h"
 #include "SBZNavMeshEventListenerComponent.h"
 #include "Templates/SubclassOf.h"
+
+ASBZDoor::ASBZDoor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_Initial;
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Scene"));
+    this->bDormant = true;
+    this->StatesSchematic = NULL;
+    this->ActionsSchematic = NULL;
+    this->AnimationsSchematic = NULL;
+    this->SoundsSchematic = NULL;
+    this->ParticlesSchematic = NULL;
+    this->MeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
+    this->DoorFrameMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("DoorFrameMesh"));
+    this->OverrideMesh = NULL;
+    this->OverrideDoorFrameMesh = NULL;
+    this->BarricadePlankMesh = NULL;
+    this->NavMeshEventListener = CreateDefaultSubobject<USBZNavMeshEventListenerComponent>(TEXT("NavMeshEventListenerComponent"));
+    this->InitState = ESBZDoorStateType::NonTraversable;
+    this->RestrictionsSchematic = NULL;
+    this->InitDoorHealth = 1;
+    this->bCanEverBeBarricaded = true;
+    this->InitBarricadePlankHealth = 1;
+    this->MaxBarricadePlankCount = 3;
+    this->BarricadeDetectionZoneHeight = 1;
+    this->BarricadeAdditionnalThickness = 1;
+    this->CollisionBoneName = TEXT("BN_Collision");
+    this->InteractionMaxDistance = 1;
+    this->NavObstacle = CreateDefaultSubobject<UBoxComponent>(TEXT("NavModifierBoxComponent"));
+    this->ShoveTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("OverlapDetectorBoxComponent"));
+    this->InteractableComponent = CreateDefaultSubobject<USBZInteractableComponent>(TEXT("InteractableComponent"));
+    this->AkAcousticPortalClass = NULL;
+    this->AkAcousticPortal = NULL;
+    this->AcousticPortalObstructionRefreshInterval = 1;
+    this->AcousticPortalObstructionCollisionChannel = ECC_Visibility;
+    this->Scene = (USceneComponent*)RootComponent;
+    this->bDoorIsFlipped = false;
+    this->bFlipDoor = false;
+    this->AIAgglomerateCheckTimeInterval = 1;
+    this->AIAgglomerateDetectionMaxDist = 1;
+    this->PhysicalSurface = SurfaceType_Default;
+    this->ServerDoorStateType = ESBZDoorStateType::NonTraversable;
+    this->DoorWidth = 1;
+    this->DoorThickness = 1;
+    this->BarricadeThickness = 1;
+    this->ShoveTrigger->SetupAttachment(MeshComponent);
+    this->NavObstacle->SetupAttachment(MeshComponent);
+    this->NavMeshEventListener->SetupAttachment(NavObstacle);
+    this->DoorFrameMeshComponent->SetupAttachment(RootComponent);
+    this->MeshComponent->SetupAttachment(DoorFrameMeshComponent);
+}
 
 void ASBZDoor::UpdateNavMeshEventListeners() {
 }
@@ -51,7 +103,11 @@ bool ASBZDoor::Server_OpenDoor(ESBZDoorSpeedModifier InSpeedModifier, bool bFron
     return false;
 }
 
-bool ASBZDoor::Server_IsOnPath(ASBZAICharacter* AICharacter) {
+bool ASBZDoor::Server_IsOpening() const {
+    return false;
+}
+
+bool ASBZDoor::Server_IsOnPath(ASBZAICharacter* AICharacter) const {
     return false;
 }
 
@@ -179,7 +235,7 @@ bool ASBZDoor::IsCharacterInAgglomerateDist(ASBZCharacter* Character) const {
     return false;
 }
 
-bool ASBZDoor::IsCharacterAgainstDoor(ASBZCharacter* Character, float CharacterRadius) const {
+bool ASBZDoor::IsCharacterAgainstDoor(ASBZCharacter* Character, float CharacterRadius, bool& bInsideDoorWidth, float& FacingDistFromDoor) const {
     return false;
 }
 
@@ -275,45 +331,4 @@ void ASBZDoor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetime
     DOREPLIFETIME(ASBZDoor, ServerDoorStateType);
 }
 
-ASBZDoor::ASBZDoor() {
-    this->bDormant = true;
-    this->StatesSchematic = NULL;
-    this->ActionsSchematic = NULL;
-    this->AnimationsSchematic = NULL;
-    this->SoundsSchematic = NULL;
-    this->ParticlesSchematic = NULL;
-    this->MeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
-    this->DoorFrameMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("DoorFrameMesh"));
-    this->OverrideMesh = NULL;
-    this->OverrideDoorFrameMesh = NULL;
-    this->BarricadePlankMesh = NULL;
-    this->NavMeshEventListener = CreateDefaultSubobject<USBZNavMeshEventListenerComponent>(TEXT("NavMeshEventListenerComponent"));
-    this->InitState = ESBZDoorStateType::NonTraversable;
-    this->RestrictionsSchematic = NULL;
-    this->InitDoorHealth = 1;
-    this->bCanEverBeBarricaded = true;
-    this->InitBarricadePlankHealth = 1;
-    this->MaxBarricadePlankCount = 3;
-    this->BarricadeDetectionZoneHeight = 1;
-    this->BarricadeAdditionnalThickness = 1;
-    this->CollisionBoneName = TEXT("BN_Collision");
-    this->InteractionMaxDistance = 1;
-    this->NavObstacle = CreateDefaultSubobject<UBoxComponent>(TEXT("NavModifierBoxComponent"));
-    this->ShoveTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("OverlapDetectorBoxComponent"));
-    this->InteractableComponent = CreateDefaultSubobject<USBZInteractableComponent>(TEXT("InteractableComponent"));
-    this->AkAcousticPortalClass = NULL;
-    this->AkAcousticPortal = NULL;
-    this->AcousticPortalObstructionRefreshInterval = 1;
-    this->AcousticPortalObstructionCollisionChannel = ECC_Visibility;
-    this->Scene = CreateDefaultSubobject<USceneComponent>(TEXT("Scene"));
-    this->bDoorIsFlipped = false;
-    this->bFlipDoor = false;
-    this->AIAgglomerateCheckTimeInterval = 1;
-    this->AIAgglomerateDetectionMaxDist = 1;
-    this->PhysicalSurface = SurfaceType_Default;
-    this->ServerDoorStateType = ESBZDoorStateType::NonTraversable;
-    this->DoorWidth = 1;
-    this->DoorThickness = 1;
-    this->BarricadeThickness = 1;
-}
 

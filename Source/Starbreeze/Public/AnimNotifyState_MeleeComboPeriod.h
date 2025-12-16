@@ -8,5 +8,6 @@ class STARBREEZE_API UAnimNotifyState_MeleeComboPeriod : public UAnimNotifyState
     GENERATED_BODY()
 public:
     UAnimNotifyState_MeleeComboPeriod();
+
 };
 

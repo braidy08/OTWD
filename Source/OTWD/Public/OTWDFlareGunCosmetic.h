@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SBZCosmeticActor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZCosmeticActor -FallbackName=SBZCosmeticActor
 #include "Templates/SubclassOf.h"
 #include "OTWDFlareGunCosmetic.generated.h"
 
@@ -14,5 +14,6 @@ public:
     TSubclassOf<ASkeletalMeshActor> SkeletalMeshActorClass;
     
     UOTWDFlareGunCosmetic();
+
 };
 

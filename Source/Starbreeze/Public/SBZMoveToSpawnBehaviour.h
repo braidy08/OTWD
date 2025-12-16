@@ -6,7 +6,7 @@
 
 class ASBZAIPatrolPoint;
 
-UCLASS(Abstract, Blueprintable, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class STARBREEZE_API USBZMoveToSpawnBehaviour : public USBZBaseSpawnBehaviour {
     GENERATED_BODY()
 public:
@@ -17,5 +17,6 @@ public:
     FSBZAIStanceIdHelper OverrideStance;
     
     USBZMoveToSpawnBehaviour();
+
 };
 

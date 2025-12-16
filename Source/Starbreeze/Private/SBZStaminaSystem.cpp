@@ -1,5 +1,17 @@
 #include "SBZStaminaSystem.h"
 
+USBZStaminaSystem::USBZStaminaSystem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RunDrainPerSecond = 1;
+    this->RechargeDelay = 1;
+    this->RechargeTime = 1;
+    this->ExtraRechargeTimeOnEmpty = 1;
+    this->StaminaClass = NULL;
+    this->OwningPlayerCharacter = NULL;
+    this->CharacterActionHandler = NULL;
+    this->PropertyComponent = NULL;
+    this->StaminaProperty = NULL;
+}
+
 void USBZStaminaSystem::OnStaminaEmptyRPC_Implementation() {
 }
 
@@ -18,15 +30,4 @@ float USBZStaminaSystem::GetCurrentStamina() const {
     return 0.0f;
 }
 
-USBZStaminaSystem::USBZStaminaSystem() {
-    this->RunDrainPerSecond = 1;
-    this->RechargeDelay = 1;
-    this->RechargeTime = 1;
-    this->ExtraRechargeTimeOnEmpty = 1;
-    this->StaminaClass = NULL;
-    this->OwningPlayerCharacter = NULL;
-    this->CharacterActionHandler = NULL;
-    this->PropertyComponent = NULL;
-    this->StaminaProperty = NULL;
-}
 

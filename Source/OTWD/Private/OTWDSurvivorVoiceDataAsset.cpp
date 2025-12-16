@@ -5,3 +5,4 @@ UOTWDSurvivorVoiceDataAsset::UOTWDSurvivorVoiceDataAsset() {
     this->CharacterCampEvent = NULL;
 }
 
+

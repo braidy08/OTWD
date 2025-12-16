@@ -16,6 +16,7 @@ public:
     TArray<USBZUnlockableMetadata*> Collection;
     
     USBZUnlockableMetadataCollection();
+
     UFUNCTION(BlueprintCallable)
     void ScanForMetadata() const;
     

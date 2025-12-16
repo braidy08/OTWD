@@ -5,3 +5,4 @@ USBZObjectiveDescriptionBuffer::USBZObjectiveDescriptionBuffer() {
     this->SubObjectiveDescriptionClass = NULL;
 }
 
+

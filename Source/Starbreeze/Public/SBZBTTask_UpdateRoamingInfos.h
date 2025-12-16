@@ -15,5 +15,6 @@ public:
     FBlackboardKeySelector MethodKey;
     
     USBZBTTask_UpdateRoamingInfos();
+
 };
 

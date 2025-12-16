@@ -1,5 +1,13 @@
 #include "SBZParty.h"
 
+USBZParty::USBZParty() {
+    this->PartyClient = NULL;
+    this->PartyHost = NULL;
+    this->PartyOnlineBeacon = NULL;
+    this->DefaultPort = 0;
+    this->PartyRestoreTimeout = 1;
+}
+
 void USBZParty::UpdatePartyState(const FSBZPartyData& InPartyState) {
 }
 
@@ -28,11 +36,4 @@ FSBZPartyData USBZParty::GetPartyData() const {
 void USBZParty::CancelPartyRestore() {
 }
 
-USBZParty::USBZParty() {
-    this->PartyClient = NULL;
-    this->PartyHost = NULL;
-    this->PartyOnlineBeacon = NULL;
-    this->DefaultPort = 0;
-    this->PartyRestoreTimeout = 1;
-}
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AbilityTask.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=AbilityTask -FallbackName=AbilityTask
 #include "SBZAbilityTask_InputHeldDelegateDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "SBZAbilityTask_InputHeld.generated.h"
@@ -19,6 +19,7 @@ public:
     FSBZAbilityTask_InputHeldDelegate OnTick;
     
     USBZAbilityTask_InputHeld();
+
     UFUNCTION(BlueprintCallable)
     void OnTimerFulfilledCallback();
     

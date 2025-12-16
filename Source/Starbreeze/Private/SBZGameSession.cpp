@@ -1,5 +1,13 @@
 #include "SBZGameSession.h"
 
+ASBZGameSession::ASBZGameSession(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->PingCheckPeriod = 1;
+    this->MaxHighPingCount = 0;
+    this->MaxPingThreshold = 1;
+    this->SlotReservationTimeout = 1;
+    this->LoadingTimeout = 1;
+}
+
 void ASBZGameSession::UnregisterTravelingClient(const FUniqueNetIdRepl& ClientId) {
 }
 
@@ -27,11 +35,4 @@ void ASBZGameSession::HandlePlayerJoined(APlayerState* PlayerState) {
 void ASBZGameSession::CheckPlayersPing() {
 }
 
-ASBZGameSession::ASBZGameSession() {
-    this->PingCheckPeriod = 1;
-    this->MaxHighPingCount = 0;
-    this->MaxPingThreshold = 1;
-    this->SlotReservationTimeout = 1;
-    this->LoadingTimeout = 1;
-}
 

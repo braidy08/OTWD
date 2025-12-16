@@ -1,5 +1,12 @@
 #include "SBZTimerComponent.h"
 
+USBZTimerComponent::USBZTimerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    this->Timer = 0;
+    this->bCountDown = true;
+    this->bShowMilliseconds = true;
+}
+
 void USBZTimerComponent::UpdateText_Implementation(const FString& Text) {
 }
 
@@ -27,9 +34,4 @@ void USBZTimerComponent::Hide() {
 void USBZTimerComponent::AttachTextComponent(UTextRenderComponent* TextRender) {
 }
 
-USBZTimerComponent::USBZTimerComponent() {
-    this->Timer = 0;
-    this->bCountDown = true;
-    this->bShowMilliseconds = true;
-}
 

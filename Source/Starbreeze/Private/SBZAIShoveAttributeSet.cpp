@@ -1,6 +1,12 @@
 #include "SBZAIShoveAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZAIShoveAttributeSet::USBZAIShoveAttributeSet() {
+    this->RecoverTime = 1;
+    this->AnticipationTime = 1;
+    this->CoolDown = 1;
+}
+
 void USBZAIShoveAttributeSet::OnRep_RecoverTime(float OldValue) {
 }
 
@@ -30,9 +36,4 @@ void USBZAIShoveAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimePropert
     DOREPLIFETIME(USBZAIShoveAttributeSet, CoolDown);
 }
 
-USBZAIShoveAttributeSet::USBZAIShoveAttributeSet() {
-    this->RecoverTime = 1;
-    this->AnticipationTime = 1;
-    this->CoolDown = 1;
-}
 

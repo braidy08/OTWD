@@ -102,5 +102,6 @@ public:
     TMap<ESBZLadderSoundType, UAkAudioEvent*> SoundsByType;
     
     USBZClimbSchematic();
+
 };
 

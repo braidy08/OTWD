@@ -1,5 +1,8 @@
 #include "SBZWeaponDataCollection.h"
 
+USBZWeaponDataCollection::USBZWeaponDataCollection() {
+}
+
 void USBZWeaponDataCollection::GenerateUIStats() const {
 }
 
@@ -10,6 +13,4 @@ USBZWeaponData* USBZWeaponDataCollection::FindWeaponDataForWeaponClass(TSoftClas
 void USBZWeaponDataCollection::CollectWeaponData() const {
 }
 
-USBZWeaponDataCollection::USBZWeaponDataCollection() {
-}
 

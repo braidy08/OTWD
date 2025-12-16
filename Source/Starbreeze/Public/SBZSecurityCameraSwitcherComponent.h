@@ -23,7 +23,8 @@ private:
     TArray<ASBZSecurityCameraPossessable*> SecurityCameras;
     
 public:
-    USBZSecurityCameraSwitcherComponent();
+    USBZSecurityCameraSwitcherComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_PossessSecurityCamera(ACharacter* Character);

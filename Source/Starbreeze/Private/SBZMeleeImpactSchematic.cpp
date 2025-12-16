@@ -4,3 +4,4 @@ USBZMeleeImpactSchematic::USBZMeleeImpactSchematic() {
     this->ImpactFeedback = NULL;
 }
 
+

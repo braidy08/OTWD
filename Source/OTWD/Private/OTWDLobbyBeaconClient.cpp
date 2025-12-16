@@ -1,5 +1,8 @@
 #include "OTWDLobbyBeaconClient.h"
 
+AOTWDLobbyBeaconClient::AOTWDLobbyBeaconClient(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void AOTWDLobbyBeaconClient::ServerUpdateStats_Implementation(const FOTWDLobbyStatsInfo& RewardInfo) {
 }
 bool AOTWDLobbyBeaconClient::ServerUpdateStats_Validate(const FOTWDLobbyStatsInfo& RewardInfo) {
@@ -12,6 +15,4 @@ bool AOTWDLobbyBeaconClient::ServerUpdateOpenedRewards_Validate(const FOTWDLobby
     return true;
 }
 
-AOTWDLobbyBeaconClient::AOTWDLobbyBeaconClient() {
-}
 

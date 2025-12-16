@@ -8,5 +8,6 @@ class OTWD_API UBTTask_GetProjectedLocationOnDoor : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UBTTask_GetProjectedLocationOnDoor();
+
 };
 

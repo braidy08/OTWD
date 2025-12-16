@@ -14,6 +14,7 @@ protected:
     USBZCharacterVoiceComponent* VoiceComponent;
     
 public:
-    ASBZNarrator();
+    ASBZNarrator(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -98,6 +98,12 @@ public:
     TArray<FSBZAttributeConfiguration> AttributeConfigurations0;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 PowerRangeMaximum1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FSBZAttributeConfiguration> AttributeConfigurations1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseStaticBaseMesh;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -149,11 +155,12 @@ public:
     FSBZWeaponDOFSettings DOFSettings;
     
 protected:
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AActor> LastInstigator;
     
 public:
-    ASBZWeapon();
+    ASBZWeapon(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void UpdateWeaponNetDormancy();
     

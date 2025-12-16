@@ -16,6 +16,7 @@ class OTWD_API UOTWDAbilityTechTreeManager : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOTWDAbilityTechTreeManager();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool ValidateAbilityTechLoadout(const UObject* WorldContextObject, const TSoftClassPtr<APawn>& CharacterClass, const TArray<USBZTech*>& Techs);
     
@@ -38,16 +39,16 @@ public:
     static int32 RefundAllPurchasedTech(const UObject* WorldContextObject, const FGuid& CharacterSavedDataGuid);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static bool PurchaseTech(const UObject* WorldContextObject, const FGuid& CharacterSavedDataGuid, UOTWDAbilityTechSchematic* Tech, bool bFinalizeImmediately);
+    static bool PurchaseTech(const UObject* WorldContextObject, const FGuid& CharacterSavedDataGuid, UOTWDAbilityTechSchematic* Tech, bool bFinalizeImmediately, bool bSkipCosts);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static bool PurchaseGlobalTech(const UObject* WorldContextObject, UOTWDAbilityTechSchematic* Tech, bool bFinalizeImmediately);
+    static bool PurchaseGlobalTech(const UObject* WorldContextObject, UOTWDAbilityTechSchematic* Tech, bool bFinalizeImmediately, bool bSkipCosts);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool IsTechPurchased(const UObject* WorldContextObject, const FGuid& CharacterSavedDataGuid, UOTWDAbilityTechSchematic* Tech);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static bool IsTechPurchasable(const UObject* WorldContextObject, const FGuid& CharacterSavedDataGuid, UOTWDAbilityTechSchematic* Tech, bool bGlobalTech);
+    static bool IsTechPurchasable(const UObject* WorldContextObject, const FGuid& CharacterSavedDataGuid, UOTWDAbilityTechSchematic* Tech, bool bGlobalTech, bool bSkipCosts);
     
     UFUNCTION(BlueprintCallable)
     static bool IsPurchasePending(UOTWDAbilityTechSchematic* Tech);

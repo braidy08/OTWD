@@ -30,5 +30,6 @@ public:
     float MaxSubRaycastSideDistFromCenterCoverPoint;
     
     USBZAIVisibilitySchematic();
+
 };
 

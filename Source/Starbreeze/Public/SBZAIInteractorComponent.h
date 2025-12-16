@@ -49,7 +49,8 @@ private:
     bool bHasOffScreenTracking;
     
 public:
-    USBZAIInteractorComponent();
+    USBZAIInteractorComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool SetInteractable(USBZAIInteractableComponent* InCurrentInteractable);
     

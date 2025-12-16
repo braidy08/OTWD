@@ -1,5 +1,6 @@
 #include "RouteBasedPathGenerator.h"
 
-ARouteBasedPathGenerator::ARouteBasedPathGenerator() {
+ARouteBasedPathGenerator::ARouteBasedPathGenerator(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

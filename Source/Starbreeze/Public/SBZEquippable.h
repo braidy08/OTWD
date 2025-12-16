@@ -33,9 +33,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bTickOnlyWhenEquipped;
     
-    ASBZEquippable();
+    ASBZEquippable(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void RefillAmmo(EEquippableSlotId SlotID, int32 Amount);
     

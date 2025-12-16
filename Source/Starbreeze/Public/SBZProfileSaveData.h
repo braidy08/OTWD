@@ -1,12 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "SBZNetStruct.h"
+#include "ESBZProfileDataLocked.h"
 #include "SBZSaveData.h"
 #include "SBZWeaponConfiguration.h"
 #include "SBZWeaponSavedData.h"
 #include "SBZProfileSaveData.generated.h"
 
+class UObject;
 class USBZContentPack;
 class USBZGameplayAbilityData;
 class USBZUnlockableMetadata;
@@ -15,8 +16,6 @@ UCLASS(Blueprintable, EditInlineNew)
 class STARBREEZE_API USBZProfileSaveData : public USBZSaveData {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnProfileDataCreated, const FSBZNetStruct&, ProfileDataPackage);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString PlayerName;
     
@@ -53,6 +52,7 @@ protected:
     
 public:
     USBZProfileSaveData();
+
     UFUNCTION(BlueprintCallable)
     bool SetActivePawnSavedDataGuid(const FGuid& SavedDataGuid);
     
@@ -83,8 +83,17 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool DoesWeaponPartSavedDataExist(const FGuid& SavedDataGuid) const;
     
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    ESBZProfileDataLocked DoesWeaponPartMetaDataMeetRequirements(const UObject* WorldContextObject, const FGuid& SavedDataGuid, USBZUnlockableMetadata*& OutLockedMetadata) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    ESBZProfileDataLocked DoesWeaponMetaDataMeetRequirements(const UObject* WorldContextObject, const FGuid& SavedDataGuid, USBZUnlockableMetadata*& OutLockedMetadata) const;
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool DoesPawnSavedDataExist(const FGuid& SavedDataGuid) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    ESBZProfileDataLocked DoesPawnMetaDataMeetRequirements(const UObject* WorldContextObject, const FGuid& SavedDataGuid, USBZUnlockableMetadata*& OutLockedMetadata) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FSBZWeaponConfiguration CreateWeaponConfigurationFromWeaponSavedData(const FSBZWeaponSavedData& WeaponSavedData, bool bIncludeSoftAssets, bool bIncludeWeaponData) const;

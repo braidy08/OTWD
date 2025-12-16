@@ -1,6 +1,12 @@
 #include "SBZEquippableAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+USBZEquippableAttributeSet::USBZEquippableAttributeSet() {
+    this->MaxUses = 1;
+    this->CurrentUses = 1;
+    this->CostMultiplier = 1;
+}
+
 void USBZEquippableAttributeSet::OnRep_MaxUses(float OldValue) {
 }
 
@@ -30,9 +36,4 @@ void USBZEquippableAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProp
     DOREPLIFETIME(USBZEquippableAttributeSet, CostMultiplier);
 }
 
-USBZEquippableAttributeSet::USBZEquippableAttributeSet() {
-    this->MaxUses = 1;
-    this->CurrentUses = 1;
-    this->CostMultiplier = 1;
-}
 

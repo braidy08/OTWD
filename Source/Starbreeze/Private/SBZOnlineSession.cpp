@@ -1,5 +1,12 @@
 #include "SBZOnlineSession.h"
 
+USBZOnlineSession::USBZOnlineSession() {
+    this->GameSearchKeyword = TEXT("OTWD");
+    this->bHostPartyByDefault = true;
+    this->OnlinePlatformErrorPopup = NULL;
+    this->SessionRequestTimeoutDuration = 1;
+}
+
 void USBZOnlineSession::StopMatchmaking() {
 }
 
@@ -94,10 +101,4 @@ int32 USBZOnlineSession::GetFoundPlayersCount() {
     return 0;
 }
 
-USBZOnlineSession::USBZOnlineSession() {
-    this->GameSearchKeyword = TEXT("OTWD");
-    this->bHostPartyByDefault = true;
-    this->OnlinePlatformErrorPopup = NULL;
-    this->SessionRequestTimeoutDuration = 1;
-}
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AbilityTask.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=AbilityTask -FallbackName=AbilityTask
 #include "SBZAbilityTask_MantlingVaultingDoneDelegateDelegate.h"
 #include "SBZAbilityTask_MantlingVaulting.generated.h"
 
@@ -15,6 +15,7 @@ public:
     FSBZAbilityTask_MantlingVaultingDoneDelegate OnVaultingDone;
     
     USBZAbilityTask_MantlingVaulting();
+
     UFUNCTION(BlueprintCallable)
     static USBZAbilityTask_MantlingVaulting* MantlingVaultingTick(UGameplayAbility* OwningAbility);
     

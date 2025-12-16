@@ -1,7 +1,10 @@
 #include "OTWDWoundReferenceActor.h"
-#include "Components/SkeletalMeshComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 
-AOTWDWoundReferenceActor::AOTWDWoundReferenceActor() {
-    this->SkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMeshComponent"));
+AOTWDWoundReferenceActor::AOTWDWoundReferenceActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bCanBeDamaged = false;
+    this->RootComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMeshComponent"));
+    this->SkeletalMeshComponent = (USkeletalMeshComponent*)RootComponent;
 }
+
 

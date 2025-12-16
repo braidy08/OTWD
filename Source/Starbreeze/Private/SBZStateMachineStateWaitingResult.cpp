@@ -1,5 +1,12 @@
 #include "SBZStateMachineStateWaitingResult.h"
 
+USBZStateMachineStateWaitingResult::USBZStateMachineStateWaitingResult() {
+    this->WaitingPlayersTimeDevelopment = 1;
+    this->WaitingPlayersTimeShipping = 1;
+    this->NumberOfAttempts = 0;
+    this->WaitResultData = NULL;
+}
+
 void USBZStateMachineStateWaitingResult::TryCheckCachedPlayers() {
 }
 
@@ -15,10 +22,4 @@ void USBZStateMachineStateWaitingResult::HandleLoadingFinished() {
 void USBZStateMachineStateWaitingResult::HandleBufferLevelLoadingFinished() {
 }
 
-USBZStateMachineStateWaitingResult::USBZStateMachineStateWaitingResult() {
-    this->WaitingPlayersTimeDevelopment = 1;
-    this->WaitingPlayersTimeShipping = 1;
-    this->NumberOfAttempts = 0;
-    this->WaitResultData = NULL;
-}
 

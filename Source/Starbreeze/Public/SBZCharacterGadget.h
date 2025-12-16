@@ -22,6 +22,7 @@ protected:
     FTransform AttachPointTransform3P;
     
 public:
-    ASBZCharacterGadget();
+    ASBZCharacterGadget(const FObjectInitializer& ObjectInitializer);
+
 };
 

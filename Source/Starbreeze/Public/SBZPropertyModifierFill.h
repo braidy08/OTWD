@@ -13,6 +13,7 @@ private:
     
 public:
     USBZPropertyModifierFill();
+
     UFUNCTION(BlueprintCallable)
     void SetFillRate(float InFillRate);
     

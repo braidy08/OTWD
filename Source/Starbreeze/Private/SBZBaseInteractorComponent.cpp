@@ -1,5 +1,11 @@
 #include "SBZBaseInteractorComponent.h"
 
+USBZBaseInteractorComponent::USBZBaseInteractorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->OwnerAbilitySystem = NULL;
+    this->OwnerCharacter = NULL;
+    this->MaximumInteractionDistance = 1;
+}
+
 void USBZBaseInteractorComponent::SaySystemComment(ESBZVoiceComment Comment, bool bReplicated, ESBZVoicePriority InPlayingPriority) const {
 }
 
@@ -23,9 +29,4 @@ bool USBZBaseInteractorComponent::CanInteractWithCurrentInteractable() const {
     return false;
 }
 
-USBZBaseInteractorComponent::USBZBaseInteractorComponent() {
-    this->OwnerAbilitySystem = NULL;
-    this->OwnerCharacter = NULL;
-    this->MaximumInteractionDistance = 1;
-}
 

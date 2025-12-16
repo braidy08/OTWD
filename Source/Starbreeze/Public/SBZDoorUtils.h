@@ -8,5 +8,6 @@ class STARBREEZE_API USBZDoorUtils : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USBZDoorUtils();
+
 };
 

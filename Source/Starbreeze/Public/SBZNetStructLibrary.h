@@ -10,6 +10,7 @@ class STARBREEZE_API USBZNetStructLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USBZNetStructLibrary();
+
     UFUNCTION(BlueprintCallable)
     static bool WriteStruct(UPARAM(Ref) FSBZNetStruct& InNetStruct, const FSBZNetStubStruct& InStruct);
     

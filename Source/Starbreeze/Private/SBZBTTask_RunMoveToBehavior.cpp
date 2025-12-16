@@ -1,6 +1,7 @@
 #include "SBZBTTask_RunMoveToBehavior.h"
 
 USBZBTTask_RunMoveToBehavior::USBZBTTask_RunMoveToBehavior() {
+    this->NodeName = TEXT("Run MoveTo Behavior");
     this->AcceptableRadius = 1;
     this->FilterClass = NULL;
     this->ObservedBlackboardValueTolerance = 1;
@@ -13,5 +14,9 @@ USBZBTTask_RunMoveToBehavior::USBZBTTask_RunMoveToBehavior() {
     this->bReachTestIncludesGoalRadius = false;
     this->bStopOnOverlap = false;
     this->bAutoUncrouch = true;
+    this->bSetStance = false;
+    this->FocusOperation = ESBZFocusOperation::None;
+    this->bCanEditFocusActor = false;
 }
+
 

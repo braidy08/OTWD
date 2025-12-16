@@ -8,5 +8,6 @@ class STARBREEZE_API USBZExplosionImpactSchematic : public USBZImpactSchematic {
     GENERATED_BODY()
 public:
     USBZExplosionImpactSchematic();
+
 };
 

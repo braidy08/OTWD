@@ -1,5 +1,8 @@
 #include "SBZMacroCapsuleComponent.h"
 
+UDEPRECATED_SBZMacroCapsuleComponent::UDEPRECATED_SBZMacroCapsuleComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UDEPRECATED_SBZMacroCapsuleComponent::DeactivateCollision(const FSBZMacroCollisionHandle& Handle) {
 }
 
@@ -15,6 +18,4 @@ FSBZMacroCollisionHandle UDEPRECATED_SBZMacroCapsuleComponent::ActivateCollision
     return FSBZMacroCollisionHandle{};
 }
 
-UDEPRECATED_SBZMacroCapsuleComponent::UDEPRECATED_SBZMacroCapsuleComponent() {
-}
 
