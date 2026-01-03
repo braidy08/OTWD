@@ -1,7 +1,7 @@
 #include "SBZWeapon.h"
 #include "AkComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+#include "Components/BoxComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=AbilitySystemComponent -FallbackName=AbilitySystemComponent
 #include "SBZModularMeshComponent.h"
 #include "SBZWeaponAttributeSet.h"

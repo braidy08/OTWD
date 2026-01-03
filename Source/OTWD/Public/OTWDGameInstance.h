@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZGameInstance -FallbackName=SBZGameInstance
+#include "Starbreeze/Public/SBZGameInstance.h"
 #include "OTWDMissionEndReport.h"
 #include "Templates/SubclassOf.h"
 #include "OTWDGameInstance.generated.h"

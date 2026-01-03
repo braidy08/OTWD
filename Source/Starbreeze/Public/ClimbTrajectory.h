@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EPhysicalSurface -FallbackName=EPhysicalSurface
+#include "Engine/EngineTypes.h"
 #include "ClimbPoint.h"
 #include "EClimbType.h"
 #include "ClimbTrajectory.generated.h"

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CharacterMovementComponent -FallbackName=CharacterMovementComponent
+#include "GameFramework/CharacterMovementComponent.h"
 #include "Engine/EngineTypes.h"
 #include "ESBZPlayerMovementState.h"
 #include "SBZCharacterCapsuleSizeChangedDelegate.h"

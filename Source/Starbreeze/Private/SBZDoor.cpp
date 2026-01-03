@@ -1,7 +1,7 @@
 #include "SBZDoor.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
+#include "Components/BoxComponent.h"
 #include "Components/SceneComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+#include "Components/SkeletalMeshComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "SBZInteractableComponent.h"
@@ -9,11 +9,6 @@
 #include "Templates/SubclassOf.h"
 
 ASBZDoor::ASBZDoor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->NetDormancy = DORM_Initial;
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Scene"));
     this->bDormant = true;
     this->StatesSchematic = NULL;
     this->ActionsSchematic = NULL;
@@ -53,11 +48,6 @@ ASBZDoor::ASBZDoor(const FObjectInitializer& ObjectInitializer) : Super(ObjectIn
     this->DoorWidth = 1;
     this->DoorThickness = 1;
     this->BarricadeThickness = 1;
-    this->ShoveTrigger->SetupAttachment(MeshComponent);
-    this->NavObstacle->SetupAttachment(MeshComponent);
-    this->NavMeshEventListener->SetupAttachment(NavObstacle);
-    this->DoorFrameMeshComponent->SetupAttachment(RootComponent);
-    this->MeshComponent->SetupAttachment(DoorFrameMeshComponent);
 }
 
 void ASBZDoor::UpdateNavMeshEventListeners() {

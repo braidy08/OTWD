@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstance -FallbackName=GameInstance
+#include "Engine/GameInstance.h"
 #include "ESBZButtonInputType.h"
 #include "ESBZDifficulty.h"
 #include "ESBZGameStateMachineState.h"

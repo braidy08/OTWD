@@ -1,6 +1,6 @@
 #include "SBZPlayerCharacter.h"
 #include "Components/CapsuleComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+#include "Components/SkeletalMeshComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SpringArmComponent -FallbackName=SpringArmComponent
 #include "Net/UnrealNetwork.h"
 #include "SBZAimAssistComponent.h"

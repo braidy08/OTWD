@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ESBZPlayerDefeatState.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPlayerCharacter -FallbackName=SBZPlayerCharacter
+#include "Starbreeze/Public/SBZPlayerCharacter.h"
 #include "Templates/SubclassOf.h"
 #include "OTWDPlayerCharacter.generated.h"
 

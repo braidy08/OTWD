@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/EngineTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZFactionIgnoreZone -FallbackName=SBZFactionIgnoreZone
+#include "Starbreeze/Public/SBZFactionIgnoreZone.h"
 #include "OTWDFactionIgnoreZone.generated.h"
 
 class AActor;

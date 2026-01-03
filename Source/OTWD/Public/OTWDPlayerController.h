@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPlayerController -FallbackName=SBZPlayerController
+#include "Starbreeze/Public/SBZPlayerController.h"
 #include "OnUnlockedLibraryItemDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "OTWDPlayerController.generated.h"

@@ -1,17 +1,15 @@
 #include "SBZThrowableProjectile.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
+#include "Particles/ParticleSystemComponent.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "Components/SphereComponent.h"
 #include "SBZProjectileMovementComponent.h"
 
 ASBZThrowableProjectile::ASBZThrowableProjectile(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionCapsule"));
-    this->SphereCollision = (USphereComponent*)RootComponent;
+    this->SphereCollision = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionCapsule"));
     this->ProjectileMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ProjectileMesh"));
     this->TrailParticleComp = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("TrailParticleComp"));
     this->ProjectileMovementComp = CreateDefaultSubobject<USBZProjectileMovementComponent>(TEXT("ProjectileMovement"));
     this->CurrentState = EThrowableProjectileState::Idle;
-    this->ProjectileMesh->SetupAttachment(RootComponent);
 }
 
 void ASBZThrowableProjectile::Throw(float ThrowForce, USBZProjectileSchematic* InProjectileSchematic, const FVector& StartPosition, const FVector& Direction, APawn* InInstigator, AActor* InDamageCauser, const FRadialDamageParams& InDamageParams, USkeletalMesh* OverrideMesh) {

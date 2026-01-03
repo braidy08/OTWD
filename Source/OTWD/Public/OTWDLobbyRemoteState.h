@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZLobbyRemoteState -FallbackName=SBZLobbyRemoteState
+#include "Starbreeze/Public/SBZLobbyRemoteState.h"
 #include "OTWDLobbyRewardsInfo.h"
 #include "OTWDLobbyStatsInfo.h"
 #include "OTWDLobbyRemoteState.generated.h"

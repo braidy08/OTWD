@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZProfileSaveData -FallbackName=SBZProfileSaveData
+#include "Starbreeze/Public/SBZProfileSaveData.h"
 #include "ChallengeIndex.h"
 #include "ChallengeProgress.h"
 #include "ChangedAbilityTechTreeDelegate.h"

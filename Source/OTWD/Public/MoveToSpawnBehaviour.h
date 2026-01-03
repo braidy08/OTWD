@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZMoveToSpawnBehaviour -FallbackName=SBZMoveToSpawnBehaviour
+#include "Starbreeze/Public/SBZMoveToSpawnBehaviour.h"
 #include "MoveToSpawnBehaviour.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

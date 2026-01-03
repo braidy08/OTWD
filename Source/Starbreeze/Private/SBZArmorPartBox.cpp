@@ -1,5 +1,5 @@
 #include "SBZArmorPartBox.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
+#include "Components/BoxComponent.h"
 
 ASBZArmorPartBox::ASBZArmorPartBox(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->Box = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxCollision"));

@@ -3,8 +3,8 @@
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EObjectTypeQuery -FallbackName=EObjectTypeQuery
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RadialDamageEvent -FallbackName=RadialDamageEvent
+//CROSSNOTE: -ModuleName=Engine -ObjectName=EObjectTypeQuery -FallbackName=EObjectTypeQuery
+//CROSSNOTE: -ModuleName=Engine -ObjectName=RadialDamageEvent -FallbackName=RadialDamageEvent
 #include "Engine/NetSerialization.h"
 #include "ActorMultiHitResult.h"
 #include "ExplosionData.h"

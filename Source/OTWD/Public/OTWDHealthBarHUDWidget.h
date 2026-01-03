@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ESBZPlayerDefeatState.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZAttributeProgressWidget -FallbackName=SBZAttributeProgressWidget
+#include "Starbreeze/Public/SBZAttributeProgressWidget.h"
 #include "OTWDHealthBarHUDWidget.generated.h"
 
 class AActor;

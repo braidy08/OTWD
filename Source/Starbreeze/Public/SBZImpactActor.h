@@ -3,7 +3,6 @@
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAttachLocation -FallbackName=EAttachLocation
 #include "Engine/EngineTypes.h"
 #include "SBZImpactActor.generated.h"
 

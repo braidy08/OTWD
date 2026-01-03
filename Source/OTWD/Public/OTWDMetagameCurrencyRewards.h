@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZNormalizedGrowthCurve -FallbackName=SBZNormalizedGrowthCurve
+#include "Starbreeze/Public/SBZNormalizedGrowthCurve.h"
 #include "OTWDMetagameCurrencyRewards.generated.h"
 
 USTRUCT(BlueprintType)

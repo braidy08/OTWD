@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZShoutTargetComponent -FallbackName=SBZShoutTargetComponent
+#include "Starbreeze/Public/SBZShoutTargetComponent.h"
 #include "OTWDReviveShoutTargetComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

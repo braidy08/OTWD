@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZUIWidgetLibrary -FallbackName=SBZUIWidgetLibrary
+#include "Starbreeze/Public/SBZUIWidgetLibrary.h"
 #include "OTWDUIWidgetLibrary.generated.h"
 
 UCLASS(Blueprintable)

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZRootSchematic -FallbackName=SBZRootSchematic
+#include "Starbreeze/Public/SBZRootSchematic.h"
 #include "OTWDRootSchematic.generated.h"
 
 class UOTWDChallengeSchematic;

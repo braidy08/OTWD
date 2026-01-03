@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZMissionEndContext -FallbackName=SBZMissionEndContext
+#include "Starbreeze/Public/SBZMissionEndContext.h"
 #include "OTWDMetaSurvivorIngameData.h"
 #include "OTWDMetagameCurrency.h"
 #include "OTWDMissionEndContext.generated.h"

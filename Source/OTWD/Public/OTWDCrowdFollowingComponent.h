@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZCrowdFollowingComponent -FallbackName=SBZCrowdFollowingComponent
+#include "Starbreeze/Public/SBZCrowdFollowingComponent.h"
 #include "Templates/SubclassOf.h"
 #include "OTWDCrowdFollowingComponent.generated.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPlayerInteractorComponent -FallbackName=SBZPlayerInteractorComponent
+#include "Starbreeze/Public/SBZPlayerInteractorComponent.h"
 #include "OTWDInteractorComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

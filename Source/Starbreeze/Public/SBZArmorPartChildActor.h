@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ChildActorComponent -FallbackName=ChildActorComponent
+#include "Components/ChildActorComponent.h"
 #include "OnArmorPartRemovedDelegate.h"
 #include "SBZArmorPartChildActor.generated.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZHurtReactionPrediction -FallbackName=SBZHurtReactionPrediction
+#include "Starbreeze/Public/SBZHurtReactionPrediction.h"
 #include "SBZLungePrediction.generated.h"
 
 class ASBZCharacter;

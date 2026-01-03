@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZAlertnessLevelIdHelper -FallbackName=SBZAlertnessLevelIdHelper
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZCharacterVoiceComponent -FallbackName=SBZCharacterVoiceComponent
+#include "Starbreeze/Public/SBZAlertnessLevelIdHelper.h"
+#include "Starbreeze/Public/SBZCharacterVoiceComponent.h"
 #include "OTWDZombieVoiceComponent.generated.h"
 
 class UAkAudioEvent;

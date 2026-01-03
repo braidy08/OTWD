@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZBeaconActionPhaseClient -FallbackName=SBZBeaconActionPhaseClient
+#include "Starbreeze/Public/SBZBeaconActionPhaseClient.h"
 #include "OTWDBeaconActionPhaseClient.generated.h"
 
 UCLASS(Blueprintable, NonTransient)

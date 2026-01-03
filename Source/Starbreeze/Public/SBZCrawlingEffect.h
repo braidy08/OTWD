@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayEffect -FallbackName=GameplayEffect
+#include "Abilities/GameplayAbility.h"
 #include "SBZCrawlingEffect.generated.h"
 
 UCLASS(Blueprintable, DefaultToInstanced, EditInlineNew)

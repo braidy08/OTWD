@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZNoiseSchematic -FallbackName=SBZNoiseSchematic
+#include "Starbreeze/Public/ESBZDifficulty.h"
+#include "Starbreeze/Public/SBZNoiseSchematic.h"
 #include "OTWDNoiseSchematic.generated.h"
 
 UCLASS(Blueprintable)

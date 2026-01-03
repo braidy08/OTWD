@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/OnlineReplStructs.h"
 #include "SBZWeaponConfiguration.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZWeaponConfigurationPartSlot -FallbackName=SBZWeaponConfigurationPartSlot
+#include "Starbreeze/Public/SBZWeaponConfigurationPartSlot.h"
 #include "OTWDLobbyRewardInfo.generated.h"
 
 USTRUCT(BlueprintType)

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTService.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=EHumanFollowerStatus -FallbackName=EHumanFollowerStatus
+#include "Starbreeze/Public/EHumanFollowerStatus.h"
 #include "OTWDBTService_ReFUpdateFollowing.generated.h"
 
 class AAIController;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ESBZWeaponRarity.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZChallengeManager -FallbackName=SBZChallengeManager
+#include "Starbreeze/Public/SBZChallengeManager.h"
 #include "EChallengeName.h"
 #include "OTWDObjectiveEvent.h"
 #include "OTWDChallengeManager.generated.h"

@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CurveBase -FallbackName=CurveBase
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RichCurve -FallbackName=RichCurve
+#include "Curves/CurveBase.h"
 #include "SBZCurveFloatInterval.generated.h"
 
 UCLASS(Blueprintable)

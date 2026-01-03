@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZNonHumanAICharacterAnimation -FallbackName=SBZNonHumanAICharacterAnimation
+#include "Starbreeze/Public/SBZNonHumanAICharacterAnimation.h"
 #include "OTWDZombieCharacterAnimation.generated.h"
 
 class AZombieCharacter;

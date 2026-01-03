@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameStateBase -FallbackName=GameStateBase
+#include "GameFramework/GameStateBase.h"
 #include "SBZGameStateBase.generated.h"
 
 class ASBZStatsDummyWeapon;

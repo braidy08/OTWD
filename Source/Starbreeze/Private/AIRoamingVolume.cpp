@@ -1,5 +1,5 @@
 #include "AIRoamingVolume.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
+#include "Components/BoxComponent.h"
 
 AAIRoamingVolume::AAIRoamingVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RootComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("RoamingVolumeBox"));

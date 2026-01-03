@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZChallengeBase -FallbackName=SBZChallengeBase
+#include "Starbreeze/Public/SBZChallengeBase.h"
 #include "EChallengeName.h"
 #include "OTWDChallengeRequirements.h"
 #include "OTWDChallengeUnlocks.h"

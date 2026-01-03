@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LevelScriptActor -FallbackName=LevelScriptActor
+#include "Engine/LevelScriptActor.h"
 #include "SBZLevelScriptActor.generated.h"
 
 class ASBZObjectiveManager;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
+#include "Engine/LatentActionManager.h"
 #include "ESBZRequestGroupStatus.h"
 #include "PawnDynamicDelegateDelegate.h"
 #include "RequestDynamicDelegateDelegate.h"

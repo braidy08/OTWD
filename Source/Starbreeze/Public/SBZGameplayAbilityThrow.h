@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbility -FallbackName=GameplayAbility
+#include "GameplayAbility.h"
 #include "Templates/SubclassOf.h"
 #include "SBZGameplayAbilityThrow.generated.h"
 

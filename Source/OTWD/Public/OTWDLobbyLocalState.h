@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZLobbyLocalState -FallbackName=SBZLobbyLocalState
+#include "Starbreeze/Public/SBZLobbyLocalState.h"
 #include "ESBZRewardType.h"
 #include "OTWDWeaponPartSavedData.h"
 #include "OTWDWeaponSavedData.h"

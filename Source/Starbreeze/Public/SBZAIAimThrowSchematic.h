@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ESuggestProjVelocityTraceOption -FallbackName=ESuggestProjVelocityTraceOption
+#include "Kismet/GameplayStatics.h"
 #include "EAimThrowType.h"
 #include "SBZSchematic.h"
 #include "SBZAIAimThrowSchematic.generated.h"

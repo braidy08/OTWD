@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZBagTypeSchematic -FallbackName=SBZBagTypeSchematic
+#include "Starbreeze/Public/SBZBagTypeSchematic.h"
 #include "OTWDBagTypeSchematic.generated.h"
 
 UCLASS(Blueprintable)

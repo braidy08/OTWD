@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavArea_Default -FallbackName=NavArea_Default
+#include "AI/Navigation/NavAreas/NavArea_Default.h"
 #include "SBZNavArea_Ladder.generated.h"
 
 UCLASS(Blueprintable)

@@ -1,8 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LevelStreamingLoadedStatus__DelegateSignature -FallbackName=LevelStreamingLoadedStatusDelegate
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LevelStreamingVisibilityStatus__DelegateSignature -FallbackName=LevelStreamingVisibilityStatusDelegate
+#include "Engine/LevelStreaming.h"
 #include "Components/SceneComponent.h"
 #include "SBZLODLevelReference.h"
 #include "SBZStreamingLevelComponent.generated.h"

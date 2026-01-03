@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DebugCameraController -FallbackName=DebugCameraController
+#include "Engine/DebugCameraController.h"
 #include "SBZDebugCameraController.generated.h"
 
 UCLASS(Blueprintable)

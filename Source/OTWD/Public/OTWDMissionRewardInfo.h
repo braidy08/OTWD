@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZMissionRewardInfo -FallbackName=SBZMissionRewardInfo
+#include "Starbreeze/Public/ESBZDifficulty.h"
+#include "Starbreeze/Public/SBZMissionRewardInfo.h"
 #include "ESBZRewardType.h"
 #include "OTWDMissionRewardInfo.generated.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZWeaponPartSavedData -FallbackName=SBZWeaponPartSavedData
+#include "Starbreeze/Public/SBZWeaponPartSavedData.h"
 #include "OTWDWeaponPartSavedData.generated.h"
 
 USTRUCT(BlueprintType)

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZOnKillData -FallbackName=SBZOnKillData
+#include "Starbreeze/Public/SBZOnKillData.h"
 #include "ChangedActiveQuestRuntimesDelegate.h"
 #include "OTWDInstancedQuestGroup.h"
 #include "OTWDQuestRewards.h"

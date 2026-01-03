@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPartyMemberHUDWidget -FallbackName=SBZPartyMemberHUDWidget
+#include "Starbreeze/Public/SBZPartyMemberHUDWidget.h"
 #include "OTWDPartyMemberHUDWidget.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

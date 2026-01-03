@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZWeaponDataRewardInfo -FallbackName=SBZWeaponDataRewardInfo
+#include "Starbreeze/Public/SBZWeaponDataRewardInfo.h"
 #include "OTWDWeaponRewardCustom.generated.h"
 
 class USBZWeaponData;

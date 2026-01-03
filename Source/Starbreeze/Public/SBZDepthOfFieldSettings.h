@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EDepthOfFieldMethod -FallbackName=EDepthOfFieldMethod
+#include "Engine/Scene.h"
 #include "SBZDepthOfFieldSettings.generated.h"
 
 class UTexture;

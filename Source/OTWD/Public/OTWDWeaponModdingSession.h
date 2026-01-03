@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZWeaponModdingSession -FallbackName=SBZWeaponModdingSession
+#include "Starbreeze/Public/SBZWeaponModdingSession.h"
 #include "OTWDMetagameCurrency.h"
 #include "OTWDWeaponPartSavedData.h"
 #include "OTWDWeaponSavedData.h"

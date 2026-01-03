@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbilitySpecHandle -FallbackName=GameplayAbilitySpecHandle
+#include "Abilities/GameplayAbilityTypes.h"
 #include "EAbilityInput.h"
 #include "EEquippableSlotId.h"
 #include "Templates/SubclassOf.h"

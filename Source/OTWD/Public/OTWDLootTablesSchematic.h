@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZLootTablesSchematic -FallbackName=SBZLootTablesSchematic
+#include "Starbreeze/Public/SBZLootTablesSchematic.h"
 #include "OTWDLootTablesSchematic.generated.h"
 
 UCLASS(Blueprintable)

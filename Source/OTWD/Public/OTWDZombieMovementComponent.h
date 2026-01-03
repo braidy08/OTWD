@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/EngineTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZCharacterMovementComponent -FallbackName=SBZCharacterMovementComponent
+#include "Starbreeze/Public/SBZCharacterMovementComponent.h"
 #include "OTWDZombieMovementComponent.generated.h"
 
 class ACharacter;

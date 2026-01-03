@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZTriggerPoint -FallbackName=SBZTriggerPoint
+#include "Starbreeze/Public/SBZTriggerPoint.h"
 #include "OTWDTriggerPoint.generated.h"
 
 UCLASS(Blueprintable)

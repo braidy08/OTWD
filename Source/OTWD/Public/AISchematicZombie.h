@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZGrappleAlignmentPullDownSettings -FallbackName=SBZGrappleAlignmentPullDownSettings
+#include "Starbreeze/Public/ESBZDifficulty.h"
+#include "Starbreeze/Public/SBZGrappleAlignmentPullDownSettings.h"
 #include "LurkerZombieData.h"
 #include "OTWDAISchematic.h"
 #include "ZombieDefaultBehaviourData.h"

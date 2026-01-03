@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZLobbyBeaconClient -FallbackName=SBZLobbyBeaconClient
+#include "Starbreeze/Public/SBZLobbyBeaconClient.h"
 #include "OTWDLobbyRewardsInfo.h"
 #include "OTWDLobbyStatsInfo.h"
 #include "OTWDLobbyBeaconClient.generated.h"

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZAnalyticsPoseTracker -FallbackName=SBZAnalyticsPoseTracker
+#include "Starbreeze/Public/SBZAnalyticsPoseTracker.h"
 #include "OTWDAnalyticsPoseTracker.generated.h"
 
 UCLASS(Blueprintable)

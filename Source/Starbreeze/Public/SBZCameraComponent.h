@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraComponent -FallbackName=CameraComponent
+#include "Camera/CameraComponent.h"
 #include "CameraViewportStateSignatureDelegate.h"
 #include "SBZCameraComponent.generated.h"
 

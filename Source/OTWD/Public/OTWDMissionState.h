@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZMissionState -FallbackName=SBZMissionState
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZNetStruct -FallbackName=SBZNetStruct
+#include "Starbreeze/Public/SBZMissionState.h"
+#include "Starbreeze/Public/SBZNetStruct.h"
 #include "OnTwitchVoteChangedDelegate.h"
 #include "OnTwitchVoteEnabledDelegate.h"
 #include "OnTwitchVoteEndedDelegate.h"

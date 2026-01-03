@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnlineSession -FallbackName=OnlineSession
+#include "GameFramework/OnlineSession.h"
 #include "GameFramework/OnlineReplStructs.h"
 #include "EOnlineSessionInfo.h"
 #include "ESBZButtonInputType.h"

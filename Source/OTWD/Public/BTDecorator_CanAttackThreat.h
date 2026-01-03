@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTDecorator.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZSenseType -FallbackName=ESBZSenseType
+#include "Starbreeze/Public/ESBZSenseType.h"
 #include "BTDecorator_CanAttackThreat.generated.h"
 
 UCLASS(Blueprintable)

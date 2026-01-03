@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZSentryComponent -FallbackName=SBZSentryComponent
+#include "Starbreeze/Public/SBZSentryComponent.h"
 #include "OTWDSentryComponent.generated.h"
 
 class ASBZCharacter;

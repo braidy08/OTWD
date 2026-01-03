@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZChallengeRequirements -FallbackName=SBZChallengeRequirements
+#include "Starbreeze/Public/SBZChallengeRequirements.h"
 #include "EChallengeName.h"
 #include "OTWDChallengeRequirements.generated.h"
 

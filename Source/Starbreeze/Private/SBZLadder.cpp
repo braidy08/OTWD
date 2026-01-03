@@ -1,6 +1,6 @@
 #include "SBZLadder.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ChildActorComponent -FallbackName=ChildActorComponent
+#include "Components/BoxComponent.h"
+#include "Components/ChildActorComponent.h"
 #include "Components/SceneComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "SBZInteractableComponent.h"

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPlayerItemEventTracker -FallbackName=SBZPlayerItemEventTracker
+#include "Starbreeze/Public/SBZPlayerItemEventTracker.h"
 #include "OTWDPlayerItemEventTracker.generated.h"
 
 UCLASS(Blueprintable)

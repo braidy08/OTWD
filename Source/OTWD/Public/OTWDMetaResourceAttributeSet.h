@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZAttributeSetOverflowBase -FallbackName=SBZAttributeSetOverflowBase
+#include "Starbreeze/Public/SBZAttributeSetOverflowBase.h"
 #include "OTWDMetaResourceAttributeSet.generated.h"
 
 UCLASS(Blueprintable)

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/EngineTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZAIFactionHideZone -FallbackName=SBZAIFactionHideZone
+#include "Starbreeze/Public/SBZAIFactionHideZone.h"
 #include "OTWDAIFactionHideZone.generated.h"
 
 class AActor;

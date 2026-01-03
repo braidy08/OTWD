@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZUnlockable -FallbackName=SBZUnlockable
+#include "Starbreeze/Public/SBZUnlockable.h"
 #include "OTWDMetagameCurrency.h"
 #include "OTWDWeaponStashAsset.generated.h"
 

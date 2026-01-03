@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ESBZWeaponFamily.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZFactionIdHelper -FallbackName=SBZFactionIdHelper
+#include "Starbreeze/Public/SBZFactionIdHelper.h"
 #include "OTWDQuestObjectiveIngameDataAsset.h"
 #include "OTWDQuestObjectiveAIKilledDataAsset.generated.h"
 

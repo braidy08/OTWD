@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LightingChannels -FallbackName=LightingChannels
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Volume -FallbackName=Volume
+#include "GameFramework/Volume.h"
 #include "ESBZSparseIrradianceVolumeHintVolumeAction.h"
 #include "SBZSparseIrradianceVolumeHintVolume.generated.h"
 

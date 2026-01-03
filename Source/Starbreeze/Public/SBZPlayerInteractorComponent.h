@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ETraceTypeQuery -FallbackName=ETraceTypeQuery
+//CROSSNOTE: -ModuleName=Engine -ObjectName=ETraceTypeQuery -FallbackName=ETraceTypeQuery
 #include "SBZBaseInteractorComponent.h"
 #include "SBZInteractionData.h"
 #include "Templates/SubclassOf.h"

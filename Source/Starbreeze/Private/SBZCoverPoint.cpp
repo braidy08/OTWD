@@ -1,5 +1,5 @@
 #include "SBZCoverPoint.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
+#include "Components/BoxComponent.h"
 #include "Components/SceneComponent.h"
 
 ASBZCoverPoint::ASBZCoverPoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

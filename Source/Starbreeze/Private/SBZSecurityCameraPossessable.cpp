@@ -1,5 +1,5 @@
 #include "SBZSecurityCameraPossessable.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraComponent -FallbackName=CameraComponent
+#include "Camera/CameraComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "SBZSecurityCameraLogicComponent.h"
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataTableRowHandle -FallbackName=DataTableRowHandle
+#include "Engine/DataTable.h"
 #include "ESBZMeleeWeaponType.h"
 #include "SBZMeleeAttack.generated.h"
 

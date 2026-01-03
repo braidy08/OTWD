@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZBlueprintBase -FallbackName=SBZBlueprintBase
+#include "Starbreeze/Public/SBZBlueprintBase.h"
 #include "PickedUpChangedDelegateDelegate.h"
 #include "PickedUpDelegateDelegate.h"
 #include "OTWDBlueprintPickup.generated.h"

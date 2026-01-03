@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZDirectionalFeedbackWidget -FallbackName=SBZDirectionalFeedbackWidget
+#include "Starbreeze/Public/SBZDirectionalFeedbackWidget.h"
 #include "Templates/SubclassOf.h"
 #include "OTWDDirectionalFeedbackWidget.generated.h"
 

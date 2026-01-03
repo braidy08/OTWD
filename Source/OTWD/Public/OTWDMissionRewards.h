@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZMissionCompletionRewards -FallbackName=SBZMissionCompletionRewards
+#include "Starbreeze/Public/ESBZDifficulty.h"
+#include "Starbreeze/Public/SBZMissionCompletionRewards.h"
 #include "OTWDMetagameCurrency.h"
 #include "OTWDMetagameCurrencyRewards.h"
 #include "OTWDMetagameFloatCurrency.h"

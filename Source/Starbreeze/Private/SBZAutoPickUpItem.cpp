@@ -1,5 +1,5 @@
 #include "SBZAutoPickUpItem.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
+#include "Components/BoxComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 #include "Components/StaticMeshComponent.h"
 #include "SBZOutlineComponent.h"

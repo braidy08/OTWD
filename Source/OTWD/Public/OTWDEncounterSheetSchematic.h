@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
+#include "Starbreeze/Public/ESBZDifficulty.h"
 #include "SBZSchematic.h"
 #include "OTWDEncounterSheetSchematic.generated.h"
 

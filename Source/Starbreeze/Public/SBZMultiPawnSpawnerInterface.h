@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
+#include "Engine/LatentActionManager.h"
 #include "SBZPawnSpawnData.h"
 #include "SBZMultiPawnSpawnerInterface.generated.h"
 

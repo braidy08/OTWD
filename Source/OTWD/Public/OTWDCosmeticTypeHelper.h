@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZCosmeticTypeHelper -FallbackName=SBZCosmeticTypeHelper
+#include "Starbreeze/Public/SBZCosmeticTypeHelper.h"
 #include "OTWDCosmeticTypeHelper.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

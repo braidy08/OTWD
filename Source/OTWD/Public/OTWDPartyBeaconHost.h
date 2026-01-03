@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPartyBeaconHost -FallbackName=SBZPartyBeaconHost
+#include "Starbreeze/Public/SBZPartyBeaconHost.h"
 #include "OTWDPartyBeaconHost.generated.h"
 
 UCLASS(Blueprintable, NonTransient)

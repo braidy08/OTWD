@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=EClimbType -FallbackName=EClimbType
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=EHumanFollowerStatus -FallbackName=EHumanFollowerStatus
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZLadderClimbActionType -FallbackName=ESBZLadderClimbActionType
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZPinningType -FallbackName=ESBZPinningType
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZHumanFollower -FallbackName=SBZHumanFollower
+#include "Starbreeze/Public/EClimbType.h"
+#include "Starbreeze/Public/EHumanFollowerStatus.h"
+#include "Starbreeze/Public/ESBZLadderClimbActionType.h"
+#include "Starbreeze/Public/ESBZPinningType.h"
+#include "Starbreeze/Public/SBZHumanFollower.h"
 #include "DestinationReachedDelegateDelegate.h"
 #include "ERescuableFollowerAnimCollection.h"
 #include "ERescuableFollowerName.h"

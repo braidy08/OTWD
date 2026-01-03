@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ENetRole -FallbackName=ENetRole
 #include "Engine/EngineTypes.h"
 #include "ESBZGrappleParticipantType.h"
 #include "ESBZPlayerGrappleFinisherState.h"

@@ -1,5 +1,5 @@
 #include "SBZSpectatorPawn.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraComponent -FallbackName=CameraComponent
+#include "Camera/CameraComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SpringArmComponent -FallbackName=SpringArmComponent
 
 ASBZSpectatorPawn::ASBZSpectatorPawn(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZUnlockable -FallbackName=SBZUnlockable
+#include "Starbreeze/Public/SBZUnlockable.h"
 #include "OTWDGameProgressionUnlockable.generated.h"
 
 UCLASS(Blueprintable, Const)

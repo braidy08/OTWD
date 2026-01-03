@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZLevelScriptActor -FallbackName=SBZLevelScriptActor
+#include "Starbreeze/Public/SBZLevelScriptActor.h"
 #include "OTWDLevelScriptActor.generated.h"
 
 UCLASS(Blueprintable)

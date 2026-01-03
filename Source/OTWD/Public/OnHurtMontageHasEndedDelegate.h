@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZHurtReactionWeight -FallbackName=ESBZHurtReactionWeight
+#include "Starbreeze/Public/ESBZHurtReactionWeight.h"
 #include "OnHurtMontageHasEndedDelegate.generated.h"
 
 class AActor;

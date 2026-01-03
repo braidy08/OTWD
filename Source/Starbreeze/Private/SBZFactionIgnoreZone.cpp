@@ -1,5 +1,5 @@
 #include "SBZFactionIgnoreZone.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
+#include "Components/BoxComponent.h"
 #include "SBZFactionIgnoreBoxComponent.h"
 
 ASBZFactionIgnoreZone::ASBZFactionIgnoreZone(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

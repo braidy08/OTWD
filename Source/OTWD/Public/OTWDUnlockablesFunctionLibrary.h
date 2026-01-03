@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZUnlockablesFunctionLibrary -FallbackName=SBZUnlockablesFunctionLibrary
+#include "Starbreeze/Public/SBZUnlockablesFunctionLibrary.h"
 #include "OTWDUnlockablesFunctionLibrary.generated.h"
 
 class ASBZPlayerController;

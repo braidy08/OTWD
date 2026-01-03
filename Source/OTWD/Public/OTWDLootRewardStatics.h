@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=ESBZDifficulty -FallbackName=ESBZDifficulty
+#include "Starbreeze/Public/ESBZDifficulty.h"
 #include "ESBZWeaponRarity.h"
 #include "OTWDLootRewardStatics.generated.h"
 

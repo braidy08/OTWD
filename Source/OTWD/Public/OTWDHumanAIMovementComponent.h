@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZCharacterMovementComponent -FallbackName=SBZCharacterMovementComponent
+#include "Starbreeze/Public/SBZCharacterMovementComponent.h"
 #include "OTWDHumanAIMovementComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

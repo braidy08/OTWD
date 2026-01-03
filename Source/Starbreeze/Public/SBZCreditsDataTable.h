@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TableRowBase -FallbackName=TableRowBase
+#include "Engine/DataTable.h"
 #include "ECreditsContext.h"
 #include "SBZCreditsDataTable.generated.h"
 

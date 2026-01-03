@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZAttributeProgressWidget -FallbackName=SBZAttributeProgressWidget
+#include "Starbreeze/Public/SBZAttributeProgressWidget.h"
 #include "OTWDStaminaBarHUDWidget.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZMissionSaveData -FallbackName=SBZMissionSaveData
+#include "Starbreeze/Public/SBZMissionSaveData.h"
 #include "OTWDMissionSaveData.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

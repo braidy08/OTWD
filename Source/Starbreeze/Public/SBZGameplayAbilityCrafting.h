@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbility -FallbackName=GameplayAbility
+#include "GameplayAbility.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayAbilities -ObjectName=GameplayAbilityActorInfo -FallbackName=GameplayAbilityActorInfo
 #include "AttributeSet.h"
 #include "Templates/SubclassOf.h"

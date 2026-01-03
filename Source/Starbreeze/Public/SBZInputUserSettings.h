@@ -1,8 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=InputActionKeyMapping -FallbackName=InputActionKeyMapping
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=InputAxisKeyMapping -FallbackName=InputAxisKeyMapping
+#include "GameFramework/PlayerInput.h"
 #include "InputCoreTypes.h"
 #include "OnActionRebindAttemptDelegate.h"
 #include "OnActionRebindingDelegate.h"

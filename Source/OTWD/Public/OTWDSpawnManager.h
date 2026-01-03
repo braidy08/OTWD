@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZSpawnManager -FallbackName=SBZSpawnManager
+#include "Starbreeze/Public/SBZSpawnManager.h"
 #include "OTWDSpawnManager.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

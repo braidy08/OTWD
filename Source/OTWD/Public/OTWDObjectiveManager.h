@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZObjectiveManager -FallbackName=SBZObjectiveManager
+#include "Starbreeze/Public/SBZObjectiveManager.h"
 #include "OnGlobalObjectiveTextChangedDelegate.h"
 #include "OTWDObjectiveManager.generated.h"
 

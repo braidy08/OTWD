@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZPlayerStealthMeterComponent -FallbackName=SBZPlayerStealthMeterComponent
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZStealthMeterFaction -FallbackName=SBZStealthMeterFaction
+#include "Starbreeze/Public/SBZPlayerStealthMeterComponent.h"
+#include "Starbreeze/Public/SBZStealthMeterFaction.h"
 #include "OTWDPlayerStealthMeterComponent.generated.h"
 
 class AActor;

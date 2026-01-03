@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Starbreeze -ObjectName=SBZOnlineSession -FallbackName=SBZOnlineSession
+#include "Starbreeze/Public/SBZOnlineSession.h"
 #include "OnOnlineCharacterChangedEventDelegateDelegate.h"
 #include "OnRewardsUpdatedDelegate.h"
 #include "OnStatsUpdatedDelegate.h"

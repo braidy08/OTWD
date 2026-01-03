@@ -1,6 +1,6 @@
 #include "SBZNavObstacle.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavModifierComponent -FallbackName=NavModifierComponent
+#include "Components/BoxComponent.h"
+#include "AI/NavigationModifier.h"
 #include "Components/SceneComponent.h"
 
 ASBZNavObstacle::ASBZNavObstacle(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
@@ -8,9 +8,6 @@ ASBZNavObstacle::ASBZNavObstacle(const FObjectInitializer& ObjectInitializer) : 
     this->bStartEnable = false;
     this->EnabledNavArea = NULL;
     this->DisabledNavArea = NULL;
-    this->NavModifierComponent = CreateDefaultSubobject<UNavModifierComponent>(TEXT("NavModifier"));
-    this->BoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxComponent"));
-    this->BoxComponent->SetupAttachment(RootComponent);
 }
 
 bool ASBZNavObstacle::IsEnable() const {
